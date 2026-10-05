@@ -1,0 +1,57 @@
+{
+  "schema": "craft-vector-native-brand-token-evidence/v1",
+  "date": "2026-10-06",
+  "publicationState": "skill-source-published; plugin-release-candidate",
+  "runtimeVersion": "0.2.0",
+  "nativeTest": {
+    "tests": 1,
+    "passed": 1,
+    "failed": 0,
+    "skipped": 0,
+    "seconds": 6.892,
+    "scope": "single copied appearance skill; script and example read from copied skill; fresh runtime cache; default public download; actual macOS arm64 native CLI"
+  },
+  "regression": {
+    "tests": 40,
+    "passed": 27,
+    "skipped": 13,
+    "failed": 0,
+    "seconds": 11.505
+  },
+  "red": {
+    "result": "ERROR",
+    "reason": "unsupported_command: swatch.new",
+    "scope": "native scenario before workflow allowlist extension"
+  },
+  "fileSha256": {
+    "skills/vectorcraft-cli-appearance/scripts/workflow.py": "2f4b48b2b7b2e1071fbcd1f04237323265603b96f4aa287221dccf5606fdeef4",
+    "skills/vectorcraft-cli-appearance/examples/brand-token-assets.json": "a13d70b9a34bd2051a85c4f7cbb5feba32ded4e672799c96d7cefb266d2c6d09",
+    "tests/test_brand_tokens_native.py": "384fffc578a38a8c2f94822f5d44faa97049b4970835eb288e19db9729a2460a",
+    "tests/test_workflow.py": "d2d7b4c0b5133961825b0529f53305b9073ae29abfd1aa02d4eb8ee6c3c09fa3"
+  },
+  "observed": [
+    "three native artboards reopen independently",
+    "one native global RGB swatch links logo, wordmark and variant",
+    "swatch edit relinks at least three registered consumers",
+    "linked artboard-1 and artboard-3 SVG and decoded PNG contain revised brand color",
+    "unrelated artboard-2 PNG bytes unchanged",
+    "original native project SHA unchanged",
+    "omitted exports inherit verified source plan output inventory",
+    "unknown swatch does not publish successful output",
+    "modified source plan and symlink source plan rejected before runtime installation",
+    "copied skill contains no Python bytecode cache"
+  ],
+  "unverified": [
+    "fixed-release installed-host acceptance for this change",
+    "actual npx skills installer",
+    "model-directed dispatch",
+    "GUI",
+    "tint, gradient, spot and non-RGB color models",
+    "cross-editor token fidelity",
+    "cross-file consumers",
+    "human creative acceptance"
+  ],
+  "skillSourceRef": "v0.1.0-dev.6",
+  "skillSourceCommit": "898849a0775dfcda0c680f7224110f45fb288096",
+  "pluginCandidateVersion": "0.1.0-dev.7"
+}

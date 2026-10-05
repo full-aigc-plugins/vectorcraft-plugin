@@ -66,3 +66,7 @@ python3 -I -B "$SKILL_DIR/scripts/bootstrap.py"
 | **vectorcraft-cli-export** | 输出矢量交换、预览和多画板资产包 |
 
 缺少技能：`npx skills add full-aigc-skills/vectorcraft-skills --skill <skill-name>`。每项自带安装与执行资源；直接执行本技能 `scripts/cli.py` 也可查询当前 CLI，不依赖兄弟路径。
+
+## 品牌色 token
+
+使用原生全局色板关联 Logo、字标与画板变体，再以 `swatch.edit` 更新；按实际色板回执名称和原工程摘要生成另存修订。读取本技能内的 [品牌 token 指南](references/brand-tokens.md)，示例为 `examples/brand-token-assets.json`。

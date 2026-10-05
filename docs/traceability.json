@@ -146,11 +146,12 @@
       "tasks": [
         "4.16",
         "4.17",
-        "4.18"
+        "4.18",
+        "4.19"
       ],
       "owner": "Domain owner",
       "status": "in-progress",
-      "evidence": "docs/evidence/brand-export-color.json"
+      "evidence": "docs/evidence/native-brand-token-first-use.json"
     },
     {
       "requirement": "VC-AR-001",

@@ -25,6 +25,7 @@ ALLOWED = {
     'object.group', 'object.transform', 'object.pathfinder.unite',
     'object.pathfinder.minusFront', 'object.pathfinder.intersect', 'object.pathfinder.exclude',
     'artboard.new', 'artboard.setProps',
+    'swatch.new', 'swatch.edit', 'swatch.list',
 }
 
 
@@ -105,6 +106,14 @@ def execute(plan, output, runtime_home=None, source=None):
         if 'document' in plan:
             raise ValueError('revision_cannot_recreate_document')
         bindings = prior['bindings']
+        # 全局色板修改默认沿用已核验的变体导出清单。
+        if 'exports' not in plan and any(op['command'] == 'swatch.edit' for op in plan['operations']):
+            source_plan = source / 'plan.json'
+            if source_plan.is_symlink() or not source_plan.is_file() or sha(source_plan) != prior['files'].get('plan.json'):
+                raise ValueError('brand_source_plan_digest_mismatch')
+            previous = json.loads(source_plan.read_text())
+            plan = {**plan, 'exports': previous.get('exports', [])}
+            validate(plan)
     elif 'document' not in plan:
         raise ValueError('document_required')
     # 安装器与本脚本同目录，单技能安装不需要访问其他包。

@@ -48,3 +48,7 @@ CLI argv 在 `--` 后，原生子命令必须放首位。安装参数放分隔�
 - 安装/诊断需要时交给 **vectorcraft-cli-setup**，完整任务路由交给 **vectorcraft-use**；缺少技能时使用 `npx skills add full-aigc-skills/vectorcraft-skills --skill <skill-name>`。不通过相邻文件路径加载其他技能。
 
 本技能不提供虚构的登录接口；本地 headless 不要求云账户。完整 GUI、跨编辑器保真与创作质量按实际证据陈述。
+
+## 品牌色 token
+
+使用原生全局色板关联 Logo、字标与画板变体，再以 `swatch.edit` 更新；按实际色板回执名称和原工程摘要生成另存修订。读取本技能内的 [品牌 token 指南](references/brand-tokens.md)，示例为 `examples/brand-token-assets.json`。
