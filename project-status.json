@@ -13,7 +13,7 @@
     "1.9": "docs/evidence/skill-suite.json",
     "1.11": "docs/evidence/installed-skill-paths.json",
     "1.12": "docs/evidence/installed-skill-paths.json",
-    "1.10": "docs/evidence/task-skill-first-use.json",
+    "1.10": "docs/evidence/dev7-full-native-suite.json",
     "4.19": "docs/evidence/native-brand-token-first-use.json",
     "4.20": "docs/evidence/native-chinese-text.json"
   },

@@ -160,3 +160,5 @@ python3 -I -B skills/vectorcraft-use/scripts/workflow.py --help
 原生 RGB 全局品牌色板工作流已通过单独复制 appearance 技能的首次在线冷启动验证，脚本与示例均来自同一技能；关联 SVG／PNG 更新、独立图标与旧工程保留有真实原生证据。独立技能源 v0.1.0-dev.6 已发布，插件 v0.1.0-dev.7 已发布；实际宿主安装后的单技能在线冷启动原生验证通过（6.487 秒），全部 58 个安装技能摘要保持一致。实际 npx 独立安装和模型派发仍待验证。详见 [品牌色架构](docs/VectorCraft-Brand-Tokens-Architecture.zh_CN.md) 与 [验证记录](docs/evidence/native-brand-token-first-use.json)。
 
 原生中文文字修订通过单技能冷启动：明确对象修改保留首样式、独立页脚与旧工程；缺失字体停止交付，可用字体依赖写入清单。技能源 dev.7 与插件 dev.8 已发布；实际安装后的单技能在线冷启动原生验证通过（8.275 秒），全部 58 个安装摘要不变。[架构](docs/VectorCraft-Chinese-Text-Architecture.zh_CN.md)、[证据](docs/evidence/native-chinese-text.json)。
+
+当前技能源 dev.7 的完整原生回归 42 项全部通过，零跳过（111.204 秒），包含九个独立任务场景、品牌色板与中文文字。任务场景使用全新公开缓存；命令发现和基线原生工作流明确复用已核验缓存。[证据](docs/evidence/dev7-full-native-suite.json)。

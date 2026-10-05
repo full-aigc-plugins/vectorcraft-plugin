@@ -61,3 +61,7 @@ CRAFT_LIVE_SUITE=1 python3 -B -m unittest discover -s tests -p test_skill_suite.
 ```
 
 单项安装：`npx skills add full-aigc-skills/vectorcraft-skills --skill <skill-name>`，使用其实际绝对路径执行，不读取兄弟技能。插件固定完整技能清单的来源标签、提交和逐项摘要；旧发布标签不可变，原 use/workflow payload 保持兼容。
+
+## 当前 dev.7 完整原生回归
+
+字体依赖门禁与随运行时默认字体调整后，42 项测试全部通过、零跳过，耗时 111.204 秒。九个任务技能分别独立复制并从全新公开原生缓存开始；品牌色和中文文字场景也使用各自独立示例和脚本。十二技能命令发现及基线原生工作流明确复用已核验领域缓存，其余为安装器或协议 fixture。证据绑定不可变技能源、十二个技能摘要与测试文件指纹，不证明实际 npx 安装、模型派发、GUI 或人工接受。证据：docs/evidence/dev7-full-native-suite.json。

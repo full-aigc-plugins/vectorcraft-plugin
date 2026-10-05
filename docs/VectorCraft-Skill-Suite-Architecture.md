@@ -61,3 +61,7 @@ CRAFT_LIVE_SUITE=1 python3 -B -m unittest discover -s tests -p test_skill_suite.
 ```
 
 Install one skill with `npx skills add full-aigc-skills/vectorcraft-skills --skill <skill-name>`; invoke its actual absolute directory, not a sibling path. Plugin packaging must bind the complete suite to a fixed source tag, commit and per-skill digest. Former tags remain immutable, and existing use/workflow payloads stay compatible.
+
+## Current dev.7 full native regression
+
+All 42 tests pass without skips in 111.204 seconds after the font-dependency guard and bundled-default-font update. Nine task skills are copied independently and start from fresh public native caches. Brand-swatch and Chinese-text scenarios also use their isolated examples/helpers. Twelve-skill CLI discovery and the baseline native workflow explicitly reuse verified domain caches; the remaining tests are installer/protocol fixtures. Evidence binds the immutable skill source and all twelve skill hashes, with test-file fingerprints. It does not prove actual npx installation, model dispatch, GUI or human acceptance. Evidence: docs/evidence/dev7-full-native-suite.json.

@@ -1,0 +1,69 @@
+{
+  "schema": "craft-vector-full-native-suite/v1",
+  "date": "2026-10-06",
+  "skillSourceRef": "v0.1.0-dev.7",
+  "skillSourceSha": "c0effdce5888f976f7b988f708af7694192fe88e",
+  "pluginVersion": "0.1.0-dev.8",
+  "nativeCliVersion": "0.2.0",
+  "platform": "darwin-arm64",
+  "python": "3.13.5",
+  "result": {
+    "tests": 42,
+    "passed": 42,
+    "skipped": 0,
+    "seconds": 111.204
+  },
+  "wholeSkillSha256": {
+    "vectorcraft-use": "2fae0f633d5d2486ea9bee77cf7212415dabd9aeb5dc81d40c2d035db561b4b1",
+    "vectorcraft-cli": "83fd8f719ec16bbf8d236eed0fc29afd7982686850ccbfa0584b1a1a890dacd3",
+    "vectorcraft-cli-setup": "305b874ad601ff1d836e8ede4c2b12b10c69d79700ba659d8a1689287005f55c",
+    "vectorcraft-cli-project": "941e5f203cc07cbe2b6ba37ad089a574e825b07b09a1c1bcd43ee93bf19085eb",
+    "vectorcraft-cli-paths": "d0a4e188e09811b1c2121933d8a6b1e5daa5f161e8ae860da0ac7f1e4529d667",
+    "vectorcraft-cli-shapes": "679bea5168b96b653cffee333fa61d4d966a09636eb95d288f09e117f6bb62bf",
+    "vectorcraft-cli-boolean": "bdd012928b84d3c38609f5d321deabefb4984f07f98c1443407c31681f1bfda2",
+    "vectorcraft-cli-text": "35925900d81b7beed6aedfbf611e2a49cd0e14e580b98aaeaba43dc535afc176",
+    "vectorcraft-cli-appearance": "9ae3526b6a8ecca71352881fdee9f750d2203fb87f5628391127447c01c3fb48",
+    "vectorcraft-cli-artboards": "74ab7fa05923a17fd7264f2f5159decf132a9e62efcd2c9a7c7ab12622639891",
+    "vectorcraft-cli-assets": "f05072859de03ff8fb8f15209aaae9add8ae6b74cdd734c55d3e1ddd9324f094",
+    "vectorcraft-cli-export": "15415f2f1172c6d988d765e2fb501e9b8d0d6f70d101aca9b67638ac182da080"
+  },
+  "tests": {
+    "test_native_workflow.py": "b4006b98958eb5d54e99013078020ff076c11e9ffacadb330b53bdbce3c1e1cb",
+    "test_installed_paths.py": "a127f856b8046419a730a922a419f443bd1713f9bbed180fbe138d7589b3d190",
+    "test_mcp_session.py": "745e34b0b440ab7e071aa295691c6fce5586d8f18d1c6a0af29c78c4561a46a1",
+    "test_exchange_loss.py": "ed9a22c6fab06b152f28751adab0d351f9d74818a0727c0d0f12ca987c37baae",
+    "test_task_skill_first_use.py": "295e5b27c35b716870fe347ec3fb0346329c4b7b92517e989723e19ac4adf0c8",
+    "test_workflow.py": "7462ea4ac707e24d59b3b6d6e18411afdb119340799edfe64c3ed78d62a6b1ac",
+    "test_chinese_text_native.py": "0800f649733b8bf8ddeede8511931c8ec73de41d9ced44ca89306bd24f4a9436",
+    "test_brand_tokens_native.py": "384fffc578a38a8c2f94822f5d44faa97049b4970835eb288e19db9729a2460a",
+    "test_first_use.py": "8bdf24b4c705915707304fee9f7dcab5d19b8f30a170b4f7fe4d24b191caf28f",
+    "test_bootstrap.py": "5285486304c7a2314285cc86ca88f919ab9bd79e00e42259de2501dbb03c7e36",
+    "test_skill_suite.py": "116a6eaa4c76d7b4edf1e7484c098d82b629c3c272f4161f01c806a94c51d689"
+  },
+  "scope": {
+    "taskScenes": "nine dedicated task skills copied alone, fresh public domain cache per case, original native project unchanged",
+    "brandAndChinese": "own example/helper copied alone, fresh native caches, global color and targeted Unicode revisions",
+    "cliDiscovery": "12 copied skill entries; verified domain cache reuse",
+    "otherTests": "native workflow uses current default pinned cache; remaining protocol and installer fixtures are unit tests"
+  },
+  "covered": [
+    "native project creation and reopen",
+    "path control handles",
+    "shape grouping and transformation",
+    "boolean union and unaffected object preservation",
+    "editable text and independent board preservation",
+    "appearance and brand recolor",
+    "artboard size and output dimensions",
+    "embedded image and reusable symbol assets",
+    "SVG/PDF/PNG vector structure and scope",
+    "global brand swatch updating registered variants",
+    "Chinese header revision, protected footer and missing-font refusal"
+  ],
+  "notProven": [
+    "actual npx installation",
+    "model dispatch",
+    "GUI and other editors",
+    "all fonts and colorspaces",
+    "human creative acceptance"
+  ]
+}
