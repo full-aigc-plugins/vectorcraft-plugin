@@ -1,7 +1,7 @@
 {
   "schema": "craft-vector-native-brand-token-evidence/v1",
   "date": "2026-10-06",
-  "publicationState": "skill-source-published; plugin-release-candidate",
+  "publicationState": "published-development-release; bounded-installed-native-acceptance-passed",
   "runtimeVersion": "0.2.0",
   "nativeTest": {
     "tests": 1,
@@ -42,7 +42,6 @@
     "copied skill contains no Python bytecode cache"
   ],
   "unverified": [
-    "fixed-release installed-host acceptance for this change",
     "actual npx skills installer",
     "model-directed dispatch",
     "GUI",
@@ -53,5 +52,15 @@
   ],
   "skillSourceRef": "v0.1.0-dev.6",
   "skillSourceCommit": "898849a0775dfcda0c680f7224110f45fb288096",
-  "pluginCandidateVersion": "0.1.0-dev.7"
+  "pluginVersion": "0.1.0-dev.7",
+  "pluginSourceCommit": "6c8cfdc2f3be5fa4b571f97bbc6f4ed256d9868a",
+  "installedNativeTest": {
+    "tests": 1,
+    "passed": 1,
+    "skipped": 0,
+    "seconds": 6.487,
+    "scope": "actual fixed-release host-installed appearance skill copied alone; own example and helper; fresh public runtime cache"
+  },
+  "hostEvidence": "docs/evidence/codex-release22-brand-token-20261006.json",
+  "postExecutionSkillHashesVerified": 58
 }

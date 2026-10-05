@@ -2,7 +2,7 @@
 
 ## 1. Authority and implementation state
 
-OpenSpec VC-DM-006 governs related variant updates and unchanged unrelated objects. This source working-tree implementation adds the existing native swatch.new/edit/list commands to the workflow allowlist. Native CLI remains 0.2.0. Skill source v0.1.0-dev.6 is published; plugin v0.1.0-dev.7 is a release candidate awaiting fixed-release host evidence. The generic example's default orange palette is unchanged; dual-palette coverage is a separate controlled test.
+OpenSpec VC-DM-006 governs related variant updates and unchanged unrelated objects. This implementation adds the existing native swatch.new/edit/list commands to the workflow allowlist. Native CLI remains 0.2.0. Skill source v0.1.0-dev.6 is published; plugin v0.1.0-dev.7 is published. Its actual installed appearance skill passes a separate fresh-cache native test in 6.487 seconds; all 58 installed skills retain their locked hashes. The generic example's default orange palette is unchanged; dual-palette coverage is a separate controlled test.
 
 ## 2. Native dependency flow
 
@@ -48,4 +48,4 @@ Every one of the twelve independent skills carries the helper, example and guide
 
 The initial native test failed because swatch.new was outside the workflow allowlist. After the policy extension, a single copied appearance skill using a fresh default-public runtime cache passes in 6.892 seconds. It creates three native artboards and a global RGB swatch, changes one token, checks revised SVG colors and decoded PNG pixels in two linked artboards, and verifies the unrelated icon PNG and original project bytes. It also checks unknown-swatches and source-plan tampering cannot publish output, and no skill bytecode cache appears. See docs/evidence/native-brand-token-first-use.json.
 
-This proves registered RGB global swatch propagation in the native project. Other color models, tint/gradient/spot propagation, cross-editor token fidelity, cross-file consumers, model dispatch, GUI and human creative acceptance are separate unverified scopes. Plugin publication and fixed-release installed-host evidence remain pending.
+This proves registered RGB global swatch propagation in the native project. Other color models, tint/gradient/spot propagation, cross-editor token fidelity, cross-file consumers, model dispatch, GUI and human creative acceptance are separate unverified scopes. Fixed-release installed-host discovery and this bounded native workflow pass; actual independent npx installation and model dispatch remain unverified.
