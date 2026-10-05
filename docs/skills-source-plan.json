@@ -1,5 +1,5 @@
 {
-  "status": "implementation-in-progress",
+  "status": "published-and-vendored",
   "package": "vectorcraft-skills",
   "proposedRepository": "https://github.com/full-aigc-skills/vectorcraft-skills",
   "skills": [
@@ -18,5 +18,7 @@
   ],
   "sourceOfTruth": "independent skills repository",
   "packaging": "immutable vendored snapshot with tag, commit and whole-tree checksums",
-  "suiteManifest": "https://github.com/full-aigc-skills/vectorcraft-skills/blob/main/skill-suite.json"
+  "suiteManifest": "https://github.com/full-aigc-skills/vectorcraft-skills/blob/main/skill-suite.json",
+  "sourceRef": "v0.1.0-dev.3",
+  "sourceSha": "50f7a05ad21f8d2b051a784fe1004ba54636d197"
 }
