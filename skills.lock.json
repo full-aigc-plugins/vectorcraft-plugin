@@ -22,7 +22,7 @@
       ],
       "dest": "skills/",
       "sha256": {
-        "vectorcraft-use": "3d1ad4339aaa10dd050062a766f39187e50d9148065ac3164d9154693f144d14",
+        "vectorcraft-use": "b1f2356681445f25c220ee5b1a20a8aef6be6afd5ca83650a4cd49933cbaa597",
         "vectorcraft-cli": "0ce2ad1bee3d38efa565832dc0c8c3c52e316c0b3bb6fd04e0064fa91c38e420",
         "vectorcraft-cli-setup": "35a7fb2d6d482617f70f5c103509c41722905cd4766babd29b19319801aa0782",
         "vectorcraft-cli-project": "33adc42df3e16a433cd87861c422b40967887fdadbce41e4455b0aa8f6bea6c0",
