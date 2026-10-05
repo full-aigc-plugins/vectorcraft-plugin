@@ -4,8 +4,8 @@
     {
       "package": "vectorcraft-skills",
       "repo": "https://github.com/full-aigc-skills/vectorcraft-skills.git",
-      "ref": "v0.1.0-dev.4",
-      "sha": "5bdb02c1eadfe14221cf7a861abc9bb63bcbd05c",
+      "ref": "v0.1.0-dev.5",
+      "sha": "70fa4fead185de23a1de270eece74b8cd30e201d",
       "skills": [
         "vectorcraft-use",
         "vectorcraft-cli",
@@ -27,12 +27,12 @@
         "vectorcraft-cli-setup": "35a7fb2d6d482617f70f5c103509c41722905cd4766babd29b19319801aa0782",
         "vectorcraft-cli-project": "33adc42df3e16a433cd87861c422b40967887fdadbce41e4455b0aa8f6bea6c0",
         "vectorcraft-cli-paths": "3164c6bc577c0d1454d261d37f61d06ef97a22c5f2c22b8e0e4b2066ce28c936",
-        "vectorcraft-cli-shapes": "677fe7ac70c856c92ea420b954a4e978f50128ba4d4af2c5e24cdfb4232efc1e",
-        "vectorcraft-cli-boolean": "7a8c429c0e7436cd225023acd937293b501719d78e5a5bfc5b07a8164bcd6d42",
+        "vectorcraft-cli-shapes": "b487c4920b1735cef5baf3d5093973d7be12a08f2a56fc7293588839749430ff",
+        "vectorcraft-cli-boolean": "b3daad6bdc9334e2b9f4714d3c18ca58b9c82be42171049650d6dc63fcf1f5fc",
         "vectorcraft-cli-text": "8a4bbee3e8fa77cf958a28675be63383fdb3575cb269787a04f734843fa6eee3",
         "vectorcraft-cli-appearance": "dbff92a4d976b082f41a9bc6288241c7446120003a655190153ed2f1b77c6f95",
         "vectorcraft-cli-artboards": "d6c2d4a08de6042efc912b61129fc727597b38789295add61b89177d5498b641",
-        "vectorcraft-cli-assets": "563de31ca3fa30e3c4839b3227f91a04871800fb902804b2e6ccee5e85c835ae",
+        "vectorcraft-cli-assets": "5f587766f5475d97463e310b30cb45f46b8c86b9adddb6ad41843bc424ae9f26",
         "vectorcraft-cli-export": "af91c01f40c6c5510d250dfff4f87add38013e2a094fc2d7a6cdbd1f92d561a1"
       }
     }

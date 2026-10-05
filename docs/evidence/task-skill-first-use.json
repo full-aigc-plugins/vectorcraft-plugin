@@ -1,0 +1,62 @@
+{
+  "schema": "craft-task-skill-first-use/v1",
+  "date": "2026-10-06",
+  "skillSourceRef": "v0.1.0-dev.5",
+  "nativeCliVersion": "0.2.0",
+  "testFile": "tests/test_task_skill_first_use.py",
+  "testFileSha256": "295e5b27c35b716870fe347ec3fb0346329c4b7b92517e989723e19ac4adf0c8",
+  "wholeSkillSha256": {
+    "vectorcraft-cli-project": "33adc42df3e16a433cd87861c422b40967887fdadbce41e4455b0aa8f6bea6c0",
+    "vectorcraft-cli-paths": "3164c6bc577c0d1454d261d37f61d06ef97a22c5f2c22b8e0e4b2066ce28c936",
+    "vectorcraft-cli-shapes": "b487c4920b1735cef5baf3d5093973d7be12a08f2a56fc7293588839749430ff",
+    "vectorcraft-cli-boolean": "b3daad6bdc9334e2b9f4714d3c18ca58b9c82be42171049650d6dc63fcf1f5fc",
+    "vectorcraft-cli-text": "8a4bbee3e8fa77cf958a28675be63383fdb3575cb269787a04f734843fa6eee3",
+    "vectorcraft-cli-appearance": "dbff92a4d976b082f41a9bc6288241c7446120003a655190153ed2f1b77c6f95",
+    "vectorcraft-cli-artboards": "d6c2d4a08de6042efc912b61129fc727597b38789295add61b89177d5498b641",
+    "vectorcraft-cli-assets": "5f587766f5475d97463e310b30cb45f46b8c86b9adddb6ad41843bc424ae9f26",
+    "vectorcraft-cli-export": "af91c01f40c6c5510d250dfff4f87add38013e2a094fc2d7a6cdbd1f92d561a1"
+  },
+  "testCommand": "CRAFT_TASK_FIRST_USE=1 CRAFT_LIVE_TEST=1 CRAFT_LIVE_SUITE=1 /opt/anaconda3/bin/python3 -B -m unittest discover -s tests -v",
+  "result": {
+    "tests": 38,
+    "passed": 38,
+    "skipped": 0,
+    "seconds": 82.001
+  },
+  "taskCaseCount": 9,
+  "isolatedFirstUse": {
+    "onlySelectedSkillCopied": true,
+    "layout": ".agents/skills/<skill>",
+    "freshRuntimePerCase": true,
+    "nativeInstalledFromPublicArchive": true,
+    "subprocessPath": "/usr/bin:/bin",
+    "originalNativeProjectHashPreserved": true
+  },
+  "verified": [
+    "Create/reopen native vector geometry",
+    "Control-handle path edit changes only icon-board rendering",
+    "Create/group/move shapes without editing existing Logo",
+    "Boolean union creates editable path and removes selected inputs",
+    "Type revision preserves editable text and unaffected icon pixels",
+    "Brand recolor changes Logo pixels but leaves icon board unchanged",
+    "Artboard dimension edit matches exported PNG size",
+    "Linked image embeds and renders after original file removal",
+    "Reusable symbol definition and two instances persist; unselected symbol command fails without output",
+    "SVG contains vector paths and no raster image; PDF/PNG signatures and native reopening verified"
+  ],
+  "redBeforeFix": [
+    "Grouping/boolean catalogue missing select.set",
+    "Asset catalogue missing file.place/select.set"
+  ],
+  "runtimeFindings": [
+    "symbol.new with ids still requires active selection in reopened CLI document",
+    "CLI native text geometry uses kind.type=text and kind.runs; harness corrected to actual schema"
+  ],
+  "exclusions": [
+    "All 585 commands",
+    "Full exchange fidelity",
+    "GUI/model dispatch",
+    "Final creative review",
+    "Full plugin Harness acceptance"
+  ]
+}

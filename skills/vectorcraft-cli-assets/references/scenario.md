@@ -31,3 +31,20 @@
 4. 原生工程、素材清单、预览/导出及交换报告交付；技术核验和视觉审核分开记录。
 
 首次组合实例采用本技能 examples 与 references/workflow.md。此实例验证组合能力，不替代所有候选命令的逐项验收。失败保留检查点，不将无损原生交付替换成扁平结果。
+
+## 已验证的导入、嵌入与符号前置（CLI 0.2.0）
+
+用 `file.place` 的真实路径与 `link:true` 导入已有图像；返回 `ids`、`linked` 和尺寸。把这些 IDs 传给 `links.embed`，要求 `embedded` 包含全部目标且 `missing` 为空，再保存。重开工程并在原图不再可访问时渲染，才能证明像素已嵌入；链接工程在素材变更或丢失时应重新关联，不能冒充独立资产。
+
+重新打开工程后，`symbol.new` 即使传入 `ids`，也可能因没有活动选择被拒绝。先执行 `select.set`，再在同一批次建立符号并放置实例：
+
+```bash
+: "${SKILL_DIR:?本技能实际加载目录}" "${SOURCE_PROJECT:?原生工程绝对路径}" "${OUTPUT_PROJECT:?新工程绝对路径}" "${OBJECT_IDS_JSON:?从真实回执取得的整数 ID 数组}"
+python3 -I -B "$SKILL_DIR/scripts/cli.py" -- run --in "$SOURCE_PROJECT" \
+  --cmd select.set --params "{\"ids\":$OBJECT_IDS_JSON}" \
+  --cmd symbol.new --params '{"name":"Brand mark"}' \
+  --cmd symbol.place --params '{"name":"Brand mark","x":64,"y":32}' \
+  --export "$OUTPUT_PROJECT"
+```
+
+示例坐标应按真实画板替换。`symbol.new` 返回名称和实例 ID，`symbol.place` 返回新实例 ID；重开后应保留符号定义与两个实例，并确认其他图标和对象未修改。

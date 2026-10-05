@@ -19,6 +19,12 @@
       "enabledAtEmptySession": false
     },
     {
+      "id": "select.set",
+      "label": "Select Objects",
+      "params": "{ids: [id…]}",
+      "enabledAtEmptySession": false
+    },
+    {
       "id": "object.pathfinder.unite",
       "label": "Unite",
       "params": "{} operate on the selected objects (back → front) → {ids}",
