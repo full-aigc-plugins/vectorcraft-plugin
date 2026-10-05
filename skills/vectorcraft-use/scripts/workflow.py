@@ -13,6 +13,11 @@ import shutil
 import subprocess
 import tempfile
 
+def exchange_report(root,outputs,warnings):
+    spec=importlib.util.spec_from_file_location('craft_exchange_loss',Path(__file__).with_name('exchange_loss.py'))
+    module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+    module.write_report(root,outputs,warnings)
+
 ALLOWED = {
     'shape.rectangle', 'shape.ellipse', 'shape.polygon', 'shape.star', 'shape.line',
     'path.create', 'path.setAnchors', 'path.close', 'text.create',
@@ -161,10 +166,11 @@ def execute(plan, output, runtime_home=None, source=None):
         (stage / 'native.json').write_text(json.dumps(native, ensure_ascii=False, indent=2) + '\n')
         (stage / 'plan.json').write_text(json.dumps(plan, ensure_ascii=False, indent=2) + '\n')
         (stage / 'operations.json').write_text(json.dumps(receipts, ensure_ascii=False, indent=2) + '\n')
+        exchange_report(stage,[item['path'] for item in outputs],{item['path']:item['warnings'] for item in outputs})
         manifest = {'schema': 'vectorcraft-delivery/v1', 'sourceProjectSha256': source_hash,
                     'runtimeSha256': installed['binarySha256'], 'bindings': bindings, 'outputs': outputs,
                     'files': {f.name: sha(f) for f in stage.iterdir() if f.is_file()},
-                    'acceptance': 'requires-domain-and-visual-review'}
+                    'lossReport': {'path':'exchange-loss.json','sha256':sha(stage/'exchange-loss.json')}, 'acceptance': 'requires-domain-and-visual-review'}
         (stage / 'manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n')
         if output.exists() or output.is_symlink():
             raise ValueError('output_exists')
