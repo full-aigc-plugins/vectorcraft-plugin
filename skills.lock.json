@@ -4,14 +4,36 @@
     {
       "package": "vectorcraft-skills",
       "repo": "https://github.com/full-aigc-skills/vectorcraft-skills.git",
-      "ref": "v0.1.0-dev.2",
-      "sha": "f1740c2b76d204218bcbfc95a9d79bbe559b684c",
+      "ref": "v0.1.0-dev.3",
+      "sha": "50f7a05ad21f8d2b051a784fe1004ba54636d197",
       "skills": [
-        "vectorcraft-use"
+        "vectorcraft-use",
+        "vectorcraft-cli",
+        "vectorcraft-cli-setup",
+        "vectorcraft-cli-project",
+        "vectorcraft-cli-paths",
+        "vectorcraft-cli-shapes",
+        "vectorcraft-cli-boolean",
+        "vectorcraft-cli-text",
+        "vectorcraft-cli-appearance",
+        "vectorcraft-cli-artboards",
+        "vectorcraft-cli-assets",
+        "vectorcraft-cli-export"
       ],
       "dest": "skills/",
       "sha256": {
-        "vectorcraft-use": "39151bde227a02af7304bbf7590d0c61ad2ef9cf1a13dd1aa33c2dae8ed1efc7"
+        "vectorcraft-use": "2e77521e238444b570e5e7ab563e070e9167842514a3cb736c534520bc4f68ca",
+        "vectorcraft-cli": "65c71d0903dcaed26036b1b83a3aaddb4ed754e072521ec9cf0e886bcf5389ee",
+        "vectorcraft-cli-setup": "7713ae5050b85cc8066a3825849cde6c408c92d6f5bd0d00bc6fc1fc7dd831c6",
+        "vectorcraft-cli-project": "3bd7f6acd9164bf4212d952730b5f5b887e45b02ec6412b6081f5bf18bfefcdd",
+        "vectorcraft-cli-paths": "94e7c4e8869a4cefe9b5eb0552ae270f20e727a4b4a198033588e43efe585b25",
+        "vectorcraft-cli-shapes": "32e1b4ee870ed3738fa99235f4212aa9d5be9511aa2a05e484fbde63b0aab705",
+        "vectorcraft-cli-boolean": "529704da0013ffe52b38d741ac67080f5ebc59a7f93dd3e4d8150d19e4cb41cd",
+        "vectorcraft-cli-text": "35a145caa1415f01e6e71736d2cb3aefcce078a89b3e952e7b9b078f172c4ee8",
+        "vectorcraft-cli-appearance": "b2882f35f43be56c10c323e083c8cfc7da7ea4b2d802940b15bab48d3dc42d1f",
+        "vectorcraft-cli-artboards": "f03eb4f96368165c4dc200643e53bb1ee980aaf85679ce81682ae60f7fc0d74b",
+        "vectorcraft-cli-assets": "0764d469bce61668ce7946ae277fb5f20d8d9cafc3c96c79ef9b58bafb5adaf1",
+        "vectorcraft-cli-export": "18a47998b370bfb4716997640b58e9c2cefdc854b67a3589beb63c3f84a18bc7"
       }
     }
   ]

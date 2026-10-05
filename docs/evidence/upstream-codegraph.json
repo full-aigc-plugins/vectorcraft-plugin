@@ -1,0 +1,23 @@
+{
+  "schema": "craft-upstream-research/v1",
+  "date": "2026-10-05",
+  "repository": "https://github.com/storytold/vectorcraft",
+  "commit": "36a6a8ae49f0e2d1059361ab1f842b1ec172bc9e",
+  "codegraph": {
+    "files": 797,
+    "nodes": 20450,
+    "edges": 102834,
+    "queries": [
+      "apps/vectorcraft-cli/src/main.rs CLI parser/save/headless/MCP",
+      "crates/engine/src/lib.rs Session execute command registry"
+    ]
+  },
+  "runtime": {
+    "version": "0.2.0",
+    "catalogueCount": 585,
+    "identity": "official native CLI"
+  },
+  "skillCount": 12,
+  "boundary": "CodeGraph/static source and runtime command discovery; not whole upstream or all commands accepted",
+  "referencePattern": "Dreamina use / cli / setup / mode skills; copied neither authorization policy nor vendor code"
+}

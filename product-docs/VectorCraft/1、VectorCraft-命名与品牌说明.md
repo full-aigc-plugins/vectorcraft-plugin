@@ -24,7 +24,7 @@ VectorCraft: 可编辑矢量品牌资产与多画板设计.
 | Skills source (planned) | full-aigc-skills/vectorcraft-skills |
 | Native deliverable | .vectorcraft |
 | Current stage | documentation-baseline |
-| Metadata version | 0.1.0-dev.2 |
+| Metadata version | 0.1.0-dev.3 |
 
 
 ## 3. 品牌与版权边界
