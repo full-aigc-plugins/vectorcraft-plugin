@@ -1,0 +1,19 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "vectorcraft",
+  "version": "0.1.0-dev.0",
+  "description": "Editable vector brand assets and multi-artboard design \u2014 documentation and specification baseline; runtime implementation pending.",
+  "author": {
+    "name": "Full AIGC Plugins",
+    "url": "https://github.com/full-aigc-plugins"
+  },
+  "homepage": "https://github.com/full-aigc-plugins/vectorcraft-plugin",
+  "repository": "https://github.com/full-aigc-plugins/vectorcraft-plugin",
+  "license": "Apache-2.0",
+  "keywords": [
+    "agent-plugin",
+    "vectorcraft",
+    "creative-workflow",
+    "design-stage"
+  ]
+}
