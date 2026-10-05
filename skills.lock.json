@@ -4,14 +4,14 @@
     {
       "package": "vectorcraft-skills",
       "repo": "https://github.com/full-aigc-skills/vectorcraft-skills.git",
-      "ref": "v0.1.0-dev.0",
-      "sha": "ef35425450ff3091f0a981c7c3c0c1b10cf5bf72",
+      "ref": "v0.1.0-dev.1",
+      "sha": "b08ed63fb3ea6d843e6e3460fb1442efb891c609",
       "skills": [
         "vectorcraft-use"
       ],
       "dest": "skills/",
       "sha256": {
-        "vectorcraft-use": "894bffbea84ad463f2106ac427797ab5e6ea50ced0846d0e9a5a4371e7edd883"
+        "vectorcraft-use": "1ad07d74ac55e3263638d68eaf270a51dcea45710a4fc79b35c139ef6f8a9256"
       }
     }
   ]
