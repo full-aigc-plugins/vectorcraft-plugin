@@ -1,0 +1,28 @@
+{
+  "observedAt": "2026-10-05",
+  "platform": "darwin-arm64",
+  "command": "CRAFT_LIVE_TEST=1 python3 -m unittest discover -s tests -v",
+  "exitCode": 0,
+  "testCount": 8,
+  "unitTestCount": 7,
+  "liveTestCount": 1,
+  "resultTail": "ok\ntest_traversal_rejected_before_extract (test_bootstrap.BootstrapTests.test_traversal_rejected_before_extract) ... ok\ntest_unknown_platform_fails_without_download (test_bootstrap.BootstrapTests.test_unknown_platform_fails_without_download) ... ok\ntest_single_skill_without_plugin_or_siblings (test_first_use.FirstUseTests.test_single_skill_without_plugin_or_siblings) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 11.739s\n\nOK\n",
+  "redPhase": "Initial bootstrap module absent: FileNotFoundError. Pinned version metadata regression: runtime_version_mismatch before fix.",
+  "scope": "Single isolated skill installation and read-only CLI invocation only",
+  "notVerified": [
+    "full-domain-workflow",
+    "plugin-host-installation",
+    "cross-plugin-orchestration",
+    "other-platforms"
+  ],
+  "sourcePackage": "vectorcraft-skills",
+  "sourceHashes": {
+    "README.md": "2865a4b6844ca37274f0e8a0111fc4ee99453dad8ca488b9c8ea448a31711fc7",
+    "README.zh-CN.md": "bed76b26df0fe2b58eb3f8adbb7546f67a7f95cdbb522a99204dbf20a1dca56d",
+    "tests/test_first_use.py": "8bdf24b4c705915707304fee9f7dcab5d19b8f30a170b4f7fe4d24b191caf28f",
+    "tests/test_bootstrap.py": "b830fa9f7629f6fad61905a0d3606cd2ec981183cdd70f1b476acb5e5d00935f",
+    "skills/vectorcraft-use/SKILL.md": "3e9a3ed4895f566cb5db012ee9ff7cd43d96cfa06cb3a627b3c1d98ab0d3af43",
+    "skills/vectorcraft-use/scripts/bootstrap.py": "1c0867a919a7b81d0b971f817ba5287742c0e602cdd0b33377c65840963b856b",
+    "skills/vectorcraft-use/scripts/runtime.lock.json": "58895e0b74ddb2cbf60de9a0832b9e61a7dc1518221d2481a96d78580276bfc5"
+  }
+}

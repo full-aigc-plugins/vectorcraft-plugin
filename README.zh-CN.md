@@ -4,7 +4,11 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
-> 当前是文档与 OpenSpec 规格基线，不是可安装的功能版本。插件功能和技能包尚未实现或发布。
+> 当前已进入实施阶段，尚未完成可安装插件版本的验收；独立技能与运行时集成正在开发。
+
+独立技能包已进入实施，单技能隔离安装已在 macOS arm64 实测；完整创作流程与插件宿主验收仍未完成。[证据](docs/evidence/bootstrap-tests.json)
+
+独立技能现已包含原生工作流助手：已实测形状与路径、布尔合并、可编辑文字、双画板、SVG/PNG/PDF 导出和定向改色。验收样例中未绑定对象及其导出保持不变，完整插件验收仍待完成。[工作流证据](docs/evidence/vector-workflow-tests.json)
 
 ## 定位
 
@@ -16,8 +20,8 @@
 
 ```text
 Intent + assets
-  -> independent Skills (planned)
-  -> plugin Harness (planned)
+  -> independent Skills (pinned development release)
+  -> public skill workflow / ArtCraft adapter
   -> verified runtime / child adapter
   -> native project + preview + export + evidence
 ```
@@ -25,8 +29,8 @@ Intent + assets
 | :--- | :--- |
 | Plugin ID | vectorcraft |
 | Metadata version | 0.1.0-dev.0 |
-| Stage | documentation-baseline |
-| Skills source | vectorcraft-skills (planned) |
+| Stage | implementation-in-progress |
+| Skills source | vectorcraft-skills / v0.1.0-dev.0 |
 | Execution | 上游 CLI；ArtCraft 使用子适配器 |
 | Host compatibility | NOT_RUN |
 | License | Apache-2.0 (original repository content) |
@@ -36,12 +40,12 @@ Intent + assets
 
 | 能力 | 行为边界 | 状态 |
 | :--- | :--- | :--- |
-| 路径形状与坐标 | 定义画板坐标、单位、路径控制点、闭合性与描边；不可把预览像素当成路径事实。 | 计划中 |
-| 组合与布尔操作 | 记录参与对象 ID、布尔运算与结果对象身份，保留修改前检查点；操作失败不丢失原对象。 | 计划中 |
-| 品牌色与文字 | 以显式 token 绑定品牌色而非全文件颜色替换；保留文本内容与字体依赖，轮廓化输出记录可编辑性损失。 | 计划中 |
-| 画板与变体 | 每个画板有稳定 ID、名称、尺寸和输出映射；预览顺序与导出范围明确，避免索引基准混淆。 | 计划中 |
-| 交换格式能力范围 | 原生 .vectorcraft 与 SVG、PDF、PNG 分别验证；遇到不可交换效果时报告栅格化范围并保留原工程。 | 计划中 |
-| 品牌变体更新 | 根据 token 与素材依赖更新相关变体，核对无关对象属性与输出没有变化。 | 计划中 |
+| 路径形状与坐标 | 定义画板坐标、单位、路径控制点、闭合性与描边；不可把预览像素当成路径事实。 | 待完整验收 |
+| 组合与布尔操作 | 记录参与对象 ID、布尔运算与结果对象身份，保留修改前检查点；操作失败不丢失原对象。 | 待完整验收 |
+| 品牌色与文字 | 以显式 token 绑定品牌色而非全文件颜色替换；保留文本内容与字体依赖，轮廓化输出记录可编辑性损失。 | 待完整验收 |
+| 画板与变体 | 每个画板有稳定 ID、名称、尺寸和输出映射；预览顺序与导出范围明确，避免索引基准混淆。 | 待完整验收 |
+| 交换格式能力范围 | 原生 .vectorcraft 与 SVG、PDF、PNG 分别验证；遇到不可交换效果时报告栅格化范围并保留原工程。 | 待完整验收 |
+| 品牌变体更新 | 根据 token 与素材依赖更新相关变体，核对无关对象属性与输出没有变化。 | 待完整验收 |
 
 不重写上游编辑引擎，不暗中改变原生交付格式，不宣称 GUI 或跨平台验收完成。
 
@@ -70,11 +74,11 @@ openspec validate establish-v1-plugin --strict --no-interactive
 vectorcraft-cli --version
 ```
 
-本次记录结果为 0.2.0。插件 setup、技能安装命令与宿主安装说明将在对应任务完成后发布，当前不提供虚构的安装入口。
+本次记录结果为 0.2.0。独立技能的 bootstrap 与 workflow 是当前开发版入口；插件宿主安装仍待验收。
 
 ## 配置与运行时
 
-目标配置包含 CLI 路径、允许读写根目录、运行模式、预算、超时与输出目录；配置 schema 尚待实现。技能锁文件 sources 为空，避免误报技能已发布。运行时锁文件中的摘要来自真实官方制品，只证明已记录平台的基础运行。
+目标配置包含 CLI 路径、允许读写根目录、运行模式、预算、超时与输出目录；配置 schema 尚待实现。技能锁文件固定已发布的独立技能源提交与内容摘要。运行时锁文件中的摘要来自真实官方制品，只证明已记录平台的基础运行。
 
 ## 可靠性与安全
 
@@ -87,8 +91,8 @@ vectorcraft-cli --version
 | 层面 | 状态 |
 | :--- | :--- |
 | 上游 CLI 与只读 MCP | 已观察，仅 macOS arm64 |
-| 业务技能与插件 Harness | PLANNED |
-| 原生工程与创作验收 | NOT_RUN |
+| 独立技能与适配器 | 技术工作流已验证；完整 Harness 待完成 |
+| 原生工程与创作验收 | 原生技术用例通过；创作质量待验收 |
 | 目标宿主安装 | NOT_RUN |
 
 
@@ -109,3 +113,16 @@ vectorcraft-cli --version
 原创内容遵循 [Apache-2.0](LICENSE)。这是第三方集成规划，不代表上游背书。四款应用的代码许可与 ArtCraft/Services 的受限许可分别处理；不复制上游 ArtCraft/Services 代码或品牌资产。
 
 [Upstream VectorCraft](https://github.com/storytold/vectorcraft) · [Issues](https://github.com/full-aigc-plugins/vectorcraft-plugin/issues)
+
+独立技能现已绑定已发布的开发标签 `v0.1.0-dev.0`，`skills.lock.json` 固定来源提交与整个技能摘要。使用 `python3 scripts/vendor/skill_vendor.py check` 核对。技能源快照发布不代表宿主验收或生产完成。
+
+## 开发版独立技能安装与使用
+
+安装独立技能：`npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-use`。安装技能后，从其真实目录运行公开入口；插件快照也包含相同技能。
+
+```bash
+python3 -I -B skills/vectorcraft-use/scripts/bootstrap.py
+python3 -I -B skills/vectorcraft-use/scripts/workflow.py --help
+```
+
+首次入口会安装锁定官方 CLI 到用户数据目录；要求 macOS arm64 与 Python 3.11+。使用技能内示例计划并提供真实素材；交付与修订合同见技能的 SKILL.md。[来源与校验证据](docs/evidence/skill-publication.json)。

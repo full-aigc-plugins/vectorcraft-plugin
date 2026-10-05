@@ -1,0 +1,37 @@
+{
+  "schema": "craft-development-publication/v1",
+  "observedAt": "2026-10-05T11:41:49.207690+00:00",
+  "status": "development-prerelease",
+  "sources": [
+    {
+      "package": "vectorcraft-skills",
+      "repo": "https://github.com/full-aigc-skills/vectorcraft-skills.git",
+      "ref": "v0.1.0-dev.0",
+      "sha": "ef35425450ff3091f0a981c7c3c0c1b10cf5bf72",
+      "skills": [
+        "vectorcraft-use"
+      ],
+      "dest": "skills/",
+      "sha256": {
+        "vectorcraft-use": "894bffbea84ad463f2106ac427797ab5e6ea50ced0846d0e9a5a4371e7edd883"
+      }
+    }
+  ],
+  "checks": {
+    "vendorUnitTests": {
+      "passed": 3,
+      "command": "python3 -B -m unittest discover -s tests -p test_skill_vendor.py"
+    },
+    "vendorOnlineCheck": {
+      "result": "passed",
+      "command": "python3 -B scripts/vendor/skill_vendor.py check"
+    }
+  },
+  "excludedEvidence": [
+    "plugin-host installation",
+    "GUI acceptance",
+    "full domain coverage",
+    "creative quality",
+    "production release"
+  ]
+}

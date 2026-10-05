@@ -1,0 +1,84 @@
+{
+  "observedAt": "2026-10-05",
+  "platform": "darwin-arm64",
+  "runtimeVersion": "0.2.0",
+  "command": "CRAFT_LIVE_TEST=1 python3 -m unittest discover -s tests -v",
+  "exitCode": 0,
+  "testsPassed": 16,
+  "sourceHashes": {
+    "LICENSE": "f51b5b32a3b7c3df50ef7153f4dd46233221574f07384d2cf99c6fae08c59f03",
+    "README.md": "59f7f5d9a699b20b045426370a66a2d582a8241d5a0cb0bbc79b74544d17bfc0",
+    ".gitignore": "60c9bdd905fcf45ac485c680d32e9773962cf061b6f041dcddd033911558a672",
+    "README.zh-CN.md": "c276335102af835197c8773d1969afc1a88f7eb1c3a310b6396ef5a6dcfae844",
+    "tests/test_native_workflow.py": "bdaa46e022429892c39d7062d2ae2df820fa7dd2db3e404bc2df202309bbaa1c",
+    "tests/test_mcp_session.py": "745e34b0b440ab7e071aa295691c6fce5586d8f18d1c6a0af29c78c4561a46a1",
+    "tests/test_workflow.py": "561a63e1c5b7bf03021d70d325c84a2c7add4633448e42cd56c693e4738c5f6d",
+    "tests/test_first_use.py": "8bdf24b4c705915707304fee9f7dcab5d19b8f30a170b4f7fe4d24b191caf28f",
+    "tests/test_bootstrap.py": "b830fa9f7629f6fad61905a0d3606cd2ec981183cdd70f1b476acb5e5d00935f",
+    "skills/vectorcraft-use/SKILL.md": "fdc65d32532ae10cc133a98edb43670a19619781964fa1f20f7dd9e478def3fd",
+    "skills/vectorcraft-use/references/workflow.md": "2ffc8764e8ef26ed54cd776076855ccdd1b4f3a9c776655c9bbbe7b735614b73",
+    "skills/vectorcraft-use/examples/brand-assets.json": "fa7132f877265db25e02742f57ff2f802e3c1d525588f8ee27d4604dee9fe673",
+    "skills/vectorcraft-use/scripts/bootstrap.py": "1c0867a919a7b81d0b971f817ba5287742c0e602cdd0b33377c65840963b856b",
+    "skills/vectorcraft-use/scripts/mcp_session.py": "2f1e6de76d1fe12917933f4967a40c827ba80994a8441e47cb68f212b00160a4",
+    "skills/vectorcraft-use/scripts/runtime.lock.json": "58895e0b74ddb2cbf60de9a0832b9e61a7dc1518221d2481a96d78580276bfc5",
+    "skills/vectorcraft-use/scripts/workflow.py": "087babcca2ec8e8c157f2fa9541120e32a8d9c99ef03796262bcb2e21fda43d9"
+  },
+  "observed": {
+    "nativeRoundtrip": true,
+    "booleanUnion": true,
+    "artboards": 2,
+    "formats": [
+      "vectorcraft",
+      "svg",
+      "png",
+      "pdf"
+    ],
+    "targetedRecolor": true,
+    "unboundObjectPreserved": true,
+    "unboundArtboardPngByteIdentical": true,
+    "pngDecodedDimensions": [
+      256,
+      256
+    ],
+    "rgbaLogoBefore": [
+      239,
+      91,
+      54,
+      255
+    ],
+    "rgbaLogoAfter": [
+      23,
+      92,
+      206,
+      255
+    ],
+    "rgbaUnboundIconAfter": [
+      239,
+      91,
+      54,
+      255
+    ],
+    "pdfDecodedPagesPerExport": 1,
+    "staleRevisionRejected": true,
+    "existingDeliveryOverwriteRejected": true,
+    "mcpTimeoutNoRetry": true
+  },
+  "sourceProjectSha256": "2bb0f7b4c6d94725641bcd93cc2b56135fa3871e22d826b3720fd98a005a9be4",
+  "revisedProjectSha256": "79e7ec99c05bb1230794aeaf603adf9499fc43899dc4b0cf47172a1c248481f3",
+  "warnings": [
+    [
+      "Preserve editing was left out: it needs a PDF of every artboard, in order (reopened, this one would show the others too)"
+    ],
+    [
+      "Preserve editing was left out: it needs a PDF of every artboard, in order (reopened, this one would show the others too)"
+    ]
+  ],
+  "notVerified": [
+    "plugin-harness-state-machine",
+    "host-plugin-installation",
+    "all-font-and-effect-interchange",
+    "general-visual-quality",
+    "other-platforms",
+    "ArtCraft-orchestration"
+  ]
+}
