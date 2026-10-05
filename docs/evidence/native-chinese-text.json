@@ -1,0 +1,66 @@
+{
+  "schema": "craft-native-chinese-text-evidence/v1",
+  "date": "2026-10-06",
+  "state": "skill-source-published; plugin-release-candidate",
+  "runtimeVersion": "0.2.0",
+  "font": "Songti SC",
+  "red": [
+    {
+      "reason": "unsupported_command: text.setText",
+      "seconds": 7.307
+    },
+    {
+      "reason": "missing font export was not rejected",
+      "seconds": 7.129
+    }
+  ],
+  "native": {
+    "tests": 1,
+    "passed": 1,
+    "skipped": 0,
+    "seconds": 7.001,
+    "scope": "one copied text skill with own example/helper; fresh public runtime cache; actual native creation, Unicode edit, SVG/PNG exports and independent reopen"
+  },
+  "regression": {
+    "tests": 42,
+    "passed": 28,
+    "skipped": 14,
+    "seconds": 9.632
+  },
+  "observed": [
+    "same-length Chinese phrases produce different glyph pixels",
+    "native first-run style unchanged after explicit-ID replacement",
+    "unrelated footer native run and PNG region unchanged",
+    "SVG stores Unicode and Songti SC dependency",
+    "original native project and source SHA preserved",
+    "unknown text ID rejected without publishing output",
+    "missing font rejected before saving/exporting successful delivery",
+    "fontDependencies records available native font family/styles",
+    "no copied skill bytecode"
+  ],
+  "files": {
+    "skills/vectorcraft-use/scripts/workflow.py": "c6ba6c4940960b185fdd41df3941b5df9770c3ad29ad7060080d7a6f4a403dd2",
+    "skills/vectorcraft-use/examples/chinese-text.json": "a5f1310bfba6102606079b62712096ae9e4298dffe860dcbab64448619613762",
+    "tests/test_chinese_text_native.py": "0800f649733b8bf8ddeede8511931c8ec73de41d9ced44ca89306bd24f4a9436",
+    "tests/test_workflow.py": "7462ea4ac707e24d59b3b6d6e18411afdb119340799edfe64c3ed78d62a6b1ac"
+  },
+  "unverified": [
+    "fixed-release installed-host acceptance for this addition",
+    "other CJK font families and full typography",
+    "multi-run rich text preservation: native operation keeps first style",
+    "cross-machine or cross-editor font fidelity",
+    "actual npx installer",
+    "model dispatch",
+    "human creative acceptance"
+  ],
+  "brandRegression": {
+    "tests": 1,
+    "passed": 1,
+    "skipped": 0,
+    "seconds": 6.209
+  },
+  "compatibility": "Default brand examples use bundled Source Sans 3 instead of unverified Arial. User projects are never automatically substituted. Native font report refers to the CLI database, not the OS installation inventory.",
+  "skillSourceRef": "v0.1.0-dev.7",
+  "skillSourceCommit": "c0effdce5888f976f7b988f708af7694192fe88e",
+  "pluginCandidateVersion": "0.1.0-dev.8"
+}

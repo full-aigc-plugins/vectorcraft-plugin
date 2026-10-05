@@ -20,7 +20,7 @@ def exchange_report(root,outputs,warnings):
 
 ALLOWED = {
     'shape.rectangle', 'shape.ellipse', 'shape.polygon', 'shape.star', 'shape.line',
-    'path.create', 'path.setAnchors', 'path.close', 'text.create',
+    'path.create', 'path.setAnchors', 'path.close', 'text.create', 'text.setText',
     'paint.setFill', 'paint.setStroke', 'select.set', 'select.none',
     'object.group', 'object.transform', 'object.pathfinder.unite',
     'object.pathfinder.minusFront', 'object.pathfinder.intersect', 'object.pathfinder.exclude',
@@ -67,6 +67,20 @@ def validate(plan):
             aliases.add(alias)
         if not isinstance(operation.get('params', {}), dict):
             raise ValueError('invalid_params')
+        if operation['command'] == 'text.setText':
+            params = operation.get('params', {})
+            valid_ref = lambda value: isinstance(value, dict) and set(value) == {'$ref'} and isinstance(value['$ref'], str) and bool(value['$ref'])
+            valid_id = lambda value: (type(value) is int and value > 0) or valid_ref(value)
+            # 禁止沿用隐式选择，整段替换只保留原生首段样式。
+            if set(params) - {'id', 'ids', 'text'} or not isinstance(params.get('text'), str) or ('id' in params) == ('ids' in params):
+                raise ValueError('invalid_text_edit: explicit id or ids and string text required')
+            if 'id' in params:
+                valid = valid_id(params['id'])
+            else:
+                ids = params['ids']
+                valid = valid_ref(ids) or (isinstance(ids, list) and bool(ids) and all(valid_id(value) for value in ids))
+            if not valid:
+                raise ValueError('invalid_text_edit: invalid target')
     seen = set()
     for output in plan.get('exports', []):
         fmt, artboard = output.get('format'), output.get('artboard', 0)
@@ -125,7 +139,7 @@ def execute(plan, output, runtime_home=None, source=None):
     cli = installed['executable']
     catalog = json.loads(subprocess.check_output([cli, 'commands'], text=True, timeout=30))
     available = {entry['id'] for entry in catalog}
-    required = {entry['command'] for entry in plan['operations']}
+    required = {entry['command'] for entry in plan['operations']} | {'text.fonts'}
     if required - available:
         raise ValueError('capability_missing: ' + ','.join(sorted(required - available)))
     output.parent.mkdir(parents=True, exist_ok=True)
@@ -148,6 +162,12 @@ def execute(plan, output, runtime_home=None, source=None):
             value = command(operation['command'], resolve(operation.get('params', {}), bindings))
             if operation.get('as'):
                 bindings[operation['as']] = value
+        fonts = command('text.fonts', {}, save=False)
+        if not isinstance(fonts, list) or any(not isinstance(font, dict) or type(font.get('missing')) is not bool for font in fonts):
+            raise ValueError('invalid_font_dependencies')
+        missing = [font for font in fonts if font['missing']]
+        if missing:
+            raise ValueError('missing_fonts: ' + json.dumps(missing, ensure_ascii=False))
         command('document.save', {'path': str(project)}, save=False)
         reopened = session_module.Session([cli, 'mcp', '--headless'])
         with reopened:
@@ -177,7 +197,7 @@ def execute(plan, output, runtime_home=None, source=None):
         (stage / 'operations.json').write_text(json.dumps(receipts, ensure_ascii=False, indent=2) + '\n')
         exchange_report(stage,[item['path'] for item in outputs],{item['path']:item['warnings'] for item in outputs})
         manifest = {'schema': 'vectorcraft-delivery/v1', 'sourceProjectSha256': source_hash,
-                    'runtimeSha256': installed['binarySha256'], 'bindings': bindings, 'outputs': outputs,
+                    'runtimeSha256': installed['binarySha256'], 'bindings': bindings, 'outputs': outputs, 'fontDependencies': fonts,
                     'files': {f.name: sha(f) for f in stage.iterdir() if f.is_file()},
                     'lossReport': {'path':'exchange-loss.json','sha256':sha(stage/'exchange-loss.json')}, 'acceptance': 'requires-domain-and-visual-review'}
         (stage / 'manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n')

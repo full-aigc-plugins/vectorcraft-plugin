@@ -70,3 +70,7 @@ python3 -I -B "$SKILL_DIR/scripts/bootstrap.py"
 ## 品牌色 token
 
 使用原生全局色板关联 Logo、字标与画板变体，再以 `swatch.edit` 更新；按实际色板回执名称和原工程摘要生成另存修订。读取本技能内的 [品牌 token 指南](references/brand-tokens.md)，示例为 `examples/brand-token-assets.json`。
+
+## 中文文字与定点修订
+
+本技能自带中文标题与独立页脚示例，支持显式对象 text.setText 原工程修订；参见本技能 [中文文字指南](references/chinese-text.md)。整段替换保留首段样式，多样式富文本合并边界必须披露。

@@ -110,11 +110,12 @@
       "tasks": [
         "4.7",
         "4.8",
-        "4.9"
+        "4.9",
+        "4.20"
       ],
       "owner": "Domain owner",
       "status": "in-progress",
-      "evidence": "docs/evidence/vector-workflow-tests.json"
+      "evidence": "docs/evidence/native-chinese-text.json"
     },
     {
       "requirement": "VC-DM-004",

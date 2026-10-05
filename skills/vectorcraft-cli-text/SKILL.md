@@ -48,3 +48,7 @@ CLI argv 在 `--` 后，原生子命令必须放首位。安装参数放分隔�
 - 安装/诊断需要时交给 **vectorcraft-cli-setup**，完整任务路由交给 **vectorcraft-use**；缺少技能时使用 `npx skills add full-aigc-skills/vectorcraft-skills --skill <skill-name>`。不通过相邻文件路径加载其他技能。
 
 本技能不提供虚构的登录接口；本地 headless 不要求云账户。完整 GUI、跨编辑器保真与创作质量按实际证据陈述。
+
+## 中文文字与定点修订
+
+本技能自带中文标题与独立页脚示例，支持显式对象 text.setText 原工程修订；参见本技能 [中文文字指南](references/chinese-text.md)。整段替换保留首段样式，多样式富文本合并边界必须披露。

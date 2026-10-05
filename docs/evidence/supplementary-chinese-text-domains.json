@@ -1,0 +1,28 @@
+{
+  "scope": "supplementary source-helper native cold rendering and revision; no installed-host or independent-copy claim",
+  "font": "Songti SC",
+  "observations": [
+    {
+      "plugin": "photocraft",
+      "nativeVersion": "0.2.0",
+      "freshPublicRuntimeCache": true,
+      "sourceProjectPreserved": true,
+      "unicodeAndFontStoredInNativeDelivery": true,
+      "sameLengthPhrasesRenderDifferentPixels": true,
+      "previewSha256": "ec2ed2fa85cf147b02c3eee71a63f4e7e70e5dc2594563332b8fd32ddba474a5",
+      "sourceProjectSha256": "33ed0ad71bc55098764102f2e2f78d2911cfedc50256b9c2a4b1de83a681503f",
+      "revisedProjectSha256": "1bdf1fc526495ab0e003ffe423805c8f97b982ea0f436fb18bca5d99da22c654"
+    },
+    {
+      "plugin": "effectcraft",
+      "nativeVersion": "0.2.0",
+      "freshPublicRuntimeCache": true,
+      "sourceProjectPreserved": true,
+      "unicodeAndFontStoredInNativeDelivery": true,
+      "sameLengthPhrasesRenderDifferentPixels": true,
+      "previewSha256": "b65c5089623b9f0614fe381bed1077404a0716e68a117d00f051d6b6f0159646",
+      "sourceProjectSha256": "521fd0b1e035b059f6da6f9827943aba84ea58bbf133dcba54fa92fd08650a83",
+      "revisedProjectSha256": "202b748fc6bc57609b638634f9561dde03a0b8e128d334a8f1b2d5f2736c10ce"
+    }
+  ]
+}
