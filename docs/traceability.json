@@ -150,7 +150,7 @@
       ],
       "owner": "Domain owner",
       "status": "in-progress",
-      "evidence": "docs/evidence/vector-workflow-tests.json"
+      "evidence": "docs/evidence/brand-export-color.json"
     },
     {
       "requirement": "VC-AR-001",

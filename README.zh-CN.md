@@ -154,3 +154,5 @@ python3 -I -B skills/vectorcraft-use/scripts/workflow.py --help
 当前固定发布的宿主核验（2026-10-06）：Codex 0.153.4 安装五个当前固定插件，加载全部 58 技能并逐项核对内容身份。本插件代表性原生工作流从实际安装路径调用，在新的原生运行时中完成创建、重开和修订检查；五工作流调用后，全部 58 个技能摘要保持不变。[证据](docs/evidence/codex-current-release-20261006.json)。显式标签生成器由 ArtCraft 统一持有。模型派发等待授权，GUI、创作与完整宿主验收仍未完成；本次 QA 维护不改变已发布技能/运行时内容或标签。
 
 当前固定发布矩阵（FilmCraft dev.6、EffectCraft dev.7、PhotoCraft dev.6、VectorCraft dev.6、ArtCraft dev.17）在隔离 Codex 安装后通过 58 技能发现及原生代表工作流；执行后所有技能摘要保持不变。[宿主安装内容的原生验证](docs/evidence/codex-release17-native-20261006.json)。此证据不代表模型调度、GUI 或完整创作验收。
+
+补充安装后品牌导出验证通过：选定 Logo／字标改色后，SVG 色值与 PNG 解码像素同时更新；无关图标属性及第二画板 PNG 保持不变。本次使用已核验运行时缓存，不是新的冷安装，也不证明自动推导 token 依赖。[证据](docs/evidence/brand-export-color.json)。插件及技能源发布标签保持不变。

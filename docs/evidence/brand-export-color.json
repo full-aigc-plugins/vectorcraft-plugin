@@ -1,0 +1,39 @@
+{
+  "schema": "craft-vector-brand-export-evidence/v1",
+  "date": "2026-10-06",
+  "pluginVersion": "0.1.0-dev.6",
+  "pluginSourceCommit": "e40674d55ab65f5e6e631e602a222a46f72782ad",
+  "skillSourceCommit": "70fa4fead185de23a1de270eece74b8cd30e201d",
+  "nativeTest": {
+    "tests": 1,
+    "passed": 1,
+    "skipped": 0,
+    "seconds": 0.193,
+    "testFileSha256": "c6a02e87a90d8b6b2214a1f74d7beba375435cc9c2f2cd5bfca25356f8fb16c9",
+    "scope": "actual host-installed immutable vectorcraft-use; existing verified runtime cache; newly created native projects; not a new cold-install test"
+  },
+  "regression": {
+    "tests": 38,
+    "passed": 26,
+    "skipped": 12,
+    "failed": 0,
+    "seconds": 9.426
+  },
+  "observed": [
+    "native boolean union and two artboards",
+    "updated artboard-1 PNG contains opaque RGB 23/92/206 absent from original",
+    "updated artboard-1 SVG contains revised #175cce color",
+    "unrelated icon native properties unchanged",
+    "unrelated artboard-2 PNG bytes unchanged",
+    "source project preserved and revision bound to original SHA",
+    "all 12 installed skill hashes unchanged after execution"
+  ],
+  "scope": "explicitly selected logo/wordmark color and SVG/PNG output propagation; not automatic token dependency inference",
+  "unverified": [
+    "automatic token-wide consumer inference",
+    "PDF visual color fidelity",
+    "model-directed dispatch",
+    "GUI",
+    "full creative acceptance"
+  ]
+}
