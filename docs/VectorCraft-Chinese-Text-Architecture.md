@@ -2,7 +2,7 @@
 
 ## 1. Authority and versions
 
-OpenSpec VC-DM-003-TEXT and task 4.20 cover explicit native text revision and font dependencies. Source candidate dev.7 exposes the existing text.setText command; native CLI remains 0.2.0. This is not a new native text engine.
+OpenSpec VC-DM-003-TEXT and task 4.20 cover explicit native text revision and font dependencies. Published skill source dev.7 exposes the existing text.setText command; native CLI remains 0.2.0. This is not a new native text engine.
 
 ## 2. Independent flow
 
@@ -27,7 +27,7 @@ The workflow requires exactly one explicit id/ids target and string text; malfor
 
 The initial native test fails on the missing workflow command. A second negative test confirms missing-font fallback previously still published output. The corrected single copied text skill passes a fresh public cold install in 7.001 seconds: changed same-length Chinese glyphs, native Unicode and first-style preservation, unchanged independent footer and original project, SVG font declaration, unknown-ID and missing-font refusal. Default regression is 42 tests: 28 pass and 14 gated skips, 9.632 seconds. Actual preview glyphs were visually inspected by the agent; this is not human creative acceptance.
 
-Publication and fixed-release installed-host evidence remain pending. Supplementary PhotoCraft/EffectCraft source-helper cold renders and revisions preserve Unicode/font in native deliveries; these are not copied-skill or host acceptance evidence. See docs/evidence/native-chinese-text.json.
+Plugin dev.8 is published. Five fixed releases and 58 skills are discovered without loading errors; the actual installed text skill passes its separate cold native test in 8.275 seconds. All 58 installed hashes remain unchanged. Supplementary PhotoCraft/EffectCraft source-helper cold renders and revisions preserve Unicode/font in native deliveries; these are not copied-skill or host acceptance evidence. See docs/evidence/native-chinese-text.json.
 
 ## 5. Boundaries
 

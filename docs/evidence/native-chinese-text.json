@@ -1,7 +1,7 @@
 {
   "schema": "craft-native-chinese-text-evidence/v1",
   "date": "2026-10-06",
-  "state": "skill-source-published; plugin-release-candidate",
+  "state": "published-development-release; bounded-installed-native-chinese-text-passed",
   "runtimeVersion": "0.2.0",
   "font": "Songti SC",
   "red": [
@@ -45,7 +45,6 @@
     "tests/test_workflow.py": "7462ea4ac707e24d59b3b6d6e18411afdb119340799edfe64c3ed78d62a6b1ac"
   },
   "unverified": [
-    "fixed-release installed-host acceptance for this addition",
     "other CJK font families and full typography",
     "multi-run rich text preservation: native operation keeps first style",
     "cross-machine or cross-editor font fidelity",
@@ -62,5 +61,15 @@
   "compatibility": "Default brand examples use bundled Source Sans 3 instead of unverified Arial. User projects are never automatically substituted. Native font report refers to the CLI database, not the OS installation inventory.",
   "skillSourceRef": "v0.1.0-dev.7",
   "skillSourceCommit": "c0effdce5888f976f7b988f708af7694192fe88e",
-  "pluginCandidateVersion": "0.1.0-dev.8"
+  "pluginVersion": "0.1.0-dev.8",
+  "pluginSourceCommit": "918e808af0438a139e2c9ca3ae56a176b7524a1c",
+  "installedNative": {
+    "tests": 1,
+    "passed": 1,
+    "skipped": 0,
+    "seconds": 8.275,
+    "scope": "actual fixed host-installed text skill copied alone; own example/helper; fresh default public native runtime cache"
+  },
+  "postExecutionSkillHashesVerified": 58,
+  "hostEvidence": "docs/evidence/codex-release24-chinese-text-20261006.json"
 }

@@ -14,8 +14,9 @@
     "1.11": "docs/evidence/installed-skill-paths.json",
     "1.12": "docs/evidence/installed-skill-paths.json",
     "1.10": "docs/evidence/task-skill-first-use.json",
-    "4.19": "docs/evidence/native-brand-token-first-use.json"
+    "4.19": "docs/evidence/native-brand-token-first-use.json",
+    "4.20": "docs/evidence/native-chinese-text.json"
   },
-  "hostValidationEvidence": "docs/evidence/codex-release22-brand-token-20261006.json",
-  "hostValidationStatus": "bounded-installed-native-brand-token-passed"
+  "hostValidationEvidence": "docs/evidence/codex-release24-chinese-text-20261006.json",
+  "hostValidationStatus": "bounded-installed-native-chinese-text-passed"
 }
