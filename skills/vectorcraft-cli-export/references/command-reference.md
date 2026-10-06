@@ -856,6 +856,8 @@ Rectangle
 {x, y, width, height, radius?: pt} → {id}
 ```
 
+- 可执行场景 / Executable recipes: [appearance-gradient-create.json](../examples/appearance-gradient-create.json)；前置条件与范围见 [外观指南](appearance-gradient.md)。样例通过不等于完整逐命令验收。
+
 ## shape.ellipse
 
 Ellipse
@@ -1995,6 +1997,8 @@ Select Objects
 {ids: [id…]}
 ```
 
+- 可执行场景 / Executable recipes: [appearance-gradient-create.json](../examples/appearance-gradient-create.json) · [appearance-gradient-revise.json](../examples/appearance-gradient-revise.json)；前置条件与范围见 [外观指南](appearance-gradient.md)。样例通过不等于完整逐命令验收。
+
 ## select.add
 
 Add to Selection
@@ -2403,6 +2407,8 @@ Fill
 {color?: "#rrggbb"|[r,g,b]|{c,m,y,k}|{gray}|{l,a,b} (CIE Lab), none?: true, swatch?: name (a global or spot colour stays linked, so swatch edits recolour it; a tint swatch links to its base at its tint; a gradient swatch is recorded as the gradient's swatch and fits each object, keeping its aspect; the built-in "[Registration]" prints on every plate), tint?: 0..100 (% of a global or spot `swatch`; default 100, or a tint swatch's own), gradient?: {kind?: linear|radial|freeform, stops?: [{offset 0..1, color, opacity? 0..1 (or 0..100), midpoint? 0.13..0.87, swatch?: global or spot colour (or tint) swatch the stop links to (its colour comes from the swatch), tint?: 0..100}] (at least 2; default white→black), angle?: deg, start?: [x,y], end?: [x,y] (the vector in document coordinates, both or neither; type objects keep it in text space), aspect?: % (radial; without start/end the gradient is placed on each object's bounds), focal?: [x,y] (radial, with start/end: the focal point, where the first stop sits), swatch?: linked gradient swatch name}, item?: appearance item index|null (omitted: the Appearance panel's active item if it is a fill, else the top fill), ids?, focus?: true (false keeps the active proxy), keepModel?: false (in a CMYK document, RGB colours and gradient stops are stored as CMYK unless true; Gray stays Gray)} sets the selection's fill and the default (new art fits a gradient to itself)
 ```
 
+- 可执行场景 / Executable recipes: [appearance-gradient-create.json](../examples/appearance-gradient-create.json)；前置条件与范围见 [外观指南](appearance-gradient.md)。样例通过不等于完整逐命令验收。
+
 ## paint.setStroke
 
 Stroke
@@ -2419,6 +2425,8 @@ Stroke
 ```text
 same as paint.setFill, for the stroke (item?: the stroke item to set)
 ```
+
+- 可执行场景 / Executable recipes: [appearance-gradient-create.json](../examples/appearance-gradient-create.json)；前置条件与范围见 [外观指南](appearance-gradient.md)。样例通过不等于完整逐命令验收。
 
 ## paint.swap
 
@@ -2624,6 +2632,8 @@ Add New Fill
 {ids?, target?: "object"|"contents"} add a fill on top of each selected object's own stack (a copy of its top fill; type without one: its characters' fill; else the default fill)
 ```
 
+- 可执行场景 / Executable recipes: [appearance-gradient-create.json](../examples/appearance-gradient-create.json)；前置条件与范围见 [外观指南](appearance-gradient.md)。样例通过不等于完整逐命令验收。
+
 ## appearance.addStroke
 
 Add New Stroke
@@ -2691,6 +2701,8 @@ Appearance Item
 ```text
 {index: paint-order item index, ids? (default: the selection), target?: "object"|"contents", opacity?: 0..100, blend?: name, visible?: bool, weight?: pt (strokes), color?|none?|swatch?|gradient? (as paint.setFill)} edit one fill/stroke of each target object's own appearance stack
 ```
+
+- 可执行场景 / Executable recipes: [appearance-gradient-create.json](../examples/appearance-gradient-create.json)；前置条件与范围见 [外观指南](appearance-gradient.md)。样例通过不等于完整逐命令验收。
 
 ## appearance.removeItem
 
@@ -2793,6 +2805,8 @@ Select Appearance Item
 ```text
 {index: paint-order item index in the first selected object's stack | null} make that fill/stroke row the target of the paint.setFill/setStroke, stroke.set/setAdvanced, paint.editGradient/setGradientGeom, transparency.set and effect.* calls that omit `item` (a fill row brings the Fill proxy forward, a stroke row the Stroke proxy); null or any selection change clears it → {index}
 ```
+
+- 可执行场景 / Executable recipes: [appearance-gradient-create.json](../examples/appearance-gradient-create.json) · [appearance-gradient-revise.json](../examples/appearance-gradient-revise.json)；前置条件与范围见 [外观指南](appearance-gradient.md)。样例通过不等于完整逐命令验收。
 
 ## appearance.showAllHidden
 
@@ -3083,6 +3097,8 @@ New Swatch
 {name?, color? | colors?: [colour] (one swatch each, in one undo step) | swatch? | gradient? | pattern?: name (default: the current fill), tint?: 0..100 (% of the global or spot `swatch`, or of the one the current fill links to), mode?: "gray"|"rgb"|"hsb"|"lab"|"cmyk"|"web" (convert the colour; lab: CIE L*a*b*, how spot colours are usually defined), global?, spot? (a spot colour, always global), group?: colour group name (solid colours only; default: ungrouped)} save a colour, gradient or pattern as a swatch. A tint of a global or spot colour (below 100%, without mode, global or spot) becomes a tint swatch, "Name 40%", linked to its base: it follows edits to the base and applies as that tint of it. Names are unique ("Sky 2"); a colour's default name is its values ("C=10 M=20 Y=30 K=0", "R=255 G=128 B=0", "Gray K=40", "L=55 a=60 b=40") → {name, names: [every new swatch]}
 ```
 
+- 可执行场景 / Executable recipes: [appearance-gradient-create.json](../examples/appearance-gradient-create.json)；前置条件与范围见 [外观指南](appearance-gradient.md)。样例通过不等于完整逐命令验收。
+
 ## swatch.delete
 
 Delete Swatch
@@ -3168,6 +3184,8 @@ Swatch Options
 {name, newName?, color? (e.g. {l, a, b} for a Lab colour), mode?: "gray"|"rgb"|"hsb"|"lab"|"cmyk"|"web" (convert the colour), global?, spot? (spot colours are always global), paint?: paint.setFill params ({color}, {gradient}, {swatch} or {pattern}) replacing the swatch's colour, gradient or pattern with one of the same kind} edit a swatch in any colour group, as one undo step. Fills, strokes, text, gradient stops and tint swatches linked to a global swatch take its new colour (at their own tint) and name; turning Global off unlinks them (they keep their colour). Colour, mode and spot apply to solid colours only; a tint swatch only takes a new name (edit its base) → {name, relinked: paints changed}
 ```
 
+- 可执行场景 / Executable recipes: [appearance-gradient-revise.json](../examples/appearance-gradient-revise.json)；前置条件与范围见 [外观指南](appearance-gradient.md)。样例通过不等于完整逐命令验收。
+
 ## swatch.list
 
 Swatches
@@ -3184,6 +3202,8 @@ Swatches
 ```text
 {group?: name (only that colour group's swatches)} → {swatches: [{name, kind: "none"|"color"|"gradient"|"pattern", group, global, spot, color?, hex?, tintOf?: base swatch of a tint swatch, tint?: its %, gradient?, pattern?}] (the built-in [Registration] after None: it prints on every plate and can't be edited, moved or deleted), groups: [{name, swatches: [names]}]}
 ```
+
+- 可执行场景 / Executable recipes: [appearance-gradient-create.json](../examples/appearance-gradient-create.json) · [appearance-gradient-revise.json](../examples/appearance-gradient-revise.json)；前置条件与范围见 [外观指南](appearance-gradient.md)。样例通过不等于完整逐命令验收。
 
 ## swatch.move
 
@@ -3338,6 +3358,8 @@ Gradient
 {stroke?: bool (default: the targeted item's kind, else the active proxy), kind?: linear|radial|freeform (freeform places points on each object, coloured along the stops), mode?: points|lines (freeform: how the Gradient tool adds points), stops?: [{offset 0..1, color? (needed without swatch), opacity? 0..1 (or 0..100), midpoint? 0.13..0.87, swatch?: colour swatch name (a global or spot colour or tint swatch links the stop, so swatch edits recolour it and a spot stop prints on its plate; a process colour just gives its colour), tint?: 0..100 (% of the linked swatch; default 100, or a tint swatch's own)}] (at least 2; a freeform gradient's points are recoloured along them), angle?: deg, aspect?: %, reverse?: bool, item?: fill/stroke item index|null (omitted: the Appearance panel's active item when it is of the edited kind), ids?, strokeMode?: within|along|across (strokes only: the gradient lies on the page and shows through the stroke, runs from the start of each subpath to its end, or runs from the stroke's left edge to its right all along it; with nothing selected, for the next object drawn; type characters' own strokes always paint within)} edit the gradient in place (keeps its placement); solid/none paints become the default gradient
 ```
 
+- 可执行场景 / Executable recipes: [appearance-gradient-create.json](../examples/appearance-gradient-create.json)；前置条件与范围见 [外观指南](appearance-gradient.md)。样例通过不等于完整逐命令验收。
+
 ## paint.setGradientGeom
 
 Gradient Vector
@@ -3355,6 +3377,8 @@ Gradient Vector
 {start?: [x,y], end?: [x,y] (document coordinates; both or neither: omitted, the vector stays), aspect?: % (radial: the extent ellipse's height / width; default: kept), focal?: [x,y] (document coordinates) | null (radial: the focal point, where the first stop sits, pulled inside the extent ellipse; null centres it; default: it keeps its place in the ellipse), ids?, stroke?: bool (default: the targeted item's kind, else the active proxy), item?: fill/stroke item index|null (alias: index; omitted: the Appearance panel's active item when it is of the edited kind)} set the gradient vector, aspect ratio and focal point (solid paints become the default gradient; type objects set it on their runs, in text space)
 ```
 
+- 可执行场景 / Executable recipes: [appearance-gradient-create.json](../examples/appearance-gradient-create.json)；前置条件与范围见 [外观指南](appearance-gradient.md)。样例通过不等于完整逐命令验收。
+
 ## gradient.selectStop
 
 Select Gradient Stop
@@ -3371,6 +3395,8 @@ Select Gradient Stop
 ```text
 {index: stop index (0 = the start) | null to clear} select a stop of the gradient behind the active proxy (the first selected object's, else the default paint): the stop the Gradient tool's annotator, the Gradient and Color panels and Delete/arrow keys act on → {index}
 ```
+
+- 可执行场景 / Executable recipes: [appearance-gradient-create.json](../examples/appearance-gradient-create.json) · [appearance-gradient-revise.json](../examples/appearance-gradient-revise.json)；前置条件与范围见 [外观指南](appearance-gradient.md)。样例通过不等于完整逐命令验收。
 
 ## transparency.makeOpacityMask
 

@@ -4,7 +4,7 @@
 
 固定原生首次安装与完整命令恢复验收通过：新版五插件58技能逐项独立冷安装，十个Art技能分别安装四领域；四个原生下载半包SSL EOF恢复、72个原生保存后故障、四个健康命令返工及混合HD返工／恢复／移动包通过，全部安装摘要保全。仅关闭领域2.10／8.11与Art4.10；2639条命令逐项、GUI、模型、通用Skills CLI及完整V1仍开放。 [版本及证据](docs/evidence/codex-native-download-first-use-20261007.json).
 
-当前插件：`0.1.0-dev.20`；技能源：`0.1.0-dev.18`；固定原生命令网关首用已通过，全量逐命令／GUI／模型／完整V1仍开放。
+当前插件：`0.1.0-dev.21`；技能源：`0.1.0-dev.19`；包含渐变／多重外观计划，固定安装待验收，完整 V1 仍开放。
 
 固定发布前的候选记录：原生下载恢复候选：最多三次只读重试并丢弃半包；此前固定版本冷安装遇到SSL EOF失败，修复后的固定安装验收仍开放。
 
@@ -69,9 +69,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.20 |
+| Metadata version | 0.1.0-dev.21 |
 | Stage | implementation-in-progress |
-| Skills source | Independent vectorcraft-skills / published v0.1.0-dev.18 |
+| Skills source | Independent vectorcraft-skills / published v0.1.0-dev.19 |
 | Execution | 上游 CLI；ArtCraft 使用子适配器 |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |
@@ -234,3 +234,5 @@ python3 -I -B skills/vectorcraft-use/scripts/workflow.py --help
 
 
 完整命令内层JSON修复候选：非有限值、溢出和重复键在绑定返回值前记录unknown，真实保存后九类故障与原工程重开通过。这是候选技能源证据，固定发布与实际安装复验尚未完成；逐命令／GUI门禁仍开放。
+
+渐变与多重外观：12 项独立技能的源候选冷启动与原生返工验证已通过；固定安装与 Art 分发待验证。 [Architecture](docs/VectorCraft-Appearance-Gradient-Architecture.zh_CN.md).
