@@ -1,0 +1,382 @@
+{
+  "schema": "craft-domain-command-revision-first-use/v1",
+  "domain": "vectorcraft",
+  "result": "PASS",
+  "count": 12,
+  "elapsedSeconds": 79.101,
+  "cases": [
+    {
+      "schema": "craft-native-command-revision/v1",
+      "domain": "vectorcraft",
+      "result": "PASS",
+      "entrySha256": "d247ab81b6d28478bbb3da4d958c0a96052067e483ac79fbbb9781bd291f1350",
+      "catalogSha256": "91b5a24b8ecc1d62d6a09df95b70378a8b3ab9f8e2aadd87e42d6a7d9e00f226",
+      "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "testSha256": "547b6ce97e8b2453770b3ccd7a007c4b707e942eb77cb644be4ea19de4634300",
+      "exampleSha256": {
+        "commands-revision-create.json": "c7668b298747a3dec9266826344778e8c977a36df293436531ea1ea8db4a44bc",
+        "commands-revision.json": "8e416f9ed55a21862cfc6848ca4e9f97b3fbd2b405b9a56faf89dbc016cbe779"
+      },
+      "revisionCommand": "paint.setFill",
+      "targetIdSource": "actual native results",
+      "projectSha256": "b2b65327d6a3ed2096626c2e2c150318cd19fa7fffe353fb262fed67e0778b8e",
+      "revisedProjectSha256": "31a398712d3356ca57d0e5ce015f33ec5c0e291282176d5c6b26b23c80f11a96",
+      "operations": 28,
+      "checks": [
+        "single skill copy",
+        "actual target identity",
+        "save and reopen revision",
+        "non-target objects preserved",
+        "native persisted target settings",
+        "rendered output and non-target pixel preservation",
+        "original delivery and skills unchanged"
+      ],
+      "coldInstall": "PASS",
+      "guiAcceptance": "NOT_RUN",
+      "fullPerCommandAcceptance": "NOT_RUN",
+      "skill": "vectorcraft-use"
+    },
+    {
+      "schema": "craft-native-command-revision/v1",
+      "domain": "vectorcraft",
+      "result": "PASS",
+      "entrySha256": "d247ab81b6d28478bbb3da4d958c0a96052067e483ac79fbbb9781bd291f1350",
+      "catalogSha256": "91b5a24b8ecc1d62d6a09df95b70378a8b3ab9f8e2aadd87e42d6a7d9e00f226",
+      "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "testSha256": "547b6ce97e8b2453770b3ccd7a007c4b707e942eb77cb644be4ea19de4634300",
+      "exampleSha256": {
+        "commands-revision-create.json": "c7668b298747a3dec9266826344778e8c977a36df293436531ea1ea8db4a44bc",
+        "commands-revision.json": "8e416f9ed55a21862cfc6848ca4e9f97b3fbd2b405b9a56faf89dbc016cbe779"
+      },
+      "revisionCommand": "paint.setFill",
+      "targetIdSource": "actual native results",
+      "projectSha256": "7a231ca2e545a1551a88ddd8446fb5614e20e773ad96141aa345c33349844a9e",
+      "revisedProjectSha256": "d09914f612552576eee3813ef721cc4d88d6df635ce01be35c906c2f3ad1ca91",
+      "operations": 28,
+      "checks": [
+        "single skill copy",
+        "actual target identity",
+        "save and reopen revision",
+        "non-target objects preserved",
+        "native persisted target settings",
+        "rendered output and non-target pixel preservation",
+        "original delivery and skills unchanged"
+      ],
+      "coldInstall": "PASS",
+      "guiAcceptance": "NOT_RUN",
+      "fullPerCommandAcceptance": "NOT_RUN",
+      "skill": "vectorcraft-cli"
+    },
+    {
+      "schema": "craft-native-command-revision/v1",
+      "domain": "vectorcraft",
+      "result": "PASS",
+      "entrySha256": "d247ab81b6d28478bbb3da4d958c0a96052067e483ac79fbbb9781bd291f1350",
+      "catalogSha256": "91b5a24b8ecc1d62d6a09df95b70378a8b3ab9f8e2aadd87e42d6a7d9e00f226",
+      "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "testSha256": "547b6ce97e8b2453770b3ccd7a007c4b707e942eb77cb644be4ea19de4634300",
+      "exampleSha256": {
+        "commands-revision-create.json": "c7668b298747a3dec9266826344778e8c977a36df293436531ea1ea8db4a44bc",
+        "commands-revision.json": "8e416f9ed55a21862cfc6848ca4e9f97b3fbd2b405b9a56faf89dbc016cbe779"
+      },
+      "revisionCommand": "paint.setFill",
+      "targetIdSource": "actual native results",
+      "projectSha256": "05642fc4561fc5a7fecf9e9db67dfd9defde48460a0961d208bca32a04384353",
+      "revisedProjectSha256": "8dc944a2d92fbcdd4e0662fbd1c85c955168be452ab783927f77e26b742140d1",
+      "operations": 28,
+      "checks": [
+        "single skill copy",
+        "actual target identity",
+        "save and reopen revision",
+        "non-target objects preserved",
+        "native persisted target settings",
+        "rendered output and non-target pixel preservation",
+        "original delivery and skills unchanged"
+      ],
+      "coldInstall": "PASS",
+      "guiAcceptance": "NOT_RUN",
+      "fullPerCommandAcceptance": "NOT_RUN",
+      "skill": "vectorcraft-cli-setup"
+    },
+    {
+      "schema": "craft-native-command-revision/v1",
+      "domain": "vectorcraft",
+      "result": "PASS",
+      "entrySha256": "d247ab81b6d28478bbb3da4d958c0a96052067e483ac79fbbb9781bd291f1350",
+      "catalogSha256": "91b5a24b8ecc1d62d6a09df95b70378a8b3ab9f8e2aadd87e42d6a7d9e00f226",
+      "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "testSha256": "547b6ce97e8b2453770b3ccd7a007c4b707e942eb77cb644be4ea19de4634300",
+      "exampleSha256": {
+        "commands-revision-create.json": "c7668b298747a3dec9266826344778e8c977a36df293436531ea1ea8db4a44bc",
+        "commands-revision.json": "8e416f9ed55a21862cfc6848ca4e9f97b3fbd2b405b9a56faf89dbc016cbe779"
+      },
+      "revisionCommand": "paint.setFill",
+      "targetIdSource": "actual native results",
+      "projectSha256": "b6b3292f8470ec7e1c9033ac000be882efa7b7cfb5539e457e7a974933460c1c",
+      "revisedProjectSha256": "916f310eedbdd1e5551431490982268b532e5a1d9f75496aad9b92d58b6f57a0",
+      "operations": 28,
+      "checks": [
+        "single skill copy",
+        "actual target identity",
+        "save and reopen revision",
+        "non-target objects preserved",
+        "native persisted target settings",
+        "rendered output and non-target pixel preservation",
+        "original delivery and skills unchanged"
+      ],
+      "coldInstall": "PASS",
+      "guiAcceptance": "NOT_RUN",
+      "fullPerCommandAcceptance": "NOT_RUN",
+      "skill": "vectorcraft-cli-project"
+    },
+    {
+      "schema": "craft-native-command-revision/v1",
+      "domain": "vectorcraft",
+      "result": "PASS",
+      "entrySha256": "d247ab81b6d28478bbb3da4d958c0a96052067e483ac79fbbb9781bd291f1350",
+      "catalogSha256": "91b5a24b8ecc1d62d6a09df95b70378a8b3ab9f8e2aadd87e42d6a7d9e00f226",
+      "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "testSha256": "547b6ce97e8b2453770b3ccd7a007c4b707e942eb77cb644be4ea19de4634300",
+      "exampleSha256": {
+        "commands-revision-create.json": "c7668b298747a3dec9266826344778e8c977a36df293436531ea1ea8db4a44bc",
+        "commands-revision.json": "8e416f9ed55a21862cfc6848ca4e9f97b3fbd2b405b9a56faf89dbc016cbe779"
+      },
+      "revisionCommand": "paint.setFill",
+      "targetIdSource": "actual native results",
+      "projectSha256": "8d1533f7acaa1111b5923b02481df2f72e10d6700bf15d9f4c3aee3e90fae16e",
+      "revisedProjectSha256": "428f02260439ca42c75b61ca0598fef639fac8f285311a53c59986076d848152",
+      "operations": 28,
+      "checks": [
+        "single skill copy",
+        "actual target identity",
+        "save and reopen revision",
+        "non-target objects preserved",
+        "native persisted target settings",
+        "rendered output and non-target pixel preservation",
+        "original delivery and skills unchanged"
+      ],
+      "coldInstall": "PASS",
+      "guiAcceptance": "NOT_RUN",
+      "fullPerCommandAcceptance": "NOT_RUN",
+      "skill": "vectorcraft-cli-paths"
+    },
+    {
+      "schema": "craft-native-command-revision/v1",
+      "domain": "vectorcraft",
+      "result": "PASS",
+      "entrySha256": "d247ab81b6d28478bbb3da4d958c0a96052067e483ac79fbbb9781bd291f1350",
+      "catalogSha256": "91b5a24b8ecc1d62d6a09df95b70378a8b3ab9f8e2aadd87e42d6a7d9e00f226",
+      "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "testSha256": "547b6ce97e8b2453770b3ccd7a007c4b707e942eb77cb644be4ea19de4634300",
+      "exampleSha256": {
+        "commands-revision-create.json": "c7668b298747a3dec9266826344778e8c977a36df293436531ea1ea8db4a44bc",
+        "commands-revision.json": "8e416f9ed55a21862cfc6848ca4e9f97b3fbd2b405b9a56faf89dbc016cbe779"
+      },
+      "revisionCommand": "paint.setFill",
+      "targetIdSource": "actual native results",
+      "projectSha256": "8eefb0a630a3aade7c992aa40bef93074221e451bbe3d075e290186a87aedf4d",
+      "revisedProjectSha256": "3fa5fe50d8e659eb7836777c53fc6229970408c71cbd23cc3428929999326f43",
+      "operations": 28,
+      "checks": [
+        "single skill copy",
+        "actual target identity",
+        "save and reopen revision",
+        "non-target objects preserved",
+        "native persisted target settings",
+        "rendered output and non-target pixel preservation",
+        "original delivery and skills unchanged"
+      ],
+      "coldInstall": "PASS",
+      "guiAcceptance": "NOT_RUN",
+      "fullPerCommandAcceptance": "NOT_RUN",
+      "skill": "vectorcraft-cli-shapes"
+    },
+    {
+      "schema": "craft-native-command-revision/v1",
+      "domain": "vectorcraft",
+      "result": "PASS",
+      "entrySha256": "d247ab81b6d28478bbb3da4d958c0a96052067e483ac79fbbb9781bd291f1350",
+      "catalogSha256": "91b5a24b8ecc1d62d6a09df95b70378a8b3ab9f8e2aadd87e42d6a7d9e00f226",
+      "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "testSha256": "547b6ce97e8b2453770b3ccd7a007c4b707e942eb77cb644be4ea19de4634300",
+      "exampleSha256": {
+        "commands-revision-create.json": "c7668b298747a3dec9266826344778e8c977a36df293436531ea1ea8db4a44bc",
+        "commands-revision.json": "8e416f9ed55a21862cfc6848ca4e9f97b3fbd2b405b9a56faf89dbc016cbe779"
+      },
+      "revisionCommand": "paint.setFill",
+      "targetIdSource": "actual native results",
+      "projectSha256": "7e753cc36012684a664613e96b9a2c42e798ecad907b1651cc09d05a1cf2e637",
+      "revisedProjectSha256": "a1fd3d623c666eac0d74f871abef1b6b91b488808f4eff9ba338ebf3f672bf44",
+      "operations": 28,
+      "checks": [
+        "single skill copy",
+        "actual target identity",
+        "save and reopen revision",
+        "non-target objects preserved",
+        "native persisted target settings",
+        "rendered output and non-target pixel preservation",
+        "original delivery and skills unchanged"
+      ],
+      "coldInstall": "PASS",
+      "guiAcceptance": "NOT_RUN",
+      "fullPerCommandAcceptance": "NOT_RUN",
+      "skill": "vectorcraft-cli-boolean"
+    },
+    {
+      "schema": "craft-native-command-revision/v1",
+      "domain": "vectorcraft",
+      "result": "PASS",
+      "entrySha256": "d247ab81b6d28478bbb3da4d958c0a96052067e483ac79fbbb9781bd291f1350",
+      "catalogSha256": "91b5a24b8ecc1d62d6a09df95b70378a8b3ab9f8e2aadd87e42d6a7d9e00f226",
+      "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "testSha256": "547b6ce97e8b2453770b3ccd7a007c4b707e942eb77cb644be4ea19de4634300",
+      "exampleSha256": {
+        "commands-revision-create.json": "c7668b298747a3dec9266826344778e8c977a36df293436531ea1ea8db4a44bc",
+        "commands-revision.json": "8e416f9ed55a21862cfc6848ca4e9f97b3fbd2b405b9a56faf89dbc016cbe779"
+      },
+      "revisionCommand": "paint.setFill",
+      "targetIdSource": "actual native results",
+      "projectSha256": "01a457ab471d0339f3b89dedcfa8f11b70ff518ac38256e03a2dde85b13cca48",
+      "revisedProjectSha256": "b6be2a81bf1c932a332dab4b9793a3c43c1b4839b024a8aac986126cc95a4492",
+      "operations": 28,
+      "checks": [
+        "single skill copy",
+        "actual target identity",
+        "save and reopen revision",
+        "non-target objects preserved",
+        "native persisted target settings",
+        "rendered output and non-target pixel preservation",
+        "original delivery and skills unchanged"
+      ],
+      "coldInstall": "PASS",
+      "guiAcceptance": "NOT_RUN",
+      "fullPerCommandAcceptance": "NOT_RUN",
+      "skill": "vectorcraft-cli-text"
+    },
+    {
+      "schema": "craft-native-command-revision/v1",
+      "domain": "vectorcraft",
+      "result": "PASS",
+      "entrySha256": "d247ab81b6d28478bbb3da4d958c0a96052067e483ac79fbbb9781bd291f1350",
+      "catalogSha256": "91b5a24b8ecc1d62d6a09df95b70378a8b3ab9f8e2aadd87e42d6a7d9e00f226",
+      "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "testSha256": "547b6ce97e8b2453770b3ccd7a007c4b707e942eb77cb644be4ea19de4634300",
+      "exampleSha256": {
+        "commands-revision-create.json": "c7668b298747a3dec9266826344778e8c977a36df293436531ea1ea8db4a44bc",
+        "commands-revision.json": "8e416f9ed55a21862cfc6848ca4e9f97b3fbd2b405b9a56faf89dbc016cbe779"
+      },
+      "revisionCommand": "paint.setFill",
+      "targetIdSource": "actual native results",
+      "projectSha256": "f9388dda86053979ac53e64a52db4d9f55c6f87ae3359001531f09ac152f0dbd",
+      "revisedProjectSha256": "68e2f1bec4f80bebda3a7294d0b752dcf075b74fdb0d5811d60af48f4ae0bdb9",
+      "operations": 28,
+      "checks": [
+        "single skill copy",
+        "actual target identity",
+        "save and reopen revision",
+        "non-target objects preserved",
+        "native persisted target settings",
+        "rendered output and non-target pixel preservation",
+        "original delivery and skills unchanged"
+      ],
+      "coldInstall": "PASS",
+      "guiAcceptance": "NOT_RUN",
+      "fullPerCommandAcceptance": "NOT_RUN",
+      "skill": "vectorcraft-cli-appearance"
+    },
+    {
+      "schema": "craft-native-command-revision/v1",
+      "domain": "vectorcraft",
+      "result": "PASS",
+      "entrySha256": "d247ab81b6d28478bbb3da4d958c0a96052067e483ac79fbbb9781bd291f1350",
+      "catalogSha256": "91b5a24b8ecc1d62d6a09df95b70378a8b3ab9f8e2aadd87e42d6a7d9e00f226",
+      "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "testSha256": "547b6ce97e8b2453770b3ccd7a007c4b707e942eb77cb644be4ea19de4634300",
+      "exampleSha256": {
+        "commands-revision-create.json": "c7668b298747a3dec9266826344778e8c977a36df293436531ea1ea8db4a44bc",
+        "commands-revision.json": "8e416f9ed55a21862cfc6848ca4e9f97b3fbd2b405b9a56faf89dbc016cbe779"
+      },
+      "revisionCommand": "paint.setFill",
+      "targetIdSource": "actual native results",
+      "projectSha256": "3ebe41ebe940819248497f03131bd2e3c9f7e63c4bbdaadb0af301ee1ecf60fd",
+      "revisedProjectSha256": "10f2820b51e367839454cfb64044910529d3be2e83fdbd66e9f11910d09d77ee",
+      "operations": 28,
+      "checks": [
+        "single skill copy",
+        "actual target identity",
+        "save and reopen revision",
+        "non-target objects preserved",
+        "native persisted target settings",
+        "rendered output and non-target pixel preservation",
+        "original delivery and skills unchanged"
+      ],
+      "coldInstall": "PASS",
+      "guiAcceptance": "NOT_RUN",
+      "fullPerCommandAcceptance": "NOT_RUN",
+      "skill": "vectorcraft-cli-artboards"
+    },
+    {
+      "schema": "craft-native-command-revision/v1",
+      "domain": "vectorcraft",
+      "result": "PASS",
+      "entrySha256": "d247ab81b6d28478bbb3da4d958c0a96052067e483ac79fbbb9781bd291f1350",
+      "catalogSha256": "91b5a24b8ecc1d62d6a09df95b70378a8b3ab9f8e2aadd87e42d6a7d9e00f226",
+      "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "testSha256": "547b6ce97e8b2453770b3ccd7a007c4b707e942eb77cb644be4ea19de4634300",
+      "exampleSha256": {
+        "commands-revision-create.json": "c7668b298747a3dec9266826344778e8c977a36df293436531ea1ea8db4a44bc",
+        "commands-revision.json": "8e416f9ed55a21862cfc6848ca4e9f97b3fbd2b405b9a56faf89dbc016cbe779"
+      },
+      "revisionCommand": "paint.setFill",
+      "targetIdSource": "actual native results",
+      "projectSha256": "9eec1a9848027cf53759253074b5757c9c43f81d97e1773e997c1a015f649d34",
+      "revisedProjectSha256": "0f34a87f06c6578f222fac7a8443d3131b58ae10c9b0ff3dd150e94bc5034987",
+      "operations": 28,
+      "checks": [
+        "single skill copy",
+        "actual target identity",
+        "save and reopen revision",
+        "non-target objects preserved",
+        "native persisted target settings",
+        "rendered output and non-target pixel preservation",
+        "original delivery and skills unchanged"
+      ],
+      "coldInstall": "PASS",
+      "guiAcceptance": "NOT_RUN",
+      "fullPerCommandAcceptance": "NOT_RUN",
+      "skill": "vectorcraft-cli-assets"
+    },
+    {
+      "schema": "craft-native-command-revision/v1",
+      "domain": "vectorcraft",
+      "result": "PASS",
+      "entrySha256": "d247ab81b6d28478bbb3da4d958c0a96052067e483ac79fbbb9781bd291f1350",
+      "catalogSha256": "91b5a24b8ecc1d62d6a09df95b70378a8b3ab9f8e2aadd87e42d6a7d9e00f226",
+      "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "testSha256": "547b6ce97e8b2453770b3ccd7a007c4b707e942eb77cb644be4ea19de4634300",
+      "exampleSha256": {
+        "commands-revision-create.json": "c7668b298747a3dec9266826344778e8c977a36df293436531ea1ea8db4a44bc",
+        "commands-revision.json": "8e416f9ed55a21862cfc6848ca4e9f97b3fbd2b405b9a56faf89dbc016cbe779"
+      },
+      "revisionCommand": "paint.setFill",
+      "targetIdSource": "actual native results",
+      "projectSha256": "9c8ab01e0b57c7c021fd3a502b4302be3c48e852ce5783f961767e312953617c",
+      "revisedProjectSha256": "66b93e730645645880b7000f3386adeb80d2863f3f9d0ec093b298369da28e3b",
+      "operations": 28,
+      "checks": [
+        "single skill copy",
+        "actual target identity",
+        "save and reopen revision",
+        "non-target objects preserved",
+        "native persisted target settings",
+        "rendered output and non-target pixel preservation",
+        "original delivery and skills unchanged"
+      ],
+      "coldInstall": "PASS",
+      "guiAcceptance": "NOT_RUN",
+      "fullPerCommandAcceptance": "NOT_RUN",
+      "skill": "vectorcraft-cli-export"
+    }
+  ],
+  "scope": "Each skill copied alone; unique empty runtime; public locked native install; paired revision examples; saved/reopened target state and non-target objects/pixels; original delivery and skill hashes unchanged. Full registry/GUI/model dispatch acceptance remains open."
+}
