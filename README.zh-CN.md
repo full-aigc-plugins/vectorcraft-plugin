@@ -166,3 +166,5 @@ python3 -I -B skills/vectorcraft-use/scripts/workflow.py --help
 固定已安装插件 dev.8／技能源 dev.7 的补充验收验证四种矩形布尔操作、原生复合孔洞方向、SVG／PNG／PDF 独立解码、原交付保全和无效选择拒绝；不扩展为任意几何或编辑器往返支持。[验收记录](docs/VectorCraft-Boolean-Geometry-Acceptance.zh_CN.md)。
 
 固定 dev.8 首次使用已知缺口：无关画板 SVG 保留画板外品牌路径，品牌色修订后发生内容变化，其 PNG／PDF 保持不变。尚未发布修复。[复现与修复边界](docs/VectorCraft-Artboard-Export-Gap.zh_CN.md)。
+
+本地维护版 CLI 候选 `0.2.0-craft.1` 已通过 954 项引擎测试、12 项 CLI 集成测试及三画板单技能隔离安装任务；品牌改色后，无关 SVG／PNG／PDF 保持字节一致。12 个源技能安装器已支持维护版版本识别与来源记录。公开运行时安装锁尚未改变，修复尚未发布。[候选证据](docs/evidence/native-artboard-svg-candidate-20261006.json)。

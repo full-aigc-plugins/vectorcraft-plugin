@@ -15,6 +15,27 @@ Independent Pillow / PyMuPDF checks confirm every output dimension, center color
 
 CodeGraph locates upstream `crates/engine/src/cmd/fileio/export.rs::export_source`: the default exports the entire document; selectedOnly filters selected objects. `select.rs::all_on_artboard` uses geometric intersections of selectable objects, excluding locked content. Applying this selection globally would omit locked objects and is insufficient as a complete repair.
 
-A repair must isolate board assets while preserving visible locked content, stroke/effect extents, groups/clipping and empty boards, or reuse outputs only after proving their native dependencies unchanged. Weakening assertions, comparing rendered pixels alone or deleting arbitrary paths cannot establish a repair. No fix is implemented or published; task 4.22 and full board/brand requirements remain open. Earlier PNG token evidence retains its original scope.
+A repair must isolate board assets while preserving visible locked content, stroke/effect extents, groups/clipping and empty boards, or reuse outputs only after proving their native dependencies unchanged. Weakening assertions, comparing rendered pixels alone or deleting arbitrary paths cannot establish a repair. A native candidate repair now exists; no repaired public runtime or plugin has been published. Task 4.22 and full board/brand requirements remain open. Earlier PNG token evidence retains its original scope.
 
 The independent source driver `tests/test_artboard_exports_first_use.py` uses an installed skill, an empty runtime and public native downloads. The default offline suite explicitly skips it: 28 passes and 16 skips out of 44 tests do not supersede the actual failure.
+
+## Native candidate repair
+
+The maintained CLI candidate `0.2.0-craft.1` is based on upstream `90e022b0c05f12171a4e9bebe0894fa62f7bc95c`. Its additive `artboardContentOnly` option applies only to a single SVG/SVGZ artboard. It reuses the native renderer's paint bounds, retains locked visible art and keeps dependency containers intact. Plain layers without appearance, clipping, masks, blending, wrap or uncertain child bounds can filter children. Groups, clipping containers and uncertain paint bounds remain conservative; retaining a cross-board group does not imply independent member exports. Invalid indices and conflicting selection/range options are rejected, while the legacy option-off behavior is preserved.
+
+```mermaid
+flowchart TD
+ A[Single SVG artboard request] --> B{Validate format and artboard options}
+ B -->|Invalid| C[Reject without writing output]
+ B -->|Valid| D[Copy native document]
+ D --> E{Plain independent layer?}
+ E -->|Yes| F[Filter children by native paint bounds]
+ E -->|No or unknown bounds| G[Keep complete dependency container]
+ F --> H[Encode selected artboard]
+ G --> H
+ H --> I[Source document and selection preserved]
+```
+
+954 engine library tests passed, including six isolation cases; all 12 CLI integration tests also passed. A single copied export skill with an empty runtime installed an explicitly supplied local candidate archive, created three artboards, exported nine SVG/PNG/PDF assets and repeated the exports after a global brand-color edit. Independent Pillow/PyMuPDF checks passed, and the unrelated board's three export formats stayed byte-identical. Invalid board and output-reuse rejection gates also passed. The run took 1.207 seconds; it is local candidate evidence, not public release download evidence. The source suite passed 30 tests with 16 deliberate skips. [Candidate evidence](evidence/native-artboard-svg-candidate-20261006.json).
+
+The independent skill source stores `runtime/patches/artboard-svg-isolation.patch` and `runtime/artboard-svg-isolation-patch.json`; the patch reproduces all six modified files exactly from the pinned upstream source. All twelve skill installers now recognize the maintained version suffix and restrict native downloads to the official VectorCraft or owned VectorCraft skill repository's release paths. Current runtime locks still install official 0.2.0. Publishing a runtime, updating SVG workflow options and immutable skill/plugin locks, repeating public first-use acceptance and updating the ArtCraft bundle remain required before task 4.22 can close.

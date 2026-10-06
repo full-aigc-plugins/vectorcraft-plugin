@@ -1,0 +1,235 @@
+{
+  "schema": "vectorcraft-artboard-local-candidate-evidence/v1",
+  "scope": "current-source export skill copied alone with explicit local candidate archive and SVG isolation overlay; empty native runtime install; distinct rectangles and global RGB token; independent Pillow/PyMuPDF output checks",
+  "samples": [
+    {
+      "revision": "v1",
+      "artboard": 0,
+      "size": [
+        128,
+        96
+      ],
+      "centerRgb": [
+        35,
+        102,
+        232
+      ],
+      "pdfVectorOnly": true
+    },
+    {
+      "revision": "v1",
+      "artboard": 1,
+      "size": [
+        80,
+        64
+      ],
+      "centerRgb": [
+        34,
+        170,
+        102
+      ],
+      "pdfVectorOnly": true
+    },
+    {
+      "revision": "v1",
+      "artboard": 2,
+      "size": [
+        96,
+        128
+      ],
+      "centerRgb": [
+        35,
+        102,
+        232
+      ],
+      "pdfVectorOnly": true
+    },
+    {
+      "revision": "v2",
+      "artboard": 0,
+      "size": [
+        128,
+        96
+      ],
+      "centerRgb": [
+        23,
+        92,
+        206
+      ],
+      "pdfVectorOnly": true
+    },
+    {
+      "revision": "v2",
+      "artboard": 1,
+      "size": [
+        80,
+        64
+      ],
+      "centerRgb": [
+        34,
+        170,
+        102
+      ],
+      "pdfVectorOnly": true
+    },
+    {
+      "revision": "v2",
+      "artboard": 2,
+      "size": [
+        96,
+        128
+      ],
+      "centerRgb": [
+        23,
+        92,
+        206
+      ],
+      "pdfVectorOnly": true
+    }
+  ],
+  "originalFiles": {
+    "plan.json": "c9877d733fe58fe7f1e8cb190a5514ce7a2e253ca9d7986a5ce16810db879847",
+    "project.vectorcraft": "428e7666b800830d21951ff8fbf97ff1e89bb789f30ebae2b550e5072de4a241",
+    "exchange-loss.json": "a3847e0cc8ff6f209b9e69b1ebf2add997fd1c0eec149729570751247a57913a",
+    "native.json": "282a13fa357b8c117f58c33c143883a9aff4779f8cb2692730ebcb838be0140e",
+    "artboard-1.pdf": "101a89e77df3661aa3bcc2e19feb3c3245a6d197933511c705580721777ce457",
+    "artboard-3.png": "3cb24cae020e1195908bfc96064b9ec4cdb8b52654f763d7d78b76a4acbd9b7d",
+    "artboard-2.png": "275271d814ca6b672358f9f52c5453c8900c7da8d8970c72a528707d2cfaf9ba",
+    "manifest.json": "e642757122515c641643631887ee5e6d2082cda6137857eaea61eb47995c77bf",
+    "artboard-2.pdf": "25a999aa044dfe22437ec37d12c6b53328301bfa2c73682d1284e95a34d334da",
+    "artboard-1.png": "0cf437697c9a2d8f00a230aaa36488a7b0e90f106d858f99416a7e7e8921eabe",
+    "artboard-3.pdf": "13ddc778aee6501fe3b83c14dffe10f3d59d47a93df73957697acbca1323681b",
+    "artboard-1.svg": "fbad7bd318abce62d16d0fb6b4f5dab855a8b6f299df86d34a233d21b9e714a1",
+    "artboard-2.svg": "e1165468af66773f704b362b00b8c09f35c4ffb6342e9f287128e897fd4f6ee4",
+    "artboard-3.svg": "eeaf51a1cdc931894fb73366f96aed7adf6cdd19fa29645ffbf65c4d42284f95",
+    "operations.json": "408bcf1857ad1360d02efcdfba7b59ea20666e779cddc4f2afc2cb9631217975"
+  },
+  "revisedFiles": {
+    "plan.json": "5e90527a00acd9ccd9c0db0811665c538d14428b175394271b99902c4acbf362",
+    "project.vectorcraft": "bf8ed0e4f4f8c58ce756d24267a8a84790f3db8edeaec733e33392e2c521dcdf",
+    "exchange-loss.json": "8bc2164af6ab8b9aa8b4156bc31815a34f851a8b764d7ad73b7c5863e4946458",
+    "native.json": "4d40e699a832dd5a7b3cb636ed1746d47d93e6d6bb665c39b771b5f5054969cf",
+    "artboard-1.pdf": "ba1b897ce139e11c6ab24de676ad6425c7ecf942ccb348c289f60eda63b30eb5",
+    "artboard-3.png": "323234fc7ee74602ae0a6389b8336a112049f576b52282c8a2d602002119bb5b",
+    "artboard-2.png": "275271d814ca6b672358f9f52c5453c8900c7da8d8970c72a528707d2cfaf9ba",
+    "manifest.json": "d2f9d573ba342f7161db473e63038d25e9e40742b636ec9dd7f37659d7c9264c",
+    "artboard-2.pdf": "25a999aa044dfe22437ec37d12c6b53328301bfa2c73682d1284e95a34d334da",
+    "artboard-1.png": "9d0e87bc4e112ebe42b5ad8fd906f0a5c7d8a91401b0f9f94151bbcc0b38da4b",
+    "artboard-3.pdf": "0ea9c5182dec6cfa11aa84aa2a423264b10b382a71e1a156e935d8c6bed13890",
+    "artboard-1.svg": "beb057ce0f0794b810e5ad83687e104741d27b2faf03c3b348fb5a49c50d7678",
+    "artboard-2.svg": "e1165468af66773f704b362b00b8c09f35c4ffb6342e9f287128e897fd4f6ee4",
+    "artboard-3.svg": "2435423a725049016a13a7e1ad35858d6104bd4f2b1f00e96ccc3e85c59b1f43",
+    "operations.json": "5ba4978aa709889399ec02f203ac58e93bc0f9cced8874a90bae0d53e844c268"
+  },
+  "artboards": [
+    {
+      "id": 1,
+      "name": "Artboard 1",
+      "rect": {
+        "x0": 0.0,
+        "x1": 128.0,
+        "y0": 0.0,
+        "y1": 96.0
+      },
+      "show_center_mark": false,
+      "show_cross_hairs": false
+    },
+    {
+      "id": 2,
+      "name": "Icon",
+      "rect": {
+        "x0": 200.0,
+        "x1": 280.0,
+        "y0": 20.0,
+        "y1": 84.0
+      },
+      "show_center_mark": false,
+      "show_cross_hairs": false
+    },
+    {
+      "id": 3,
+      "name": "Portrait variant",
+      "rect": {
+        "x0": 400.0,
+        "x1": 496.0,
+        "y0": -40.0,
+        "y1": 88.0
+      },
+      "show_center_mark": false,
+      "show_cross_hairs": false
+    }
+  ],
+  "unrelatedIconAllFormatsUnchanged": true,
+  "invalidBoardRejected": true,
+  "sourceAndSkillFilesPreserved": true,
+  "runtimeLockSha256": "ab7d2ab90382629a461c3345dc542168221880f8e358a0375da7e0f89f74b676",
+  "status": "passed",
+  "publicRelease": false,
+  "candidate": {
+    "schema": "vectorcraft-local-cli-candidate/v1",
+    "versionOutput": "vectorcraft-cli 0.2.0-craft.1",
+    "archiveSha256": "e310a081f07f1ec15f6461ff1c5100ac93a18f207059e24c8dfd6ca4506846ae",
+    "binarySha256": "247b3a7f94745eee0f7eca68e78b4b0201b442adccddd53b7b780aab8bb829b3",
+    "candidateWorkflowSha256": "7a7857cb1509a4338318b7811225b0cd2fd9d76f5ac0cbf0869e65ab1fb2d76c",
+    "candidateRuntimeLockSha256": "ab7d2ab90382629a461c3345dc542168221880f8e358a0375da7e0f89f74b676",
+    "overlays": [
+      "single skill copied from current source working tree, bootstrap supports maintained suffix and provenance",
+      "runtime lock bound to local candidate archive and binary",
+      "workflow install archive parameter supplied explicitly",
+      "SVG export artboardContentOnly true; PNG/PDF unchanged"
+    ],
+    "publicRelease": false,
+    "nativeBuildProfile": "dev optimized + debuginfo"
+  },
+  "nativeUpstream": {
+    "repository": "https://github.com/storytold/vectorcraft",
+    "commit": "90e022b0c05f12171a4e9bebe0894fa62f7bc95c",
+    "version": "0.2.0"
+  },
+  "patchSha256": "6852555f6177a9cd0c911517e6f33f27d61b550523922178c0c659ee69ad54e4",
+  "nativeEngine": {
+    "passed": 954,
+    "failed": 0,
+    "scope": "complete engine library test suite",
+    "logSha256": "e6bb72e288adf43163f853199c7fcc77425df64640c6eaabc392ad6a0e317a6e"
+  },
+  "nativeCliBuild": {
+    "profile": "dev optimized + debuginfo",
+    "seconds": 54.68,
+    "logSha256": "5c078dbc2b0c10596f1f9fcbbc11c07c32177f2658d51fd20b4624704743698f"
+  },
+  "firstUseSeconds": 1.207,
+  "sourceSuite": {
+    "total": 46,
+    "passed": 30,
+    "skipped": 16,
+    "seconds": 10.13
+  },
+  "patchReproducibility": {
+    "pristineApplyCheck": true,
+    "allModifiedFilesMatch": true,
+    "files": 6
+  },
+  "drivers": {
+    "baselineSha256": "1748ce79645f1cfb4403c726701876072448e27bc8c3c1d2320926c3b9839e2f",
+    "candidateSha256": "97ca00d08257c2e1117ed72e0abef4702c55ae8d01dce87a7a2d3864473cc17c",
+    "difference": "Evidence scope label only; assertions unchanged."
+  },
+  "notVerified": [
+    "public archive download and fixed plugin reinstallation",
+    "ArtCraft updated Vector bundle lock and mixed workflow",
+    "desktop editor and model-driven dispatch",
+    "full V1 acceptance"
+  ],
+  "nativeCliIntegration": {
+    "passed": 12,
+    "failed": 0,
+    "groups": [
+      4,
+      3,
+      5
+    ],
+    "logSha256": "0e9b52b9f54467ddaa750a74e8497bffeb1f07388235776d932834a13ef55f03",
+    "scope": "CLI command, conversion and headless MCP integration tests"
+  }
+}
