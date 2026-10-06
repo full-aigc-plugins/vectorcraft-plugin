@@ -56,9 +56,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.14 |
+| Metadata version | 0.1.0-dev.15 |
 | Stage | implementation-in-progress |
-| Skills source | vectorcraft-skills / 0.1.0-dev.13 |
+| Skills source | vectorcraft-skills / 0.1.0-dev.14 |
 | Execution | Upstream CLI; ArtCraft uses child adapters |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |
@@ -210,3 +210,5 @@ Plugin dev.11 vendors immutable skill source dev.10, adding registered PNG/SVG p
 Fixed plugin dev.11 / skill source dev.10 has passed actual Codex 0.153.4 public-tag installation and discovery: 58 skills, zero loading errors. Installed single asset/export skills passed two native cold-start tests without skips (4.855s and 6.743s); 12 VectorCraft skills separately cold-installed in 56.275s. Linked/embedded PNG, SVG, JPEG/SVG replacement, direct relocated native reopening and unrelated artboard preservation were checked. All 58 installed hashes stayed unchanged. [Fixed evidence](docs/evidence/codex-vectorcraft11-assets-first-use-20261006.json). ArtCraft still consumes the older Vector bundle; its distribution upgrade and mixed first use remain open.
 
 Current fixed-release domain task matrix: 37 native scenarios and 6 contract checks passed with zero skips across FilmCraft dev.10, EffectCraft dev.9, PhotoCraft dev.10 and VectorCraft dev.11. Each task copied only its selected installed skill and installed the native CLI into a fresh runtime directory from the default public archive. Native projects, actual pixels/audio and targeted preservation were checked; all 58 installed skill identities remained unchanged. [Version-bound evidence](docs/evidence/codex-current-domain-task-matrix-20261006.json). This does not close full V1, generic Skills CLI installation, model dispatch, GUI or creative acceptance.
+
+Public-workflow reply validation is synchronized in the domain source candidates and has bounded native/Art protocol evidence. Fixed updated domain and Art distributions are still pending. [Candidate architecture](docs/VectorCraft-Complete-Commands-Architecture.md) · [Evidence](docs/evidence/public-workflow-session-candidate-20261007.json).
