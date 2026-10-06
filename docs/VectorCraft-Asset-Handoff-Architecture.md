@@ -2,7 +2,7 @@
 
 ## Authority and current stage
 
-Behavior is owned by `VC-DM-007` in the existing OpenSpec change. Independent `vectorcraft-skills` owns implementation. This is a source candidate; plugin dev.10 remains its immutable older snapshot. No new fixed-release host acceptance is claimed.
+Behavior is owned by `VC-DM-007` in the existing OpenSpec change. Independent `vectorcraft-skills` owns implementation. Plugin dev.11 vendors immutable skill source dev.10, which includes the implemented candidate. Installed-host repetition and the ArtCraft distribution upgrade are separate acceptance steps; the historical candidate evidence is retained.
 
 ## Problem and native boundaries
 

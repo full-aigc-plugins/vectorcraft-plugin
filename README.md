@@ -34,9 +34,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.10 |
+| Metadata version | 0.1.0-dev.11 |
 | Stage | implementation-in-progress |
-| Skills source | vectorcraft-skills / v0.1.0-dev.9 |
+| Skills source | vectorcraft-skills / v0.1.0-dev.10 |
 | Execution | Upstream CLI; ArtCraft uses child adapters |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |
@@ -182,3 +182,5 @@ Fixed ArtCraft dev.50 / VectorCraft dev.10 first use passes in isolated Codex 0.
 All 22 updated skills pass individual public cold first use (159.811s): each is copied alone to .agents/skills and installs into an independent empty runtime, checks exact version and command contracts, and preserves its files and all host-installed hashes. This does not establish generic Skills CLI installation or every creative scenario.
 
 Registered-asset source candidate: linked PNG, embedded SVG, JPEG/SVG replacement, native dependency collection and relocation are implemented in the independent skill workflow. [Architecture](docs/VectorCraft-Asset-Handoff-Architecture.md). The existing fixed plugin snapshot is unchanged; new release and installed-host acceptance remain pending.
+
+Plugin dev.11 vendors immutable skill source dev.10, adding registered PNG/SVG placement and JPEG/SVG replacement with native dependency collection. Installed-host acceptance for this release and the ArtCraft distribution upgrade are separate steps; full V1 acceptance remains open.

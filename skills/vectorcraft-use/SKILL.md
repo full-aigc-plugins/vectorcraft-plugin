@@ -78,3 +78,5 @@ python3 -I -B "$SKILL_DIR/scripts/bootstrap.py"
 当前运行时为基于官方 `v0.2.0` 的维护版 `0.2.0-craft.2`，由 `full-aigc-skills/vectorcraft-skills` 发布；安装记录明确区分维护版来源。SVG 工作流按原生绘制边界隔离画板，保守保留群组、裁切和未知范围依赖。
 
 PDF 工作流绑定工程创建日期；缺少创建日期时保留首次导出日期记录。`pdf-export-date.json` 的摘要写入交付清单，返工时校验该记录；原生工程日期与修订历史保持可追溯。
+
+登记素材操作：使用本技能自带的 `examples/provided-assets.json`，以 `--asset product=/absolute/product.png --asset logo=/absolute/logo.svg` 传入实际素材。`asset.place` 支持多个实例；`asset.replace` 以原别名与新输入别名定点更新。具体参数、栅格链接／矢量嵌入、依赖收集及迁移边界见本技能 [工作流合同](references/workflow.md)。当前为技能源候选，不代表旧固定插件快照已包含该能力。

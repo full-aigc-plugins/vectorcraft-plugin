@@ -20,6 +20,7 @@ def exchange_report(root,outputs,warnings):
     module.write_report(root,outputs,warnings)
 
 ALLOWED = {
+    'asset.place', 'asset.replace',
     'shape.rectangle', 'shape.ellipse', 'shape.polygon', 'shape.star', 'shape.line',
     'path.create', 'path.setAnchors', 'path.close', 'text.create', 'text.setText',
     'paint.setFill', 'paint.setStroke', 'select.set', 'select.none',
@@ -28,6 +29,17 @@ ALLOWED = {
     'artboard.new', 'artboard.setProps',
     'swatch.new', 'swatch.edit', 'swatch.list',
 }
+
+
+def asset_module():
+    spec = importlib.util.spec_from_file_location('craft_asset_inputs', Path(__file__).with_name('asset_inputs.py'))
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def inputs_name(value):
+    return isinstance(value, str) and bool(asset_module().NAME.fullmatch(value))
 
 
 def sha(path):
@@ -90,6 +102,8 @@ def validate(plan):
             aliases.add(alias)
         if not isinstance(operation.get('params', {}), dict):
             raise ValueError('invalid_params')
+        if operation['command'] in ('asset.place', 'asset.replace'):
+            asset_module().validate_operation(operation['command'], operation.get('params', {}))
         if operation['command'] == 'text.setText':
             params = operation.get('params', {})
             valid_ref = lambda value: isinstance(value, dict) and set(value) == {'$ref'} and isinstance(value['$ref'], str) and bool(value['$ref'])
@@ -131,6 +145,7 @@ def execute(plan, output, runtime_home=None, source=None):
     source_project = None
     bindings = {}
     source_hash = None
+    prior = {}
     if source:
         source = Path(source).resolve()
         source_project = source / 'project.vectorcraft'
@@ -153,6 +168,8 @@ def execute(plan, output, runtime_home=None, source=None):
             validate(plan)
     elif 'document' not in plan:
         raise ValueError('document_required')
+    inputs_module = asset_module()
+    input_assets = inputs_module.preflight(plan, source, prior)
     # 安装器与本脚本同目录，单技能安装不需要访问其他包。
     spec = importlib.util.spec_from_file_location('craft_bootstrap', Path(__file__).with_name('bootstrap.py'))
     bootstrap = importlib.util.module_from_spec(spec)
@@ -162,7 +179,9 @@ def execute(plan, output, runtime_home=None, source=None):
     cli = installed['executable']
     catalog = json.loads(subprocess.check_output([cli, 'commands'], text=True, timeout=30))
     available = {entry['id'] for entry in catalog}
-    required = {entry['command'] for entry in plan['operations']} | {'text.fonts'}
+    required = {entry['command'] for entry in plan['operations']} - {'asset.place', 'asset.replace'} | {'text.fonts'}
+    if input_assets:
+        required |= {'file.place', 'links.relink', 'links.embed', 'links.placementOptions', 'links.list', 'links.check', 'file.package'}
     if required - available:
         raise ValueError('capability_missing: ' + ','.join(sorted(required - available)))
     output.parent.mkdir(parents=True, exist_ok=True)
@@ -172,6 +191,7 @@ def execute(plan, output, runtime_home=None, source=None):
     with session_module.Session([cli, 'mcp', '--headless']) as session, tempfile.TemporaryDirectory(prefix='.vectorcraft-', dir=output.parent) as temporary:
         stage = Path(temporary)
         project = stage / 'project.vectorcraft'
+        assets = inputs_module.collect(input_assets, stage)
         receipts = []
         def command(identifier, params=None, save=True):
             value = session.command(identifier, params or {})
@@ -179,10 +199,48 @@ def execute(plan, output, runtime_home=None, source=None):
             return value
         if source_project:
             command('document.open', {'path': str(source_project)}, save=False)
+            for entry in assets.values():
+                if entry.get('linked'):
+                    result = command('links.relink', {'ids': entry['ids'], 'path': str(stage / entry['path'])})
+                    if result.get('notFound') or set(result.get('relinked', [])) != set(entry['ids']):
+                        raise ValueError('asset_relink_failed')
         else:
             command('file.new', plan['document'])
         for operation in plan['operations']:
-            value = command(operation['command'], resolve(operation.get('params', {}), bindings))
+            params = resolve(operation.get('params', {}), bindings)
+            if operation['command'] == 'asset.place':
+                entry = assets[params['asset']]
+                value = command('file.place', {k: v for k, v in params.items() if k != 'asset'} | {'path': str(stage / entry['path'])})
+                if 'linked' in entry and entry['linked'] != value['linked']:
+                    raise ValueError('asset_mixed_link_modes')
+                entry.update({'ids': entry.get('ids', []) + value['ids'], 'linked': value['linked'], 'warnings': value.get('warnings', [])})
+            elif operation['command'] == 'asset.replace':
+                old = assets[params['asset']]
+                new = assets[params['replacement']]
+                if old['format'] != 'svg' and new['format'] != 'svg':
+                    command('links.placementOptions', {'ids': old['ids'], 'preserve': 'bounds'})
+                    value = command('links.relink', {'ids': old['ids'], 'path': str(stage / new['path'])})
+                    if value.get('notFound') or set(value.get('relinked', [])) != set(old['ids']):
+                        raise ValueError('asset_relink_failed')
+                    if not old['linked']:
+                        command('links.embed', {'ids': old['ids']})
+                    value = {'ids': old['ids'], 'linked': old['linked'], 'identity': 'retained'}
+                else:
+                    replaced = {};warnings = []
+                    for old_id in old['ids']:
+                        command('select.set', {'ids': [old_id]})
+                        placed = command('file.place', {'path': str(stage / new['path']), 'replace': True, 'link': old['linked']})
+                        replaced[old_id] = placed['ids'];warnings += placed.get('warnings', [])
+                    value = {'ids': [i for ids in replaced.values() for i in ids], 'linked': placed['linked'], 'identity': 'replaced', 'warnings': warnings}
+                    # 所有已登记实例分别保留位置；既有回执更新新身份。
+                    for binding in bindings.values():
+                        if isinstance(binding, dict) and isinstance(binding.get('ids'), list):
+                            binding['ids'] = [i for old_id in binding['ids'] for i in replaced.get(old_id, [old_id])]
+                new.update({'ids': value['ids'], 'linked': value['linked'], 'warnings': value.get('warnings', [])})
+                assets[params['asset']] = new
+                del assets[params['replacement']]
+            else:
+                value = command(operation['command'], params)
             if operation.get('as'):
                 bindings[operation['as']] = value
         fonts = command('text.fonts', {}, save=False)
@@ -192,10 +250,40 @@ def execute(plan, output, runtime_home=None, source=None):
         if missing:
             raise ValueError('missing_fonts: ' + json.dumps(missing, ensure_ascii=False))
         command('document.save', {'path': str(project)}, save=False)
+        if assets:
+            links = command('links.list')
+            registered = {i for entry in assets.values() if entry['linked'] for i in entry['ids']}
+            if any(row['linked'] and row['id'] not in registered for row in links['links']):
+                raise ValueError('unregistered_dependency')
+            if links['missing'] or links['modified']:
+                raise ValueError('asset_link_invalid')
+            packaged = command('file.package', {'folder': str(stage), 'name': 'delivery', 'report': False})
+            if packaged['missingLinks']:
+                raise ValueError('asset_collection_failed')
+            delivery = stage / 'delivery'
+            for entry in assets.values():
+                filename = Path(entry['path']).name
+                if entry['linked']:
+                    collected = delivery / 'Links' / filename
+                else:
+                    collected = delivery / 'Assets' / filename
+                    collected.parent.mkdir(exist_ok=True)
+                    shutil.copyfile(stage / entry['path'], collected)
+                if not collected.is_file() or sha(collected) != entry['sha256']:
+                    raise ValueError('asset_collection_digest_mismatch')
+                entry['path'] = str(collected.relative_to(delivery))
+            # 原生 package 不修改原会话；所有导出改从收集后的工程进行。
+            stage = delivery
+            project = stage / 'project.vectorcraft'
+            command('document.open', {'path': str(project)}, save=False)
         reopened = session_module.Session([cli, 'mcp', '--headless'])
         with reopened:
             reopened.command('document.open', {'path': str(project)})
             native = reopened.command('document.json', {})
+            if assets:
+                checked = reopened.command('links.check', {})
+                if checked['missing'] or checked['modified']:
+                    raise ValueError('asset_link_invalid')
         # 由独立会话重新打开工程取得模型；导出前检查真实画板范围。
         outputs = []
         pdf_date = pdf_export_date(native, source, prior if source else None) if any(item['format'] == 'pdf' for item in plan.get('exports', [])) else None
@@ -219,19 +307,35 @@ def execute(plan, output, runtime_home=None, source=None):
                             **({'pdfCreated': pdf_date['created'], 'pdfDateBinding': pdf_date['binding']} if item['format'] == 'pdf' else {})})
         if source_project and sha(source_project) != source_hash:
             raise ValueError('revision_conflict')
+        for entry in input_assets.values():
+            if sha(entry['inputPath']) != entry['sha256']:
+                raise ValueError('asset_digest_mismatch')
         # 不把暂存绝对路径写入可分发记录。
         for receipt in receipts:
             if receipt['command'] in ('document.export', 'document.save', 'document.open'):
                 receipt['params']['path'] = Path(receipt['params']['path']).name
                 if isinstance(receipt['result'], dict) and 'path' in receipt['result']:
                     receipt['result']['path'] = Path(receipt['result']['path']).name
-        (stage / 'native.json').write_text(json.dumps(native, ensure_ascii=False, indent=2) + '\n')
-        (stage / 'plan.json').write_text(json.dumps(plan, ensure_ascii=False, indent=2) + '\n')
-        (stage / 'operations.json').write_text(json.dumps(receipts, ensure_ascii=False, indent=2) + '\n')
+        def portable(value):
+            if isinstance(value, dict):
+                return {k: portable(v) for k, v in value.items()}
+            if isinstance(value, list):
+                return [portable(v) for v in value]
+            if isinstance(value, str):
+                for name, entry in input_assets.items():
+                    value = value.replace(str(entry['inputPath']), 'input:' + name)
+                return value.replace(str(stage), '.').replace(str(temporary), '.').replace(str(source) if source else '\x00', 'source')
+            return value
+        saved_plan = {**plan, **({'assets': {name: {'path': entry['path'], 'sha256': entry['sha256']} for name, entry in assets.items()}} if assets else {})}
+        (stage / 'native.json').write_text(json.dumps(portable(native), ensure_ascii=False, indent=2) + '\n')
+        (stage / 'plan.json').write_text(json.dumps(portable(saved_plan), ensure_ascii=False, indent=2) + '\n')
+        (stage / 'operations.json').write_text(json.dumps(portable(receipts), ensure_ascii=False, indent=2) + '\n')
         exchange_report(stage,[item['path'] for item in outputs],{item['path']:item['warnings'] for item in outputs})
         manifest = {'schema': 'vectorcraft-delivery/v1', 'sourceProjectSha256': source_hash,
                     'runtimeSha256': installed['binarySha256'], 'bindings': bindings, 'outputs': outputs, 'fontDependencies': fonts,
-                    'files': {f.name: sha(f) for f in stage.iterdir() if f.is_file()},
+                    'assets': assets,
+                    **({'collection': {'links': packaged['links'], 'fonts': packaged['fonts'], 'skippedFonts': packaged['skippedFonts']}} if assets else {}),
+                    'files': {str(f.relative_to(stage)): sha(f) for f in stage.rglob('*') if f.is_file()},
                     'lossReport': {'path':'exchange-loss.json','sha256':sha(stage/'exchange-loss.json')}, 'acceptance': 'requires-domain-and-visual-review'}
         (stage / 'manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n')
         if output.exists() or output.is_symlink():
@@ -246,9 +350,16 @@ def main():
     parser.add_argument('--output', required=True, type=Path)
     parser.add_argument('--source', type=Path)
     parser.add_argument('--runtime-home', type=Path)
+    parser.add_argument('--asset', action='append', default=[], metavar='NAME=PATH', help='登记输入素材并计算摘要')
     args = parser.parse_args()
     try:
-        result = execute(json.loads(args.plan.read_text()), args.output, args.runtime_home, args.source)
+        plan = json.loads(args.plan.read_text())
+        for assignment in args.asset:
+            name, separator, path = assignment.partition('=')
+            if not separator or not inputs_name(name) or name in plan.get('assets', {}):
+                raise ValueError('asset_binding_invalid')
+            plan.setdefault('assets', {})[name] = {'path': path, 'sha256': sha(path)}
+        result = execute(plan, args.output, args.runtime_home, args.source)
         print(json.dumps(result, ensure_ascii=False))
     except (ValueError, RuntimeError, OSError, subprocess.SubprocessError) as error:
         print(json.dumps({'error': str(error)}, ensure_ascii=False))

@@ -25,6 +25,16 @@ python3 "$SKILL_DIR/scripts/workflow.py" \
 
 支持的命令范围见脚本 `ALLOWED`：基础形状、路径、文字创建、填充与描边、选择、组合、变换、四种布尔操作、添加与调整画板。其他命令通过原生 CLI/MCP 单独执行并验证，不能假定此助手已支持。
 
+## 登记素材、链接和替换
+
+通过 `--asset product=/absolute/input.png --asset logo=/absolute/logo.svg` 登记输入，脚本按文件内容识别 PNG／JPEG／SVG并计算摘要，不以扩展名判定格式。单独安装本技能即可安装锁定 CLI 并执行。`asset.place` 参数为 `{asset, at?:[x,y], rect?:[x,y,w,h], link?:true}`；at 和 rect 不可同时提供。一个别名可置入多个实例；所有实例写入交付清单。SVG 保持原生矢量组嵌入；栅格默认链接，显式 link=false 可嵌入。混用同别名的链接和嵌入状态拒绝成功交付。
+
+新建模板见 `examples/provided-assets.json`。有效 SVG 必须自包含；外部 href、脚本、foreignObject、DTD／实体、外部 CSS URL 不在此公开素材合同内，不允许隐式读取额外文件。每项输入限 64 MiB。未消费素材、摘要冲突和非法路径不发布交付；预检可确定的错误在安装前拒绝。
+
+修订计划使用 `asset.replace` 参数 `{asset:"product",replacement:"updated"}`，再加 `--asset updated=/absolute/new.jpg --source /absolute/project/v1`。替换栅格通过 links.relink 保留 ID、边界和堆叠；矢量组通过原生 file.place 逐实例置换，更新回执 ID，不冒充旧身份。替换后新素材归入原别名，禁止依赖旧组 ID 编写后续指令，应从更新后的 `$ref` 取得真实 ID。
+
+有素材的工程调用原生 file.package 收集 Links 和许可允许嵌入的 Fonts。矢量／嵌入输入源文件仍在 Assets 保留摘要；无法打包字体记录到 skippedFonts，不声称跨机器字体可用。独立会话重开收集工程并核对链接，随后才导出和发布新目录。manifest.files 递归覆盖依赖文件，manifest.assets 记录 path、sha256、format、ids、linked。迁移交付目录可直接重开；部分原生链接元数据含引擎保存的原路径，但包内相对引用用于重新定位，不能把原路径当作新的读取授权。
+
 ## 局部改色
 
 读取 `brand-v1/manifest.json` 的 `files.project.vectorcraft` 和 `bindings`，创建以下修订计划，将示意摘要替换为实际值：

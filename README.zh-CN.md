@@ -34,9 +34,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.10 |
+| Metadata version | 0.1.0-dev.11 |
 | Stage | implementation-in-progress |
-| Skills source | vectorcraft-skills / v0.1.0-dev.9 |
+| Skills source | vectorcraft-skills / v0.1.0-dev.10 |
 | Execution | 上游 CLI；ArtCraft 使用子适配器 |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |
@@ -182,3 +182,5 @@ python3 -I -B skills/vectorcraft-use/scripts/workflow.py --help
 本次更新的 22 个技能逐项公开冷启动全部通过（159.811 秒）：每项只复制自身目录到 .agents/skills，独立空运行时完成版本与命令合同检查，目录摘要和全部宿主安装摘要保留。该证据不代表通用 Skills CLI 安装或全部创作场景。
 
 登记素材技能源候选：公开工作流已接入 PNG 链接、SVG 嵌入、JPEG／SVG 替换、原生依赖收集与迁移。[架构](docs/VectorCraft-Asset-Handoff-Architecture.zh_CN.md)。既有固定插件快照未改动；新版发布与安装宿主复验仍待完成。
+
+插件 dev.11 收录不可变技能源 dev.10，接入登记 PNG／SVG 置入、JPEG／SVG 替换与原生依赖收集。本版安装宿主验收与 ArtCraft 分发升级分别进行，完整 V1 验收保持开放。
