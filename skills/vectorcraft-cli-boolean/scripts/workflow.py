@@ -19,7 +19,7 @@ def exchange_report(root,outputs,warnings):
     module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
     module.write_report(root,outputs,warnings)
 
-ALLOWED = {
+ALLOWED = {'native.command', 
     'asset.place', 'asset.replace',
     'shape.rectangle', 'shape.ellipse', 'shape.polygon', 'shape.star', 'shape.line',
     'path.create', 'path.setAnchors', 'path.close', 'text.create', 'text.setText',
@@ -86,11 +86,19 @@ def resolve(value, bindings):
     return value
 
 
+def native_module():
+    spec = importlib.util.spec_from_file_location('craft_native_workflow', Path(__file__).with_name('native_workflow.py'))
+    module = importlib.util.module_from_spec(spec); spec.loader.exec_module(module)
+    return module
+
+
 def validate(plan):
     if not isinstance(plan, dict) or not isinstance(plan.get('operations'), list):
         raise ValueError('operations_required')
     aliases = set()
     for operation in plan['operations']:
+        if operation.get('command') == 'native.command':
+            native_module().validate(operation.get('params'))
         if operation.get('command') not in ALLOWED:
             raise ValueError('unsupported_command: ' + str(operation.get('command')))
         alias = operation.get('as')
@@ -179,7 +187,7 @@ def execute(plan, output, runtime_home=None, source=None):
     cli = installed['executable']
     catalog = json.loads(subprocess.check_output([cli, 'commands'], text=True, timeout=30))
     available = {entry['id'] for entry in catalog}
-    required = {entry['command'] for entry in plan['operations']} - {'asset.place', 'asset.replace'} | {'text.fonts'}
+    required = {entry['params']['command'] if entry['command']=='native.command' else entry['command'] for entry in plan['operations']} - {'asset.place', 'asset.replace'} | {'text.fonts'}
     if input_assets:
         required |= {'file.place', 'links.relink', 'links.embed', 'links.placementOptions', 'links.list', 'links.check', 'file.package'}
     if required - available:
@@ -215,7 +223,9 @@ def execute(plan, output, runtime_home=None, source=None):
             command('file.new', plan['document'])
         for operation in plan['operations']:
             params = resolve(operation.get('params', {}), bindings)
-            if operation['command'] == 'asset.place':
+            if operation['command'] == 'native.command':
+                value = native_module().execute(session, params, recovery_state, receipts, stage)
+            elif operation['command'] == 'asset.place':
                 entry = assets[params['asset']]
                 value = command('file.place', {k: v for k, v in params.items() if k != 'asset'} | {'path': str(stage / entry['path'])})
                 if 'linked' in entry and entry['linked'] != value['linked']:
