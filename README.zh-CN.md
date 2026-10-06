@@ -164,3 +164,5 @@ python3 -I -B skills/vectorcraft-use/scripts/workflow.py --help
 当前技能源 dev.7 的完整原生回归 42 项全部通过，零跳过（111.204 秒），包含九个独立任务场景、品牌色板与中文文字。任务场景使用全新公开缓存；命令发现和基线原生工作流明确复用已核验缓存。[证据](docs/evidence/dev7-full-native-suite.json)。
 
 固定已安装插件 dev.8／技能源 dev.7 的补充验收验证四种矩形布尔操作、原生复合孔洞方向、SVG／PNG／PDF 独立解码、原交付保全和无效选择拒绝；不扩展为任意几何或编辑器往返支持。[验收记录](docs/VectorCraft-Boolean-Geometry-Acceptance.zh_CN.md)。
+
+固定 dev.8 首次使用已知缺口：无关画板 SVG 保留画板外品牌路径，品牌色修订后发生内容变化，其 PNG／PDF 保持不变。尚未发布修复。[复现与修复边界](docs/VectorCraft-Artboard-Export-Gap.zh_CN.md)。

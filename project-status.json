@@ -19,5 +19,8 @@
     "4.21": "docs/evidence/codex-vectorcraft8-boolean-geometry-first-use-20261006.json"
   },
   "hostValidationEvidence": "docs/evidence/codex-release24-chinese-text-20261006.json",
-  "hostValidationStatus": "bounded-installed-native-chinese-text-passed"
+  "hostValidationStatus": "bounded-installed-native-chinese-text-passed",
+  "knownFirstUseFailures": [
+    "docs/evidence/installed-artboard-export-failure.json"
+  ]
 }

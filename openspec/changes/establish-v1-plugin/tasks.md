@@ -97,3 +97,5 @@
 `docs/evidence/codex-current-release.json` 记录固定发布在 Codex 0.147.0 / 0.153.4 的安装、发现与公开入口执行；共享复现工具由 ArtCraft 持有。该证据未覆盖模型派发、桌面 GUI、完整 P0 与创作验收，release-compatibility 任务的前置条件尚未全部满足，不能据此勾选完整发布任务。
 
 - [x] 4.21 [VC-DM-002／VC-DM-005] 固定已安装单布尔技能从空运行时验证 unite／minusFront／intersect／exclude，原生复合孔洞与方向、SVG／PNG／PDF 独立解码、未选图形与源目录全文件保全及无效选择拒绝。产物：docs/evidence/codex-vectorcraft8-boolean-geometry-first-use-20261006.json；矩形样例不关闭完整 4.4–4.6 或交换格式任务。
+
+- [ ] 4.22 [VC-DM-004／VC-DM-006] 修复不同尺寸和偏移画板的 SVG 输出隔离：固定安装单导出技能已真实复现无关 SVG 随品牌色变化，PNG／PDF 不变；保留锁定可见内容、效果／描边外扩、群组／裁切和空画板语义，正负原生回归后再发布并验收。失败证据：docs/evidence/installed-artboard-export-failure.json。

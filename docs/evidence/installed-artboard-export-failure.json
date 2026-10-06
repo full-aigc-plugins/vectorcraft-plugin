@@ -1,0 +1,206 @@
+{
+  "schema": "vectorcraft-artboard-unaffected-export-regression/v1",
+  "status": "failed",
+  "scope": "fixed installed export skill copied alone, empty public native runtime; actual different-size artboards; independent PNG/PDF dimensions and visible color checks completed before export identity gate",
+  "unaffectedExports": {
+    "svg": {
+      "before": "45d338e0770c946ed6201b1f35b86ea15b35604f1d3b34b67ee6c908e3e4cded",
+      "after": "268520cd6afa41c63ebd5b0763adf60ebfccc0ce349d99560ee6c3511f2a537c"
+    },
+    "png": {
+      "before": "7bdbb621fc7db687b34587d796cfee4b6b4fc825c20b40014eedbfb20fad7673",
+      "after": "7bdbb621fc7db687b34587d796cfee4b6b4fc825c20b40014eedbfb20fad7673"
+    },
+    "pdf": {
+      "before": "c99c6023678adec6b5dba0f95046c1069c8b13e506c197b222db84456363d02e",
+      "after": "c99c6023678adec6b5dba0f95046c1069c8b13e506c197b222db84456363d02e"
+    }
+  },
+  "samples": [
+    {
+      "revision": "v1",
+      "artboard": 0,
+      "size": [
+        128,
+        96
+      ],
+      "centerRgb": [
+        35,
+        102,
+        232
+      ],
+      "pdfVectorOnly": true
+    },
+    {
+      "revision": "v1",
+      "artboard": 1,
+      "size": [
+        80,
+        64
+      ],
+      "centerRgb": [
+        34,
+        170,
+        102
+      ],
+      "pdfVectorOnly": true
+    },
+    {
+      "revision": "v1",
+      "artboard": 2,
+      "size": [
+        96,
+        128
+      ],
+      "centerRgb": [
+        35,
+        102,
+        232
+      ],
+      "pdfVectorOnly": true
+    },
+    {
+      "revision": "v2",
+      "artboard": 0,
+      "size": [
+        128,
+        96
+      ],
+      "centerRgb": [
+        23,
+        92,
+        206
+      ],
+      "pdfVectorOnly": true
+    },
+    {
+      "revision": "v2",
+      "artboard": 1,
+      "size": [
+        80,
+        64
+      ],
+      "centerRgb": [
+        34,
+        170,
+        102
+      ],
+      "pdfVectorOnly": true
+    },
+    {
+      "revision": "v2",
+      "artboard": 2,
+      "size": [
+        96,
+        128
+      ],
+      "centerRgb": [
+        23,
+        92,
+        206
+      ],
+      "pdfVectorOnly": true
+    }
+  ],
+  "initialSvg": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"80\" height=\"64\" viewBox=\"0 0 80 64\">\n  <title>Different artboards</title>\n  <g id=\"Layer_1\" data-name=\"Layer 1\">\n    <path d=\"M-168 4 L-104 4 L-104 52 L-168 52 Z\" fill=\"#2366e8\"/>\n    <path d=\"M20 16 L60 16 L60 48 L20 48 Z\" fill=\"#22aa66\"/>\n    <path d=\"M224 -28 L272 -28 L272 36 L224 36 Z\" fill=\"#2366e8\"/>\n  </g>\n</svg>\n",
+  "revisedSvg": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"80\" height=\"64\" viewBox=\"0 0 80 64\">\n  <title>Different artboards</title>\n  <g id=\"Layer_1\" data-name=\"Layer 1\">\n    <path d=\"M-168 4 L-104 4 L-104 52 L-168 52 Z\" fill=\"#175cce\"/>\n    <path d=\"M20 16 L60 16 L60 48 L20 48 Z\" fill=\"#22aa66\"/>\n    <path d=\"M224 -28 L272 -28 L272 36 L224 36 Z\" fill=\"#175cce\"/>\n  </g>\n</svg>\n",
+  "runtimeLockSha256": "58895e0b74ddb2cbf60de9a0832b9e61a7dc1518221d2481a96d78580276bfc5",
+  "driverSha256": "1748ce79645f1cfb4403c726701876072448e27bc8c3c1d2320926c3b9839e2f",
+  "fixedRelease": {
+    "pluginId": "vectorcraft",
+    "version": "0.1.0-dev.8",
+    "pluginManifestSha256": "7379260ff2dd7210b39ab93e0054ec3f72cf8e31e8e2b8ae520221a79ae2362e",
+    "sourceSha": "918e808af0438a139e2c9ca3ae56a176b7524a1c",
+    "skillSourceSha": "c0effdce5888f976f7b988f708af7694192fe88e",
+    "skillSha256": "2fae0f633d5d2486ea9bee77cf7212415dabd9aeb5dc81d40c2d035db561b4b1",
+    "discoveredName": "vectorcraft:vectorcraft-use",
+    "scope": "user",
+    "enabled": true,
+    "skills": [
+      {
+        "name": "vectorcraft:vectorcraft-cli",
+        "sha256": "83fd8f719ec16bbf8d236eed0fc29afd7982686850ccbfa0584b1a1a890dacd3",
+        "scope": "user",
+        "enabled": true
+      },
+      {
+        "name": "vectorcraft:vectorcraft-cli-appearance",
+        "sha256": "9ae3526b6a8ecca71352881fdee9f750d2203fb87f5628391127447c01c3fb48",
+        "scope": "user",
+        "enabled": true
+      },
+      {
+        "name": "vectorcraft:vectorcraft-cli-artboards",
+        "sha256": "74ab7fa05923a17fd7264f2f5159decf132a9e62efcd2c9a7c7ab12622639891",
+        "scope": "user",
+        "enabled": true
+      },
+      {
+        "name": "vectorcraft:vectorcraft-cli-assets",
+        "sha256": "f05072859de03ff8fb8f15209aaae9add8ae6b74cdd734c55d3e1ddd9324f094",
+        "scope": "user",
+        "enabled": true
+      },
+      {
+        "name": "vectorcraft:vectorcraft-cli-boolean",
+        "sha256": "bdd012928b84d3c38609f5d321deabefb4984f07f98c1443407c31681f1bfda2",
+        "scope": "user",
+        "enabled": true
+      },
+      {
+        "name": "vectorcraft:vectorcraft-cli-export",
+        "sha256": "15415f2f1172c6d988d765e2fb501e9b8d0d6f70d101aca9b67638ac182da080",
+        "scope": "user",
+        "enabled": true
+      },
+      {
+        "name": "vectorcraft:vectorcraft-cli-paths",
+        "sha256": "d0a4e188e09811b1c2121933d8a6b1e5daa5f161e8ae860da0ac7f1e4529d667",
+        "scope": "user",
+        "enabled": true
+      },
+      {
+        "name": "vectorcraft:vectorcraft-cli-project",
+        "sha256": "941e5f203cc07cbe2b6ba37ad089a574e825b07b09a1c1bcd43ee93bf19085eb",
+        "scope": "user",
+        "enabled": true
+      },
+      {
+        "name": "vectorcraft:vectorcraft-cli-setup",
+        "sha256": "305b874ad601ff1d836e8ede4c2b12b10c69d79700ba659d8a1689287005f55c",
+        "scope": "user",
+        "enabled": true
+      },
+      {
+        "name": "vectorcraft:vectorcraft-cli-shapes",
+        "sha256": "679bea5168b96b653cffee333fa61d4d966a09636eb95d288f09e117f6bb62bf",
+        "scope": "user",
+        "enabled": true
+      },
+      {
+        "name": "vectorcraft:vectorcraft-cli-text",
+        "sha256": "35925900d81b7beed6aedfbf611e2a49cd0e14e580b98aaeaba43dc535afc176",
+        "scope": "user",
+        "enabled": true
+      },
+      {
+        "name": "vectorcraft:vectorcraft-use",
+        "sha256": "2fae0f633d5d2486ea9bee77cf7212415dabd9aeb5dc81d40c2d035db561b4b1",
+        "scope": "user",
+        "enabled": true
+      }
+    ]
+  },
+  "observedRunsSeconds": [
+    6.718,
+    6.186
+  ],
+  "failure": "unrelated artboard SVG changes after another artboard brand token update; PNG and PDF unchanged",
+  "repairStatus": "not implemented or published",
+  "defaultRegression": {
+    "tests": 44,
+    "passed": 28,
+    "skipped": 16,
+    "seconds": 10.425
+  }
+}

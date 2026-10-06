@@ -164,3 +164,5 @@ Native Chinese text revision now has a single-skill cold test: explicit object e
 Current skill source dev.7 full native regression passes all 42 tests with zero skips (111.204 seconds), including nine separately copied task scenes, brand swatches and Chinese text. Native task scenes use fresh public caches; CLI discovery and baseline native workflow explicitly reuse verified caches. [Evidence](docs/evidence/dev7-full-native-suite.json).
 
 Installed plugin dev.8 / skill source dev.7 supplementary acceptance now checks four rectangular boolean operations, native compound-hole winding, independently decoded SVG/PNG/PDF, original delivery preservation and invalid selection rejection. This does not expand support to arbitrary geometry or editor round trips. [Acceptance](docs/VectorCraft-Boolean-Geometry-Acceptance.md).
+
+Known fixed dev.8 first-use gap: an unrelated artboard SVG retains off-board brand paths and changes after a brand-token revision, although its PNG/PDF remain unchanged. No repair is published. [Reproduction and design boundary](docs/VectorCraft-Artboard-Export-Gap.md).
