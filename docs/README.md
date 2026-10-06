@@ -39,3 +39,5 @@ OpenSpec is the sole behavioral authority; this documentation provides explanati
 [Domain technical design](VectorCraft-Domain-Design.md)
 
 [Current host verification / 当前宿主验证](VectorCraft-Host-Verification-Architecture.md)
+
+- [Source-candidate asset handoff / 素材交接候选](VectorCraft-Asset-Handoff-Architecture.md)

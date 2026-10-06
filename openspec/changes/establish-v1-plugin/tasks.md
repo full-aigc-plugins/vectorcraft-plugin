@@ -103,3 +103,6 @@
 - [x] 4.22 [VC-DM-004／VC-DM-006] 修复不同尺寸和偏移画板的 SVG 输出隔离：固定安装单导出技能已真实复现无关 SVG 随品牌色变化，PNG／PDF 不变；保留锁定可见内容、效果／描边外扩、群组／裁切和空画板语义，正负原生回归后再发布并验收。失败证据：docs/evidence/installed-artboard-export-failure.json；954 项引擎、12 项 CLI、46 项完整技能源回归及固定 dev.9 单技能公开冷启动验收通过，全部 58 个安装摘要保持不变。修复验收：docs/evidence/codex-vectorcraft9-artboard-first-use-20261006.json。
 
 固定新版验收：FilmCraft dev.9、EffectCraft dev.7、PhotoCraft dev.9、VectorCraft dev.10、ArtCraft dev.50 在 Codex 0.153.4 隔离安装发现 58 技能，零加载错误。安装后单导出技能跨秒原生验收 1 项通过，混合品牌返工 2 项通过，全部 58 安装摘要保留。证据：`docs/evidence/codex-release50-vector10-stable-export-first-use-20261006.json`。不关闭通用 Skills CLI、模型／GUI、完整领域／创作／发布门禁。
+
+- [x] 4.24 [VC-DM-007] 完成登记素材公开合同、预期失败测试与候选实现，真实单技能冷安装／原生交付及相关选择性返工通过；产物：docs/evidence/vector-assets-candidate-20261006.json。仅关闭所列 PNG／JPEG／自包含 SVG 候选范围，不替代固定发行宿主验收。
+- [ ] 4.25 [VC-DM-007] 发布不可变技能源、插件及 Art runtime／bundle，重建固定发行，使用真实安装技能复验素材迁移、替换、选择性返工及安装摘要；候选测试不能代替本任务。

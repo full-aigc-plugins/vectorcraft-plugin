@@ -233,6 +233,17 @@
       "owner": "Skills owner",
       "status": "bounded-verification-passed",
       "evidence": "docs/evidence/skill-suite.json"
+    },
+    {
+      "requirement": "VC-DM-007",
+      "capability": "domain-workflow",
+      "tasks": [
+        "4.24",
+        "4.25"
+      ],
+      "owner": "Domain owner",
+      "status": "in-progress",
+      "evidence": "docs/evidence/vector-assets-candidate-20261006.json"
     }
   ]
 }
