@@ -1,0 +1,123 @@
+{
+  "schema": "craft-failed-stage-candidate/v1",
+  "date": "2026-10-07",
+  "domain": "vectorcraft",
+  "result": "PASS",
+  "scope": "candidate canonical standalone skills; locked native CLI; actual original-stage preservation/reopen; healthy native creation/revision regression",
+  "nativeIdentity": {
+    "pluginId": "vectorcraft",
+    "pluginVersion": "0.1.0-dev.14",
+    "cliVersion": "0.2.0-craft.2",
+    "sha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+    "mode": "headless",
+    "capabilitySnapshotSha256": "c9cb5a4bcb96626c9dadff7d1461e005d9af76316ba58893e2f54188ec5d43e4"
+  },
+  "sourceBase": "52fbd020c03c98e4bf040f32d8d27e00cf51aaa9",
+  "nativeFaults": {
+    "schema": "craft-native-failed-stage/v1",
+    "domain": "vectorcraft",
+    "result": "PASS",
+    "cases": [
+      {
+        "fault": "malformed",
+        "result": "PASS",
+        "originalStagePreserved": true,
+        "nativeReopened": true,
+        "noReplay": true,
+        "nativeSaveCount": 1,
+        "partialFiles": 2
+      },
+      {
+        "fault": "scalar",
+        "result": "PASS",
+        "originalStagePreserved": true,
+        "nativeReopened": true,
+        "noReplay": true,
+        "nativeSaveCount": 1,
+        "partialFiles": 2
+      },
+      {
+        "fault": "missing",
+        "result": "PASS",
+        "originalStagePreserved": true,
+        "nativeReopened": true,
+        "noReplay": true,
+        "nativeSaveCount": 1,
+        "partialFiles": 2
+      },
+      {
+        "fault": "ambiguous",
+        "result": "PASS",
+        "originalStagePreserved": true,
+        "nativeReopened": true,
+        "noReplay": true,
+        "nativeSaveCount": 1,
+        "partialFiles": 2
+      },
+      {
+        "fault": "nonfinite",
+        "result": "PASS",
+        "originalStagePreserved": true,
+        "nativeReopened": true,
+        "noReplay": true,
+        "nativeSaveCount": 1,
+        "partialFiles": 2
+      },
+      {
+        "fault": "tool-content",
+        "result": "PASS",
+        "originalStagePreserved": true,
+        "nativeReopened": true,
+        "noReplay": true,
+        "nativeSaveCount": 1,
+        "partialFiles": 2
+      }
+    ],
+    "scope": "candidate source with locked installed native CLI; original retained stage inspected and reopened; proxy capture is not recovery input"
+  },
+  "redBaseline": {
+    "faults": 6,
+    "reason": "actual native save succeeded once; public workflow removed stage and produced no recovery record",
+    "result": "FAILED_AS_EXPECTED"
+  },
+  "regression": {
+    "tests": 85,
+    "passed": 64,
+    "optionalSkipped": 21,
+    "lifecycleTests": 8,
+    "healthyNativeWorkflowTests": 1,
+    "healthyNativeWorkflowResult": "PASS"
+  },
+  "sourceHashes": {
+    "skills/vectorcraft-cli/scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "skills/vectorcraft-cli/scripts/workflow.py": "4301b899ab31665c46e3e13a5305288c8056d24a2310608114491ddcdb0a5632",
+    "skills/vectorcraft-cli-appearance/scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "skills/vectorcraft-cli-appearance/scripts/workflow.py": "4301b899ab31665c46e3e13a5305288c8056d24a2310608114491ddcdb0a5632",
+    "skills/vectorcraft-cli-artboards/scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "skills/vectorcraft-cli-artboards/scripts/workflow.py": "4301b899ab31665c46e3e13a5305288c8056d24a2310608114491ddcdb0a5632",
+    "skills/vectorcraft-cli-assets/scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "skills/vectorcraft-cli-assets/scripts/workflow.py": "4301b899ab31665c46e3e13a5305288c8056d24a2310608114491ddcdb0a5632",
+    "skills/vectorcraft-cli-boolean/scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "skills/vectorcraft-cli-boolean/scripts/workflow.py": "4301b899ab31665c46e3e13a5305288c8056d24a2310608114491ddcdb0a5632",
+    "skills/vectorcraft-cli-export/scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "skills/vectorcraft-cli-export/scripts/workflow.py": "4301b899ab31665c46e3e13a5305288c8056d24a2310608114491ddcdb0a5632",
+    "skills/vectorcraft-cli-paths/scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "skills/vectorcraft-cli-paths/scripts/workflow.py": "4301b899ab31665c46e3e13a5305288c8056d24a2310608114491ddcdb0a5632",
+    "skills/vectorcraft-cli-project/scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "skills/vectorcraft-cli-project/scripts/workflow.py": "4301b899ab31665c46e3e13a5305288c8056d24a2310608114491ddcdb0a5632",
+    "skills/vectorcraft-cli-setup/scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "skills/vectorcraft-cli-setup/scripts/workflow.py": "4301b899ab31665c46e3e13a5305288c8056d24a2310608114491ddcdb0a5632",
+    "skills/vectorcraft-cli-shapes/scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "skills/vectorcraft-cli-shapes/scripts/workflow.py": "4301b899ab31665c46e3e13a5305288c8056d24a2310608114491ddcdb0a5632",
+    "skills/vectorcraft-cli-text/scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "skills/vectorcraft-cli-text/scripts/workflow.py": "4301b899ab31665c46e3e13a5305288c8056d24a2310608114491ddcdb0a5632",
+    "skills/vectorcraft-use/scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "skills/vectorcraft-use/scripts/workflow.py": "4301b899ab31665c46e3e13a5305288c8056d24a2310608114491ddcdb0a5632"
+  },
+  "excluded": [
+    "immutable candidate release and actual installed new source",
+    "Art fixed bundled upgrade",
+    "force-killed process and filesystem crash persistence",
+    "complete2639-command/GUI/model/fullV1 acceptance"
+  ]
+}

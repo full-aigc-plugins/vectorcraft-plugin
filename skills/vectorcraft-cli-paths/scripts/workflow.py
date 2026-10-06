@@ -188,13 +188,20 @@ def execute(plan, output, runtime_home=None, source=None):
     session_spec = importlib.util.spec_from_file_location('craft_mcp', Path(__file__).with_name('mcp_session.py'))
     session_module = importlib.util.module_from_spec(session_spec)
     session_spec.loader.exec_module(session_module)
-    with session_module.Session([cli, 'mcp', '--headless']) as session, tempfile.TemporaryDirectory(prefix='.vectorcraft-', dir=output.parent) as temporary:
+    recovery_spec = importlib.util.spec_from_file_location('craft_recovery', Path(__file__).with_name('preserved_stage.py'))
+    recovery_module = importlib.util.module_from_spec(recovery_spec)
+    recovery_spec.loader.exec_module(recovery_module)
+    recovery_state = {}
+    with recovery_module.preserved_stage(output, '.vectorcraft-', recovery_state) as temporary, session_module.Session([cli, 'mcp', '--headless']) as session:
         stage = Path(temporary)
         project = stage / 'project.vectorcraft'
         assets = inputs_module.collect(input_assets, stage)
         receipts = []
+        recovery_state['operations'] = receipts
         def command(identifier, params=None, save=True):
+            recovery_state['lastAttempt'] = {'command': identifier, 'params': params or {}, 'phase': 'submitted'}
             value = session.command(identifier, params or {})
+            recovery_state['lastAttempt']['phase'] = 'reply_received'
             receipts.append({'command': identifier, 'params': params or {}, 'result': value})
             return value
         if source_project:
