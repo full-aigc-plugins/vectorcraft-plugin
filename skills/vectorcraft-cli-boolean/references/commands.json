@@ -1,9 +1,9 @@
 {
   "schema": "craft-skill-command-evidence/v1",
   "pluginId": "vectorcraft",
-  "runtimeVersion": "0.2.0",
+  "runtimeVersion": "0.2.0-craft.1",
   "upstreamRepository": "https://github.com/storytold/vectorcraft",
-  "upstreamCommit": "36a6a8ae49f0e2d1059361ab1f842b1ec172bc9e",
+  "upstreamCommit": "90e022b0c05f12171a4e9bebe0894fa62f7bc95c",
   "scope": "observed command catalogue, not capability or creative acceptance",
   "commands": [
     {
@@ -96,5 +96,7 @@
       "params": "{ids?} → {regions: [{bounds: [x0,y0,x1,y1], area, sources: [id…]}]} faces of the planar arrangement",
       "enabledAtEmptySession": false
     }
-  ]
+  ],
+  "runtimePatchSourceCommit": "87355039ca5a273e1d73345cf21f5a622eef194f",
+  "analysisCommit": "36a6a8ae49f0e2d1059361ab1f842b1ec172bc9e"
 }

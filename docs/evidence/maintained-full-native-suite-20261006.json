@@ -1,0 +1,33 @@
+{
+  "schema": "vectorcraft-maintained-full-native-suite/v1",
+  "status": "passed",
+  "runtimeVersion": "0.2.0-craft.1",
+  "runtimeEntry": {
+    "url": "https://github.com/full-aigc-skills/vectorcraft-skills/releases/download/runtime-v0.2.0-craft.1/vectorcraft-cli-0.2.0-craft.1-darwin-arm64.zip",
+    "archiveSha256": "c304f9df22551176767892d46e2e4742785e5cd7bac41673b7707f822a89d987",
+    "binarySha256": "bee86d46ac6295640bbfcbace42d733326f563398bf4de56d0f6966fcb08c95e",
+    "versionOutput": "vectorcraft-cli 0.2.0-craft.1",
+    "evidenceScope": "maintained native SVG isolation; headless engine and CLI integration tested"
+  },
+  "testCount": 46,
+  "passed": 46,
+  "skipped": 0,
+  "seconds": 86.57,
+  "scope": "current source suite: nine independent task-skill public cold installations, CLI catalogue, native workflows, brand tokens, Chinese text, rectangular booleans and distinct artboard exports; no model/desktop acceptance",
+  "testLogSha256": "97cc656c755bdec7c2c3c33b1c0f1bcb1357109e987661cc6bb894775c2dc1a7",
+  "priorFailure": {
+    "failures": 9,
+    "reason": "task driver hardcoded official 0.2.0 runtime directory before scene gates; updated to verify locked version, binary SHA and installation receipt version",
+    "logSha256": "82af0460238ae88ae03e1ee683c6ae83937730ae7788f2ef29f12d1b21d0675a"
+  },
+  "publicRuntimeThreeBoardTask": {
+    "passed": true,
+    "seconds": 4.97,
+    "evidence": "docs/evidence/public-artboard-svg-runtime-20261006.json"
+  },
+  "notVerified": [
+    "fixed immutable skill/plugin host first use",
+    "ArtCraft updated Vector bundle",
+    "desktop editor/model dispatch/full V1"
+  ]
+}

@@ -15,7 +15,7 @@ flowchart LR
 
 CodeGraph 定位上游 `crates/engine/src/cmd/fileio/export.rs::export_source`：默认导出整个文档，selectedOnly 可筛选已选择对象。`select.rs::all_on_artboard` 按几何交集选择可选对象，可选对象会排除锁定内容。直接把全部 SVG 改为该选区导出会遗漏锁定对象，不能作为完整修复。
 
-修复需要在保持锁定可见内容、描边／效果外扩、群组／裁切和空画板语义的前提下隔离 SVG 画板资产，或对已证明无变化的原生画板依赖复用旧输出。不能靠降低断言、仅比较渲染像素或删除任意路径宣称修复。原生候选修复已完成，但尚未发布修复版运行时或插件；4.22 保持未完成，完整画板与品牌更新任务也保持开放。此前 PNG 色板更新证据仍按原范围有效。
+修复需要在保持锁定可见内容、描边／效果外扩、群组／裁切和空画板语义的前提下隔离 SVG 画板资产，或对已证明无变化的原生画板依赖复用旧输出。不能靠降低断言、仅比较渲染像素或删除任意路径宣称修复。原生维护版运行时已发布，但修复版不可变技能／插件快照尚待发布；4.22 保持未完成，完整画板与品牌更新任务也保持开放。此前 PNG 色板更新证据仍按原范围有效。
 
 真实驱动位于独立技能源 `tests/test_artboard_exports_first_use.py`，以已安装技能路径、空 runtime 和公开原生安装复现。默认离线测试显式跳过此用例，44 项中 28 项通过、16 项跳过不能掩盖上述真实失败。
 
@@ -38,4 +38,8 @@ flowchart TD
 
 原生引擎完整库测试通过 954 项，包含 6 项隔离用例；12 项 CLI 集成测试也全部通过。单独复制导出技能后，在空 runtime 中通过显式本地候选 ZIP 安装 CLI，建立三个画板，导出九份 SVG／PNG／PDF，并在修改全局品牌色后再次导出。独立 Pillow／PyMuPDF 检查通过，无关画板三种格式保持字节一致；无效画板、重复输出拒绝与源目录／技能目录保全门禁也通过。该任务耗时 1.207 秒，只证明本地候选包安装，不证明公开发行下载。技能源测试通过 30 项、显式跳过 16 项。[候选证据](evidence/native-artboard-svg-candidate-20261006.json)。
 
-独立技能源保存 `runtime/patches/artboard-svg-isolation.patch` 与 `runtime/artboard-svg-isolation-patch.json`；补丁从锁定上游源码准确复现全部 6 个修改文件。12 个技能安装器现已识别维护版后缀，并限定原生 VectorCraft 或本 VectorCraft 技能仓的 release 下载路径。当前运行时安装锁仍指向官方 0.2.0。完成运行时发布、SVG 工作流参数和不可变技能／插件锁更新、公开首次安装验收，以及 ArtCraft 对应 bundle 更新后，才能关闭 4.22。
+独立技能源保存 `runtime/patches/artboard-svg-isolation.patch` 与 `runtime/artboard-svg-isolation-patch.json`；补丁从锁定上游源码准确复现全部 6 个修改文件。12 个技能安装器现已识别维护版后缀，并限定原生 VectorCraft 或本 VectorCraft 技能仓的 release 下载路径。当前已发布技能／插件快照仍指向官方 0.2.0，工作区安装锁与 SVG 工作流参数已接入维护版。完成不可变技能／插件快照发布、固定公开首次安装验收及 ArtCraft 对应 bundle 更新后，才能关闭 4.22。
+
+## 已发布维护版原生运行时
+
+发行构建的 `0.2.0-craft.1` CLI 已发布到独立技能源仓。工作区导出技能从 HTTPS 冷下载该运行时，三画板任务在 4.970 秒内通过，覆盖无关 SVG／PNG／PDF 字节一致及源工程／技能目录保全。工作区安装器与工作流现已锁定此发行版，并记录 SVG 保守隔离策略。不可变技能／插件发布、固定宿主首次使用及 ArtCraft bundle 更新仍待完成。[公开原生运行时证据](evidence/public-artboard-svg-runtime-20261006.json)。

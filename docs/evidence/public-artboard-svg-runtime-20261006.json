@@ -1,0 +1,180 @@
+{
+  "schema": "vectorcraft-public-maintained-runtime-first-use/v1",
+  "scope": "Current working-tree export skill copied alone into .agents/skills; empty native runtime; actual HTTPS public maintained release downloaded with archive/binary/version/license checks; this is not yet a fixed published skill/plugin snapshot",
+  "samples": [
+    {
+      "revision": "v1",
+      "artboard": 0,
+      "size": [
+        128,
+        96
+      ],
+      "centerRgb": [
+        35,
+        102,
+        232
+      ],
+      "pdfVectorOnly": true
+    },
+    {
+      "revision": "v1",
+      "artboard": 1,
+      "size": [
+        80,
+        64
+      ],
+      "centerRgb": [
+        34,
+        170,
+        102
+      ],
+      "pdfVectorOnly": true
+    },
+    {
+      "revision": "v1",
+      "artboard": 2,
+      "size": [
+        96,
+        128
+      ],
+      "centerRgb": [
+        35,
+        102,
+        232
+      ],
+      "pdfVectorOnly": true
+    },
+    {
+      "revision": "v2",
+      "artboard": 0,
+      "size": [
+        128,
+        96
+      ],
+      "centerRgb": [
+        23,
+        92,
+        206
+      ],
+      "pdfVectorOnly": true
+    },
+    {
+      "revision": "v2",
+      "artboard": 1,
+      "size": [
+        80,
+        64
+      ],
+      "centerRgb": [
+        34,
+        170,
+        102
+      ],
+      "pdfVectorOnly": true
+    },
+    {
+      "revision": "v2",
+      "artboard": 2,
+      "size": [
+        96,
+        128
+      ],
+      "centerRgb": [
+        23,
+        92,
+        206
+      ],
+      "pdfVectorOnly": true
+    }
+  ],
+  "originalFiles": {
+    "plan.json": "c9877d733fe58fe7f1e8cb190a5514ce7a2e253ca9d7986a5ce16810db879847",
+    "project.vectorcraft": "6a9ead0f5f5eeeb4fb0aeef0eb034f813095b9b3835aa8f6c238d88e64b9c906",
+    "exchange-loss.json": "7673da597a5adcb0329bf16a5eee740a9703045c81479febd458b0fa8bafb9ff",
+    "native.json": "4e186c74c81179f48abf5ae79c0f0debc4dec4c61e3fadf925bfb09da09ecf5f",
+    "artboard-1.pdf": "6d4165c89d38dd31063485e7ffaaeaff79e9ec1260a4e7d1d31b32ee838a351c",
+    "artboard-3.png": "96a4cfc77f078fe0ad901f7e71b4aa6041a2e64f6bc19bfa8d89ad1f8a2da216",
+    "artboard-2.png": "9f5193e19fcfa1fe27d18fab6c87f24b2ecf9c3257425f9ea75d7faeb33a436f",
+    "manifest.json": "772f79fde818af46da1c8362c1cc66c705f32a7177660fae67aa71b4635d1199",
+    "artboard-2.pdf": "037214a40e98528737ba289695cd399e6ee8b506c1661de8315fd8584b807b3c",
+    "artboard-1.png": "a714dd2101234e138364b03a456d2e3f3f309094cfa0d244e2d1ff9d4919855a",
+    "artboard-3.pdf": "038f2258c8b771d2a8169774e7d6b022e3c69219521d3d851fe540876dccb0ff",
+    "artboard-1.svg": "fbad7bd318abce62d16d0fb6b4f5dab855a8b6f299df86d34a233d21b9e714a1",
+    "artboard-2.svg": "e1165468af66773f704b362b00b8c09f35c4ffb6342e9f287128e897fd4f6ee4",
+    "artboard-3.svg": "eeaf51a1cdc931894fb73366f96aed7adf6cdd19fa29645ffbf65c4d42284f95",
+    "operations.json": "408bcf1857ad1360d02efcdfba7b59ea20666e779cddc4f2afc2cb9631217975"
+  },
+  "revisedFiles": {
+    "plan.json": "7356d37a7b9baf00af4e26682b72819a4d1a076f34f8330a2adac800d0a2274a",
+    "project.vectorcraft": "6743fad949770311f420fd952d2c571e2ba992ba11baa091d9779b1e0eecd307",
+    "exchange-loss.json": "071fd0c621f0687072160bd0df2018d4bfac9a16e1fd6a912081737d7ee68950",
+    "native.json": "2af62becb7ebe377a69d942a1d2f26b8eb654d08db90add8b0c5241bc0f85575",
+    "artboard-1.pdf": "bfb4a48b9d4b3a8e7838ef400340089823d53705e2540b945d2010be3b840bec",
+    "artboard-3.png": "695de669a8169d87cecb8895b24564d9e130bd67b7c0db496b200dc2c98f67e6",
+    "artboard-2.png": "9f5193e19fcfa1fe27d18fab6c87f24b2ecf9c3257425f9ea75d7faeb33a436f",
+    "manifest.json": "22cd65f036de3f2dc0821dcf569bba63b446588c9edfda5e5ed346e04944c680",
+    "artboard-2.pdf": "037214a40e98528737ba289695cd399e6ee8b506c1661de8315fd8584b807b3c",
+    "artboard-1.png": "a105925e9144eb9511cf4197cd5591c035148e762de13ccf7c0103c47252231a",
+    "artboard-3.pdf": "a56e41488d150929e2c97249aa9b541e346f4e0b94d1ef72ad9bedce4a7c92da",
+    "artboard-1.svg": "beb057ce0f0794b810e5ad83687e104741d27b2faf03c3b348fb5a49c50d7678",
+    "artboard-2.svg": "e1165468af66773f704b362b00b8c09f35c4ffb6342e9f287128e897fd4f6ee4",
+    "artboard-3.svg": "2435423a725049016a13a7e1ad35858d6104bd4f2b1f00e96ccc3e85c59b1f43",
+    "operations.json": "5ba4978aa709889399ec02f203ac58e93bc0f9cced8874a90bae0d53e844c268"
+  },
+  "artboards": [
+    {
+      "id": 1,
+      "name": "Artboard 1",
+      "rect": {
+        "x0": 0.0,
+        "x1": 128.0,
+        "y0": 0.0,
+        "y1": 96.0
+      },
+      "show_center_mark": false,
+      "show_cross_hairs": false
+    },
+    {
+      "id": 2,
+      "name": "Icon",
+      "rect": {
+        "x0": 200.0,
+        "x1": 280.0,
+        "y0": 20.0,
+        "y1": 84.0
+      },
+      "show_center_mark": false,
+      "show_cross_hairs": false
+    },
+    {
+      "id": 3,
+      "name": "Portrait variant",
+      "rect": {
+        "x0": 400.0,
+        "x1": 496.0,
+        "y0": -40.0,
+        "y1": 88.0
+      },
+      "show_center_mark": false,
+      "show_cross_hairs": false
+    }
+  ],
+  "unrelatedIconAllFormatsUnchanged": true,
+  "invalidBoardRejected": true,
+  "sourceAndSkillFilesPreserved": true,
+  "runtimeLockSha256": "e47799ec27fc10fa67e4b932c750962c83f1546916c09ed6ef3183bb2839f49d",
+  "status": "passed",
+  "seconds": 4.97,
+  "runtimeEntry": {
+    "url": "https://github.com/full-aigc-skills/vectorcraft-skills/releases/download/runtime-v0.2.0-craft.1/vectorcraft-cli-0.2.0-craft.1-darwin-arm64.zip",
+    "archiveSha256": "c304f9df22551176767892d46e2e4742785e5cd7bac41673b7707f822a89d987",
+    "binarySha256": "bee86d46ac6295640bbfcbace42d733326f563398bf4de56d0f6966fcb08c95e",
+    "versionOutput": "vectorcraft-cli 0.2.0-craft.1",
+    "evidenceScope": "maintained native SVG isolation; headless engine and CLI integration tested"
+  },
+  "publicRuntimeRelease": "https://github.com/full-aigc-skills/vectorcraft-skills/releases/tag/runtime-v0.2.0-craft.1",
+  "fixedSkillPluginFirstUse": false,
+  "workflowSha256": "cdeb430f4058ecd23cdc368b094b9385d3fdba9830aaaa33fbd996b1253dca9d",
+  "bootstrapSha256": "51bf9a240b8385d0480a6364f450375c552f0885710765ad8d972d26a0e2466f",
+  "driverSha256": "1748ce79645f1cfb4403c726701876072448e27bc8c3c1d2320926c3b9839e2f"
+}

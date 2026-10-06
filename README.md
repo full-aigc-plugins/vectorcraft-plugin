@@ -34,9 +34,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.8 |
+| Metadata version | 0.1.0-dev.9 |
 | Stage | implementation-in-progress |
-| Skills source | vectorcraft-skills / v0.1.0-dev.7 |
+| Skills source | vectorcraft-skills / v0.1.0-dev.8 |
 | Execution | Upstream CLI; ArtCraft uses child adapters |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |
@@ -161,10 +161,14 @@ The native RGB global brand-swatch workflow passed a first-use public cold insta
 
 Native Chinese text revision now has a single-skill cold test: explicit object edit keeps the first style, unrelated footer and original project; missing fonts stop delivery and successful font dependencies are recorded. Skill source dev.7 and plugin dev.8 are published. Actual installed single-skill public cold native testing passes in 8.275 seconds; all 58 installed hashes remain unchanged. [Architecture](docs/VectorCraft-Chinese-Text-Architecture.md), [evidence](docs/evidence/native-chinese-text.json).
 
-Current skill source dev.7 full native regression passes all 42 tests with zero skips (111.204 seconds), including nine separately copied task scenes, brand swatches and Chinese text. Native task scenes use fresh public caches; CLI discovery and baseline native workflow explicitly reuse verified caches. [Evidence](docs/evidence/dev7-full-native-suite.json).
+Earlier skill source dev.7 full native regression passes all 42 tests with zero skips (111.204 seconds), including nine separately copied task scenes, brand swatches and Chinese text. Native task scenes use fresh public caches; CLI discovery and baseline native workflow explicitly reuse verified caches. [Evidence](docs/evidence/dev7-full-native-suite.json).
 
 Installed plugin dev.8 / skill source dev.7 supplementary acceptance now checks four rectangular boolean operations, native compound-hole winding, independently decoded SVG/PNG/PDF, original delivery preservation and invalid selection rejection. This does not expand support to arbitrary geometry or editor round trips. [Acceptance](docs/VectorCraft-Boolean-Geometry-Acceptance.md).
 
-Known fixed dev.8 first-use gap: an unrelated artboard SVG retains off-board brand paths and changes after a brand-token revision, although its PNG/PDF remain unchanged. No repair is published. [Reproduction and design boundary](docs/VectorCraft-Artboard-Export-Gap.md).
+Known fixed dev.8 first-use gap: an unrelated artboard SVG retains off-board brand paths and changes after a brand-token revision, although its PNG/PDF remain unchanged. A maintained native runtime is published; the repaired immutable skill/plugin snapshot is pending. [Reproduction and design boundary](docs/VectorCraft-Artboard-Export-Gap.md).
 
-A local maintained CLI candidate `0.2.0-craft.1` now passes 954 engine tests, 12 CLI integration tests and the three-artboard isolated archive-install task, including byte-identical unrelated SVG/PNG/PDF after a brand-color edit. Twelve source skill installers support its maintained version identity and provenance. Public runtime locks remain unchanged; the repair is not yet released. [Candidate evidence](docs/evidence/native-artboard-svg-candidate-20261006.json).
+A local maintained CLI candidate `0.2.0-craft.1` now passes 954 engine tests, 12 CLI integration tests and the three-artboard isolated archive-install task, including byte-identical unrelated SVG/PNG/PDF after a brand-color edit. Twelve source skill installers support its maintained version identity and provenance. This paragraph records the earlier local candidate stage; the maintained runtime is now published, with fixed skill/plugin acceptance pending. [Candidate evidence](docs/evidence/native-artboard-svg-candidate-20261006.json).
+
+The published maintained native runtime passed working-tree single-skill HTTPS cold first use (4.970 seconds). Immutable skill/plugin release and ArtCraft integration remain pending. [Evidence](docs/evidence/public-artboard-svg-runtime-20261006.json).
+
+Plugin dev.9 vendors immutable skill source dev.8 and maintained native CLI 0.2.0-craft.1. The source native suite passes 46 tests without skips; fixed dev.9 host first use and the ArtCraft bundle update are the remaining integration gates. [Source native regression](docs/evidence/maintained-full-native-suite-20261006.json).

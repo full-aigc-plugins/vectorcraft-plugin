@@ -1,9 +1,9 @@
 {
   "schema": "craft-skill-command-evidence/v1",
   "pluginId": "vectorcraft",
-  "runtimeVersion": "0.2.0",
+  "runtimeVersion": "0.2.0-craft.1",
   "upstreamRepository": "https://github.com/storytold/vectorcraft",
-  "upstreamCommit": "36a6a8ae49f0e2d1059361ab1f842b1ec172bc9e",
+  "upstreamCommit": "90e022b0c05f12171a4e9bebe0894fa62f7bc95c",
   "scope": "observed command catalogue, not capability or creative acceptance",
   "commands": [
     {
@@ -192,5 +192,7 @@
       "params": "{ids?: [image ids] (default: the selected images), preserve?: transforms|bounds (default)|fileDimensions|fit|fill, align?: topLeft|top|topRight|left|center (default)|right|bottomLeft|bottom|bottomRight (where the new art sits; not for bounds), clip?: false (clip it to the old bounds where it is larger)} how a file read again (links.relink, links.update) takes each image's place: transforms keeps its scale (relative to each file's 100% size), rotation and position; bounds stretches it into the old bounds; fileDimensions puts it at 100%, unrotated; fit and fill scale it proportionally to fit inside or cover the old bounds. Without options → {placement} of the first image; else one undo step → {ids, placement}",
       "enabledAtEmptySession": false
     }
-  ]
+  ],
+  "runtimePatchSourceCommit": "87355039ca5a273e1d73345cf21f5a622eef194f",
+  "analysisCommit": "36a6a8ae49f0e2d1059361ab1f842b1ec172bc9e"
 }

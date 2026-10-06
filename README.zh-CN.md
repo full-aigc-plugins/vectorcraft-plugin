@@ -34,9 +34,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.8 |
+| Metadata version | 0.1.0-dev.9 |
 | Stage | implementation-in-progress |
-| Skills source | vectorcraft-skills / v0.1.0-dev.7 |
+| Skills source | vectorcraft-skills / v0.1.0-dev.8 |
 | Execution | 上游 CLI；ArtCraft 使用子适配器 |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |
@@ -161,10 +161,14 @@ python3 -I -B skills/vectorcraft-use/scripts/workflow.py --help
 
 原生中文文字修订通过单技能冷启动：明确对象修改保留首样式、独立页脚与旧工程；缺失字体停止交付，可用字体依赖写入清单。技能源 dev.7 与插件 dev.8 已发布；实际安装后的单技能在线冷启动原生验证通过（8.275 秒），全部 58 个安装摘要不变。[架构](docs/VectorCraft-Chinese-Text-Architecture.zh_CN.md)、[证据](docs/evidence/native-chinese-text.json)。
 
-当前技能源 dev.7 的完整原生回归 42 项全部通过，零跳过（111.204 秒），包含九个独立任务场景、品牌色板与中文文字。任务场景使用全新公开缓存；命令发现和基线原生工作流明确复用已核验缓存。[证据](docs/evidence/dev7-full-native-suite.json)。
+较早技能源 dev.7 的完整原生回归 42 项全部通过，零跳过（111.204 秒），包含九个独立任务场景、品牌色板与中文文字。任务场景使用全新公开缓存；命令发现和基线原生工作流明确复用已核验缓存。[证据](docs/evidence/dev7-full-native-suite.json)。
 
 固定已安装插件 dev.8／技能源 dev.7 的补充验收验证四种矩形布尔操作、原生复合孔洞方向、SVG／PNG／PDF 独立解码、原交付保全和无效选择拒绝；不扩展为任意几何或编辑器往返支持。[验收记录](docs/VectorCraft-Boolean-Geometry-Acceptance.zh_CN.md)。
 
-固定 dev.8 首次使用已知缺口：无关画板 SVG 保留画板外品牌路径，品牌色修订后发生内容变化，其 PNG／PDF 保持不变。尚未发布修复。[复现与修复边界](docs/VectorCraft-Artboard-Export-Gap.zh_CN.md)。
+固定 dev.8 首次使用已知缺口：无关画板 SVG 保留画板外品牌路径，品牌色修订后发生内容变化，其 PNG／PDF 保持不变。维护版原生运行时已发布，修复版不可变技能／插件快照尚待发布。[复现与修复边界](docs/VectorCraft-Artboard-Export-Gap.zh_CN.md)。
 
-本地维护版 CLI 候选 `0.2.0-craft.1` 已通过 954 项引擎测试、12 项 CLI 集成测试及三画板单技能隔离安装任务；品牌改色后，无关 SVG／PNG／PDF 保持字节一致。12 个源技能安装器已支持维护版版本识别与来源记录。公开运行时安装锁尚未改变，修复尚未发布。[候选证据](docs/evidence/native-artboard-svg-candidate-20261006.json)。
+本地维护版 CLI 候选 `0.2.0-craft.1` 已通过 954 项引擎测试、12 项 CLI 集成测试及三画板单技能隔离安装任务；品牌改色后，无关 SVG／PNG／PDF 保持字节一致。12 个源技能安装器已支持维护版版本识别与来源记录。此段记录较早的本地候选阶段；维护版运行时现已发布，固定技能／插件验收仍待完成。[候选证据](docs/evidence/native-artboard-svg-candidate-20261006.json)。
+
+已发布的维护版原生运行时通过工作区单技能 HTTPS 冷安装任务（4.970 秒）。不可变技能／插件发布和 ArtCraft 接入仍待完成。[证据](docs/evidence/public-artboard-svg-runtime-20261006.json)。
+
+插件 dev.9 收录不可变技能源 dev.8，锁定维护版原生 CLI 0.2.0-craft.1。源原生回归 46 项全部通过、零跳过；固定 dev.9 宿主首次使用及 ArtCraft bundle 更新仍待完成。[源原生回归](docs/evidence/maintained-full-native-suite-20261006.json)。

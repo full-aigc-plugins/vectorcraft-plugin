@@ -48,3 +48,5 @@ CLI argv 在 `--` 后，原生子命令必须放首位。安装参数放分隔�
 - 安装/诊断需要时交给 **vectorcraft-cli-setup**，完整任务路由交给 **vectorcraft-use**；缺少技能时使用 `npx skills add full-aigc-skills/vectorcraft-skills --skill <skill-name>`。不通过相邻文件路径加载其他技能。
 
 本技能不提供虚构的登录接口；本地 headless 不要求云账户。完整 GUI、跨编辑器保真与创作质量按实际证据陈述。
+
+当前运行时为基于官方 `v0.2.0` 的维护版 `0.2.0-craft.1`，由 `full-aigc-skills/vectorcraft-skills` 发布；安装记录明确区分维护版来源。SVG 工作流按原生绘制边界隔离画板，保守保留群组、裁切和未知范围依赖。

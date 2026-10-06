@@ -1,16 +1,16 @@
 {
   "schema": "craft-runtime-lock/v1",
   "artifact": "vectorcraft-cli",
-  "resolvedVersion": "0.2.0",
-  "releaseRef": "v0.2.0",
-  "repository": "https://github.com/storytold/vectorcraft",
+  "resolvedVersion": "0.2.0-craft.1",
+  "releaseRef": "runtime-v0.2.0-craft.1",
+  "repository": "https://github.com/full-aigc-skills/vectorcraft-skills",
   "artifacts": {
     "darwin-arm64": {
-      "url": "https://github.com/storytold/vectorcraft/releases/download/v0.2.0/vectorcraft-cli-0.2.0-macos-universal.zip",
-      "archiveSha256": "2c394066695d54084f09321bca812c2f0fe38c34a147b421f6963e49347038da",
-      "binarySha256": "4ba62138ff64d7f701fd2d8fd4c833bd3bb077b6ed78244a8909a4fa0129b766",
-      "evidenceScope": "headless MCP smoke only",
-      "versionOutput": "vectorcraft-cli 0.2.0"
+      "url": "https://github.com/full-aigc-skills/vectorcraft-skills/releases/download/runtime-v0.2.0-craft.1/vectorcraft-cli-0.2.0-craft.1-darwin-arm64.zip",
+      "archiveSha256": "c304f9df22551176767892d46e2e4742785e5cd7bac41673b7707f822a89d987",
+      "binarySha256": "bee86d46ac6295640bbfcbace42d733326f563398bf4de56d0f6966fcb08c95e",
+      "versionOutput": "vectorcraft-cli 0.2.0-craft.1",
+      "evidenceScope": "maintained native SVG isolation; headless engine and CLI integration tested"
     }
   },
   "supportedPluginWorkflows": []

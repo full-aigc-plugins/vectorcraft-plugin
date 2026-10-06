@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""仅用标准库安装锁定的官方 CLI；技能单独复制后仍可运行。"""
+"""仅用标准库安装锁定的 CLI；技能单独复制后仍可运行。"""
 import argparse
 import hashlib
 import json
@@ -13,6 +13,7 @@ import subprocess
 import tempfile
 import time
 import urllib.request
+import urllib.parse
 import zipfile
 
 MAX_BYTES = 1024 * 1024 * 1024
@@ -24,9 +25,19 @@ def digest(path):
         return hashlib.file_digest(stream, 'sha256').hexdigest()
 
 
+def trusted_release_url(url):
+    """只允许原生项目与本技能仓维护的不可变运行时发行路径。"""
+    parsed = urllib.parse.urlsplit(url)
+    return (parsed.scheme == 'https' and parsed.netloc == 'github.com'
+            and not parsed.query and not parsed.fragment
+            and any(parsed.path.startswith(prefix) for prefix in (
+                '/storytold/vectorcraft/releases/download/',
+                '/full-aigc-skills/vectorcraft-skills/releases/download/')))
+
+
 def download(url, destination):
     """下载完成并核对摘要之前，永不运行内容。"""
-    if not url.startswith('https://github.com/storytold/'):
+    if not trusted_release_url(url):
         raise ValueError('untrusted_release_url')
     request = urllib.request.Request(url, headers={'User-Agent': 'craft-skill-bootstrap/0.1'})
     with urllib.request.urlopen(request, timeout=60) as source, destination.open('wb') as out:
@@ -79,7 +90,7 @@ def install(lock, runtime_home, archive=None, platform_key=None):
     if expected is None:
         raise ValueError('unsupported_platform: ' + key)
     artifact, version = lock['artifact'], lock['resolvedVersion']
-    if not re.fullmatch(r'[a-z]+craft-cli', artifact) or not re.fullmatch(r'\d+\.\d+\.\d+', version):
+    if not re.fullmatch(r'[a-z]+craft-cli', artifact) or not re.fullmatch(r'\d+\.\d+\.\d+(?:-craft\.[1-9][0-9]*)?', version):
         raise ValueError('invalid_runtime_identity')
     parent = Path(runtime_home).expanduser().absolute() / artifact.removesuffix('-cli')
     parent.mkdir(parents=True, exist_ok=True)
@@ -132,7 +143,7 @@ def install(lock, runtime_home, archive=None, platform_key=None):
             if result.stdout.strip() != expected.get('versionOutput', f'{artifact} {version}'):
                 raise ValueError('runtime_version_mismatch')
             receipt = dict(expected, name=artifact.removesuffix('-cli'), version=version,
-                           platform=key, versionOutput=result.stdout.strip(), source='official-github-release')
+                           platform=key, versionOutput=result.stdout.strip(), source=('maintained-github-release' if expected['url'].startswith('https://github.com/full-aigc-skills/vectorcraft-skills/releases/download/') else 'official-github-release'))
             (payload / 'installation.json').write_text(json.dumps(receipt, indent=2) + '\n')
             # 同文件系统原子发布。没有任何自动升级/替换已有版本的分支。
             payload.rename(destination)
@@ -142,7 +153,7 @@ def install(lock, runtime_home, archive=None, platform_key=None):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--runtime-home', default=os.environ.get('CRAFT_RUNTIME_HOME', str(Path.home() / '.local/share/craft-runtimes')))
-    parser.add_argument('--archive', type=Path, help='已下载的官方 ZIP；仍强制校验锁定摘要')
+    parser.add_argument('--archive', type=Path, help='已下载的锁定 ZIP；仍强制校验锁定摘要')
     args = parser.parse_args()
     lock = json.loads(Path(__file__).with_name('runtime.lock.json').read_text())
     try:

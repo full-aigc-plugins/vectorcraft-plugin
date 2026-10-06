@@ -180,10 +180,14 @@ def execute(plan, output, runtime_home=None, source=None):
             if index >= len(native['artboards']):
                 raise ValueError('artboard_out_of_range')
             destination = stage / f'artboard-{index + 1}.{item["format"]}'
-            value = command('document.export', {'path': str(destination), 'format': item['format'], 'artboard': index, 'artboards': [index]}, save=False)
+            params = {'path': str(destination), 'format': item['format'], 'artboard': index, 'artboards': [index]}
+            if item['format'] == 'svg':
+                params['artboardContentOnly'] = True
+            value = command('document.export', params, save=False)
             if not destination.is_file() or destination.stat().st_size == 0:
                 raise ValueError('export_missing')
-            outputs.append({'path': destination.name, 'artboardId': native['artboards'][index]['id'], 'warnings': value.get('warnings', [])})
+            outputs.append({'path': destination.name, 'artboardId': native['artboards'][index]['id'], 'warnings': value.get('warnings', []),
+                            **({'isolationPolicy': 'native-paint-bounds; whole-dependent-containers-and-unknown-bounds-retained'} if item['format'] == 'svg' else {})})
         if source_project and sha(source_project) != source_hash:
             raise ValueError('revision_conflict')
         # 不把暂存绝对路径写入可分发记录。
