@@ -35,5 +35,6 @@
   ],
   "currentReleaseDiscoveryEvidence": "docs/evidence/codex-vectorcraft11-assets-first-use-20261006.json",
   "registeredAssetHostEvidence": "docs/evidence/codex-vectorcraft11-assets-first-use-20261006.json",
-  "svgFixedReleaseEvidence": "docs/evidence/codex-release63-svg-first-use-20261006.json"
+  "svgFixedReleaseEvidence": "docs/evidence/codex-release63-svg-first-use-20261006.json",
+  "currentDomainTaskMatrixEvidence": "docs/evidence/codex-current-domain-task-matrix-20261006.json"
 }
