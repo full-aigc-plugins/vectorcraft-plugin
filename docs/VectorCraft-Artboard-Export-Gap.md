@@ -1,5 +1,6 @@
 # VectorCraft multi-artboard SVG isolation gap
 
+Current status: fixed public first use passes for plugin dev.9 / skill source dev.8 / maintained CLI 0.2.0-craft.1, and task 4.22 is complete. Earlier stages below retain their historical evidence scope; the ArtCraft bundle update remains pending.
 Fixed plugin dev.8 / skills dev.7 / native CLI 0.2.0 fails actual single-export-skill cold first use. Three artboards have sizes 128×96, 80×64 and 96×128 with different origins. The first and third use a shared global brand token; the second holds an unrelated green icon.
 
 ```mermaid
@@ -43,3 +44,7 @@ The independent skill source stores `runtime/patches/artboard-svg-isolation.patc
 ## Published maintained native runtime
 
 The release-profile `0.2.0-craft.1` CLI is now published under the independent skill repository. The working-tree export skill cold-downloaded it from HTTPS and passed the three-artboard task in 4.970 seconds, including unaffected SVG/PNG/PDF bytes and source/skill preservation. Working-tree installers and workflow now pin this release and record the conservative SVG isolation policy. Immutable skill/plugin releases, fixed-host first use and the ArtCraft bundle update remain pending. [Public native runtime evidence](evidence/public-artboard-svg-runtime-20261006.json).
+
+## Fixed published plugin acceptance
+
+Plugin dev.9 / skill source dev.8 passes fixed public Codex installation, discovery of all 58 skills and actual installed export-skill cold public native use in 4.985 seconds. The unaffected SVG/PNG/PDF byte gate, dimensions/colors, invalid-board/output rejection and source/skill preservation all pass. All 58 installed hashes remain unchanged. Task 4.22 closes for this domain scope. ArtCraft still pins its older Vector bundle until separately updated. [Fixed installed evidence](evidence/codex-vectorcraft9-artboard-first-use-20261006.json).

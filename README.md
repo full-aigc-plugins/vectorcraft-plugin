@@ -165,10 +165,12 @@ Earlier skill source dev.7 full native regression passes all 42 tests with zero 
 
 Installed plugin dev.8 / skill source dev.7 supplementary acceptance now checks four rectangular boolean operations, native compound-hole winding, independently decoded SVG/PNG/PDF, original delivery preservation and invalid selection rejection. This does not expand support to arbitrary geometry or editor round trips. [Acceptance](docs/VectorCraft-Boolean-Geometry-Acceptance.md).
 
-Known fixed dev.8 first-use gap: an unrelated artboard SVG retains off-board brand paths and changes after a brand-token revision, although its PNG/PDF remain unchanged. A maintained native runtime is published; the repaired immutable skill/plugin snapshot is pending. [Reproduction and design boundary](docs/VectorCraft-Artboard-Export-Gap.md).
+Historical fixed dev.8 first-use gap, resolved by dev.9: an unrelated artboard SVG retains off-board brand paths and changes after a brand-token revision, although its PNG/PDF remain unchanged. A maintained native runtime is published; the repaired immutable skill/plugin snapshot is pending. [Reproduction and design boundary](docs/VectorCraft-Artboard-Export-Gap.md).
 
 A local maintained CLI candidate `0.2.0-craft.1` now passes 954 engine tests, 12 CLI integration tests and the three-artboard isolated archive-install task, including byte-identical unrelated SVG/PNG/PDF after a brand-color edit. Twelve source skill installers support its maintained version identity and provenance. This paragraph records the earlier local candidate stage; the maintained runtime is now published, with fixed skill/plugin acceptance pending. [Candidate evidence](docs/evidence/native-artboard-svg-candidate-20261006.json).
 
 The published maintained native runtime passed working-tree single-skill HTTPS cold first use (4.970 seconds). Immutable skill/plugin release and ArtCraft integration remain pending. [Evidence](docs/evidence/public-artboard-svg-runtime-20261006.json).
 
 Plugin dev.9 vendors immutable skill source dev.8 and maintained native CLI 0.2.0-craft.1. The source native suite passes 46 tests without skips; fixed dev.9 host first use and the ArtCraft bundle update are the remaining integration gates. [Source native regression](docs/evidence/maintained-full-native-suite-20261006.json).
+
+Fixed public plugin dev.9 / skill source dev.8 now passes actual Codex discovery of 58 skills and installed single-export-skill public cold native acceptance (4.985 seconds). All 58 installed skill hashes remain unchanged. OpenSpec 4.22 is verified at this domain scope; the ArtCraft bundle update and complete V1 acceptance remain pending. [Fixed installed evidence](docs/evidence/codex-vectorcraft9-artboard-first-use-20261006.json).
