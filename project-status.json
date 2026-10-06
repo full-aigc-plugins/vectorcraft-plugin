@@ -40,5 +40,6 @@
   "svgFixedReleaseEvidence": "docs/evidence/codex-release63-svg-first-use-20261006.json",
   "currentDomainTaskMatrixEvidence": "docs/evidence/codex-current-domain-task-matrix-20261006.json",
   "completeCommandEntryEvidence": "docs/evidence/complete-commands-20261007.json",
-  "completeCommandAcceptance": "incomplete"
+  "completeCommandAcceptance": "incomplete",
+  "completeCommandColdFirstUseEvidence": "docs/evidence/complete-commands-cold-first-use-20261007.json"
 }
