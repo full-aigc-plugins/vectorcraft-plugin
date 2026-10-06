@@ -12,6 +12,7 @@ import re
 import shutil
 import subprocess
 import tempfile
+import time
 
 def exchange_report(root,outputs,warnings):
     spec=importlib.util.spec_from_file_location('craft_exchange_loss',Path(__file__).with_name('exchange_loss.py'))
@@ -32,6 +33,28 @@ ALLOWED = {
 def sha(path):
     with Path(path).open('rb') as stream:
         return hashlib.file_digest(stream, 'sha256').hexdigest()
+
+
+def pdf_export_date(native, source=None, prior=None):
+    """PDF 日期绑定原生创建时间；旧记录缺少该时间时保留首次交付时间。"""
+    valid = lambda value: type(value) is int and -(2**63) <= value < 2**63
+    created = native.get('metadata', {}).get('created')
+    if created is not None and not valid(created):
+        raise ValueError('invalid_native_pdf_created')
+    if source:
+        record = Path(source) / 'pdf-export-date.json'
+        if record.exists() or record.is_symlink() or record.name in (prior or {}).get('files', {}):
+            if record.is_symlink() or not record.is_file() or sha(record) != (prior or {}).get('files', {}).get(record.name):
+                raise ValueError('pdf_date_digest_mismatch')
+            previous = json.loads(record.read_text())
+            if (previous.get('schema') != 'vectorcraft-pdf-date/v1' or not valid(previous.get('created'))
+                    or previous.get('binding') not in ('native-document-created', 'initial-delivery-time')):
+                raise ValueError('invalid_pdf_date_record')
+            if previous['binding'] == 'native-document-created' and previous['created'] != created:
+                raise ValueError('pdf_date_binding_mismatch')
+            return previous
+    return {'schema': 'vectorcraft-pdf-date/v1', 'created': created if created is not None else int(time.time()),
+            'binding': 'native-document-created' if created is not None else 'initial-delivery-time'}
 
 
 def resolve(value, bindings):
@@ -175,6 +198,9 @@ def execute(plan, output, runtime_home=None, source=None):
             native = reopened.command('document.json', {})
         # 由独立会话重新打开工程取得模型；导出前检查真实画板范围。
         outputs = []
+        pdf_date = pdf_export_date(native, source, prior if source else None) if any(item['format'] == 'pdf' for item in plan.get('exports', [])) else None
+        if pdf_date:
+            (stage / 'pdf-export-date.json').write_text(json.dumps(pdf_date, indent=2) + '\n')
         for item in plan.get('exports', []):
             index = item.get('artboard', 0)
             if index >= len(native['artboards']):
@@ -183,11 +209,14 @@ def execute(plan, output, runtime_home=None, source=None):
             params = {'path': str(destination), 'format': item['format'], 'artboard': index, 'artboards': [index]}
             if item['format'] == 'svg':
                 params['artboardContentOnly'] = True
+            if item['format'] == 'pdf':
+                params['created'] = pdf_date['created']
             value = command('document.export', params, save=False)
             if not destination.is_file() or destination.stat().st_size == 0:
                 raise ValueError('export_missing')
             outputs.append({'path': destination.name, 'artboardId': native['artboards'][index]['id'], 'warnings': value.get('warnings', []),
-                            **({'isolationPolicy': 'native-paint-bounds; whole-dependent-containers-and-unknown-bounds-retained'} if item['format'] == 'svg' else {})})
+                            **({'isolationPolicy': 'native-paint-bounds; whole-dependent-containers-and-unknown-bounds-retained'} if item['format'] == 'svg' else {}),
+                            **({'pdfCreated': pdf_date['created'], 'pdfDateBinding': pdf_date['binding']} if item['format'] == 'pdf' else {})})
         if source_project and sha(source_project) != source_hash:
             raise ValueError('revision_conflict')
         # 不把暂存绝对路径写入可分发记录。

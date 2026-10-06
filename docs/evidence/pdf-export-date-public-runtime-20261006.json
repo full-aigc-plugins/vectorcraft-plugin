@@ -1,0 +1,186 @@
+{
+  "schema": "vectorcraft-pdf-date-public-native-first-use/v1",
+  "scope": "Current working-tree single export skill copied alone; empty runtime; actual public maintained craft.2 HTTPS download, archive/binary/version/license checks; revisions separated by 2.1 seconds; dates independently decoded; fixed new skill/plugin host not yet verified",
+  "samples": [
+    {
+      "revision": "v1",
+      "artboard": 0,
+      "size": [
+        128,
+        96
+      ],
+      "centerRgb": [
+        35,
+        102,
+        232
+      ],
+      "pdfVectorOnly": true
+    },
+    {
+      "revision": "v1",
+      "artboard": 1,
+      "size": [
+        80,
+        64
+      ],
+      "centerRgb": [
+        34,
+        170,
+        102
+      ],
+      "pdfVectorOnly": true
+    },
+    {
+      "revision": "v1",
+      "artboard": 2,
+      "size": [
+        96,
+        128
+      ],
+      "centerRgb": [
+        35,
+        102,
+        232
+      ],
+      "pdfVectorOnly": true
+    },
+    {
+      "revision": "v2",
+      "artboard": 0,
+      "size": [
+        128,
+        96
+      ],
+      "centerRgb": [
+        23,
+        92,
+        206
+      ],
+      "pdfVectorOnly": true
+    },
+    {
+      "revision": "v2",
+      "artboard": 1,
+      "size": [
+        80,
+        64
+      ],
+      "centerRgb": [
+        34,
+        170,
+        102
+      ],
+      "pdfVectorOnly": true
+    },
+    {
+      "revision": "v2",
+      "artboard": 2,
+      "size": [
+        96,
+        128
+      ],
+      "centerRgb": [
+        23,
+        92,
+        206
+      ],
+      "pdfVectorOnly": true
+    }
+  ],
+  "pdfExportDate": {
+    "schema": "vectorcraft-pdf-date/v1",
+    "created": 1791271800,
+    "binding": "native-document-created"
+  },
+  "originalFiles": {
+    "plan.json": "c9877d733fe58fe7f1e8cb190a5514ce7a2e253ca9d7986a5ce16810db879847",
+    "project.vectorcraft": "1c53bdda3058d08b8c8325cc6a4be59a5caf6660ebee3726cd2e4af09cf352e4",
+    "exchange-loss.json": "e949bad6c28c0ee74383a290ddd7d5e181b7c909f4d0a4427b693bba7fc8c127",
+    "pdf-export-date.json": "7f1f2f91691239b4c44a9a07ef52e4349f82d354965f7686773f3dcd81183040",
+    "native.json": "691655fa94ca906cd48414e84700da3d488cc8e7724882ef0113a5fbc3fa16a9",
+    "artboard-1.pdf": "d80d4ce1744926aa3301223fe3be0f71fd88a59592a147084c3e09027a5b77b6",
+    "artboard-3.png": "0728733da562650f6b4f2036f9afd321b8a62a478ac2e7aab1f046ffcef7291b",
+    "artboard-2.png": "6e243f48fdf295f0954ddc21f9115de6c3d5033569ebc055229321ee3acb9e67",
+    "manifest.json": "819391be4c6a12533f741fb38b79cf3f2a84f7b298931fa3ad4cbc43ae1cea4e",
+    "artboard-2.pdf": "d22b6ba20345e1fd26a7b16c4f56303f7258d0408a3fb49e8914d1baf18927a9",
+    "artboard-1.png": "fa153c398f76e7bb5af13912c025754aa463397208fd522e730070573af071c3",
+    "artboard-3.pdf": "82800f445bd28b2413ae8f4b4d2568cee6ca6accbc60851b782c59b9b6ed0841",
+    "artboard-1.svg": "fbad7bd318abce62d16d0fb6b4f5dab855a8b6f299df86d34a233d21b9e714a1",
+    "artboard-2.svg": "e1165468af66773f704b362b00b8c09f35c4ffb6342e9f287128e897fd4f6ee4",
+    "artboard-3.svg": "eeaf51a1cdc931894fb73366f96aed7adf6cdd19fa29645ffbf65c4d42284f95",
+    "operations.json": "dc94bd4c1dccd9f4ec87f429e69e91b568b6ebe816331883aafd979cefc6f20a"
+  },
+  "revisedFiles": {
+    "plan.json": "3f05167e51efa1315840d2c233463fd0d95bd8d76ac0b7744c80fb7d2db0b00b",
+    "project.vectorcraft": "f256147f143a5dfebea55df1302a35a39ca32746d9e32048d512c9c2f90e11eb",
+    "exchange-loss.json": "b598cd02bcdab8bb0a1b9bc29355501e3548d04c5d2ef46bf01e50258267e09b",
+    "pdf-export-date.json": "7f1f2f91691239b4c44a9a07ef52e4349f82d354965f7686773f3dcd81183040",
+    "native.json": "58193bcdc2e6effc7e77ff7b5d8f6bd79019de8a9cdb497767df048adfe6df7d",
+    "artboard-1.pdf": "defff97f53d9e4cd43ffe54a2f3cbeb4c3161ccebc1f748a1f34a6885b5dcd91",
+    "artboard-3.png": "6266064095a47051a33ed59ddb5e0e376b320be6cc1c8d8e1d87181c90e59f27",
+    "artboard-2.png": "6e243f48fdf295f0954ddc21f9115de6c3d5033569ebc055229321ee3acb9e67",
+    "manifest.json": "9fc1f182ce15ca8eaf9559f7ea20a4ab65993ab44091042bf18816ab36e72316",
+    "artboard-2.pdf": "d22b6ba20345e1fd26a7b16c4f56303f7258d0408a3fb49e8914d1baf18927a9",
+    "artboard-1.png": "5c2e79ab63c70c1e629fbccd9233e5c4b9e37d71659fe19cb3b92c52bc25bbb3",
+    "artboard-3.pdf": "364718484c17429f367a51bfb71e2d8aed549cef1d081e129d9b40df35683ee7",
+    "artboard-1.svg": "beb057ce0f0794b810e5ad83687e104741d27b2faf03c3b348fb5a49c50d7678",
+    "artboard-2.svg": "e1165468af66773f704b362b00b8c09f35c4ffb6342e9f287128e897fd4f6ee4",
+    "artboard-3.svg": "2435423a725049016a13a7e1ad35858d6104bd4f2b1f00e96ccc3e85c59b1f43",
+    "operations.json": "f36283fa84034fb5c69edf7e48956c53012951df0b9316cbb7d7f4cf46685db2"
+  },
+  "artboards": [
+    {
+      "id": 1,
+      "name": "Artboard 1",
+      "rect": {
+        "x0": 0.0,
+        "x1": 128.0,
+        "y0": 0.0,
+        "y1": 96.0
+      },
+      "show_center_mark": false,
+      "show_cross_hairs": false
+    },
+    {
+      "id": 2,
+      "name": "Icon",
+      "rect": {
+        "x0": 200.0,
+        "x1": 280.0,
+        "y0": 20.0,
+        "y1": 84.0
+      },
+      "show_center_mark": false,
+      "show_cross_hairs": false
+    },
+    {
+      "id": 3,
+      "name": "Portrait variant",
+      "rect": {
+        "x0": 400.0,
+        "x1": 496.0,
+        "y0": -40.0,
+        "y1": 88.0
+      },
+      "show_center_mark": false,
+      "show_cross_hairs": false
+    }
+  ],
+  "unrelatedIconAllFormatsUnchanged": true,
+  "invalidBoardRejected": true,
+  "sourceAndSkillFilesPreserved": true,
+  "runtimeLockSha256": "7b6bd7f3fab84b757d4ea20ac91b74d89b417ec061efc6ae320dda97a422cc07",
+  "status": "passed",
+  "seconds": 7.228,
+  "runtimeEntry": {
+    "url": "https://github.com/full-aigc-skills/vectorcraft-skills/releases/download/runtime-v0.2.0-craft.2/vectorcraft-cli-0.2.0-craft.2-darwin-arm64.zip",
+    "archiveSha256": "0e3402b6c810551075183471f07cf05f925e3a91337cc188dd1f5b3ada6108de",
+    "binarySha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+    "versionOutput": "vectorcraft-cli 0.2.0-craft.2",
+    "evidenceScope": "maintained native SVG isolation and stable explicit PDF date; native engine and CLI tests"
+  },
+  "nativeTestsPassed": 956,
+  "cliIntegrationPassed": 12,
+  "publicRuntimeRelease": "https://github.com/full-aigc-skills/vectorcraft-skills/releases/tag/runtime-v0.2.0-craft.2",
+  "driverSha256": "02371d9ad818e4a02f942c55776af61fda2bba1b594b27f4cbf527606d5f08ee"
+}

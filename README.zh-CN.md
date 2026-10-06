@@ -34,9 +34,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.9 |
+| Metadata version | 0.1.0-dev.10 |
 | Stage | implementation-in-progress |
-| Skills source | vectorcraft-skills / v0.1.0-dev.8 |
+| Skills source | vectorcraft-skills / v0.1.0-dev.9 |
 | Execution | 上游 CLI；ArtCraft 使用子适配器 |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |
@@ -174,3 +174,5 @@ python3 -I -B skills/vectorcraft-use/scripts/workflow.py --help
 插件 dev.9 收录不可变技能源 dev.8，锁定维护版原生 CLI 0.2.0-craft.1。源原生回归 46 项全部通过、零跳过；固定 dev.9 宿主首次使用及 ArtCraft bundle 更新仍待完成。[源原生回归](docs/evidence/maintained-full-native-suite-20261006.json)。
 
 固定公开插件 dev.9／技能源 dev.8 已通过 Codex 发现全部 58 个技能，以及实际安装后的单导出技能公开冷启动原生验收（4.985 秒）。全部 58 个安装技能摘要不变。OpenSpec 4.22 的领域验收已完成，ArtCraft bundle 更新与完整 V1 验收仍待完成。[固定安装证据](docs/evidence/codex-vectorcraft9-artboard-first-use-20261006.json).
+
+插件 dev.10 收录不可变技能源 dev.9，锁定维护版 CLI craft.2。稳定 PDF 创建日期与摘要绑定的日期记录通过 49 项完整原生回归；固定新宿主与 ArtCraft 混合验收仍待完成。[日期架构](docs/VectorCraft-PDF-Date-Architecture.zh_CN.md)、[原生测试](docs/evidence/craft2-full-native-suite-20261006.json)。

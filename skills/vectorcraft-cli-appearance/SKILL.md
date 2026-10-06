@@ -53,4 +53,6 @@ CLI argv 在 `--` 后，原生子命令必须放首位。安装参数放分隔�
 
 使用原生全局色板关联 Logo、字标与画板变体，再以 `swatch.edit` 更新；按实际色板回执名称和原工程摘要生成另存修订。读取本技能内的 [品牌 token 指南](references/brand-tokens.md)，示例为 `examples/brand-token-assets.json`。
 
-当前运行时为基于官方 `v0.2.0` 的维护版 `0.2.0-craft.1`，由 `full-aigc-skills/vectorcraft-skills` 发布；安装记录明确区分维护版来源。SVG 工作流按原生绘制边界隔离画板，保守保留群组、裁切和未知范围依赖。
+当前运行时为基于官方 `v0.2.0` 的维护版 `0.2.0-craft.2`，由 `full-aigc-skills/vectorcraft-skills` 发布；安装记录明确区分维护版来源。SVG 工作流按原生绘制边界隔离画板，保守保留群组、裁切和未知范围依赖。
+
+PDF 工作流绑定工程创建日期；缺少创建日期时保留首次导出日期记录。`pdf-export-date.json` 的摘要写入交付清单，返工时校验该记录；原生工程日期与修订历史保持可追溯。

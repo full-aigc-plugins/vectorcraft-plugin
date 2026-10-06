@@ -1,7 +1,7 @@
 {
   "schema": "craft-skill-command-evidence/v1",
   "pluginId": "vectorcraft",
-  "runtimeVersion": "0.2.0-craft.1",
+  "runtimeVersion": "0.2.0-craft.2",
   "upstreamRepository": "https://github.com/storytold/vectorcraft",
   "upstreamCommit": "90e022b0c05f12171a4e9bebe0894fa62f7bc95c",
   "scope": "observed command catalogue, not capability or creative acceptance",
@@ -271,6 +271,6 @@
       "enabledAtEmptySession": false
     }
   ],
-  "runtimePatchSourceCommit": "87355039ca5a273e1d73345cf21f5a622eef194f",
+  "runtimePatchSourceCommit": "402de7b5f698797af9195cbd380cc97716883bc8",
   "analysisCommit": "36a6a8ae49f0e2d1059361ab1f842b1ec172bc9e"
 }

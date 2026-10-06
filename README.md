@@ -34,9 +34,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.9 |
+| Metadata version | 0.1.0-dev.10 |
 | Stage | implementation-in-progress |
-| Skills source | vectorcraft-skills / v0.1.0-dev.8 |
+| Skills source | vectorcraft-skills / v0.1.0-dev.9 |
 | Execution | Upstream CLI; ArtCraft uses child adapters |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |
@@ -174,3 +174,5 @@ The published maintained native runtime passed working-tree single-skill HTTPS c
 Plugin dev.9 vendors immutable skill source dev.8 and maintained native CLI 0.2.0-craft.1. The source native suite passes 46 tests without skips; fixed dev.9 host first use and the ArtCraft bundle update are the remaining integration gates. [Source native regression](docs/evidence/maintained-full-native-suite-20261006.json).
 
 Fixed public plugin dev.9 / skill source dev.8 now passes actual Codex discovery of 58 skills and installed single-export-skill public cold native acceptance (4.985 seconds). All 58 installed skill hashes remain unchanged. OpenSpec 4.22 is verified at this domain scope; the ArtCraft bundle update and complete V1 acceptance remain pending. [Fixed installed evidence](docs/evidence/codex-vectorcraft9-artboard-first-use-20261006.json).
+
+Plugin dev.10 vendors immutable skill source dev.9 and maintained CLI craft.2. Stable PDF creation dates and hash-bound date records pass the 49-test native source suite; fixed new host and ArtCraft mixed acceptance remain pending. [Date architecture](docs/VectorCraft-PDF-Date-Architecture.md), [native tests](docs/evidence/craft2-full-native-suite-20261006.json).

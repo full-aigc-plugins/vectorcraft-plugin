@@ -1,0 +1,200 @@
+{
+  "schema": "vectorcraft-pdf-date-local-candidate/v1",
+  "scope": "working-tree single export skill copied alone; explicit local candidate archive install; distinct rectangles and global RGB token; revisions separated by 2.1 seconds; PDF dates decoded and bound; independent Pillow/PyMuPDF checks",
+  "samples": [
+    {
+      "revision": "v1",
+      "artboard": 0,
+      "size": [
+        128,
+        96
+      ],
+      "centerRgb": [
+        35,
+        102,
+        232
+      ],
+      "pdfVectorOnly": true
+    },
+    {
+      "revision": "v1",
+      "artboard": 1,
+      "size": [
+        80,
+        64
+      ],
+      "centerRgb": [
+        34,
+        170,
+        102
+      ],
+      "pdfVectorOnly": true
+    },
+    {
+      "revision": "v1",
+      "artboard": 2,
+      "size": [
+        96,
+        128
+      ],
+      "centerRgb": [
+        35,
+        102,
+        232
+      ],
+      "pdfVectorOnly": true
+    },
+    {
+      "revision": "v2",
+      "artboard": 0,
+      "size": [
+        128,
+        96
+      ],
+      "centerRgb": [
+        23,
+        92,
+        206
+      ],
+      "pdfVectorOnly": true
+    },
+    {
+      "revision": "v2",
+      "artboard": 1,
+      "size": [
+        80,
+        64
+      ],
+      "centerRgb": [
+        34,
+        170,
+        102
+      ],
+      "pdfVectorOnly": true
+    },
+    {
+      "revision": "v2",
+      "artboard": 2,
+      "size": [
+        96,
+        128
+      ],
+      "centerRgb": [
+        23,
+        92,
+        206
+      ],
+      "pdfVectorOnly": true
+    }
+  ],
+  "pdfExportDate": {
+    "schema": "vectorcraft-pdf-date/v1",
+    "created": 1791271464,
+    "binding": "native-document-created"
+  },
+  "originalFiles": {
+    "plan.json": "c9877d733fe58fe7f1e8cb190a5514ce7a2e253ca9d7986a5ce16810db879847",
+    "project.vectorcraft": "210970446b3368dfcaba543dbdeef371372d796ba6cacb42db63ea649209eba7",
+    "exchange-loss.json": "2606978d18c426d8c400295317a78f2c57d78c34c0d32ed9e6a9e4fc9d231519",
+    "pdf-export-date.json": "aec8f2061a0fad52de99acd161086e2e3a6dfacabe8edab8a8bda75393ae8bb1",
+    "native.json": "242e84704a8aad24264b8b89941e3115b2fa284bb5eacb67dc4521c95ee9b083",
+    "artboard-1.pdf": "5ad6497cd76a6a9261286e6e9f6aea00a067425b197cb89b4b07ee5f327fb1ae",
+    "artboard-3.png": "4343572fda10d27718e365b40389af6061926602cf69bdb59c76915473429254",
+    "artboard-2.png": "5a87a23de3610c6085d40c6f4e2ab1d2c1d8aea94aaa7b1ef79ea09540000cd7",
+    "manifest.json": "b1e284bd45010b177ab2ee13ea248a47231d512a1b16ce2c0a53bb27ba37bf24",
+    "artboard-2.pdf": "876f86ad0629c83e1eae3c148faa589f2f953c1c631181c83b3bef1ca8b85c63",
+    "artboard-1.png": "b60e62eda45dd0ea0ba08a88f6fb699454766ff269efc45456ffb3486eb7c231",
+    "artboard-3.pdf": "51b21e425fcfd6b3e082a61fa154d7919b6d4b2f547cd4dedf990892516d0891",
+    "artboard-1.svg": "fbad7bd318abce62d16d0fb6b4f5dab855a8b6f299df86d34a233d21b9e714a1",
+    "artboard-2.svg": "e1165468af66773f704b362b00b8c09f35c4ffb6342e9f287128e897fd4f6ee4",
+    "artboard-3.svg": "eeaf51a1cdc931894fb73366f96aed7adf6cdd19fa29645ffbf65c4d42284f95",
+    "operations.json": "5e43efe8d4a1cce60478175a24580d84da99b9b9f5c8d4a8f5846a6436f55b0f"
+  },
+  "revisedFiles": {
+    "plan.json": "d7043e60422338f038f7356599de9d9931da3fa01cb1a6ae4aee6f0727ff12d2",
+    "project.vectorcraft": "2856e5a09ae4c1883495f5743a23cfdbf8264f70ddb603daf1c4c16b644210ea",
+    "exchange-loss.json": "4ed14a4a000e8cfb7f7d4c6b43c19fd7ff9dfc841fcc70c99392640a2b446651",
+    "pdf-export-date.json": "aec8f2061a0fad52de99acd161086e2e3a6dfacabe8edab8a8bda75393ae8bb1",
+    "native.json": "17bf97076e293468192b821952b95af9d72032b13cf6b5fbab561e7c8f50dcd3",
+    "artboard-1.pdf": "ced3ef19084e05dbabde0ad150ea7e5deb34c54b17e98eb02e06f6b0720d4c84",
+    "artboard-3.png": "367c168673c34a194ac17ea52cf528a93e99af62dae121c795d20f2f422f6680",
+    "artboard-2.png": "5a87a23de3610c6085d40c6f4e2ab1d2c1d8aea94aaa7b1ef79ea09540000cd7",
+    "manifest.json": "976b89173bede73490fcb685e73a8394988897cc299a02ac9f201bdd5430e7c9",
+    "artboard-2.pdf": "876f86ad0629c83e1eae3c148faa589f2f953c1c631181c83b3bef1ca8b85c63",
+    "artboard-1.png": "4994b82a1c261390877ddbd8ebfc89780c895f40b5fb52d1d2d81a49b6bfc796",
+    "artboard-3.pdf": "bae958ecdf78695e980d2a21ab39958d25ac2ae385ee6ce5d3fa32c62768710d",
+    "artboard-1.svg": "beb057ce0f0794b810e5ad83687e104741d27b2faf03c3b348fb5a49c50d7678",
+    "artboard-2.svg": "e1165468af66773f704b362b00b8c09f35c4ffb6342e9f287128e897fd4f6ee4",
+    "artboard-3.svg": "2435423a725049016a13a7e1ad35858d6104bd4f2b1f00e96ccc3e85c59b1f43",
+    "operations.json": "8dff7366c2e8fe7320ae92e694f66680fe0d60303f69e60c02f833e1ac5586f4"
+  },
+  "artboards": [
+    {
+      "id": 1,
+      "name": "Artboard 1",
+      "rect": {
+        "x0": 0.0,
+        "x1": 128.0,
+        "y0": 0.0,
+        "y1": 96.0
+      },
+      "show_center_mark": false,
+      "show_cross_hairs": false
+    },
+    {
+      "id": 2,
+      "name": "Icon",
+      "rect": {
+        "x0": 200.0,
+        "x1": 280.0,
+        "y0": 20.0,
+        "y1": 84.0
+      },
+      "show_center_mark": false,
+      "show_cross_hairs": false
+    },
+    {
+      "id": 3,
+      "name": "Portrait variant",
+      "rect": {
+        "x0": 400.0,
+        "x1": 496.0,
+        "y0": -40.0,
+        "y1": 88.0
+      },
+      "show_center_mark": false,
+      "show_cross_hairs": false
+    }
+  ],
+  "unrelatedIconAllFormatsUnchanged": true,
+  "invalidBoardRejected": true,
+  "sourceAndSkillFilesPreserved": true,
+  "runtimeLockSha256": "585adbd7e9b505ee8a65db81fcda56b7b54211d4bbad823e8892ba7b844b8d65",
+  "status": "passed",
+  "publicRelease": false,
+  "seconds": 3.329,
+  "revisionIntervalSeconds": 2.1,
+  "nativeTests": {
+    "passed": 956,
+    "failed": 0,
+    "logSha256": "71c09a6fb7a5cc40791ad9d0a770400dfb2a66904d918058e70f05cf3c639fa9"
+  },
+  "patchSha256": "48ed297dcdb292913aa5d1a15e0cb4dbde5ec6ba2a9736096ba73638850db870",
+  "runtime": {
+    "version": "vectorcraft-cli 0.2.0-craft.2",
+    "archiveSha256": "d101b8dfbcedaf802814e8a355f8f360788d35d62e2b590b2c5e2f5ff26dbd25",
+    "binarySha256": "b10304b696247ead83eb7eaa427f750a74b80c2d8fe902ae9032214c76391c9d",
+    "publicRelease": false
+  },
+  "sourceSuite": {
+    "total": 49,
+    "passed": 33,
+    "skipped": 16,
+    "seconds": 10.762
+  },
+  "notVerified": [
+    "public craft.2 archive install",
+    "fixed new skill/plugin host acceptance",
+    "ArtCraft updated domain bundle mixed first use"
+  ]
+}
