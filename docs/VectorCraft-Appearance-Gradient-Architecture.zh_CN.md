@@ -29,3 +29,5 @@ flowchart LR
 源候选验证：12 项独立技能分别从空运行时安装，创建、保存重开、改色返工和错误参数拒绝通过；96 项回归中 73 通过、23 为明确可选跳过。[候选证据](evidence/vector-appearance-candidate-20261007.json)。固定宿主及 Art 新领域分发尚未由本证据确认。
 
 PNG 实际解码且目标像素改变；无关联控制对象 JSON 与像素、目标几何与 ID、顶层叠加填充和原交付摘要不变。SVG 观察到实际 `linearGradient`；PDF 仅确认文件头结构。PDF 跨编辑器视觉和可编辑性、GUI、全部 585 命令逐项执行以及完整 V1 仍需独立验收。
+
+固定版本验证：插件 `v0.1.0-dev.21` / 技能源 `v0.1.0-dev.19` 的 12 项实际安装技能再次通过空运行时原生创建与返工，58 项安装身份不变、无加载错误；四项插件标签 CI 通过，两个公开 ZIP 与标签 Git archive 摘要一致。Art 更新分发仍待验证。 [Evidence](evidence/codex-vectorcraft-gradient-first-use-20261007.json).

@@ -37,7 +37,8 @@
     "2.10": "docs/evidence/codex-native-download-first-use-20261007.json",
     "8.11": "docs/evidence/codex-native-download-first-use-20261007.json",
     "8.12": "docs/evidence/codex-native-gateway-first-use-20261007.json",
-    "8.13": "docs/evidence/vector-appearance-candidate-20261007.json"
+    "8.13": "docs/evidence/vector-appearance-candidate-20261007.json",
+    "8.15": "docs/evidence/codex-vectorcraft-gradient-first-use-20261007.json"
   },
   "hostValidationEvidence": "docs/evidence/codex-protocol-fault-first-use-20261007.json",
   "hostValidationStatus": "fixed-protocol-repair-install-and-discovery-passed",
@@ -77,5 +78,6 @@
   "failedStageHostEvidence": "docs/evidence/codex-failed-stage-first-use-20261007.json",
   "nativeDownloadFixedHostEvidence": "docs/evidence/codex-native-download-first-use-20261007.json",
   "nativeDownloadAcceptance": "bounded-fixed-installed-macos-arm64-passed; exhaustive commands and fullV1 remain open",
-  "appearanceCandidateEvidence": "docs/evidence/vector-appearance-candidate-20261007.json"
+  "appearanceCandidateEvidence": "docs/evidence/vector-appearance-candidate-20261007.json",
+  "appearanceFixedInstalledEvidence": "docs/evidence/codex-vectorcraft-gradient-first-use-20261007.json"
 }

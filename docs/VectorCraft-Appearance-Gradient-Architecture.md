@@ -29,3 +29,5 @@ Explicit IDs do not replace live selection or GUI prerequisites. The gateway ret
 Source-candidate evidence covers 12 independent skills starting with empty runtimes: installation, native creation/reopening, linked swatch revision and invalid-geometry rejection. Regression: 96 total, 73 passed, 23 optional skips. [Evidence](evidence/vector-appearance-candidate-20261007.json). It does not establish the new fixed installed host or Art distribution.
 
 Decoded PNG target pixels change while control node/pixels, target geometry/IDs, top fill and original delivery remain unchanged. SVG contains a real `linearGradient`. PDF validation observes the header only. Cross-editor PDF appearance/editability, GUI, exhaustive 585-command execution and full V1 acceptance remain open.
+
+Fixed release validation: installed plugin `v0.1.0-dev.21` / source `v0.1.0-dev.19` passes the same 12 cold native appearance cases; all 58 installed identities remain unchanged, no loading errors. Four plugin tag CI checks pass; both public ZIPs match exact tagged Git archives. Updated Art distribution remains pending. [Evidence](evidence/codex-vectorcraft-gradient-first-use-20261007.json).
