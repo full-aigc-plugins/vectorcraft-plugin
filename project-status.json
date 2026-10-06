@@ -22,10 +22,11 @@
     "4.24": "docs/evidence/vector-assets-candidate-20261006.json",
     "4.25": "docs/evidence/codex-release63-svg-first-use-20261006.json",
     "8.1": "docs/evidence/complete-commands-20261007.json",
-    "8.2": "docs/evidence/complete-commands-20261007.json"
+    "8.2": "docs/evidence/complete-commands-20261007.json",
+    "8.4": "docs/evidence/codex-complete-command-first-use-20261007.json"
   },
-  "hostValidationEvidence": "docs/evidence/codex-vectorcraft11-assets-first-use-20261006.json",
-  "hostValidationStatus": "bounded-installed-native-asset-replacement-relocation-and-export-passed",
+  "hostValidationEvidence": "docs/evidence/codex-complete-command-first-use-20261007.json",
+  "hostValidationStatus": "bounded-fixed-installed-cold-first-use-passed",
   "knownFirstUseFailures": [],
   "resolvedFirstUseFailures": [
     {
@@ -35,11 +36,12 @@
       "resolutionEvidence": "docs/evidence/codex-vectorcraft9-artboard-first-use-20261006.json"
     }
   ],
-  "currentReleaseDiscoveryEvidence": "docs/evidence/codex-vectorcraft11-assets-first-use-20261006.json",
+  "currentReleaseDiscoveryEvidence": "docs/evidence/codex-complete-command-first-use-20261007.json",
   "registeredAssetHostEvidence": "docs/evidence/codex-vectorcraft11-assets-first-use-20261006.json",
   "svgFixedReleaseEvidence": "docs/evidence/codex-release63-svg-first-use-20261006.json",
   "currentDomainTaskMatrixEvidence": "docs/evidence/codex-current-domain-task-matrix-20261006.json",
   "completeCommandEntryEvidence": "docs/evidence/complete-commands-20261007.json",
   "completeCommandAcceptance": "incomplete",
-  "completeCommandColdFirstUseEvidence": "docs/evidence/complete-commands-cold-first-use-20261007.json"
+  "completeCommandColdFirstUseEvidence": "docs/evidence/complete-commands-cold-first-use-20261007.json",
+  "currentFixedFirstUseEvidence": "docs/evidence/codex-complete-command-first-use-20261007.json"
 }
