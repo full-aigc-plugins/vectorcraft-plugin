@@ -1,0 +1,935 @@
+{
+  "schema": "craft-domain-protocol-fault-first-use/v1",
+  "domain": "vectorcraft",
+  "result": "PASS",
+  "skills": 12,
+  "faultCases": 72,
+  "elapsedSeconds": 86.858,
+  "cases": [
+    {
+      "schema": "craft-native-protocol-fault-first-use/v1",
+      "domain": "vectorcraft",
+      "result": "PASS",
+      "coldInstall": "PASS",
+      "cases": [
+        {
+          "fault": "malformed",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "784d06842295c0a358c247d8f802375fe88ca5dde2828837716268982fd8169f",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "scalar",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "f22c3ed61d545111f4feb3604b32b60b1870283c23e1df53b686de1be7912446",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "missing",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "f22c3ed61d545111f4feb3604b32b60b1870283c23e1df53b686de1be7912446",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "ambiguous",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "f22c3ed61d545111f4feb3604b32b60b1870283c23e1df53b686de1be7912446",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "nonfinite",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "f22c3ed61d545111f4feb3604b32b60b1870283c23e1df53b686de1be7912446",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "tool-content",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "f22c3ed61d545111f4feb3604b32b60b1870283c23e1df53b686de1be7912446",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        }
+      ],
+      "entrySha256": "d9b1fd19c18aaef7e51b5dd03b8e14e0802883f5e8d58f1094ea2fafc2f4adc4",
+      "transportSha256": "40f31e45cf21d237f0df2bdcf09cf5a880309616d44b9b7a1b58c952b181ec7d",
+      "testSha256": "db92ee754ed0a9884b9e74ccf6d30cb3a07cca768ceedbcfbee6ac4961739f95",
+      "checks": [
+        "single skill copy",
+        "fresh public locked runtime",
+        "native save before injected response fault",
+        "one save request",
+        "unknown journal and failure receipt",
+        "no later operations",
+        "saved native project reopened",
+        "original delivery and skills unchanged"
+      ],
+      "scope": "six injected response faults after real native save; not exhaustive commands or GUI acceptance",
+      "skill": "vectorcraft-use"
+    },
+    {
+      "schema": "craft-native-protocol-fault-first-use/v1",
+      "domain": "vectorcraft",
+      "result": "PASS",
+      "coldInstall": "PASS",
+      "cases": [
+        {
+          "fault": "malformed",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "7244d0df6a838516814d6e6da2a187abfda6c9486f9543e27bf87d05be8e9277",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "scalar",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "7244d0df6a838516814d6e6da2a187abfda6c9486f9543e27bf87d05be8e9277",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "missing",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "7244d0df6a838516814d6e6da2a187abfda6c9486f9543e27bf87d05be8e9277",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "ambiguous",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "7244d0df6a838516814d6e6da2a187abfda6c9486f9543e27bf87d05be8e9277",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "nonfinite",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "7244d0df6a838516814d6e6da2a187abfda6c9486f9543e27bf87d05be8e9277",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "tool-content",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "7244d0df6a838516814d6e6da2a187abfda6c9486f9543e27bf87d05be8e9277",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        }
+      ],
+      "entrySha256": "d9b1fd19c18aaef7e51b5dd03b8e14e0802883f5e8d58f1094ea2fafc2f4adc4",
+      "transportSha256": "40f31e45cf21d237f0df2bdcf09cf5a880309616d44b9b7a1b58c952b181ec7d",
+      "testSha256": "db92ee754ed0a9884b9e74ccf6d30cb3a07cca768ceedbcfbee6ac4961739f95",
+      "checks": [
+        "single skill copy",
+        "fresh public locked runtime",
+        "native save before injected response fault",
+        "one save request",
+        "unknown journal and failure receipt",
+        "no later operations",
+        "saved native project reopened",
+        "original delivery and skills unchanged"
+      ],
+      "scope": "six injected response faults after real native save; not exhaustive commands or GUI acceptance",
+      "skill": "vectorcraft-cli"
+    },
+    {
+      "schema": "craft-native-protocol-fault-first-use/v1",
+      "domain": "vectorcraft",
+      "result": "PASS",
+      "coldInstall": "PASS",
+      "cases": [
+        {
+          "fault": "malformed",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "8189171e42a91271de84c705c3ddee62e410fc500876c36c6fccd302325c2ae1",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "scalar",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "0f9b54630ab4c3b9511f6a5ecabe9a9dcb393463c0a930f7d1729cb411b9474e",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "missing",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "0f9b54630ab4c3b9511f6a5ecabe9a9dcb393463c0a930f7d1729cb411b9474e",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "ambiguous",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "0f9b54630ab4c3b9511f6a5ecabe9a9dcb393463c0a930f7d1729cb411b9474e",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "nonfinite",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "0f9b54630ab4c3b9511f6a5ecabe9a9dcb393463c0a930f7d1729cb411b9474e",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "tool-content",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "0f9b54630ab4c3b9511f6a5ecabe9a9dcb393463c0a930f7d1729cb411b9474e",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        }
+      ],
+      "entrySha256": "d9b1fd19c18aaef7e51b5dd03b8e14e0802883f5e8d58f1094ea2fafc2f4adc4",
+      "transportSha256": "40f31e45cf21d237f0df2bdcf09cf5a880309616d44b9b7a1b58c952b181ec7d",
+      "testSha256": "db92ee754ed0a9884b9e74ccf6d30cb3a07cca768ceedbcfbee6ac4961739f95",
+      "checks": [
+        "single skill copy",
+        "fresh public locked runtime",
+        "native save before injected response fault",
+        "one save request",
+        "unknown journal and failure receipt",
+        "no later operations",
+        "saved native project reopened",
+        "original delivery and skills unchanged"
+      ],
+      "scope": "six injected response faults after real native save; not exhaustive commands or GUI acceptance",
+      "skill": "vectorcraft-cli-setup"
+    },
+    {
+      "schema": "craft-native-protocol-fault-first-use/v1",
+      "domain": "vectorcraft",
+      "result": "PASS",
+      "coldInstall": "PASS",
+      "cases": [
+        {
+          "fault": "malformed",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "2560891c26b89b64a320767be4b79bf759e226b7b7ff7f910fa6f5393ea9131b",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "scalar",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "2560891c26b89b64a320767be4b79bf759e226b7b7ff7f910fa6f5393ea9131b",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "missing",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "2560891c26b89b64a320767be4b79bf759e226b7b7ff7f910fa6f5393ea9131b",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "ambiguous",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "2560891c26b89b64a320767be4b79bf759e226b7b7ff7f910fa6f5393ea9131b",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "nonfinite",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "2560891c26b89b64a320767be4b79bf759e226b7b7ff7f910fa6f5393ea9131b",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "tool-content",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "2560891c26b89b64a320767be4b79bf759e226b7b7ff7f910fa6f5393ea9131b",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        }
+      ],
+      "entrySha256": "d9b1fd19c18aaef7e51b5dd03b8e14e0802883f5e8d58f1094ea2fafc2f4adc4",
+      "transportSha256": "40f31e45cf21d237f0df2bdcf09cf5a880309616d44b9b7a1b58c952b181ec7d",
+      "testSha256": "db92ee754ed0a9884b9e74ccf6d30cb3a07cca768ceedbcfbee6ac4961739f95",
+      "checks": [
+        "single skill copy",
+        "fresh public locked runtime",
+        "native save before injected response fault",
+        "one save request",
+        "unknown journal and failure receipt",
+        "no later operations",
+        "saved native project reopened",
+        "original delivery and skills unchanged"
+      ],
+      "scope": "six injected response faults after real native save; not exhaustive commands or GUI acceptance",
+      "skill": "vectorcraft-cli-project"
+    },
+    {
+      "schema": "craft-native-protocol-fault-first-use/v1",
+      "domain": "vectorcraft",
+      "result": "PASS",
+      "coldInstall": "PASS",
+      "cases": [
+        {
+          "fault": "malformed",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "34338786ff5f2b47e2cce397f783a080f9809b576cc8ace32115ec4ce6e5b1e8",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "scalar",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "e2f8dae6f9a97d0515749048b408f50e684a30dc722f8b3aace44004003299ef",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "missing",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "e2f8dae6f9a97d0515749048b408f50e684a30dc722f8b3aace44004003299ef",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "ambiguous",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "e2f8dae6f9a97d0515749048b408f50e684a30dc722f8b3aace44004003299ef",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "nonfinite",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "e2f8dae6f9a97d0515749048b408f50e684a30dc722f8b3aace44004003299ef",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "tool-content",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "e2f8dae6f9a97d0515749048b408f50e684a30dc722f8b3aace44004003299ef",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        }
+      ],
+      "entrySha256": "d9b1fd19c18aaef7e51b5dd03b8e14e0802883f5e8d58f1094ea2fafc2f4adc4",
+      "transportSha256": "40f31e45cf21d237f0df2bdcf09cf5a880309616d44b9b7a1b58c952b181ec7d",
+      "testSha256": "db92ee754ed0a9884b9e74ccf6d30cb3a07cca768ceedbcfbee6ac4961739f95",
+      "checks": [
+        "single skill copy",
+        "fresh public locked runtime",
+        "native save before injected response fault",
+        "one save request",
+        "unknown journal and failure receipt",
+        "no later operations",
+        "saved native project reopened",
+        "original delivery and skills unchanged"
+      ],
+      "scope": "six injected response faults after real native save; not exhaustive commands or GUI acceptance",
+      "skill": "vectorcraft-cli-paths"
+    },
+    {
+      "schema": "craft-native-protocol-fault-first-use/v1",
+      "domain": "vectorcraft",
+      "result": "PASS",
+      "coldInstall": "PASS",
+      "cases": [
+        {
+          "fault": "malformed",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "7da99109cb5a51265665e2b495e440311f382906b2d52cd8f0f8ac0c5fb275bf",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "scalar",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "7da99109cb5a51265665e2b495e440311f382906b2d52cd8f0f8ac0c5fb275bf",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "missing",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "7da99109cb5a51265665e2b495e440311f382906b2d52cd8f0f8ac0c5fb275bf",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "ambiguous",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "7da99109cb5a51265665e2b495e440311f382906b2d52cd8f0f8ac0c5fb275bf",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "nonfinite",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "7da99109cb5a51265665e2b495e440311f382906b2d52cd8f0f8ac0c5fb275bf",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "tool-content",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "7da99109cb5a51265665e2b495e440311f382906b2d52cd8f0f8ac0c5fb275bf",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        }
+      ],
+      "entrySha256": "d9b1fd19c18aaef7e51b5dd03b8e14e0802883f5e8d58f1094ea2fafc2f4adc4",
+      "transportSha256": "40f31e45cf21d237f0df2bdcf09cf5a880309616d44b9b7a1b58c952b181ec7d",
+      "testSha256": "db92ee754ed0a9884b9e74ccf6d30cb3a07cca768ceedbcfbee6ac4961739f95",
+      "checks": [
+        "single skill copy",
+        "fresh public locked runtime",
+        "native save before injected response fault",
+        "one save request",
+        "unknown journal and failure receipt",
+        "no later operations",
+        "saved native project reopened",
+        "original delivery and skills unchanged"
+      ],
+      "scope": "six injected response faults after real native save; not exhaustive commands or GUI acceptance",
+      "skill": "vectorcraft-cli-shapes"
+    },
+    {
+      "schema": "craft-native-protocol-fault-first-use/v1",
+      "domain": "vectorcraft",
+      "result": "PASS",
+      "coldInstall": "PASS",
+      "cases": [
+        {
+          "fault": "malformed",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "1d4f95d498023b5d6fded83ee2e5690497ee3de211b9d33f6cea5caeddfb9046",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "scalar",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "1d4f95d498023b5d6fded83ee2e5690497ee3de211b9d33f6cea5caeddfb9046",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "missing",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "1d4f95d498023b5d6fded83ee2e5690497ee3de211b9d33f6cea5caeddfb9046",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "ambiguous",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "1d4f95d498023b5d6fded83ee2e5690497ee3de211b9d33f6cea5caeddfb9046",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "nonfinite",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "1d4f95d498023b5d6fded83ee2e5690497ee3de211b9d33f6cea5caeddfb9046",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "tool-content",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "1d4f95d498023b5d6fded83ee2e5690497ee3de211b9d33f6cea5caeddfb9046",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        }
+      ],
+      "entrySha256": "d9b1fd19c18aaef7e51b5dd03b8e14e0802883f5e8d58f1094ea2fafc2f4adc4",
+      "transportSha256": "40f31e45cf21d237f0df2bdcf09cf5a880309616d44b9b7a1b58c952b181ec7d",
+      "testSha256": "db92ee754ed0a9884b9e74ccf6d30cb3a07cca768ceedbcfbee6ac4961739f95",
+      "checks": [
+        "single skill copy",
+        "fresh public locked runtime",
+        "native save before injected response fault",
+        "one save request",
+        "unknown journal and failure receipt",
+        "no later operations",
+        "saved native project reopened",
+        "original delivery and skills unchanged"
+      ],
+      "scope": "six injected response faults after real native save; not exhaustive commands or GUI acceptance",
+      "skill": "vectorcraft-cli-boolean"
+    },
+    {
+      "schema": "craft-native-protocol-fault-first-use/v1",
+      "domain": "vectorcraft",
+      "result": "PASS",
+      "coldInstall": "PASS",
+      "cases": [
+        {
+          "fault": "malformed",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "7a33de839ee89bc9f380bee7f68209312596e28e33898177ffdb9dc32c7b2691",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "scalar",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "7a33de839ee89bc9f380bee7f68209312596e28e33898177ffdb9dc32c7b2691",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "missing",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "7da89ece6301f229c9d274d45b75b10a38447262d1b7e9bd2848ff10d68cefef",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "ambiguous",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "7da89ece6301f229c9d274d45b75b10a38447262d1b7e9bd2848ff10d68cefef",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "nonfinite",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "7da89ece6301f229c9d274d45b75b10a38447262d1b7e9bd2848ff10d68cefef",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "tool-content",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "7da89ece6301f229c9d274d45b75b10a38447262d1b7e9bd2848ff10d68cefef",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        }
+      ],
+      "entrySha256": "d9b1fd19c18aaef7e51b5dd03b8e14e0802883f5e8d58f1094ea2fafc2f4adc4",
+      "transportSha256": "40f31e45cf21d237f0df2bdcf09cf5a880309616d44b9b7a1b58c952b181ec7d",
+      "testSha256": "db92ee754ed0a9884b9e74ccf6d30cb3a07cca768ceedbcfbee6ac4961739f95",
+      "checks": [
+        "single skill copy",
+        "fresh public locked runtime",
+        "native save before injected response fault",
+        "one save request",
+        "unknown journal and failure receipt",
+        "no later operations",
+        "saved native project reopened",
+        "original delivery and skills unchanged"
+      ],
+      "scope": "six injected response faults after real native save; not exhaustive commands or GUI acceptance",
+      "skill": "vectorcraft-cli-text"
+    },
+    {
+      "schema": "craft-native-protocol-fault-first-use/v1",
+      "domain": "vectorcraft",
+      "result": "PASS",
+      "coldInstall": "PASS",
+      "cases": [
+        {
+          "fault": "malformed",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "304f7b580cec02cc70dd3c366c3fd19e219a7fd97d18cb673042b42d71a1a2a2",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "scalar",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "304f7b580cec02cc70dd3c366c3fd19e219a7fd97d18cb673042b42d71a1a2a2",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "missing",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "304f7b580cec02cc70dd3c366c3fd19e219a7fd97d18cb673042b42d71a1a2a2",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "ambiguous",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "304f7b580cec02cc70dd3c366c3fd19e219a7fd97d18cb673042b42d71a1a2a2",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "nonfinite",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "304f7b580cec02cc70dd3c366c3fd19e219a7fd97d18cb673042b42d71a1a2a2",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "tool-content",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "88b3f67df5513577778b50704f4cc85df10a98ba9c9e3444b506bdd4dfd22113",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        }
+      ],
+      "entrySha256": "d9b1fd19c18aaef7e51b5dd03b8e14e0802883f5e8d58f1094ea2fafc2f4adc4",
+      "transportSha256": "40f31e45cf21d237f0df2bdcf09cf5a880309616d44b9b7a1b58c952b181ec7d",
+      "testSha256": "db92ee754ed0a9884b9e74ccf6d30cb3a07cca768ceedbcfbee6ac4961739f95",
+      "checks": [
+        "single skill copy",
+        "fresh public locked runtime",
+        "native save before injected response fault",
+        "one save request",
+        "unknown journal and failure receipt",
+        "no later operations",
+        "saved native project reopened",
+        "original delivery and skills unchanged"
+      ],
+      "scope": "six injected response faults after real native save; not exhaustive commands or GUI acceptance",
+      "skill": "vectorcraft-cli-appearance"
+    },
+    {
+      "schema": "craft-native-protocol-fault-first-use/v1",
+      "domain": "vectorcraft",
+      "result": "PASS",
+      "coldInstall": "PASS",
+      "cases": [
+        {
+          "fault": "malformed",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "a5830f4abc5aa95b75cfb524959291064cefe867ef68a68d6e1aade1609f844d",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "scalar",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "a5830f4abc5aa95b75cfb524959291064cefe867ef68a68d6e1aade1609f844d",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "missing",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "a5830f4abc5aa95b75cfb524959291064cefe867ef68a68d6e1aade1609f844d",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "ambiguous",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "a5830f4abc5aa95b75cfb524959291064cefe867ef68a68d6e1aade1609f844d",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "nonfinite",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "a5830f4abc5aa95b75cfb524959291064cefe867ef68a68d6e1aade1609f844d",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "tool-content",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "a5830f4abc5aa95b75cfb524959291064cefe867ef68a68d6e1aade1609f844d",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        }
+      ],
+      "entrySha256": "d9b1fd19c18aaef7e51b5dd03b8e14e0802883f5e8d58f1094ea2fafc2f4adc4",
+      "transportSha256": "40f31e45cf21d237f0df2bdcf09cf5a880309616d44b9b7a1b58c952b181ec7d",
+      "testSha256": "db92ee754ed0a9884b9e74ccf6d30cb3a07cca768ceedbcfbee6ac4961739f95",
+      "checks": [
+        "single skill copy",
+        "fresh public locked runtime",
+        "native save before injected response fault",
+        "one save request",
+        "unknown journal and failure receipt",
+        "no later operations",
+        "saved native project reopened",
+        "original delivery and skills unchanged"
+      ],
+      "scope": "six injected response faults after real native save; not exhaustive commands or GUI acceptance",
+      "skill": "vectorcraft-cli-artboards"
+    },
+    {
+      "schema": "craft-native-protocol-fault-first-use/v1",
+      "domain": "vectorcraft",
+      "result": "PASS",
+      "coldInstall": "PASS",
+      "cases": [
+        {
+          "fault": "malformed",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "96d5274ff3f72d981338669ae4d6823eb64c357bac9e965a4c8d470ce05ce4df",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "scalar",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "96d5274ff3f72d981338669ae4d6823eb64c357bac9e965a4c8d470ce05ce4df",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "missing",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "96d5274ff3f72d981338669ae4d6823eb64c357bac9e965a4c8d470ce05ce4df",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "ambiguous",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "96d5274ff3f72d981338669ae4d6823eb64c357bac9e965a4c8d470ce05ce4df",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "nonfinite",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "96d5274ff3f72d981338669ae4d6823eb64c357bac9e965a4c8d470ce05ce4df",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "tool-content",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "a21aef65eefe292e6a3d5141258bdccb9df14a90c95dfb8120b3121c5ccd6d5e",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        }
+      ],
+      "entrySha256": "d9b1fd19c18aaef7e51b5dd03b8e14e0802883f5e8d58f1094ea2fafc2f4adc4",
+      "transportSha256": "40f31e45cf21d237f0df2bdcf09cf5a880309616d44b9b7a1b58c952b181ec7d",
+      "testSha256": "db92ee754ed0a9884b9e74ccf6d30cb3a07cca768ceedbcfbee6ac4961739f95",
+      "checks": [
+        "single skill copy",
+        "fresh public locked runtime",
+        "native save before injected response fault",
+        "one save request",
+        "unknown journal and failure receipt",
+        "no later operations",
+        "saved native project reopened",
+        "original delivery and skills unchanged"
+      ],
+      "scope": "six injected response faults after real native save; not exhaustive commands or GUI acceptance",
+      "skill": "vectorcraft-cli-assets"
+    },
+    {
+      "schema": "craft-native-protocol-fault-first-use/v1",
+      "domain": "vectorcraft",
+      "result": "PASS",
+      "coldInstall": "PASS",
+      "cases": [
+        {
+          "fault": "malformed",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "f03d9b6f9c61d0f0c41e9bbc77c5bf0c039a3de601ebf6b2806043e9ab150eee",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "scalar",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "d2cd8a5d07a2818db861e351202aa3199cb23f875b5c12e05635ccf525bee23e",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "missing",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "d2cd8a5d07a2818db861e351202aa3199cb23f875b5c12e05635ccf525bee23e",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "ambiguous",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "d2cd8a5d07a2818db861e351202aa3199cb23f875b5c12e05635ccf525bee23e",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "nonfinite",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "d2cd8a5d07a2818db861e351202aa3199cb23f875b5c12e05635ccf525bee23e",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        },
+        {
+          "fault": "tool-content",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 13,
+          "reopen": "PASS",
+          "projectSha256": "d2cd8a5d07a2818db861e351202aa3199cb23f875b5c12e05635ccf525bee23e",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+        }
+      ],
+      "entrySha256": "d9b1fd19c18aaef7e51b5dd03b8e14e0802883f5e8d58f1094ea2fafc2f4adc4",
+      "transportSha256": "40f31e45cf21d237f0df2bdcf09cf5a880309616d44b9b7a1b58c952b181ec7d",
+      "testSha256": "db92ee754ed0a9884b9e74ccf6d30cb3a07cca768ceedbcfbee6ac4961739f95",
+      "checks": [
+        "single skill copy",
+        "fresh public locked runtime",
+        "native save before injected response fault",
+        "one save request",
+        "unknown journal and failure receipt",
+        "no later operations",
+        "saved native project reopened",
+        "original delivery and skills unchanged"
+      ],
+      "scope": "six injected response faults after real native save; not exhaustive commands or GUI acceptance",
+      "skill": "vectorcraft-cli-export"
+    }
+  ],
+  "scope": "Every standalone skill copied alone; one unique empty public runtime per skill; six injected faulty replies after successful native save, one save per case, unknown receipt, no subsequent operations, fresh-session reopening and original delivery/skill preservation. Fixed installed snapshot, Art bundles and exhaustive command/GUI acceptance remain separate."
+}
