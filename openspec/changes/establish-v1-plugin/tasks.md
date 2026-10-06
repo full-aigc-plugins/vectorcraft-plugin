@@ -95,3 +95,5 @@
 ## 当前宿主证据范围
 
 `docs/evidence/codex-current-release.json` 记录固定发布在 Codex 0.147.0 / 0.153.4 的安装、发现与公开入口执行；共享复现工具由 ArtCraft 持有。该证据未覆盖模型派发、桌面 GUI、完整 P0 与创作验收，release-compatibility 任务的前置条件尚未全部满足，不能据此勾选完整发布任务。
+
+- [x] 4.21 [VC-DM-002／VC-DM-005] 固定已安装单布尔技能从空运行时验证 unite／minusFront／intersect／exclude，原生复合孔洞与方向、SVG／PNG／PDF 独立解码、未选图形与源目录全文件保全及无效选择拒绝。产物：docs/evidence/codex-vectorcraft8-boolean-geometry-first-use-20261006.json；矩形样例不关闭完整 4.4–4.6 或交换格式任务。

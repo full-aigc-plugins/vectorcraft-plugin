@@ -1,0 +1,119 @@
+{
+  "schema": "craft-vector-boolean-geometry-evidence/v1",
+  "date": "2026-10-06",
+  "result": "passed",
+  "platform": "darwin-arm64",
+  "python": "3.13.5",
+  "nativeCliVersion": "0.2.0",
+  "pluginVersion": "0.1.0-dev.8",
+  "pluginTagSha": "918e808af0438a139e2c9ca3ae56a176b7524a1c",
+  "skillSourceTag": "v0.1.0-dev.7",
+  "skillSourceSha": "c0effdce5888f976f7b988f708af7694192fe88e",
+  "testFile": "tests/test_boolean_geometry_first_use.py",
+  "testSha256": "969440d392e42de10a58d2b250308ddc2ea85640bb0e5e3b015c57cfe99b2e30",
+  "installedSkillHashesPreserved": [
+    {
+      "name": "vectorcraft-cli",
+      "sha256": "83fd8f719ec16bbf8d236eed0fc29afd7982686850ccbfa0584b1a1a890dacd3"
+    },
+    {
+      "name": "vectorcraft-cli-appearance",
+      "sha256": "9ae3526b6a8ecca71352881fdee9f750d2203fb87f5628391127447c01c3fb48"
+    },
+    {
+      "name": "vectorcraft-cli-artboards",
+      "sha256": "74ab7fa05923a17fd7264f2f5159decf132a9e62efcd2c9a7c7ab12622639891"
+    },
+    {
+      "name": "vectorcraft-cli-assets",
+      "sha256": "f05072859de03ff8fb8f15209aaae9add8ae6b74cdd734c55d3e1ddd9324f094"
+    },
+    {
+      "name": "vectorcraft-cli-boolean",
+      "sha256": "bdd012928b84d3c38609f5d321deabefb4984f07f98c1443407c31681f1bfda2"
+    },
+    {
+      "name": "vectorcraft-cli-export",
+      "sha256": "15415f2f1172c6d988d765e2fb501e9b8d0d6f70d101aca9b67638ac182da080"
+    },
+    {
+      "name": "vectorcraft-cli-paths",
+      "sha256": "d0a4e188e09811b1c2121933d8a6b1e5daa5f161e8ae860da0ac7f1e4529d667"
+    },
+    {
+      "name": "vectorcraft-cli-project",
+      "sha256": "941e5f203cc07cbe2b6ba37ad089a574e825b07b09a1c1bcd43ee93bf19085eb"
+    },
+    {
+      "name": "vectorcraft-cli-setup",
+      "sha256": "305b874ad601ff1d836e8ede4c2b12b10c69d79700ba659d8a1689287005f55c"
+    },
+    {
+      "name": "vectorcraft-cli-shapes",
+      "sha256": "679bea5168b96b653cffee333fa61d4d966a09636eb95d288f09e117f6bb62bf"
+    },
+    {
+      "name": "vectorcraft-cli-text",
+      "sha256": "35925900d81b7beed6aedfbf611e2a49cd0e14e580b98aaeaba43dc535afc176"
+    },
+    {
+      "name": "vectorcraft-use",
+      "sha256": "2fae0f633d5d2486ea9bee77cf7212415dabd9aeb5dc81d40c2d035db561b4b1"
+    }
+  ],
+  "firstUse": {
+    "singleSkill": "vectorcraft-cli-boolean",
+    "runtime": "fresh empty home with default public pinned download",
+    "copiedDirectory": ".agents/skills/vectorcraft-cli-boolean",
+    "nativeProjects": 5,
+    "cases": [
+      "unite",
+      "minusFront",
+      "intersect",
+      "exclude"
+    ],
+    "invalidSelectionRejected": true,
+    "originalProjectAndAllDeliveryFileHashesPreserved": true
+  },
+  "geometry": {
+    "canvas": [
+      128,
+      128
+    ],
+    "outerArea": 6400,
+    "innerArea": 1024,
+    "holeKind": "compound",
+    "holeRule": "NonZero",
+    "holeContoursOppositeWinding": true,
+    "unselectedShapePropertiesPreserved": true,
+    "unselectedShapePixelsPreserved": true
+  },
+  "exports": {
+    "native": "saved project reopened in independent native MCP session",
+    "png": "actual RGBA samples check outer-only, center, outside and sentinel",
+    "svg": "no image nodes; independently rendered with PyMuPDF and RGBA samples checked",
+    "pdf": "one page; vector drawings present, zero raster images; independently rendered and RGBA samples checked"
+  },
+  "targetTest": {
+    "tests": 1,
+    "pass": 1,
+    "fail": 0,
+    "skipped": 0,
+    "seconds": 9.625
+  },
+  "sourceRegression": {
+    "tests": 43,
+    "pass": 28,
+    "fail": 0,
+    "skipped": 15,
+    "seconds": 11.027,
+    "scope": "default tests; opt-in native cases skipped, separate target live proof above"
+  },
+  "notVerified": [
+    "all arbitrary self-intersecting or curved boolean geometry",
+    "divide/trim/compound release scene coverage",
+    "external editor round trip",
+    "desktop GUI/model dispatch",
+    "complete creative or release acceptance"
+  ]
+}

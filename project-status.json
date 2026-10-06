@@ -15,7 +15,8 @@
     "1.12": "docs/evidence/installed-skill-paths.json",
     "1.10": "docs/evidence/dev7-full-native-suite.json",
     "4.19": "docs/evidence/native-brand-token-first-use.json",
-    "4.20": "docs/evidence/native-chinese-text.json"
+    "4.20": "docs/evidence/native-chinese-text.json",
+    "4.21": "docs/evidence/codex-vectorcraft8-boolean-geometry-first-use-20261006.json"
   },
   "hostValidationEvidence": "docs/evidence/codex-release24-chinese-text-20261006.json",
   "hostValidationStatus": "bounded-installed-native-chinese-text-passed"
