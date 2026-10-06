@@ -20,5 +20,5 @@
   "packaging": "immutable vendored snapshot with tag, commit and whole-tree checksums",
   "suiteManifest": "https://github.com/full-aigc-skills/vectorcraft-skills/blob/main/skill-suite.json",
   "sourceRef": "v0.1.0-dev.15",
-  "sourceSha": "284cd4105e6c012d6276427b3caf5bfe777e5114"
+  "sourceSha": "7c70e642528cac31b956f9d855e4ff5e9c078c7e"
 }
