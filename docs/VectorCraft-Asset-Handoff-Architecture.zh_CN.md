@@ -62,3 +62,5 @@ manifest.assets 包含 path、sha256、format、ids、linked、warnings；manife
 `tests/test_asset_first_use.py` 只复制素材技能，空运行时公开下载安装，PNG 链接与 SVG 嵌入各两个实例，用 JPEG／SVG 替换，比较实际像素，无关对象和旧文件不变；移动交付后直接重开原生链接。ArtCraft 的 `test/vector_asset_workflow.test.ts` 验证 Vector 到 Photo 的真实输入、源修订与选择性复用。
 
 固定领域复验：插件 dev.11／源 dev.10 已通过实际安装单技能素材替换与迁移、多画板导出回归，以及 12 项逐技能空运行时 CLI 首次调用，全部 58 项安装摘要保全。[版本绑定证据](evidence/codex-vectorcraft11-assets-first-use-20261006.json)。仅完成领域安装复验；ArtCraft 分发／混合验收、模型派发、GUI、完整创作、其他原生素材格式和跨机器字体保真继续开放。
+
+固定 ArtCraft 插件 dev.63／技能源 dev.43／runtime dev.62：隔离 Codex 发现五插件／58 技能／零错误；安装后 PNG／JPEG 与 SVG 混合首用 2 项通过（76.574 秒）、四领域回归 3 项通过（116.076 秒）、Art 十项独立冷启动通过（133.395 秒）。原安装全部 58 项摘要保全，五包固定重建一致，两份公开发行附件及逐文件摘要匹配。SVG 拒绝保留领域代码；替换只重建消费者，非目标像素保持，PNG／PSD 独立核对且迁移包通过。仅关闭有界固定 SVG 交接门禁；SVG 类型元数据、动态透明序列及完整首版／创作／模型／GUI 仍开放。[固定证据](evidence/codex-release63-svg-first-use-20261006.json)。

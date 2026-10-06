@@ -105,8 +105,10 @@
 固定新版验收：FilmCraft dev.9、EffectCraft dev.7、PhotoCraft dev.9、VectorCraft dev.10、ArtCraft dev.50 在 Codex 0.153.4 隔离安装发现 58 技能，零加载错误。安装后单导出技能跨秒原生验收 1 项通过，混合品牌返工 2 项通过，全部 58 安装摘要保留。证据：`docs/evidence/codex-release50-vector10-stable-export-first-use-20261006.json`。不关闭通用 Skills CLI、模型／GUI、完整领域／创作／发布门禁。
 
 - [x] 4.24 [VC-DM-007] 完成登记素材公开合同、预期失败测试与候选实现，真实单技能冷安装／原生交付及相关选择性返工通过；产物：docs/evidence/vector-assets-candidate-20261006.json。仅关闭所列 PNG／JPEG／自包含 SVG 候选范围，不替代固定发行宿主验收。
-- [ ] 4.25 [VC-DM-007] 发布不可变技能源、插件及 Art runtime／bundle，重建固定发行，使用真实安装技能复验素材迁移、替换、选择性返工及安装摘要；候选测试不能代替本任务。
+- [x] 4.25 [VC-DM-007] 发布不可变技能源、插件及 Art runtime／bundle，重建固定发行，使用真实安装技能复验素材迁移、替换、选择性返工及安装摘要；候选测试不能代替本任务。
 
 4.25 领域发行部分已完成：固定插件 dev.11／技能源 dev.10 真实安装发现 58 项技能、零错误，素材替换／移动后原生重开与多画板导出 2 项通过、零跳过，12 项逐技能空运行时首次调用通过，58 项安装摘要保全。证据 `docs/evidence/codex-vectorcraft11-assets-first-use-20261006.json`。当时 ArtCraft runtime／bundle 升级和固定混合验收尚未执行，因此 4.25 保持未完成；不关闭完整领域或创作门禁。
 
 4.25 Art 固定 PNG／JPEG 部分现已完成：runtime dev.60／技能源 dev.42／插件 dev.61 重建固定包并通过真实宿主混合替换、返工与摘要复验。[跨插件证据](https://github.com/full-aigc-plugins/artcraft-plugin/blob/main/docs/evidence/codex-release61-vector-photo-first-use-20261006.json)。SVG 登记混合输入仍待验收，本任务保持开放。
+
+4.25 固定 SVG 混合验收已完成：Art 插件 dev.63／技能源 dev.43／runtime dev.62、Vector 插件 dev.11／技能源 dev.10；五插件 58 技能发现、两项安装后 PNG／JPEG／SVG 原生混合验收、三项四领域回归、Art 十项冷启动和全部安装摘要保全通过。证据 docs/evidence/codex-release63-svg-first-use-20261006.json。只关闭登记素材交接增量，完整领域、类型化 SVG、动态透明序列和创作门禁仍开放。
