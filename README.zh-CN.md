@@ -176,3 +176,7 @@ python3 -I -B skills/vectorcraft-use/scripts/workflow.py --help
 固定公开插件 dev.9／技能源 dev.8 已通过 Codex 发现全部 58 个技能，以及实际安装后的单导出技能公开冷启动原生验收（4.985 秒）。全部 58 个安装技能摘要不变。OpenSpec 4.22 的领域验收已完成，ArtCraft bundle 更新与完整 V1 验收仍待完成。[固定安装证据](docs/evidence/codex-vectorcraft9-artboard-first-use-20261006.json).
 
 插件 dev.10 收录不可变技能源 dev.9，锁定维护版 CLI craft.2。稳定 PDF 创建日期与摘要绑定的日期记录通过 49 项完整原生回归；固定新宿主与 ArtCraft 混合验收仍待完成。[日期架构](docs/VectorCraft-PDF-Date-Architecture.zh_CN.md)、[原生测试](docs/evidence/craft2-full-native-suite-20261006.json)。
+
+固定 ArtCraft dev.50／VectorCraft dev.10 的 Codex 0.153.4 隔离首次使用通过：五插件 58 技能发现、零加载错误；单导出技能空运行时跨秒原生验收 1 项通过（8.108 秒），混合品牌返工 2 项通过（51.409 秒），全部安装摘要保留。[发行绑定证据](docs/evidence/codex-release50-vector10-stable-export-first-use-20261006.json)。通用 Skills CLI 安装、模型／GUI、完整领域与创作验收仍开放。
+
+本次更新的 22 个技能逐项公开冷启动全部通过（159.811 秒）：每项只复制自身目录到 .agents/skills，独立空运行时完成版本与命令合同检查，目录摘要和全部宿主安装摘要保留。该证据不代表通用 Skills CLI 安装或全部创作场景。

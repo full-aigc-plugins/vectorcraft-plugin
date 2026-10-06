@@ -20,6 +20,8 @@ flowchart TD
 
 956 项引擎库测试通过，覆盖明确的 2000-01-01 PDF 日期、重复字节一致、无效类型与源保全。技能源测试通过 33 项、显式跳过 16 项。单导出技能以显式本地候选 ZIP 安装，修订间隔 2.1 秒后无关 SVG／PNG／PDF 字节与独立解码的 PDF 日期保持一致，耗时 3.329 秒。[候选证据](evidence/pdf-export-date-candidate-20261006.json)。这不代表公开 CLI 下载或固定新插件验收。
 
-公开维护版 craft.1 和插件 dev.9 保持不可变。4.23 与 ArtCraft 6.33 仍开放，直到 craft.2 运行时、不可变技能／插件更新和真实混合首次使用通过。复现驱动是 `tests/test_artboard_exports_first_use.py` 与 `tests/test_brand_token_mixed_first_use.py`，不通过规范化 PDF 字节替代身份门禁。
+公开维护版 craft.1 和插件 dev.9 保持不可变。候选阶段的 4.23 与 ArtCraft 6.33 尚待固定发布和安装后验收；当前结果以下文最新固定验收为准。复现驱动是 `tests/test_artboard_exports_first_use.py` 与 `tests/test_brand_token_mixed_first_use.py`，不通过规范化 PDF 字节替代身份门禁。
 
-维护版运行时 craft.2 现已发布；工作区技能安装锁已接入该运行时，单导出技能实际公开 HTTPS 冷安装、跨秒字节与日期解码门禁在 7.228 秒内通过，12 项 CLI 集成测试通过。不可变技能源 dev.9／插件 dev.10 与 ArtCraft 接入仍待完成。[公开原生证据](evidence/pdf-export-date-public-runtime-20261006.json)。
+维护版运行时 craft.2 现已发布；工作区技能安装锁已接入该运行时，单导出技能实际公开 HTTPS 冷安装、跨秒字节与日期解码门禁在 7.228 秒内通过，12 项 CLI 集成测试通过。当时的不可变技能源／插件与 ArtCraft 安装后验收尚未完成；下文最新固定验收补齐此限定范围。[公开原生证据](evidence/pdf-export-date-public-runtime-20261006.json)。
+
+最新固定发布验收已通过：ArtCraft dev.50 携带技能源 dev.37，VectorCraft dev.10 携带技能源 dev.9，原生 CLI 0.2.0-craft.2。58 项安装摘要核对通过；真实跨秒 PDF 日期绑定与五节点混合品牌返工通过，任务 4.23／6.33 已按此限定范围关闭。[证据](evidence/codex-release50-vector10-stable-export-first-use-20261006.json)。旧候选／失败证据保持各自范围，完整首版仍未完成。
