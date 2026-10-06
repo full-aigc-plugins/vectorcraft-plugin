@@ -184,3 +184,5 @@ python3 -I -B skills/vectorcraft-use/scripts/workflow.py --help
 登记素材技能源候选：公开工作流已接入 PNG 链接、SVG 嵌入、JPEG／SVG 替换、原生依赖收集与迁移。[架构](docs/VectorCraft-Asset-Handoff-Architecture.zh_CN.md)。既有固定插件快照未改动；新版发布与安装宿主复验仍待完成。
 
 插件 dev.11 收录不可变技能源 dev.10，接入登记 PNG／SVG 置入、JPEG／SVG 替换与原生依赖收集。本版安装宿主验收与 ArtCraft 分发升级分别进行，完整 V1 验收保持开放。
+
+固定插件 dev.11／技能源 dev.10 已通过 Codex 0.153.4 公开标签安装与发现：58 项技能、零加载错误。安装后的素材／导出单技能空运行时原生测试 2 项通过、零跳过（4.855 秒、6.743 秒）；12 项 VectorCraft 技能逐项独立冷安装通过（56.275 秒）。实际核验链接／嵌入 PNG、SVG、JPEG／SVG 替换、移动后直接重开原生工程及无关画板保全，全部 58 项安装摘要保持不变。[固定证据](docs/evidence/codex-vectorcraft11-assets-first-use-20261006.json)。ArtCraft 仍消费旧 Vector bundle，分发升级与混合首次使用仍待完成。

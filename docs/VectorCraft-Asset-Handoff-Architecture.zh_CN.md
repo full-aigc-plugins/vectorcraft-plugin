@@ -61,4 +61,4 @@ manifest.assets 包含 path、sha256、format、ids、linked、warnings；manife
 
 `tests/test_asset_first_use.py` 只复制素材技能，空运行时公开下载安装，PNG 链接与 SVG 嵌入各两个实例，用 JPEG／SVG 替换，比较实际像素，无关对象和旧文件不变；移动交付后直接重开原生链接。ArtCraft 的 `test/vector_asset_workflow.test.ts` 验证 Vector 到 Photo 的真实输入、源修订与选择性复用。
 
-候选证据与固定插件安装分开。新不可变技能／插件快照、安装宿主复验、模型派发、GUI、完整创作验收、其他原生素材格式和跨机器字体保真仍待完成。既有 SVG 隔离与 PDF 日期绑定必须继续通过回归。
+固定领域复验：插件 dev.11／源 dev.10 已通过实际安装单技能素材替换与迁移、多画板导出回归，以及 12 项逐技能空运行时 CLI 首次调用，全部 58 项安装摘要保全。[版本绑定证据](evidence/codex-vectorcraft11-assets-first-use-20261006.json)。仅完成领域安装复验；ArtCraft 分发／混合验收、模型派发、GUI、完整创作、其他原生素材格式和跨机器字体保真继续开放。

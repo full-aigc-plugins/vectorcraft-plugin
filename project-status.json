@@ -21,8 +21,8 @@
     "4.23": "docs/evidence/codex-release50-vector10-stable-export-first-use-20261006.json",
     "4.24": "docs/evidence/vector-assets-candidate-20261006.json"
   },
-  "hostValidationEvidence": "docs/evidence/codex-release50-vector10-stable-export-first-use-20261006.json",
-  "hostValidationStatus": "bounded-installed-stable-vector-export-and-mixed-brand-revision-passed",
+  "hostValidationEvidence": "docs/evidence/codex-vectorcraft11-assets-first-use-20261006.json",
+  "hostValidationStatus": "bounded-installed-native-asset-replacement-relocation-and-export-passed",
   "knownFirstUseFailures": [],
   "resolvedFirstUseFailures": [
     {
@@ -32,5 +32,6 @@
       "resolutionEvidence": "docs/evidence/codex-vectorcraft9-artboard-first-use-20261006.json"
     }
   ],
-  "currentReleaseDiscoveryEvidence": "docs/evidence/codex-release50-vector10-stable-export-first-use-20261006.json"
+  "currentReleaseDiscoveryEvidence": "docs/evidence/codex-vectorcraft11-assets-first-use-20261006.json",
+  "registeredAssetHostEvidence": "docs/evidence/codex-vectorcraft11-assets-first-use-20261006.json"
 }
