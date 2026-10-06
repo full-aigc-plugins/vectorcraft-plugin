@@ -1,5 +1,13 @@
 # VectorCraft Agent Plugin
 
+## Complete native command entry
+
+Local candidate: skills dev.11 / plugin dev.12; publication and installed-host checks pending.
+
+All 585 commands now have verbatim parameters, skill routing, and same-session invocation through `commands.py list / describe / check / run`. Live enabled state is checked; the existing 27-operation delivery workflow remains bounded. GUI commands require explicit bridge mode. Complete registry coverage does not establish full command acceptance.
+
+[Architecture and usage](docs/VectorCraft-Complete-Commands-Architecture.md) · [Complete reference](skills/vectorcraft-use/references/command-reference.md) · [Runnable example](skills/vectorcraft-use/examples/commands-advanced.json)
+
 Independent-skills-driven Editable vector brand assets and multi-artboard design.
 
 [English](README.md) | [简体中文](README.zh-CN.md)
@@ -34,9 +42,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.11 |
+| Metadata version | 0.1.0-dev.12 |
 | Stage | implementation-in-progress |
-| Skills source | vectorcraft-skills / v0.1.0-dev.10 |
+| Skills source | vectorcraft-skills / v0.1.0-dev.11 |
 | Execution | Upstream CLI; ArtCraft uses child adapters |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |

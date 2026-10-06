@@ -54,3 +54,15 @@ CLI argv 在 `--` 后，原生子命令必须放首位。安装参数放分隔�
 PDF 工作流绑定工程创建日期；缺少创建日期时保留首次导出日期记录。`pdf-export-date.json` 的摘要写入交付清单，返工时校验该记录；原生工程日期与修订历史保持可追溯。
 
 登记素材操作：使用本技能自带的 `examples/provided-assets.json`，以 `--asset product=/absolute/product.png --asset logo=/absolute/logo.svg` 传入实际素材。`asset.place` 支持多个实例；`asset.replace` 以原别名与新输入别名定点更新。具体参数、栅格链接／矢量嵌入、依赖收集及迁移边界见本技能 [工作流合同](references/workflow.md)。当前为技能源候选，不代表旧固定插件快照已包含该能力。
+
+## 完整原生命令使用
+
+当前技能自带完整目录的参数说明与同会话入口，不受创作模板白名单限制。读取 [完整使用指南](references/command-usage.md)，按需查询 [命令参考](references/command-reference.md)；每条指令有技能路由、前置观察及验收状态。
+
+```bash
+python3 -I -B "$SKILL_DIR/scripts/commands.py" list --filter QUERY
+python3 -I -B "$SKILL_DIR/scripts/commands.py" describe COMMAND_ID
+python3 -I -B "$SKILL_DIR/scripts/commands.py" run "$SKILL_DIR/examples/commands-advanced.json" --output /absolute/new-command-result
+```
+
+新入口执行前检查真实注册表与当前可执行状态，保留返回值引用和逐步回执；语义错误或超时不冒充成功。目录覆盖与直接原生使用不等于所有指令、GUI、交付或 Art 编排已验收。

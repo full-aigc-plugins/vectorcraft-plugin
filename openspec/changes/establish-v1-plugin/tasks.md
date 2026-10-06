@@ -112,3 +112,9 @@
 4.25 Art 固定 PNG／JPEG 部分现已完成：runtime dev.60／技能源 dev.42／插件 dev.61 重建固定包并通过真实宿主混合替换、返工与摘要复验。[跨插件证据](https://github.com/full-aigc-plugins/artcraft-plugin/blob/main/docs/evidence/codex-release61-vector-photo-first-use-20261006.json)。SVG 登记混合输入仍待验收，本任务保持开放。
 
 4.25 固定 SVG 混合验收已完成：Art 插件 dev.63／技能源 dev.43／runtime dev.62、Vector 插件 dev.11／技能源 dev.10；五插件 58 技能发现、两项安装后 PNG／JPEG／SVG 原生混合验收、三项四领域回归、Art 十项冷启动和全部安装摘要保全通过。证据 docs/evidence/codex-release63-svg-first-use-20261006.json。只关闭登记素材交接增量，完整领域、类型化 SVG、动态透明序列和创作门禁仍开放。
+
+## 8. 完整命令覆盖
+
+- [x] 8.1 [VC-CM-001] 建立全目录覆盖、后续非法命令、引用、嵌入错误及超时不重放的失败测试；记录目标缺失失败。
+- [x] 8.2 [VC-CM-001] 在独立技能源实现完整命令参数说明、技能路由、同会话调用、实时状态检查及逐步回执；同步独立技能资源并验证固定目录覆盖。
+- [ ] 8.3 [VC-CM-001] 完成逐命令适用上下文、GUI／原生输出与局部修订验收；固定发布及实际安装副本复验。仅目录和代表调用通过不得关闭此任务。

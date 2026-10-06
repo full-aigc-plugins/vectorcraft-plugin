@@ -20,7 +20,9 @@
     "4.22": "docs/evidence/codex-vectorcraft9-artboard-first-use-20261006.json",
     "4.23": "docs/evidence/codex-release50-vector10-stable-export-first-use-20261006.json",
     "4.24": "docs/evidence/vector-assets-candidate-20261006.json",
-    "4.25": "docs/evidence/codex-release63-svg-first-use-20261006.json"
+    "4.25": "docs/evidence/codex-release63-svg-first-use-20261006.json",
+    "8.1": "docs/evidence/complete-commands-20261007.json",
+    "8.2": "docs/evidence/complete-commands-20261007.json"
   },
   "hostValidationEvidence": "docs/evidence/codex-vectorcraft11-assets-first-use-20261006.json",
   "hostValidationStatus": "bounded-installed-native-asset-replacement-relocation-and-export-passed",
@@ -36,5 +38,7 @@
   "currentReleaseDiscoveryEvidence": "docs/evidence/codex-vectorcraft11-assets-first-use-20261006.json",
   "registeredAssetHostEvidence": "docs/evidence/codex-vectorcraft11-assets-first-use-20261006.json",
   "svgFixedReleaseEvidence": "docs/evidence/codex-release63-svg-first-use-20261006.json",
-  "currentDomainTaskMatrixEvidence": "docs/evidence/codex-current-domain-task-matrix-20261006.json"
+  "currentDomainTaskMatrixEvidence": "docs/evidence/codex-current-domain-task-matrix-20261006.json",
+  "completeCommandEntryEvidence": "docs/evidence/complete-commands-20261007.json",
+  "completeCommandAcceptance": "incomplete"
 }

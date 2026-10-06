@@ -52,3 +52,15 @@ CLI argv 在 `--` 后，原生子命令必须放首位。安装参数放分隔�
 当前运行时为基于官方 `v0.2.0` 的维护版 `0.2.0-craft.2`，由 `full-aigc-skills/vectorcraft-skills` 发布；安装记录明确区分维护版来源。SVG 工作流按原生绘制边界隔离画板，保守保留群组、裁切和未知范围依赖。
 
 PDF 工作流绑定工程创建日期；缺少创建日期时保留首次导出日期记录。`pdf-export-date.json` 的摘要写入交付清单，返工时校验该记录；原生工程日期与修订历史保持可追溯。
+
+## 完整原生命令使用
+
+当前技能自带完整目录的参数说明与同会话入口，不受创作模板白名单限制。读取 [完整使用指南](references/command-usage.md)，按需查询 [命令参考](references/command-reference.md)；每条指令有技能路由、前置观察及验收状态。
+
+```bash
+python3 -I -B "$SKILL_DIR/scripts/commands.py" list --filter QUERY
+python3 -I -B "$SKILL_DIR/scripts/commands.py" describe COMMAND_ID
+python3 -I -B "$SKILL_DIR/scripts/commands.py" run "$SKILL_DIR/examples/commands-advanced.json" --output /absolute/new-command-result
+```
+
+新入口执行前检查真实注册表与当前可执行状态，保留返回值引用和逐步回执；语义错误或超时不冒充成功。目录覆盖与直接原生使用不等于所有指令、GUI、交付或 Art 编排已验收。

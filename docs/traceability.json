@@ -244,6 +244,17 @@
       "owner": "Domain owner",
       "status": "in-progress",
       "evidence": "docs/evidence/vector-assets-candidate-20261006.json"
+    },
+    {
+      "requirement": "VC-CM-001",
+      "capability": "domain-workflow",
+      "tasks": [
+        "8.1",
+        "8.2",
+        "8.3"
+      ],
+      "owner": "Skills owner",
+      "status": "in-progress"
     }
   ]
 }
