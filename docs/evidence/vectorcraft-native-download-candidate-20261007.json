@@ -1,0 +1,30 @@
+{
+  "schema": "craft-native-download-candidate/v1",
+  "date": "2026-10-07",
+  "domain": "vectorcraft",
+  "scope": "candidate native installer only; fixed installed cold gate remains open",
+  "redScope": "EffectCraft representative red: three errors; other domains did not run an independent red baseline",
+  "defaultRegressionBeforeSupplement": {
+    "total": 404,
+    "passed": 310,
+    "skipped": 94,
+    "failed": 0
+  },
+  "supplementalBootstrapTests": "four domains passed short response/HTTP503 recovery and final size refusal",
+  "bootstrapSha256": "594af69f53e2df5accba79e0b611e46fdbe2adb1aa172cd7bc983f50e78f255e",
+  "previousFixedColdObservation": {
+    "result": "FAIL",
+    "scope": "fixed plugin19/18 and Art80 independent public cold installations",
+    "failedSkills": [
+      "artcraft-cli: effectcraft native download SSL EOF",
+      "filmcraft-cli-color: native download SSL EOF"
+    ],
+    "processesTerminal": true,
+    "nativeEditingNotStarted": true,
+    "publicationAssetsAndInstalledNativeFaultsPassed": true,
+    "coldGatesNotClosed": true,
+    "finding": "domain bootstrap downloads have one attempt; Art package download retries do not cover native domain bootstrap subprocess"
+  },
+  "fixedInstalledNewRelease": "NOT_RUN",
+  "allCommandAcceptance": "NOT_RUN"
+}
