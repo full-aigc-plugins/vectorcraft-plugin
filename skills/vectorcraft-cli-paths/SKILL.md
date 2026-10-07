@@ -1,6 +1,6 @@
 ---
 name: vectorcraft-cli-paths
-description: 当需要创建锚点、控制柄、闭合和编辑矢量路径时使用 VectorCraft；本技能自带首次安装与公开 CLI 入口。
+description: 编辑矢量锚点与控制柄，描边轮廓化、偏移、简化和清理路径；首次使用安装固定 VectorCraft CLI。
 license: Apache-2.0
 ---
 
@@ -78,3 +78,5 @@ GUI任务可先使用本技能自带的 [固定桌面安装](references/desktop-
 安装失败时读取 [首次使用诊断](references/first-use-failures.md)，按回执定位当前技能自身的 setup 入口；安装失败与原生调用失败分别处理。
 
 相关创作任务读取 [对象选择与变换场景](references/object-selection-scene.md)，核对原生参数、对象上下文、局部返工与交付边界。
+
+对象布局、状态与路径编辑，先读取本技能自带 [对象操作指南](references/object-edit-scene.md)，核对授权对象、边界类型和原工程保留要求。

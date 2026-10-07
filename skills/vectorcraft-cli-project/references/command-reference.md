@@ -1134,8 +1134,8 @@ Scale…
 
 Reflect…
 
-- 技能 / Owner: `vectorcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli`。
+- 技能 / Owner: `vectorcraft-cli-shapes`。
+- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli-shapes`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe object.reflect`；按原生参数构造计划后执行 run。
@@ -1151,8 +1151,8 @@ Reflect…
 
 Shear…
 
-- 技能 / Owner: `vectorcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli`。
+- 技能 / Owner: `vectorcraft-cli-shapes`。
+- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli-shapes`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe object.shear`；按原生参数构造计划后执行 run。
@@ -1185,8 +1185,8 @@ Transform Again
 
 Nudge
 
-- 技能 / Owner: `vectorcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli`。
+- 技能 / Owner: `vectorcraft-cli-shapes`。
+- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli-shapes`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe object.nudge`；按原生参数构造计划后执行 run。
@@ -1202,8 +1202,8 @@ Nudge
 
 Bring to Front
 
-- 技能 / Owner: `vectorcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli`。
+- 技能 / Owner: `vectorcraft-cli-shapes`。
+- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli-shapes`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe object.arrange.bringToFront`；按原生参数构造计划后执行 run。
@@ -1219,8 +1219,8 @@ Bring to Front
 
 Bring Forward
 
-- 技能 / Owner: `vectorcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli`。
+- 技能 / Owner: `vectorcraft-cli-shapes`。
+- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli-shapes`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe object.arrange.bringForward`；按原生参数构造计划后执行 run。
@@ -1236,8 +1236,8 @@ Bring Forward
 
 Send Backward
 
-- 技能 / Owner: `vectorcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli`。
+- 技能 / Owner: `vectorcraft-cli-shapes`。
+- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli-shapes`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe object.arrange.sendBackward`；按原生参数构造计划后执行 run。
@@ -1253,8 +1253,8 @@ Send Backward
 
 Send to Back
 
-- 技能 / Owner: `vectorcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli`。
+- 技能 / Owner: `vectorcraft-cli-shapes`。
+- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli-shapes`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe object.arrange.sendToBack`；按原生参数构造计划后执行 run。
@@ -1270,8 +1270,8 @@ Send to Back
 
 Send to Current Layer
 
-- 技能 / Owner: `vectorcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli`。
+- 技能 / Owner: `vectorcraft-cli-shapes`。
+- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli-shapes`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe object.arrange.sendToCurrentLayer`；按原生参数构造计划后执行 run。
@@ -1321,8 +1321,8 @@ Ungroup
 
 Selection
 
-- 技能 / Owner: `vectorcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli`。
+- 技能 / Owner: `vectorcraft-cli-selection`。
+- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe object.lock`；按原生参数构造计划后执行 run。
@@ -1338,8 +1338,8 @@ Selection
 
 Unlock All
 
-- 技能 / Owner: `vectorcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli`。
+- 技能 / Owner: `vectorcraft-cli-selection`。
+- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe object.unlockAll`；按原生参数构造计划后执行 run。
@@ -1355,8 +1355,8 @@ Unlock All
 
 Selection
 
-- 技能 / Owner: `vectorcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli`。
+- 技能 / Owner: `vectorcraft-cli-selection`。
+- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe object.hide`；按原生参数构造计划后执行 run。
@@ -1372,8 +1372,8 @@ Selection
 
 Show All
 
-- 技能 / Owner: `vectorcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli`。
+- 技能 / Owner: `vectorcraft-cli-selection`。
+- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe object.showAll`；按原生参数构造计划后执行 run。
@@ -1491,8 +1491,8 @@ Edit Clipping Path
 
 Enter Isolation Mode
 
-- 技能 / Owner: `vectorcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli`。
+- 技能 / Owner: `vectorcraft-cli-selection`。
+- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe object.isolate`；按原生参数构造计划后执行 run。
@@ -1508,8 +1508,8 @@ Enter Isolation Mode
 
 Exit Isolation Mode
 
-- 技能 / Owner: `vectorcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli`。
+- 技能 / Owner: `vectorcraft-cli-selection`。
+- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe object.exitIsolation`；按原生参数构造计划后执行 run。
@@ -1525,8 +1525,8 @@ Exit Isolation Mode
 
 Object Properties
 
-- 技能 / Owner: `vectorcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli`。
+- 技能 / Owner: `vectorcraft-cli-shapes`。
+- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli-shapes`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe object.setProps`；按原生参数构造计划后执行 run。
@@ -1542,8 +1542,8 @@ Object Properties
 
 Align
 
-- 技能 / Owner: `vectorcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli`。
+- 技能 / Owner: `vectorcraft-cli-shapes`。
+- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli-shapes`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe object.align`；按原生参数构造计划后执行 run。
@@ -1559,8 +1559,8 @@ Align
 
 Distribute
 
-- 技能 / Owner: `vectorcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli`。
+- 技能 / Owner: `vectorcraft-cli-shapes`。
+- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli-shapes`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe object.distribute`；按原生参数构造计划后执行 run。
@@ -1576,8 +1576,8 @@ Distribute
 
 Distribute Spacing
 
-- 技能 / Owner: `vectorcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli`。
+- 技能 / Owner: `vectorcraft-cli-shapes`。
+- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli-shapes`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe object.distributeSpacing`；按原生参数构造计划后执行 run。
@@ -1593,8 +1593,8 @@ Distribute Spacing
 
 Set Bounds
 
-- 技能 / Owner: `vectorcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli`。
+- 技能 / Owner: `vectorcraft-cli-shapes`。
+- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli-shapes`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe object.setBounds`；按原生参数构造计划后执行 run。
@@ -1610,8 +1610,8 @@ Set Bounds
 
 Expand Shape
 
-- 技能 / Owner: `vectorcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli`。
+- 技能 / Owner: `vectorcraft-cli-shapes`。
+- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli-shapes`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe object.expandShape`；按原生参数构造计划后执行 run。
@@ -1627,8 +1627,8 @@ Expand Shape
 
 Live Shape Properties
 
-- 技能 / Owner: `vectorcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli`。
+- 技能 / Owner: `vectorcraft-cli-shapes`。
+- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli-shapes`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe object.setLiveShape`；按原生参数构造计划后执行 run。
@@ -4116,8 +4116,8 @@ Blob Brush
 
 Free Distort
 
-- 技能 / Owner: `vectorcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli`。
+- 技能 / Owner: `vectorcraft-cli-shapes`。
+- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli-shapes`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe object.distort`；按原生参数构造计划后执行 run。
@@ -4473,8 +4473,8 @@ Minus Back
 
 Outline Stroke
 
-- 技能 / Owner: `vectorcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli`。
+- 技能 / Owner: `vectorcraft-cli-paths`。
+- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli-paths`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe object.path.outlineStroke`；按原生参数构造计划后执行 run。
@@ -4490,8 +4490,8 @@ Outline Stroke
 
 Offset Path…
 
-- 技能 / Owner: `vectorcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli`。
+- 技能 / Owner: `vectorcraft-cli-paths`。
+- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli-paths`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe object.path.offsetPath`；按原生参数构造计划后执行 run。
@@ -4507,8 +4507,8 @@ Offset Path…
 
 Simplify…
 
-- 技能 / Owner: `vectorcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli`。
+- 技能 / Owner: `vectorcraft-cli-paths`。
+- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli-paths`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe object.path.simplify`；按原生参数构造计划后执行 run。
@@ -4524,8 +4524,8 @@ Simplify…
 
 Add Anchor Points
 
-- 技能 / Owner: `vectorcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli`。
+- 技能 / Owner: `vectorcraft-cli-paths`。
+- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli-paths`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe object.path.addAnchorPoints`；按原生参数构造计划后执行 run。
@@ -4541,8 +4541,8 @@ Add Anchor Points
 
 Divide Objects Below
 
-- 技能 / Owner: `vectorcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli`。
+- 技能 / Owner: `vectorcraft-cli-paths`。
+- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli-paths`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe object.path.divideObjectsBelow`；按原生参数构造计划后执行 run。
@@ -4558,8 +4558,8 @@ Divide Objects Below
 
 Split Into Grid…
 
-- 技能 / Owner: `vectorcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli`。
+- 技能 / Owner: `vectorcraft-cli-paths`。
+- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli-paths`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe object.path.splitIntoGrid`；按原生参数构造计划后执行 run。
@@ -4575,8 +4575,8 @@ Split Into Grid…
 
 Clean Up…
 
-- 技能 / Owner: `vectorcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli`。
+- 技能 / Owner: `vectorcraft-cli-paths`。
+- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli-paths`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe object.path.cleanUp`；按原生参数构造计划后执行 run。
@@ -4677,8 +4677,8 @@ Character
 
 All Artwork Above
 
-- 技能 / Owner: `vectorcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli`。
+- 技能 / Owner: `vectorcraft-cli-selection`。
+- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe object.lock.above`；按原生参数构造计划后执行 run。
@@ -4694,8 +4694,8 @@ All Artwork Above
 
 Other Layers
 
-- 技能 / Owner: `vectorcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli`。
+- 技能 / Owner: `vectorcraft-cli-selection`。
+- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe object.lock.otherLayers`；按原生参数构造计划后执行 run。
@@ -4711,8 +4711,8 @@ Other Layers
 
 All Artwork Above
 
-- 技能 / Owner: `vectorcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli`。
+- 技能 / Owner: `vectorcraft-cli-selection`。
+- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe object.hide.above`；按原生参数构造计划后执行 run。
@@ -4728,8 +4728,8 @@ All Artwork Above
 
 Other Layers
 
-- 技能 / Owner: `vectorcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli`。
+- 技能 / Owner: `vectorcraft-cli-selection`。
+- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe object.hide.otherLayers`；按原生参数构造计划后执行 run。
@@ -4762,8 +4762,8 @@ Transform Each…
 
 Reset Bounding Box
 
-- 技能 / Owner: `vectorcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli`。
+- 技能 / Owner: `vectorcraft-cli-shapes`。
+- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli-shapes`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe object.resetBoundingBox`；按原生参数构造计划后执行 run。
@@ -4847,8 +4847,8 @@ Create Trim Marks
 
 Convert to Shape
 
-- 技能 / Owner: `vectorcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli`。
+- 技能 / Owner: `vectorcraft-cli-shapes`。
+- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli-shapes`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe object.shape.convertToShape`；按原生参数构造计划后执行 run。
@@ -5476,8 +5476,8 @@ Assign Profile…
 
 Convert Document Color Mode
 
-- 技能 / Owner: `vectorcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli`。
+- 技能 / Owner: `vectorcraft-cli-project`。
+- 安装 / Install: `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe object.convertDocumentColorMode`；按原生参数构造计划后执行 run。

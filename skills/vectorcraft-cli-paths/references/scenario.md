@@ -36,7 +36,7 @@
 
 ## 完整归属清单 / Complete assigned command list
 
-本技能归属 28 条命令。下面按命令族分组；上述短表若存在，仅是示例。归属按最长前缀确定，实际任务可组合其他能力的命令。
+本技能归属 35 条命令。下面按命令族分组；上述短表若存在，仅是示例。归属按最长前缀确定，实际任务可组合其他能力的命令。
 
 Each command below has a parameter contract in this skill’s `command-reference.md`. Assignment uses the most specific prefix; a task can combine commands from multiple capabilities.
 
@@ -51,6 +51,18 @@ Order: inspect project and selection, describe parameters, construct and check t
 | 命令 / Command | 用途 / Label | 参数入口 / Parameters |
 | --- | --- | --- |
 | `node.move` | Reorder | `describe node.move` |
+
+### `object` — 7
+
+| 命令 / Command | 用途 / Label | 参数入口 / Parameters |
+| --- | --- | --- |
+| `object.path.outlineStroke` | Outline Stroke | `describe object.path.outlineStroke` |
+| `object.path.offsetPath` | Offset Path… | `describe object.path.offsetPath` |
+| `object.path.simplify` | Simplify… | `describe object.path.simplify` |
+| `object.path.addAnchorPoints` | Add Anchor Points | `describe object.path.addAnchorPoints` |
+| `object.path.divideObjectsBelow` | Divide Objects Below | `describe object.path.divideObjectsBelow` |
+| `object.path.splitIntoGrid` | Split Into Grid… | `describe object.path.splitIntoGrid` |
+| `object.path.cleanUp` | Clean Up… | `describe object.path.cleanUp` |
 
 ### `path` — 27
 

@@ -42,7 +42,7 @@
 
 ## 完整归属清单 / Complete assigned command list
 
-本技能归属 18 条命令。下面按命令族分组；上述短表若存在，仅是示例。归属按最长前缀确定，实际任务可组合其他能力的命令。
+本技能归属 36 条命令。下面按命令族分组；上述短表若存在，仅是示例。归属按最长前缀确定，实际任务可组合其他能力的命令。
 
 Each command below has a parameter contract in this skill’s `command-reference.md`. Assignment uses the most specific prefix; a task can combine commands from multiple capabilities.
 
@@ -52,7 +52,7 @@ Order: inspect project and selection, describe parameters, construct and check t
 
 这些是命令使用入口，不能把分类或计划校验当作实际执行成功；禁用项必须重新查询上下文，超时不得直接重放。 / Classification and preflight do not prove execution acceptance. Re-query disabled commands and reconcile timed-out operations before retry.
 
-### `object` — 8
+### `object` — 26
 
 | 命令 / Command | 用途 / Label | 参数入口 / Parameters |
 | --- | --- | --- |
@@ -60,10 +60,28 @@ Order: inspect project and selection, describe parameters, construct and check t
 | `object.move` | Move… | `describe object.move` |
 | `object.rotate` | Rotate… | `describe object.rotate` |
 | `object.scale` | Scale… | `describe object.scale` |
+| `object.reflect` | Reflect… | `describe object.reflect` |
+| `object.shear` | Shear… | `describe object.shear` |
 | `object.transformAgain` | Transform Again | `describe object.transformAgain` |
+| `object.nudge` | Nudge | `describe object.nudge` |
+| `object.arrange.bringToFront` | Bring to Front | `describe object.arrange.bringToFront` |
+| `object.arrange.bringForward` | Bring Forward | `describe object.arrange.bringForward` |
+| `object.arrange.sendBackward` | Send Backward | `describe object.arrange.sendBackward` |
+| `object.arrange.sendToBack` | Send to Back | `describe object.arrange.sendToBack` |
+| `object.arrange.sendToCurrentLayer` | Send to Current Layer | `describe object.arrange.sendToCurrentLayer` |
 | `object.group` | Group | `describe object.group` |
 | `object.ungroup` | Ungroup | `describe object.ungroup` |
+| `object.setProps` | Object Properties | `describe object.setProps` |
+| `object.align` | Align | `describe object.align` |
+| `object.distribute` | Distribute | `describe object.distribute` |
+| `object.distributeSpacing` | Distribute Spacing | `describe object.distributeSpacing` |
+| `object.setBounds` | Set Bounds | `describe object.setBounds` |
+| `object.expandShape` | Expand Shape | `describe object.expandShape` |
+| `object.setLiveShape` | Live Shape Properties | `describe object.setLiveShape` |
+| `object.distort` | Free Distort | `describe object.distort` |
 | `object.transformEach` | Transform Each… | `describe object.transformEach` |
+| `object.resetBoundingBox` | Reset Bounding Box | `describe object.resetBoundingBox` |
+| `object.shape.convertToShape` | Convert to Shape | `describe object.shape.convertToShape` |
 
 ### `shape` — 10
 

@@ -4,7 +4,7 @@
 
 ## 完整归属清单 / Complete assigned command list
 
-本技能归属 247 条命令。下面按命令族分组；上述短表若存在，仅是示例。归属按最长前缀确定，实际任务可组合其他能力的命令。
+本技能归属 211 条命令。下面按命令族分组；上述短表若存在，仅是示例。归属按最长前缀确定，实际任务可组合其他能力的命令。
 
 Each command below has a parameter contract in this skill’s `command-reference.md`. Assignment uses the most specific prefix; a task can combine commands from multiple capabilities.
 
@@ -216,53 +216,18 @@ Order: inspect project and selection, describe parameters, construct and check t
 | `magicWand.set` | Magic Wand Options | `describe magicWand.set` |
 | `magicWand.options` | Magic Wand Settings | `describe magicWand.options` |
 
-### `object` — 102
+### `object` — 66
 
 | 命令 / Command | 用途 / Label | 参数入口 / Parameters |
 | --- | --- | --- |
-| `object.reflect` | Reflect… | `describe object.reflect` |
-| `object.shear` | Shear… | `describe object.shear` |
-| `object.nudge` | Nudge | `describe object.nudge` |
-| `object.arrange.bringToFront` | Bring to Front | `describe object.arrange.bringToFront` |
-| `object.arrange.bringForward` | Bring Forward | `describe object.arrange.bringForward` |
-| `object.arrange.sendBackward` | Send Backward | `describe object.arrange.sendBackward` |
-| `object.arrange.sendToBack` | Send to Back | `describe object.arrange.sendToBack` |
-| `object.arrange.sendToCurrentLayer` | Send to Current Layer | `describe object.arrange.sendToCurrentLayer` |
-| `object.lock` | Selection | `describe object.lock` |
-| `object.unlockAll` | Unlock All | `describe object.unlockAll` |
-| `object.hide` | Selection | `describe object.hide` |
-| `object.showAll` | Show All | `describe object.showAll` |
 | `object.clippingMask.make` | Make | `describe object.clippingMask.make` |
 | `object.clippingMask.release` | Release | `describe object.clippingMask.release` |
 | `object.clippingMask.editContents` | Edit Contents | `describe object.clippingMask.editContents` |
 | `object.clippingMask.editMask` | Edit Clipping Path | `describe object.clippingMask.editMask` |
-| `object.isolate` | Enter Isolation Mode | `describe object.isolate` |
-| `object.exitIsolation` | Exit Isolation Mode | `describe object.exitIsolation` |
-| `object.setProps` | Object Properties | `describe object.setProps` |
-| `object.align` | Align | `describe object.align` |
-| `object.distribute` | Distribute | `describe object.distribute` |
-| `object.distributeSpacing` | Distribute Spacing | `describe object.distributeSpacing` |
-| `object.setBounds` | Set Bounds | `describe object.setBounds` |
-| `object.expandShape` | Expand Shape | `describe object.expandShape` |
-| `object.setLiveShape` | Live Shape Properties | `describe object.setLiveShape` |
-| `object.distort` | Free Distort | `describe object.distort` |
-| `object.path.outlineStroke` | Outline Stroke | `describe object.path.outlineStroke` |
-| `object.path.offsetPath` | Offset Path… | `describe object.path.offsetPath` |
-| `object.path.simplify` | Simplify… | `describe object.path.simplify` |
-| `object.path.addAnchorPoints` | Add Anchor Points | `describe object.path.addAnchorPoints` |
-| `object.path.divideObjectsBelow` | Divide Objects Below | `describe object.path.divideObjectsBelow` |
-| `object.path.splitIntoGrid` | Split Into Grid… | `describe object.path.splitIntoGrid` |
-| `object.path.cleanUp` | Clean Up… | `describe object.path.cleanUp` |
-| `object.lock.above` | All Artwork Above | `describe object.lock.above` |
-| `object.lock.otherLayers` | Other Layers | `describe object.lock.otherLayers` |
-| `object.hide.above` | All Artwork Above | `describe object.hide.above` |
-| `object.hide.otherLayers` | Other Layers | `describe object.hide.otherLayers` |
-| `object.resetBoundingBox` | Reset Bounding Box | `describe object.resetBoundingBox` |
 | `object.rasterize` | Rasterize… | `describe object.rasterize` |
 | `object.createObjectMosaic` | Create Object Mosaic… | `describe object.createObjectMosaic` |
 | `object.cropImage` | Crop Image | `describe object.cropImage` |
 | `object.createTrimMarks` | Create Trim Marks | `describe object.createTrimMarks` |
-| `object.shape.convertToShape` | Convert to Shape | `describe object.shape.convertToShape` |
 | `object.blend.make` | Make | `describe object.blend.make` |
 | `object.blend.release` | Release | `describe object.blend.release` |
 | `object.blend.options` | Blend Options… | `describe object.blend.options` |
@@ -284,7 +249,6 @@ Order: inspect project and selection, describe parameters, construct and check t
 | `object.mesh.addLine` | Add Mesh Line | `describe object.mesh.addLine` |
 | `object.mesh.deletePoint` | Delete Mesh Point | `describe object.mesh.deletePoint` |
 | `object.mesh.expand` | Expand Gradient Mesh | `describe object.mesh.expand` |
-| `object.convertDocumentColorMode` | Convert Document Color Mode | `describe object.convertDocumentColorMode` |
 | `object.textWrap.make` | Make | `describe object.textWrap.make` |
 | `object.textWrap.release` | Release | `describe object.textWrap.release` |
 | `object.textWrap.options` | Text Wrap Options… | `describe object.textWrap.options` |

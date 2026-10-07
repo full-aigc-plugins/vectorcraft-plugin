@@ -4,7 +4,7 @@
 
 ## 完整归属清单 / Complete assigned command list
 
-本技能归属 47 条命令。下面按命令族分组；上述短表若存在，仅是示例。归属按最长前缀确定，实际任务可组合其他能力的命令。
+本技能归属 57 条命令。下面按命令族分组；上述短表若存在，仅是示例。归属按最长前缀确定，实际任务可组合其他能力的命令。
 
 Each command below has a parameter contract in this skill’s `command-reference.md`. Assignment uses the most specific prefix; a task can combine commands from multiple capabilities.
 
@@ -13,6 +13,21 @@ Each command below has a parameter contract in this skill’s `command-reference
 Order: inspect project and selection, describe parameters, construct and check the plan, run it, save and reopen the native project, then verify requested and unaffected content. Follow `command-usage.md` for bridge mode.
 
 这些是命令使用入口，不能把分类或计划校验当作实际执行成功；禁用项必须重新查询上下文，超时不得直接重放。 / Classification and preflight do not prove execution acceptance. Re-query disabled commands and reconcile timed-out operations before retry.
+
+### `object` — 10
+
+| 命令 / Command | 用途 / Label | 参数入口 / Parameters |
+| --- | --- | --- |
+| `object.lock` | Selection | `describe object.lock` |
+| `object.unlockAll` | Unlock All | `describe object.unlockAll` |
+| `object.hide` | Selection | `describe object.hide` |
+| `object.showAll` | Show All | `describe object.showAll` |
+| `object.isolate` | Enter Isolation Mode | `describe object.isolate` |
+| `object.exitIsolation` | Exit Isolation Mode | `describe object.exitIsolation` |
+| `object.lock.above` | All Artwork Above | `describe object.lock.above` |
+| `object.lock.otherLayers` | Other Layers | `describe object.lock.otherLayers` |
+| `object.hide.above` | All Artwork Above | `describe object.hide.above` |
+| `object.hide.otherLayers` | Other Layers | `describe object.hide.otherLayers` |
 
 ### `select` — 47
 
