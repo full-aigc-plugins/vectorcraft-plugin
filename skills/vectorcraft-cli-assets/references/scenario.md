@@ -48,3 +48,69 @@ python3 -I -B "$SKILL_DIR/scripts/cli.py" -- run --in "$SOURCE_PROJECT" \
 ```
 
 示例坐标应按真实画板替换。`symbol.new` 返回名称和实例 ID，`symbol.place` 返回新实例 ID；重开后应保留符号定义与两个实例，并确认其他图标和对象未修改。
+
+<!-- COMPLETE_SCENARIO_COMMANDS_START -->
+
+## 完整归属清单 / Complete assigned command list
+
+本技能归属 30 条命令。下面按命令族分组；上述短表若存在，仅是示例。归属按最长前缀确定，实际任务可组合其他能力的命令。
+
+Each command below has a parameter contract in this skill’s `command-reference.md`. Assignment uses the most specific prefix; a task can combine commands from multiple capabilities.
+
+执行顺序：检查工程和选中对象 → `commands.py describe COMMAND_ID` → 根据参数说明构造计划 → `commands.py check PLAN.json` → `commands.py run PLAN.json --output NEW_DIRECTORY` → 保存并重开原生工程、核验目标修改和非目标内容。涉及 GUI 时按 `command-usage.md` 选择 bridge 模式。
+
+Order: inspect project and selection, describe parameters, construct and check the plan, run it, save and reopen the native project, then verify requested and unaffected content. Follow `command-usage.md` for bridge mode.
+
+这些是命令使用入口，不能把分类或计划校验当作实际执行成功；禁用项必须重新查询上下文，超时不得直接重放。 / Classification and preflight do not prove execution acceptance. Re-query disabled commands and reconcile timed-out operations before retry.
+
+### `file` — 3
+
+| 命令 / Command | 用途 / Label | 参数入口 / Parameters |
+| --- | --- | --- |
+| `file.place` | Place… | `describe file.place` |
+| `file.place.info` | Placed File Info | `describe file.place.info` |
+| `file.place.queue` | Load Place Cursor | `describe file.place.queue` |
+
+### `imageTrace` — 5
+
+| 命令 / Command | 用途 / Label | 参数入口 / Parameters |
+| --- | --- | --- |
+| `imageTrace.make` | Make | `describe imageTrace.make` |
+| `imageTrace.makeAndExpand` | Make and Expand | `describe imageTrace.makeAndExpand` |
+| `imageTrace.release` | Release | `describe imageTrace.release` |
+| `imageTrace.expand` | Expand | `describe imageTrace.expand` |
+| `imageTrace.presets` | Image Trace Presets | `describe imageTrace.presets` |
+
+### `links` — 9
+
+| 命令 / Command | 用途 / Label | 参数入口 / Parameters |
+| --- | --- | --- |
+| `links.check` | Check Links | `describe links.check` |
+| `links.update` | Update Links | `describe links.update` |
+| `links.relink` | Relink | `describe links.relink` |
+| `links.list` | Links | `describe links.list` |
+| `links.goTo` | Go To Link | `describe links.goTo` |
+| `links.embed` | Embed Image | `describe links.embed` |
+| `links.unembed` | Unembed | `describe links.unembed` |
+| `links.info` | Link Info | `describe links.info` |
+| `links.placementOptions` | Placement Options | `describe links.placementOptions` |
+
+### `symbol` — 13
+
+| 命令 / Command | 用途 / Label | 参数入口 / Parameters |
+| --- | --- | --- |
+| `symbol.list` | Symbols | `describe symbol.list` |
+| `symbol.new` | New Symbol… | `describe symbol.new` |
+| `symbol.place` | Place Symbol Instance | `describe symbol.place` |
+| `symbol.breakLink` | Break Link to Symbol | `describe symbol.breakLink` |
+| `symbol.edit` | Edit Symbol | `describe symbol.edit` |
+| `symbol.update` | Redefine Symbol | `describe symbol.update` |
+| `symbol.delete` | Delete Symbol | `describe symbol.delete` |
+| `symbol.duplicate` | Duplicate Symbol | `describe symbol.duplicate` |
+| `symbol.replace` | Replace Symbol | `describe symbol.replace` |
+| `symbol.setCurrent` | Current Symbol | `describe symbol.setCurrent` |
+| `symbol.selectInstances` | Select All Instances | `describe symbol.selectInstances` |
+| `symbol.spray` | Symbol Sprayer | `describe symbol.spray` |
+| `symbol.adjust` | Symbolism Tool | `describe symbol.adjust` |
+
+<!-- COMPLETE_SCENARIO_COMMANDS_END -->

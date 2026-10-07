@@ -37,3 +37,53 @@
 重新打开工程后，不把原会话的活动选择视为已保存。创建多个对象后，从各自真实回执取得 ID，再在同一 `run` 内执行 `select.set` 和 `object.group` 或 `object.pathfinder.unite`。不能仅因几何对象存在就执行依赖选择的命令。布尔运算返回 `ids` 数组，分组返回 `id`；采用实际结果继续操作。
 
 分组保持子对象可编辑；布尔并集在此已测样本中生成原生路径，并移除参与运算的两个输入对象。核验其他 Logo、文字与画板未变化，保留原工程，另存新 `.vectorcraft`。
+
+<!-- COMPLETE_SCENARIO_COMMANDS_START -->
+
+## 完整归属清单 / Complete assigned command list
+
+本技能归属 19 条命令。下面按命令族分组；上述短表若存在，仅是示例。归属按最长前缀确定，实际任务可组合其他能力的命令。
+
+Each command below has a parameter contract in this skill’s `command-reference.md`. Assignment uses the most specific prefix; a task can combine commands from multiple capabilities.
+
+执行顺序：检查工程和选中对象 → `commands.py describe COMMAND_ID` → 根据参数说明构造计划 → `commands.py check PLAN.json` → `commands.py run PLAN.json --output NEW_DIRECTORY` → 保存并重开原生工程、核验目标修改和非目标内容。涉及 GUI 时按 `command-usage.md` 选择 bridge 模式。
+
+Order: inspect project and selection, describe parameters, construct and check the plan, run it, save and reopen the native project, then verify requested and unaffected content. Follow `command-usage.md` for bridge mode.
+
+这些是命令使用入口，不能把分类或计划校验当作实际执行成功；禁用项必须重新查询上下文，超时不得直接重放。 / Classification and preflight do not prove execution acceptance. Re-query disabled commands and reconcile timed-out operations before retry.
+
+### `object` — 8
+
+| 命令 / Command | 用途 / Label | 参数入口 / Parameters |
+| --- | --- | --- |
+| `object.transform` | Transform | `describe object.transform` |
+| `object.move` | Move… | `describe object.move` |
+| `object.rotate` | Rotate… | `describe object.rotate` |
+| `object.scale` | Scale… | `describe object.scale` |
+| `object.transformAgain` | Transform Again | `describe object.transformAgain` |
+| `object.group` | Group | `describe object.group` |
+| `object.ungroup` | Ungroup | `describe object.ungroup` |
+| `object.transformEach` | Transform Each… | `describe object.transformEach` |
+
+### `select` — 1
+
+| 命令 / Command | 用途 / Label | 参数入口 / Parameters |
+| --- | --- | --- |
+| `select.set` | Select Objects | `describe select.set` |
+
+### `shape` — 10
+
+| 命令 / Command | 用途 / Label | 参数入口 / Parameters |
+| --- | --- | --- |
+| `shape.rectangle` | Rectangle | `describe shape.rectangle` |
+| `shape.ellipse` | Ellipse | `describe shape.ellipse` |
+| `shape.polygon` | Polygon | `describe shape.polygon` |
+| `shape.star` | Star | `describe shape.star` |
+| `shape.flare` | Flare | `describe shape.flare` |
+| `shape.line` | Line Segment | `describe shape.line` |
+| `shape.spiral` | Spiral | `describe shape.spiral` |
+| `shape.arc` | Arc | `describe shape.arc` |
+| `shape.rectangularGrid` | Rectangular Grid | `describe shape.rectangularGrid` |
+| `shape.polarGrid` | Polar Grid | `describe shape.polarGrid` |
+
+<!-- COMPLETE_SCENARIO_COMMANDS_END -->
