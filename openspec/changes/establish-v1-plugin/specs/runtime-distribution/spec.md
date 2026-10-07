@@ -47,3 +47,27 @@
 - **WHEN** 首用下载锁定原生CLI制品发生SSL EOF、超时、连接中断、短读或408／429／5xx
 - **THEN** 安装器 SHALL 丢弃半包并最多执行三次只读下载，之后仍执行原摘要／安全解压／版本检查，不重试原生编辑
 - **AND** 证书、权限、磁盘、大小限制、摘要及非临时HTTP拒绝错误 SHALL 不被重试或放宽；固定发行及安装首用另行验收
+
+### Requirement: Verified Vector desktop export alias
+The standalone full-command gateway SHALL map `file.export` to `document.export` only in VectorCraft bridge mode, because the pinned official desktop advertises the engine operation while the CLI advertises its host alias. The gateway SHALL validate the complete mapped registry, check the actual operation's enabled state in the same session, preserve requested and backend command identities in its receipt, and fail on any unrelated missing command. Headless command identity SHALL remain unchanged.
+
+#### Scenario: Export alias on official desktop
+- **GIVEN** the pinned desktop has `document.export` and no `file.export`
+- **WHEN** a bridge plan requests `file.export`
+- **THEN** the gateway calls `run_command` with `document.export`, produces the requested export, and records both identities
+
+#### Scenario: Unrelated registry drift
+- **WHEN** any other mapped command is missing
+- **THEN** the gateway refuses the workflow before edits
+
+### Requirement: Explicit desktop Place registry variants
+VectorCraft bridge discovery SHALL normalize only the verified `file.place` engine/UI pair in the pinned desktop registry. It SHALL retain the engine entry and its enabled state; the UI dialog entry cannot enable an otherwise disabled engine command. All unrecognized duplicates, multiple engine variants or multiple UI variants SHALL remain registry errors. Headless discovery SHALL retain strict uniqueness checks.
+
+#### Scenario: Engine Place remains disabled despite UI variant
+- **GIVEN** one engine and one UI `file.place` entry in the pinned bridge registry
+- **WHEN** the engine entry is disabled
+- **THEN** gateway execution remains blocked even if the UI dialog entry is enabled
+
+#### Scenario: Unexpected registry duplicate
+- **WHEN** a different command has duplicate entries or the Place variants are not exactly one engine and one UI entry
+- **THEN** discovery returns an unknown registry outcome and performs no edit
