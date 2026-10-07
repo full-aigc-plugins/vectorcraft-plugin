@@ -1,4 +1,6 @@
-当前插件：`0.1.0-dev.22`；技能源：`0.1.0-dev.20`。独立技能现提供固定桌面与 CLI 安装、自动启动、同会话全命令入口及退出回执。候选源码48项冷启动通过；本次固定发布安装复验待完成，全量命令及完整V1仍开放。[使用指南](docs/Craft-Desktop-First-Use-Architecture.zh_CN.md)。
+当前插件：`0.1.0-dev.23`；技能源：`0.1.0-dev.21`。独立技能现提供固定桌面与 CLI 安装、自动启动、同会话全命令入口及退出回执。候选源码48项冷启动通过；本次固定发布安装复验待完成，全量命令及完整V1仍开放。[使用指南](docs/Craft-Desktop-First-Use-Architecture.zh_CN.md)。
+
+历史发行记录：当前插件：`0.1.0-dev.22`；技能源：`0.1.0-dev.20`。独立技能现提供固定桌面与 CLI 安装、自动启动、同会话全命令入口及退出回执。候选源码48项冷启动通过；本次固定发布安装复验待完成，全量命令及完整V1仍开放。[使用指南](docs/Craft-Desktop-First-Use-Architecture.zh_CN.md)。
 
 历史 CLI 验收（原固定版本范围）：当前固定版本的 58 个技能全部通过独立冷启动：单技能目录、空运行环境、公开安装、版本查询及完整命令发现。此证据不代表 2639 条命令全部执行通过或完整场景验收。 [Evidence](docs/evidence/codex-current58-cold-cli-first-use-20261007.json).
 
@@ -75,9 +77,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.22 |
+| Metadata version | 0.1.0-dev.23 |
 | Stage | implementation-in-progress |
-| Skills source | Independent vectorcraft-skills / published v0.1.0-dev.20 |
+| Skills source | Independent vectorcraft-skills / published v0.1.0-dev.21 |
 | Execution | 上游 CLI；ArtCraft 使用子适配器 |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |
