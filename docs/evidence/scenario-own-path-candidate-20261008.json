@@ -1,0 +1,16 @@
+{
+  "result": "PASS",
+  "scope": "source candidate; documented paths and argument-parser entry help only; fixed installed runtime acceptance pending",
+  "record": {
+    "domain": "vectorcraft",
+    "skills": 13,
+    "layoutCopies": 39,
+    "helpInvocations": 114,
+    "greenLogSha256": "42ae7a5cccb30eebd61b2c152de68ef06182db13c6a9400e5c72bec2e66d5bf7",
+    "redFailures": 1,
+    "regressionTests": 134,
+    "seconds": 21.513,
+    "skipped": 27,
+    "regressionLogSha256": "490f5f4dcd396ca5e706132e90e3d5075a57a81a3d1e9bc82bae9f49cad7e155"
+  }
+}

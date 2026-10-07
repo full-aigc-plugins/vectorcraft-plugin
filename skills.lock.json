@@ -4,8 +4,8 @@
     {
       "package": "vectorcraft-skills",
       "repo": "https://github.com/full-aigc-skills/vectorcraft-skills.git",
-      "ref": "v0.1.0-dev.30",
-      "sha": "6b4661c93a827e534ec14a3254b33df4ab652307",
+      "ref": "v0.1.0-dev.31",
+      "sha": "3f7bb4f9b58239113230f171ab76d8a8ce8b5b73",
       "skills": [
         "vectorcraft-use",
         "vectorcraft-cli",
@@ -35,7 +35,7 @@
         "vectorcraft-cli-artboards": "cae8b443d45154a4e6ae709d2880294f326a151faeddddc8e4d3cb7b5f431b4d",
         "vectorcraft-cli-assets": "8ba9814dafaf1401262b591048fe86eb6bed7d6582ddcc5da3ce033d919a933e",
         "vectorcraft-cli-export": "4f23fa20c0f346f0c79dc13303b17f36f907b0c96b9b57dc56da840dd4e5e80a",
-        "vectorcraft-cli-selection": "f690b3daf143bb507e553a770974963abd68593f6aedf400a26fa84bbc37ece4"
+        "vectorcraft-cli-selection": "7e367c7d329be902a8044e3c0be90d4e04e4a154010a891513ad61f801f8afc3"
       }
     }
   ]
