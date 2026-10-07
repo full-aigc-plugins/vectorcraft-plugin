@@ -19,6 +19,6 @@
   "sourceOfTruth": "independent skills repository",
   "packaging": "immutable vendored snapshot with tag, commit and whole-tree checksums",
   "suiteManifest": "https://github.com/full-aigc-skills/vectorcraft-skills/blob/main/skill-suite.json",
-  "sourceRef": "v0.1.0-dev.23",
-  "sourceSha": "a7475ae4c56d4541ce408cb90cdad8809584423c"
+  "sourceRef": "v0.1.0-dev.24",
+  "sourceSha": "46e7a116968d07862f30661b517697607026c861"
 }
