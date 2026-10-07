@@ -1,0 +1,109 @@
+{
+  "schema": "craft-skill-source-contract-evidence/v1",
+  "result": "PASS",
+  "requirement": "VC-SK-001",
+  "requirementSha256": "b63b5d7cfd4b3e3ac3000b8e8b530f2a8f8730c408c5dd276a86bd44b29abf17",
+  "vendorSha256": "ce99651896676f7c64b0075fce0f6589c28f03954c39480d11b27aa158801570",
+  "testSha256": "3c28f7ebbabd27c751824c41b80c8c8b459dbbc2dffa733fe7070ac9863140e6",
+  "oldVendorSha256": "b72dfa1175b7f785e3b9877182eeadab7c9dd563310452c93f3490ce4985f298",
+  "red": {
+    "tests": 12,
+    "failingAssertions": 17,
+    "errors": 0,
+    "logSha256": "8ffa9dfa981a5f116895be8d89e2859968f905405a63316061b5e2698242a26e",
+    "scope": "The original vendor script was byte-identical in all five repositories; current complete boundary tests run against that original version."
+  },
+  "sources": [
+    {
+      "package": "vectorcraft-skills",
+      "repo": "https://github.com/full-aigc-skills/vectorcraft-skills.git",
+      "ref": "v0.1.0-dev.30",
+      "sha": "6b4661c93a827e534ec14a3254b33df4ab652307",
+      "skills": [
+        "vectorcraft-use",
+        "vectorcraft-cli",
+        "vectorcraft-cli-setup",
+        "vectorcraft-cli-project",
+        "vectorcraft-cli-paths",
+        "vectorcraft-cli-shapes",
+        "vectorcraft-cli-boolean",
+        "vectorcraft-cli-text",
+        "vectorcraft-cli-appearance",
+        "vectorcraft-cli-artboards",
+        "vectorcraft-cli-assets",
+        "vectorcraft-cli-export",
+        "vectorcraft-cli-selection"
+      ],
+      "dest": "skills/",
+      "sha256": {
+        "vectorcraft-use": "251d3f4ab3b8af3c3da4f40028d975e28598e96add4a28c046e50b43f66f1d89",
+        "vectorcraft-cli": "db16523fd6bb3f23f5da962f744e91f009879c4184a9aff37c74ff10dfaafa49",
+        "vectorcraft-cli-setup": "6060a2f644086128d6d6312bc5c62185b802c614374139d2af3a1822255fa915",
+        "vectorcraft-cli-project": "ef66522b7d91c766cbce2b550c385c23236b60c2a7382e8c84b842ff70781732",
+        "vectorcraft-cli-paths": "ccd9a42beec98a818ac75207b830a9a7d58e69a7ba4741e177aca42a007f29cf",
+        "vectorcraft-cli-shapes": "50f4319013d634f0fe8bd6364c10ec13f73f4a14990540293c0017a1fad76fd5",
+        "vectorcraft-cli-boolean": "b3b38eec6bc64459514c4b0ae8885f2e1b57645a0b4a05d1d8a96240984df185",
+        "vectorcraft-cli-text": "927d86d51016cd5317559f636c82d64d12ebad6cdaf88e156f05dbd72f36d5ec",
+        "vectorcraft-cli-appearance": "9bbabd93525e6e8e333effa90a5ee20bb3064203788feea8781b6cb9a8697144",
+        "vectorcraft-cli-artboards": "cae8b443d45154a4e6ae709d2880294f326a151faeddddc8e4d3cb7b5f431b4d",
+        "vectorcraft-cli-assets": "8ba9814dafaf1401262b591048fe86eb6bed7d6582ddcc5da3ce033d919a933e",
+        "vectorcraft-cli-export": "4f23fa20c0f346f0c79dc13303b17f36f907b0c96b9b57dc56da840dd4e5e80a",
+        "vectorcraft-cli-selection": "f690b3daf143bb507e553a770974963abd68593f6aedf400a26fa84bbc37ece4"
+      }
+    }
+  ],
+  "publicSourceCheck": {
+    "result": "PASS",
+    "logSha256": "289d200f9ab15051848fd10b7f5e9f3afea77f61b913b5558e11c665c716f2da",
+    "scope": "Public remote tag-only resolution, isolated checkout, exact locked commit and whole skill payload comparison; no local override."
+  },
+  "currentInstallationIdentity": {
+    "result": "passed",
+    "skills": 64,
+    "scope": "Current tracked skill-source files match the fixed-tag archive; plugin/installed full trees rehashed; local immutable tags and recorded host discovery match the exact lock. Ignored source files are separately reported."
+  },
+  "installationAuditSha256": "331eb34110da5557b870c174163993e242145f8c5a4cb5be5cbe4094e4702178",
+  "scenarios": [
+    {
+      "id": "VC-SK-001-P",
+      "proof": "Actual public fixed source check plus current64 source/plugin/installed full-tree identity audit."
+    },
+    {
+      "id": "VC-SK-001-N",
+      "proof": "Snapshot drift refuses check without updating lock; old fixed-tag checkout excludes local dirty source and caches."
+    },
+    {
+      "id": "VC-SK-001-LOCAL",
+      "proof": "Existing real Git fixture verifies fixed-tag checkout and source worktree preservation."
+    },
+    {
+      "id": "VC-SK-001-SELF-CONTAINED",
+      "proof": "File/directory/root/parent/dangling links and equal-content external entries refuse; actual public check/update preserve old targets and lock; invalid second source preflights before any replacement."
+    },
+    {
+      "id": "VC-SK-001-TAG",
+      "proof": "Real local version-named branch without a tag refuses both resolution and checkout; missing commit/digest locks refuse offline checks."
+    }
+  ],
+  "regression": {
+    "plugin": "vectorcraft",
+    "total": 18,
+    "passed": 18,
+    "skipped": 0,
+    "seconds": 4.363,
+    "logSha256": "43a69bc96447f39907a366830c939e55c164cde5cad6c00e3eed03d315af7aa7"
+  },
+  "unverified": [
+    "Actual generic Skills CLI installation",
+    "Copy-time I/O transaction rollback",
+    "Malicious concurrent filesystem replacement",
+    "Native creative scenarios have separate evidence",
+    "Complete V1"
+  ],
+  "publishedSkillRuntimeChanges": "none",
+  "documentationValidation": {
+    "result": "PASS",
+    "logSha256": "8bb78b42c8e31f3d7ea5183b38641d4a7fe89ef752b44bd85588cecf9d391b3d",
+    "openTasks": 52
+  }
+}

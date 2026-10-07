@@ -41,3 +41,5 @@ OpenSpec is the sole behavioral authority; this documentation provides explanati
 [Current host verification / 当前宿主验证](VectorCraft-Host-Verification-Architecture.md)
 
 - [Source-candidate asset handoff / 素材交接候选](VectorCraft-Asset-Handoff-Architecture.md)
+
+- [Skill snapshot preflight](Skill-Snapshot-Self-Contained.md) · [技能快照预检](Skill-Snapshot-Self-Contained.zh_CN.md)
