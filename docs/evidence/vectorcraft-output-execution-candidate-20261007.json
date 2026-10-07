@@ -1,0 +1,83 @@
+{
+  "schema": "vectorcraft-output-execution-candidate/v1",
+  "result": "PASS",
+  "sourceVersion": "0.1.0-dev.29",
+  "sourceBaseline": "7cb6b698f51b6658ccdbf22896417d458eae0b35",
+  "red": "public workflow starts native session before claiming a competing output; RuntimeError(native_started_without_claim) reproduced before implementation",
+  "guards": {
+    "passed": 7,
+    "cases": [
+      "public conflict blocks session",
+      "different targets independent",
+      "owned subprocess SIGKILL blocks replay",
+      "exception reconciling",
+      "invalid record preserved",
+      "symlink preserved",
+      "user output preserved"
+    ]
+  },
+  "sourceRegression": {
+    "total": 133,
+    "passed": 106,
+    "skipped": 27
+  },
+  "coldNative": {
+    "passed": 1,
+    "seconds": 11.631,
+    "scope": "source candidate with default public runtime downloads; create/reopen/revise/export and record effective-plan/source/runtime binding",
+    "evidence": {
+      "domain": "vectorcraft",
+      "result": "PASS",
+      "guardRecords": [
+        {
+          "identity": {
+            "inputHashes": {},
+            "planHash": "dcec5e8929097f924dc02cdc14a6a72b23dd53ff76513126ba1512dba6758e52",
+            "projectRevision": null,
+            "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+          },
+          "ownerPid": 10883,
+          "replayAllowed": false,
+          "schema": "vectorcraft-output-execution/v1",
+          "state": "finished",
+          "targetHash": "b8be627ab76dfa750235759e7c1d6e4b85bb830c7ee7ce82f73091fc0d9c795f"
+        },
+        {
+          "identity": {
+            "inputHashes": {},
+            "planHash": "c4cb5a6f8661d5b8b0ee241f8b2ec5065248ed34aae290ce30464fcdc8c05968",
+            "projectRevision": "5a61f4ffa4908f9392f52e7747205a2c7793acbc4c5c64b8470a9ca55ca284f1",
+            "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+          },
+          "ownerPid": 11285,
+          "replayAllowed": false,
+          "schema": "vectorcraft-output-execution/v1",
+          "state": "finished",
+          "targetHash": "c8387da88e292d2c1fc88a3526da7b196027f565f7539fde1554e6b2f983b9b6"
+        }
+      ],
+      "workflowSha256": "80f4904f6f4f898e32ba0e81901b933d5e5adb628a20a3e33aa1b28795542212",
+      "guardSha256": "7c13abd891370058e670fbfb3db7992d4a8ed7934682c83bde1aabf47ad6846f",
+      "entrySha256": "290108267b948b6ddda6f0865e20f1bdfadd7558442fb1d617125a1ed25eb116",
+      "projectSha256": "5a61f4ffa4908f9392f52e7747205a2c7793acbc4c5c64b8470a9ca55ca284f1",
+      "revisionSha256": "0b42150b1ac0dc5b4752dadf358c4745804ef8a9849d5fcf79779eb08cf210ab",
+      "scope": "source candidate single-skill cold native workflow delivery/revision; no full DAG acceptance"
+    }
+  },
+  "sourceFingerprints": {
+    "workflow.py": "80f4904f6f4f898e32ba0e81901b933d5e5adb628a20a3e33aa1b28795542212",
+    "output_guard.py": "7c13abd891370058e670fbfb3db7992d4a8ed7934682c83bde1aabf47ad6846f"
+  },
+  "testFingerprints": {
+    "test_output_execution_guard.py": "d26979d229d8554d6c124b4df42bdccd5cbfdb12bf118e2a7008ead2228ac8b1",
+    "test_native_workflow_first_use.py": "054e7878c34ab8a17de3dcb23fb2e9b12933ec69058b461c369957e97ea45c77"
+  },
+  "mirroredSkills": 13,
+  "unverified": [
+    "fixed plugin publication and installation",
+    "Art pinned domain bundle upgrade",
+    "raw CLI execution leases",
+    "complete authorization/idempotency/cancellation/budget contracts",
+    "creative acceptance and full V1"
+  ]
+}

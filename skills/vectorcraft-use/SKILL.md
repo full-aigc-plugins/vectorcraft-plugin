@@ -108,3 +108,7 @@ GUI任务可先使用本技能自带的 [固定桌面安装](references/desktop-
 相关创作任务读取 [对象选择与变换场景](references/object-selection-scene.md)，核对原生参数、对象上下文、局部返工与交付边界。
 
 对齐、分布、对象状态及路径处理任务按 [对象操作指南](references/object-edit-scene.md) 交给对应现有技能。
+
+## 同目标执行保护
+
+调用公开工作流前阅读本技能的 [执行登记与中断处理](references/output-execution.md)。竞争或未知状态不得删除登记、自动重放或换目标绕过核对。

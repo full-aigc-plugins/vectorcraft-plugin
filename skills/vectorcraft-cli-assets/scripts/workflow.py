@@ -148,6 +148,7 @@ def validate(plan):
 def execute(plan, output, runtime_home=None, source=None):
     validate(plan)
     output = Path(output).absolute()
+    output = output.parent.resolve()/output.name
     if output.exists() or output.is_symlink():
         raise ValueError('output_exists; choose a new revision directory')
     source_project = None
@@ -200,7 +201,13 @@ def execute(plan, output, runtime_home=None, source=None):
     recovery_module = importlib.util.module_from_spec(recovery_spec)
     recovery_spec.loader.exec_module(recovery_module)
     recovery_state = {}
-    with recovery_module.preserved_stage(output, '.vectorcraft-', recovery_state) as temporary, session_module.Session([cli, 'mcp', '--headless']) as session:
+    guard_spec = importlib.util.spec_from_file_location('craft_output_guard', Path(__file__).with_name('output_guard.py'))
+    guard_module = importlib.util.module_from_spec(guard_spec)
+    guard_spec.loader.exec_module(guard_module)
+    execution_identity = {'planHash': hashlib.sha256(json.dumps(plan, sort_keys=True, separators=(',', ':'), allow_nan=False).encode()).hexdigest(),
+                         'inputHashes': {name: asset['sha256'] for name, asset in input_assets.items()},
+                         'projectRevision': source_hash, 'runtimeSha256': installed['binarySha256']}
+    with guard_module.claim(output, execution_identity), recovery_module.preserved_stage(output, '.vectorcraft-', recovery_state) as temporary, session_module.Session([cli, 'mcp', '--headless']) as session:
         stage = Path(temporary)
         project = stage / 'project.vectorcraft'
         assets = inputs_module.collect(input_assets, stage)
