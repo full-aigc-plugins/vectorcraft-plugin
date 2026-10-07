@@ -45,7 +45,8 @@
     "8.19": "docs/evidence/craft-four-desktop-live-bridge-20261007.json",
     "8.17": "docs/evidence/craft-full-command-fixed-first-use-20261007.json",
     "8.20": "docs/evidence/craft-full-command-fixed-first-use-20261007.json",
-    "3.13": "docs/evidence/vectorcraft-output-execution-candidate-20261007.json"
+    "3.13": "docs/evidence/vectorcraft-output-execution-candidate-20261007.json",
+    "3.14": "docs/evidence/craft-three-domain-output-guards-fixed-first-use-20261007.json"
   },
   "hostValidationEvidence": "docs/evidence/craft-full-command-fixed-first-use-20261007.json",
   "hostValidationStatus": "fixed-five-plugin58-discovery-and-standalone-desktop-passed",
