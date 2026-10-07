@@ -194,3 +194,9 @@ Vectorcraft SHALL 为锁定反射目录每条命令保留完整参数原文、�
 - **AND** 原生保存重开 SHALL 保留三项外观与渐变链接；源修订 SHALL 保留原交付、路径几何、对象ID、未改顶部填色及未绑定品牌色的控制对象／像素
 - **AND** SVG SHALL 包含实际渐变，PNG SHALL 呈现目标变化；PDF结构与跨编辑器外观验收 SHALL 分开，不以文件头或预览证明保真
 - **AND** 不完整渐变向量 SHALL 拒绝成功交付且不覆盖原工程；源候选与固定安装首次使用证据 SHALL 分开，不能关闭全量逐命令门禁
+
+#### Scenario: [VC-CM-001-PLAN-JSON] 计划 JSON 禁止重复键
+
+- **WHEN** 命令计划的顶层、操作或嵌套参数 JSON 对象包含重复键
+- **THEN** 公开 check／run 入口 SHALL 报告 duplicate_json_key，拒绝后值静默覆盖前值
+- **AND** 在创建输出目录、安装运行时和调用任何原生命令之前停止；有效的唯一键计划保持兼容
