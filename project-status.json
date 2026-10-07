@@ -39,7 +39,10 @@
     "8.12": "docs/evidence/codex-native-gateway-first-use-20261007.json",
     "8.13": "docs/evidence/vector-appearance-candidate-20261007.json",
     "8.15": "docs/evidence/codex-vectorcraft-gradient-first-use-20261007.json",
-    "8.14": "docs/evidence/codex-art86-vector-appearance-first-use-20261007.json"
+    "8.14": "docs/evidence/codex-art86-vector-appearance-first-use-20261007.json",
+    "8.16": "docs/evidence/craft-owned-desktop-first-use-20261007.json",
+    "8.18": "docs/evidence/craft-four-desktop-live-bridge-20261007.json",
+    "8.19": "docs/evidence/craft-four-desktop-live-bridge-20261007.json"
   },
   "hostValidationEvidence": "docs/evidence/codex-protocol-fault-first-use-20261007.json",
   "hostValidationStatus": "fixed-protocol-repair-install-and-discovery-passed",

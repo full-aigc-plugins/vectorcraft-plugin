@@ -102,6 +102,10 @@ def resolve(value, bindings):
         return [resolve(child, bindings) for child in value]
     return value
 
+def backend_identifier(identifier, mode="headless"):
+    """官方 Vector 桌面提供引擎导出操作，CLI 同时提供 file.export 别名。"""
+    return "document.export" if DOMAIN == "vectorcraft" and mode == "bridge" and identifier == "file.export" else identifier
+
 def native_call(identifier, params):
     _, tool, key = ROUTES[DOMAIN]
     return tool, {key: identifier, "params": params}
@@ -212,10 +216,18 @@ def write(path, value):
     temporary.write_text(json.dumps(value, ensure_ascii=False, indent=2, allow_nan=False) + "\n")
     temporary.replace(path)
 
-def runtime_rows(session, params=None):
+def runtime_rows(session, params=None, mode="headless"):
     reply = session.request("tools/call", {"name": ROUTES[DOMAIN][0], "arguments": params or {}})
     result = parse_reply(reply)
     rows = result.get("commands") if isinstance(result, dict) else result
+    # 官方桌面 file.place 同时注册引擎和对话框；选择引擎前置状态，其他重复仍拒绝。
+    if DOMAIN == "vectorcraft" and mode == "bridge" and isinstance(rows, list):
+        variants = [r for r in rows if isinstance(r, dict) and r.get("id") == "file.place"]
+        if len(variants) == 2:
+            engine = [r for r in variants if r.get("ui") is not True]
+            dialog = [r for r in variants if r.get("ui") is True]
+            if len(engine) == len(dialog) == 1:
+                rows = [r for r in rows if r is not dialog[0]]
     if (not isinstance(rows, list)
             or any(not isinstance(row, dict) or not isinstance(row.get('id'), str)
                    or not row['id'] for row in rows)
@@ -287,8 +299,8 @@ def execute(plan, output, runtime_home=None, mode="headless", connect=None, toke
             # 目录查询也是原生能力合同；旧服务不能冒充新入口。
             if not required.issubset(available) or ROUTES[DOMAIN][0] not in available:
                 raise RuntimeError("native_tool_missing")
-            current = {r["id"]: r for r in runtime_rows(session)}
-            expected = {r["id"] for r in catalog()["commands"]}
+            current = {r["id"]: r for r in runtime_rows(session, mode=mode)}
+            expected = {backend_identifier(r["id"], mode) for r in catalog()["commands"]}
             if not expected.issubset(current):
                 raise RuntimeError("native_registry_drift")
             receipt["registeredCommands"] = len(current)
@@ -297,14 +309,16 @@ def execute(plan, output, runtime_home=None, mode="headless", connect=None, toke
                 record = {"index": index, "command": step.get("command"), "tool": step.get("tool"),
                           "params": params, "state": "started"}
                 if "command" in step:
-                    states = {r["id"]: r for r in runtime_rows(session, {"filter": step["command"]})}
-                    row = states.get(step["command"])
+                    backend_command = backend_identifier(step["command"], mode)
+                    states = {r["id"]: r for r in runtime_rows(session, {"filter": backend_command}, mode=mode)}
+                    row = states.get(backend_command)
                     if row is None or row.get("enabled") is not True:
                         record["state"] = "blocked"
                         record["reason"] = row.get("why", "native_context_disabled") if row else "native_command_missing"
                         receipt["steps"].append(record)
                         raise RuntimeError("precondition_failed: " + step["command"] + ": " + record["reason"])
-                    tool, args = native_call(step["command"], params)
+                    record["backendCommand"] = backend_command
+                    tool, args = native_call(backend_command, params)
                 else:
                     tool, args = step["tool"], params
                 receipt["steps"].append(record)

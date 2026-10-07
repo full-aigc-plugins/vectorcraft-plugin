@@ -96,3 +96,5 @@ python3 -I -B "$SKILL_DIR/scripts/commands.py" run "$SKILL_DIR/examples/commands
 完整工作流命令网关源候选见 [使用说明](references/native-workflow.md)。固定版本尚待发布及安装验收；GUI与全量逐命令仍独立验收。
 
 原生渐变、全局色板联动、多重填色与明确活动行场景，使用本技能的[可执行创建／返工说明](references/appearance-gradient.md)。
+
+GUI任务可先使用本技能自带的 [固定桌面安装](references/desktop-install.md)；安装、启动与实际GUI编辑分别核验。

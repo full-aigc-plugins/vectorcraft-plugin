@@ -48,7 +48,7 @@
 - **THEN** 安装器 SHALL 丢弃半包并最多执行三次只读下载，之后仍执行原摘要／安全解压／版本检查，不重试原生编辑
 - **AND** 证书、权限、磁盘、大小限制、摘要及非临时HTTP拒绝错误 SHALL 不被重试或放宽；固定发行及安装首用另行验收
 
-### Requirement: Verified Vector desktop export alias
+### Requirement: VC-DS-002 Verified Vector desktop export alias
 The standalone full-command gateway SHALL map `file.export` to `document.export` only in VectorCraft bridge mode, because the pinned official desktop advertises the engine operation while the CLI advertises its host alias. The gateway SHALL validate the complete mapped registry, check the actual operation's enabled state in the same session, preserve requested and backend command identities in its receipt, and fail on any unrelated missing command. Headless command identity SHALL remain unchanged.
 
 #### Scenario: Export alias on official desktop
@@ -60,7 +60,7 @@ The standalone full-command gateway SHALL map `file.export` to `document.export`
 - **WHEN** any other mapped command is missing
 - **THEN** the gateway refuses the workflow before edits
 
-### Requirement: Explicit desktop Place registry variants
+### Requirement: VC-DS-003 Explicit desktop Place registry variants
 VectorCraft bridge discovery SHALL normalize only the verified `file.place` engine/UI pair in the pinned desktop registry. It SHALL retain the engine entry and its enabled state; the UI dialog entry cannot enable an otherwise disabled engine command. All unrecognized duplicates, multiple engine variants or multiple UI variants SHALL remain registry errors. Headless discovery SHALL retain strict uniqueness checks.
 
 #### Scenario: Engine Place remains disabled despite UI variant
@@ -72,7 +72,7 @@ VectorCraft bridge discovery SHALL normalize only the verified `file.place` engi
 - **WHEN** a different command has duplicate entries or the Place variants are not exactly one engine and one UI entry
 - **THEN** discovery returns an unknown registry outcome and performs no edit
 
-### Requirement: Owned standalone desktop workflow
+### Requirement: VC-DS-001 Owned standalone desktop workflow
 Each domain skill SHALL offer `desktop.py run PLAN --output NEW_DIRECTORY` that validates the plan before installation, verifies fixed desktop and CLI identities, starts only its own isolated desktop, confirms the loopback listener belongs to that process, executes the existing full-command bridge gateway, and closes only its owned desktop/MCP processes on success or failure. Photo authentication SHALL use a private token file and the same authorized output root in both desktop and CLI. Unknown editing outcomes SHALL not be replayed.
 
 #### Scenario: First use without a running desktop
@@ -84,3 +84,11 @@ Each domain skill SHALL offer `desktop.py run PLAN --output NEW_DIRECTORY` that 
 - **THEN** no installation or desktop launch occurs
 - **WHEN** owned desktop startup or MCP initialization fails
 - **THEN** only owned processes are closed, logs and failure receipts are retained, and edits are not retried
+
+#### Scenario: Interrupted command is not replayed
+- **WHEN** a standalone desktop workflow is interrupted with an editing request started
+- **THEN** completed steps remain preserved, the started request becomes unknown, and failure plus owned-process lifecycle receipts are written before exit code 130
+
+#### Scenario: Ambiguous JSON plan
+- **WHEN** a plan contains duplicate object keys or nonfinite numeric values
+- **THEN** the runner rejects it before installing or starting a desktop

@@ -292,6 +292,37 @@
       "status": "verified-darwin-arm64",
       "candidateEvidence": "docs/evidence/failed-stage-candidate-20261007.json",
       "fixedHostEvidence": "docs/evidence/codex-failed-stage-first-use-20261007.json"
+    },
+    {
+      "requirement": "VC-DS-001",
+      "capability": "runtime-distribution",
+      "tasks": [
+        "8.16",
+        "8.17"
+      ],
+      "owner": "Desktop runtime owner",
+      "status": "in-progress",
+      "evidence": "docs/evidence/craft-owned-desktop-first-use-20261007.json"
+    },
+    {
+      "requirement": "VC-DS-002",
+      "capability": "runtime-distribution",
+      "tasks": [
+        "8.18"
+      ],
+      "owner": "Desktop gateway owner",
+      "status": "source-verified",
+      "evidence": "docs/evidence/craft-four-desktop-live-bridge-20261007.json"
+    },
+    {
+      "requirement": "VC-DS-003",
+      "capability": "runtime-distribution",
+      "tasks": [
+        "8.19"
+      ],
+      "owner": "Desktop gateway owner",
+      "status": "source-verified",
+      "evidence": "docs/evidence/craft-four-desktop-live-bridge-20261007.json"
     }
   ]
 }
