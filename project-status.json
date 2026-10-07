@@ -42,10 +42,12 @@
     "8.14": "docs/evidence/codex-art86-vector-appearance-first-use-20261007.json",
     "8.16": "docs/evidence/craft-owned-desktop-first-use-20261007.json",
     "8.18": "docs/evidence/craft-four-desktop-live-bridge-20261007.json",
-    "8.19": "docs/evidence/craft-four-desktop-live-bridge-20261007.json"
+    "8.19": "docs/evidence/craft-four-desktop-live-bridge-20261007.json",
+    "8.17": "docs/evidence/craft-full-command-fixed-first-use-20261007.json",
+    "8.20": "docs/evidence/craft-full-command-fixed-first-use-20261007.json"
   },
-  "hostValidationEvidence": "docs/evidence/codex-protocol-fault-first-use-20261007.json",
-  "hostValidationStatus": "fixed-protocol-repair-install-and-discovery-passed",
+  "hostValidationEvidence": "docs/evidence/craft-full-command-fixed-first-use-20261007.json",
+  "hostValidationStatus": "fixed-five-plugin58-discovery-and-standalone-desktop-passed",
   "knownFirstUseFailures": [],
   "resolvedFirstUseFailures": [
     {
@@ -61,7 +63,7 @@
   "completeCommandEntryEvidence": "docs/evidence/complete-commands-20261007.json",
   "completeCommandAcceptance": "incomplete",
   "completeCommandColdFirstUseEvidence": "docs/evidence/complete-commands-cold-first-use-20261007.json",
-  "currentFixedFirstUseEvidence": "docs/evidence/codex-complete-command-first-use-20261007.json",
+  "currentFixedFirstUseEvidence": "docs/evidence/craft-full-command-fixed-first-use-20261007.json",
   "completeCommandRevisionEvidence": "docs/evidence/complete-command-revision-first-use-20261007.json",
   "completeCommandRevisionStatus": "bounded-source-and-fixed-installed-cold-revision-passed; exhaustive command acceptance remains open",
   "previousFixedHostEvidence": "docs/evidence/codex-complete-command-first-use-20261007.json",
@@ -69,7 +71,7 @@
   "protocolFaultCandidateEvidence": "docs/evidence/protocol-fault-first-use-20261007.json",
   "protocolFaultAcceptance": "bounded-source-and-fixed-installed-cold-faults-passed; exhaustive commands and Art bundle remain open",
   "previousRevisionHostEvidence": "docs/evidence/codex-complete-command-revision-first-use-20261007.json",
-  "currentReleaseDiscoveryEvidence": "docs/evidence/codex-protocol-fault-first-use-20261007.json",
+  "currentReleaseDiscoveryEvidence": "docs/evidence/craft-full-command-fixed-first-use-20261007.json",
   "protocolFaultHostEvidence": "docs/evidence/codex-protocol-fault-first-use-20261007.json",
   "publicWorkflowCandidateEvidence": "docs/evidence/public-workflow-session-candidate-20261007.json",
   "publicWorkflowCandidateStatus": "bounded fixed installed domain clients passed; Art bundled distribution and exhaustive command gates remain open",
@@ -84,5 +86,9 @@
   "nativeDownloadAcceptance": "bounded-fixed-installed-macos-arm64-passed; exhaustive commands and fullV1 remain open",
   "appearanceCandidateEvidence": "docs/evidence/vector-appearance-candidate-20261007.json",
   "appearanceFixedInstalledEvidence": "docs/evidence/codex-vectorcraft-gradient-first-use-20261007.json",
-  "appearanceArtDistributionEvidence": "docs/evidence/codex-art86-vector-appearance-first-use-20261007.json"
+  "appearanceArtDistributionEvidence": "docs/evidence/codex-art86-vector-appearance-first-use-20261007.json",
+  "previousFixedFirstUseEvidence": "docs/evidence/codex-complete-command-first-use-20261007.json",
+  "ownedDesktopFirstUseEvidence": "docs/evidence/craft-full-command-fixed-first-use-20261007.json",
+  "advancedDesktopFirstUseEvidence": "docs/evidence/craft-full-command-fixed-first-use-20261007.json",
+  "ownedDesktopAcceptance": "bounded-first-use-and-advanced-desktop-passed; exhaustive commands and full V1 remain open"
 }
