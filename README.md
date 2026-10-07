@@ -242,3 +242,7 @@ Candidate complete-command inner JSON fix: nonfinite values, overflow and duplic
 Gradient and multiple appearance: source-candidate cold native creation/revision passes for 12 standalone skills; fixed installation and Art distribution are pending. [Architecture](docs/VectorCraft-Appearance-Gradient-Architecture.md).
 
 Fixed installed gradient/multiple appearance: 12 skills pass, with control objects and original delivery preserved; updated Art distribution remains open. [Evidence](docs/evidence/codex-vectorcraft-gradient-first-use-20261007.json).
+
+## Desktop installation component (source candidate)
+
+The 48 standalone domain skills now have their own pinned official desktop installers. See the [installation architecture](docs/Craft-Desktop-First-Use-Architecture.md) and [48-skill installation evidence](docs/evidence/craft-desktop-source48-first-use-20261007.json). Existing release-tag skill copies do not yet contain this candidate component. Desktop startup, GUI edits/save/reopen and complete command execution remain open acceptance gates.
