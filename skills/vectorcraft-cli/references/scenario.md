@@ -4,7 +4,7 @@
 
 ## 完整归属清单 / Complete assigned command list
 
-本技能归属 293 条命令。下面按命令族分组；上述短表若存在，仅是示例。归属按最长前缀确定，实际任务可组合其他能力的命令。
+本技能归属 247 条命令。下面按命令族分组；上述短表若存在，仅是示例。归属按最长前缀确定，实际任务可组合其他能力的命令。
 
 Each command below has a parameter contract in this skill’s `command-reference.md`. Assignment uses the most specific prefix; a task can combine commands from multiple capabilities.
 
@@ -353,57 +353,6 @@ Order: inspect project and selection, describe parameters, construct and check t
 | `prefs.set` | Set Preference | `describe prefs.set` |
 | `prefs.reset` | Reset Preferences | `describe prefs.reset` |
 | `prefs.list` | List Preferences | `describe prefs.list` |
-
-### `select` — 46
-
-| 命令 / Command | 用途 / Label | 参数入口 / Parameters |
-| --- | --- | --- |
-| `select.all` | All | `describe select.all` |
-| `select.allOnArtboard` | All on Active Artboard | `describe select.allOnArtboard` |
-| `select.none` | Deselect | `describe select.none` |
-| `select.reselect` | Reselect | `describe select.reselect` |
-| `select.inverse` | Inverse | `describe select.inverse` |
-| `select.nextAbove` | Next Object Above | `describe select.nextAbove` |
-| `select.nextBelow` | Next Object Below | `describe select.nextBelow` |
-| `select.add` | Add to Selection | `describe select.add` |
-| `select.toggle` | Toggle Selection | `describe select.toggle` |
-| `select.key` | Set Key Object | `describe select.key` |
-| `select.anchors` | Select Anchors | `describe select.anchors` |
-| `select.anchorsMany` | Select Anchors | `describe select.anchorsMany` |
-| `select.same.fillColor` | Fill Color | `describe select.same.fillColor` |
-| `select.same.strokeColor` | Stroke Color | `describe select.same.strokeColor` |
-| `select.same.strokeWeight` | Stroke Weight | `describe select.same.strokeWeight` |
-| `select.same.fillAndStroke` | Fill & Stroke | `describe select.same.fillAndStroke` |
-| `select.same.opacity` | Opacity | `describe select.same.opacity` |
-| `select.same.blendingMode` | Blending Mode | `describe select.same.blendingMode` |
-| `select.same.appearance` | Appearance | `describe select.same.appearance` |
-| `select.same.shapeType` | Shape | `describe select.same.shapeType` |
-| `select.object.allOnSameLayers` | All on Same Layers | `describe select.object.allOnSameLayers` |
-| `select.object.clippingMasks` | Clipping Masks | `describe select.object.clippingMasks` |
-| `select.object.textObjects` | All Text Objects | `describe select.object.textObjects` |
-| `select.object.strayPoints` | Stray Points | `describe select.object.strayPoints` |
-| `select.object.openPaths` | Open Paths | `describe select.object.openPaths` |
-| `select.same.graphicStyle` | Graphic Style | `describe select.same.graphicStyle` |
-| `select.same.appearanceAttribute` | Appearance Attribute | `describe select.same.appearanceAttribute` |
-| `select.magicWand` | Magic Wand | `describe select.magicWand` |
-| `select.font` | Select Text by Font | `describe select.font` |
-| `select.same.symbolInstance` | Symbol Instance | `describe select.same.symbolInstance` |
-| `select.same.fontFamily` | Font Family | `describe select.same.fontFamily` |
-| `select.same.fontFamilyStyle` | Font Family & Style | `describe select.same.fontFamilyStyle` |
-| `select.same.fontFamilyStyleSize` | Font Family, Style & Size | `describe select.same.fontFamilyStyleSize` |
-| `select.same.fontSize` | Font Size | `describe select.same.fontSize` |
-| `select.same.textFillColor` | Text Fill Color | `describe select.same.textFillColor` |
-| `select.same.textStrokeColor` | Text Stroke Color | `describe select.same.textStrokeColor` |
-| `select.object.directionHandles` | Direction Handles | `describe select.object.directionHandles` |
-| `select.object.pointText` | Point Text Objects | `describe select.object.pointText` |
-| `select.object.areaText` | Area Text Objects | `describe select.object.areaText` |
-| `select.object.brushStrokes` | Brush Strokes | `describe select.object.brushStrokes` |
-| `select.object.bristleBrushStrokes` | Bristle Brush Strokes | `describe select.object.bristleBrushStrokes` |
-| `select.save` | Save Selection… | `describe select.save` |
-| `select.recall` | Recall Selection | `describe select.recall` |
-| `select.editSaved` | Edit Selection… | `describe select.editSaved` |
-| `select.savedList` | Saved Selections | `describe select.savedList` |
-| `select.object.slices` | Slices | `describe select.object.slices` |
 
 ### `slice` — 1
 

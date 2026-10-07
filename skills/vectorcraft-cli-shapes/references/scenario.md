@@ -42,7 +42,7 @@
 
 ## 完整归属清单 / Complete assigned command list
 
-本技能归属 19 条命令。下面按命令族分组；上述短表若存在，仅是示例。归属按最长前缀确定，实际任务可组合其他能力的命令。
+本技能归属 18 条命令。下面按命令族分组；上述短表若存在，仅是示例。归属按最长前缀确定，实际任务可组合其他能力的命令。
 
 Each command below has a parameter contract in this skill’s `command-reference.md`. Assignment uses the most specific prefix; a task can combine commands from multiple capabilities.
 
@@ -64,12 +64,6 @@ Order: inspect project and selection, describe parameters, construct and check t
 | `object.group` | Group | `describe object.group` |
 | `object.ungroup` | Ungroup | `describe object.ungroup` |
 | `object.transformEach` | Transform Each… | `describe object.transformEach` |
-
-### `select` — 1
-
-| 命令 / Command | 用途 / Label | 参数入口 / Parameters |
-| --- | --- | --- |
-| `select.set` | Select Objects | `describe select.set` |
 
 ### `shape` — 10
 

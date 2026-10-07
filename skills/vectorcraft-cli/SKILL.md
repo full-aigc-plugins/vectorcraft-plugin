@@ -1,6 +1,6 @@
 ---
 name: vectorcraft-cli
-description: 当需要查询实际命令参数和能力，调用公开 CLI、MCP 与诊断时使用 VectorCraft；本技能自带首次安装与公开 CLI 入口。
+description: 查询 VectorCraft 原生命令和参数，或处理按属性选择品牌对象、批量变换与变体修改；首次使用安装固定 CLI。
 license: Apache-2.0
 ---
 
@@ -65,7 +65,7 @@ python3 -I -B "$SKILL_DIR/scripts/commands.py" run "$SKILL_DIR/examples/commands
 
 新入口执行前检查真实注册表与当前可执行状态，保留返回值引用和逐步回执；语义错误或超时不冒充成功。目录覆盖与直接原生使用不等于所有指令、GUI、交付或 Art 编排已验收。
 
-完整工作流命令网关见 [使用说明](references/native-workflow.md)。领域分发固定版本为 0.1.0-dev.21；该版本的独立安装复验与全量逐命令验收分别记录，不以发布替代验收。
+完整工作流命令网关见 [使用说明](references/native-workflow.md)。固定 CLI 的版本与制品摘要以本技能自带 `scripts/runtime.lock.json` 为准；技能包版本以对应发布标签为准。独立安装复验与全量逐命令验收分别记录，不以发布替代验收。
 
 原生渐变、全局色板联动、多重填色与明确活动行场景，使用本技能的[可执行创建／返工说明](references/appearance-gradient.md)。
 
@@ -76,3 +76,5 @@ GUI任务可先使用本技能自带的 [固定桌面安装](references/desktop-
 业务任务从 [场景操作手册](references/business-scenes.md) 开始，按输入检查、模板适配、原生交付、局部返工和结果核验执行。
 
 安装失败时读取 [首次使用诊断](references/first-use-failures.md)，按回执定位当前技能自身的 setup 入口；安装失败与原生调用失败分别处理。
+
+相关创作任务读取 [对象选择与变换场景](references/object-selection-scene.md)，核对原生参数、对象上下文、局部返工与交付边界。
