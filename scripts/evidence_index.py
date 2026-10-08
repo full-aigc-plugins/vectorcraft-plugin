@@ -223,6 +223,9 @@ def build(root=ROOT):
     artboard_mapping='docs/evidence/vectorcraft-artboard-mapping-candidate54-20261009.json'
     if (root/artboard_mapping).is_file():
         entries.append(bound_report(root,artboard_mapping,'native-candidate','Source40 stable artboard-ID mapping and native receipt binding, three successful mappings/four refusals;9 mapping tests,49 Python and115 Node regressions;minimum4.10/4.11 only, complete4.12 remains open','VC-DM-004',['4.10','4.11']))
+    artboard_mapping_fixed='docs/evidence/vectorcraft-artboard-mapping-fixed54-20261009.json'
+    if (root/artboard_mapping_fixed).is_file():
+        entries.append(bound_report(root,artboard_mapping_fixed,'fixed-install','Actual public54/source40 isolated host installation, three successful native mappings/four refusals/14 decoded outputs;13 skills unchanged;complete4.12 remains open','VC-DM-004'))
     # 明确归档变更前执行字节；保留报告原摘要，不能把旧运行重绑定到新实现。
     for entry in entries:
         archived={}
