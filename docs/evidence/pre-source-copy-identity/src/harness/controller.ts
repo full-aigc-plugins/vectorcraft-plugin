@@ -1,5 +1,5 @@
 import {assetDigest} from './asset_digest.ts';
-import {authorizedRead,authorizedDigest,authorizedDigests,authorizedCopy} from './authorized_file.ts';
+import {authorizedRead,authorizedDigest,authorizedDigests} from './authorized_file.ts';
 import {assertNoLiteralSecrets,validateAssetRecords} from './input_policy.ts';
 import {nativeEnvironment} from './native_environment.ts';
 import { createHash } from 'node:crypto';
@@ -32,7 +32,7 @@ type RunRequest={key:string,skill:string,expectedSkillSha256:string,plan:string,
 /** 仅协调已固定的独立技能；原生命令语义与失败工程保留由源技能负责。 */
 export class Controller {
   ledger:Ledger;snapshotRoot:string;processes:ProcessRegistry;probe:RuntimeProbe;
-  constructor(database:string,probe:RuntimeProbe=prepareRuntime){this.probe=probe;this.ledger=new Ledger(database);this.processes=new ProcessRegistry(this.ledger.db);this.snapshotRoot=join(resourcePath(dirname(resolve(database))),'plan-snapshots');}
+  constructor(database:string,probe:RuntimeProbe=prepareRuntime){this.probe=probe;this.ledger=new Ledger(database);this.processes=new ProcessRegistry(this.ledger.db);this.snapshotRoot=join(dirname(resolve(database)),'plan-snapshots');}
   /** 原子公布撤销状态；这里只请求取消，停止和原文件核验之前不释放资源。 */
   requestCancel(id:string,epoch:number):any {
     const task=this.ledger.cancel(id,epoch,false),budgetId=task.binding.authorization.budgetId??task.id;
@@ -234,7 +234,9 @@ export class Controller {
         const original=join(request.source,name),snapshot=join(sourceSnapshot,name);
         if(sourcePathLinked(name))throw new Error('invalid_source_dependency');
         mkdirSync(dirname(snapshot),{recursive:true,mode:0o700});
-        authorizedCopy(original,auth.readRoots,snapshot,sourceSnapshot,expected);
+        const bytes=readFileSync(original);if(sha(bytes)!==expected)throw new Error('stale_source_dependencies');
+        writeFileSync(snapshot,bytes,{flag:'wx',mode:0o400});
+        const descriptor=openSync(snapshot,'r');try{fsyncSync(descriptor);}finally{closeSync(descriptor);}
       }
       checkInputs();sourceSnapshotSha256=skillDigest(sourceSnapshot);
     }

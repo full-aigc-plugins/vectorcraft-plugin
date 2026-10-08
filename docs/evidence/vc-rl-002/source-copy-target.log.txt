@@ -1,0 +1,21 @@
+✔ stream copy preserves a 65MiB project, digest and readonly mode (242.914292ms)
+✔ copy rejects digest drift and removes only the newly created target (90.61375ms)
+✔ copy rejects source and destination links and a target outside the frozen write root (91.291583ms)
+✔ source manifest cannot change while runtime is probing (198.394ms)
+✔ source inherited plan cannot change while runtime is probing (194.715333ms)
+✔ source declared asset cannot change while runtime is probing (186.52675ms)
+✔ source previously absent PDF date cannot change while runtime is probing (153.529625ms)
+✔ source manifest and declared dependency digests enter immutable task identity (729.376416ms)
+✔ source manifest cannot introduce path traversal or linked inputs before probing (276.844833ms)
+✔ ordinary dependency filenames cannot bypass guards through object prototype setters (187.647166ms)
+✔ a declared dependency cannot escape its source bundle through a parent directory link (98.129375ms)
+✔ execution uses a hash-verified readonly source snapshot while resource identity stays on the user source (815.456667ms)
+✔ source snapshot refuses an ancestor swapped after link checking before copying bytes (329.568166ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2933.713666

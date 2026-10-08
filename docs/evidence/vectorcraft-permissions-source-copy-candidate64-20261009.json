@@ -1,0 +1,60 @@
+{
+  "schema": "vectorcraft-permissions-source-copy-candidate/v1",
+  "result": "PASS",
+  "pluginVersion": "0.1.0-dev.64",
+  "sourceRef": "v0.1.0-dev.46",
+  "baseCommit": "f16a9be29faf3aaf36ef5b5f43acdbb7aa08e873",
+  "platform": "darwin-arm64",
+  "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+  "tasksClosed": [],
+  "marketplaceEligible": false,
+  "fixedPluginAcceptance": "NOT_RUN",
+  "redTests": 1,
+  "greenBoundaryTests": 4,
+  "targetTests": 13,
+  "nodeTests": 153,
+  "nativeRevision": {
+    "result": "PASS",
+    "sharedAttempts": 4,
+    "sourcePreserved": true,
+    "controlTextPreserved": true,
+    "allGroupsStopped": true,
+    "scope": "actual native authorized revision and checked next candidate; scores are explicitly injected QA; no creative or fixed installation acceptance"
+  },
+  "remaining": [
+    "other parent write operations",
+    "actual host secret references",
+    "complete entrypoint audit",
+    "current immutable fixed plugin installation acceptance"
+  ],
+  "fingerprints": {
+    "src/harness/controller.ts": "ad042d8b5797c2188df961f6ec11f1d9c097e58e0b37e0bdbbbabb64d1dcdc33",
+    "src/harness/authorized_file.ts": "42a8c74b646c4598a7652493a63ba772bf28eb791c816a6d345ad6b3daa0cd33",
+    "src/harness/asset_digest.py": "8ddd6bc9e07f7b111da43b4c7d5564ef623be438924ddbaa215b749b701f3465",
+    "skills/vectorcraft-use/scripts/asset_reader.py": "d067708d2355c0aa4415027ae2cff53c5559611c90854447fd7595b6535939f3",
+    "skills.lock.json": "44bd17666c6ef2a79641245a239a4f29a1f4a79162bba0de8b8329347f0a8fd1",
+    "plugin.json": "60e59b0f5f44bf657e0554e25a20c5e99e774af7c2ad9f1602590cd5bff6f712",
+    "scripts/qa/revision_budget.ts": "a5601841c8e76d9ca143060df7a21e27722612c2b4b7892e3215218ca3275e47",
+    "tests/source_snapshot_permissions.test.ts": "14fda2dfb24987ebdb47422ba5ce892a4a9db3273bc668f6d27aa62b3e261603",
+    "tests/authorized_copy.test.ts": "ee70445b6b88a3ae3b76b90e1984f03df422f6ef170d1598616d610fe9ab01f9",
+    "docs/evidence/vc-rl-002/source-copy-red.log.txt": "f725bb85f3e747c18f8e9358c3f3566cb47b0add6497188dd4fcc671e0e1f2db",
+    "docs/evidence/vc-rl-002/source-copy-green.log.txt": "6e8a1c449c3d5f34780a4e3e30dafe05159a041faeadca522270c33c26f73b73",
+    "docs/evidence/vc-rl-002/source-copy-target.log.txt": "a65cc1b3fc08fa1692a022d21ab86d1c32cb2a436ab5292f9d3a391f9b3b5ea6",
+    "docs/evidence/vc-rl-002/source-copy-node153.log.txt": "56365173ccc0af2180e91b4bd61ff91b4aef9cd65ca734251ce930c8dd3782c4",
+    "docs/evidence/vc-rl-002/source-copy-native.json": "5ecb90da1cdd46099f9ae6fb0bf85fc8939cc6fb675510b92ba6e041692645ac",
+    "docs/evidence/vc-rl-002/source-copy-native.log.txt": "c0001f21291126dc73fd527bd6d09f61a9c7974ae6aeff64704c1c747617170e",
+    "docs/evidence/vc-rl-002/source-copy-python156.log.txt": "4730621e83d318e3954e9ea91870c9a3d34c45480ed6c8aa31f3fcbe454c2039",
+    "docs/evidence/vc-rl-002/source-copy-python-source-plan-retry.log.txt": "f97fa48616c82773355ad4676ba6ad357a2906fb6a58289607e5537d90430cad"
+  },
+  "pythonRegression": {
+    "total": 156,
+    "passed": 155,
+    "environmentErrors": 1,
+    "error": "test_source_plan_identity copytree failed with ENOSPC",
+    "targetedRetry": {
+      "tests": 1,
+      "passed": 1
+    },
+    "scope": "all156 covered across full run and targeted retry; not a single all-green run"
+  }
+}

@@ -321,18 +321,5 @@
     "evidence": "docs/evidence/vectorcraft-permissions-delivery-read-candidate64-20261009.json",
     "scope": "frozen-root delivery reads,manifest-bound native geometry and verified manifest receipt digest; source snapshot copies,parent writes,host secrets and fixed release remain open",
     "tasksClosed": []
-  },
-  "permissionsSourceCopyIncrement": {
-    "implementationVersion": "0.1.0-dev.64",
-    "sourceRef": "v0.1.0-dev.46",
-    "evidence": "docs/evidence/vectorcraft-permissions-source-copy-candidate64-20261009.json",
-    "result": "PASS",
-    "tasksClosed": [],
-    "remaining": [
-      "other parent write operations",
-      "actual host secret references",
-      "complete entrypoint audit",
-      "current immutable fixed plugin installation acceptance"
-    ]
   }
 }

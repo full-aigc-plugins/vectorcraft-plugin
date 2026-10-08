@@ -1,0 +1,6 @@
+test_current_source_plan_identity_and_stale_fields (test_source_plan_identity.SourcePlanIdentityTests.test_current_source_plan_identity_and_stale_fields) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 4.582s
+
+OK
