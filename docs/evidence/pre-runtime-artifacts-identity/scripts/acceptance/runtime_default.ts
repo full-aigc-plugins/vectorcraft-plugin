@@ -10,19 +10,17 @@ const deps=['src/runtime/prepare_runtime.ts','src/runtime/runtime_probe.py','src
 const fingerprints=Object.fromEntries(deps.map(p=>[p,sha(p)]));const expectedSkillSha256=skillDigest(skill);
 const plan=join(root,'plan.json');writeFileSync(plan,JSON.stringify({document:{width:40,height:40,units:'Points'},operations:[{command:'shape.rectangle',params:{x:3,y:3,width:12,height:12},as:'box'}]}));
 const request={key:'first',skill,expectedSkillSha256,plan,output:join(root,'first'),runtimeHome,python,estimatedBytes:16*1024*1024,authorization:{objects:[],fields:[],deadline:Date.now()+180000,maxAttempts:2,maxBytes:32*1024*1024,readRoots:[root],writeRoots:[root]}};
-const database=join(root,'state.sqlite'),controller=new Controller(database),cases:any[]=[],deliveries:any={};
-function recordDelivery(name:string){const directory=join(root,name),manifestPath=join(directory,'manifest.json'),manifest=JSON.parse(readFileSync(manifestPath,'utf8'));for(const [file,digest] of Object.entries(manifest.files))assert.equal(sha(join(directory,file)),digest);deliveries[name]={manifestSha256:sha(manifestPath),files:manifest.files};}
+const database=join(root,'state.sqlite'),controller=new Controller(database),cases:any[]=[];
 try{
  const first=await controller.run(request);assert.equal(first.state,'review_ready');assert.ok(first.binding.inputHashes['runtime:capabilities']);
  const installation=JSON.parse(readFileSync(join(runtimeHome,'vectorcraft/0.2.0-craft.2/installation.json'),'utf8'));
  assert.equal(installation.binarySha256,first.binding.runtimeIdentity);
  assert.equal(sha(join(runtimeHome,'vectorcraft/0.2.0-craft.2/vectorcraft-cli')),installation.binarySha256);
  cases.push({case:'empty-runtime-default-first-use',state:first.state,binarySha256:installation.binarySha256,capabilityFingerprint:first.binding.inputHashes['runtime:capabilities']});
- recordDelivery('first');
  assert.equal((await controller.run(request)).id,first.id);cases.push({case:'same-key-readonly',state:'PASS'});
  const other=new Controller(database);try{
   const [second,third]=await Promise.all([controller.run({...request,key:'second',output:join(root,'second')}),other.run({...request,key:'third',output:join(root,'third')})]);
-  assert.equal(second.state,'review_ready');assert.equal(third.state,'review_ready');recordDelivery('second');recordDelivery('third');cases.push({case:'same-ledger-parallel-distinct-targets',state:'PASS'});
+  assert.equal(second.state,'review_ready');assert.equal(third.state,'review_ready');cases.push({case:'same-ledger-parallel-distinct-targets',state:'PASS'});
  }finally{other.close();}
  const wrongSkill=join(root,'wrong-schema-skill');cpSync(skill,wrongSkill,{recursive:true});
  const catalogPath=join(wrongSkill,'references/command-coverage.json');const catalog=JSON.parse(readFileSync(catalogPath,'utf8'));catalog.commands[0].params='{} adversarial schema';writeFileSync(catalogPath,JSON.stringify(catalog));
@@ -35,7 +33,7 @@ try{
  const selected=JSON.parse((controller.ledger.db.prepare('SELECT active FROM runtime_selection WHERE id=1').get() as any).active);
  assert.equal(selected.commands.length,585);assert.equal(selected.tools.length,25);
  assert.equal(skillDigest(skill),expectedSkillSha256);assert.deepEqual(fingerprints,Object.fromEntries(deps.map(p=>[p,sha(p)])));
- const proof={schema:'vectorcraft-runtime-default-evidence/v1',result:'PASS',level:'native-candidate',platform:process.platform+'-'+process.arch,cases,deliveries,commandCount:585,toolCount:25,skillSha256:expectedSkillSha256,runtimeIdentity:installation.binarySha256,fingerprints,
+ const proof={schema:'vectorcraft-runtime-default-evidence/v1',result:'PASS',level:'native-candidate',platform:process.platform+'-'+process.arch,cases,commandCount:585,toolCount:25,skillSha256:expectedSkillSha256,runtimeIdentity:installation.binarySha256,fingerprints,
   scope:'actual cold public fixed install, default headless probe and managed create, readonly resume, parallel tasks and live signature drift refusal; no desktop, different-version upgrade, rollback or complete2.6 acceptance'};
  writeFileSync(join(root,'proof.json'),JSON.stringify(proof,null,2)+'\n');console.log(JSON.stringify({result:'PASS',cases:cases.length}));
 }finally{controller.close();}

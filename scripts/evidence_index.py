@@ -148,12 +148,15 @@ def build(root=ROOT):
     runtime_default='docs/evidence/vectorcraft-runtime-default-candidate-20261008.json'
     if (root/runtime_default).is_file():
         entries.append(bound_report(root,runtime_default,'native-candidate','default cold fixed install and headless schemas, parallel creation, readonly resume, pre-edit refusal and8 managed structural cases; complete2.6 remains open','VC-RT-002',['2.5']))
+    runtime_artifacts='docs/evidence/vectorcraft-runtime-default-artifacts-candidate-20261008.json'
+    if (root/runtime_artifacts).is_file():
+        entries.append(bound_report(root,runtime_artifacts,'native-candidate','fresh default headless cold/concurrent/refusal cases with all three delivery manifest and file digests; unchanged managed structural regression reused by exact fingerprints; full2.6 remains open','VC-RT-002',['2.5']))
     # 明确归档变更前执行字节；保留报告原摘要，不能把旧运行重绑定到新实现。
     for entry in entries:
         archived={}
         for name,digest in entry['dependencies'].items():
             if sha(safe_file(root,name))==digest:continue
-            for prefix in ['docs/evidence/pre-runtime-gate-identity/','docs/evidence/pre-runtime-default-identity/']:
+            for prefix in ['docs/evidence/pre-runtime-gate-identity/','docs/evidence/pre-runtime-default-identity/','docs/evidence/pre-runtime-artifacts-identity/']:
                 old=prefix+name
                 if (root/old).is_file() and sha(safe_file(root,old))==digest:
                     archived[name]=old

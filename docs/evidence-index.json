@@ -358,7 +358,41 @@
       "sha256": "41a56c7270a41d2b1354b7d33bcb56d342ab969f681d51269959f8759cc6dd42",
       "level": "native-candidate",
       "status": "PASS",
-      "scope": "default cold fixed install and headless schemas, parallel creation, readonly resume, pre-edit refusal and8 managed structural cases; complete2.6 remains open",
+      "scope": "historical before runtime integration; default cold fixed install and headless schemas, parallel creation, readonly resume, pre-edit refusal and8 managed structural cases; complete2.6 remains open",
+      "requirement": "VC-RT-002",
+      "tasks": [
+        "2.5"
+      ],
+      "historical": true,
+      "dependencies": {
+        "src/runtime/prepare_runtime.ts": "08ecee9238056335ac33710421b4b878cad01b4556ffad641d14c26819b2e6c1",
+        "src/runtime/runtime_probe.py": "ee196f91dde9487bd1537d1c91a8f5957deb795431a54baa333be35bfc90e54c",
+        "src/runtime/runtime_gate.ts": "70ad2b606cf486794c354c912da9a650dcbeca9b0dd960a4e8a6d12271f52a70",
+        "runtime/vectorcraft-headless-capabilities.json": "37472383852928bdf131f4f69c015fd8ce323847323915bb0cb58260c0936756",
+        "src/harness/controller.ts": "c61419ec3418f14d4adcc1feca8bb9ed0ff53feae52e1a9cbdc02c7aafe190f0",
+        "src/harness/ledger.ts": "fd53203575a46100e6456eb3c3a415ffeceb4c879349019ba6cde7e797a82f51",
+        "tests/runtime_default.test.ts": "c2e88108c4ae985dfaaf4f5930f6e54cb341dc22f10a5b0f6d1cb019d44fdc48",
+        "tests/runtime_fixture.ts": "e6f16d546f9f827780bd1b85e8b5e6673d1439ade3a968ff7c54f6382c4b80d4",
+        "docs/evidence/pre-runtime-artifacts-identity/scripts/acceptance/runtime_default.ts": "8ee64b35571e5c412bce5766d9f90b640668ee629d42d15e4c50e07313a616b0",
+        "skills.lock.json": "37cf4e7a514193ff10b1f051915b931874f05a8f693c87e67d904657f040464e",
+        "scripts/acceptance/managed_boolean.ts": "55fbffdf6d44a8b0b95b9902d7716037980eeaf5c2c437c69a06b740b889be52",
+        "src/harness/process_registry.ts": "c19a3cb5d42cc33620bc5baeff7db71f1c6daa92f046a112951a7f50f7906162",
+        "src/harness/process_runner.py": "7332d0757aa01f03d00697f8eb8d93f849517cab34ea8a1355ba6c9513d5aba2",
+        "src/planning/geometry.ts": "97650dc916111666a73bcfea6ddc797e48b5b9bc2d6b6e54a85f33b1a8766e2d",
+        "src/strict_json.ts": "69a445339670e53f6a7fcb96770b53b896666dd1e60f114c1751a23981d5b7d0",
+        "docs/evidence/runtime-default/red.log": "af36786b928e5409b38a868061a090874c5d20eac86c3a8f8df5ebb30fbb4c5d",
+        "docs/evidence/runtime-default/managed-native.json": "6920ff2f2b3630e2f5a6986756096b71ff9113cdff9ed053db4c5316f637cafa",
+        "docs/evidence/runtime-default/default-native.json": "66dde668158fe200c9a11ad2297338c142e56e6142ca38e84200f31c91f59de1",
+        "docs/evidence/runtime-default/node-regression.log": "316a6fa5b36943ae8958c777847550777017d1ac8119f48e08dd6d46a71e21e5",
+        "docs/evidence/pre-runtime-default-identity/identity.json": "3b4b9c191b8798a29da02b39aea5d39bc63a3037a16a6b97f56d315bf3d9df79"
+      }
+    },
+    {
+      "path": "docs/evidence/vectorcraft-runtime-default-artifacts-candidate-20261008.json",
+      "sha256": "417c9a9300cd263d9687f723bb47fe02e9d1ec133c23d0bf1e7ad4614d132d09",
+      "level": "native-candidate",
+      "status": "PASS",
+      "scope": "fresh default headless cold/concurrent/refusal cases with all three delivery manifest and file digests; unchanged managed structural regression reused by exact fingerprints; full2.6 remains open",
       "requirement": "VC-RT-002",
       "tasks": [
         "2.5"
@@ -373,7 +407,7 @@
         "src/harness/ledger.ts": "fd53203575a46100e6456eb3c3a415ffeceb4c879349019ba6cde7e797a82f51",
         "tests/runtime_default.test.ts": "c2e88108c4ae985dfaaf4f5930f6e54cb341dc22f10a5b0f6d1cb019d44fdc48",
         "tests/runtime_fixture.ts": "e6f16d546f9f827780bd1b85e8b5e6673d1439ade3a968ff7c54f6382c4b80d4",
-        "scripts/acceptance/runtime_default.ts": "8ee64b35571e5c412bce5766d9f90b640668ee629d42d15e4c50e07313a616b0",
+        "scripts/acceptance/runtime_default.ts": "ce238365dad5f30eec4a7c8029566a73c69323152fbefdd9ae6fcff8ee782648",
         "skills.lock.json": "37cf4e7a514193ff10b1f051915b931874f05a8f693c87e67d904657f040464e",
         "scripts/acceptance/managed_boolean.ts": "55fbffdf6d44a8b0b95b9902d7716037980eeaf5c2c437c69a06b740b889be52",
         "src/harness/process_registry.ts": "c19a3cb5d42cc33620bc5baeff7db71f1c6daa92f046a112951a7f50f7906162",
@@ -382,9 +416,10 @@
         "src/strict_json.ts": "69a445339670e53f6a7fcb96770b53b896666dd1e60f114c1751a23981d5b7d0",
         "docs/evidence/runtime-default/red.log": "af36786b928e5409b38a868061a090874c5d20eac86c3a8f8df5ebb30fbb4c5d",
         "docs/evidence/runtime-default/managed-native.json": "6920ff2f2b3630e2f5a6986756096b71ff9113cdff9ed053db4c5316f637cafa",
-        "docs/evidence/runtime-default/default-native.json": "66dde668158fe200c9a11ad2297338c142e56e6142ca38e84200f31c91f59de1",
         "docs/evidence/runtime-default/node-regression.log": "316a6fa5b36943ae8958c777847550777017d1ac8119f48e08dd6d46a71e21e5",
-        "docs/evidence/pre-runtime-default-identity/identity.json": "3b4b9c191b8798a29da02b39aea5d39bc63a3037a16a6b97f56d315bf3d9df79"
+        "docs/evidence/pre-runtime-default-identity/identity.json": "3b4b9c191b8798a29da02b39aea5d39bc63a3037a16a6b97f56d315bf3d9df79",
+        "docs/evidence/runtime-default/default-native-artifact-binding.json": "c37f69e2baf5afcc254f57f7a71f095534bfed06d3787f81a9e0d71eee70c13f",
+        "docs/evidence/pre-runtime-artifacts-identity/identity.json": "77fa98ff2b0430cffafd0e76ca06efd8afce5708dec22d4f2f9f76ab92ce61c5"
       }
     }
   ],
