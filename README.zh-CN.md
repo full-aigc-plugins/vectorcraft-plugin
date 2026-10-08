@@ -137,7 +137,7 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.62 |
+| Metadata version | 0.1.0-dev.63 |
 | Stage | implementation-in-progress |
 | Skills source | vectorcraft-skills / v0.1.0-dev.43 |
 | Execution | 上游 CLI；ArtCraft 使用子适配器 |
@@ -420,3 +420,5 @@ Codex 0.153.4 在全新隔离配置中安装并发现13技能。13项独立空�
 公开插件62／源43经Codex实际隔离安装，真实原生预算边界再次通过：四次共享尝试内保留更高分只读原生候选，源工程与控制文字保全，13技能摘要未变。本补充不关闭新任务；6.6完整四场景验收继续开放。 [Evidence](docs/evidence/vectorcraft-revision-budget-fixed62-20261009.json).
 
 公开62／源43新增三项真实原生修订：小幅提升不足阈值仍停滞但保留新最佳、降分保留旧最佳、轮数上限停止。签名桌面独占bridge修改并保存源工程后，旧建议在执行前被拒绝，共享尝试保持2且无新修订输出；最佳副本保全。10项证据校验测试通过，13技能摘要未变。评分是QA注入；6.6完整四场景仍开放，116/127完成、11项开放。 [Evidence](docs/evidence/vectorcraft-revision-limits-fixed62-20261009.json).
+
+插件63修复目标变化的停止分支：先校验原有授权及可信技术评审，再持久记录最新问题；原目标最佳候选保持独立可验证，重复观察不重复推进。公开62真实原生流程复现旧问题回传缺口，三个回归测试先失败、修复后14项目标测试通过；候选另通过15项原生授权／新鲜度／谱系边界。固定63与6.6完整验收仍待验证，不关闭新任务。 [Evidence](docs/evidence/vectorcraft-revision-goal-candidate63-20261009.json).

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """核验固定62停滞、轮数上限与桌面陈旧源子集；不关闭完整6.6。"""
-import builtins,hashlib,json
+import hashlib,json
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 REPORT='docs/evidence/vectorcraft-revision-limits-fixed62-20261009.json'
@@ -13,18 +13,11 @@ def verify(root=ROOT):
   if not p.is_file() or not p.resolve().is_relative_to(root.resolve()) or any(x.is_symlink() for x in [p,*p.parents] if x.is_relative_to(root)):raise ValueError('invalid_evidence_path')
   return p
  r=json.loads(local(REPORT).read_text())
- index=json.loads((root/'docs/evidence-index.json').read_text()) if (root/'docs/evidence-index.json').is_file() else {'entries':[]}
- known=builtins.next((x['dependencies'] for x in index['entries'] if x['path']==REPORT),{})
- def bound(name):
-  expected=r['fingerprints'][name];p=local(name)
-  if sha(p)==expected:return p
-  candidates=[n for n,h in known.items() if h==expected and n.endswith('/'+name)]
-  if len(candidates)!=1 or sha(local(candidates[0]))!=expected:raise ValueError('stale_revision_limits_evidence')
-  return local(candidates[0])
- for name in r['fingerprints']:bound(name)
+ for name,digest in r['fingerprints'].items():
+  if sha(local(name))!=digest:raise ValueError('stale_revision_limits_evidence')
  def read(name):
   if name not in r['fingerprints']:raise ValueError('unbound_revision_limits_evidence')
-  return json.loads(bound(name).read_text())
+  return json.loads(local(name).read_text())
  if r['result']!='PASS' or r['tasksClosed']!=[] or set(r['cases'])!={'small-improvement','lower-score','round-limit','stale-gui','guiSnapshots'}:raise ValueError('limits_scope')
  lock=read('skills.lock.json')['sources'][0]
  if read('plugin.json')['version']!=r['pluginVersion'] or lock['ref']!=r['sourceRef']:raise ValueError('limits_identity')
@@ -34,7 +27,7 @@ def verify(root=ROOT):
  if integrity['result']!='PASS' or integrity['skillsUnchanged']!=13 or integrity['digests']!=lock['sha256']:raise ValueError('limits_installed_integrity')
  field='appearance.items.0.paint';value={'type':'solid','color':{'model':'rgb','r':0,'g':1,'b':0}}
  def common(n,driver):
-  if n['result']!='PASS' or n['pluginVersion']!=r['pluginVersion'] or n['sourceRef']!=r['sourceRef'] or n['platform']!=r['platform'] or n['driverSha256']!=sha(bound(driver)):raise ValueError('limits_execution_identity')
+  if n['result']!='PASS' or n['pluginVersion']!=r['pluginVersion'] or n['sourceRef']!=r['sourceRef'] or n['platform']!=r['platform'] or n['driverSha256']!=sha(local(driver)):raise ValueError('limits_execution_identity')
   first=n['initialRequest'];p=n['proposal'];auth=first['input']['authorization'];a=p['authorization']
   if p['requestId']!=first['id'] or p['bindingHash']!=first['bindingHash'] or p['expectedProjectRevision']!=first['input']['projectRevision'] or p['changes']!=[{'objectId':2,'field':field,'value':value}] or a!={**auth,'objects':[2],'fields':[field]}:raise ValueError('limits_authority')
   if n['best']['engineeringStatus']!='NOT_RUN' or n['best']['acceptanceStatus']!='pending':raise ValueError('limits_claim_escalation')
@@ -61,7 +54,7 @@ def verify(root=ROOT):
   e=next['input']['technicalEvidence'];m=n['manifest'];execution=n['execution']
   if next['input']['technicalEvidenceOrigin']!='checked-decoder' or e['technicalStatus']!='PASS' or len(e['outputs'])!=3 or any(x['status']!='PASS' for x in e['outputs']) or e['files']!=m['files'] or m['sourceProjectSha256']!=first['input']['projectRevision'] or next['input']['native']!=execution['output']+'/project.vectorcraft' or execution['state']!='awaiting_review':raise ValueError('limits_lineage')
  n=read(r['cases']['stale-gui']);common(n,'scripts/qa/revision_stale_gui.ts');gui=n['gui']
- if n['guiDriverSha256']!=sha(bound('scripts/qa/revision_gui_edit.py')) or any(gui[x] is not True for x in ['listenerOwnedByPID','ownedProcessesStopped','nativeDocumentChanged','nativeReopened','persistedContentMatches']) or gui['sourceBeforeSha256']==gui['sourceAfterSha256']:raise ValueError('limits_gui')
+ if n['guiDriverSha256']!=sha(local('scripts/qa/revision_gui_edit.py')) or any(gui[x] is not True for x in ['listenerOwnedByPID','ownedProcessesStopped','nativeDocumentChanged','nativeReopened','persistedContentMatches']) or gui['sourceBeforeSha256']==gui['sourceAfterSha256']:raise ValueError('limits_gui')
  if 'stale_review_binding' not in n['refusal'] or n['sharedAttempts']!=2 or n['registeredGroupsBefore']!=n['registeredGroupsAfter'] or n['newOutputAbsent'] is not True or n['originalSourcePreserved'] is not True or n['allGroupsStopped'] is not True or n['best']['requestId']!=n['initialRequest']['id']:raise ValueError('limits_stale')
  if sha(local(r['cases']['guiSnapshots']))!=gui['snapshotsSha256']:raise ValueError('limits_gui_snapshots')
  snapshots=read(r['cases']['guiSnapshots']);modified=snapshots['modified'];reopened=snapshots['reopened']

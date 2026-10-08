@@ -1,0 +1,83 @@
+✔ a review assigned to a durable bounded cycle cannot bypass it through legacy revision (6.53025ms)
+✔ bounded cycles require checked evidence and immutable valid policy (63.974875ms)
+✔ round reservations are idempotent, cannot overlap, and preserve shared budget across restart (39.444583ms)
+✔ stagnation stops the cycle and retains a hash-verifiable best candidate (77.711667ms)
+✔ an improving last round still stops at the hard limit and retains the new best (71.28625ms)
+✔ exhausted shared budget stops durably and cannot be revived by restoring the counter (42.10625ms)
+✔ source edits and duplicate field targets cannot issue a revision (37.769667ms)
+✖ changed goals stop the cycle while its earlier best remains verifiable (42.730833ms)
+✔ runtime drift is rejected before execution intent or another shared attempt (39.001125ms)
+✔ observing a non-improving candidate at the shared budget limit stops durably and retains prior best (45.249708ms)
+✔ higher score at the budget limit reuses verified readonly native dependencies without another attempt (47.147833ms)
+✔ budget fallback refuses a writable or changed technical snapshot before selecting a new best (46.571083ms)
+✖ changed goals cannot bypass checked evidence before stopping the cycle (40.213041ms)
+✖ changed goals cannot replace the immutable cycle authorization (41.218917ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 11
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 735.268667
+
+✖ failing tests:
+
+test at tests/revision_cycle.test.ts:111:1
+✖ changed goals stop the cycle while its earlier best remains verifiable (42.730833ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + '95c40771-0081-4251-af02-f576f2c3c319'
+  - 'd947dc2b-e379-45bb-be6a-d3d5c560a834'
+  
+      at TestContext.<anonymous> (file://QA_PLUGIN/tests/revision_cycle.test.ts:116:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1325:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+      at Test.postRun (node:internal/test_runner/test:1465:19)
+      at Test.run (node:internal/test_runner/test:1390:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '95c40771-0081-4251-af02-f576f2c3c319',
+    expected: 'd947dc2b-e379-45bb-be6a-d3d5c560a834',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/revision_cycle.test.ts:185:1
+✖ changed goals cannot bypass checked evidence before stopping the cycle (40.213041ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (file://QA_PLUGIN/tests/revision_cycle.test.ts:190:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1325:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+      at Test.postRun (node:internal/test_runner/test:1465:19)
+      at Test.run (node:internal/test_runner/test:1390:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /checked_review_required/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/revision_cycle.test.ts:193:1
+✖ changed goals cannot replace the immutable cycle authorization (41.218917ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (file://QA_PLUGIN/tests/revision_cycle.test.ts:197:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1325:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+      at Test.postRun (node:internal/test_runner/test:1465:19)
+      at Test.run (node:internal/test_runner/test:1390:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /revision_authorization_changed/,
+    operator: 'throws',
+    diff: 'simple'
+  }

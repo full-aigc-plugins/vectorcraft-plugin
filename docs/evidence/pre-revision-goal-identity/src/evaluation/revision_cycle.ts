@@ -62,22 +62,8 @@ export class RevisionCycle {
     if(this.ledger.db.prepare('SELECT review FROM revision_observations WHERE review=? AND cycle=?').get(requestId,id))return cycle;
     if(cycle.state!=='active')throw new Error('revision_cycle_stopped: '+cycle.reason);
     const review=this.store.current(requestId);
+    if(canonical(this.goal(review))!==canonical(cycle.goal))return this.stop(id,'goal_changed');
     if(review.input.runtimeIdentity!==cycle.runtime||canonical(review.input.authorization)!==canonical(cycle.authorization))throw new Error('revision_authorization_changed');
-    if(canonical(this.goal(review))!==canonical(cycle.goal)){
-      // 目标变化不是绕过可信来源和授权的捷径；保留原目标最佳候选，但报告最新已检查的问题。
-      this.checked(review);
-      this.ledger.transaction(()=>{
-        const current=this.get(id);if(current.latest!==cycle.latest||current.state!=='active')throw new Error('stale_revision_cycle');
-        const member=this.ledger.db.prepare('SELECT cycle FROM revision_members WHERE review=?').get(requestId) as any;
-        if(member&&member.cycle!==id)throw new Error('review_already_bound_to_cycle');
-        this.ledger.db.prepare('INSERT INTO revision_observations(review,cycle,score,checkpoint,fingerprints,project) VALUES(?,?,NULL,?,?,?)')
-          .run(requestId,id,'','{}',review.input.projectRevision);
-        this.ledger.db.prepare('INSERT OR IGNORE INTO revision_members(review,cycle) VALUES(?,?)').run(requestId,id);
-        this.ledger.db.prepare("UPDATE revision_cycles SET latest=?,state='stopped',reason='goal_changed' WHERE id=?").run(requestId,id);
-        if(proposalId)this.ledger.db.prepare("UPDATE revision_proposals SET state='reviewed' WHERE id=? AND cycle=? AND review=? AND state='awaiting_review'").run(proposalId,id,cycle.latest);
-      });
-      return this.get(id);
-    }
     if(cycle.latest){
       const proposal=this.ledger.db.prepare('SELECT * FROM revision_proposals WHERE id=? AND cycle=?').get(proposalId??'',id) as any;
       if(!proposal||proposal.state!=='awaiting_review'||proposal.review!==cycle.latest)throw new Error('revision_execution_required');

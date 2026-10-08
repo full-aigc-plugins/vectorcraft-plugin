@@ -113,8 +113,6 @@ test('changed goals stop the cycle while its earlier best remains verifiable',()
   const id=seedChecked(f);cycle.open({id:'cycle',requestId:id,policy});writeFileSync(join(f.root,'brief.txt'),'new goal');
   const directory=join(f.root,'changed-goal');mkdirSync(directory);const next=seedChecked(f,4,'changed-native',directory);
   assert.equal(cycle.observe('cycle',next).reason,'goal_changed');assert.equal(cycle.best('cycle').requestId,id);
-  assert.equal(cycle.best('cycle').latestRequestId,next);assert.equal(cycle.get('cycle').latest,next);
-  assert.equal(cycle.observe('cycle',next).reason,'goal_changed');
  }finally{cycle.close();f.close();}
 });
 
@@ -178,22 +176,5 @@ test('budget fallback refuses a writable or changed technical snapshot before se
   assert.throws(()=>cycle.observe('cycle',next,proposal.id),/technical_snapshot_changed/);assert.equal(cycle.get('cycle').best,id);
   chmodSync(join(snapshot,'preview.png'),0o400);chmodSync(join(snapshot,'project.vectorcraft'),0o600);writeFileSync(join(snapshot,'project.vectorcraft'),'changed checked source');chmodSync(join(snapshot,'project.vectorcraft'),0o400);
   assert.throws(()=>cycle.checkedSnapshot(cycle.get('cycle'),f.store.current(next)),/technical_snapshot_changed/);assert.equal(cycle.get('cycle').best,id);assert.equal(cycle.get('cycle').state,'stopped');
- }finally{cycle.close();f.close();}
-});
-
-// 目标变更仍须通过技术来源和原有授权检查；未经检查或超范围回执不能终止现有循环。
-test('changed goals cannot bypass checked evidence before stopping the cycle',()=>{
- const f=fixture(),cycle=new RevisionCycle(f.store);try{
-  const id=seedChecked(f);cycle.open({id:'cycle',requestId:id,policy});writeFileSync(join(f.root,'brief.txt'),'new goal');
-  const input={...f.input,projectRevision:hash('native')};const next=f.store.request(input);
-  f.store.importReceipt({schema:'vectorcraft-review-receipt/v1',requestId:next.id,bindingHash:next.bindingHash,reviewer:{kind:'human',identity:'unit unchecked fixture',contextOrigin:'unit',independenceEvidence:null},verdict:'revise',issues:[{objectId:2,field:'paint.color',message:'new goal issue',evidence:['preview.png']}],scores:{structure:2,text:2,brand:2,layout:2,legibility:2}});
-  assert.throws(()=>cycle.observe('cycle',next.id),/checked_review_required/);assert.equal(cycle.get('cycle').state,'active');assert.equal(cycle.get('cycle').latest,id);
- }finally{cycle.close();f.close();}
-});
-test('changed goals cannot replace the immutable cycle authorization',()=>{
- const f=fixture(),cycle=new RevisionCycle(f.store);try{
-  const id=seedChecked(f);cycle.open({id:'cycle',requestId:id,policy});writeFileSync(join(f.root,'brief.txt'),'new goal');
-  f.input.authorization={...f.input.authorization,maxAttempts:30};const directory=join(f.root,'changed-scope');mkdirSync(directory);const next=seedChecked(f,3,'changed-native',directory);
-  assert.throws(()=>cycle.observe('cycle',next),/revision_authorization_changed/);assert.equal(cycle.get('cycle').state,'active');assert.equal(cycle.get('cycle').latest,id);
  }finally{cycle.close();f.close();}
 });

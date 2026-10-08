@@ -1,0 +1,42 @@
+{
+  "schema": "vectorcraft-revision-goal-candidate/v1",
+  "result": "PASS",
+  "pluginVersion": "0.1.0-dev.63",
+  "sourceRef": "v0.1.0-dev.43",
+  "tasksClosed": [],
+  "baseline": "docs/evidence/vc-qa-002/goal-baseline62.json",
+  "candidate": "docs/evidence/vc-qa-002/goal-candidate63.json",
+  "guards": "docs/evidence/vc-qa-002/guards-candidate63.json",
+  "red": "docs/evidence/vc-qa-002/goal-unit-red63.log.txt",
+  "green": "docs/evidence/vc-qa-002/goal-unit-green63.log.txt",
+  "fingerprints": {
+    "docs/evidence/vc-qa-002/goal-baseline62.json": "5d5c1c0ae9b78ce54f1a223b2a313fa63c74d72f5f83ab45c034c168065c1af8",
+    "docs/evidence/vc-qa-002/goal-candidate63.json": "4c2ca36f01b84cc275d76e8fefc5e38ee3a832ba460c5ce60afeb18bcbe6eb6e",
+    "docs/evidence/vc-qa-002/guards-candidate63.json": "fd0414c97ee03fa4ed480baff506503a15849a4e187c5b50c05ade72fe2b80b1",
+    "docs/evidence/vc-qa-002/goal-unit-red63.log.txt": "a42b134bad2ae569529c1cf5f00f6de1e04b1aaba4eae78be70efe14f9362f29",
+    "docs/evidence/vc-qa-002/goal-unit-green63.log.txt": "f5d4eb7118db3ef644f7db4085b3680c2d8650f12b83b66d73fb571c9721a485",
+    "plugin.json": "51014ee0536d8f30da7f2992afa63d8c8ff38f2881f7059690d4068b6fdaef57",
+    "skills.lock.json": "46255b049f5e3d14b45ca9fecbaf037cd55b1e8b8bb447d407cb16c55eb3758c",
+    "docs/current-identity.json": "c6b9397363562db279e8cf2a98711a7a57040c361e6d9b20e7db040766d38d11",
+    "src/evaluation/revision_cycle.ts": "86280433e21003262200266b0a1a7666ac232091ab40b5490571e4ba58715fe7",
+    "tests/revision_cycle.test.ts": "b99c8ebe0d622aeee15a86c25b3bd64b456a2f179368d167528f73bb99d55b45",
+    "scripts/qa/revision_goal.ts": "3e40cc1d808756040e17b569280e41aaf68e2ab664f0667cb9d01547b52367c9",
+    "scripts/qa/revision_guards.ts": "5301ea043c97cd7b38a843b249fd6b6154405c5cf00168822141b57e6e36a393",
+    "openspec/changes/establish-v1-plugin/specs/quality-review/spec.md": "60b8491854042fc69fe12898fefb57a85731ea7c23f264190b7fdf764fb32c54",
+    "docs/evidence/pre-revision-goal-identity/src/evaluation/revision_cycle.ts": "a44508a02bc9f57cf5d0ef11a5e755cfd0950a2d890232aca05ee19c1abddc75",
+    "docs/evidence/vc-qa-002/goal-node124.log.txt": "e3658754accd973c8a625210f0ff427c0d0a374c50ec814ca4797a9fd3711037",
+    "docs/evidence/vc-qa-002/goal-python114.log.txt": "31e928d8bd2be769d8f662f3fbf815ff9004878e1351908a820ee36930c8a7c2"
+  },
+  "scope": "Published62 native changed-goal latest-issues gap; candidate63 reports latest checked issues while retaining original-goal best. Three unit regressions failed before fix and14 pass after;15 additional native guard cases. No full6.6 closure or fixed63 qualification yet.",
+  "unverified": [
+    "published63 installation",
+    "full VC-QA-002 qualification",
+    "actual creative review",
+    "full V1"
+  ],
+  "localTests": {
+    "nodePassed": 124,
+    "pythonPassed": 114,
+    "failed": 0
+  }
+}

@@ -10,7 +10,7 @@ Four-domain RT-001 runtime source/integrity acceptance now covers every current 
 
 Create Logo, icon and brand assets as `.vectorcraft` with applicable SVG, PDF and PNG exports.
 
-Current plugin: `0.1.0-dev.62`; skill source: `0.1.0-dev.43`; 13 independent skills.
+Current plugin: `0.1.0-dev.63`; skill source: `0.1.0-dev.43`; 13 independent skills.
 
 Plugin55/source41 adds actual SVG image scope and a digest-bound technical disclosure guard. Minimum tasks4.13/4.14 pass; 4.15 qualifies for its current headless scenarios. [Architecture](docs/VectorCraft-Exchange-Scope.en.md).
 
@@ -137,7 +137,7 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.62 |
+| Metadata version | 0.1.0-dev.63 |
 | Stage | implementation-in-progress |
 | Skills source | vectorcraft-skills / v0.1.0-dev.43 |
 | Execution | Upstream CLI; ArtCraft uses child adapters |
@@ -422,3 +422,5 @@ Plugin62 fixes exhausted-budget observation: stop durably and preserve the best 
 Public62/source43 actual isolated Codex installation repeats the native budget boundary: four shared attempts retain the higher-score readonly native candidate, with source/control text preserved and13 unchanged skill digests. This closes no additional tasks;6.6 complete four-scenario qualification remains open. [Evidence](docs/evidence/vectorcraft-revision-budget-fixed62-20261009.json).
 
 Public62/source43 adds three native revision cases: small improvement stops for stagnation while retaining the higher score, lower score keeps the prior best, and the round limit stops execution. An owned signed desktop bridge edits and saves the source; the stale proposal is rejected before revision effects, with two shared attempts, no new revision output and the best copy preserved. Ten evidence tests pass; all13 skill digests remain unchanged. Scores are QA fixtures; full four-scenario task6.6 remains open,116/127 complete and11 open. [Evidence](docs/evidence/vectorcraft-revision-limits-fixed62-20261009.json).
+
+Plugin63 fixes changed-goal stopping: validate the original authority and checked review first, then persist the latest feedback while retaining the original-goal best. Re-observation is idempotent. Public62 native execution reproduces the stale-feedback gap; three regressions fail before the fix and14 targeted tests pass after it. The candidate also passes15 native authority, freshness and lineage boundaries. Fixed63 and complete6.6 qualification remain pending; no new task closes. [Evidence](docs/evidence/vectorcraft-revision-goal-candidate63-20261009.json).

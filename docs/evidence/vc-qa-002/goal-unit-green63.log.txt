@@ -1,0 +1,22 @@
+✔ a review assigned to a durable bounded cycle cannot bypass it through legacy revision (5.704709ms)
+✔ bounded cycles require checked evidence and immutable valid policy (53.600792ms)
+✔ round reservations are idempotent, cannot overlap, and preserve shared budget across restart (39.577542ms)
+✔ stagnation stops the cycle and retains a hash-verifiable best candidate (76.732375ms)
+✔ an improving last round still stops at the hard limit and retains the new best (76.691958ms)
+✔ exhausted shared budget stops durably and cannot be revived by restoring the counter (40.37225ms)
+✔ source edits and duplicate field targets cannot issue a revision (36.81425ms)
+✔ changed goals stop the cycle while its earlier best remains verifiable (44.292709ms)
+✔ runtime drift is rejected before execution intent or another shared attempt (77.612292ms)
+✔ observing a non-improving candidate at the shared budget limit stops durably and retains prior best (43.987ms)
+✔ higher score at the budget limit reuses verified readonly native dependencies without another attempt (49.998917ms)
+✔ budget fallback refuses a writable or changed technical snapshot before selecting a new best (48.264041ms)
+✔ changed goals cannot bypass checked evidence before stopping the cycle (40.537041ms)
+✔ changed goals cannot replace the immutable cycle authorization (44.922333ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 767.291958
