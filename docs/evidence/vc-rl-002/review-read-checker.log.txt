@@ -1,0 +1,17 @@
+✔ review refuses unauthorized-manifest before external bytes are read (4.584042ms)
+✔ review refuses replaced-manifest before external bytes are read (43.624125ms)
+✔ review refuses replaced-review-input before external bytes are read (31.943125ms)
+✔ checked review binds skills/vectorcraft-use/scripts/exchange_loss.py and rejects its drift after restart (949.505417ms)
+✔ checked review binds skills/vectorcraft-use/scripts/asset_reader.py and rejects its drift after restart (867.817375ms)
+✔ checked review binds src/harness/asset_digest.py and rejects its drift after restart (875.720834ms)
+✔ checked review binds src/harness/authorized_file.ts and rejects its drift after restart (856.43875ms)
+✔ first checked request cannot settle persisted checked evidence after dependency drift (527.381208ms)
+✔ older checked evidence without a complete checker bundle must be checked again (880.761375ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5029.570709

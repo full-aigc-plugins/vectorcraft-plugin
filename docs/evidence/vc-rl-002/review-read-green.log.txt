@@ -1,0 +1,11 @@
+✔ review refuses unauthorized-manifest before external bytes are read (3.838875ms)
+✔ review refuses replaced-manifest before external bytes are read (57.406833ms)
+✔ review refuses replaced-review-input before external bytes are read (30.650834ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 172.916

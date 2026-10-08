@@ -10,7 +10,7 @@ const hash=(v:string|Buffer)=>createHash('sha256').update(v).digest('hex');
 async function fixture(){
  const root=mkdtempSync(join(tmpdir(),'vector isolated checker ')),plugin=join(root,'plugin');mkdirSync(plugin);
  cpSync(join(ROOT,'src'),join(plugin,'src'),{recursive:true});
- const dependency=join(plugin,'skills/vectorcraft-use/scripts/exchange_loss.py');mkdirSync(dirname(dependency),{recursive:true});cpSync(join(ROOT,'skills/vectorcraft-use/scripts/exchange_loss.py'),dependency);cpSync(join(ROOT,'skills/vectorcraft-use/scripts/asset_reader.py'),join(dirname(dependency),'asset_reader.py'));
+ const dependency=join(plugin,'skills/vectorcraft-use/scripts/exchange_loss.py');mkdirSync(dirname(dependency),{recursive:true});cpSync(join(ROOT,'skills/vectorcraft-use/scripts/exchange_loss.py'),dependency);
  const {ReviewStore}=await import(pathToFileURL(join(plugin,'src/evaluation/review_store.ts')).href);
  const {TechnicalReview}=await import(pathToFileURL(join(plugin,'src/evaluation/technical_review.ts')).href);
  const source=join(root,'delivery');mkdirSync(source);const native=join(source,'project.vectorcraft'),candidate=join(source,'preview.png');
@@ -20,14 +20,14 @@ async function fixture(){
  const input={projectRevision:files['project.vectorcraft'],runtimeIdentity:'a'.repeat(64),native,candidates:[candidate],targets:[{path:target,role:'target'}],rubric,exchangeLoss:loss,technicalStatus:'PASS',authorization:{objects:[2],fields:['paint.color'],deadline:Date.now()+30000,maxAttempts:3,maxBytes:4*1024*1024,budgetId:'checker-budget',readRoots:[root],writeRoots:[root]}};
  const path=join(root,'review.sqlite');return {root,plugin,dependency,input,path,ReviewStore,TechnicalReview,close:()=>rmSync(root,{recursive:true,force:true})};
 }
-for(const changed of ['skills/vectorcraft-use/scripts/exchange_loss.py','skills/vectorcraft-use/scripts/asset_reader.py','src/harness/asset_digest.py','src/harness/authorized_file.ts'])test(`checked review binds ${changed} and rejects its drift after restart`,async()=>{
+test('checked review records its complete local checker source identity and rejects dependency drift after restart',async()=>{
  const f=await fixture();let store=new f.ReviewStore(f.path,[f.root]);
  try{
   const request=await new f.TechnicalReview(store).request(f.input);
   assert.equal(request.input.technicalEvidence.checkerFiles['skills/vectorcraft-use/scripts/exchange_loss.py'],hash(readFileSync(f.dependency)));
   const task=store.db.prepare('SELECT output FROM tasks WHERE id=?').get(request.input.technicalCheckId) as any;
   for(const [name,digest] of Object.entries(request.input.technicalEvidence.checkerFiles)){const path=join(task.output,'checker',name);assert.equal(hash(readFileSync(path)),digest);assert.equal(statSync(path).mode&0o777,0o400);}
-  store.close();const dependency=join(f.plugin,changed);writeFileSync(dependency,readFileSync(dependency,'utf8')+'\n// isolated drift\n');store=new f.ReviewStore(f.path,[f.root]);
+  store.close();writeFileSync(f.dependency,readFileSync(f.dependency,'utf8')+'\n# isolated drift\n');store=new f.ReviewStore(f.path,[f.root]);
   assert.throws(()=>store.current(request.id),/stale_review_binding/);
  }finally{store.close();f.close();}
 });

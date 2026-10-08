@@ -44,3 +44,14 @@ V1 为本地单用户工作区；插件包只读，运行时按版本存储，�
 
 
 固定插件56／源42在Codex0.153.4隔离安装副本通过VC-DM-006全部六个当前场景，13技能摘要保持。品牌色板两入口、八类误改拒绝、登记栅格／SVG各两实例替换、九份素材输出解码、三份无关SVG／PDF／PNG字节保全、未知色板及两入口符号链接清单拒绝通过；失败检查点独立重开且不重放。任务4.18完成，当前111项完成／16项开放。GUI、模型创作质量、其他平台、全部素材格式、跨文件／外部编辑器、Art捆绑包和完整V1分别保持未验。
+
+技术评审的读取路径：先冻结请求与存储读取根，在交集内由固定描述符读取器访问文件；清单解析发生在授权读取之后。依赖身份同时包含读取器及适配代码。其余父进程写入与宿主秘密引用继续单独验收。
+
+```mermaid
+flowchart LR
+  A[Trusted read roots] --> B[Frozen root intersection]
+  B --> C[Pinned descriptor reader]
+  C --> D[Bytes and digest]
+  D --> E[Technical decoder]
+  C -->|Outside root or identity changed| F[Refuse before external bytes]
+```

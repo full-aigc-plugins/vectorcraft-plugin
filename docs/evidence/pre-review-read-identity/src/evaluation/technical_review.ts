@@ -1,5 +1,4 @@
 import {assertNoLiteralSecrets} from '../harness/input_policy.ts';
-import {authorizedRead} from '../harness/authorized_file.ts';
 import {nativeEnvironment} from '../harness/native_environment.ts';
 import { spawn } from 'node:child_process';
 import { createHash,randomUUID } from 'node:crypto';
@@ -24,20 +23,15 @@ export class TechnicalReview {
     if(input?.technicalEvidence!==undefined||input?.technicalEvidenceOrigin!==undefined)throw new Error('technical_evidence_requires_check');
     const source=resolve(dirname(input.native)),manifest=join(source,'manifest.json');
     if(resolve(input.native)!==join(source,'project.vectorcraft'))throw new Error('invalid_native_path');
-    if(!Array.isArray(input.authorization?.readRoots))throw new Error('technical_read_outside_roots');
-    const readRoots=input.authorization.readRoots.map((root:string)=>realpathSync(root));
-    const sources:Record<string,string>={},contents=new Map<string,Buffer>();let bytes=0;
-    const capture=(path:string)=>{
-      const physical=realpathSync(path);
-      if(!readRoots.some((root:string)=>inside(root,physical)))throw new Error('technical_read_outside_roots');
-      if(!this.store.roots.some(root=>inside(root,physical)))throw new Error('review_path_outside_roots');
-      const roots=readRoots.flatMap((readRoot:string)=>this.store.roots.flatMap(storeRoot=>inside(readRoot,storeRoot)?[storeRoot]:inside(storeRoot,readRoot)?[readRoot]:[]));
-      const value=authorizedRead(physical,roots);sources[path]=hash(value);return value;
-    };
-    const manifestBytes=capture(manifest);contents.set('manifest.json',manifestBytes);bytes+=manifestBytes.length;
-    const data=strictJson(manifestBytes.toString('utf8'));
+    const data=strictJson(readFileSync(manifest,'utf8'));
     if(data.schema!=='vectorcraft-delivery/v1'||data.runtimeSha256!==input.runtimeIdentity||data.files?.['project.vectorcraft']!==input.projectRevision
       ||!data.files||Array.isArray(data.files)||Object.keys(data.files).length>4096||!Array.isArray(data.outputs))throw new Error('invalid_delivery_binding');
+    const sources:Record<string,string>={},contents=new Map<string,Buffer>();let bytes=0;
+    const capture=(path:string)=>{
+      if(!Array.isArray(input.authorization?.readRoots)||!input.authorization.readRoots.some((r:string)=>inside(realpathSync(r),realpathSync(path))))throw new Error('technical_read_outside_roots');
+      const value=readFileSync(path);sources[path]=this.store.fingerprint(path);return value;
+    };
+    const manifestBytes=capture(manifest);contents.set('manifest.json',manifestBytes);bytes+=manifestBytes.length;
     for(const [name,expected] of Object.entries(data.files)){
       if(!name||name==='manifest.json'||name.includes('\\')||isAbsolute(name)||name.split('/').some(p=>!p||p==='.'||p==='..'))throw new Error('invalid_artifact_path');
       const path=join(source,name);
@@ -92,7 +86,7 @@ export class TechnicalReview {
         if(report.schema!=='vectorcraft-technical-review/v1'||report.projectRevision!==input.projectRevision||report.runtimeIdentity!==input.runtimeIdentity
           ||report.manifestSha256!==sources[manifest]||canonical(report.files)!==canonical(data.files)||!['PASS','FAIL','NOT_RUN'].includes(report.technicalStatus)
           ||report.engineeringStatus!=='NOT_RUN'||report.nativeReopenStatus!=='NOT_RUN')throw new Error('invalid_technical_report');
-        for(const [path,expected] of Object.entries(sources))if(hash(capture(path))!==expected)throw new Error('stale_review_binding');
+        for(const [path,expected] of Object.entries(sources))if(this.store.fingerprint(path)!==expected)throw new Error('stale_review_binding');
         if(canonical(checkerFiles())!==canonical(checker.files)||Object.entries(checker.files).some(([name,expected])=>hash(readFileSync(join(checkerRoot,name)))!==expected))throw new Error('technical_checker_changed');
         report.checkId=task.id;report.checkerSha256=checkerSha;report.launcherSha256=launcherSha;report.checkerFiles=checker.files;
         const serialized=canonical(report),reportPath=join(output,'report.json');writeFileSync(reportPath,serialized,{flag:'wx',mode:0o400});

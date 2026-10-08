@@ -297,13 +297,5 @@
     "independentReview": false,
     "fullAutomaticLoop": false,
     "fixedDistribution": "NOT_RUN"
-  },
-  "permissionsReviewReadIncrement": {
-    "status": "candidate-implementation",
-    "pluginVersion": "0.1.0-dev.64",
-    "sourceRef": "v0.1.0-dev.46",
-    "evidence": "docs/evidence/vectorcraft-permissions-review-read-candidate64-20261009.json",
-    "scope": "technical manifest and captured review inputs authorized before reading; descriptor-based review fingerprints; complete parent reads/writes,host secret resolver and fixed distribution remain open",
-    "tasksClosed": []
   }
 }

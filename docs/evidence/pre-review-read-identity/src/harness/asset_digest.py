@@ -17,20 +17,9 @@ def main():
     reader = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(reader)
     # 根已由Controller冻结为物理路径；不能再次resolve根来跟随后续替换。
-    operation = request.get('operation', 'asset-digest')
-    if operation == 'file-digest':
-        digest, _ = reader.digest_authorized(request['path'], roots)
-        print(json.dumps({'sha256': digest}))
-        return
-    if operation not in {'asset-digest', 'file-read'}:
-        raise ValueError('asset_input_invalid')
     data, _ = reader.read_authorized(request['path'], roots)
     import hashlib
-    reply = {'sha256': hashlib.sha256(data).hexdigest()}
-    if operation == 'file-read':
-        import base64
-        reply['base64'] = base64.b64encode(data).decode('ascii')
-    print(json.dumps(reply))
+    print(json.dumps({'sha256': hashlib.sha256(data).hexdigest()}))
 
 
 if __name__ == '__main__':

@@ -1,8 +1,7 @@
 import {assertNoLiteralSecrets} from '../harness/input_policy.ts';
-import {authorizedDigest} from '../harness/authorized_file.ts';
 import { DatabaseSync } from 'node:sqlite';
 import { createHash, randomUUID } from 'node:crypto';
-import { realpathSync } from 'node:fs';
+import { readFileSync, realpathSync } from 'node:fs';
 import { dirname, resolve, relative, isAbsolute } from 'node:path';
 import { checkerFiles } from './checker_bundle.ts';
 import { canonical, strictJson } from '../strict_json.ts';
@@ -23,7 +22,7 @@ export class ReviewStore {
   fingerprint(path:string):string {
     const file=realpathSync(path);
     if(!this.roots.some(root=>{const sub=relative(root,file);return !isAbsolute(sub)&&sub!=='..'&&!sub.startsWith('../');}))throw new Error('review_path_outside_roots');
-    return authorizedDigest(file,this.roots);
+    return hash(readFileSync(file));
   }
   request(input:any):any {
     if(input?.technicalEvidence!==undefined||(input?.technicalEvidenceOrigin!==undefined&&input.technicalEvidenceOrigin!=='caller_unverified'))throw new Error('technical_evidence_requires_check');
@@ -38,7 +37,7 @@ export class ReviewStore {
     if(!evidence.checkerFiles||canonical(evidence.checkerFiles)!==canonical(checkerFiles()))throw new Error('stale_review_binding');
     if(row.review_id){const current=this.current(row.review_id);return {schema:'vectorcraft-review-request/v1',id:current.id,bindingHash:current.binding_hash,input:current.input,fingerprints:current.fingerprints,state:current.state};}
     if(evidence.projectRevision!==input.projectRevision||evidence.runtimeIdentity!==input.runtimeIdentity)throw new Error('technical_identity_mismatch');
-    for(const [path,expected] of Object.entries(sources))if(this.fingerprint(path)!==expected)throw new Error('stale_review_binding');
+    for(const [path,expected] of Object.entries(sources))if(hash(readFileSync(path))!==expected)throw new Error('stale_review_binding');
     const request=this.createRequest({...input,technicalStatus:evidence.technicalStatus,technicalEvidence:evidence,
       technicalEvidenceOrigin:'checked-decoder',technicalCheckId:checkId},sources);
     this.db.prepare('UPDATE technical_checks SET review_id=? WHERE task=?').run(request.id,checkId);
