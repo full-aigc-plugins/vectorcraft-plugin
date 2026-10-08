@@ -1,0 +1,32 @@
+{
+  "schema": "vectorcraft-exchange-fixed-subset/v1",
+  "result": "PASS",
+  "pluginVersion": "0.1.0-dev.55",
+  "pluginCommit": "b1757a70abe64e33cb50a2e07bedf2b8c4dbaed1",
+  "sourceRef": "v0.1.0-dev.41",
+  "sourceCommit": "9649db7fbcee4d275b91748115143c0680e94417",
+  "hostVersion": "codex-cli 0.153.4",
+  "platform": "Darwin-arm64",
+  "tasksClosed": [],
+  "host": "docs/evidence/vc-dm-005/fixed55-host.json",
+  "native": "docs/evidence/vc-dm-005/fixed55-native.json",
+  "fingerprints": {
+    "docs/evidence/vc-dm-005/fixed55-host.json": "b2cf3239db66592d2fa4b43a743b39c77c314478d34532f7a3f3df6ab31a4a4b",
+    "docs/evidence/vc-dm-005/fixed55-native.json": "2715866a6a15e64c31012274d770a59155b69869b9abf19abf2f7e41421f13ba",
+    "plugin.json": "8c09f2fc1da8f218e20936dbdb5ddff884e92c985502eb016f32a17b2e20dd84",
+    "skills.lock.json": "0035adfa3fc09aae071c37cc03b78e307d9a92f0af947ffa4603a6da2f42cd06",
+    "docs/current-identity.json": "43742de0dcd2b2fd39ea182525d2640f80918e966224231b3c39d3c2785d81cf",
+    "src/evaluation/delivery_quality.py": "f3bb72202c70a8db138881b2ff89456d66c128103d5ed9a8a2006d876eca75dc",
+    "scripts/qa/exchange_formats.py": "3f2e25009080470f6ee61fba32c3091c0c79d8b07fec29b5f618cc2d9d44d97f"
+  },
+  "skillsUnchanged": 13,
+  "nativeReopenCases": 3,
+  "decodedExports": 9,
+  "disclosureRefusals": 4,
+  "scope": "actual public55/source41 isolated host installation and installed-copy technical exchange subset, pinned native runtime reused; complete4.15 remains open",
+  "remaining": [
+    "The raster case explicitly calls effect.expandAppearance; this does not establish automatic exporter fallback for nonexchangeable live effects.",
+    "Retain a supplied original live-effect project while qualifying derivative fallback/rejection; complete current VC-DM-005 scenarios before closing4.15.",
+    "GUI,creative/model acceptance,other platforms and complete V1 remain separate."
+  ]
+}

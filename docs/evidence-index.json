@@ -2463,6 +2463,25 @@
         "skills/vectorcraft-use/scripts/exchange_loss.py": "7fdee028008a20bd88bb1e27334f326a7fcc774a079b1621a1c0d06bebfd8f29",
         "docs/evidence/vc-dm-005/node-green.log.txt": "bec663ce826704b9bbc4e150c3928d5d8f9be43ee18d644341f822c4d2d5af0c"
       }
+    },
+    {
+      "path": "docs/evidence/vectorcraft-exchange-fixed55-20261009.json",
+      "sha256": "0b20b910d82ce2c0f2c000069a165b603d79cdea13ebc39e06afa9d626e10552",
+      "level": "fixed-install",
+      "status": "PASS",
+      "scope": "Actual public55/source41 installation/discovery and installed-copy three native reopen/nine decode/four disclosure refusals;13 skills unchanged;explicit expansion only,complete4.15 remains open",
+      "requirement": "VC-DM-005",
+      "tasks": [],
+      "historical": false,
+      "dependencies": {
+        "docs/evidence/vc-dm-005/fixed55-host.json": "b2cf3239db66592d2fa4b43a743b39c77c314478d34532f7a3f3df6ab31a4a4b",
+        "docs/evidence/vc-dm-005/fixed55-native.json": "2715866a6a15e64c31012274d770a59155b69869b9abf19abf2f7e41421f13ba",
+        "plugin.json": "8c09f2fc1da8f218e20936dbdb5ddff884e92c985502eb016f32a17b2e20dd84",
+        "skills.lock.json": "0035adfa3fc09aae071c37cc03b78e307d9a92f0af947ffa4603a6da2f42cd06",
+        "docs/current-identity.json": "43742de0dcd2b2fd39ea182525d2640f80918e966224231b3c39d3c2785d81cf",
+        "src/evaluation/delivery_quality.py": "f3bb72202c70a8db138881b2ff89456d66c128103d5ed9a8a2006d876eca75dc",
+        "scripts/qa/exchange_formats.py": "3f2e25009080470f6ee61fba32c3091c0c79d8b07fec29b5f618cc2d9d44d97f"
+      }
     }
   ],
   "commandAcceptance": "Use version-bound command catalog executionAcceptance; directory discovery never promotes NOT_RUN",
