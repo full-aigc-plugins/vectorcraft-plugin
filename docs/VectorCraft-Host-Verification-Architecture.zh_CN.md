@@ -47,4 +47,12 @@ CRAFT_HOST_TEST=1 CRAFT_CODEX_CLI=<absolute-codex> \
 
 在线检查下载公开发布。6 项验证器测试通过，覆盖内容/清单/来源篡改和已有目录保护。原生测试依赖已声明的 Python 媒体库和固定官方 CLI。独立仓原生测试以 `CRAFT_INSTALLED_SKILL_ROOT` 选择实际宿主缓存；导入禁止写字节码以保持快照身份。
 
-本次 QA 更新不改变运行时包、技能内容或不可变标签。完整发布需求通过前，`marketplaceEligible` 保持 false、`supportedPluginHosts` 保持空数组；RL-001 任务保留未满足的 P0 前置条件。参见[证据](evidence/codex-current-release.json)与[任务](../openspec/changes/establish-v1-plugin/tasks.md)。
+记录中的0.1.0-dev.2 QA快照未改变运行时包、技能内容或不可变标签，当时RL-001前置条件尚未满足。当前任务状态以文末六层发布核验为准；完整发布需求通过前，`marketplaceEligible` 保持false、`supportedPluginHosts` 保持空数组。参见[证据](evidence/codex-current-release.json)与[任务](../openspec/changes/establish-v1-plugin/tasks.md)。
+
+## 当前六层发布核验
+
+VC-RL-001两场景完成：发布者只读门禁分别核验插件结构、独立技能源、运行时、宿主加载、真实任务和原生交付。12项门禁测试先因缺少目标行为失败，最小实现后通过；另4项证据校验通过。实际隔离包中文档与OpenSpec均通过时，仅文档证明仍被门禁拒绝；原有有界记录保持原范围。复用未变化的公开63／源43实际安装、6次原生修订与独占桌面证据，并重新校验当前摘要，本轮没有新增原生或模型运行。7.1–7.3完成，120/127完成、7项开放；marketplaceEligible仍false，supportedPluginHosts仍空。权限与秘密、全命令、模型路由、完整分发和真实创作仍待独立验收。 [Evidence](evidence/vectorcraft-release-gate-20261009.json).
+
+`python3 -I -B scripts/release_gate.py --require development`
+
+`python3 -I -B scripts/release_gate.py --require marketplace`

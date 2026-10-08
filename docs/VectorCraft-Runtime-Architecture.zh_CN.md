@@ -225,3 +225,24 @@ Controller新任务现已先进行固定技能计划验证、可信版本目录�
 公开回执入口重启时只恢复已持久化技术检查的只读授权。解码器、启动器和交换损失依赖使用摘要绑定的只读执行副本；创作回执不能覆盖技术失败，也不提升原生重开状态。公开插件61／源43实际安装于Codex0.153.4 macOS arm64，通过VC-QA-001当前三个场景与19项真实原生边界。三输出解码通过；QA注入满分回执不能覆盖损坏PNG／PDF／SVG，真实缺少解码器保持NOT_RUN。文件／检查器漂移、预算先于只读副本、超时停止及协调器SIGKILL重启不重放均通过；13技能摘要保持。12项证据测试含11项重签后缺失／篡改拒绝通过。6.3关闭；116/127完成，11项开放。真实创作判断、GUI、其他平台、6.6及完整V1分别未验。 [Evidence](evidence/vectorcraft-quality-fixed61-20261009.json).
 
 插件62修复评审到达时预算已耗尽的状态：持久停止并保留最佳可验证候选；无法再次支付封存时，核验身份和只读权限后复用已付费的技术检查副本。已复现公开61真实原生缺口，候选62以相同四次共享尝试保留更高分原生修订；122项Node通过，含三项新增回归。评分明确为QA注入；任务6.6完整验收仍开放，116/127完成、11项开放。 [Evidence](evidence/vectorcraft-revision-budget-candidate62-20261009.json).
+
+## 发布者证据门禁
+
+VC-RL-001两场景完成：发布者只读门禁分别核验插件结构、独立技能源、运行时、宿主加载、真实任务和原生交付。12项门禁测试先因缺少目标行为失败，最小实现后通过；另4项证据校验通过。实际隔离包中文档与OpenSpec均通过时，仅文档证明仍被门禁拒绝；原有有界记录保持原范围。复用未变化的公开63／源43实际安装、6次原生修订与独占桌面证据，并重新校验当前摘要，本轮没有新增原生或模型运行。7.1–7.3完成，120/127完成、7项开放；marketplaceEligible仍false，supportedPluginHosts仍空。权限与秘密、全命令、模型路由、完整分发和真实创作仍待独立验收。 [Evidence](evidence/vectorcraft-release-gate-20261009.json).
+
+`python3 -I -B scripts/release_gate.py --require development`
+
+`python3 -I -B scripts/release_gate.py --require marketplace`
+
+```mermaid
+flowchart LR
+ B[Fixed release evidence bundle] --> S[Structure and skill source]
+ B --> R[Runtime and host load]
+ B --> N[Real task and native delivery]
+ S --> G[Readonly release gate]
+ R --> G
+ N --> G
+ G --> D[Scoped development evidence]
+ G --> M[Full task and host approval gates]
+ M --> P[Marketplace approval remains blocked]
+```

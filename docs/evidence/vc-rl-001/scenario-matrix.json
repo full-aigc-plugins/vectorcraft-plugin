@@ -1,0 +1,25 @@
+{
+  "scenarioContracts": {
+    "VC-RL-001-P 合同条件满足": "dc174c05e32a68ee369227a431c50202861553983124437ac5b163bab7652695",
+    "VC-RL-001-N 边界条件": "5ebf70da85942e770ff05cf9c5ab60b574f5de9399aa5e3983b4d21966c767f2"
+  },
+  "entries": [
+    {
+      "scenario": "VC-RL-001-P 合同条件满足",
+      "result": "PASS",
+      "level": "release-tooling-fixed-evidence",
+      "evidence": [
+        "docs/evidence/vc-rl-001/development.json"
+      ]
+    },
+    {
+      "scenario": "VC-RL-001-N 边界条件",
+      "result": "PASS",
+      "level": "release-tooling-fixed-evidence",
+      "evidence": [
+        "docs/evidence/vc-rl-001/docs-only-proof.json",
+        "docs/evidence/vc-rl-001/marketplace-denied.json"
+      ]
+    }
+  ]
+}

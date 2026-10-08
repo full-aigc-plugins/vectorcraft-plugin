@@ -225,3 +225,24 @@ Current status (public plugin43/source37): all seven runtime scenarios and task2
 The public receipt CLI restores only persisted checked read authorization on restart. The decoder,launcher and exchange-loss module execute from a digest-bound readonly bundle; creative receipts cannot bypass technical FAIL or promote native reopening. Actual public61/source43 installed on Codex0.153.4 macOS arm64 qualifies all three current VC-QA-001 scenarios and19 native boundaries. Three real decodes pass; maximal-score QA receipts cannot override corrupt PNG/PDF/SVG; real missing decoders stay NOT_RUN. File/checker drift, shared budget before snapshots, timeout stop and coordinator SIGKILL/restart without replay pass.13 skill digests remain unchanged.12 evidence tests reject11 rehashed omissions/tamper cases. Task6.3 closes;116/127 complete,11 open. Actual creative judgment,GUI,other platforms,6.6 and full V1 remain separate. [Evidence](evidence/vectorcraft-quality-fixed61-20261009.json).
 
 Plugin62 fixes exhausted-budget observation: stop durably and preserve the best verified candidate; when another copy cannot be funded, reuse the already-paid readonly technical snapshot after identity and permission checks. Public61 native failure is reproduced, candidate62 keeps the higher scored native revision at exactly four shared attempts;122 Node tests pass, including three new regressions. QA scores are explicit fixtures. Task6.6 full qualification remains open;116/127 complete,11 open. [Evidence](evidence/vectorcraft-revision-budget-candidate62-20261009.json).
+
+## Release-owner evidence gate
+
+Both VC-RL-001 scenarios pass. A readonly release-owner gate checks plugin structure,independent skill source,runtime,host load,real task and native delivery separately. Twelve target tests first fail for the missing behavior and then pass;four semantic evidence tests also pass. In an actual isolated package,documentation and OpenSpec pass while documentation-only attestations still fail the release gate,retaining prior bounded records. Unchanged public63/source43 installation,six native revisions and owned-desktop evidence are reused with current digest checks;this turn adds no native or model run. Tasks7.1–7.3 complete,120/127 complete and7 open;marketplaceEligible stays false and supportedPluginHosts stays empty. Permissions/secrets,all commands,model routing,full distribution and actual creative review remain separate. [Evidence](evidence/vectorcraft-release-gate-20261009.json).
+
+`python3 -I -B scripts/release_gate.py --require development`
+
+`python3 -I -B scripts/release_gate.py --require marketplace`
+
+```mermaid
+flowchart LR
+ B[Fixed release evidence bundle] --> S[Structure and skill source]
+ B --> R[Runtime and host load]
+ B --> N[Real task and native delivery]
+ S --> G[Readonly release gate]
+ R --> G
+ N --> G
+ G --> D[Scoped development evidence]
+ G --> M[Full task and host approval gates]
+ M --> P[Marketplace approval remains blocked]
+```

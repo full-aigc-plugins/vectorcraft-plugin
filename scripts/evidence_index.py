@@ -286,6 +286,9 @@ def build(root=ROOT):
     revision_fixed='docs/evidence/vectorcraft-revision-fixed63-20261009.json'
     if (root/revision_fixed).is_file():
         entries.append(bound_report(root,revision_fixed,'fixed-install','All four current VC-QA-002 scenarios;actual public63/source43 Codex macOS arm64;6 native revisions,15 native guards and owned signed desktop stale source;QA scores,creative judgment separate','VC-QA-002',['6.6']))
+    release_gate='docs/evidence/vectorcraft-release-gate-20261009.json'
+    if (root/release_gate).is_file():
+        entries.append(bound_report(root,release_gate,'fixed-install','External release-owner six-layer gate revalidates unchanged public63/source43 actual installed native proof;docs/spec-only isolated package refuses capability promotion;no new native/model run or marketplace eligibility','VC-RL-001',['7.1','7.2','7.3']))
     # 明确归档变更前执行字节；保留报告原摘要，不能把旧运行重绑定到新实现。
     for entry in entries:
         archived={}

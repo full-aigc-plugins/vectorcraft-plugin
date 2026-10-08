@@ -245,7 +245,9 @@
         "7.3"
       ],
       "owner": "Release owner",
-      "status": "planned"
+      "status": "verified",
+      "evidence": "docs/evidence/vectorcraft-release-gate-20261009.json",
+      "scope": "both current scenarios;external release-owner tooling verifies unchanged public63/source43 actual host/native proof;docs/spec-only isolation refuses promotion;marketplace and other full-release gates remain blocked"
     },
     {
       "requirement": "VC-RL-002",

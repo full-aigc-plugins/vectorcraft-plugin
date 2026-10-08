@@ -100,3 +100,5 @@
 普通Harness入口已接入编辑前的固定安装、版本／摘要／命令及工具schema探测，支持同版本并发复用与原任务只读恢复；不隐式切换已选择版本。源码候选通过本地及原生验证，见[运行门禁说明](../../docs/Runtime-Gate.zh-CN.md)。已发布插件41保持不变，不同版本升级／回退和desktop等完整2.6门禁仍开放。
 
 公开插件43／源37已完成VC-RT-002全部7个当前场景及任务2.6：实际版本和bridge排空、激活竞争、原生升级／回退重开、默认冷安装及schema3旧连接预算保全。见[固定安装证据](../../docs/evidence/vectorcraft-runtime-upgrade-fixed43-20261008.json)。上文较早候选阶段的2.6开放描述已由本证据更新；其他33项任务及完整V1保持开放。
+
+VC-RL-001两场景完成：发布者只读门禁分别核验插件结构、独立技能源、运行时、宿主加载、真实任务和原生交付。12项门禁测试先因缺少目标行为失败，最小实现后通过；另4项证据校验通过。实际隔离包中文档与OpenSpec均通过时，仅文档证明仍被门禁拒绝；原有有界记录保持原范围。复用未变化的公开63／源43实际安装、6次原生修订与独占桌面证据，并重新校验当前摘要，本轮没有新增原生或模型运行。7.1–7.3完成，120/127完成、7项开放；marketplaceEligible仍false，supportedPluginHosts仍空。权限与秘密、全命令、模型路由、完整分发和真实创作仍待独立验收。 [Evidence](https://github.com/full-aigc-plugins/vectorcraft-plugin/blob/main/docs/evidence/vectorcraft-release-gate-20261009.json).

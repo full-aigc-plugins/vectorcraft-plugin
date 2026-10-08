@@ -1,0 +1,113 @@
+FFFFFFFFFFFF
+======================================================================
+FAIL: test_actual_snapshot_passes_six_layers_as_development_only (test_release_gate.ReleaseGateTests.test_actual_snapshot_passes_six_layers_as_development_only)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "QA_PLUGIN/tests/test_release_gate.py", line 7, in setUp
+    self.assertTrue((ROOT/'scripts/release_gate.py').is_file(),'release_gate_behavior_missing: no executable six-layer release readiness contract')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : release_gate_behavior_missing: no executable six-layer release readiness contract
+
+======================================================================
+FAIL: test_changed_installed_code_refused (test_release_gate.ReleaseGateTests.test_changed_installed_code_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "QA_PLUGIN/tests/test_release_gate.py", line 7, in setUp
+    self.assertTrue((ROOT/'scripts/release_gate.py').is_file(),'release_gate_behavior_missing: no executable six-layer release readiness contract')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : release_gate_behavior_missing: no executable six-layer release readiness contract
+
+======================================================================
+FAIL: test_checkboxes_cannot_grant_marketplace_eligibility (test_release_gate.ReleaseGateTests.test_checkboxes_cannot_grant_marketplace_eligibility)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "QA_PLUGIN/tests/test_release_gate.py", line 7, in setUp
+    self.assertTrue((ROOT/'scripts/release_gate.py').is_file(),'release_gate_behavior_missing: no executable six-layer release readiness contract')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : release_gate_behavior_missing: no executable six-layer release readiness contract
+
+======================================================================
+FAIL: test_disabled_host_skill_refused_after_rehash (test_release_gate.ReleaseGateTests.test_disabled_host_skill_refused_after_rehash)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "QA_PLUGIN/tests/test_release_gate.py", line 7, in setUp
+    self.assertTrue((ROOT/'scripts/release_gate.py').is_file(),'release_gate_behavior_missing: no executable six-layer release readiness contract')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : release_gate_behavior_missing: no executable six-layer release readiness contract
+
+======================================================================
+FAIL: test_document_pass_cannot_impersonate_native_acceptance (test_release_gate.ReleaseGateTests.test_document_pass_cannot_impersonate_native_acceptance)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "QA_PLUGIN/tests/test_release_gate.py", line 7, in setUp
+    self.assertTrue((ROOT/'scripts/release_gate.py').is_file(),'release_gate_behavior_missing: no executable six-layer release readiness contract')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : release_gate_behavior_missing: no executable six-layer release readiness contract
+
+======================================================================
+FAIL: test_documents_only_do_not_promote_runtime_or_host (test_release_gate.ReleaseGateTests.test_documents_only_do_not_promote_runtime_or_host)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "QA_PLUGIN/tests/test_release_gate.py", line 7, in setUp
+    self.assertTrue((ROOT/'scripts/release_gate.py').is_file(),'release_gate_behavior_missing: no executable six-layer release readiness contract')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : release_gate_behavior_missing: no executable six-layer release readiness contract
+
+======================================================================
+FAIL: test_marketplace_cli_fails_closed_with_json (test_release_gate.ReleaseGateTests.test_marketplace_cli_fails_closed_with_json)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "QA_PLUGIN/tests/test_release_gate.py", line 7, in setUp
+    self.assertTrue((ROOT/'scripts/release_gate.py').is_file(),'release_gate_behavior_missing: no executable six-layer release readiness contract')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : release_gate_behavior_missing: no executable six-layer release readiness contract
+
+======================================================================
+FAIL: test_metadata_path_escape_refused (test_release_gate.ReleaseGateTests.test_metadata_path_escape_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "QA_PLUGIN/tests/test_release_gate.py", line 7, in setUp
+    self.assertTrue((ROOT/'scripts/release_gate.py').is_file(),'release_gate_behavior_missing: no executable six-layer release readiness contract')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : release_gate_behavior_missing: no executable six-layer release readiness contract
+
+======================================================================
+FAIL: test_rehashed_native_budget_violation_refused (test_release_gate.ReleaseGateTests.test_rehashed_native_budget_violation_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "QA_PLUGIN/tests/test_release_gate.py", line 7, in setUp
+    self.assertTrue((ROOT/'scripts/release_gate.py').is_file(),'release_gate_behavior_missing: no executable six-layer release readiness contract')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : release_gate_behavior_missing: no executable six-layer release readiness contract
+
+======================================================================
+FAIL: test_vendor_drift_refused (test_release_gate.ReleaseGateTests.test_vendor_drift_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "QA_PLUGIN/tests/test_release_gate.py", line 7, in setUp
+    self.assertTrue((ROOT/'scripts/release_gate.py').is_file(),'release_gate_behavior_missing: no executable six-layer release readiness contract')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : release_gate_behavior_missing: no executable six-layer release readiness contract
+
+======================================================================
+FAIL: test_wrong_release_version_refused (test_release_gate.ReleaseGateTests.test_wrong_release_version_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "QA_PLUGIN/tests/test_release_gate.py", line 7, in setUp
+    self.assertTrue((ROOT/'scripts/release_gate.py').is_file(),'release_gate_behavior_missing: no executable six-layer release readiness contract')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : release_gate_behavior_missing: no executable six-layer release readiness contract
+
+======================================================================
+FAIL: test_wrong_skill_source_in_host_refused (test_release_gate.ReleaseGateTests.test_wrong_skill_source_in_host_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "QA_PLUGIN/tests/test_release_gate.py", line 7, in setUp
+    self.assertTrue((ROOT/'scripts/release_gate.py').is_file(),'release_gate_behavior_missing: no executable six-layer release readiness contract')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : release_gate_behavior_missing: no executable six-layer release readiness contract
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.027s
+
+FAILED (failures=12)

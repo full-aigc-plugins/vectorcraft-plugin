@@ -47,4 +47,12 @@ CRAFT_HOST_TEST=1 CRAFT_CODEX_CLI=<absolute-codex> \
 
 The online check downloads public releases. Six verifier tests passed, including content/manifest/source tampering and refusal to overwrite existing output. Native tests require the declared Python media dependencies and pinned official CLIs. `CRAFT_INSTALLED_SKILL_ROOT` selects a real installed skill cache in the independent repository's native test; imports disable bytecode writes to preserve snapshot identity.
 
-This QA update does not alter runtime bundles, skill content or immutable tags. `marketplaceEligible` stays false and `supportedPluginHosts` stays empty until full release requirements pass. RL-001 tasks retain their unmet P0 prerequisites. See [evidence](evidence/codex-current-release.json) and [tasks](../openspec/changes/establish-v1-plugin/tasks.md).
+At the recorded 0.1.0-dev.2 QA snapshot,runtime bundles,skill content and immutable tags were unchanged and RL-001 prerequisites remained unmet. Current task status follows the six-layer verification section below;`marketplaceEligible` remains false and `supportedPluginHosts` remains empty until full release requirements pass. See [evidence](evidence/codex-current-release.json) and [tasks](../openspec/changes/establish-v1-plugin/tasks.md).
+
+## Current six-layer release verification
+
+Both VC-RL-001 scenarios pass. A readonly release-owner gate checks plugin structure,independent skill source,runtime,host load,real task and native delivery separately. Twelve target tests first fail for the missing behavior and then pass;four semantic evidence tests also pass. In an actual isolated package,documentation and OpenSpec pass while documentation-only attestations still fail the release gate,retaining prior bounded records. Unchanged public63/source43 installation,six native revisions and owned-desktop evidence are reused with current digest checks;this turn adds no native or model run. Tasks7.1–7.3 complete,120/127 complete and7 open;marketplaceEligible stays false and supportedPluginHosts stays empty. Permissions/secrets,all commands,model routing,full distribution and actual creative review remain separate. [Evidence](evidence/vectorcraft-release-gate-20261009.json).
+
+`python3 -I -B scripts/release_gate.py --require development`
+
+`python3 -I -B scripts/release_gate.py --require marketplace`

@@ -1,0 +1,53 @@
+{
+  "schema": "vectorcraft-release-readiness/v1",
+  "pluginVersion": "0.1.0-dev.63",
+  "sourceRef": "v0.1.0-dev.43",
+  "layers": {
+    "structure": {
+      "status": "PASS",
+      "evidence": [
+        "plugin.json",
+        "docs/current-identity.json"
+      ],
+      "pluginVersion": "0.1.0-dev.63"
+    },
+    "skills": {
+      "status": "PASS",
+      "evidence": [
+        "skills.lock.json"
+      ],
+      "sourceRef": "v0.1.0-dev.43",
+      "sourceCommit": "36b79c603111fbf6c95f36d2f4c9ed43c9e7f155",
+      "skills": 13
+    },
+    "runtime": {
+      "status": "FAIL",
+      "reason": "release_technical_identity"
+    },
+    "host": {
+      "status": "FAIL",
+      "reason": "release_check_failed"
+    },
+    "task": {
+      "status": "FAIL",
+      "reason": "release_technical_identity"
+    },
+    "native": {
+      "status": "FAIL",
+      "reason": "release_technical_identity"
+    }
+  },
+  "publishable": {
+    "development": false,
+    "marketplace": false
+  },
+  "marketplaceBlockers": [
+    "six_layer_evidence_incomplete",
+    "implementation_tasks_open",
+    "implementation_not_complete",
+    "marketplace_approval_missing",
+    "full_task_evidence_coverage_missing"
+  ],
+  "scope": "readonly release evidence gate;development scope does not assert complete V1 or modify host/marketplace approval"
+}
+

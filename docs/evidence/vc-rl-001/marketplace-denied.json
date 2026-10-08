@@ -1,0 +1,75 @@
+{
+  "schema": "vectorcraft-release-readiness/v1",
+  "pluginVersion": "0.1.0-dev.63",
+  "sourceRef": "v0.1.0-dev.43",
+  "layers": {
+    "structure": {
+      "status": "PASS",
+      "evidence": [
+        "plugin.json",
+        "docs/current-identity.json"
+      ],
+      "pluginVersion": "0.1.0-dev.63"
+    },
+    "skills": {
+      "status": "PASS",
+      "evidence": [
+        "skills.lock.json"
+      ],
+      "sourceRef": "v0.1.0-dev.43",
+      "sourceCommit": "36b79c603111fbf6c95f36d2f4c9ed43c9e7f155",
+      "skills": 13
+    },
+    "runtime": {
+      "status": "PASS",
+      "evidence": [
+        "docs/evidence/vectorcraft-revision-fixed63-20261009.json",
+        "docs/evidence/vc-qa-002/integrity-fixed63.json"
+      ],
+      "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "platform": "darwin-arm64"
+    },
+    "host": {
+      "status": "PASS",
+      "evidence": [
+        "docs/evidence/vc-qa-002/host-fixed63.json"
+      ],
+      "hostVersion": "codex-cli 0.153.4",
+      "platform": "Darwin-arm64",
+      "scope": "isolated actual published-tag plugin installation and host discovery; private acceptance catalog only",
+      "excluded": [
+        "model implicit routing",
+        "GUI",
+        "complete V1",
+        "public marketplace eligibility"
+      ]
+    },
+    "task": {
+      "status": "PASS",
+      "evidence": [
+        "docs/evidence/vc-qa-002/guards-fixed63.json"
+      ],
+      "executionTaskId": "e8e7a109-b455-4e8e-bf9c-b06d96dcf329",
+      "scope": "actual installed native task;explicit QA feedback,no model routing claim"
+    },
+    "native": {
+      "status": "PASS",
+      "evidence": [
+        "docs/evidence/vectorcraft-revision-fixed63-20261009.json"
+      ],
+      "scope": "current four-scenario native revision evidence;creative judgment and other platforms excluded"
+    }
+  },
+  "publishable": {
+    "development": true,
+    "marketplace": false
+  },
+  "marketplaceBlockers": [
+    "implementation_tasks_open",
+    "implementation_not_complete",
+    "marketplace_approval_missing",
+    "full_task_evidence_coverage_missing",
+    "host_scope_exclusions_open"
+  ],
+  "scope": "readonly release evidence gate;development scope does not assert complete V1 or modify host/marketplace approval"
+}
