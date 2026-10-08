@@ -83,16 +83,7 @@ export class ReviewStore {
   }
   importReceipt(value:string|any):any {
     // 凭据拒绝发生在失败审计序列化之前，禁止把原文写入 review_events。
-    let parsed:any=value;
-    if(typeof value==='string'){
-      try{parsed=strictJson(value);}catch{
-        // 无法解析时不能确认原文是否含秘密，只保留身份摘要和固定原因。
-        const evidence=canonical({sha256:hash(value),bytes:Buffer.byteLength(value),withheld:true});
-        this.db.prepare('INSERT INTO review_events(request,reason,receipt) VALUES(NULL,?,?)').run('invalid_review_json',evidence);
-        throw new Error('invalid_review_json');
-      }
-    }
-    assertNoLiteralSecrets(parsed);
+    assertNoLiteralSecrets(typeof value==='string'?strictJson(value):value);
     try{return this.receiveReceipt(value);}catch(error){
       const raw=typeof value==='string'?value:JSON.stringify(value);
       const id=typeof value==='object'&&typeof value?.requestId==='string'?value.requestId:null;

@@ -454,10 +454,10 @@
         "9.21"
       ],
       "owner": "Harness owner",
-      "status": "single-round-candidate-passed-full-foundations-open",
+      "status": "both-current-single-round-scenarios-qualified",
       "priority": "P2",
-      "evidence": "docs/evidence/vectorcraft-optimization-local-20261008.json",
-      "scope": "section9 implementation and bounded candidate evidence; release/installation/full foundational gates remain separate"
+      "evidence": "docs/evidence/vectorcraft-single-round64-20261009.json",
+      "scope": "actual current-conversation multi-size native review,one authorized revision,nine stale/schema/restart guards; task9.21 only; no independence,full automatic loop or fixed distribution claim"
     }
   ]
 }

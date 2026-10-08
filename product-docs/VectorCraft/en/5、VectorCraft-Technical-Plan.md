@@ -112,3 +112,5 @@ Candidate64 now pins public source45(a4b1e624818f). Source45 passes28 permission
 Source46 is now pinned in unpublished candidate64. Current tests cover trusted Python asset reads,descriptor-safe copies,13 standalone cold starts,28 native permission cases and actual managed asset create/inherit with six exports. Node parent preflight audit,host secret references and fixed64 release qualification remain open; no new task closes.
 
 Node parent asset hashing now uses the pinned descriptor reader under frozen roots; an actual ancestor replacement first failed,then passed.133 Node/146 Python tests and managed native create/inherit pass. Remaining root audit,secrets and fixed qualification stay open.
+
+VC-QA-003 both current scenarios and task9.21 are verified through current-conversation actual multi-size review,one native local revision and strict persisted rejection/restart guards.135 Node and154 Python regressions passed before the final evidence-only audit. Creative acceptance is pending; six tasks and fixed distribution remain open.

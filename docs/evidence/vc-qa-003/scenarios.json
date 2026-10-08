@@ -1,0 +1,28 @@
+{
+  "schema": "vectorcraft-single-round-scenarios/v1",
+  "scenarioContracts": {
+    "VC-QA-003-P": "41558f24c745565001f3c5ef1ba140cf6f54107530c2c1f5ad4e76eeee0a9f80",
+    "VC-QA-003-N": "dc4ac0a6f896738714635e7c9ed0179be4a337085249854cfdaae9e231e9240c"
+  },
+  "entries": [
+    {
+      "scenario": "VC-QA-003-P",
+      "result": "PASS",
+      "evidence": [
+        "flow.json",
+        "revision-phase.json",
+        "initial-assessment.json",
+        "revised-assessment.json",
+        "budget.json"
+      ]
+    },
+    {
+      "scenario": "VC-QA-003-N",
+      "result": "PASS",
+      "evidence": [
+        "receipt-guards.json",
+        "malformed-green.log.txt"
+      ]
+    }
+  ]
+}

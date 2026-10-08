@@ -81,3 +81,5 @@ Candidate64 now pins public source45(a4b1e624818f). Source45 passes28 permission
 Current candidate64/source46 verifies Python asset-root boundaries and actual native/managed asset creation and inherited revision. This is partial VC-RL-002 progress; Node parent audit,host secrets and fixed distribution remain pending.120/127 tasks complete,7 open; no V1 or marketplace qualification.
 
 The parent initial asset read-after-check gap is fixed and verified by native managed creation/rework. VC-RL-002 remains partial; no additional tasks close or marketplace eligibility follows.
+
+Task9.21 complete: actual current-agent review and one explicit native revision,with separate technical and creative conclusions. The green target passes but small text remains unresolved.121/127 tasks complete,6 open; no independent review,automatic loop,fixed installation,V1 or marketplace claim.

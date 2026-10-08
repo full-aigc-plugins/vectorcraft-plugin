@@ -119,8 +119,7 @@
     "6.6": "docs/evidence/vectorcraft-revision-fixed63-20261009.json",
     "7.1": "docs/evidence/vectorcraft-release-gate-20261009.json",
     "7.2": "docs/evidence/vectorcraft-release-gate-20261009.json",
-    "7.3": "docs/evidence/vectorcraft-release-gate-20261009.json",
-    "9.21": "docs/evidence/vectorcraft-single-round64-20261009.json"
+    "7.3": "docs/evidence/vectorcraft-release-gate-20261009.json"
   },
   "hostValidationEvidence": "docs/evidence/craft-full-command-fixed-first-use-20261007.json",
   "hostValidationStatus": "fixed-five-plugin58-discovery-and-standalone-desktop-passed",
@@ -285,17 +284,5 @@
     "pluginVersion": "0.1.0-dev.64",
     "sourceRef": "v0.1.0-dev.46",
     "sourceCommit": "91092712e427542e9c8383e346f0ad94f0e3f029"
-  },
-  "singleRoundActualReview": {
-    "status": "both-current-scenarios-verified",
-    "evidence": "docs/evidence/vectorcraft-single-round64-20261009.json",
-    "pluginVersion": "0.1.0-dev.64",
-    "sourceRef": "v0.1.0-dev.46",
-    "actualCurrentConversationAssessment": true,
-    "explicitNativeRevisions": 1,
-    "creativeAcceptance": "pending; small label issue remains",
-    "independentReview": false,
-    "fullAutomaticLoop": false,
-    "fixedDistribution": "NOT_RUN"
   }
 }

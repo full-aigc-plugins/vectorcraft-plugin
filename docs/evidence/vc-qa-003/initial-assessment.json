@@ -1,0 +1,106 @@
+{
+  "kind": "actual-current-conversation-model-review",
+  "projectRevision": "c1de3466c9af39d7756f6b1671c49eec23e4eaa6c09ea5d38be8ccd1aeb45a48",
+  "previewSha256": "02e13da3a0b0c7de68fadaa1c6f736a65b2a4a794c6311fbef84f036df2dc3bd",
+  "reviewer": {
+    "kind": "host-model",
+    "identity": "Codex active conversation main assistant",
+    "contextOrigin": "thread 01a11a35-eaa0-7911-ac19-2546b82066f1; actual view_image tool inspection of128x96,64x48,32x24 native previews",
+    "independenceEvidence": null
+  },
+  "verdict": "revise",
+  "scores": {
+    "structure": 3,
+    "text": 2,
+    "brand": 1,
+    "layout": 3,
+    "legibility": 1
+  },
+  "issues": [
+    {
+      "objectId": 2,
+      "field": "appearance.items.0.paint",
+      "message": "observed: red/blue gradient fails the explicit solid-green target; change only this fill to #00ff00",
+      "evidence": [
+        "artboard-1.png: rectangle x12..72,y12..48",
+        "native.json: object2 appearance.items.0.paint"
+      ]
+    },
+    {
+      "objectId": 3,
+      "field": "kind.runs.0.style.size",
+      "message": "observed: label is not readable in the32x24 preview; text-size edits are outside this round authorization and remain unresolved",
+      "evidence": [
+        "initial previews/preview-32.png",
+        "native.json: object3 live Source Sans3,size12"
+      ]
+    }
+  ],
+  "inspection": {
+    "actualImageViews": [
+      {
+        "path": "preview-128.png",
+        "sha256": "02e13da3a0b0c7de68fadaa1c6f736a65b2a4a794c6311fbef84f036df2dc3bd",
+        "width": 128,
+        "height": 96,
+        "scale": 1
+      },
+      {
+        "path": "preview-64.png",
+        "sha256": "f58a7e40247166945c20e2de329df86e830447861d0759a340f2d4394b150df7",
+        "width": 64,
+        "height": 48,
+        "scale": 0.5
+      },
+      {
+        "path": "preview-32.png",
+        "sha256": "1432616744fa34f12a7305526149f0a02e855d9eedf0ca3438983301b730ee12",
+        "width": 32,
+        "height": 24,
+        "scale": 0.25
+      }
+    ],
+    "structure": {
+      "status": "observed",
+      "closedSubpaths": 1,
+      "holes": 0,
+      "stroke": "none",
+      "nativeEditability": "path and live rectangle retained"
+    },
+    "text": {
+      "status": "observed",
+      "live": "Editable source",
+      "font": "Source Sans3 present",
+      "fontPortability": "unknown"
+    },
+    "brand": {
+      "status": "observed",
+      "solidGreenTargetMet": false
+    },
+    "layout": {
+      "status": "observed",
+      "alignment": "shape and text left edges x12; artboard128x96"
+    },
+    "legibility": {
+      "status": "observed",
+      "128": "dark label on transparent preview has limited contrast",
+      "64": "reduced text is difficult",
+      "32": "label is not readable"
+    },
+    "exchange": {
+      "lost": [
+        "SVG native editing model",
+        "SVG live-text editability"
+      ],
+      "observed": [
+        "SVG freeform fill rasterization",
+        "native editable text and closed shape"
+      ],
+      "unknown": [
+        "font portability",
+        "universal external editor effect fidelity"
+      ]
+    },
+    "scope": "Actual current-agent inspection of synthetic acceptance artwork; no independent reviewer,external-host routing or universal brand quality claim"
+  }
+}

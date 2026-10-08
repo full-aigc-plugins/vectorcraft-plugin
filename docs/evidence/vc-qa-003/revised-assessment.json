@@ -1,0 +1,97 @@
+{
+  "kind": "actual-current-conversation-model-review",
+  "projectRevision": "08e3b58b1fd5f46979b7958470c2c54c16ab691739653209c35bbe1f90011d9d",
+  "previewSha256": "099779df74d2eaffc1e4e67220d55bed8a3b686f0387fb4e1a981ddfcecd5e74",
+  "reviewer": {
+    "kind": "host-model",
+    "identity": "Codex active conversation main assistant",
+    "contextOrigin": "thread 01a11a35-eaa0-7911-ac19-2546b82066f1; actual view_image tool inspection of128x96,64x48,32x24 native previews",
+    "independenceEvidence": null
+  },
+  "verdict": "revise",
+  "scores": {
+    "structure": 3,
+    "text": 2,
+    "brand": 4,
+    "layout": 3,
+    "legibility": 1
+  },
+  "issues": [
+    {
+      "objectId": 3,
+      "field": "kind.runs.0.style.size",
+      "message": "observed: solid green target is met,but label remains unreadable at32x24; text-size changes are outside this round authorization",
+      "evidence": [
+        "revised previews/preview-32.png",
+        "native.json: object3 unchanged"
+      ]
+    }
+  ],
+  "inspection": {
+    "actualImageViews": [
+      {
+        "path": "preview-128.png",
+        "sha256": "099779df74d2eaffc1e4e67220d55bed8a3b686f0387fb4e1a981ddfcecd5e74",
+        "width": 128,
+        "height": 96,
+        "scale": 1
+      },
+      {
+        "path": "preview-64.png",
+        "sha256": "460a74ba1fd7ec29706af0b7a6e740b94ed5b2216575e17fd34a29b83556dcdb",
+        "width": 64,
+        "height": 48,
+        "scale": 0.5
+      },
+      {
+        "path": "preview-32.png",
+        "sha256": "48af94e0e689bf8b2d320e67cc23f7e7309c4640eb52b0a2c88597217980d84d",
+        "width": 32,
+        "height": 24,
+        "scale": 0.25
+      }
+    ],
+    "structure": {
+      "status": "observed",
+      "closedSubpaths": 1,
+      "holes": 0,
+      "stroke": "none",
+      "nativeEditability": "Native closed path and editable rectangle remain; geometry and stroke unchanged"
+    },
+    "text": {
+      "status": "observed",
+      "live": "Editable source",
+      "font": "Source Sans3 present",
+      "fontPortability": "unknown"
+    },
+    "brand": {
+      "status": "observed",
+      "solidGreenTargetMet": true
+    },
+    "layout": {
+      "status": "observed",
+      "alignment": "shape and text left edges x12; artboard128x96"
+    },
+    "legibility": {
+      "status": "observed",
+      "128": "dark label on transparent preview has limited contrast",
+      "64": "reduced text is difficult",
+      "32": "label is not readable"
+    },
+    "exchange": {
+      "lost": [
+        "Derivative native editing model",
+        "SVG appearance-mode live-text editability"
+      ],
+      "observed": [
+        "solid green shape",
+        "native editable text and closed shape"
+      ],
+      "unknown": [
+        "font portability",
+        "universal external editor effect fidelity"
+      ]
+    },
+    "scope": "Actual renewed view_image inspection of all three current preview sizes; native revision identity has changed,so old assessment binding was refused before importing"
+  }
+}

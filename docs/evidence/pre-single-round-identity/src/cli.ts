@@ -15,13 +15,7 @@ import { RevisionCycle } from './evaluation/revision_cycle.ts';
 async function main(){
   const [action,database,file]=process.argv.slice(2);
   if(!action||!database||!file)throw new Error('usage: node src/cli.ts run|cancel|reconcile|runtime-probe|runtime-activate|runtime-status|review-request|review-checked|review-import|revision|revision-cycle-open|revision-cycle-observe|revision-cycle-propose|revision-cycle-run|revision-cycle-best DATABASE REQUEST.json');
-  const raw=readFileSync(file,'utf8');let input:any;
-  try{input=strictJson(raw);}catch(error){
-    if(action!=='review-import')throw error;
-    // 畸形回执同样进入持久拒绝路径，存摘要而不回显可能含秘密的原文。
-    const rejected=new ReviewStore(database);try{return rejected.importReceipt(raw);}finally{rejected.close();}
-  }
-  assertNoLiteralSecrets(input);
+  const input=strictJson(readFileSync(file,'utf8'));assertNoLiteralSecrets(input);
   if(['runtime-probe','runtime-activate','runtime-status'].includes(action)){
     const controller=new Controller(database);try{
       const gate=new RuntimeGate(controller.ledger);
