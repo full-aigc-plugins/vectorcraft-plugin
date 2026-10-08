@@ -1,0 +1,15 @@
+✔ preview pixel geometry and unspecified units are refused before effects (5.802959ms)
+✔ artboard-local controls are verified against native coordinates without previews (0.669083ms)
+✔ closure and unit mismatches report real object IDs (0.196292ms)
+✔ point, handle and stroke drift cannot be masked by a matching anchor count (0.103709ms)
+✔ duplicate binding aliases and missing actual IDs never become successful geometry (0.189917ms)
+✔ ambiguous boards and unknown inherited transformations are refused (0.42075ms)
+✔ nonfinite controls, duplicate targets and relaxed tolerances fail contract validation (0.22625ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 92.612667

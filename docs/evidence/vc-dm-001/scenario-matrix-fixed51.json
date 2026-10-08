@@ -1,0 +1,305 @@
+{
+  "schema": "vectorcraft-geometry-scenario-matrix/v1",
+  "result": "PASS",
+  "scope": "all current VC-DM-001 scenarios against public installed51/source38 macOS arm64; manifest-bound reopened native geometry, no preview inference",
+  "scenarioContracts": {
+    "VC-DM-001-P": "90806917b020ea126570bfb4aa2792196c0dba44d2bacd47273f56c3462a9ddf",
+    "VC-DM-001-N": "7ca3d1209f9ff5940deeac122afbc27b1543a14fc6b57ba093b9fc1bcde42089"
+  },
+  "entries": [
+    {
+      "scenario": "VC-DM-001-P",
+      "checks": [
+        {
+          "report": "docs/evidence/vc-dm-001/native.json",
+          "pointer": "/cases/0/result",
+          "expected": "PASS",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-001/native.json",
+          "pointer": "/cases/0/state",
+          "expected": "review_ready",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-001/native.json",
+          "pointer": "/cases/0/geometryVerification/status",
+          "expected": "PASS",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-001/native.json",
+          "pointer": "/cases/0/receiptPersisted",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-001/native.json",
+          "pointer": "/cases/0/changedContractRejected",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-001/native.json",
+          "pointer": "/cases/0/budgetUnchangedOnResume",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-001/native.json",
+          "pointer": "/cases/0/allRegisteredGroupsStopped",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-001/native.json",
+          "pointer": "/cases/1/result",
+          "expected": "PASS",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-001/native.json",
+          "pointer": "/cases/1/state",
+          "expected": "review_ready",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-001/native.json",
+          "pointer": "/cases/1/geometryVerification/status",
+          "expected": "PASS",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-001/native.json",
+          "pointer": "/cases/1/receiptPersisted",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-001/native.json",
+          "pointer": "/cases/1/changedContractRejected",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-001/native.json",
+          "pointer": "/cases/1/budgetUnchangedOnResume",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-001/native.json",
+          "pointer": "/cases/1/allRegisteredGroupsStopped",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-001/native.json",
+          "pointer": "/cases/0/contract/coordinateSpace",
+          "expected": "artboard-local",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-001/native.json",
+          "pointer": "/cases/1/contract/coordinateSpace",
+          "expected": "document",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-001/native.json",
+          "pointer": "/cases/0/contract/units",
+          "expected": "Pixels",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-001/native.json",
+          "pointer": "/cases/1/contract/units",
+          "expected": "Points",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-001/native.json",
+          "pointer": "/cases/0/contract/paths/0/strokes/0/width",
+          "expected": 3,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-001/unit.log",
+          "contains": "✔ artboard-local controls are verified against native coordinates without previews (",
+          "level": "unit-fixed-install"
+        }
+      ]
+    },
+    {
+      "scenario": "VC-DM-001-N",
+      "checks": [
+        {
+          "report": "docs/evidence/vc-dm-001/native.json",
+          "pointer": "/cases/2/result",
+          "expected": "PASS",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-001/native.json",
+          "pointer": "/cases/2/state",
+          "expected": "reconciling",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-001/native.json",
+          "pointer": "/cases/2/geometryVerification/status",
+          "expected": "FAIL",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-001/native.json",
+          "pointer": "/cases/2/originalOutputRetained",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-001/native.json",
+          "pointer": "/cases/2/replayRefused",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-001/native.json",
+          "pointer": "/cases/2/allRegisteredGroupsStopped",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-001/native.json",
+          "pointer": "/cases/3/result",
+          "expected": "PASS",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-001/native.json",
+          "pointer": "/cases/3/state",
+          "expected": "reconciling",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-001/native.json",
+          "pointer": "/cases/3/geometryVerification/status",
+          "expected": "FAIL",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-001/native.json",
+          "pointer": "/cases/3/originalOutputRetained",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-001/native.json",
+          "pointer": "/cases/3/replayRefused",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-001/native.json",
+          "pointer": "/cases/3/allRegisteredGroupsStopped",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-001/native.json",
+          "pointer": "/cases/4/result",
+          "expected": "PASS",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-001/native.json",
+          "pointer": "/cases/4/state",
+          "expected": "reconciling",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-001/native.json",
+          "pointer": "/cases/4/geometryVerification/status",
+          "expected": "FAIL",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-001/native.json",
+          "pointer": "/cases/4/originalOutputRetained",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-001/native.json",
+          "pointer": "/cases/4/replayRefused",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-001/native.json",
+          "pointer": "/cases/4/allRegisteredGroupsStopped",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-001/native.json",
+          "pointer": "/cases/5/result",
+          "expected": "PASS",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-001/native.json",
+          "pointer": "/cases/5/state",
+          "expected": "reconciling",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-001/native.json",
+          "pointer": "/cases/5/geometryVerification/status",
+          "expected": "FAIL",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-001/native.json",
+          "pointer": "/cases/5/originalOutputRetained",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-001/native.json",
+          "pointer": "/cases/5/replayRefused",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-001/native.json",
+          "pointer": "/cases/5/allRegisteredGroupsStopped",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-001/native.json",
+          "pointer": "/invalidPreviewRejectedBeforeEffects",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-001/unit.log",
+          "contains": "✔ closure and unit mismatches report real object IDs (",
+          "level": "unit-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-001/unit.log",
+          "contains": "✔ point, handle and stroke drift cannot be masked by a matching anchor count (",
+          "level": "unit-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-001/unit.log",
+          "contains": "✔ ambiguous boards and unknown inherited transformations are refused (",
+          "level": "unit-fixed-install"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "result": "PASS",
+  "skillsUnchanged": 13,
+  "groups": [
+    {
+      "case": "pixels-local",
+      "task": "3503e28b-8264-47b4-8a4d-804e14a2cb33",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": "points-document-open",
+      "task": "a069b394-9bbb-4fd1-b313-339b9e7f8db7",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": "closed-mismatch",
+      "task": "2fd477e3-aee7-47d2-b487-1e7ec4393998",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": "units-mismatch",
+      "task": "b305ef98-b6cf-42ae-8ac0-bfb3729697df",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": "control-mismatch",
+      "task": "aef78ae1-91fe-4287-9802-35ef5d12a2f0",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": "stroke-mismatch",
+      "task": "122fbfa8-184f-4c33-9c0b-16001df57af0",
+      "epoch": 1,
+      "stopped": true
+    }
+  ]
+}

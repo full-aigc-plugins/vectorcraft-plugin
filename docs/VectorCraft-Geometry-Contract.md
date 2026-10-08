@@ -1,6 +1,6 @@
 # Native geometry contract and verification
 
-Development prerelease dev.40 includes VC-DM-001 tests and minimal implementation (4.1/4.2); full4.3 remains open.
+All two VC-DM-001 scenarios passed against public installed51/source38; task4.3 is complete. Six native save/reopen cases and18 exports cover Pixels/Points, document/artboard-local coordinates, controls, open/closed paths and visible strokes. Four rejected contracts retain original artifacts and actual object IDs. Seven geometry tests pass,13 skill digests remain unchanged and6 registered groups stopped. Arbitrary transforms,GUI and creative acceptance remain separate. [固定验收 / Fixed acceptance](evidence/vectorcraft-geometry-fixed51-20261009.json).
 
 Supply optional `geometryContract` to `Controller.run`. Schema is `vectorcraft-geometry-contract/v1`; units are `Pixels` or `Points`, coordinateSpace is `document` or `artboard-local`, and tolerance is0 through0.001. `artboards` declare native integer IDs and `[x0,y0,x1,y1]`. Each `paths` entry declares exactly one `objectId` or native receipt `binding` such as `curve.id`, plus `artboardId`, `subpaths` and `strokes`. Subpaths contain `closed` and `anchors`; anchors specify `p`, optional `in`/`out` controls and `kind`. Strokes specify `width` and native `paint` objects.
 

@@ -107,8 +107,9 @@
         "4.3"
       ],
       "owner": "Domain owner",
-      "status": "in-progress",
-      "evidence": "docs/evidence/vector-workflow-tests.json"
+      "status": "verified",
+      "evidence": "docs/evidence/vectorcraft-geometry-fixed51-20261009.json",
+      "scope": "all two current scenarios against installed public51/source38 macOS arm64;six actual native save/reopen cases and18 exports;seven geometry tests;no arbitrary transforms or creative/GUI acceptance"
     },
     {
       "requirement": "VC-DM-002",

@@ -211,6 +211,9 @@ def build(root=ROOT):
     budget_fixed='docs/evidence/vectorcraft-budget-cancel-fixed51-20261009.json'
     if (root/budget_fixed).is_file():
         entries.append(bound_report(root,budget_fixed,'fixed-install','All five current VC-TX-003 scenarios on public installed51/source38 macOS arm64;five native cases,115 Node and43 Python tests,13 unchanged skills and13 stopped groups;only3.9 closes','VC-TX-003',['3.9']))
+    geometry_fixed='docs/evidence/vectorcraft-geometry-fixed51-20261009.json'
+    if (root/geometry_fixed).is_file():
+        entries.append(bound_report(root,geometry_fixed,'fixed-install','All two current VC-DM-001 scenarios against installed public51/source38 macOS arm64;external QA driver,six native cases,18 exports,seven geometry tests,13 unchanged skills and6 stopped groups;only4.3 closes','VC-DM-001',['4.3']))
     # 明确归档变更前执行字节；保留报告原摘要，不能把旧运行重绑定到新实现。
     for entry in entries:
         archived={}

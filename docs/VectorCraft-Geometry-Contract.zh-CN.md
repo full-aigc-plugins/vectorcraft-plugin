@@ -1,6 +1,6 @@
 # 原生几何合同与核验
 
-开发版 dev.40 包含 VC-DM-001 的测试和最小实现（4.1／4.2）；完整4.3继续开放。
+公开固定51／源38已通过VC-DM-001全部两个当前场景，任务4.3完成。六组真实原生保存／重开与18份导出覆盖Pixels／Points、文档／画板局部坐标、控制点、开闭路径和可见黑色描边；四类错误合同保留原产物并报告实际对象ID。七项几何回归通过，13技能摘要未变、6个登记组停止。任意变换、GUI和创作验收保持独立。[固定验收](evidence/vectorcraft-geometry-fixed51-20261009.json)。
 
 调用 `Controller.run` 时可提供 `geometryContract`。版本为 `vectorcraft-geometry-contract/v1`，单位必须是 `Pixels` 或 `Points`，坐标空间必须是 `document` 或 `artboard-local`，容差为0到0.001。`artboards` 声明原生整数ID与 `[x0,y0,x1,y1]`；`paths` 使用唯一 `objectId` 或原生回执 `binding`（例如 `curve.id`），并声明 `artboardId`、`subpaths` 与 `strokes`。子路径包含 `closed` 与 `anchors`，锚点提供 `p`、可选 `in`／`out` 控制点和 `kind`。描边包含 `width` 与原生 `paint` 对象。
 

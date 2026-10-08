@@ -1,0 +1,116 @@
+{
+  "schema": "vectorcraft-fixed-host-install/v1",
+  "result": "PASS",
+  "pluginVersion": "0.1.0-dev.51",
+  "pluginCommit": "f8b5e2aa881dfcd81a85f07397562e8a9a545019",
+  "skillSourceRef": "v0.1.0-dev.38",
+  "skillSourceCommit": "6f569740961d8129a1b08b2985ff0d89f16d7772",
+  "hostVersion": "codex-cli 0.153.4",
+  "hostIdentity": {
+    "userAgent": "Codex Desktop/0.153.4 (Mac OS 27.0.1; arm64) dumb (vectorcraft-fixed-acceptance; 1.0)",
+    "codexHome": "<plugin-root>/.local/fixed51 release host/codex home",
+    "platformFamily": "unix",
+    "platformOs": "macos"
+  },
+  "platform": "Darwin-arm64",
+  "skills": [
+    {
+      "name": "vectorcraft-use",
+      "path": "<plugin-root>/.local/fixed51 release host/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.51/skills/vectorcraft-use",
+      "sha256": "e7d84d441d0628269801918ced6f2f47abc31e461095dd805cc7634436757875",
+      "enabled": true,
+      "implicitPolicy": "policy:\n  allow_implicit_invocation: true\n"
+    },
+    {
+      "name": "vectorcraft-cli",
+      "path": "<plugin-root>/.local/fixed51 release host/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.51/skills/vectorcraft-cli",
+      "sha256": "bbadce2cefd040e8c1e143c84cf74f4efab0a03e768440e1b38ce73d10c2efb4",
+      "enabled": true,
+      "implicitPolicy": "policy:\n  allow_implicit_invocation: false\n"
+    },
+    {
+      "name": "vectorcraft-cli-setup",
+      "path": "<plugin-root>/.local/fixed51 release host/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.51/skills/vectorcraft-cli-setup",
+      "sha256": "e0bd59ddb23cf69d662c21dbef5324d708d20267638869d1813bef244e7cd3b3",
+      "enabled": true,
+      "implicitPolicy": "policy:\n  allow_implicit_invocation: false\n"
+    },
+    {
+      "name": "vectorcraft-cli-project",
+      "path": "<plugin-root>/.local/fixed51 release host/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.51/skills/vectorcraft-cli-project",
+      "sha256": "d516720b6da5cfcfeafa484ee50d67f75ec9c6cf5f685d2958be7e9f90719cb8",
+      "enabled": true,
+      "implicitPolicy": "policy:\n  allow_implicit_invocation: false\n"
+    },
+    {
+      "name": "vectorcraft-cli-paths",
+      "path": "<plugin-root>/.local/fixed51 release host/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.51/skills/vectorcraft-cli-paths",
+      "sha256": "5d67ad22e0b8a474b0ad4f125803a2d31a1d147272f8ffd534949e298d4d485c",
+      "enabled": true,
+      "implicitPolicy": "policy:\n  allow_implicit_invocation: false\n"
+    },
+    {
+      "name": "vectorcraft-cli-shapes",
+      "path": "<plugin-root>/.local/fixed51 release host/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.51/skills/vectorcraft-cli-shapes",
+      "sha256": "b8ae3dbeb2fdcd731a51d262b6f0fe16e2675a3b02bd904ab293191dcffa2d53",
+      "enabled": true,
+      "implicitPolicy": "policy:\n  allow_implicit_invocation: false\n"
+    },
+    {
+      "name": "vectorcraft-cli-boolean",
+      "path": "<plugin-root>/.local/fixed51 release host/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.51/skills/vectorcraft-cli-boolean",
+      "sha256": "8e14ba7eb0b24ce01c2cf227afb8913473b06636f593e9b6fa28147aa001ba00",
+      "enabled": true,
+      "implicitPolicy": "policy:\n  allow_implicit_invocation: false\n"
+    },
+    {
+      "name": "vectorcraft-cli-text",
+      "path": "<plugin-root>/.local/fixed51 release host/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.51/skills/vectorcraft-cli-text",
+      "sha256": "f42e0a496a25530fa8014721599108659be5064ee311044312dac09416004fe7",
+      "enabled": true,
+      "implicitPolicy": "policy:\n  allow_implicit_invocation: false\n"
+    },
+    {
+      "name": "vectorcraft-cli-appearance",
+      "path": "<plugin-root>/.local/fixed51 release host/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.51/skills/vectorcraft-cli-appearance",
+      "sha256": "fb9a966b0f082fb216a5d26738052afc4578a032fd43880dee14f51657545be0",
+      "enabled": true,
+      "implicitPolicy": "policy:\n  allow_implicit_invocation: false\n"
+    },
+    {
+      "name": "vectorcraft-cli-artboards",
+      "path": "<plugin-root>/.local/fixed51 release host/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.51/skills/vectorcraft-cli-artboards",
+      "sha256": "5a11d4415ad514cf3691e0f0d82254eb6f005810712e7cf2a47071d400a59f60",
+      "enabled": true,
+      "implicitPolicy": "policy:\n  allow_implicit_invocation: false\n"
+    },
+    {
+      "name": "vectorcraft-cli-assets",
+      "path": "<plugin-root>/.local/fixed51 release host/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.51/skills/vectorcraft-cli-assets",
+      "sha256": "4c120487365a4d23e689359cfec1d5c9b09d99909e07caefae868da4e28fe75a",
+      "enabled": true,
+      "implicitPolicy": "policy:\n  allow_implicit_invocation: false\n"
+    },
+    {
+      "name": "vectorcraft-cli-export",
+      "path": "<plugin-root>/.local/fixed51 release host/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.51/skills/vectorcraft-cli-export",
+      "sha256": "edac0db2760f244b0f820b5ca4c154fc49a2c16cb070ce485ea8a15c358e4953",
+      "enabled": true,
+      "implicitPolicy": "policy:\n  allow_implicit_invocation: false\n"
+    },
+    {
+      "name": "vectorcraft-cli-selection",
+      "path": "<plugin-root>/.local/fixed51 release host/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.51/skills/vectorcraft-cli-selection",
+      "sha256": "14fdf505ffedcec15c762b69891cec6aa58ec53196dd0dbc794818791a3467f9",
+      "enabled": true,
+      "implicitPolicy": "policy:\n  allow_implicit_invocation: false\n"
+    }
+  ],
+  "scope": "isolated actual published-tag plugin installation and host discovery; private acceptance catalog only",
+  "excluded": [
+    "model implicit routing",
+    "GUI",
+    "complete V1",
+    "public marketplace eligibility"
+  ]
+}
