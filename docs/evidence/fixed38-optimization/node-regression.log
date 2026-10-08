@@ -1,0 +1,27 @@
+
+> test
+> node --test tests/*.test.ts
+
+✔ controller binds a supplied standalone snapshot, records intent and verifies actual files (206.76175ms)
+✔ single writer keys the source resource, not output path; epochs fence old writers (7.845458ms)
+✔ idempotency binds input, authorization and runtime; budget and cancellation persist (9.121292ms)
+✔ single-round review binds fresh source, candidate, target and rubric and rejects duplicates (26.964791ms)
+✔ strict review JSON rejects duplicate keys, overflow, malformed values and accepts business error (0.572292ms)
+✔ revision proposals require actual assessed fields and preserve authorization without claiming independence (5.814583ms)
+✔ child tasks share one durable budget and late cancellation receipts are quarantined (3.439958ms)
+✔ review request rejects a claimed revision that differs from actual native bytes (3.439916ms)
+✔ review binds exchange loss and persists rejection reasons across restart (4.469041ms)
+✔ pending reviews survive restart and any bound source, candidate or rubric replacement invalidates acceptance (12.3755ms)
+✔ review target and authorization schemas reject undeclared target keys and invalid scopes (2.758584ms)
+✔ durable ownership survives registry restart and stops a TERM-ignoring descendant (373.968208ms)
+✔ a forged root identity never authorizes signalling a live group (147.745792ms)
+✔ settling a verified interruption fences the previous epoch and never claims delivery (11.889916ms)
+✔ new or changed original files after inspection keep writer occupation (28.199834ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 595.796333

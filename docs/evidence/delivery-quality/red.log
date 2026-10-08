@@ -1,0 +1,65 @@
+test_corrupt_image_with_matching_manifest_hash_cannot_pass (test_delivery_quality.DeliveryQualityTests.test_corrupt_image_with_matching_manifest_hash_cannot_pass) ... ERROR
+test_declared_file_or_runtime_drift_blocks_before_decode (test_delivery_quality.DeliveryQualityTests.test_declared_file_or_runtime_drift_blocks_before_decode) ... ERROR
+test_manifest_integrity_does_not_claim_native_reopening (test_delivery_quality.DeliveryQualityTests.test_manifest_integrity_does_not_claim_native_reopening) ... ERROR
+test_missing_decoder_is_not_a_technical_pass (test_delivery_quality.DeliveryQualityTests.test_missing_decoder_is_not_a_technical_pass) ... ERROR
+
+======================================================================
+ERROR: test_corrupt_image_with_matching_manifest_hash_cannot_pass (test_delivery_quality.DeliveryQualityTests.test_corrupt_image_with_matching_manifest_hash_cannot_pass)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/tests/test_delivery_quality.py", line 32, in test_corrupt_image_with_matching_manifest_hash_cannot_pass
+    module=checker()
+  File "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/tests/test_delivery_quality.py", line 16, in checker
+    module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);return module
+                                                 ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "<frozen importlib._bootstrap_external>", line 1022, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1159, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1217, in get_data
+FileNotFoundError: [Errno 2] No such file or directory: '<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/src/evaluation/delivery_quality.py'
+
+======================================================================
+ERROR: test_declared_file_or_runtime_drift_blocks_before_decode (test_delivery_quality.DeliveryQualityTests.test_declared_file_or_runtime_drift_blocks_before_decode)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/tests/test_delivery_quality.py", line 56, in test_declared_file_or_runtime_drift_blocks_before_decode
+    module=checker()
+  File "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/tests/test_delivery_quality.py", line 16, in checker
+    module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);return module
+                                                 ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "<frozen importlib._bootstrap_external>", line 1022, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1159, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1217, in get_data
+FileNotFoundError: [Errno 2] No such file or directory: '<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/src/evaluation/delivery_quality.py'
+
+======================================================================
+ERROR: test_manifest_integrity_does_not_claim_native_reopening (test_delivery_quality.DeliveryQualityTests.test_manifest_integrity_does_not_claim_native_reopening)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/tests/test_delivery_quality.py", line 48, in test_manifest_integrity_does_not_claim_native_reopening
+    module=checker()
+  File "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/tests/test_delivery_quality.py", line 16, in checker
+    module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);return module
+                                                 ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "<frozen importlib._bootstrap_external>", line 1022, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1159, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1217, in get_data
+FileNotFoundError: [Errno 2] No such file or directory: '<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/src/evaluation/delivery_quality.py'
+
+======================================================================
+ERROR: test_missing_decoder_is_not_a_technical_pass (test_delivery_quality.DeliveryQualityTests.test_missing_decoder_is_not_a_technical_pass)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/tests/test_delivery_quality.py", line 41, in test_missing_decoder_is_not_a_technical_pass
+    module=checker()
+  File "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/tests/test_delivery_quality.py", line 16, in checker
+    module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);return module
+                                                 ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "<frozen importlib._bootstrap_external>", line 1022, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1159, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1217, in get_data
+FileNotFoundError: [Errno 2] No such file or directory: '<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/src/evaluation/delivery_quality.py'
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.001s
+
+FAILED (errors=4)

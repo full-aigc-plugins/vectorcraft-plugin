@@ -1,0 +1,111 @@
+{
+  "schema": "vectorcraft-technical-review/v1",
+  "artifactIntegrityStatus": "PASS",
+  "engineeringStatus": "NOT_RUN",
+  "technicalStatus": "PASS",
+  "creativeStatus": "NOT_RUN",
+  "acceptanceStatus": "pending",
+  "nativeReopenStatus": "NOT_RUN",
+  "files": {
+    "plan.json": "e310ff9618138ecef59c9b48068e19f28cf105babb0bc3716e75f4cb3b5a314f",
+    "project.vectorcraft": "c3fab1c8567336dd3f335f0e43eeb42620b50d8ba2531f5dad12c979801e3884",
+    "exchange-loss.json": "55fa2998c4eaece34dfb70bf43d322137614a1d105cdf4f1065881fa02acabd0",
+    "pdf-export-date.json": "c2b58ec1b29fcde5a141b137e86339c2ce6098bb8cf9ad6ca53d3e39dd553835",
+    "native.json": "e40c928b574b803ff56c4b5bfecd77b1bb72bf1d7020a2b84aa23f62671bef00",
+    "artboard-1.pdf": "6cf9823c72f04edbe62b76dcbfe7303b7326e76253fd807a2509fc0c3b00f918",
+    "artboard-3.png": "7455236d57267e5908873dd86cd652deba4478652e53e38a9c00f244e40e3219",
+    "artboard-2.png": "aa8f4f66ace1570e707ba3bd47543e194532c47aa3b3ab9eca4be6a5ed5b1aa5",
+    "brand-dependencies.json": "55a170a44d2674db8fc24d2bfc11955792595471979f1ef6b76cae98ce29d830",
+    "artboard-2.pdf": "8e48a3720d475d137572ae10dc05d36b79d4a7c91b6ae20d63315f84815ed50d",
+    "artboard-1.png": "1d6861a1a5fa82748ee1635310ef68bf9457934cd9948c9b10f708362aa8aa90",
+    "artboard-3.pdf": "4da5b4e5b179e8a39036daba29838c1af6e01fa346836db4edd59bbaefeb4115",
+    "artboard-1.svg": "c7a774c7266600ba7fecab611add76b9d0f53459d015e7daba7f1edd14b184f2",
+    "artboard-2.svg": "5029c5a828113727055290d06af118a36aa0d01d2ee5a36526c65da7b7427de8",
+    "artboard-3.svg": "5962cfb3ea69378457613a83afa3e7012c2b358707f5aba006ddc95798ee0a63",
+    "operations.json": "ded10d3bef5848536f4d3999f2a89f3ec93907935a01f1c13d4fb1cdf0f567c8"
+  },
+  "outputs": [
+    {
+      "path": "artboard-1.svg",
+      "sha256": "c7a774c7266600ba7fecab611add76b9d0f53459d015e7daba7f1edd14b184f2",
+      "status": "PASS",
+      "decoder": "PyMuPDF",
+      "pages": 1,
+      "scope": "bounded raster decode; creative quality not assessed"
+    },
+    {
+      "path": "artboard-1.png",
+      "sha256": "1d6861a1a5fa82748ee1635310ef68bf9457934cd9948c9b10f708362aa8aa90",
+      "status": "PASS",
+      "decoder": "Pillow",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "path": "artboard-1.pdf",
+      "sha256": "6cf9823c72f04edbe62b76dcbfe7303b7326e76253fd807a2509fc0c3b00f918",
+      "status": "PASS",
+      "decoder": "PyMuPDF",
+      "pages": 1,
+      "scope": "bounded raster decode; creative quality not assessed"
+    },
+    {
+      "path": "artboard-2.svg",
+      "sha256": "5029c5a828113727055290d06af118a36aa0d01d2ee5a36526c65da7b7427de8",
+      "status": "PASS",
+      "decoder": "PyMuPDF",
+      "pages": 1,
+      "scope": "bounded raster decode; creative quality not assessed"
+    },
+    {
+      "path": "artboard-2.png",
+      "sha256": "aa8f4f66ace1570e707ba3bd47543e194532c47aa3b3ab9eca4be6a5ed5b1aa5",
+      "status": "PASS",
+      "decoder": "Pillow",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "path": "artboard-2.pdf",
+      "sha256": "8e48a3720d475d137572ae10dc05d36b79d4a7c91b6ae20d63315f84815ed50d",
+      "status": "PASS",
+      "decoder": "PyMuPDF",
+      "pages": 1,
+      "scope": "bounded raster decode; creative quality not assessed"
+    },
+    {
+      "path": "artboard-3.svg",
+      "sha256": "5962cfb3ea69378457613a83afa3e7012c2b358707f5aba006ddc95798ee0a63",
+      "status": "PASS",
+      "decoder": "PyMuPDF",
+      "pages": 1,
+      "scope": "bounded raster decode; creative quality not assessed"
+    },
+    {
+      "path": "artboard-3.png",
+      "sha256": "7455236d57267e5908873dd86cd652deba4478652e53e38a9c00f244e40e3219",
+      "status": "PASS",
+      "decoder": "Pillow",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "path": "artboard-3.pdf",
+      "sha256": "4da5b4e5b179e8a39036daba29838c1af6e01fa346836db4edd59bbaefeb4115",
+      "status": "PASS",
+      "decoder": "PyMuPDF",
+      "pages": 1,
+      "scope": "bounded raster decode; creative quality not assessed"
+    }
+  ],
+  "scope": "artifact integrity and export decode only; native reopening and creative review remain separate",
+  "projectRevision": "c3fab1c8567336dd3f335f0e43eeb42620b50d8ba2531f5dad12c979801e3884",
+  "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+  "manifestSha256": "836fad998da003abb7be0e0408da8122ef5e64f09549a8732cb447c0b6800fab"
+}

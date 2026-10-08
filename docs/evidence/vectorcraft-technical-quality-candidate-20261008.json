@@ -1,0 +1,32 @@
+{
+  "schema": "vectorcraft-technical-quality-candidate/v1",
+  "result": "PASS",
+  "level": "native-candidate",
+  "completedTasks": [
+    "6.1"
+  ],
+  "sourceOfExports": {
+    "plugin": "0.1.0-dev.38",
+    "skills": "v0.1.0-dev.35"
+  },
+  "unitTests": 5,
+  "nativeDecodedExports": 18,
+  "corruptNativeExportCases": 2,
+  "scope": "tests and standalone readonly technical helper;6.2 coordinator integration and6.3 complete native engineering/creative acceptance remain open",
+  "fingerprints": {
+    "src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
+    "tests/test_delivery_quality.py": "bd424eae9e6ee0d00cb331aea7c4310fef8caae642f117ccea8fbde475d86f4b",
+    "docs/evidence/delivery-quality/direct-corrupt.json": "c1bdd14d64829df0c33fea102451a7319af8d0fe5cb182877b50974a05bd7ae0",
+    "docs/evidence/delivery-quality/direct-healthy.json": "283a29f7fd54bf5f1f48664521e9cbd1e487c57c53d6d525ddcbc1c82d319292",
+    "docs/evidence/delivery-quality/green.log": "479c892b7f3dc8871cd5382190e1206ec01d9cb180f88c8316778884046e9e01",
+    "docs/evidence/delivery-quality/native-gateway-corrupt.json": "ce81882293815c87cc35f4c371a1ace9df422707be0f10b87d5bf3ff8dbe821c",
+    "docs/evidence/delivery-quality/native-gateway-healthy.json": "d1eb43137a5b721a30e82ff79639b4b5d848bd4ed84a849f12db1b3133989992",
+    "docs/evidence/delivery-quality/proof.json": "2074b79ceae9e0be4c07c9ce42ae9f15a009aa7501b2cef944d0f80d59471929",
+    "docs/evidence/delivery-quality/red.log": "c2d8679341323ae907dd9dc56c6c2099a0c829daafbe6afb793c605f9ff5caa0",
+    "docs/evidence/delivery-quality/status-red.log": "45ae37ba26b58cb7d917bfcdb12d4b7fc05b0ed7d29daaa7b175c1f22b2a8e0e"
+  },
+  "engineering": "NOT_RUN",
+  "creative": "NOT_RUN",
+  "acceptance": "pending",
+  "redReason": "target delivery_quality.py implementation absent, then unknown status accepted; not missing interpreter/decoder dependencies"
+}

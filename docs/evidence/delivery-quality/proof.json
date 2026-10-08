@@ -1,0 +1,27 @@
+{
+  "result": "PASS",
+  "schema": "vectorcraft-native-technical-quality/v1",
+  "level": "native-candidate",
+  "cases": [
+    {
+      "mode": "direct",
+      "decodedExports": 9,
+      "healthyTechnical": "PASS",
+      "corruptManifestHashMatches": true,
+      "corruptTechnical": "FAIL",
+      "highCreativeVerdictCannotOverride": true,
+      "nativeReopen": "NOT_RUN"
+    },
+    {
+      "mode": "native-gateway",
+      "decodedExports": 9,
+      "healthyTechnical": "PASS",
+      "corruptManifestHashMatches": true,
+      "corruptTechnical": "FAIL",
+      "highCreativeVerdictCannotOverride": true,
+      "nativeReopen": "NOT_RUN"
+    }
+  ],
+  "driverSha256": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
+  "scope": "decode actual fixed38/source35 exports; report helper candidate only, review coordinator not wired; native reopening remains separate"
+}

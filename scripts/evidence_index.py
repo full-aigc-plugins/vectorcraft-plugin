@@ -105,6 +105,9 @@ def build(root=ROOT):
             entries.append(bound_report(root,fixed,'fixed-install','actual isolated host installation, 13 cold starts and protocol/brand technical tasks only',tasks=['9.3','9.6']))
         else:
             entries.append(record(root,fixed,'fixed-install','PASS',[],'fixed plugin38/source35; retained at original execution identity',tasks=['9.3','9.6'],historical=True))
+    quality='docs/evidence/vectorcraft-technical-quality-candidate-20261008.json'
+    if (root/quality).is_file():
+        entries.append(bound_report(root,quality,'native-candidate','standalone technical decoder and negative tests; coordinator and native engineering acceptance open',tasks=['6.1']))
     previous='docs/evidence/vectorcraft-optimization-local-before-execution-control-20261008.json'
     if (root/previous).is_file():
         entries.append(record(root,previous,'local-tests','PASS',[],'original execution fingerprints retained inside historical report; never rebound to changed source',historical=True))

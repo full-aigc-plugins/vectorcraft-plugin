@@ -1,0 +1,10 @@
+test_corrupt_image_with_matching_manifest_hash_cannot_pass (test_delivery_quality.DeliveryQualityTests.test_corrupt_image_with_matching_manifest_hash_cannot_pass) ... ok
+test_declared_file_or_runtime_drift_blocks_before_decode (test_delivery_quality.DeliveryQualityTests.test_declared_file_or_runtime_drift_blocks_before_decode) ... ok
+test_manifest_integrity_does_not_claim_native_reopening (test_delivery_quality.DeliveryQualityTests.test_manifest_integrity_does_not_claim_native_reopening) ... ok
+test_missing_decoder_is_not_a_technical_pass (test_delivery_quality.DeliveryQualityTests.test_missing_decoder_is_not_a_technical_pass) ... ok
+test_unknown_status_cannot_be_accepted (test_delivery_quality.DeliveryQualityTests.test_unknown_status_cannot_be_accepted) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.014s
+
+OK

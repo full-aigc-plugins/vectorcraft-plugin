@@ -82,7 +82,8 @@
     "3.7": "docs/evidence/vectorcraft-execution-control-20261008.json",
     "3.8": "docs/evidence/vectorcraft-execution-control-20261008.json",
     "9.3": "docs/evidence/vectorcraft-fixed38-optimization-20261008.json",
-    "9.6": "docs/evidence/vectorcraft-fixed38-optimization-20261008.json"
+    "9.6": "docs/evidence/vectorcraft-fixed38-optimization-20261008.json",
+    "6.1": "docs/evidence/vectorcraft-technical-quality-candidate-20261008.json"
   },
   "hostValidationEvidence": "docs/evidence/craft-full-command-fixed-first-use-20261007.json",
   "hostValidationStatus": "fixed-five-plugin58-discovery-and-standalone-desktop-passed",
