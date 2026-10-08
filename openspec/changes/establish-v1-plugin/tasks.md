@@ -366,3 +366,5 @@
 源45已公开发布并正常vendor进入候选64。28项权限测试、13项独立冷安装、当前插件132项Node／146项Python及实际受限原生修订通过；Python素材预检授权、宿主秘密引用与固定64权限验收仍未完成，7.4–7.6保持开放。证据：`docs/evidence/vectorcraft-permissions-filesystem-integration-candidate64-20261009.json`。
 
 源46素材读取候选已完成本地回归：14项目标测试及255项回归（207通过、48跳过），修复素材元数据自行授权、登记输入链接替换复制及受管CLI在冻结授权前读取的问题。[独立源证据](https://github.com/full-aigc-skills/vectorcraft-skills/blob/9109271/docs/evidence/permissions-candidate46-20261009.json)。当前插件64继续锁源45，尚未vendor源46；源46新素材原生放置／继承返工／冷安装及固定插件验证未运行，7.4–7.6和其他开放任务不勾选。当前六层发布门禁因 `release_evidence_changed` 拒绝候选64发布，公开插件仍为63。
+
+源46后续实测与集成：公开不可变源46已通过正常vendor进入候选64；28项当前原生权限测试、13技能逐项冷启动、实际素材创建／含空格移动重开／继承返工及5类完整性拒绝通过。插件受管素材创建与继承返工产生6个导出，2类越权启动前拒绝，2个拥有的原生组停止。前述“尚未vendor源46”为集成前状态记录；Node父进程预检完整审计、宿主秘密引用和固定64验收继续开放，7.4–7.6不勾选。[当前候选证据](../../../docs/evidence/vectorcraft-permissions-assets-integration-candidate64-20261009.json)。

@@ -6,7 +6,6 @@ import hashlib
 import importlib.util
 import json
 import os
-import shutil
 from pathlib import Path
 import re
 import subprocess
@@ -248,12 +247,14 @@ def execute(plan, output, runtime_home=None, mode="headless", connect=None, toke
     if not isinstance(inputs, dict) or any(not isinstance(k, str) or not re.fullmatch(r"[a-zA-Z][\w-]*", k) or k == "output" for k in inputs):
         raise ValueError("invalid_input_name")
     sources = {}
+    reader = load("asset_reader")
     for name, value in inputs.items():
-        source = Path(value)
+        source = Path(value).absolute()
         if source.is_symlink() or not source.is_file():
             raise ValueError("invalid_input_file: " + name)
-        with source.open("rb") as stream:
-            sources[name] = (source, hashlib.file_digest(stream, "sha256").hexdigest())
+        roots = reader.normalize_roots([source])
+        digest, identity = reader.digest_authorized(source, roots)
+        sources[name] = (source, digest, roots, identity)
     validate(plan, sources)
     output = Path(output)
     if output.exists() or output.is_symlink():
@@ -284,13 +285,10 @@ def execute(plan, output, runtime_home=None, mode="headless", connect=None, toke
         receipt["inputs"] = {}
         if sources:
             (output / "inputs").mkdir()
-        for name, (source, digest) in sources.items():
+        for name, (source, digest, roots, identity) in sources.items():
             target = output / "inputs" / (name + source.suffix)
-            shutil.copyfile(source, target)
-            with target.open("rb") as stream:
-                copied = hashlib.file_digest(stream, "sha256").hexdigest()
-            with source.open("rb") as stream:
-                after = hashlib.file_digest(stream, "sha256").hexdigest()
+            copied, _ = reader.digest_authorized(source, roots, identity, target)
+            after, _ = reader.digest_authorized(source, roots, identity)
             if copied != digest or after != digest:
                 raise ValueError("input_changed: " + name)
             relative = str(target.relative_to(output))

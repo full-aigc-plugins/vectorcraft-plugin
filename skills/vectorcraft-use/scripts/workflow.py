@@ -135,7 +135,7 @@ def validate(plan):
                 raise ValueError('invalid_document_size')
 
 
-def execute(plan, output, runtime_home=None, source=None, control=None):
+def execute(plan, output, runtime_home=None, source=None, control=None, read_roots=()):
     validate(plan)
     if control:
         control.check()
@@ -177,7 +177,8 @@ def execute(plan, output, runtime_home=None, source=None, control=None):
     elif 'document' not in plan:
         raise ValueError('document_required')
     inputs_module = asset_module()
-    input_assets = inputs_module.preflight(plan, source, prior)
+    authorized_roots = control.profile.get('authorization', {}).get('readRoots', []) if control else read_roots
+    input_assets = inputs_module.preflight(plan, source, prior, authorized_roots)
     # 安装器与本脚本同目录，单技能安装不需要访问其他包。
     spec = importlib.util.spec_from_file_location('craft_bootstrap', Path(__file__).with_name('bootstrap.py'))
     bootstrap = importlib.util.module_from_spec(spec)
@@ -414,8 +415,7 @@ def execute(plan, output, runtime_home=None, source=None, control=None):
         if source_project and sha(source_project) != source_hash:
             raise ValueError('revision_conflict')
         for entry in input_assets.values():
-            if sha(entry['inputPath']) != entry['sha256']:
-                raise ValueError('asset_digest_mismatch')
+            inputs_module.verify_input(entry)
         # 不把暂存绝对路径写入可分发记录。
         for receipt in receipts:
             if receipt['command'] in ('document.export', 'document.save', 'document.open'):
@@ -475,15 +475,11 @@ def main():
     parser.add_argument('--source', type=Path)
     parser.add_argument('--runtime-home', type=Path)
     parser.add_argument('--control', type=Path, help='显式本地Harness控制配置；逐调用核对取消、epoch及预算')
+    parser.add_argument('--read-root', action='append', default=[], help='可信调用层授权的素材读取根，可重复')
     parser.add_argument('--asset', action='append', default=[], metavar='NAME=PATH', help='登记输入素材并计算摘要')
     args = parser.parse_args()
     try:
         plan = native_module().commands.reply_json(args.plan.read_text())
-        for assignment in args.asset:
-            name, separator, path = assignment.partition('=')
-            if not separator or not inputs_name(name) or name in plan.get('assets', {}):
-                raise ValueError('asset_binding_invalid')
-            plan.setdefault('assets', {})[name] = {'path': path, 'sha256': sha(path)}
         control = None
         if args.control:
             spec = importlib.util.spec_from_file_location('craft_execution_control', Path(__file__).with_name('execution_control.py'))
@@ -493,7 +489,24 @@ def main():
             def terminated(signum, frame):
                 raise RuntimeError('cancel_requested: managed process termination')
             signal.signal(signal.SIGTERM, terminated)
-        result = execute(plan, args.output, args.runtime_home, args.source, control)
+        if control:
+            control.check()
+            if plan != control.expected_plan:
+                raise ValueError("plan_snapshot_mismatch")
+        seen_assets = set()
+        for assignment in args.asset:
+            name, separator, path = assignment.partition('=')
+            if not separator or not inputs_name(name) or name in seen_assets:
+                raise ValueError('asset_binding_invalid')
+            seen_assets.add(name)
+            reader = asset_module()._reader
+            data, _ = reader.read_authorized(path, reader.normalize_roots(control.profile.get("authorization", {}).get("readRoots", []) if control else [path]))
+            binding = {'path': path, 'sha256': hashlib.sha256(data).hexdigest()}
+            if name in plan.get('assets', {}) and plan['assets'][name] != binding:
+                raise ValueError('asset_binding_invalid')
+            plan.setdefault('assets', {})[name] = binding
+            args.read_root.append(path)
+        result = execute(plan, args.output, args.runtime_home, args.source, control, args.read_root)
         print(json.dumps(result, ensure_ascii=False))
     except (ValueError, RuntimeError, OSError, subprocess.SubprocessError) as error:
         print(json.dumps({'error': str(error)}, ensure_ascii=False))

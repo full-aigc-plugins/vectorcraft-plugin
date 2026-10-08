@@ -1,10 +1,14 @@
 """登记输入预检与收集；不允许计划直接选择原生命令文件路径。"""
 import hashlib
+import importlib.util
 import math
 from pathlib import Path
 import re
-import shutil
 import xml.etree.ElementTree as ET
+
+_reader_spec = importlib.util.spec_from_file_location('craft_asset_reader', Path(__file__).with_name('asset_reader.py'))
+_reader = importlib.util.module_from_spec(_reader_spec)
+_reader_spec.loader.exec_module(_reader)
 
 NAME = re.compile(r'[A-Za-z][A-Za-z0-9_-]{0,63}')
 
@@ -44,9 +48,10 @@ def source_file(root, location):
     return path
 
 
-def preflight(plan, source=None, prior=None):
+def preflight(plan, source=None, prior=None, read_roots=()):
     """输入先验摘要及消费检查必须在 CLI 安装与输出目录创建之前完成。"""
     entries = {}
+    authorized = _reader.normalize_roots(read_roots)
     previous = (prior or {}).get('assets', {})
     if not isinstance(previous, dict):
         raise ValueError('asset_record_invalid')
@@ -59,7 +64,7 @@ def preflight(plan, source=None, prior=None):
         ids = value.get('ids')
         if not isinstance(ids, list) or not ids or any(type(i) is not int or i <= 0 for i in ids) or len(ids) != len(set(ids)) or type(value.get('linked')) is not bool:
             raise ValueError('asset_record_invalid')
-        entries[name] = {**value, 'inputPath': path}
+        entries[name] = {**value, 'inputPath': path, 'inputRoots': _reader.normalize_roots([source])}
     inputs = plan.get('assets', {})
     if not isinstance(inputs, dict):
         raise ValueError('asset_record_invalid')
@@ -69,13 +74,20 @@ def preflight(plan, source=None, prior=None):
         if not isinstance(value['path'], str):
             raise ValueError('asset_path_invalid')
         path = Path(value['path'])
-        if not path.is_absolute() or path.is_symlink() or not path.is_file():
+        if not path.is_absolute():
             raise ValueError('asset_path_invalid')
-        entries[name] = {**value, 'inputPath': path}
+        if not any(path.resolve().is_relative_to(Path(root)) for root in authorized):
+            raise ValueError('asset_read_outside_root')
+        if path.is_symlink() or not path.is_file():
+            raise ValueError('asset_path_invalid')
+        entries[name] = {**value, 'inputPath': path, 'inputRoots': authorized}
     for entry in entries.values():
-        path = entry['inputPath']
-        if path.stat().st_size > 64*1024*1024 or not isinstance(entry.get('sha256'), str) or not re.fullmatch(r'[a-f0-9]{64}', entry['sha256']) or sha(path) != entry['sha256']:
+        if not isinstance(entry.get('sha256'), str) or not re.fullmatch(r'[a-f0-9]{64}', entry['sha256']):
             raise ValueError('asset_digest_mismatch')
+        data, identity = _reader.read_authorized(entry['inputPath'], entry['inputRoots'])
+        if hashlib.sha256(data).hexdigest() != entry['sha256']:
+            raise ValueError('asset_digest_mismatch')
+        entry['inputIdentity'] = identity
     consumed = set()
     live = {name for name in entries if 'ids' in entries[name]}
     for op in plan['operations']:
@@ -95,7 +107,7 @@ def preflight(plan, source=None, prior=None):
     if set(inputs) != consumed:
         raise ValueError('asset_not_consumed')
     for entry in entries.values():
-        data = entry['inputPath'].read_bytes()
+        data = read_input(entry)
         if data.startswith(b'\x89PNG\r\n\x1a\n'):
             fmt = 'png'
         elif data.startswith(b'\xff\xd8'):
@@ -126,14 +138,26 @@ def preflight(plan, source=None, prior=None):
 def collect(entries, root):
     assets = {}
     for name, entry in entries.items():
-        source = entry['inputPath']
-        if sha(source) != entry['sha256']:
-            raise ValueError('asset_digest_mismatch')
+        data = read_input(entry)
         target = Path(root) / 'Assets' / (name + '.' + entry['format'])
         target.parent.mkdir(exist_ok=True)
-        shutil.copyfile(source, target)
-        if sha(target) != entry['sha256'] or sha(source) != entry['sha256']:
+        target.write_bytes(data)
+        verify_input(entry)
+        if sha(target) != entry['sha256']:
             raise ValueError('asset_digest_mismatch')
-        assets[name] = {k: v for k, v in entry.items() if k not in ('inputPath', 'path')}
+        assets[name] = {k: v for k, v in entry.items() if k not in ('inputPath', 'path', 'inputRoots', 'inputIdentity')}
         assets[name]['path'] = str(target.relative_to(root))
     return assets
+
+
+def read_input(entry):
+    """沿原授权读取同一素材，身份或摘要变化时拒绝。"""
+    data, _ = _reader.read_authorized(entry['inputPath'], entry['inputRoots'], entry['inputIdentity'])
+    if hashlib.sha256(data).hexdigest() != entry['sha256']:
+        raise ValueError('asset_digest_mismatch')
+    return data
+
+
+def verify_input(entry):
+    """最终校验仍使用冻结授权，不通过普通路径读取绕过边界。"""
+    read_input(entry)

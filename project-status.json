@@ -273,16 +273,16 @@
   },
   "permissionsCandidate": {
     "status": "partial-native-candidate",
-    "evidence": "docs/evidence/vectorcraft-permissions-filesystem-integration-candidate64-20261009.json",
+    "evidence": "docs/evidence/vectorcraft-permissions-assets-integration-candidate64-20261009.json",
     "completedTasks": [],
     "pending": [
-      "Python asset preflight authorization audit",
+      "Node parent asset preflight race audit",
       "host secret-reference contract",
       "fixed public plugin64 qualification and all VC-RL-002 scenarios",
       "real host/model routing and creative conclusions"
     ],
     "pluginVersion": "0.1.0-dev.64",
-    "sourceRef": "v0.1.0-dev.45",
-    "sourceCommit": "a4b1e624818f72880f04f75f7b99e0979c4b8944"
+    "sourceRef": "v0.1.0-dev.46",
+    "sourceCommit": "91092712e427542e9c8383e346f0ad94f0e3f029"
   }
 }
