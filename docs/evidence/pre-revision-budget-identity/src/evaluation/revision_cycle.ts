@@ -78,16 +78,9 @@ export class RevisionCycle {
     const receipt=strictJson(review.receipt),score=dimensions.reduce((sum,k)=>sum+receipt.scores[k],0)/dimensions.length;
     const better=receipt.verdict!=='reject'&&(cycle.best===null||score>cycle.best_score);
     const improved=better&&(cycle.best===null||score-cycle.best_score>=cycle.policy.minImprovement);
-    let checkpoint='',fingerprints:Record<string,string>={},budgetLimited=false;
+    let checkpoint='',fingerprints:Record<string,string>={};
     if(better){
-      let kept;
-      try{kept=this.checkpoint(cycle,review);}catch(error){
-        if(!String(error).includes('budget_exceeded'))throw error;
-        // 技术检查已经付费保留全部原生文件及依赖；额度不足时复用该只读副本。
-        try{kept=this.checkedSnapshot(cycle,review);}catch(snapshotError){this.stop(id,'technical_snapshot_changed');throw snapshotError;}
-        budgetLimited=true;
-      }
-      checkpoint=kept.path;fingerprints=kept.fingerprints;
+      const kept=this.checkpoint(cycle,review);checkpoint=kept.path;fingerprints=kept.fingerprints;
     }
     this.ledger.transaction(()=>{
       // 其他进程已推进这一轮时，不允许用旧观察覆盖最新候选。
@@ -98,31 +91,12 @@ export class RevisionCycle {
       if(member&&member.cycle!==id)throw new Error('review_already_bound_to_cycle');
       this.ledger.db.prepare('INSERT OR IGNORE INTO revision_members(review,cycle) VALUES(?,?)').run(requestId,id);
       const stagnation=improved?0:cycle.stagnation+1;
-      const budget=this.ledger.db.prepare('SELECT attempts,bytes FROM budgets WHERE id=?').get(cycle.budget) as any;
-      const exhausted=budgetLimited||!budget||Date.now()>=cycle.authorization.deadline||budget.attempts>=cycle.authorization.maxAttempts||budget.bytes>=cycle.authorization.maxBytes;
-      const reason=exhausted?'budget_exceeded':receipt.verdict==='accept'?'review_ready':receipt.verdict==='reject'?'rejected':cycle.rounds>=cycle.policy.maxRounds?'round_limit':stagnation>=cycle.policy.stagnationLimit?'stagnation':null;
+      const reason=receipt.verdict==='accept'?'review_ready':receipt.verdict==='reject'?'rejected':cycle.rounds>=cycle.policy.maxRounds?'round_limit':stagnation>=cycle.policy.stagnationLimit?'stagnation':null;
       this.ledger.db.prepare('UPDATE revision_cycles SET latest=?,best=?,best_score=?,stagnation=?,state=?,reason=? WHERE id=?')
         .run(requestId,better?requestId:cycle.best,better?score:cycle.best_score,stagnation,reason?'stopped':'active',reason,id);
       if(proposalId)this.ledger.db.prepare("UPDATE revision_proposals SET state='reviewed' WHERE id=?").run(proposalId);
     });
     return this.get(id);
-  }
-  /** 预算耗尽时复用账本已核验的只读技术副本，不再次复制或消耗额度。 */
-  checkedSnapshot(cycle:any,review:any):{path:string,fingerprints:Record<string,string>}{
-    const check=this.ledger.db.prepare('SELECT c.report,c.report_sha,t.output,t.state FROM technical_checks c JOIN tasks t ON t.id=c.task WHERE c.task=?').get(review.input.technicalCheckId) as any;
-    if(!check||check.state!=='review_ready'||hash(check.report)!==check.report_sha||canonical(strictJson(check.report))!==canonical(review.input.technicalEvidence))throw new Error('verified_technical_snapshot_required');
-    const path=join(check.output,'delivery');
-    if(resourcePath(path)!==path||!cycle.authorization.writeRoots?.some((root:string)=>inside(root,path)))throw new Error('revision_checkpoint_outside_roots');
-    const manifestPath=join(path,'manifest.json'),manifest=strictJson(readFileSync(manifestPath,'utf8')),fingerprints:Record<string,string>={};
-    const expected=review.fingerprints[join(dirname(review.input.native),'manifest.json')];
-    if(hash(readFileSync(manifestPath))!==expected||manifest.files['project.vectorcraft']!==review.input.projectRevision||canonical(manifest.files)!==canonical(review.input.technicalEvidence.files))throw new Error('technical_snapshot_changed');
-    for(const [name,digest] of Object.entries({'manifest.json':expected,...manifest.files}) as [string,string][]){
-      if(isAbsolute(name)||name.includes('\\')||name.split('/').some(p=>!p||p==='.'||p==='..'))throw new Error('invalid_artifact_path');
-      const file=join(path,name),stat=lstatSync(file);
-      if(resourcePath(file)!==file||!stat.isFile()||(stat.mode&0o222)!==0||this.store.fingerprint(file)!==digest)throw new Error('technical_snapshot_changed');
-      fingerprints[name]=digest;
-    }
-    return {path,fingerprints};
   }
   checkpoint(cycle:any,review:any):{path:string,fingerprints:Record<string,string>}{
     const base=join(realpathSync(dirname(this.store.path)),'.revision-best');
@@ -142,8 +116,6 @@ export class RevisionCycle {
       add(name,join(dirname(review.input.native),name));
     }
     for(const [i,source] of [...review.input.targets.map((t:any)=>t.path),review.input.rubric,review.input.exchangeLoss].entries())add('inputs/'+i,source);
-    const budget=this.ledger.db.prepare('SELECT attempts,bytes FROM budgets WHERE id=?').get(cycle.budget) as any;
-    if(Date.now()>=cycle.authorization.deadline||budget&&(budget.attempts>=cycle.authorization.maxAttempts||budget.bytes+bytes>cycle.authorization.maxBytes))throw new Error('budget_exceeded');
     const task=this.ledger.claim('revision-best:'+cycle.id+':'+review.id,path,path,{planHash:hash(canonical({cycle:cycle.id,review:review.binding_hash})),inputHashes:review.fingerprints,
       projectRevision:review.input.projectRevision,runtimeIdentity:cycle.runtime,authorization:cycle.authorization});
     if(task.state!=='ready')throw new Error('reconcile_required');
@@ -226,7 +198,7 @@ export class RevisionCycle {
     const latest=this.ledger.db.prepare('SELECT receipt FROM reviews WHERE id=?').get(cycle.latest) as any;
     const budget=this.ledger.db.prepare('SELECT attempts,bytes FROM budgets WHERE id=?').get(cycle.budget) as any;
     return {cycleId:id,requestId:row.review,score:row.score,path:row.checkpoint,fingerprints,projectRevision:row.project,
-      latestRequestId:cycle.latest,goal:cycle.goal,unresolvedIssues:latest?.receipt?strictJson(latest.receipt).issues:[],rounds:cycle.rounds,stagnation:cycle.stagnation,
+      latestRequestId:cycle.latest,unresolvedIssues:latest?.receipt?strictJson(latest.receipt).issues:[],rounds:cycle.rounds,stagnation:cycle.stagnation,
       sharedBudget:{id:cycle.budget,attempts:budget?.attempts,bytes:budget?.bytes},technicalStatus:'PASS',engineeringStatus:'NOT_RUN',acceptanceStatus:'pending',reason:cycle.reason};
   }
   close(){this.ledger.close();}

@@ -137,7 +137,7 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.61 |
+| Metadata version | 0.1.0-dev.62 |
 | Stage | implementation-in-progress |
 | Skills source | vectorcraft-skills / v0.1.0-dev.43 |
 | Execution | 上游 CLI；ArtCraft 使用子适配器 |
@@ -414,3 +414,5 @@ Codex 0.153.4 在全新隔离配置中安装并发现13技能。13项独立空�
 插件61修复公开回执入口重启后跨已声明只读根目录的误拒绝：恢复已持久化技术检查授权，拒绝回执自行声明根目录。固定60缺口已由公开CLI红灯复现；119项Node与19项真实原生边界候选通过，任务6.3固定61验收仍开放。[候选证据](docs/evidence/vectorcraft-quality-roots-candidate61-20261009.json)。
 
 公开插件61／源43实际安装于Codex0.153.4 macOS arm64，通过VC-QA-001当前三个场景与19项真实原生边界。三输出解码通过；QA注入满分回执不能覆盖损坏PNG／PDF／SVG，真实缺少解码器保持NOT_RUN。文件／检查器漂移、预算先于只读副本、超时停止及协调器SIGKILL重启不重放均通过；13技能摘要保持。12项证据测试含11项重签后缺失／篡改拒绝通过。6.3关闭；116/127完成，11项开放。真实创作判断、GUI、其他平台、6.6及完整V1分别未验。 [Evidence](docs/evidence/vectorcraft-quality-fixed61-20261009.json).
+
+插件62修复评审到达时预算已耗尽的状态：持久停止并保留最佳可验证候选；无法再次支付封存时，核验身份和只读权限后复用已付费的技术检查副本。已复现公开61真实原生缺口，候选62以相同四次共享尝试保留更高分原生修订；122项Node通过，含三项新增回归。评分明确为QA注入；任务6.6完整验收仍开放，116/127完成、11项开放。 [Evidence](docs/evidence/vectorcraft-revision-budget-candidate62-20261009.json).

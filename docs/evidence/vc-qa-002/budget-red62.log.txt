@@ -1,0 +1,90 @@
+✔ a review assigned to a durable bounded cycle cannot bypass it through legacy revision (4.767292ms)
+✔ bounded cycles require checked evidence and immutable valid policy (54.080458ms)
+✔ round reservations are idempotent, cannot overlap, and preserve shared budget across restart (39.613958ms)
+✔ stagnation stops the cycle and retains a hash-verifiable best candidate (71.568208ms)
+✔ an improving last round still stops at the hard limit and retains the new best (71.315709ms)
+✔ exhausted shared budget stops durably and cannot be revived by restoring the counter (39.704125ms)
+✔ source edits and duplicate field targets cannot issue a revision (39.376458ms)
+✔ changed goals stop the cycle while its earlier best remains verifiable (40.497208ms)
+✔ runtime drift is rejected before execution intent or another shared attempt (40.131708ms)
+✖ observing a non-improving candidate at the shared budget limit stops durably and retains prior best (43.638375ms)
+✖ higher score at the budget limit reuses verified readonly native dependencies without another attempt (42.170167ms)
+✖ budget fallback refuses a writable or changed technical snapshot before selecting a new best (43.170042ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 9
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 622.480583
+
+✖ failing tests:
+
+test at tests/revision_cycle.test.ts:130:1
+✖ observing a non-improving candidate at the shared budget limit stops durably and retains prior best (43.638375ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + null
+  - 'budget_exceeded'
+  
+      at TestContext.<anonymous> (file:///private<isolated-baseline>/tests/revision_cycle.test.ts:135:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1325:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+      at Test.postRun (node:internal/test_runner/test:1465:19)
+      at Test.run (node:internal/test_runner/test:1390:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: null,
+    expected: 'budget_exceeded',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/revision_cycle.test.ts:158:1
+✖ higher score at the budget limit reuses verified readonly native dependencies without another attempt (42.170167ms)
+  Error: budget_exceeded
+      at file:///private<isolated-baseline>/src/harness/ledger.ts:128:113
+      at Ledger.transaction (file:///private<isolated-baseline>/src/harness/ledger.ts:89:54)
+      at Ledger.claim (file:///private<isolated-baseline>/src/harness/ledger.ts:108:17)
+      at RevisionCycle.checkpoint (file:///private<isolated-baseline>/src/evaluation/revision_cycle.ts:119:28)
+      at RevisionCycle.observe (file:///private<isolated-baseline>/src/evaluation/revision_cycle.ts:83:23)
+      at TestContext.<anonymous> (file:///private<isolated-baseline>/tests/revision_cycle.test.ts:163:22)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1325:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+      at Test.postRun (node:internal/test_runner/test:1465:19)
+
+test at tests/revision_cycle.test.ts:170:1
+✖ budget fallback refuses a writable or changed technical snapshot before selecting a new best (43.170042ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /technical_snapshot_changed/. Input:
+  
+  'Error: budget_exceeded'
+  
+      at TestContext.<anonymous> (file:///private<isolated-baseline>/tests/revision_cycle.test.ts:176:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1325:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+      at Test.postRun (node:internal/test_runner/test:1465:19)
+      at Test.run (node:internal/test_runner/test:1390:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: budget_exceeded
+        at file:///private<isolated-baseline>/src/harness/ledger.ts:128:113
+        at Ledger.transaction (file:///private<isolated-baseline>/src/harness/ledger.ts:89:54)
+        at Ledger.claim (file:///private<isolated-baseline>/src/harness/ledger.ts:108:17)
+        at RevisionCycle.checkpoint (file:///private<isolated-baseline>/src/evaluation/revision_cycle.ts:119:28)
+        at RevisionCycle.observe (file:///private<isolated-baseline>/src/evaluation/revision_cycle.ts:83:23)
+        at file:///private<isolated-baseline>/tests/revision_cycle.test.ts:176:27
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file:///private<isolated-baseline>/tests/revision_cycle.test.ts:176:10)
+        at Test.runInAsyncScope (node:async_hooks:227:14),
+    expected: /technical_snapshot_changed/,
+    operator: 'throws',
+    diff: 'simple'
+  }

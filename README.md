@@ -10,7 +10,7 @@ Four-domain RT-001 runtime source/integrity acceptance now covers every current 
 
 Create Logo, icon and brand assets as `.vectorcraft` with applicable SVG, PDF and PNG exports.
 
-Current plugin: `0.1.0-dev.61`; skill source: `0.1.0-dev.43`; 13 independent skills.
+Current plugin: `0.1.0-dev.62`; skill source: `0.1.0-dev.43`; 13 independent skills.
 
 Plugin55/source41 adds actual SVG image scope and a digest-bound technical disclosure guard. Minimum tasks4.13/4.14 pass; 4.15 qualifies for its current headless scenarios. [Architecture](docs/VectorCraft-Exchange-Scope.en.md).
 
@@ -137,7 +137,7 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.61 |
+| Metadata version | 0.1.0-dev.62 |
 | Stage | implementation-in-progress |
 | Skills source | vectorcraft-skills / v0.1.0-dev.43 |
 | Execution | Upstream CLI; ArtCraft uses child adapters |
@@ -416,3 +416,5 @@ Plugin60/source43 binds the decoder, process launcher and local exchange-loss de
 Plugin61 fixes receipt CLI restart across declared read roots, restoring the persisted checked authorization while rejecting roots supplied by the receipt. The previous fixed60 failure is reproduced by a public CLI red test;119 Node tests and19 native boundary cases pass as candidates. Task6.3 fixed61 qualification remains open. [Candidate evidence](docs/evidence/vectorcraft-quality-roots-candidate61-20261009.json).
 
 Actual public61/source43 installed on Codex0.153.4 macOS arm64 qualifies all three current VC-QA-001 scenarios and19 native boundaries. Three real decodes pass; maximal-score QA receipts cannot override corrupt PNG/PDF/SVG; real missing decoders stay NOT_RUN. File/checker drift, shared budget before snapshots, timeout stop and coordinator SIGKILL/restart without replay pass.13 skill digests remain unchanged.12 evidence tests reject11 rehashed omissions/tamper cases. Task6.3 closes;116/127 complete,11 open. Actual creative judgment,GUI,other platforms,6.6 and full V1 remain separate. [Evidence](docs/evidence/vectorcraft-quality-fixed61-20261009.json).
+
+Plugin62 fixes exhausted-budget observation: stop durably and preserve the best verified candidate; when another copy cannot be funded, reuse the already-paid readonly technical snapshot after identity and permission checks. Public61 native failure is reproduced, candidate62 keeps the higher scored native revision at exactly four shared attempts;122 Node tests pass, including three new regressions. QA scores are explicit fixtures. Task6.6 full qualification remains open;116/127 complete,11 open. [Evidence](docs/evidence/vectorcraft-revision-budget-candidate62-20261009.json).
