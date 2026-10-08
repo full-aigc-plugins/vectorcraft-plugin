@@ -184,12 +184,15 @@ def build(root=ROOT):
     writer47_fixed='docs/evidence/vectorcraft-single-writer-fixed47-20261008.json'
     if (root/writer47_fixed).is_file():
         entries.append(bound_report(root,writer47_fixed,'fixed-install','All seven VC-TX-001 scenarios including physical namespace replacement at public installed plugin47/source37 on macOS arm64; 77 Node and43 Python tests','VC-TX-001',['3.3']))
+    recovery48='docs/evidence/vectorcraft-source-recovery-candidate48-20261008.json'
+    if (root/recovery48).is_file():
+        entries.append(bound_report(root,recovery48,'native-candidate','Source snapshot gate, actual post-save receipt loss and readonly original-output recovery;84 Node and43 Python tests; full3.6 remains open','VC-TX-002'))
     # 明确归档变更前执行字节；保留报告原摘要，不能把旧运行重绑定到新实现。
     for entry in entries:
         archived={}
         for name,digest in entry['dependencies'].items():
             if sha(safe_file(root,name))==digest:continue
-            for prefix in ['docs/evidence/pre-runtime-gate-identity/','docs/evidence/pre-runtime-default-identity/','docs/evidence/pre-runtime-artifacts-identity/','docs/evidence/pre-runtime-boundaries-identity/','docs/evidence/pre-open-reader-identity/','docs/evidence/pre-download-test-cache-identity/','docs/evidence/pre-authorization-identity/','docs/evidence/pre-recovery-binding-identity/','docs/evidence/pre-source-dependencies-identity/','docs/evidence/pre-task3-closure-identity/','docs/evidence/pre-path-identity/']:
+            for prefix in ['docs/evidence/pre-runtime-gate-identity/','docs/evidence/pre-runtime-default-identity/','docs/evidence/pre-runtime-artifacts-identity/','docs/evidence/pre-runtime-boundaries-identity/','docs/evidence/pre-open-reader-identity/','docs/evidence/pre-download-test-cache-identity/','docs/evidence/pre-authorization-identity/','docs/evidence/pre-recovery-binding-identity/','docs/evidence/pre-source-dependencies-identity/','docs/evidence/pre-task3-closure-identity/','docs/evidence/pre-path-identity/','docs/evidence/pre-source-recovery-identity/']:
                 old=prefix+name
                 if (root/old).is_file() and sha(safe_file(root,old))==digest:
                     archived[name]=old

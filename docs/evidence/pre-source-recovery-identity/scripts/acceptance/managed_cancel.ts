@@ -68,8 +68,7 @@ try{
       for(const [file,error,content] of [
         [join(intent.skillSnapshot,'scripts/mcp_session.py'),'skill_snapshot_mismatch',readFileSync(join(intent.skillSnapshot,'scripts/mcp_session.py'),'utf8')+'\n# replaced retained session\n'],
         [intent.planSnapshot,'recovery_plan_mismatch',JSON.stringify({...intent.plan,recoveryTamper:true})],
-        [intent.controlFile,'recovery_control_mismatch',JSON.stringify({...strictJson(readFileSync(intent.controlFile,'utf8')),recoveryTamper:true})],
-        [join(intent.sourceSnapshot,'manifest.json'),'recovery_source_snapshot_mismatch',readFileSync(join(intent.sourceSnapshot,'manifest.json'),'utf8')+'\n']
+        [intent.controlFile,'recovery_control_mismatch',JSON.stringify({...strictJson(readFileSync(intent.controlFile,'utf8')),recoveryTamper:true})]
       ]){
         const originalBytes=readFileSync(file),mode=statSync(file).mode&0o777;
         const processes=(restarted.ledger.db.prepare('SELECT COUNT(*) AS n FROM native_processes').get() as any).n;
@@ -79,7 +78,7 @@ try{
           assert.equal(restarted.ledger.get(id!).state,'cancel_requested');
           assert.equal((restarted.ledger.db.prepare('SELECT COUNT(*) AS n FROM native_processes').get() as any).n,processes);
           assert.equal(hash(checkpoint.path),checkpoint.sha256);assert.equal(hash(eventFile),eventBefore);
-          snapshotRefusals.push({snapshot: file===intent.controlFile?'control':file===intent.planSnapshot?'plan':file===join(intent.sourceSnapshot,'manifest.json')?'source':'skill',error,inspectionProcessStarted:false,checkpointUnchanged:true});
+          snapshotRefusals.push({snapshot: file===intent.controlFile?'control':file===intent.planSnapshot?'plan':'skill',error,inspectionProcessStarted:false,checkpointUnchanged:true});
         }finally{writeFileSync(file,originalBytes);chmodSync(file,mode);}
       }
     }

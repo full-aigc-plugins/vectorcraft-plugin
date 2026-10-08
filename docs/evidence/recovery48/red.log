@@ -1,0 +1,185 @@
+✔ recovery refuses skill before any inspection process or proof (8.238417ms)
+✔ recovery refuses plan before any inspection process or proof (6.02725ms)
+✔ recovery refuses control before any inspection process or proof (5.831166ms)
+✔ recovery refuses missing-control-hash before any inspection process or proof (3.795709ms)
+✔ recovery refuses symlink-plan before any inspection process or proof (5.282ms)
+✔ recovery refuses unchanged before any inspection process or proof (4.998916ms)
+✖ recovery refuses source-edited before any inspection process or proof (5.369875ms)
+✖ recovery refuses source-deleted before any inspection process or proof (5.156708ms)
+✖ recovery refuses source-added before any inspection process or proof (4.301958ms)
+✖ recovery refuses source-symlink before any inspection process or proof (5.369916ms)
+✖ recovery refuses source-missing-directory before any inspection process or proof (4.275917ms)
+✖ recovery refuses source-missing-hash before any inspection process or proof (6.126417ms)
+✔ recovery refuses source-unchanged before any inspection process or proof (4.796458ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 7
+ℹ fail 6
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 166.087542
+
+✖ failing tests:
+
+test at tests/recovery_binding.test.ts:40:2
+✖ recovery refuses source-edited before any inspection process or proof (5.369875ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /recovery_source_snapshot_mismatch/. Input:
+
+  'Error: original_stage_identity_missing'
+
+      at async TestContext.<anonymous> (file://<plugin-root>/tests/recovery_binding.test.ts:42:4)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: original_stage_identity_missing
+        at Recovery.inspect (file://<plugin-root>/src/harness/recovery.ts:40:24)
+        at file://<plugin-root>/tests/recovery_binding.test.ts:42:40
+        at waitForActual (node:assert:632:21)
+        at strict.rejects (node:assert:769:31)
+        at TestContext.<anonymous> (file://<plugin-root>/tests/recovery_binding.test.ts:42:17)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1325:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+        at Test.postRun (node:internal/test_runner/test:1465:19)
+        at Test.run (node:internal/test_runner/test:1390:12),
+    expected: /recovery_source_snapshot_mismatch/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/recovery_binding.test.ts:40:2
+✖ recovery refuses source-deleted before any inspection process or proof (5.156708ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /recovery_source_snapshot_mismatch/. Input:
+
+  'Error: original_stage_identity_missing'
+
+      at async TestContext.<anonymous> (file://<plugin-root>/tests/recovery_binding.test.ts:42:4)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: original_stage_identity_missing
+        at Recovery.inspect (file://<plugin-root>/src/harness/recovery.ts:40:24)
+        at file://<plugin-root>/tests/recovery_binding.test.ts:42:40
+        at waitForActual (node:assert:632:21)
+        at strict.rejects (node:assert:769:31)
+        at TestContext.<anonymous> (file://<plugin-root>/tests/recovery_binding.test.ts:42:17)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1325:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+        at Test.postRun (node:internal/test_runner/test:1465:19)
+        at Test.run (node:internal/test_runner/test:1390:12),
+    expected: /recovery_source_snapshot_mismatch/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/recovery_binding.test.ts:40:2
+✖ recovery refuses source-added before any inspection process or proof (4.301958ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /recovery_source_snapshot_mismatch/. Input:
+
+  'Error: original_stage_identity_missing'
+
+      at async TestContext.<anonymous> (file://<plugin-root>/tests/recovery_binding.test.ts:42:4)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: original_stage_identity_missing
+        at Recovery.inspect (file://<plugin-root>/src/harness/recovery.ts:40:24)
+        at file://<plugin-root>/tests/recovery_binding.test.ts:42:40
+        at waitForActual (node:assert:632:21)
+        at strict.rejects (node:assert:769:31)
+        at TestContext.<anonymous> (file://<plugin-root>/tests/recovery_binding.test.ts:42:17)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1325:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+        at Test.postRun (node:internal/test_runner/test:1465:19)
+        at Test.run (node:internal/test_runner/test:1390:12),
+    expected: /recovery_source_snapshot_mismatch/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/recovery_binding.test.ts:40:2
+✖ recovery refuses source-symlink before any inspection process or proof (5.369916ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /recovery_source_snapshot_mismatch/. Input:
+
+  'Error: original_stage_identity_missing'
+
+      at async TestContext.<anonymous> (file://<plugin-root>/tests/recovery_binding.test.ts:42:4)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: original_stage_identity_missing
+        at Recovery.inspect (file://<plugin-root>/src/harness/recovery.ts:40:24)
+        at file://<plugin-root>/tests/recovery_binding.test.ts:42:40
+        at waitForActual (node:assert:632:21)
+        at strict.rejects (node:assert:769:31)
+        at TestContext.<anonymous> (file://<plugin-root>/tests/recovery_binding.test.ts:42:17)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1325:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+        at Test.postRun (node:internal/test_runner/test:1465:19)
+        at Test.run (node:internal/test_runner/test:1390:12),
+    expected: /recovery_source_snapshot_mismatch/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/recovery_binding.test.ts:40:2
+✖ recovery refuses source-missing-directory before any inspection process or proof (4.275917ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /recovery_source_snapshot_mismatch/. Input:
+
+  'Error: original_stage_identity_missing'
+
+      at async TestContext.<anonymous> (file://<plugin-root>/tests/recovery_binding.test.ts:42:4)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: original_stage_identity_missing
+        at Recovery.inspect (file://<plugin-root>/src/harness/recovery.ts:40:24)
+        at file://<plugin-root>/tests/recovery_binding.test.ts:42:40
+        at waitForActual (node:assert:632:21)
+        at strict.rejects (node:assert:769:31)
+        at TestContext.<anonymous> (file://<plugin-root>/tests/recovery_binding.test.ts:42:17)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1325:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+        at Test.postRun (node:internal/test_runner/test:1465:19)
+        at Test.run (node:internal/test_runner/test:1390:12),
+    expected: /recovery_source_snapshot_mismatch/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/recovery_binding.test.ts:40:2
+✖ recovery refuses source-missing-hash before any inspection process or proof (6.126417ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /recovery_identity_missing/. Input:
+
+  'Error: original_stage_identity_missing'
+
+      at async TestContext.<anonymous> (file://<plugin-root>/tests/recovery_binding.test.ts:42:4)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: original_stage_identity_missing
+        at Recovery.inspect (file://<plugin-root>/src/harness/recovery.ts:40:24)
+        at file://<plugin-root>/tests/recovery_binding.test.ts:42:40
+        at waitForActual (node:assert:632:21)
+        at strict.rejects (node:assert:769:31)
+        at TestContext.<anonymous> (file://<plugin-root>/tests/recovery_binding.test.ts:42:17)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1325:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+        at Test.postRun (node:internal/test_runner/test:1465:19)
+        at Test.run (node:internal/test_runner/test:1390:12),
+    expected: /recovery_identity_missing/,
+    operator: 'rejects',
+    diff: 'simple'
+  }

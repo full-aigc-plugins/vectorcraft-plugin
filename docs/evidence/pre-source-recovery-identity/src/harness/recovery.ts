@@ -32,13 +32,6 @@ export class Recovery {
     if(hash(intent.controlFile)!==intent.controlSha256)throw new Error('recovery_control_mismatch');
     const profile=strictJson(readFileSync(intent.controlFile,'utf8'));
     if(profile.task!==taskId||profile.epoch!==epoch||profile.planHash!==task.binding.planHash)throw new Error('recovery_binding_mismatch');
-    // 恢复使用原请求的源快照身份；0400 权限不能替代重启后的字节校验。
-    if(intent.source||intent.sourceSnapshot||intent.sourceSnapshotSha256){
-      if(typeof intent.sourceSnapshot!=='string'||!/^[a-f0-9]{64}$/.test(intent.sourceSnapshotSha256??''))throw new Error('recovery_identity_missing');
-      let digest:string;
-      try{digest=skillDigest(intent.sourceSnapshot);}catch{throw new Error('recovery_source_snapshot_mismatch');}
-      if(digest!==intent.sourceSnapshotSha256)throw new Error('recovery_source_snapshot_mismatch');
-    }
     const eventStat=lstatSync(profile.eventFile);
     if(eventStat.isSymbolicLink()||eventStat.ino!==profile.eventInode||eventStat.dev!==profile.eventDevice)throw new Error('execution_event_identity_mismatch');
     const events=readFileSync(profile.eventFile,'utf8').split('\n').filter(Boolean).map(line=>strictJson(line));

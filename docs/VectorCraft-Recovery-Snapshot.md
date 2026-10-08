@@ -4,7 +4,7 @@ Plugin dev.45 persists the control file SHA-256 in the execution intent before s
 
 The [contract](../openspec/changes/establish-v1-plugin/specs/task-execution/spec.md) remains owned by establish-v1-plugin. Recovery reads the original files, dependencies and receipts without moving failed directories or replaying unknown edits. It never promotes interrupted files to successful delivery. Cancellation settles as cancelled; an unknown crash settles as interrupted_verified; both fence the old epoch.
 
-Native candidate evidence covers cancellation after a real saved checkpoint, three retained-snapshot tamper refusals, coordinator SIGKILL with a surviving native group, readonly restart without replay, native reopening, handoff and quarantine of a late native reply record. SIGSTOP freezes only the registered group owned by this test; SIGKILL targets only its coordinator and verified group. Native save and reopen are real. Complete3.3,3.6 and3.9 remain open; GUI competition, nonempty linked dependencies and the complete budget matrix require their own evidence.
+Native candidate evidence covers cancellation after a real saved checkpoint, three retained-snapshot tamper refusals, coordinator SIGKILL with a surviving native group, readonly restart without replay, native reopening, handoff and quarantine of a late native reply record. SIGSTOP freezes only the registered group owned by this test; SIGKILL targets only its coordinator and verified group. Native save and reopen are real. Task3.3 closed at fixed47; complete3.6 and3.9 remain open; GUI competition, nonempty linked dependencies and the complete budget matrix require their own evidence.
 
 ```mermaid
 stateDiagram-v2
@@ -18,3 +18,7 @@ stateDiagram-v2
  interrupted_verified --> [*]
  cancelled --> [*]
 ```
+
+Plugin48 also verifies the complete source-dependency snapshot digest. Changed, added, deleted or linked files and missing directories are refused before native inspection. Source tasks without the original snapshot digest return recovery_identity_missing and remain occupied. Six negative cases and one intact-snapshot case are added; real cancellation recovery covers skill, plan, control and source tampering.
+
+The new post-save receipt-loss test completes real native save, nine exports and delivery digest checks, then kills its own coordinator at the ledger receipt entry. Restart finds a submitted step with no result and a stopped native group. Recovery reopens the original output readonly with its inode intact, without consuming another attempt or bytes or changing output paths. It settles interrupted_verified; the actual lost receipt is quarantined at the old epoch rather than promoting success. Pre-native-call crashes and the complete nonempty linked-dependency matrix remain unverified; task3.6 stays open.

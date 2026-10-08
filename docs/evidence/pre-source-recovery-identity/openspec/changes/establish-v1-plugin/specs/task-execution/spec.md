@@ -77,7 +77,6 @@
 - **WHEN** 已停止的原任务准备只读核验保留的原生工程
 - **THEN** 系统 SHALL 在启动检查进程前核对持久化意图中的整技能摘要、规范化计划摘要与控制文件摘要，拒绝修改后的执行脚本、计划或授权配置及符号链接快照
 - **AND** 缺少原控制文件摘要的旧任务继续保留占用并报告 recovery_identity_missing，不从当前文件补写摘要、重放未知编辑或伪造恢复成功
-- **AND** 存在源工程的任务 SHALL 同时核对意图中原先持久化的源依赖快照摘要；缺少该摘要时报告 recovery_identity_missing，文件改动、增删或链接替换时报告 recovery_source_snapshot_mismatch，均在启动检查进程前拒绝且保留占用
 
 ### Requirement: VC-TX-003 取消与预算边界
 

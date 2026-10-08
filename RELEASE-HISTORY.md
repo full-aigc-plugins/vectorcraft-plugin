@@ -1,5 +1,9 @@
 # Version-bound release records
 
+## dev.48 (2026-10-08)
+
+Verify source-dependency snapshot identity before recovery; six regression cases fail before the fix and pass afterward. After real native save and nine exports, kill the coordinator at the ledger receipt boundary; restart reopens original outputs readonly without replay or additional budget, then quarantines the actual late receipt.84 Node and43 Python tests pass. Source stays dev.37; complete3.6 andV1 remain open.
+
 ## dev.47 (2026-10-08)
 
 Revalidate captured physical roots and request paths so replacing a resolved root or output parent with a redirecting symlink cannot escape the captured scope.77 Node tests and10 real native contract cases pass; full3.3 awaits actual fixed47 installation. Source remains dev.37 and completeV1 remains open.

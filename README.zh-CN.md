@@ -10,7 +10,9 @@
 
 Logo、图标与品牌图形需求进入，交付 `.vectorcraft` 及适用的 SVG、PDF、PNG。
 
-当前插件：`0.1.0-dev.47`；技能源：`0.1.0-dev.37`；13 个独立技能。
+当前插件：`0.1.0-dev.48`；技能源：`0.1.0-dev.37`；13 个独立技能。
+
+候选插件48补充恢复前的源依赖快照摘要校验；真实保存与9项导出完成后、回执写入前的协调器SIGKILL恢复通过，保持原输出且不重放。84项Node、43项Python回归通过。固定48验收另行记录，完整任务3.6仍开放。
 
 插件47进一步在探测后、启动时和监督期间复核已解析物理根目录与请求路径；将原根目录或输出父目录替换为重定向链接时，在任务登记前拒绝。公开插件47及该宿主实际加载的技能源37通过全部七个VC-TX-001场景、77项Node、43项Python与10项真实原生合同案例；任务3.3完成，32项OpenSpec任务仍开放。[固定证据](docs/evidence/vectorcraft-single-writer-fixed47-20261008.json)。
 
@@ -18,7 +20,7 @@ Logo、图标与品牌图形需求进入，交付 `.vectorcraft` 及适用的 SV
 
 公开插件45／技能源37通过隔离Codex安装、63项Node与43项Python回归，已安装副本的真实取消与协调器崩溃恢复通过；13技能摘要保持不变。[固定安装证据](docs/evidence/vectorcraft-recovery-fixed45-20261008.json)。这些是有限恢复案例，本轮不关闭额外V1任务。
 
-恢复入口现于原生检查前核验保留的技能、计划与控制文件身份；缺少原控制摘要的旧未完成任务继续保留占用。真实取消与协调器崩溃用例已通过，均不自动重放。[恢复合同](docs/VectorCraft-Recovery-Snapshot.zh_CN.md)。完整3.3、3.6、3.9及V1仍开放。
+恢复入口现于原生检查前核验保留的技能、计划与控制文件身份；缺少原控制摘要的旧未完成任务继续保留占用。真实取消与协调器崩溃用例已通过，均不自动重放。[恢复合同](docs/VectorCraft-Recovery-Snapshot.zh_CN.md)。任务3.3已由固定47关闭；完整3.6、3.9及V1仍开放。
 
 授权入口现于异步探测前固定调用方范围、输入摘要及物理路径，并要求暂存父目录具有写入授权。三个协调器回归案例覆盖这些边界；完整任务3.3及V1验收仍开放。
 
@@ -119,7 +121,7 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.47 |
+| Metadata version | 0.1.0-dev.48 |
 | Stage | implementation-in-progress |
 | Skills source | vectorcraft-skills / v0.1.0-dev.37 |
 | Execution | 上游 CLI；ArtCraft 使用子适配器 |

@@ -10,7 +10,9 @@ Four-domain RT-001 runtime source/integrity acceptance now covers every current 
 
 Create Logo, icon and brand assets as `.vectorcraft` with applicable SVG, PDF and PNG exports.
 
-Current plugin: `0.1.0-dev.47`; skill source: `0.1.0-dev.37`; 13 independent skills.
+Current plugin: `0.1.0-dev.48`; skill source: `0.1.0-dev.37`; 13 independent skills.
+
+Candidate plugin48 adds source-dependency snapshot identity checks before recovery. A coordinator SIGKILL after real native save and nine exports, before ledger receipt, passes readonly original-output recovery without replay. 84 Node and43 Python regressions pass; fixed48 acceptance is recorded separately and full task3.6 remains open.
 
 Plugin47 additionally revalidates captured physical roots and request paths after probing, at launch and during supervision. Replacing a resolved root or output parent with a redirecting link is refused before task registration. Public installed plugin47 and its actual host-loaded source37 passed all seven current VC-TX-001 scenarios,77 Node and43 Python tests and10 native contract cases. Task3.3 is complete;32 OpenSpec tasks remain. [Fixed evidence](docs/evidence/vectorcraft-single-writer-fixed47-20261008.json).
 
@@ -18,7 +20,7 @@ Source manifests, inherited plans and dependencies are now version-bound and cop
 
 Published plugin45/source37 passed isolated Codex installation,63 Node and43 Python tests, and real cancellation and coordinator-crash recovery from the installed copy. All13 skill digests remain unchanged. [Fixed-install evidence](docs/evidence/vectorcraft-recovery-fixed45-20261008.json). These are bounded recovery cases; no additional V1 task closes.
 
-Recovery now verifies retained skill, plan and control identities before launching native inspection; old unresolved tasks without an original control digest remain occupied. Real cancellation and coordinator-crash cases pass without replay. [Recovery contract](docs/VectorCraft-Recovery-Snapshot.md). Complete3.3,3.6,3.9 and V1 remain open.
+Recovery now verifies retained skill, plan and control identities before launching native inspection; old unresolved tasks without an original control digest remain occupied. Real cancellation and coordinator-crash cases pass without replay. [Recovery contract](docs/VectorCraft-Recovery-Snapshot.md). Task3.3 closed at fixed47; complete3.6,3.9 and V1 remain open.
 
 Authorization now freezes caller scope, input fingerprints and physical paths before asynchronous probing, and requires write permission for the staging parent. Three coordinator regression cases cover these boundaries; complete task3.3 and V1 acceptance remain open.
 
@@ -119,7 +121,7 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.47 |
+| Metadata version | 0.1.0-dev.48 |
 | Stage | implementation-in-progress |
 | Skills source | vectorcraft-skills / v0.1.0-dev.37 |
 | Execution | Upstream CLI; ArtCraft uses child adapters |
