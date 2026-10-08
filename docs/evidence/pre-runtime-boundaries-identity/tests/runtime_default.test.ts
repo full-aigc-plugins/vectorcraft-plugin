@@ -41,7 +41,7 @@ test('a selection switched during a pending default probe is never silently over
  const controller=new Controller(join(f.root,'state.sqlite'),async()=>{await pending;return await f.probe();});
  try{
   const result=controller.run(f.request);const {RuntimeGate}=await import('../src/runtime/runtime_gate.ts');
-  const report=await f.probe();new RuntimeGate(controller.ledger).activate({...report,binarySha256:'d'.repeat(64)},{mode:'headless',commands:{},tools:{}},[3]);
+  const report=await f.probe();new RuntimeGate(controller.ledger).activate({...report,binarySha256:'d'.repeat(64)},{mode:'headless',commands:{},tools:{}},[2]);
   release();await assert.rejects(()=>result,/runtime_selection_mismatch/);
   assert.equal(existsSync(f.request.output),false);assert.equal((controller.ledger.db.prepare('SELECT COUNT(*) AS n FROM tasks').get() as any).n,0);
  }finally{release();controller.close();f.close();}

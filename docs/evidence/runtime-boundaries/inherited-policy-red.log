@@ -1,0 +1,37 @@
+✔ actual schema and mode must match; enabled flags do not substitute for signatures (0.676333ms)
+✔ activation drains tasks, guards claim atomically, retains previous version and survives restart (5.27575ms)
+✔ incompatible rollback and unconfirmed native groups retain active identity (2.361584ms)
+✔ bridge selection cannot silently execute a headless Controller task (2.078375ms)
+✔ every unresolved task state prevents activation (3.042958ms)
+✔ an explicitly bridge-bound native task registers against its selected bridge runtime (2.063292ms)
+✖ inherited schema2 selection cannot claim or bypass drain during schema3 initialization (3.339625ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 6
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 99.863792
+
+✖ failing tests:
+
+test at tests/runtime_gate.test.ts:61:1
+✖ inherited schema2 selection cannot claim or bypass drain during schema3 initialization (3.339625ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at file://<plugin-root>/tests/runtime_gate.test.ts:64:9
+      at fixture (file://<plugin-root>/tests/runtime_gate.test.ts:11:158)
+      at TestContext.<anonymous> (file://<plugin-root>/tests/runtime_gate.test.ts:61:99)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1325:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+      at Test.postRun (node:internal/test_runner/test:1465:19)
+      at Test.run (node:internal/test_runner/test:1390:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /incompatible_state_schema/,
+    operator: 'throws',
+    diff: 'simple'
+  }

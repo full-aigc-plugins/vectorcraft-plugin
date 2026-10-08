@@ -139,7 +139,7 @@ export class Controller {
       if(request.source&&sha(readFileSync(join(request.source,'project.vectorcraft')))!==projectRevision)throw new Error('revision_conflict');
       if(report.binarySha256!==runtimeIdentity)throw new Error('runtime_identity_mismatch');
       validateCapabilities(report,requirements);
-      const active=gate.initialize(report,requirements,[3]).active;
+      const active=gate.initialize(report,requirements,[2]).active;
       validateCapabilities(active,requirements);
       inputHashes['runtime:capabilities']=sha(canonical({commands:active.commands,tools:active.tools,mode:active.mode}));
     }

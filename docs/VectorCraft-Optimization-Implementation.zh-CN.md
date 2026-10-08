@@ -69,3 +69,5 @@ node scripts/acceptance/managed_cancel.ts CONFIG.json
 TASK含taskId与epoch。CONFIG沿用单轮品牌夹具的skill/source/runtimeHome/output/python/targetColor/authorization；原生取消测试在真实检查点保存后撤销，没有模拟原生写盘。当前固定dev.33技能尚无控制模块，因此托管执行会明确拒绝；独立公开入口仍保持原合同，发布dev.34后再固定同步和安装验证。
 
 当前回归为独立源162项（132通过、30条件跳过），插件15项Node测试。原生候选验证覆盖单轮授权返工、真实检查点后的取消、监督器重启、原位置工程和依赖核验、epoch隔离；不代表完整3.x／6.x、固定安装或完整V1。OpenSpec已勾选3.1／3.2／3.4／3.5／3.7／3.8，完整验收3.3／3.6／3.9继续开放；总表81完成、46开放。
+
+插件42补充schema3迁移前只读备份与明确模式绑定；实际旧阅读器拒绝新schema。当前跨版本原生局部证据与完整2.6验收边界见[运行时门禁](Runtime-Gate.zh-CN.md)。技能源仍固定dev.37。

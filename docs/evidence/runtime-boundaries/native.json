@@ -1,0 +1,95 @@
+{
+  "schema": "vectorcraft-runtime-boundaries/v1",
+  "result": "PASS",
+  "level": "native-candidate",
+  "platform": "darwin-arm64",
+  "versions": [
+    "vectorcraft-cli 0.2.0",
+    "vectorcraft-cli 0.2.0-craft.2"
+  ],
+  "runtimeHashes": {
+    "old": "4ba62138ff64d7f701fd2d8fd4c833bd3bb077b6ed78244a8909a4fa0129b766",
+    "current": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+  },
+  "cases": [
+    {
+      "case": "missing-new-capability-retains-old",
+      "result": "PASS"
+    },
+    {
+      "case": "actual-old-new-schema-drift-refused",
+      "result": "PASS"
+    },
+    {
+      "case": "actual-old-session-blocks-upgrade",
+      "runtimeIdentity": "4ba62138ff64d7f701fd2d8fd4c833bd3bb077b6ed78244a8909a4fa0129b766",
+      "projectSha256": "ff86b98a7361083fd7b44c55a056f089adc65bb200caa1d435a8c80efa6b9c51",
+      "nativeFormat": 3,
+      "reopened": true
+    },
+    {
+      "case": "exited-but-unconfirmed-group-blocks-upgrade",
+      "result": "PASS"
+    },
+    {
+      "case": "schema1-fixture-with-real-native-task-rows",
+      "backupSha256": "33d5314e977ca867e297713e44ee9e4088a523dc2f29fb231f618328eb68a157",
+      "fromSchema": 1,
+      "toSchema": 3,
+      "rowsPreserved": true
+    },
+    {
+      "case": "drained-upgrade-retains-old",
+      "result": "PASS"
+    },
+    {
+      "case": "new-runtime-reopens-old-native",
+      "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "projectSha256": "ab7305ea9e8a9e3d13c5f690ac667c0c5e48cbd10211b14de3a871723f50ee05",
+      "nativeFormat": 3,
+      "reopened": true,
+      "documentPreservedExceptSaveTimestamp": true
+    },
+    {
+      "case": "default-harness-after-upgrade",
+      "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "projectSha256": "b12b3dd6f2bdfa06de0176806de85bc7fe8574c14c6b2d16a971b28b944a08a7"
+    },
+    {
+      "case": "incompatible-rollback-policy-refused",
+      "result": "PASS"
+    },
+    {
+      "case": "compatible-rollback-reopens-native",
+      "runtimeIdentity": "4ba62138ff64d7f701fd2d8fd4c833bd3bb077b6ed78244a8909a4fa0129b766",
+      "projectSha256": "ce60c0fa203623f799654fea38a54301467949b06f9033cd61da4d2b8ea3eb3a",
+      "nativeFormat": 3,
+      "reopened": true,
+      "documentPreservedExceptSaveTimestamp": true
+    },
+    {
+      "case": "actual-desktop-bridge-is-not-headless",
+      "result": "PASS",
+      "listenerOwnedByPID": true,
+      "ownedProcessesStopped": true,
+      "desktopBinarySha256": "46d7846a765dd0c2a64a72dea17796f49d725203d2c5d91c339432572048f856",
+      "desktopVersion": "0.2.0",
+      "projectSha256": "da34ca8b489003325356256ac37380d0d1fdf75bf3bc840cec361b37e14f7d06",
+      "cliBinarySha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+    }
+  ],
+  "fingerprints": {
+    "src/harness/controller.ts": "4ae925154e193e139100c938af4f26157c5cc321c6504b69c163330bf3b60b23",
+    "src/harness/ledger.ts": "451ad750c34d3e662cdeb4bcf5ad2607133361c8d54b919cc8cdf7ed799f21a2",
+    "src/harness/process_registry.ts": "c19a3cb5d42cc33620bc5baeff7db71f1c6daa92f046a112951a7f50f7906162",
+    "src/runtime/runtime_gate.ts": "269966ae978c9afa7b9cdad719afce9ca0b57e54c52f3cb732777f3ddc23a68c",
+    "src/runtime/runtime_probe.py": "ee196f91dde9487bd1537d1c91a8f5957deb795431a54baa333be35bfc90e54c",
+    "src/runtime/prepare_runtime.ts": "08ecee9238056335ac33710421b4b878cad01b4556ffad641d14c26819b2e6c1",
+    "scripts/acceptance/runtime_boundaries.ts": "9ea05b771ab9df8db34f1971f8610bde52b642c23a1741c48879cae8b9797652",
+    "scripts/acceptance/runtime_native_child.py": "1ddf23c94d43bad1a943d6aeb7582ce1c72fe6d97bca6a36dd679f990e5c46d7",
+    "tests/state_migration.test.ts": "d99ebba9cf4224da61145c58bc293964cfe205651bf30decd7a5060ad7f91c3a",
+    "runtime/vectorcraft-headless-capabilities.json": "37472383852928bdf131f4f69c015fd8ce323847323915bb0cb58260c0936756",
+    "skills.lock.json": "37cf4e7a514193ff10b1f051915b931874f05a8f693c87e67d904657f040464e"
+  },
+  "scope": "two actual pinned native CLI versions, live-session drain, native reopen across upgrade/rollback, explicit state compatibility policy and owned signed desktop bridge; no fixed plugin install, full GUI creative assessment or other platforms"
+}

@@ -1,0 +1,54 @@
+{
+  "schema": "vectorcraft-runtime-boundaries-candidate/v1",
+  "result": "PASS",
+  "pluginVersion": "0.1.0-dev.42",
+  "sourceVersion": "0.1.0-dev.37",
+  "level": "native-candidate",
+  "platform": "darwin-arm64",
+  "tests": {
+    "node": {
+      "passed": 52,
+      "skipped": 0
+    },
+    "python": {
+      "passed": 38,
+      "skipped": 0
+    },
+    "nativeCases": 11
+  },
+  "fingerprints": {
+    "src/harness/controller.ts": "4ae925154e193e139100c938af4f26157c5cc321c6504b69c163330bf3b60b23",
+    "src/harness/ledger.ts": "451ad750c34d3e662cdeb4bcf5ad2607133361c8d54b919cc8cdf7ed799f21a2",
+    "src/harness/process_registry.ts": "c19a3cb5d42cc33620bc5baeff7db71f1c6daa92f046a112951a7f50f7906162",
+    "src/runtime/runtime_gate.ts": "269966ae978c9afa7b9cdad719afce9ca0b57e54c52f3cb732777f3ddc23a68c",
+    "src/runtime/runtime_probe.py": "ee196f91dde9487bd1537d1c91a8f5957deb795431a54baa333be35bfc90e54c",
+    "src/runtime/prepare_runtime.ts": "08ecee9238056335ac33710421b4b878cad01b4556ffad641d14c26819b2e6c1",
+    "scripts/acceptance/runtime_boundaries.ts": "9ea05b771ab9df8db34f1971f8610bde52b642c23a1741c48879cae8b9797652",
+    "scripts/acceptance/runtime_native_child.py": "1ddf23c94d43bad1a943d6aeb7582ce1c72fe6d97bca6a36dd679f990e5c46d7",
+    "tests/state_migration.test.ts": "d99ebba9cf4224da61145c58bc293964cfe205651bf30decd7a5060ad7f91c3a",
+    "runtime/vectorcraft-headless-capabilities.json": "37472383852928bdf131f4f69c015fd8ce323847323915bb0cb58260c0936756",
+    "skills.lock.json": "37cf4e7a514193ff10b1f051915b931874f05a8f693c87e67d904657f040464e",
+    "src/strict_json.ts": "69a445339670e53f6a7fcb96770b53b896666dd1e60f114c1751a23981d5b7d0",
+    "scripts/acceptance/runtime_boundary_probe.py": "f4f795e97c61d48a73f3b0ad3ed4f4b0215cfc01095b84bcdb0f44568eab2ad5",
+    "tests/runtime_gate.test.ts": "e1672fe1636d7f0e9dc1f77f1e81947c9a540065d383021b8a0aa6dd48e0901a",
+    "tests/runtime_default.test.ts": "63592e778ff4d4e4d75d5ec9bf6da657629d7bc2cd53f1db1b2d5639f50513a3",
+    "docs/evidence/pre-runtime-boundaries-identity/identity.json": "6e3e8d4b9d45e3dd8fab311b6030f424126f0d54eeab78bf3e6a85d4013586f0",
+    "docs/evidence/runtime-boundaries/desktop-lifecycle.json": "3cbe76b0840aa177144c87e3b6258f4f2806abd51dcf84f8abc0b97cd5a876f3",
+    "docs/evidence/runtime-boundaries/node.log": "a6c3b8618d436af4260643f9a720b2a722a42cebb1dad5360365350df47de55f",
+    "docs/evidence/runtime-boundaries/new-probe.json": "579d24315ebd7fdfbddda71f352baa395e116787bc1b9f37d0fc455cc04892bc",
+    "docs/evidence/runtime-boundaries/bridge-red.log": "f723bb75d9ce998ea059c3e0994754216afa9b59426a3b231d437bd20edc0100",
+    "docs/evidence/runtime-boundaries/old-probe.json": "5da7914ad0fe1f667ed7f712a3881a120c162c3388a785cc661b128bbba3dfa2",
+    "docs/evidence/runtime-boundaries/native.json": "c10ba78c1c2727aa43b2f9a695b31aaffd41cb86b1754d40c959ba6f0428b8f4",
+    "docs/evidence/runtime-boundaries/migration-red.log": "2a627aeeb8c446d72e6ee5036e2d10bd10c0030c5ea5298023b728db4c2b13d8",
+    "docs/evidence/runtime-boundaries/inherited-policy-red.log": "3078f300be5db64c850cf1f9ad188512fab63762b560650b104db56787e130b5",
+    "docs/evidence/runtime-boundaries/bridge-probe.json": "2e2069e14cd4f1bff5f52450290754eb2f99c395c7b3aec7d45996a88f69ed41",
+    "docs/evidence/runtime-boundaries/schema3-red.log": "d31f9364b05aaac476a04c23bcfcc8b1e69e9f36b87b1c034cb7a1997c7a41cd",
+    "docs/evidence/runtime-boundaries/python.log": "2292792d9fb81a6cfcae90b0b35d556bb0830478699452e26c17d3c3d31be0fc"
+  },
+  "tasksCompleted": [],
+  "tasksOpen": [
+    "2.6"
+  ],
+  "scope": "Two real native CLI versions; live old-session and unconfirmed-group drain; schema1 fixture migration preserving real native task rows; schema2 fixture with actual previous-reader refusal; upgrade/rollback native reopen; independent owned signed desktop bridge save/reopen and headless refusal. Full registered bridge drain, complete install/upgrade matrix, other platforms and full V1 remain open.",
+  "logs": "Private paths redacted; raw local executions retained. Fixture migrations are explicitly distinguished from historical production database migrations."
+}

@@ -38,7 +38,7 @@ export class RuntimeGate {
    if(initialOnly&&current){
     if(current.active.mode!==report.mode)throw new Error('runtime_mode_mismatch');
     if(current.active.binarySha256!==report.binarySha256)throw new Error('runtime_selection_mismatch');
-    if(current.active.stateSchemas?.includes(version))return current;
+    return current;
    }
    if(this.ledger.db.prepare("SELECT id FROM tasks WHERE state IN ('ready','running','reconciling','cancel_requested') LIMIT 1").get())throw new Error('runtime_tasks_not_drained');
    if(this.ledger.db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='native_processes'").get()

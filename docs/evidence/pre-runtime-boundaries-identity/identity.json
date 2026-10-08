@@ -1,0 +1,13 @@
+{
+  "commit": "fa47c86e4e294bd2ee102b2c17928ac132de1fb3",
+  "scope": "Exact pre-change bytes; historical executions are never rebound",
+  "files": {
+    "scripts/acceptance/runtime_gate.ts": "bd6f3c56ca3ea1b3ec88bb7392fc4a4de5ba555ff9451276be3d22ebcf751f29",
+    "src/harness/controller.ts": "c61419ec3418f14d4adcc1feca8bb9ed0ff53feae52e1a9cbdc02c7aafe190f0",
+    "src/harness/ledger.ts": "fd53203575a46100e6456eb3c3a415ffeceb4c879349019ba6cde7e797a82f51",
+    "src/runtime/runtime_gate.ts": "70ad2b606cf486794c354c912da9a650dcbeca9b0dd960a4e8a6d12271f52a70",
+    "tests/runtime_default.test.ts": "c2e88108c4ae985dfaaf4f5930f6e54cb341dc22f10a5b0f6d1cb019d44fdc48",
+    "tests/runtime_gate.test.ts": "15a880bca55edd06dda861a307894b147f671b7d0060601c15049b1116ba03f4",
+    "src/strict_json.ts": "69a445339670e53f6a7fcb96770b53b896666dd1e60f114c1751a23981d5b7d0"
+  }
+}

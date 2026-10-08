@@ -17,19 +17,19 @@ const schemas=Object.fromEntries(probe.tools.map((t:any)=>[t.name,t.inputSchema]
 assert.equal(validateCapabilities(probe,requirements).commandCount,585);
 const controller=new Controller(join(root,'state.sqlite')),gate=new RuntimeGate(controller.ledger);
 try{
- gate.activate(probe,requirements,[3]);
- assert.throws(()=>gate.activate(probe,{...requirements,commands:{'__missing__':'{}'}},[3]),/capability_missing/);
- assert.throws(()=>gate.activate(probe,{...requirements,commands:{'file.new':'{}'}},[3]),/capability_schema_mismatch/);
- assert.throws(()=>gate.activate(probe,{...requirements,mode:'bridge'},[3]),/runtime_mode_mismatch/);
+ gate.activate(probe,requirements,[2]);
+ assert.throws(()=>gate.activate(probe,{...requirements,commands:{'__missing__':'{}'}},[2]),/capability_missing/);
+ assert.throws(()=>gate.activate(probe,{...requirements,commands:{'file.new':'{}'}},[2]),/capability_schema_mismatch/);
+ assert.throws(()=>gate.activate(probe,{...requirements,mode:'bridge'},[2]),/runtime_mode_mismatch/);
  assert.throws(()=>gate.activate(probe,requirements,[1]),/incompatible_state_schema/);
  const plan=join(root,'plan.json');writeFileSync(plan,JSON.stringify({document:{width:32,height:32,units:'Points'},operations:[{command:'shape.rectangle',params:{x:2,y:2,width:12,height:12},as:'box'}]}));
  const request={key:'native',skill,expectedSkillSha256,plan,output:join(root,'delivery'),runtimeHome:resolve(home),python,estimatedBytes:16*1024*1024,authorization:{objects:[],fields:[],deadline:Date.now()+60000,maxAttempts:2,maxBytes:32*1024*1024,readRoots:[root],writeRoots:[root,resolve(home)]}};
  const running=controller.run(request);
- assert.throws(()=>gate.activate(probe,requirements,[3]),/runtime_tasks_not_drained/);
+ assert.throws(()=>gate.activate(probe,requirements,[2]),/runtime_tasks_not_drained/);
  const task=await running;assert.equal(task.state,'review_ready');
  assert.ok(task.binding.inputHashes['runtime:capabilities']);
  assert.equal((await controller.run(request)).id,task.id);
- gate.activate(probe,requirements,[3]);assert.equal(gate.current().previous,null);
+ gate.activate(probe,requirements,[2]);assert.equal(gate.current().previous,null);
  assert.equal(skillDigest(skill),expectedSkillSha256);
  assert.deepEqual(fingerprints,Object.fromEntries(inputs.map(p=>[p,sha(p)])));
  const manifest=JSON.parse(readFileSync(join(request.output,'manifest.json'),'utf8'));

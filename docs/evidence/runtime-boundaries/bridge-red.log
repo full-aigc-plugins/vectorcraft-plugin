@@ -1,0 +1,30 @@
+✔ actual schema and mode must match; enabled flags do not substitute for signatures (1.079917ms)
+✔ activation drains tasks, guards claim atomically, retains previous version and survives restart (5.319833ms)
+✔ incompatible rollback and unconfirmed native groups retain active identity (2.963792ms)
+✔ bridge selection cannot silently execute a headless Controller task (2.074125ms)
+✔ every unresolved task state prevents activation (3.084583ms)
+✖ an explicitly bridge-bound native task registers against its selected bridge runtime (1.979459ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 5
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 109.006708
+
+✖ failing tests:
+
+test at tests/runtime_gate.test.ts:54:1
+✖ an explicitly bridge-bound native task registers against its selected bridge runtime (1.979459ms)
+  Error: runtime_mode_mismatch
+      at file://<plugin-root>/src/harness/ledger.ts:85:45
+      at Ledger.transaction (file://<plugin-root>/src/harness/ledger.ts:59:54)
+      at Ledger.claim (file://<plugin-root>/src/harness/ledger.ts:78:17)
+      at file://<plugin-root>/tests/runtime_gate.test.ts:56:15
+      at fixture (file://<plugin-root>/tests/runtime_gate.test.ts:11:158)
+      at TestContext.<anonymous> (file://<plugin-root>/tests/runtime_gate.test.ts:54:97)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1325:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+      at Test.postRun (node:internal/test_runner/test:1465:19)

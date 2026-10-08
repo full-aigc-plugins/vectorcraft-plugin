@@ -1,11 +1,11 @@
 import { DatabaseSync } from 'node:sqlite';
 import { createHash, randomUUID } from 'node:crypto';
-import { existsSync, realpathSync, readFileSync, lstatSync, mkdirSync, openSync,closeSync,fsyncSync,chmodSync } from 'node:fs';
+import { existsSync, realpathSync, readFileSync } from 'node:fs';
 import { resolve, dirname, basename } from 'node:path';
 import { canonical, strictJson } from '../strict_json.ts';
 
 export type Authorization={objects:number[],fields:string[],deadline:number,maxAttempts:number,maxBytes:number,budgetId?:string};
-export type Binding={executionMode?:'headless'|'bridge',skillSha256?:string,planHash:string,inputHashes:Record<string,string>,projectRevision:string|null,runtimeIdentity:string,authorization:Authorization};
+export type Binding={skillSha256?:string,planHash:string,inputHashes:Record<string,string>,projectRevision:string|null,runtimeIdentity:string,authorization:Authorization};
 const digest=(v:any)=>createHash('sha256').update(canonical(v)).digest('hex');
 
 /** 规范化资源身份；符号链接别名不能取得第二份工程占用。 */
@@ -16,32 +16,12 @@ export function resourcePath(path:string):string {
 
 /** SQLite 持久账本：事务提交意图后才允许调用原生端。 */
 export class Ledger {
-  db:DatabaseSync;closed=false;schemaBackup?:{path:string,fromSchema:number,toSchema:number,sha256:string};
+  db:DatabaseSync;closed=false;
   constructor(path:string) {
     this.db=new DatabaseSync(path);this.db.exec('PRAGMA busy_timeout=3000; PRAGMA journal_mode=WAL; PRAGMA foreign_keys=ON;');
     const version=this.db.prepare('PRAGMA user_version').get() as any;
-    if(version.user_version!==0&&version.user_version!==1&&version.user_version!==2&&version.user_version!==3){this.db.close();throw new Error('incompatible_state_schema');}
-    if(version.user_version===1||version.user_version===2){
-      // VACUUM INTO包含已提交WAL数据；先保留只读一致快照，备份失败不得继续迁移。
-      const directory=resolve(dirname(resourcePath(path)),'state-schema-backups');
-      const backup=resolve(directory,basename(path)+'.before-schema3-'+randomUUID()+'.sqlite');
-      try{
-        mkdirSync(directory,{recursive:true,mode:0o700});
-        if(lstatSync(directory).isSymbolicLink())throw new Error('state_backup_directory_symlink');
-        const fd=openSync(backup,'wx',0o600);closeSync(fd);
-        this.db.prepare('VACUUM INTO ?').run(backup);
-        const saved=openSync(backup,'r');try{fsyncSync(saved);}finally{closeSync(saved);}
-        chmodSync(backup,0o400);
-        const snapshot=new DatabaseSync(backup,{readOnly:true});let snapshotVersion:number;
-        try{snapshotVersion=(snapshot.prepare('PRAGMA user_version').get() as any).user_version;}finally{snapshot.close();}
-        if(![1,2,3].includes(snapshotVersion))throw new Error('incompatible_backup_schema');
-        const parent=openSync(directory,'r');try{fsyncSync(parent);}finally{closeSync(parent);}
-        this.schemaBackup={path:backup,fromSchema:snapshotVersion,toSchema:3,sha256:createHash('sha256').update(readFileSync(backup)).digest('hex')};
-      }catch(error){this.db.close();this.closed=true;throw new Error('state_backup_failed; schema not migrated: '+String(error));}
-    }
-    try{
-      this.db.exec('BEGIN IMMEDIATE');
-      this.db.exec(`CREATE TABLE IF NOT EXISTS tasks (
+    if(version.user_version!==0&&version.user_version!==1&&version.user_version!==2){this.db.close();throw new Error('incompatible_state_schema');}
+    this.db.exec(`CREATE TABLE IF NOT EXISTS tasks (
       id TEXT PRIMARY KEY, key TEXT UNIQUE NOT NULL, resource TEXT NOT NULL, output TEXT NOT NULL,
       binding_hash TEXT NOT NULL, binding TEXT NOT NULL, epoch INTEGER NOT NULL DEFAULT 1,
       state TEXT NOT NULL, attempts INTEGER NOT NULL DEFAULT 0, bytes INTEGER NOT NULL DEFAULT 0, reason TEXT);
@@ -51,9 +31,7 @@ export class Ledger {
         state TEXT NOT NULL, result TEXT, PRIMARY KEY(task,n));
       CREATE TABLE IF NOT EXISTS budgets(id TEXT PRIMARY KEY,policy TEXT NOT NULL,attempts INTEGER NOT NULL DEFAULT 0,bytes INTEGER NOT NULL DEFAULT 0);
       CREATE TABLE IF NOT EXISTS late_receipts(id INTEGER PRIMARY KEY,task TEXT NOT NULL,epoch INTEGER NOT NULL,n INTEGER NOT NULL,result TEXT NOT NULL,received_at INTEGER NOT NULL);
-      PRAGMA user_version=3;`);
-      this.db.exec('COMMIT');
-    }catch(error){try{this.db.exec('ROLLBACK');}catch{}this.db.close();this.closed=true;throw error;}
+      PRAGMA user_version=2;`);
   }
   transaction<T>(fn:()=>T):T {
     this.db.exec('BEGIN IMMEDIATE');try{const result=fn();this.db.exec('COMMIT');return result;}
@@ -69,7 +47,7 @@ export class Ledger {
   }
   claim(key:string,resource:string,output:string,binding:Binding):any {
     const auth=binding.authorization;
-    if((binding.executionMode!==undefined&&!['headless','bridge'].includes(binding.executionMode))||(binding.skillSha256!==undefined&&!/^[a-f0-9]{64}$/.test(binding.skillSha256))||!key||![binding.planHash,binding.runtimeIdentity,...Object.values(binding.inputHashes)].every(h=>/^[a-f0-9]{64}$/.test(h))
+    if((binding.skillSha256!==undefined&&!/^[a-f0-9]{64}$/.test(binding.skillSha256))||!key||![binding.planHash,binding.runtimeIdentity,...Object.values(binding.inputHashes)].every(h=>/^[a-f0-9]{64}$/.test(h))
       ||(auth.budgetId!==undefined&&(typeof auth.budgetId!=='string'||!auth.budgetId))
       ||!Array.isArray(auth.objects)||auth.objects.some(x=>!Number.isSafeInteger(x)||x<=0)
       ||!Array.isArray(auth.fields)||auth.fields.some(x=>typeof x!=='string'||!x)
@@ -82,9 +60,8 @@ export class Ledger {
       if(this.db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='runtime_selection'").get()){
         const selected=this.db.prepare('SELECT active FROM runtime_selection WHERE id=1').get() as any;
         if(selected){const active=strictJson(selected.active);
-          if(active.mode!==(binding.executionMode??'headless'))throw new Error('runtime_mode_mismatch');
+          if(active.mode!=='headless')throw new Error('runtime_mode_mismatch');
           if(active.binarySha256!==binding.runtimeIdentity)throw new Error('runtime_selection_mismatch');
-          if(!active.stateSchemas?.includes((this.db.prepare('PRAGMA user_version').get() as any).user_version))throw new Error('incompatible_state_schema');
         }
       }
       if(auth.deadline<=Date.now())throw new Error('budget_exceeded');

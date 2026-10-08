@@ -1,0 +1,9 @@
+{
+  "result": "PASS",
+  "listenerOwnedByPID": true,
+  "ownedProcessesStopped": true,
+  "desktopBinarySha256": "46d7846a765dd0c2a64a72dea17796f49d725203d2c5d91c339432572048f856",
+  "desktopVersion": "0.2.0",
+  "projectSha256": "da34ca8b489003325356256ac37380d0d1fdf75bf3bc840cec361b37e14f7d06",
+  "cliBinarySha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+}
