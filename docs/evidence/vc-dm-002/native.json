@@ -1,0 +1,212 @@
+{
+  "schema": "vectorcraft-boolean-fixed-qa/v1",
+  "result": "PASS",
+  "level": "external-qa-against-fixed-install",
+  "platform": "darwin",
+  "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+  "cases": [
+    {
+      "name": "direct-unite",
+      "participantIds": [
+        2,
+        3
+      ],
+      "resultIds": [
+        5
+      ],
+      "checkpointReopened": true,
+      "projectReopened": true,
+      "checkpointSha256": "f71e552706975a812cabc3aaf639c9432b1754ffc84a8bb2dcee3b344d1d609b",
+      "projectSha256": "10b08c7303df6c47f88ace7f3c48967c09244eed2690e985ead29c5653dba656"
+    },
+    {
+      "name": "direct-minusFront",
+      "participantIds": [
+        2,
+        3
+      ],
+      "resultIds": [
+        5
+      ],
+      "checkpointReopened": true,
+      "projectReopened": true,
+      "checkpointSha256": "f71e552706975a812cabc3aaf639c9432b1754ffc84a8bb2dcee3b344d1d609b",
+      "projectSha256": "23f99b7c936f03f512fe812daac56a4ea1723b36e61088d168510262b97388ba"
+    },
+    {
+      "name": "direct-intersect",
+      "participantIds": [
+        2,
+        3
+      ],
+      "resultIds": [
+        5
+      ],
+      "checkpointReopened": true,
+      "projectReopened": true,
+      "checkpointSha256": "f71e552706975a812cabc3aaf639c9432b1754ffc84a8bb2dcee3b344d1d609b",
+      "projectSha256": "519802cabfcff22b336f955ed5b037c2f9c200678b91aecb7f658b3d4d503c7f"
+    },
+    {
+      "name": "direct-exclude",
+      "participantIds": [
+        2,
+        3
+      ],
+      "resultIds": [
+        5
+      ],
+      "checkpointReopened": true,
+      "projectReopened": true,
+      "checkpointSha256": "f71e552706975a812cabc3aaf639c9432b1754ffc84a8bb2dcee3b344d1d609b",
+      "projectSha256": "23f99b7c936f03f512fe812daac56a4ea1723b36e61088d168510262b97388ba"
+    },
+    {
+      "name": "direct-group",
+      "participantIds": [
+        2,
+        3
+      ],
+      "resultIds": [
+        5
+      ],
+      "checkpointReopened": true,
+      "projectReopened": true,
+      "checkpointSha256": "f71e552706975a812cabc3aaf639c9432b1754ffc84a8bb2dcee3b344d1d609b",
+      "projectSha256": "44c44950fbe276ffcf9a8393d8043dfa5d43a1bf7c5cf3cff3581a627ede8fb7"
+    },
+    {
+      "name": "gateway-unite",
+      "participantIds": [
+        2,
+        3
+      ],
+      "resultIds": [
+        5
+      ],
+      "checkpointReopened": true,
+      "projectReopened": true,
+      "checkpointSha256": "f71e552706975a812cabc3aaf639c9432b1754ffc84a8bb2dcee3b344d1d609b",
+      "projectSha256": "10b08c7303df6c47f88ace7f3c48967c09244eed2690e985ead29c5653dba656"
+    },
+    {
+      "name": "gateway-minusFront",
+      "participantIds": [
+        2,
+        3
+      ],
+      "resultIds": [
+        5
+      ],
+      "checkpointReopened": true,
+      "projectReopened": true,
+      "checkpointSha256": "f71e552706975a812cabc3aaf639c9432b1754ffc84a8bb2dcee3b344d1d609b",
+      "projectSha256": "23f99b7c936f03f512fe812daac56a4ea1723b36e61088d168510262b97388ba"
+    },
+    {
+      "name": "gateway-intersect",
+      "participantIds": [
+        2,
+        3
+      ],
+      "resultIds": [
+        5
+      ],
+      "checkpointReopened": true,
+      "projectReopened": true,
+      "checkpointSha256": "f71e552706975a812cabc3aaf639c9432b1754ffc84a8bb2dcee3b344d1d609b",
+      "projectSha256": "519802cabfcff22b336f955ed5b037c2f9c200678b91aecb7f658b3d4d503c7f"
+    },
+    {
+      "name": "gateway-exclude",
+      "participantIds": [
+        2,
+        3
+      ],
+      "resultIds": [
+        5
+      ],
+      "checkpointReopened": true,
+      "projectReopened": true,
+      "checkpointSha256": "f9cb5cd9c2fb1f5316fe94f68d4bb5c5d73dd7cfdc8272aa6f3ccdd6e099e3b9",
+      "projectSha256": "4ddf44bdaec3c74cf9bf7fb45930ea053fa8477744a5785c869483c6f7748f28"
+    },
+    {
+      "name": "gateway-group",
+      "participantIds": [
+        2,
+        3
+      ],
+      "resultIds": [
+        5
+      ],
+      "checkpointReopened": true,
+      "projectReopened": true,
+      "checkpointSha256": "f9cb5cd9c2fb1f5316fe94f68d4bb5c5d73dd7cfdc8272aa6f3ccdd6e099e3b9",
+      "projectSha256": "a13a36657e54128937f0f2973ec9df758852fbc04de54ad65f9e8bb469b31dfe"
+    },
+    {
+      "name": "linked-asset-checkpoint-relocation",
+      "checkpointReopened": true,
+      "movedLinksValid": true,
+      "participantIds": [
+        2,
+        3
+      ]
+    },
+    {
+      "name": "complete-command-group-ungroup",
+      "transactions": 2,
+      "result": "PASS"
+    },
+    {
+      "name": "real-native-injected-known",
+      "status": "restored_after_failure",
+      "invocations": 1,
+      "checkpointReopened": true,
+      "replayAllowed": false
+    },
+    {
+      "name": "real-native-injected-unknown",
+      "status": "unknown",
+      "invocations": 1,
+      "checkpointReopened": true,
+      "replayAllowed": false
+    }
+  ],
+  "fingerprints": {
+    "skills/vectorcraft-use/scripts/boolean_transactions.py": "22d311dfda26cadcd3fc6bb51596ab8b2cd9245cabf5f28dfe3d0d74e8ff9120",
+    "skills/vectorcraft-use/scripts/workflow.py": "412cd5ef739d138f9fa43babe630be612b6b336918680a79e1555d5ddd6ea0c0",
+    "skills/vectorcraft-use/scripts/native_workflow.py": "395f83ad24ecce458e70305e79a0aec2daf749017a616ae7323706cdfd066139",
+    "skills/vectorcraft-use/scripts/commands.py": "42b72f9da9ca9cf429c1ccd50b52cf1f6ed7cbe7411a70b2561317feef7f6017",
+    "skills/vectorcraft-use/scripts/mcp_session.py": "15395ead853349a24feab6ce364e5bc9795add12e1dbe62e8ed5718ffdd1ccd2",
+    "skills/vectorcraft-use/scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "skills/vectorcraft-use/scripts/execution_control.py": "0acaa8fa01aae3689bb8c460efdd9bb19578d33e1572e24dc8dea00ef38ec008",
+    "skills.lock.json": "14952869286b68ee7080b75bcc5619de7f78e73b820c54d727d154b0745e7ca5",
+    "plugin.json": "196e82d28b763dd3ad69a5bbd662cb5255b6b671d3d895e81ae477a41ca5cb0d"
+  },
+  "installedFilesSha256": "dbc7ce52dc5693e90846594d9c67ff8b309261fb24210903962c2b40e8d64ccb",
+  "sourcePreserved": true,
+  "isolatedSkillPreserved": true,
+  "skills": {
+    "vectorcraft-cli-setup": "e0bd59ddb23cf69d662c21dbef5324d708d20267638869d1813bef244e7cd3b3",
+    "vectorcraft-cli-export": "edac0db2760f244b0f820b5ca4c154fc49a2c16cb070ce485ea8a15c358e4953",
+    "vectorcraft-cli-appearance": "fb9a966b0f082fb216a5d26738052afc4578a032fd43880dee14f51657545be0",
+    "vectorcraft-cli-artboards": "5a11d4415ad514cf3691e0f0d82254eb6f005810712e7cf2a47071d400a59f60",
+    "vectorcraft-use": "e7d84d441d0628269801918ced6f2f47abc31e461095dd805cc7634436757875",
+    "vectorcraft-cli-paths": "5d67ad22e0b8a474b0ad4f125803a2d31a1d147272f8ffd534949e298d4d485c",
+    "vectorcraft-cli-assets": "4c120487365a4d23e689359cfec1d5c9b09d99909e07caefae868da4e28fe75a",
+    "vectorcraft-cli-text": "f42e0a496a25530fa8014721599108659be5064ee311044312dac09416004fe7",
+    "vectorcraft-cli-shapes": "b8ae3dbeb2fdcd731a51d262b6f0fe16e2675a3b02bd904ab293191dcffa2d53",
+    "vectorcraft-cli-boolean": "8e14ba7eb0b24ce01c2cf227afb8913473b06636f593e9b6fa28147aa001ba00",
+    "vectorcraft-cli": "bbadce2cefd040e8c1e143c84cf74f4efab0a03e768440e1b38ce73d10c2efb4",
+    "vectorcraft-cli-project": "d516720b6da5cfcfeafa484ee50d67f75ec9c6cf5f685d2958be7e9f90719cb8",
+    "vectorcraft-cli-selection": "14fdf505ffedcec15c762b69891cec6aa58ec53196dd0dbc794818791a3467f9"
+  },
+  "pluginVersion": "0.1.0-dev.51",
+  "sourceRef": "v0.1.0-dev.38",
+  "sourceCommit": "6f569740961d8129a1b08b2985ff0d89f16d7772",
+  "driverSha256": "151e5adf8dfab498eafc1b748e455d111c2530c38051778333233bfd44d5c7db",
+  "fixedInstalledSkill": true,
+  "scope": "14 real native cases: direct/gateway operations, complete group/ungroup and explicit post-success fault injection; actual public fixed installed skill; not all Pathfinder contexts, GUI or creative acceptance"
+}

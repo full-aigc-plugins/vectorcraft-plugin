@@ -1,0 +1,13 @@
+test_bad_result_or_unselected_mutation_restores_checkpoint (test_boolean_transactions.BooleanTransactionTests.test_bad_result_or_unselected_mutation_restores_checkpoint) ... ok
+test_checkpoint_collection_compares_geometry_and_link_contents (test_boolean_transactions.BooleanTransactionTests.test_checkpoint_collection_compares_geometry_and_link_contents) ... ok
+test_existing_checkpoint_is_not_overwritten (test_boolean_transactions.BooleanTransactionTests.test_existing_checkpoint_is_not_overwritten) ... ok
+test_invalid_selection_never_executes_or_creates_checkpoint (test_boolean_transactions.BooleanTransactionTests.test_invalid_selection_never_executes_or_creates_checkpoint) ... ok
+test_known_partial_delete_restores_original_objects_without_replay (test_boolean_transactions.BooleanTransactionTests.test_known_partial_delete_restores_original_objects_without_replay) ... ok
+test_restore_failure_is_unknown_and_original_checkpoint_remains (test_boolean_transactions.BooleanTransactionTests.test_restore_failure_is_unknown_and_original_checkpoint_remains) ... ok
+test_success_records_result_identity_and_keeps_unselected_objects (test_boolean_transactions.BooleanTransactionTests.test_success_records_result_identity_and_keeps_unselected_objects) ... ok
+test_unknown_reply_keeps_stage_without_restore_or_replay (test_boolean_transactions.BooleanTransactionTests.test_unknown_reply_keeps_stage_without_restore_or_replay) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.181s
+
+OK

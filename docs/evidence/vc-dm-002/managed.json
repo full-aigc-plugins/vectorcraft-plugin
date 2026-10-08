@@ -1,0 +1,116 @@
+{
+  "schema": "vectorcraft-managed-boolean/v1",
+  "result": "PASS",
+  "level": "native-candidate",
+  "platform": "darwin-arm64",
+  "pinnedSkill": true,
+  "skillSha256": "e7d84d441d0628269801918ced6f2f47abc31e461095dd805cc7634436757875",
+  "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+  "cases": [
+    {
+      "name": "direct-unite",
+      "participantIds": [
+        2,
+        3
+      ],
+      "resultIds": [
+        5
+      ],
+      "state": "review_ready",
+      "sameKeyStable": true,
+      "checkpointSha256": "2ad57839f2bbba2bbb415943e0e01d43f0ba39a82f39f034033bd12f87837b04",
+      "projectRevision": "adc43f327015e5a2327f8aa2c7be5b88873e967a012fde9e79c2f69200d463d5"
+    },
+    {
+      "name": "direct-group",
+      "participantIds": [
+        2,
+        3
+      ],
+      "resultIds": [
+        5
+      ],
+      "state": "review_ready",
+      "sameKeyStable": true,
+      "checkpointSha256": "4d9a72829b7ecc0be1f67af0d98cc5f06fae0d29dfd07fb7402dbf42655011da",
+      "projectRevision": "e95067545e9c60de93ed797d284c148633ac37064360a91379bea071730ff6f3"
+    },
+    {
+      "name": "direct-ungroup",
+      "participantIds": [
+        5
+      ],
+      "resultIds": [
+        2,
+        3
+      ],
+      "state": "review_ready"
+    },
+    {
+      "name": "gateway-unite",
+      "participantIds": [
+        2,
+        3
+      ],
+      "resultIds": [
+        5
+      ],
+      "state": "review_ready",
+      "sameKeyStable": true,
+      "checkpointSha256": "0ad3035ff6fba3fe5714ddb6b0692ef88daa7c6fe40a952e333c4998df4beda5",
+      "projectRevision": "cb9dcf835af8f30cba1d1bfafcb1c9b7a33f33e6c3d2e1a9428ca2fbeb316c2c"
+    },
+    {
+      "name": "gateway-group",
+      "participantIds": [
+        2,
+        3
+      ],
+      "resultIds": [
+        5
+      ],
+      "state": "review_ready",
+      "sameKeyStable": true,
+      "checkpointSha256": "ee658079f33cafb2790dda0a23c9b15859e2ff2622f7891406b9f790080714bd",
+      "projectRevision": "83b6a9cc24e0669b801146331219d1b11bbd25717239dd7a8c1045e2832b7f14"
+    },
+    {
+      "name": "gateway-ungroup",
+      "participantIds": [
+        5
+      ],
+      "resultIds": [
+        2,
+        3
+      ],
+      "state": "review_ready"
+    },
+    {
+      "name": "kind-is-not-structure",
+      "state": "reconciling",
+      "mutationNotSubmitted": true,
+      "sourcePreserved": true,
+      "automaticReplayRefused": true,
+      "ownedProcessStopped": true
+    },
+    {
+      "name": "missing-operand-authorization",
+      "state": "reconciling",
+      "mutationNotSubmitted": true,
+      "sourcePreserved": true,
+      "automaticReplayRefused": true,
+      "ownedProcessStopped": true
+    }
+  ],
+  "fingerprints": {
+    "skills.lock.json": "14952869286b68ee7080b75bcc5619de7f78e73b820c54d727d154b0745e7ca5",
+    "scripts/acceptance/managed_boolean.ts": "55fbffdf6d44a8b0b95b9902d7716037980eeaf5c2c437c69a06b740b889be52",
+    "src/harness/controller.ts": "1dfbd182d7228eb20c21dd8f70a85c24c75a4b22fcf9a1f11d5b19f8eea7a8f5",
+    "src/harness/ledger.ts": "d2a336ad4f52e2fc1f839514fd4d3ed351b323f5cfa230152f796d55b336db6c",
+    "src/harness/process_registry.ts": "c19a3cb5d42cc33620bc5baeff7db71f1c6daa92f046a112951a7f50f7906162",
+    "src/harness/process_runner.py": "7332d0757aa01f03d00697f8eb8d93f849517cab34ea8a1355ba6c9513d5aba2",
+    "src/planning/geometry.ts": "97650dc916111666a73bcfea6ddc797e48b5b9bc2d6b6e54a85f33b1a8766e2d",
+    "src/strict_json.ts": "69a445339670e53f6a7fcb96770b53b896666dd1e60f114c1751a23981d5b7d0"
+  },
+  "scope": "real managed group/ungroup/unite via direct and gateway routes; structural scope rejection before mutation, durable receipts and replay refusal; full4.6, GUI and creative acceptance remain open"
+}

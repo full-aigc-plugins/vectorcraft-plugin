@@ -1,0 +1,112 @@
+{
+  "schema": "vectorcraft-boolean-selection-fixed/v1",
+  "result": "PASS",
+  "scope": "real pinned SDK control with actual reopened native document/selection; explicit selection mismatch and missing descendant authorization; not an engine defect or complete Harness case",
+  "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+  "driverSha256": "7022681c98efbd52369d0fcf1ce4fbafed56a4516bbd2dc1e00a53c0bde07537",
+  "cases": [
+    {
+      "name": "selection-mismatch",
+      "result": "PASS",
+      "expectedFailure": "revision_selection_identity_mismatch",
+      "explicitSelectionMismatchInjection": true,
+      "sourceSha256": "f71e552706975a812cabc3aaf639c9432b1754ffc84a8bb2dcee3b344d1d609b",
+      "sourceUnchanged": true,
+      "actualSelection": [
+        2
+      ],
+      "authorizedObjectIds": [
+        2,
+        3
+      ],
+      "planObjectIds": [
+        2,
+        3
+      ],
+      "nativeMutationNotSubmitted": true,
+      "sessionExited": true,
+      "beforeModelSha256": "e0a79f9f4d58058a92708ad56a7ef5f52974b6f1ae3ca97ffd7c1e2ba32a164b",
+      "eventSha256": "0ab25ea6ee706860c4bf3483cf2fcac473f76d6155192375c71f7eadccff9e5e"
+    },
+    {
+      "name": "missing-descendants",
+      "result": "PASS",
+      "expectedFailure": "revision_outside_authorization",
+      "explicitSelectionMismatchInjection": false,
+      "sourceSha256": "e95067545e9c60de93ed797d284c148633ac37064360a91379bea071730ff6f3",
+      "sourceUnchanged": true,
+      "actualSelection": [
+        5
+      ],
+      "authorizedObjectIds": [
+        5
+      ],
+      "planObjectIds": [
+        2,
+        3
+      ],
+      "nativeMutationNotSubmitted": true,
+      "sessionExited": true,
+      "beforeModelSha256": "f9cb74c557eaa83059f4a3f06b83c25b02107928adc00940362bd4777dca2dda",
+      "eventSha256": "9c33674ca8125cb9bbc4d0f80f523be16c1de31044c26e380ea0f1ff09ebb3e9"
+    }
+  ],
+  "fingerprints": {
+    "skills/vectorcraft-use/SKILL.md": "5911290dba9e5797c25ec0d10a0cf442096b313681043dede24c7c37c97c9943",
+    "skills/vectorcraft-use/agents/openai.yaml": "8619a54e8c098122a7f3881394f84ca89b684366e848233a29ad18b6ec363935",
+    "skills/vectorcraft-use/examples/appearance-gradient-create.json": "ff974dd61eac86d7b5bb604ddc60f9ae97ce5c57cd43e65ac3fefc8f8c498aff",
+    "skills/vectorcraft-use/examples/appearance-gradient-revise.json": "3e464a7576f55684c45eaf4b3b4ce94bc53c52a4e360e2a1609372201686f616",
+    "skills/vectorcraft-use/examples/brand-assets.json": "d4c342c68791d7fb9ca0a966448947d7f9597af66e00245aec3c4d4c43cc6950",
+    "skills/vectorcraft-use/examples/brand-token-assets.json": "07f3a8acb45b3dd03ecbe96b75c53571a6b7960eb29b6bb10b777194ba3c1202",
+    "skills/vectorcraft-use/examples/chinese-text.json": "a5f1310bfba6102606079b62712096ae9e4298dffe860dcbab64448619613762",
+    "skills/vectorcraft-use/examples/commands-advanced.json": "eb456387da8df5ac16399c318ebb493fef1e716a537a777420baaa52b89030b8",
+    "skills/vectorcraft-use/examples/commands-revision-create.json": "c7668b298747a3dec9266826344778e8c977a36df293436531ea1ea8db4a44bc",
+    "skills/vectorcraft-use/examples/commands-revision.json": "8e416f9ed55a21862cfc6848ca4e9f97b3fbd2b405b9a56faf89dbc016cbe779",
+    "skills/vectorcraft-use/examples/desktop-first-use.json": "41461b895abe438b35cfa2fcedec42d883ceb0a77812cb5e21e071b5473f3b2b",
+    "skills/vectorcraft-use/examples/native-workflow.json": "e9a89a79c3bdf0ae8ca41958f2fbbdf523ac77da47ecceda6cc97d982e38b265",
+    "skills/vectorcraft-use/examples/object-layout-create.json": "81d4eda918c6e4a41f41b58658a79eee1841872c49fff0a57d72beb94016127b",
+    "skills/vectorcraft-use/examples/object-layout-reopen.json": "7ad1f4a35980a2a90198d8b140ba1b486e604f391322484452d88e110d98da5f",
+    "skills/vectorcraft-use/examples/object-layout-revise.json": "6e85a7f2e54a1e3126d30f12e41fe02320f30542bd6d0d1044c79e79fd539731",
+    "skills/vectorcraft-use/examples/operation-revise.json": "4ed5a5914075583eae05dfab6ac3fc909b2da20558eb466c683355d35443bd78",
+    "skills/vectorcraft-use/examples/provided-assets.json": "f5a3e15cc7a44b912fd87fc833c00c2e51893b553d90daa6f3682bd9ff4336cd",
+    "skills/vectorcraft-use/examples/selection-brand-create.json": "3343eab1f42ef16e5334382c01c861d523d15d41ff49b6946e02046e582a2e73",
+    "skills/vectorcraft-use/examples/selection-brand-reopen.json": "7ad1f4a35980a2a90198d8b140ba1b486e604f391322484452d88e110d98da5f",
+    "skills/vectorcraft-use/examples/selection-brand-revise.json": "10edd02b725c5b0a337d1eb6931942c1bc5e7127c494a1738fecee528ed4ae21",
+    "skills/vectorcraft-use/references/appearance-gradient.md": "712a5822162e95610515d21ee00af77e0c276445f573440fbb360803e94342b7",
+    "skills/vectorcraft-use/references/brand-tokens.md": "ed9b228ccc0376808a51a4a75cb58e75338832260ba6c148a30eae6531c4e9b8",
+    "skills/vectorcraft-use/references/business-scenes.md": "9d11ef8f28be9249f9f7f32e166f307f0cfa7d5ac27520adbbbe483abf043d74",
+    "skills/vectorcraft-use/references/chinese-text.md": "b2229e5054fe2a71ee069b4aba6fa6d87c3ebbf4afaf3d1a2f85a80256948294",
+    "skills/vectorcraft-use/references/command-coverage.json": "532d2fc467f4fc4c48856e11fdb97ea465276270c882e837a3214692de831a50",
+    "skills/vectorcraft-use/references/command-reference.md": "87f39638580025e3d5042da4bda71e255ce9d729850e840ff7baf14a027c08c0",
+    "skills/vectorcraft-use/references/command-usage.md": "49d6405db258efeb7c2a9726c7a858dce855db5ddd2e14afbcde8025a88b5440",
+    "skills/vectorcraft-use/references/commands.json": "e436b3e9a89690f520a541932c03a41c090e7e5323900d4ee8f6bcc3bbcc6ed3",
+    "skills/vectorcraft-use/references/desktop-install.md": "db2db151b0eff30a3381a03ae377fb23ac09b2b4a919859740bd9343e7f14887",
+    "skills/vectorcraft-use/references/exchange-loss.md": "eee665f62b77274ca8ce0efc4117012ade85978905cdfd40ab488af64297b8ae",
+    "skills/vectorcraft-use/references/first-use-failures.md": "ce2a8d1a8ca6b8a29a084d52d105d510476de88d40b439d6c2ff79212581d61d",
+    "skills/vectorcraft-use/references/installation-concurrency.md": "69067acebcd47f1924a8d6aa9d8a4ce6f44ad0756d44888a21eb224bcdb1c215",
+    "skills/vectorcraft-use/references/native-command-snapshot.json": "1e63722f850930947c4cc6e9bdbe24638413e43c2e5127dd385f167d493e10e1",
+    "skills/vectorcraft-use/references/native-workflow.md": "42fee416c66a69f6f3802abe1be6f002963cf109e7e22a4d6297b6dcaf62b8e9",
+    "skills/vectorcraft-use/references/object-edit-scene.md": "ac760587eaabc1205b20325e48325463fd90efe343df4183fc7ae7f9d07e6550",
+    "skills/vectorcraft-use/references/object-selection-scene.md": "42593e844568184451bf648c84f4f0fafaee5a1644e39b1641fe49a078e336d9",
+    "skills/vectorcraft-use/references/operation-contract.json": "a68a5b834e075059708c9cf555a9bd9acf9074236e9e367861378073ccbf459a",
+    "skills/vectorcraft-use/references/output-execution.md": "baa3d38af5f8d3b01cb36bcc6b89dee3d8449ec676bc52d6f5c2de9f563ba3ac",
+    "skills/vectorcraft-use/references/workflow.md": "3b5655fd20ce503b83c487d04e8453f5c3c9dd06d129094c8c41d9dc5a5972e0",
+    "skills/vectorcraft-use/scripts/asset_inputs.py": "b2868a4239ef50648f201be99bb29ad4ddf0d8bdeb5a626c54b3fc1aac701758",
+    "skills/vectorcraft-use/scripts/boolean_transactions.py": "22d311dfda26cadcd3fc6bb51596ab8b2cd9245cabf5f28dfe3d0d74e8ff9120",
+    "skills/vectorcraft-use/scripts/bootstrap.py": "78d5bdf16bf08e9abc96b4b23e5d071da72b648698b888b85fa1b90f81cf32a9",
+    "skills/vectorcraft-use/scripts/brand_variants.py": "d5973ec8f36312ae32cf5b3e07d3f96ea32df0bc8a7b07c17d3328918fbc3a55",
+    "skills/vectorcraft-use/scripts/cli.py": "f59eb61605f0f4ac7213e6f52b83a47a93bf6201101cffd64d332fbb025313d5",
+    "skills/vectorcraft-use/scripts/commands.py": "42b72f9da9ca9cf429c1ccd50b52cf1f6ed7cbe7411a70b2561317feef7f6017",
+    "skills/vectorcraft-use/scripts/desktop.lock.json": "f38c7cd5b837bc4f3275ef96c17308fc894f6be66c6a00ecf9c53378ad4bb486",
+    "skills/vectorcraft-use/scripts/desktop.py": "24dddb82f1c51ca8e835c582d9b7228aa9d643dfcada11b570bde9191f002f0f",
+    "skills/vectorcraft-use/scripts/desktop_session.py": "b6b07a9a18b77386d481a7f263190b0981a7a763dda4f46ad7417a92d416fbb5",
+    "skills/vectorcraft-use/scripts/exchange_loss.py": "b1e68eb2e4887dc52b3c2e4d071ea4364c1254b3f96ffb6511ad42f9dfc0dff6",
+    "skills/vectorcraft-use/scripts/execution_control.py": "0acaa8fa01aae3689bb8c460efdd9bb19578d33e1572e24dc8dea00ef38ec008",
+    "skills/vectorcraft-use/scripts/mcp_session.py": "15395ead853349a24feab6ce364e5bc9795add12e1dbe62e8ed5718ffdd1ccd2",
+    "skills/vectorcraft-use/scripts/native_workflow.py": "395f83ad24ecce458e70305e79a0aec2daf749017a616ae7323706cdfd066139",
+    "skills/vectorcraft-use/scripts/output_guard.py": "7c13abd891370058e670fbfb3db7992d4a8ed7934682c83bde1aabf47ad6846f",
+    "skills/vectorcraft-use/scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "skills/vectorcraft-use/scripts/runtime.lock.json": "7b6bd7f3fab84b757d4ea20ac91b74d89b417ec061efc6ae320dda97a422cc07",
+    "skills/vectorcraft-use/scripts/workflow.py": "412cd5ef739d138f9fa43babe630be612b6b336918680a79e1555d5ddd6ea0c0"
+  }
+}

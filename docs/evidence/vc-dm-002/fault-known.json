@@ -1,0 +1,18 @@
+{
+  "schema": "vectorcraft-boolean-transactions/v1",
+  "operations": [
+    {
+      "command": "object.pathfinder.unite",
+      "participantIds": [
+        2,
+        3
+      ],
+      "resultIds": null,
+      "checkpoint": "boolean-checkpoint-0.vectorcraft",
+      "checkpointSha256": "f9cb5cd9c2fb1f5316fe94f68d4bb5c5d73dd7cfdc8272aa6f3ccdd6e099e3b9",
+      "status": "restored_after_failure",
+      "replayAllowed": false,
+      "error": "semantic_error: injected after successful native mutation"
+    }
+  ]
+}

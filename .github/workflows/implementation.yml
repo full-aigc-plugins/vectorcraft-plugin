@@ -17,6 +17,7 @@ jobs:
       - run: python3 -I -B scripts/current_identity.py --check
       - run: python3 -I -B scripts/evidence_index.py --check
       - run: python3 -I -B scripts/verify_geometry_evidence.py
+      - run: python3 -I -B scripts/verify_boolean_evidence.py
       - uses: actions/setup-node@v4
         with:
           node-version: '24.18.0'

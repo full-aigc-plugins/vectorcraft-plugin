@@ -12,6 +12,8 @@ Create Logo, icon and brand assets as `.vectorcraft` with applicable SVG, PDF an
 
 Current plugin: `0.1.0-dev.51`; skill source: `0.1.0-dev.38`; 13 independent skills.
 
+All four current VC-DM-002 scenarios passed against public installed51/source38; task4.6 is complete.14 native workflow cases,8 managed authorization cases,2 native SDK selection/subtree refusals and17 source tests passed;13 skills remain unchanged and9 Harness registered groups stopped. Known/unknown faults were explicitly injected after actual native success; this is not an engine defect report. GUI,all Pathfinder contexts and creative topology judgments remain separate. [固定验收 / Fixed acceptance](docs/evidence/vectorcraft-boolean-fixed51-20261009.json).
+
 All two VC-DM-001 scenarios passed against public installed51/source38; task4.3 is complete. Six native save/reopen cases and18 exports cover Pixels/Points, document/artboard-local coordinates, controls, open/closed paths and visible strokes. Four rejected contracts retain original artifacts and actual object IDs. Seven geometry tests pass,13 skill digests remain unchanged and6 registered groups stopped. Arbitrary transforms,GUI and creative acceptance remain separate. [固定验收 / Fixed acceptance](docs/evidence/vectorcraft-geometry-fixed51-20261009.json).
 
 Candidate51 makes an explicit budgetId a shared workflow cancellation boundary. Cancellation fences all active members and future tasks/steps durably, including stale readers; each native group stops and each original artifact is inspected independently before epoch settlement. Expired resumes cancel the workflow; spent attempt/reserved-output quotas refuse admission. Public installed51 passed five actual native cases,115 Node and43 Python regressions; task3.9 is complete. [Architecture](docs/VectorCraft-Shared-Cancellation.md).
@@ -349,17 +351,17 @@ Minimal durable rounds, shared budgets, stagnation, native execution lineage and
 
 ### dev.40 geometry and revision prerelease
 
-Native geometry contracts check units, artboard offsets, controls, closure and strokes with persisted receipts. Bounded revision cycles retain the best verified candidate. Full4.3,6.6, host and creative acceptance remain open. [Geometry contract](docs/VectorCraft-Geometry-Contract.md).
+Native geometry contracts check units, artboard offsets, controls, closure and strokes with persisted receipts. Bounded revision cycles retain the best verified candidate. Task4.3 now has fixed51 acceptance;6.6, host and creative acceptance remain open. [Geometry contract](docs/VectorCraft-Geometry-Contract.md).
 
 ### Boolean transaction source candidate
 
-Independent source implements retained checkpoints, live participant/result IDs and restoration after known partial failures; linked checkpoints remain portable. Tasks4.4/4.5 are checked; complete4.6 and fixed snapshot uptake remain open. Published dev.40/source36 are unchanged. [Architecture](docs/VectorCraft-Boolean-Transactions.md).
+Independent source implements retained checkpoints, live participant/result IDs and restoration after known partial failures; linked checkpoints remain portable. At this historical dev.40 checkpoint, tasks4.4/4.5 were checked; complete4.6 and fixed snapshot uptake remained open. Published dev.40/source36 are unchanged. [Architecture](docs/VectorCraft-Boolean-Transactions.md).
 
 ### dev.41 structural revision prerelease
 
-Pins source37 boolean checkpoints and explicit Harness `structure` authorization. Actual selection, participant subtrees, result IDs and unaffected model fields are checked. Published source36 and plugin40 stay immutable. Full4.6, host/model/GUI and creative acceptance remain open.
+Pins source37 boolean checkpoints and explicit Harness `structure` authorization. Actual selection, participant subtrees, result IDs and unaffected model fields are checked. Published source36 and plugin40 stay immutable. At this historical source37 checkpoint, full4.6, host/model/GUI and creative acceptance remained open.
 
-Published dev.41/source37 now passes actual isolated Codex0.153.4 installation:13 skill identities,13 independent public cold starts,12 declared create/revise pairs and8 managed structural cases. Installed bytes remain unchanged. [Fixed evidence](docs/evidence/vectorcraft-fixed41-structural-20261008.json). Complete4.6, model dispatch, GUI and creative acceptance remain open.
+Published dev.41/source37 now passes actual isolated Codex0.153.4 installation:13 skill identities,13 independent public cold starts,12 declared create/revise pairs and8 managed structural cases. Installed bytes remain unchanged. [Fixed evidence](docs/evidence/vectorcraft-fixed41-structural-20261008.json). At this historical dev.41 checkpoint, complete4.6, model dispatch, GUI and creative acceptance remained open.
 
 A new source candidate adds fixed runtime identity, live command/tool schemas, single-ledger draining and rollback compatibility guards.42 Node tests and9 native cases passed; different-version upgrades and desktop acceptance remain open. Published plugin41 is unchanged. See [entry points and boundaries](docs/Runtime-Gate.md).
 

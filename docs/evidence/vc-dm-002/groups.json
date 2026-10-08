@@ -1,0 +1,60 @@
+{
+  "result": "PASS",
+  "skillsUnchanged": 13,
+  "groups": [
+    {
+      "case": ".local/boolean-managed-fixed51/kind-is-not-structure/refused.sqlite",
+      "task": "a7555bf3-5cc5-4597-aac9-4dae863c578c",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": ".local/boolean-managed-fixed51/missing-operand-authorization/refused.sqlite",
+      "task": "84c274a2-7ace-44e7-9f7d-bf8753b219c7",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": ".local/boolean-managed-fixed51/positive/direct-group.sqlite",
+      "task": "7a76d060-f9b7-4892-aaf9-389a7a53b285",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": ".local/boolean-managed-fixed51/positive/direct-ungroup.sqlite",
+      "task": "8ab4a322-f1e3-4fb3-8392-ed99eb899200",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": ".local/boolean-managed-fixed51/positive/direct-unite.sqlite",
+      "task": "8fb0269b-366b-4c11-9196-9c26e805bc54",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": ".local/boolean-managed-fixed51/positive/gateway-group.sqlite",
+      "task": "6812c671-89a5-40e1-bc81-77132e8ceead",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": ".local/boolean-managed-fixed51/positive/gateway-ungroup.sqlite",
+      "task": "4da9c997-2495-40a8-9111-519416dcb751",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": ".local/boolean-managed-fixed51/positive/gateway-unite.sqlite",
+      "task": "4b1f0c5c-5e35-45c4-8b8a-2783c315ca22",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": ".local/boolean-managed-fixed51/positive/source.sqlite",
+      "task": "d8a55b77-dd05-453a-9e16-44c8e9651dc7",
+      "epoch": 1,
+      "stopped": true
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # 分组与布尔事务源码候选
 
-OpenSpec `VC-DM-002` 由伴生插件持有。本增量已由技能源dev.37固定发布并由插件dev.41接收，旧source36与插件40保持不变；只实现测试与最小执行合同，不宣称完整4.6验收。
+公开固定51／源38已完成VC-DM-002全部四个当前场景，任务4.6完成：14组原生工作流、8组受控授权、2组原生SDK选择／子树拒绝，17项目标源测试通过；13技能摘要未变，9个Harness登记组停止。已知／未知失败在真实原生操作成功后显式注入，不是引擎缺陷报告；GUI、全Pathfinder上下文与创作拓扑判断保持独立。 [固定验收 / Fixed acceptance](evidence/vectorcraft-boolean-fixed51-20261009.json).
 
 普通工作流直接命令、`native.command` 反射入口及完整命令计划共用 `boolean_transactions.py`。支持识别分组／解组及Pathfinder命令；每步从原生document.inspect读取实时选择，从document.json读取完整对象树，保存原位置检查点后才执行一次。`boolean-transactions.json`记录命令、参与ID、结果ID、检查点摘要与状态，成功交付清单包含报告和检查点。验证比较未选子树、祖先属性、层级顺序及文档属性；分组保留子对象内容，解组核对释放对象身份。
 
@@ -26,4 +26,4 @@ flowchart TD
 
 ## 技能源37的受控结构授权
 
-新增显式structure授权。实际选择必须匹配已授权ID，结构修改要求参与子树的全部对象ID均已授权，再次核对结果身份和未选模型。kind字段授权不推断为结构授权。8项真实Harness案例覆盖直接／反射分组、解组、合并及修改前拒绝。完整4.6、GUI和创作验收仍独立开放。源回归174项，144通过、30环境跳过。之前的候选证据按原摘要保存在boolean-transactions-before-managed-20261008.json。
+新增显式structure授权。实际选择必须匹配已授权ID，结构修改要求参与子树的全部对象ID均已授权，再次核对结果身份和未选模型。kind字段授权不推断为结构授权。8项真实Harness案例覆盖直接／反射分组、解组、合并及修改前拒绝。上述source37历史候选阶段，完整4.6、GUI和创作验收仍独立开放。源回归174项，144通过、30环境跳过。之前的候选证据按原摘要保存在boolean-transactions-before-managed-20261008.json。

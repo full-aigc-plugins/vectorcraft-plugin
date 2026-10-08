@@ -120,8 +120,9 @@
         "4.6"
       ],
       "owner": "Domain owner",
-      "status": "in-progress",
-      "evidence": "docs/evidence/vector-workflow-tests.json"
+      "status": "verified",
+      "evidence": "docs/evidence/vectorcraft-boolean-fixed51-20261009.json",
+      "scope": "all four current scenarios against public installed51/source38 macOS arm64;24 actual native workflow/Harness/SDK cases and17 source unit tests; known and unknown faults explicitly injected; complete V1,GUI and all Pathfinder contexts remain separate"
     },
     {
       "requirement": "VC-DM-003",

@@ -1,0 +1,14 @@
+test_boolean_verification_still_protects_unselected_tree_and_document (test_execution_control.ExecutionControlTests.test_boolean_verification_still_protects_unselected_tree_and_document) ... ok
+test_cancel_deadline_epoch_and_source_change_block_next_native_request (test_execution_control.ExecutionControlTests.test_cancel_deadline_epoch_and_source_change_block_next_native_request) ... ok
+test_delivery_identity_is_durable_before_nested_stage_rename (test_execution_control.ExecutionControlTests.test_delivery_identity_is_durable_before_nested_stage_rename) ... ok
+test_delivery_identity_refuses_unowned_stage_and_output_parent (test_execution_control.ExecutionControlTests.test_delivery_identity_refuses_unowned_stage_and_output_parent) ... ok
+test_original_stage_identity_and_submitted_request_survive_reopen (test_execution_control.ExecutionControlTests.test_original_stage_identity_and_submitted_request_survive_reopen) ... ok
+test_revision_checks_actual_object_fields_and_all_global_swatch_consumers (test_execution_control.ExecutionControlTests.test_revision_checks_actual_object_fields_and_all_global_swatch_consumers) ... ok
+test_structural_permission_cannot_be_inferred_from_kind_field_or_parent (test_execution_control.ExecutionControlTests.test_structural_permission_cannot_be_inferred_from_kind_field_or_parent) ... ok
+test_structural_selection_receipt_must_match_actual_selection (test_execution_control.ExecutionControlTests.test_structural_selection_receipt_must_match_actual_selection) ... ok
+test_structural_selection_requires_explicit_structure_authorization (test_execution_control.ExecutionControlTests.test_structural_selection_requires_explicit_structure_authorization) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.115s
+
+OK

@@ -214,6 +214,9 @@ def build(root=ROOT):
     geometry_fixed='docs/evidence/vectorcraft-geometry-fixed51-20261009.json'
     if (root/geometry_fixed).is_file():
         entries.append(bound_report(root,geometry_fixed,'fixed-install','All two current VC-DM-001 scenarios against installed public51/source38 macOS arm64;external QA driver,six native cases,18 exports,seven geometry tests,13 unchanged skills and6 stopped groups;only4.3 closes','VC-DM-001',['4.3']))
+    boolean_fixed='docs/evidence/vectorcraft-boolean-fixed51-20261009.json'
+    if (root/boolean_fixed).is_file():
+        entries.append(bound_report(root,boolean_fixed,'fixed-install','All four current VC-DM-002 scenarios against installed public51/source38 macOS arm64;24 native workflow/Harness/SDK cases,17 source unit tests,13 unchanged skills and9 stopped registered groups;explicit failure injection;only4.6 closes','VC-DM-002',['4.6']))
     # 明确归档变更前执行字节；保留报告原摘要，不能把旧运行重绑定到新实现。
     for entry in entries:
         archived={}

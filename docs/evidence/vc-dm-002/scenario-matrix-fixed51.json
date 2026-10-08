@@ -1,0 +1,405 @@
+{
+  "schema": "vectorcraft-boolean-scenario-matrix/v1",
+  "result": "PASS",
+  "scope": "all four VC-DM-002 scenarios against public installed51/source38; actual Harness/workflow and standalone native SDK checks distinguished; known/unknown faults explicitly injected",
+  "scenarioContracts": {
+    "VC-DM-002-P": "464c920d55290ffedb4679f01ceed9760e8e197ab0b43aa5f82ad1a020f95af9",
+    "VC-DM-002-N": "607976119355892959265db38fe6c540a2764ce69ebb52af980b6924f5e15184",
+    "VC-DM-002-MANAGED": "8b0d79ad04be9cf5b2806b60d1e5515a1b216cc8fb2688d0e1d215f53651d81e",
+    "VC-DM-002-MANAGED-N": "6719a4907df78b8bc4ec654b653b0fa1c081d5dabc22e8d90455edc4bc84d00e"
+  },
+  "entries": [
+    {
+      "scenario": "VC-DM-002-P",
+      "checks": [
+        {
+          "report": "docs/evidence/vc-dm-002/native.json",
+          "pointer": "/cases/0/checkpointReopened",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/native.json",
+          "pointer": "/cases/0/projectReopened",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/native.json",
+          "pointer": "/cases/1/checkpointReopened",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/native.json",
+          "pointer": "/cases/1/projectReopened",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/native.json",
+          "pointer": "/cases/2/checkpointReopened",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/native.json",
+          "pointer": "/cases/2/projectReopened",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/native.json",
+          "pointer": "/cases/3/checkpointReopened",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/native.json",
+          "pointer": "/cases/3/projectReopened",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/native.json",
+          "pointer": "/cases/4/checkpointReopened",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/native.json",
+          "pointer": "/cases/4/projectReopened",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/native.json",
+          "pointer": "/cases/5/checkpointReopened",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/native.json",
+          "pointer": "/cases/5/projectReopened",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/native.json",
+          "pointer": "/cases/6/checkpointReopened",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/native.json",
+          "pointer": "/cases/6/projectReopened",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/native.json",
+          "pointer": "/cases/7/checkpointReopened",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/native.json",
+          "pointer": "/cases/7/projectReopened",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/native.json",
+          "pointer": "/cases/8/checkpointReopened",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/native.json",
+          "pointer": "/cases/8/projectReopened",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/native.json",
+          "pointer": "/cases/9/checkpointReopened",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/native.json",
+          "pointer": "/cases/9/projectReopened",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/managed.json",
+          "pointer": "/cases/0/state",
+          "expected": "review_ready",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/managed.json",
+          "pointer": "/cases/1/state",
+          "expected": "review_ready",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/managed.json",
+          "pointer": "/cases/2/state",
+          "expected": "review_ready",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/managed.json",
+          "pointer": "/cases/3/state",
+          "expected": "review_ready",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/managed.json",
+          "pointer": "/cases/4/state",
+          "expected": "review_ready",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/managed.json",
+          "pointer": "/cases/5/state",
+          "expected": "review_ready",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/native.json",
+          "pointer": "/sourcePreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/native.json",
+          "pointer": "/isolatedSkillPreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/native.json",
+          "pointer": "/cases/10/movedLinksValid",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/native.json",
+          "pointer": "/cases/11/transactions",
+          "expected": 2,
+          "level": "native-fixed-install"
+        }
+      ]
+    },
+    {
+      "scenario": "VC-DM-002-N",
+      "checks": [
+        {
+          "report": "docs/evidence/vc-dm-002/native.json",
+          "pointer": "/cases/12/status",
+          "expected": "restored_after_failure",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/native.json",
+          "pointer": "/cases/12/checkpointReopened",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/native.json",
+          "pointer": "/cases/12/invocations",
+          "expected": 1,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/native.json",
+          "pointer": "/cases/12/replayAllowed",
+          "expected": false,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/native.json",
+          "pointer": "/cases/13/status",
+          "expected": "unknown",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/native.json",
+          "pointer": "/cases/13/invocations",
+          "expected": 1,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/native.json",
+          "pointer": "/cases/13/replayAllowed",
+          "expected": false,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/fault-known.json",
+          "pointer": "/operations/0/status",
+          "expected": "restored_after_failure",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/fault-unknown.json",
+          "pointer": "/operations/0/status",
+          "expected": "unknown",
+          "level": "native-fixed-install"
+        }
+      ]
+    },
+    {
+      "scenario": "VC-DM-002-MANAGED",
+      "checks": [
+        {
+          "report": "docs/evidence/vc-dm-002/managed.json",
+          "pointer": "/cases/0/state",
+          "expected": "review_ready",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/managed.json",
+          "pointer": "/cases/1/state",
+          "expected": "review_ready",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/managed.json",
+          "pointer": "/cases/2/state",
+          "expected": "review_ready",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/managed.json",
+          "pointer": "/cases/3/state",
+          "expected": "review_ready",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/managed.json",
+          "pointer": "/cases/4/state",
+          "expected": "review_ready",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/managed.json",
+          "pointer": "/cases/5/state",
+          "expected": "review_ready",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/managed.json",
+          "pointer": "/cases/0/sameKeyStable",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/managed.json",
+          "pointer": "/cases/1/sameKeyStable",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/managed.json",
+          "pointer": "/cases/3/sameKeyStable",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/managed.json",
+          "pointer": "/cases/4/sameKeyStable",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/selection.json",
+          "pointer": "/cases/1/expectedFailure",
+          "expected": "revision_outside_authorization",
+          "level": "native-sdk-guard-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/selection.json",
+          "pointer": "/cases/1/nativeMutationNotSubmitted",
+          "expected": true,
+          "level": "native-sdk-guard-fixed-install"
+        }
+      ]
+    },
+    {
+      "scenario": "VC-DM-002-MANAGED-N",
+      "checks": [
+        {
+          "report": "docs/evidence/vc-dm-002/managed.json",
+          "pointer": "/cases/6/mutationNotSubmitted",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/managed.json",
+          "pointer": "/cases/6/sourcePreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/managed.json",
+          "pointer": "/cases/6/automaticReplayRefused",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/managed.json",
+          "pointer": "/cases/6/ownedProcessStopped",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/managed.json",
+          "pointer": "/cases/7/mutationNotSubmitted",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/managed.json",
+          "pointer": "/cases/7/sourcePreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/managed.json",
+          "pointer": "/cases/7/automaticReplayRefused",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/managed.json",
+          "pointer": "/cases/7/ownedProcessStopped",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/selection.json",
+          "pointer": "/cases/0/expectedFailure",
+          "expected": "revision_selection_identity_mismatch",
+          "level": "native-sdk-guard-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/selection.json",
+          "pointer": "/cases/0/nativeMutationNotSubmitted",
+          "expected": true,
+          "level": "native-sdk-guard-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-002/selection.json",
+          "pointer": "/cases/0/sourceUnchanged",
+          "expected": true,
+          "level": "native-sdk-guard-fixed-install"
+        }
+      ]
+    }
+  ]
+}
