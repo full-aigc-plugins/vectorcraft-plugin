@@ -67,7 +67,7 @@ python3 -I -B "$SKILL_DIR/scripts/bootstrap.py"
 
 | **vectorcraft-cli-selection** | 使用 VectorCraft 精确选择对象或按属性筛选品牌修改候选，核对画板和非目标对象；首次使用安装固定 CLI。 |
 
-缺少技能：`npx skills add full-aigc-skills/vectorcraft-skills --skill <skill-name>`。每项自带安装与执行资源；直接执行本技能 `scripts/cli.py` 也可查询当前 CLI，不依赖兄弟路径。
+缺少技能：`npx skills add full-aigc-skills/vectorcraft-skills --skill <skill-name>`。每项自带安装与执行资源；直接执行本技能 `scripts/cli.py` 也可查询当前 CLI，不依赖兄弟路径。 原生工程读写根目录及原始 CLI 的授权参数见 [文件权限边界](references/filesystem-permissions.md)。
 
 ## 品牌色 token
 

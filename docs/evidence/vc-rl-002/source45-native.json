@@ -1,0 +1,40 @@
+{
+  "schema": "vectorcraft-permissions-native-candidate/v1",
+  "result": "PASS",
+  "level": "native-candidate",
+  "sourceCandidateVersion": "0.1.0-dev.45",
+  "driverSha256": "3aaaa5f2d2580b8dbabb14c2f835ceb6cd445efafbd722548b42c32eba1d9120",
+  "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+  "sourceProjectSha256": "c1de3466c9af39d7756f6b1671c49eec23e4eaa6c09ea5d38be8ccd1aeb45a48",
+  "sourcePreserved": true,
+  "targetPaint": {
+    "type": "solid",
+    "color": {
+      "model": "rgb",
+      "r": 0.0,
+      "g": 1.0,
+      "b": 0.0
+    }
+  },
+  "controlTextPreserved": true,
+  "independentNativeReopen": true,
+  "reopenProcessStopped": true,
+  "files": {
+    "plan.json": "a86979400bbc4475c0166a300583bdda16ab37b9c806058b2507285115371edd",
+    "project.vectorcraft": "a6855104b46eb469c41792bcf276a28ffdcf8873a20f9d4be003a41ff2dc4b9b",
+    "exchange-loss.json": "744fcedc9cf5b8d5941f05716e92a386b39bf37560ed9b61f1d2a2261e5c1a4b",
+    "pdf-export-date.json": "c7381343ea6046fcb36ee719065592fecfe43967d2e134483e683a1913f566d3",
+    "native.json": "e8a126769de253a5352db28d577500b27700bd61d25c1044aec93d2006361266",
+    "artboard-1.pdf": "e048c75ca760a0603c7523dc8f92b9cfa66c8d7c76600389dff35f0252dfdf52",
+    "artboard-1.png": "099779df74d2eaffc1e4e67220d55bed8a3b686f0387fb4e1a981ddfcecd5e74",
+    "artboard-1.svg": "81575fef72584e8f9af32e854a8ee71d11b86d5fa630a86b90ba8aaa11fcd45e",
+    "operations.json": "d806c9f21130f36a1dc0dfa6fece57ede2a18af75b2a93f2c6ed8a07f9de2ebd",
+    "lineage.json": "f2b6f84f38ab16c4154818e96d3e0520cc7974f466b6454e709439098be583e2"
+  },
+  "exports": [
+    "svg",
+    "pdf",
+    "png"
+  ],
+  "scope": "Actual source candidate native revision,three exports and independent reopen under filtered environments and explicit kernel file scopes;not host routing,secret-reference resolution,complete entry-point audit or fixed plugin qualification"
+}

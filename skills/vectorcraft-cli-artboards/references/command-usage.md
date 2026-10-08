@@ -126,3 +126,7 @@ Every object must use unique JSON keys, including the root, operations and neste
 `object-layout-revise.json` 和 `selection-brand-revise.json` 中的 `{"$ref":"target.id"}` 是待填充模板。先从当前工程的创建或原生检查回执取得对象整数 ID，在新计划中将这些引用替换为该整数，再使用 `--input project=/absolute/project.vectorcraft` 执行。`--input NAME=FILE` 仅登记 `NAME.path` 和 `NAME.sha256`，不会读取 JSON 文件内容作为对象字段；传入 `--input target=object.json` 不能直接解析 `target.id`。保留原回执、原工程摘要及填充后计划摘要以供核验。
 
 For command revision templates, replace each `target.id` reference with the integer ID from the current native create/inspection receipt before running the new plan. `--input NAME=FILE` provides only `NAME.path` and `NAME.sha256`; it does not load JSON fields. Preserve the receipt, source project hash and rendered plan hash.
+
+## 文件权限 / File permissions
+
+原始 CLI 的工程访问需显式授权根目录，完整命令与工作流的原生执行使用限定根目录。参见 [文件权限边界](filesystem-permissions.md)。

@@ -277,7 +277,9 @@ def execute(plan, output, runtime_home=None, mode="headless", connect=None, toke
         installed = installer(lock, runtime_home or os.environ.get("CRAFT_RUNTIME_HOME",
                                str(Path.home() / ".local/share/craft-runtimes")))
         receipt["runtimeSha256"] = installed["binarySha256"]
-        session_factory = session_factory or load("mcp_session").Session
+        if session_factory is None:
+            session_type=load("mcp_session").Session
+            session_factory=lambda argv:session_type(argv,filesystem={"readRoots":[str(output)],"writeRoots":[str(output)]})
         bindings = {"output": "" if DOMAIN == "photocraft" else str(output)}
         receipt["inputs"] = {}
         if sources:

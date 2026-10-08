@@ -15,13 +15,15 @@ _spec.loader.exec_module(_commands)
 
 
 class Session:
-    def __init__(self, argv, timeout=120, control=None):
+    def __init__(self, argv, timeout=120, control=None, filesystem=None):
         self.control = control
+        self.filesystem = filesystem
         self.timeout = timeout
         self.buffer = b''
         self.sequence = 0
         self.stderr = tempfile.TemporaryFile()
-        self.process = subprocess.Popen(argv, env=_commands.load('input_security').native_environment(), stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=self.stderr, preexec_fn=control.apply_limits if control else None)
+        launch = _commands.load('filesystem_scope').launch(argv,filesystem) if filesystem is not None else argv
+        self.process = subprocess.Popen(launch, env=_commands.load('input_security').native_environment(), stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=self.stderr, preexec_fn=control.apply_limits if control else None)
         try:
             if self.control:
                 self.control.emit('session_created', pid=self.process.pid)
@@ -41,6 +43,10 @@ class Session:
             raise RuntimeError('outcome_unknown: mcp_write_failed; request not retried') from None
 
     def request(self, method, params):
+        if self.filesystem is not None and method == 'tools/call' and isinstance(params, dict):
+            arguments = params.get('arguments', {})
+            if params.get('name') == 'run_command' and isinstance(arguments, dict):
+                _commands.load('filesystem_scope').authorize_command(arguments.get('command'), arguments.get('params', {}), self.filesystem)
         self.sequence += 1
         identifier = self.sequence
         if self.control:

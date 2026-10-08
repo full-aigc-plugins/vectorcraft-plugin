@@ -1,0 +1,140 @@
+{
+  "schema": "vectorcraft-candidate-standalone-cold/v1",
+  "result": "PASS",
+  "sourceCandidateVersion": "0.1.0-dev.45",
+  "level": "native-candidate",
+  "scope": "13 individually copied candidate skills and empty native-runtime directories; public locked downloads and 585-command discovery; not fixed plugin installation, host routing or exhaustive execution",
+  "driverSha256": "1bdf77df914c88172cbae9f9bb35aade08926266248e6115259a88eca4be23f4",
+  "cases": [
+    {
+      "skill": "vectorcraft-use",
+      "skillSha256": "dcd11ea6ae7ec42aebee8332f44086c207d792a17c7a2f204f88d62cb58689ad",
+      "version": "vectorcraft-cli 0.2.0-craft.2",
+      "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "commandsDiscovered": 585,
+      "freshRuntime": true,
+      "spaceInPath": true,
+      "skillUnchanged": true
+    },
+    {
+      "skill": "vectorcraft-cli",
+      "skillSha256": "2985af9c2fe3dce867e0907e85ad98bc41cd1f2107a6115b3362d6c3d8fa5a52",
+      "version": "vectorcraft-cli 0.2.0-craft.2",
+      "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "commandsDiscovered": 585,
+      "freshRuntime": true,
+      "spaceInPath": true,
+      "skillUnchanged": true
+    },
+    {
+      "skill": "vectorcraft-cli-setup",
+      "skillSha256": "22a4ea1c65d02d9e44e7befdcc420e9b6a62b9814a37f3f474723d769681c68b",
+      "version": "vectorcraft-cli 0.2.0-craft.2",
+      "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "commandsDiscovered": 585,
+      "freshRuntime": true,
+      "spaceInPath": true,
+      "skillUnchanged": true
+    },
+    {
+      "skill": "vectorcraft-cli-project",
+      "skillSha256": "6659593ff025e37879f90abd3f22a1bb5b2774f2f4f772b78c09e2ee623cc5c9",
+      "version": "vectorcraft-cli 0.2.0-craft.2",
+      "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "commandsDiscovered": 585,
+      "freshRuntime": true,
+      "spaceInPath": true,
+      "skillUnchanged": true
+    },
+    {
+      "skill": "vectorcraft-cli-paths",
+      "skillSha256": "4021bc8446f525cfb804ea6d2c776059cc2bcb47be1c864d3284dc25a3da293e",
+      "version": "vectorcraft-cli 0.2.0-craft.2",
+      "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "commandsDiscovered": 585,
+      "freshRuntime": true,
+      "spaceInPath": true,
+      "skillUnchanged": true
+    },
+    {
+      "skill": "vectorcraft-cli-shapes",
+      "skillSha256": "96bf92903da89b580c7d8fda5a580e3d4ebf7e1926943b17a389637bcf55187b",
+      "version": "vectorcraft-cli 0.2.0-craft.2",
+      "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "commandsDiscovered": 585,
+      "freshRuntime": true,
+      "spaceInPath": true,
+      "skillUnchanged": true
+    },
+    {
+      "skill": "vectorcraft-cli-boolean",
+      "skillSha256": "1235e475ada287ff7277560b3151d387e4c4bc49c8c9126f0abfcc9a53ad0ee7",
+      "version": "vectorcraft-cli 0.2.0-craft.2",
+      "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "commandsDiscovered": 585,
+      "freshRuntime": true,
+      "spaceInPath": true,
+      "skillUnchanged": true
+    },
+    {
+      "skill": "vectorcraft-cli-text",
+      "skillSha256": "215782178a06ca34e888eb508a7b5b70232da6f75c1b60120bbc7c5642baf41f",
+      "version": "vectorcraft-cli 0.2.0-craft.2",
+      "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "commandsDiscovered": 585,
+      "freshRuntime": true,
+      "spaceInPath": true,
+      "skillUnchanged": true
+    },
+    {
+      "skill": "vectorcraft-cli-appearance",
+      "skillSha256": "99230d28601c0a45abc3e5df149f57644a2f13c8ddb025bc71a2f9f4b35bd698",
+      "version": "vectorcraft-cli 0.2.0-craft.2",
+      "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "commandsDiscovered": 585,
+      "freshRuntime": true,
+      "spaceInPath": true,
+      "skillUnchanged": true
+    },
+    {
+      "skill": "vectorcraft-cli-artboards",
+      "skillSha256": "2546cd48406424c7ba3cf347478f4e8fd6241c98b8427849a7ef6146d285a723",
+      "version": "vectorcraft-cli 0.2.0-craft.2",
+      "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "commandsDiscovered": 585,
+      "freshRuntime": true,
+      "spaceInPath": true,
+      "skillUnchanged": true
+    },
+    {
+      "skill": "vectorcraft-cli-assets",
+      "skillSha256": "b1c50cc7ba1f84cee63166510a3e77d0b2219f9dc8046b304a6db844005d592f",
+      "version": "vectorcraft-cli 0.2.0-craft.2",
+      "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "commandsDiscovered": 585,
+      "freshRuntime": true,
+      "spaceInPath": true,
+      "skillUnchanged": true
+    },
+    {
+      "skill": "vectorcraft-cli-export",
+      "skillSha256": "73585304b78d22dd59e504529788026bcee77ffcf6e7b042c397c186eae80b21",
+      "version": "vectorcraft-cli 0.2.0-craft.2",
+      "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "commandsDiscovered": 585,
+      "freshRuntime": true,
+      "spaceInPath": true,
+      "skillUnchanged": true
+    },
+    {
+      "skill": "vectorcraft-cli-selection",
+      "skillSha256": "73d88f8b8fc2c92b0a38222315cc0da038ec677fec6f046668da3e94c5872927",
+      "version": "vectorcraft-cli 0.2.0-craft.2",
+      "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "commandsDiscovered": 585,
+      "freshRuntime": true,
+      "spaceInPath": true,
+      "skillUnchanged": true
+    }
+  ]
+}

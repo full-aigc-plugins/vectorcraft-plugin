@@ -24,6 +24,8 @@ def main():
  parser=argparse.ArgumentParser(description=__doc__)
  parser.add_argument('--runtime-home',default=os.environ.get('CRAFT_RUNTIME_HOME',str(Path.home()/'.local/share/craft-runtimes')))
  parser.add_argument('--archive',type=Path)
+ parser.add_argument('--read-root',action='append',default=[],help='trusted authorized native input root; repeatable')
+ parser.add_argument('--write-root',action='append',default=[],help='trusted authorized native output root; repeatable')
  parser.add_argument('arguments',nargs=argparse.REMAINDER)
  args=parser.parse_args();argv=args.arguments
  if argv[:1]==['--']:argv=argv[1:]
@@ -34,7 +36,10 @@ def main():
   module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
   installed=module.install(json.loads(path.with_name('runtime.lock.json').read_text()),args.runtime_home,args.archive)
   installation_completed=True
-  result=subprocess.run([installed['executable'],*argv],timeout=600,env=_native_environment())
+  import runpy
+  filesystem=runpy.run_path(str(Path(__file__).with_name('filesystem_scope.py')))
+  launch=filesystem['launch']([installed['executable'],*argv],{'readRoots':args.read_root,'writeRoots':args.write_root})
+  result=subprocess.run(launch,timeout=600,env=_native_environment())
   return result.returncode
  except (ValueError,OSError,subprocess.SubprocessError) as error:
   reply={'error':str(error),'result':'unknown' if isinstance(error,subprocess.TimeoutExpired) else 'failed'}

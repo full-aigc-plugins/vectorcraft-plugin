@@ -10,7 +10,7 @@
 
 Logo、图标与品牌图形需求进入，交付 `.vectorcraft` 及适用的 SVG、PDF、PNG。
 
-当前插件：`0.1.0-dev.64`；技能源：`0.1.0-dev.44`；13 个独立技能。候选64尚未发布，公开63仍保留源43。
+当前插件：`0.1.0-dev.64`；技能源：`0.1.0-dev.45`；13 个独立技能。候选64尚未发布，公开63仍保留源43。
 
 插件55／源41增加SVG实际图像范围及摘要绑定的技术披露门禁；最小任务4.13／4.14通过，4.15当前无界面场景验收通过。[架构](docs/VectorCraft-Exchange-Scope.zh_CN.md)。
 
@@ -139,7 +139,7 @@ Intent + assets
 | Plugin ID | vectorcraft |
 | Metadata version | 0.1.0-dev.64 |
 | Stage | implementation-in-progress |
-| Skills source | vectorcraft-skills / v0.1.0-dev.44 |
+| Skills source | vectorcraft-skills / v0.1.0-dev.45 |
 | Execution | 上游 CLI；ArtCraft 使用子适配器 |
 | Host compatibility | Public63 bounded Codex install/discovery verified; candidate64 fixed-host qualification pending |
 | License | Apache-2.0 (original repository content) |
@@ -430,3 +430,5 @@ VC-RL-001两场景完成：发布者只读门禁分别核验插件结构、独�
 权限与秘密边界正在实施：本地候选已限制七类子进程入口的环境继承、禁止向错误输出转发原始子进程诊断、拒绝素材附加指令字段及明确命名的字面凭据；失败评审回执也不得将此类凭据写入审计表。8项定向测试和132项Node回归通过，146项Python测试通过；实际原生修订及后续技术检查消耗4次共享预算，相关进程组停止。本候选尚未公开固定分发或完成宿主秘密引用合同，7.4–7.6继续开放，当前仍120/127完成、7项开放。原发布63／源43不变；旧发布证据不得为改动后的工作树放行。该校验不声称识别任意正文中的秘密。 [Evidence](docs/evidence/vectorcraft-permissions-candidate-20261009.json).
 
 候选64已锁定公开技能源44（e5f8e1bb8528），旧63／源43保持不可变。源44的183项回归通过、30项跳过、6项目标测试及13项真实独立冷安装通过；候选插件132项Node与146项Python回归通过，实际原生修订和后续技术检查消耗4次共享预算并停止相关进程组。源44主分支和标签CI通过；插件64仍未公开固定分发，宿主秘密引用、完整权限入口审计与VC-RL-002全部场景尚待完成，7.4–7.6继续开放，总体120/127完成、7项开放。 [Evidence](docs/evidence/vectorcraft-permissions-integration-candidate64-20261009.json).
+
+候选插件64现锁定公开源45（a4b1e624818f）。源45的28项权限测试、193项回归（48跳过）、13项真实独立冷安装及原生修订／三导出／独立重开通过，包含真实GUI保存重开和绕过Python预检后的内核拒绝。当前插件132项Node／146项Python回归及原生修订检查通过，4次共享预算内停止所有拥有的进程组。旧源44快照与执行记录按原始字节归档。Python素材预检授权、实际宿主秘密引用与固定插件64权限验收仍开放；120/127完成、7项开放，候选64未发布，V1及市场资格未获得。 [Evidence](docs/evidence/vectorcraft-permissions-filesystem-integration-candidate64-20261009.json).

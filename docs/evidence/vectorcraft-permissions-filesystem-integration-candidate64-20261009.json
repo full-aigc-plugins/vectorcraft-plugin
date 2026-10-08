@@ -1,0 +1,69 @@
+{
+  "schema": "vectorcraft-permissions-integration-candidate/v1",
+  "result": "PASS",
+  "level": "native-candidate",
+  "pluginVersion": "0.1.0-dev.64",
+  "sourceRef": "v0.1.0-dev.45",
+  "sourceCommit": "a4b1e624818f72880f04f75f7b99e0979c4b8944",
+  "publishedPlugin": false,
+  "completedTasks": [],
+  "sourceCI": [
+    {
+      "run": 37852532745,
+      "result": "success"
+    },
+    {
+      "run": 37852527907,
+      "result": "success"
+    }
+  ],
+  "sourceTargetTests": 28,
+  "sourceRegression": {
+    "total": 241,
+    "passed": 193,
+    "skipped": 48
+  },
+  "standaloneColdCases": 13,
+  "pluginNodeTests": 132,
+  "pluginPythonTests": 146,
+  "nativeBudgetAttempts": 4,
+  "scope": "Unpublished64/source45 integration:kernel native file roots and pre-RPC guards,28 source targets including signed GUI and direct kernel refusals,13 real independent cold installs;actual plugin native revision/check uses four shared attempts and stops owned groups;not fixed64 qualification or complete VC-RL-002",
+  "pending": [
+    "Python asset preflight authorization audit",
+    "host secret-reference contract",
+    "fixed public plugin64 qualification and all VC-RL-002 scenarios",
+    "real host/model routing and creative conclusions"
+  ],
+  "fingerprints": {
+    "plugin.json": "60e59b0f5f44bf657e0554e25a20c5e99e774af7c2ad9f1602590cd5bff6f712",
+    "skills.lock.json": "e1dfde91051afd5a9dd4d8231171f991df69698e976f3af96b7b8ffd6ed2d528",
+    "docs/current-identity.json": "99f0a5feda51a8362724f84741402eb939b8169eb05bca91bb97be4966ca337f",
+    "docs/skills-source-plan.json": "5be8276b52f7323ae6312071929393ec89749dd18486d2fb957aa3972f5154e0",
+    "src/harness/native_environment.ts": "fec69bc8d8aa148feb7708af2ac9e10bc140389cc8e27e24468c8fb9bf318dc0",
+    "src/harness/input_policy.ts": "02e153e37675821008226edffed71bab0055205dfa75602e954f51086bcbf3a5",
+    "src/harness/controller.ts": "2ad9f5cf6e324806d468519ad71e3c71de215fb9edf8bcc65b30010d69f1fe8c",
+    "src/runtime/prepare_runtime.ts": "5ded468dbc3074d1a770bb438527474d2f2a86a35aaa01dc6ee1b27fa8c05fd5",
+    "src/evaluation/review_store.ts": "44d838936737967a032aedcf59c456770b18c3b2fea462858765307a5da1b8f7",
+    "src/evaluation/technical_review.ts": "4ffc30b01b96ca0a4e5051996ed95d420d2d527cdaecb9a4770bda25119c3a49",
+    "src/harness/recovery.ts": "7a07a0296921d2e6b75f9ce05c506503f95cd3fe7ac7cffd0a49cd42ae8f0a94",
+    "src/harness/launch_recovery.ts": "baae4fc69b2577df52f576b6ff5e593d5b48e6f871574d13910eab96f0b11b89",
+    "src/harness/process_registry.ts": "50fccff148a0aa11b2b84e9c4ddb44b8ff45dca554e0fc3c2e24ce0d754caa15",
+    "src/cli.ts": "e8838911d359dfcdb4c060b1b13fd428513786c1bc87f110810106082f8622f2",
+    "tests/permissions_environment.test.ts": "4081d40da8ccba27ae5a8d893d0b27ed9a92cd505d7f1f385f8b1315869f403b",
+    "tests/test_release_gate.py": "99f540030f005d1adc9ff23c39ee1fe05178254fbddee4d7622f8ce8def9d7d3",
+    "scripts/qa/revision_budget.ts": "a5601841c8e76d9ca143060df7a21e27722612c2b4b7892e3215218ca3275e47",
+    "docs/evidence/vc-rl-002/source45-cold.json": "69872dfd679546029c5762fd72fae63886982952e8677726409529554e4f48bd",
+    "docs/evidence/vc-rl-002/source45-native.json": "6e556bba032ec1b39ef4a3ed24d2a501b120eb2bf1052d080bed76228e649647",
+    "docs/evidence/vc-rl-002/source45-candidate.json": "1177d6489fc67464db9c6cbf54df208470a0fd0d048b65faea6c0e6c30d1f786",
+    "docs/evidence/vc-rl-002/source45-target.log.txt": "5415ea6f877c9e042df84b5021d2295c8ed9ad5255786151d030e230c31b04af",
+    "docs/evidence/vc-rl-002/plugin64-source45-native-candidate.json": "7e7c52234ad8e8b9c95685b23adb0775029a5c46f499fab580ccf1f882379d5c",
+    "docs/evidence/vc-rl-002/plugin64-source45-python.log.txt": "e1c78c565d0ed623fc78695dfd20487ee05c02ad8cd5ce4b30ad37b3535b339a",
+    "docs/evidence/vc-rl-002/plugin64-source45-node.log.txt": "d0a1031b2ba62f35953ffea111acc324c5c8f6988ff72546e0e537d19fd95b8f",
+    "skills/vectorcraft-use/scripts/filesystem_scope.py": "1389cbaab07470cae0f00a7cbbe54c74170ca03d4bba49815d03571ad441f3c5",
+    "skills/vectorcraft-use/scripts/mcp_session.py": "b4eea16b83d31377c4d4c1d2e0933120962a89fe6bce55bda240f659952474eb",
+    "skills/vectorcraft-use/scripts/commands.py": "5e39c3f0d238727e7f5cb9ec821cf517301a859c385dac27ee015d75c57c9190",
+    "skills/vectorcraft-use/scripts/workflow.py": "fc2c3057afbac010b67a923958a365ec87b5c7775ed9e4bd200d40c10ff989d0",
+    "skills/vectorcraft-use/scripts/cli.py": "a1166ea4ffe0dad96666f5dd8fd9c983a26f2734d826b5774fa4ebb123053f5c",
+    "skills/vectorcraft-use/scripts/desktop_session.py": "e87d5df29c7e5ead4b7e3ebcbdf4c6361f65da8d3df1681c4822363b6b23a687"
+  }
+}

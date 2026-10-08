@@ -20,6 +20,9 @@ class OwnedSession:
    env['PHOTOCRAFT_CONFIG_DIR']=str(data);args+=['--control-token-file',str(self.token_file),'--automation-read-root',str(self.output),'--automation-write-root',str(self.output)]
   elif self.domain=='vectorcraft':env['VECTORCRAFT_NO_PREFS']='1';env['VECTORCRAFT_NO_NATIVE_MENU']='1'
   else:raise ValueError('unsupported_desktop_domain')
+  scope={'readRoots':[str(self.output)],'writeRoots':[str(self.output)],'ports':[self.port]}
+  if self.domain=='vectorcraft':
+   args=load('filesystem_scope').launch(args,{**scope,'resources':[self.desktop['app']],'graphics':True})
   try:
    self.log=(self.output/'desktop.log').open('w');self.process=subprocess.Popen(args,env=env,stdout=self.log,stderr=subprocess.STDOUT);deadline=time.monotonic()+45
    while time.monotonic()<deadline:
@@ -27,7 +30,7 @@ class OwnedSession:
     if owned_listener(self.process,self.port):self.listener_verified=True;break
     time.sleep(.2)
    else:raise TimeoutError('desktop_start_timeout: no owned loopback listener')
-   self.session=load('mcp_session').Session(self.argv);return self
+   self.session=(load('mcp_session').Session(self.argv,filesystem=scope) if self.domain=='vectorcraft' else load('mcp_session').Session(self.argv));return self
   except BaseException:
    self.close();raise
  def request(self,*args):return self.session.request(*args)

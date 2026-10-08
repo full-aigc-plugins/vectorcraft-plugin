@@ -210,3 +210,5 @@ flowchart LR
 独立技能源45完成固定macOS arm64原生文件根目录适配：完整命令、主工作流、原始CLI及拥有的签名GUI均使用明确根目录，已知文件命令在RPC发送前拒绝越界；GUI后台保存受理不能代替落盘证明。28项目标测试通过，含绕过Python预检后的真实内核拒绝及GUI保存／重开；241项回归中193项通过、48项跳过；13项独立冷安装及当前源码原生修订／三导出／独立重开通过。[独立源码证据](https://github.com/full-aigc-skills/vectorcraft-skills/blob/v0.1.0-dev.45/docs/evidence/permissions-candidate45-20261009.json)。
 
 此候选尚未进入插件64锁定快照；当前插件仍锁源44。Python素材预检授权、实际宿主秘密引用及新固定插件权限验收仍需继续实施，7.4–7.6及其余四项任务保持开放。不得用独立技能源的局部验证替代插件六层发布门禁。
+
+后续集成已通过正常vendor锁定公开源45；前述“尚未进入插件64”是集成前阶段记录。旧源44完整快照保留于 `docs/evidence/pre-filesystem-source45-identity/`。当前身份以技能锁和current-identity为准，源45集成候选证据不授予固定64发布资格。

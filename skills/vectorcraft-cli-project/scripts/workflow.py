@@ -208,7 +208,12 @@ def execute(plan, output, runtime_home=None, source=None, control=None):
     execution_identity = {'planHash': hashlib.sha256(json.dumps(plan, sort_keys=True, separators=(',', ':'), allow_nan=False).encode()).hexdigest(),
                          'inputHashes': {name: asset['sha256'] for name, asset in input_assets.items()},
                          'projectRevision': source_hash, 'runtimeSha256': installed['binarySha256']}
-    with guard_module.claim(output, execution_identity), recovery_module.preserved_stage(output, '.vectorcraft-', recovery_state) as temporary, (session_module.Session([cli, 'mcp', '--headless'], control=control) if control else session_module.Session([cli, 'mcp', '--headless'])) as session:
+    def scoped_session(stage_root):
+        # 原生操作只获得可信调用层绑定的源目录和暂存目录；计划不能扩展能力。
+        read_roots = [str(stage_root)] + ([str(source)] if source else [])
+        policy = {'readRoots': read_roots, 'writeRoots': [str(stage_root)]}
+        return session_module.Session([cli, 'mcp', '--headless'], control=control, filesystem=policy)
+    with guard_module.claim(output, execution_identity), recovery_module.preserved_stage(output, '.vectorcraft-', recovery_state) as temporary, scoped_session(Path(temporary)) as session:
         stage = Path(temporary)
         if control:
             control.attach_stage(stage)
@@ -371,7 +376,7 @@ def execute(plan, output, runtime_home=None, source=None, control=None):
             stage = delivery
             project = stage / 'project.vectorcraft'
             command('document.open', {'path': str(project)}, save=False)
-        reopened = session_module.Session([cli, 'mcp', '--headless'], control=control) if control else session_module.Session([cli, 'mcp', '--headless'])
+        reopened = scoped_session(Path(temporary))
         with reopened:
             reopened.command('document.open', {'path': str(project)})
             native = reopened.command('document.json', {})
@@ -435,8 +440,7 @@ def execute(plan, output, runtime_home=None, source=None, control=None):
             (stage / 'brand-dependencies.json').write_text(json.dumps({'schema': 'vectorcraft-brand-dependencies/v1',
                 'checks': brand_checks}, ensure_ascii=False, indent=2) + '\n')
         native_module().commands.load('boolean_transactions').collect_checkpoints(
-            Path(temporary), stage, lambda: (session_module.Session([cli, 'mcp', '--headless'], control=control)
-                                            if control else session_module.Session([cli, 'mcp', '--headless'])))
+            Path(temporary), stage, lambda: scoped_session(Path(temporary)))
         for checkpoint in managed_checkpoints:
             checkpoint.unlink()
         saved_plan = {**plan, **({'assets': {name: {'path': entry['path'], 'sha256': entry['sha256']} for name, entry in assets.items()}} if assets else {})}
