@@ -1,6 +1,6 @@
 {
   "schema": "vectorcraft-evidence-index/v1",
-  "identitySha256": "31787cfda06f181c34c858ca98eda504bcb11bc454814274343f7e18a36ac909",
+  "identitySha256": "09b14f8ef696cbdb3a49e99cb93c7780cb97cfecb39282f1b056c2fdabe9f60a",
   "entries": [
     {
       "path": "docs/evidence/craft-vector37-gateway-export-fixed-first-use-20261008.json",
@@ -606,7 +606,7 @@
       "tasks": [],
       "historical": true,
       "dependencies": {
-        "src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
+        "docs/evidence/pre-quality-roots-identity/src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
         "docs/evidence/pre-exchange-identity/src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
         "docs/evidence/pre-quality-checker-identity/src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
         "src/evaluation/revision_cycle.ts": "019a80ddf7ca9fa80737934ad65efb3cf5e66c17b180e25d32091123ac25185f",
@@ -672,7 +672,7 @@
       "tasks": [],
       "historical": true,
       "dependencies": {
-        "src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
+        "docs/evidence/pre-quality-roots-identity/src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
         "docs/evidence/pre-exchange-identity/src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
         "docs/evidence/pre-quality-checker-identity/src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
         "src/evaluation/revision_cycle.ts": "019a80ddf7ca9fa80737934ad65efb3cf5e66c17b180e25d32091123ac25185f",
@@ -736,7 +736,7 @@
       "tasks": [],
       "historical": true,
       "dependencies": {
-        "src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
+        "docs/evidence/pre-quality-roots-identity/src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
         "docs/evidence/pre-exchange-identity/src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
         "docs/evidence/pre-quality-checker-identity/src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
         "src/evaluation/revision_cycle.ts": "019a80ddf7ca9fa80737934ad65efb3cf5e66c17b180e25d32091123ac25185f",
@@ -810,7 +810,7 @@
       "tasks": [],
       "historical": true,
       "dependencies": {
-        "src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
+        "docs/evidence/pre-quality-roots-identity/src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
         "docs/evidence/pre-exchange-identity/src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
         "docs/evidence/pre-quality-checker-identity/src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
         "src/evaluation/revision_cycle.ts": "019a80ddf7ca9fa80737934ad65efb3cf5e66c17b180e25d32091123ac25185f",
@@ -878,7 +878,7 @@
       "tasks": [],
       "historical": true,
       "dependencies": {
-        "src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
+        "docs/evidence/pre-quality-roots-identity/src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
         "docs/evidence/pre-exchange-identity/src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
         "docs/evidence/pre-quality-checker-identity/src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
         "src/evaluation/revision_cycle.ts": "019a80ddf7ca9fa80737934ad65efb3cf5e66c17b180e25d32091123ac25185f",
@@ -948,7 +948,7 @@
       ],
       "historical": true,
       "dependencies": {
-        "src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
+        "docs/evidence/pre-quality-roots-identity/src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
         "docs/evidence/pre-exchange-identity/src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
         "docs/evidence/pre-quality-checker-identity/src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
         "src/evaluation/revision_cycle.ts": "019a80ddf7ca9fa80737934ad65efb3cf5e66c17b180e25d32091123ac25185f",
@@ -1016,7 +1016,7 @@
       "tasks": [],
       "historical": true,
       "dependencies": {
-        "src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
+        "docs/evidence/pre-quality-roots-identity/src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
         "docs/evidence/pre-exchange-identity/src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
         "docs/evidence/pre-quality-checker-identity/src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
         "src/evaluation/revision_cycle.ts": "019a80ddf7ca9fa80737934ad65efb3cf5e66c17b180e25d32091123ac25185f",
@@ -1083,7 +1083,7 @@
       "tasks": [],
       "historical": true,
       "dependencies": {
-        "src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
+        "docs/evidence/pre-quality-roots-identity/src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
         "docs/evidence/pre-exchange-identity/src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
         "docs/evidence/pre-quality-checker-identity/src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
         "src/evaluation/revision_cycle.ts": "019a80ddf7ca9fa80737934ad65efb3cf5e66c17b180e25d32091123ac25185f",
@@ -1151,7 +1151,7 @@
       "tasks": [],
       "historical": true,
       "dependencies": {
-        "src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
+        "docs/evidence/pre-quality-roots-identity/src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
         "docs/evidence/pre-exchange-identity/src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
         "docs/evidence/pre-quality-checker-identity/src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
         "src/evaluation/revision_cycle.ts": "019a80ddf7ca9fa80737934ad65efb3cf5e66c17b180e25d32091123ac25185f",
@@ -1221,7 +1221,7 @@
       "tasks": [],
       "historical": true,
       "dependencies": {
-        "src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
+        "docs/evidence/pre-quality-roots-identity/src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
         "docs/evidence/pre-exchange-identity/src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
         "docs/evidence/pre-quality-checker-identity/src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
         "src/evaluation/revision_cycle.ts": "019a80ddf7ca9fa80737934ad65efb3cf5e66c17b180e25d32091123ac25185f",
@@ -1296,7 +1296,7 @@
       "tasks": [],
       "historical": true,
       "dependencies": {
-        "src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
+        "docs/evidence/pre-quality-roots-identity/src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
         "docs/evidence/pre-exchange-identity/src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
         "docs/evidence/pre-quality-checker-identity/src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
         "src/evaluation/revision_cycle.ts": "019a80ddf7ca9fa80737934ad65efb3cf5e66c17b180e25d32091123ac25185f",
@@ -1368,7 +1368,7 @@
       "tasks": [],
       "historical": true,
       "dependencies": {
-        "src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
+        "docs/evidence/pre-quality-roots-identity/src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
         "docs/evidence/pre-exchange-identity/src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
         "docs/evidence/pre-quality-checker-identity/src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
         "src/evaluation/revision_cycle.ts": "019a80ddf7ca9fa80737934ad65efb3cf5e66c17b180e25d32091123ac25185f",
@@ -1458,7 +1458,7 @@
       ],
       "historical": true,
       "dependencies": {
-        "src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
+        "docs/evidence/pre-quality-roots-identity/src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
         "docs/evidence/pre-exchange-identity/src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
         "docs/evidence/pre-quality-checker-identity/src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
         "src/evaluation/revision_cycle.ts": "019a80ddf7ca9fa80737934ad65efb3cf5e66c17b180e25d32091123ac25185f",
@@ -1546,7 +1546,7 @@
       "tasks": [],
       "historical": true,
       "dependencies": {
-        "src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
+        "docs/evidence/pre-quality-roots-identity/src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
         "docs/evidence/pre-exchange-identity/src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
         "docs/evidence/pre-quality-checker-identity/src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
         "src/evaluation/revision_cycle.ts": "019a80ddf7ca9fa80737934ad65efb3cf5e66c17b180e25d32091123ac25185f",
@@ -1633,7 +1633,7 @@
       ],
       "historical": true,
       "dependencies": {
-        "src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
+        "docs/evidence/pre-quality-roots-identity/src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
         "docs/evidence/pre-exchange-identity/src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
         "docs/evidence/pre-quality-checker-identity/src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
         "src/evaluation/revision_cycle.ts": "019a80ddf7ca9fa80737934ad65efb3cf5e66c17b180e25d32091123ac25185f",
@@ -1721,7 +1721,7 @@
       ],
       "historical": true,
       "dependencies": {
-        "src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
+        "docs/evidence/pre-quality-roots-identity/src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
         "docs/evidence/pre-exchange-identity/src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
         "docs/evidence/pre-quality-checker-identity/src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
         "src/evaluation/revision_cycle.ts": "019a80ddf7ca9fa80737934ad65efb3cf5e66c17b180e25d32091123ac25185f",
@@ -2752,10 +2752,10 @@
       "sha256": "a729e908b20094dfbd709bb342873e293c1c9c70b4d1a8461e1cdf800b76ed75",
       "level": "local-tests",
       "status": "PASS",
-      "scope": "Readonly checker bundle identity and stale dependency regression; no task6.3 closure or fixed native acceptance",
+      "scope": "historical at original execution identity; Readonly checker bundle identity and stale dependency regression; no task6.3 closure or fixed native acceptance",
       "requirement": "VC-QA-001",
       "tasks": [],
-      "historical": false,
+      "historical": true,
       "dependencies": {
         "docs/evidence/vc-qa-001/python92.log.txt": "402f3a1464f161172fa73f0a44e27bb86055d750d8bb3e91ff6cc1ae014567cd",
         "docs/evidence/vc-qa-001/node118.log.txt": "dae354094954715f9f57bd42df8b123e0a922614f9678f86e38627414bfc5eb8",
@@ -2766,9 +2766,37 @@
         "src/evaluation/technical_review.ts": "503b8f9d8b3f62965eaf5237361bda2a0c7a406ab1768dc77be2ea182fe64f8d",
         "tests/technical_checker_identity.test.ts": "ae62fa3d4dce870f3c4bf0ce3df0a58299779ea2c40d72813903b56ba01c33e8",
         "tests/revision_cycle.test.ts": "7ef695d713f7b782a1c301876d40cd3e228f8c5886b165379f6a75132d2618b0",
-        "plugin.json": "3a3556b0f4d2f18eef6bbcfe127c0d828715bdfa604a4c838b9e87174798de8f",
-        "docs/current-identity.json": "31787cfda06f181c34c858ca98eda504bcb11bc454814274343f7e18a36ac909",
+        "docs/evidence/pre-quality-roots-identity/plugin.json": "3a3556b0f4d2f18eef6bbcfe127c0d828715bdfa604a4c838b9e87174798de8f",
+        "docs/evidence/pre-quality-roots-identity/docs/current-identity.json": "31787cfda06f181c34c858ca98eda504bcb11bc454814274343f7e18a36ac909",
         "skills.lock.json": "46255b049f5e3d14b45ca9fecbaf037cd55b1e8b8bb447d407cb16c55eb3758c",
+        "openspec/changes/establish-v1-plugin/specs/quality-review/spec.md": "60b8491854042fc69fe12898fefb57a85731ea7c23f264190b7fdf764fb32c54"
+      }
+    },
+    {
+      "path": "docs/evidence/vectorcraft-quality-roots-candidate61-20261009.json",
+      "sha256": "30ae216a0edd9c7de3c25cec142fcf78096fd2daa64fb7b8c74c93624b951b6a",
+      "level": "native-candidate",
+      "status": "PASS",
+      "scope": "Persisted checked read roots restored at public receipt CLI;19 candidate native boundary cases;fixed61 qualification remains open",
+      "requirement": "VC-QA-001",
+      "tasks": [],
+      "historical": false,
+      "dependencies": {
+        "docs/evidence/vc-qa-001/roots-red61.log.txt": "3f6118de24425c88c382b2344895f5a415337403d956b119054bc8955cf616b6",
+        "docs/evidence/vc-qa-001/roots-green61.log.txt": "eae10112c402480c405efca41b98145b43312189b491855c4828301174ec8528",
+        "docs/evidence/vc-qa-001/node119.log.txt": "b156c4d3974e3801d858c18746a2f34ad245be96ff89eef411c4ea550ded7452",
+        "docs/evidence/vc-qa-001/candidate61.json": "edaade5619e83130a0828d1c8d5a178c802f0e998d2b06aa53327e7bae3cb5f5",
+        "docs/evidence/vc-qa-001/native-candidate61-input.json": "93cc6ee97756298e42840fed5cbbbac398d3efa2ba410d6c11b97db64e44de29",
+        "src/cli.ts": "0e1ef0fb88c3afd8beb8ea837a64b0634c3c2990804a3fb3ea52440f94cbf859",
+        "src/evaluation/technical_review.ts": "503b8f9d8b3f62965eaf5237361bda2a0c7a406ab1768dc77be2ea182fe64f8d",
+        "src/evaluation/review_store.ts": "615b436f7d60450f8913d7fb2224ebddc68f8679699b4a7ae40ba7499081ead4",
+        "src/evaluation/checker_bundle.ts": "c2b57712374d5b2dcb7f5c6fc5c9d2f39a93353a4d74df54dd8e286e3fc90526",
+        "scripts/qa/quality_review_fixed.ts": "70b3556f7e2e8bb11349b721f8fa873c6a627e7b8a1585a7c4716b858f7b2dc8",
+        "scripts/qa/exchange_delivery.py": "6b66ccae7d9051b5c4548202d1bd4856a0597d50ec9be73be4caef13724211b4",
+        "tests/review_cli_roots.test.ts": "f186fdd0566a33f8095dc93893f72cf6f7fa428b7b385dfe7d8b91bf198d5152",
+        "plugin.json": "f7197ba7c45b09715584739ba69a66903240c7a2090223add55b307e9f94b3eb",
+        "skills.lock.json": "46255b049f5e3d14b45ca9fecbaf037cd55b1e8b8bb447d407cb16c55eb3758c",
+        "docs/current-identity.json": "09b14f8ef696cbdb3a49e99cb93c7780cb97cfecb39282f1b056c2fdabe9f60a",
         "openspec/changes/establish-v1-plugin/specs/quality-review/spec.md": "60b8491854042fc69fe12898fefb57a85731ea7c23f264190b7fdf764fb32c54"
       }
     }

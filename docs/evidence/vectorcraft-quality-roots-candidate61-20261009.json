@@ -1,0 +1,41 @@
+{
+  "schema": "vectorcraft-quality-roots-candidate/v1",
+  "result": "PASS",
+  "pluginVersion": "0.1.0-dev.61",
+  "sourceRef": "v0.1.0-dev.43",
+  "tasksClosed": [],
+  "tests": {
+    "redTargetFailures": 1,
+    "greenTargetPass": 1,
+    "nodePass": 119,
+    "nativeBoundaryCases": 19
+  },
+  "quality": "docs/evidence/vc-qa-001/candidate61.json",
+  "nativeInput": "docs/evidence/vc-qa-001/native-candidate61-input.json",
+  "fingerprints": {
+    "docs/evidence/vc-qa-001/roots-red61.log.txt": "3f6118de24425c88c382b2344895f5a415337403d956b119054bc8955cf616b6",
+    "docs/evidence/vc-qa-001/roots-green61.log.txt": "eae10112c402480c405efca41b98145b43312189b491855c4828301174ec8528",
+    "docs/evidence/vc-qa-001/node119.log.txt": "b156c4d3974e3801d858c18746a2f34ad245be96ff89eef411c4ea550ded7452",
+    "docs/evidence/vc-qa-001/candidate61.json": "edaade5619e83130a0828d1c8d5a178c802f0e998d2b06aa53327e7bae3cb5f5",
+    "docs/evidence/vc-qa-001/native-candidate61-input.json": "93cc6ee97756298e42840fed5cbbbac398d3efa2ba410d6c11b97db64e44de29",
+    "src/cli.ts": "0e1ef0fb88c3afd8beb8ea837a64b0634c3c2990804a3fb3ea52440f94cbf859",
+    "src/evaluation/technical_review.ts": "503b8f9d8b3f62965eaf5237361bda2a0c7a406ab1768dc77be2ea182fe64f8d",
+    "src/evaluation/review_store.ts": "615b436f7d60450f8913d7fb2224ebddc68f8679699b4a7ae40ba7499081ead4",
+    "src/evaluation/checker_bundle.ts": "c2b57712374d5b2dcb7f5c6fc5c9d2f39a93353a4d74df54dd8e286e3fc90526",
+    "scripts/qa/quality_review_fixed.ts": "70b3556f7e2e8bb11349b721f8fa873c6a627e7b8a1585a7c4716b858f7b2dc8",
+    "scripts/qa/exchange_delivery.py": "6b66ccae7d9051b5c4548202d1bd4856a0597d50ec9be73be4caef13724211b4",
+    "tests/review_cli_roots.test.ts": "f186fdd0566a33f8095dc93893f72cf6f7fa428b7b385dfe7d8b91bf198d5152",
+    "plugin.json": "f7197ba7c45b09715584739ba69a66903240c7a2090223add55b307e9f94b3eb",
+    "skills.lock.json": "46255b049f5e3d14b45ca9fecbaf037cd55b1e8b8bb447d407cb16c55eb3758c",
+    "docs/current-identity.json": "09b14f8ef696cbdb3a49e99cb93c7780cb97cfecb39282f1b056c2fdabe9f60a",
+    "openspec/changes/establish-v1-plugin/specs/quality-review/spec.md": "60b8491854042fc69fe12898fefb57a85731ea7c23f264190b7fdf764fb32c54"
+  },
+  "scope": "Local candidate restores previously persisted checked read roots at public receipt CLI;19 native boundary cases use fresh public60 native creation with same source43; no fixed61 or actual creative acceptance claim",
+  "unverified": [
+    "task6.3 fixed61 qualification",
+    "actual creative review",
+    "GUI",
+    "other platforms",
+    "full V1"
+  ]
+}

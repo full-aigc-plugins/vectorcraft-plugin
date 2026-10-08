@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { readFileSync,realpathSync } from 'node:fs';
+import { readFileSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { RuntimeGate,validateCapabilities } from './runtime/runtime_gate.ts';
@@ -33,7 +33,7 @@ async function main(){
       return await controller.run(input);
     }finally{controller.close();}
   }
-  const store=new ReviewStore(database,action==='review-import'?undefined:input.readRoots);
+  const store=new ReviewStore(database,input.readRoots);
   try{
     if(action.startsWith('revision-cycle-')){
       const cycle=new RevisionCycle(store);try{
@@ -47,19 +47,7 @@ async function main(){
     }
     if(action==='review-request')return store.request(input);
     if(action==='review-checked')return await new TechnicalReview(store).request(input);
-    if(action==='review-import'){
-      // 回执不能自行扩展根目录；重启只恢复已落账技术检查的授权范围。
-      const row=typeof input.requestId==='string'?store.db.prepare('SELECT input FROM reviews WHERE id=?').get(input.requestId) as any:undefined;
-      if(row){
-        const saved=strictJson(row.input);
-        if(saved.technicalEvidenceOrigin==='checked-decoder'){
-          const roots=saved.authorization?.readRoots;
-          if(!Array.isArray(roots)||!roots.length||roots.some((root:any)=>typeof root!=='string'))throw new Error('invalid_checked_read_roots');
-          store.roots=roots.map((root:string)=>realpathSync(root));
-        }
-      }
-      return store.importReceipt(input);
-    }
+    if(action==='review-import')return store.importReceipt(input);
     if(action==='revision')return store.revision(input.requestId,input.changes);
     throw new Error('unknown_action');
   }finally{store.close();}

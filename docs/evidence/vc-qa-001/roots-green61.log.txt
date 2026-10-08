@@ -1,0 +1,9 @@
+✔ public receipt CLI restores persisted checked read roots after restart without allowing receipt roots injection (443.221292ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 1
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 512.011541

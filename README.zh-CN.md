@@ -137,7 +137,7 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.60 |
+| Metadata version | 0.1.0-dev.61 |
 | Stage | implementation-in-progress |
 | Skills source | vectorcraft-skills / v0.1.0-dev.43 |
 | Execution | 上游 CLI；ArtCraft 使用子适配器 |
@@ -410,3 +410,5 @@ Codex 0.153.4 在全新隔离配置中安装并发现13技能。13项独立空�
 公开59／源43实际安装于Codex0.153.4 macOS arm64后，通过当前VC-AR-002三个场景：原生独立重开、文字／自由渐变仍可编辑、三输出解码及20类拒绝。13项技能摘要未变，5.6关闭；115/127完成，12项开放。GUI、创作、外部编辑器保真及其他平台独立验收。 [Evidence](docs/evidence/vectorcraft-native-exchange-fixed59-20261009.json).
 
 插件60／源43将解码器、进程启动器和本地交换损失依赖一起绑定到只读执行快照。首次交接或重启后依赖变化均使旧评审失效，旧格式检查证据需重新检查。三项目标测试、118项Node与92项Python本地通过。任务6.3仍开放；115/127完成，12项开放。[本地证据](docs/evidence/vectorcraft-quality-checker-candidate60-20261009.json)。
+
+插件61修复公开回执入口重启后跨已声明只读根目录的误拒绝：恢复已持久化技术检查授权，拒绝回执自行声明根目录。固定60缺口已由公开CLI红灯复现；119项Node与19项真实原生边界候选通过，任务6.3固定61验收仍开放。[候选证据](docs/evidence/vectorcraft-quality-roots-candidate61-20261009.json)。
