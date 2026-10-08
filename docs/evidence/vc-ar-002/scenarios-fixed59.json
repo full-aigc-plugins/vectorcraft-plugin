@@ -1,0 +1,24 @@
+{
+  "scenarioContracts": {
+    "VC-AR-002-P 合同条件满足": "aaefbd89193d0d57f2106ac26075a7834083bd3703eb1af0591124aeef624483",
+    "VC-AR-002-N 边界条件": "eccb824a2f7a4d0d7b0b5bb03c00efcd975b57b6180286397c448f4f2fda6755",
+    "绑定原生工程的交换损失报告": "00772a5090d2ba7fed511f57f2044f73f8cae4e26363017461fe2dfbe24bdf8f"
+  },
+  "entries": [
+    {
+      "scenario": "VC-AR-002-P 合同条件满足",
+      "level": "native-fixed-install",
+      "result": "PASS"
+    },
+    {
+      "scenario": "VC-AR-002-N 边界条件",
+      "level": "native-fixed-install",
+      "result": "PASS"
+    },
+    {
+      "scenario": "绑定原生工程的交换损失报告",
+      "level": "native-fixed-install",
+      "result": "PASS"
+    }
+  ]
+}

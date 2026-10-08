@@ -144,6 +144,8 @@ if en_sections!=zh_sections:
     errors.append('README languages differ in section coverage')
 
 for path in ROOT.rglob('*.json'):
+    if path.relative_to(ROOT).parts[0] == '.local':
+        continue
     if '.git' not in path.parts:
         try:
             json.loads(path.read_text())

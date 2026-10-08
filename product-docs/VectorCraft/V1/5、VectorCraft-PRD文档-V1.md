@@ -68,3 +68,6 @@
 
 
 VC-AR-001验收：公开58／源43、Codex0.153.4 macOS arm64已通过当前三个场景，验证原生移动重开、父修订、登记依赖及篡改拒绝；外部编辑器保真、创作和其他平台独立验收。 [Evidence](../../../docs/evidence/vectorcraft-lineage-fixed58-20261009.json).
+
+
+VC-AR-002验收：实际公开59／源43、Codex0.153.4 macOS arm64通过当前三个场景，原生文字和自由渐变仍可编辑，SVG／PDF／PNG损失及20类拒绝已验证。GUI、创作和外部编辑器保真独立验收。 [Evidence](../../../docs/evidence/vectorcraft-native-exchange-fixed59-20261009.json).

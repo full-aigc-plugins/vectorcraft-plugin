@@ -229,6 +229,9 @@ def build(root=ROOT):
     artboards='docs/evidence/vectorcraft-artboards-fixed54-20261009.json'
     if (root/artboards).is_file():
         entries.append(bound_report(root,artboards,'fixed-install','All four current VC-DM-004 scenarios on installed54/source40 macOS arm64;31 native boundary cases, standalone export cold first use, stable-ID mapping and pinned renderer unknown-bounds semantics;only4.12 closes','VC-DM-004',['4.12']))
+    native_exchange='docs/evidence/vectorcraft-native-exchange-fixed59-20261009.json'
+    if (root/native_exchange).is_file():
+        entries.append(bound_report(root,native_exchange,'fixed-install','All three current VC-AR-002 scenarios on actual Codex public59/source43 macOS arm64; native text/freeform reopen/edit,three decoded exports,20 refusals;13 skills unchanged;only5.6 closes','VC-AR-002',['5.6']))
     exchange_delivery='docs/evidence/vectorcraft-exchange-delivery-candidate59-20261009.json'
     if (root/exchange_delivery).is_file():
         entries.append(bound_report(root,exchange_delivery,'native-candidate','Public59 supplemental AR-002 guard; actual58 PDF substitute gap,85 Python regressions and20 native refusals;fixed5.6 remains open','VC-AR-002'))

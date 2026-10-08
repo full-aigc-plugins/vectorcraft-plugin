@@ -68,3 +68,6 @@ Every P0 requirement needs positive and negative evidence; unexecuted cases are 
 
 
 VC-AR-001 qualification: all current three scenarios passed on public58/source43, Codex0.153.4 macOS arm64. Native move/reopen, parent revision, registered dependencies and tamper refusals are verified; external editor fidelity, creative and other platforms are separate. [Evidence](../../../../docs/evidence/vectorcraft-lineage-fixed58-20261009.json).
+
+
+VC-AR-002 qualification: all current three scenarios pass on actual public59/source43 Codex0.153.4 macOS arm64. Native text and freeform gradients remain editable; SVG/PDF/PNG losses and20 refusals are verified. GUI,creative and external editor fidelity remain separate. [Evidence](../../../../docs/evidence/vectorcraft-native-exchange-fixed59-20261009.json).

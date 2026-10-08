@@ -407,3 +407,6 @@ Actual public58/source43 installed on Codex0.153.4 macOS arm64 passes all three 
 
 
 Plugin59/source43 adds uniform exchange-report checks for SVG/PDF/PNG, native and reopened-inspection identity, derivative-only roles, conservative font/effect fidelity and SVG live-text loss matching native settings. The installed58 PDF substitute gap is reproduced; candidate three decodes,20 refusals and85 Python tests pass. Fixed task5.6 remains open. [Evidence](docs/evidence/vectorcraft-exchange-delivery-candidate59-20261009.json).
+
+
+Actual public59/source43 on Codex0.153.4 macOS arm64 passes all three current VC-AR-002 scenarios: independent native reopening, retained live-text/freeform editing, three decoded exports and20 refusals. All13 skill digests remain unchanged. Task5.6 closes;115/127 complete,12 open. GUI,creative,external editor fidelity and other platforms remain separate. [Evidence](docs/evidence/vectorcraft-native-exchange-fixed59-20261009.json).

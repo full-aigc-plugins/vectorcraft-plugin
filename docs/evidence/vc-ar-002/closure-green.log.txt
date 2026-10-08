@@ -1,0 +1,12 @@
+test_changed_reopened_model_refused (test_native_exchange_evidence.NativeExchangeEvidenceTests.test_changed_reopened_model_refused) ... ok
+test_false_font_fidelity_refused (test_native_exchange_evidence.NativeExchangeEvidenceTests.test_false_font_fidelity_refused) ... ok
+test_forged_installed_skill_refused (test_native_exchange_evidence.NativeExchangeEvidenceTests.test_forged_installed_skill_refused) ... ok
+test_missing_decoded_export_refused (test_native_exchange_evidence.NativeExchangeEvidenceTests.test_missing_decoded_export_refused) ... ok
+test_missing_native_substitute_refusal_refused (test_native_exchange_evidence.NativeExchangeEvidenceTests.test_missing_native_substitute_refusal_refused) ... ok
+test_missing_scene_refused (test_native_exchange_evidence.NativeExchangeEvidenceTests.test_missing_scene_refused) ... ok
+test_real_fixed_evidence_passes (test_native_exchange_evidence.NativeExchangeEvidenceTests.test_real_fixed_evidence_passes) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.072s
+
+OK

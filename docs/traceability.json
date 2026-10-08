@@ -205,7 +205,9 @@
         "5.6"
       ],
       "owner": "Harness owner",
-      "status": "planned"
+      "status": "verified",
+      "evidence": "docs/evidence/vectorcraft-native-exchange-fixed59-20261009.json",
+      "scope": "all three current scenarios; actual public59/source43 Codex0.153.4 macOS arm64; creative/GUI/external editors/other platforms separate"
     },
     {
       "requirement": "VC-QA-001",

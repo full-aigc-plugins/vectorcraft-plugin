@@ -1,0 +1,66 @@
+test_changed_reopened_model_refused (test_native_exchange_evidence.NativeExchangeEvidenceTests.test_changed_reopened_model_refused) ... FAIL
+test_false_font_fidelity_refused (test_native_exchange_evidence.NativeExchangeEvidenceTests.test_false_font_fidelity_refused) ... FAIL
+test_forged_installed_skill_refused (test_native_exchange_evidence.NativeExchangeEvidenceTests.test_forged_installed_skill_refused) ... FAIL
+test_missing_decoded_export_refused (test_native_exchange_evidence.NativeExchangeEvidenceTests.test_missing_decoded_export_refused) ... FAIL
+test_missing_native_substitute_refusal_refused (test_native_exchange_evidence.NativeExchangeEvidenceTests.test_missing_native_substitute_refusal_refused) ... FAIL
+test_missing_scene_refused (test_native_exchange_evidence.NativeExchangeEvidenceTests.test_missing_scene_refused) ... FAIL
+test_real_fixed_evidence_passes (test_native_exchange_evidence.NativeExchangeEvidenceTests.test_real_fixed_evidence_passes) ... ok
+
+======================================================================
+FAIL: test_changed_reopened_model_refused (test_native_exchange_evidence.NativeExchangeEvidenceTests.test_changed_reopened_model_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_REPO/tests/test_native_exchange_evidence.py", line 31, in test_changed_reopened_model_refused
+    with self.assertRaisesRegex(ValueError,'native'):self.verify()
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_false_font_fidelity_refused (test_native_exchange_evidence.NativeExchangeEvidenceTests.test_false_font_fidelity_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_REPO/tests/test_native_exchange_evidence.py", line 22, in test_false_font_fidelity_refused
+    with self.assertRaisesRegex(ValueError,'loss'):self.verify()
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_forged_installed_skill_refused (test_native_exchange_evidence.NativeExchangeEvidenceTests.test_forged_installed_skill_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_REPO/tests/test_native_exchange_evidence.py", line 28, in test_forged_installed_skill_refused
+    with self.assertRaisesRegex(ValueError,'installed'):self.verify()
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_missing_decoded_export_refused (test_native_exchange_evidence.NativeExchangeEvidenceTests.test_missing_decoded_export_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_REPO/tests/test_native_exchange_evidence.py", line 34, in test_missing_decoded_export_refused
+    with self.assertRaisesRegex(ValueError,'decode'):self.verify()
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_missing_native_substitute_refusal_refused (test_native_exchange_evidence.NativeExchangeEvidenceTests.test_missing_native_substitute_refusal_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_REPO/tests/test_native_exchange_evidence.py", line 25, in test_missing_native_substitute_refusal_refused
+    with self.assertRaisesRegex(ValueError,'refusal'):self.verify()
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_missing_scene_refused (test_native_exchange_evidence.NativeExchangeEvidenceTests.test_missing_scene_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_REPO/tests/test_native_exchange_evidence.py", line 19, in test_missing_scene_refused
+    with self.assertRaisesRegex(ValueError,'scenario'):self.verify()
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.040s
+
+FAILED (failures=6)
