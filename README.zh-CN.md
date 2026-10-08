@@ -10,9 +10,9 @@
 
 Logo、图标与品牌图形需求进入，交付 `.vectorcraft` 及适用的 SVG、PDF、PNG。
 
-当前插件：`0.1.0-dev.52`；技能源：`0.1.0-dev.39`；13 个独立技能。
+当前插件：`0.1.0-dev.53`；技能源：`0.1.0-dev.39`；13 个独立技能。
 
-开发插件52锁定技能源39：SVG记录实际文字导出模式，轮廓导出明确报告文字编辑性损失，并保留原生文字及字体依赖；三个公开文字修改入口统一要求显式对象ID。源回归151项通过、30项跳过，原生候选验证单独记录；固定52验收与完整V1任务仍开放。[文字交付架构](docs/VectorCraft-Text-Outline.zh_CN.md)。
+开发插件53锁定技能源39：SVG记录实际文字导出模式，轮廓导出明确报告文字编辑性损失，并保留原生文字及字体依赖；三个公开文字修改入口统一要求显式对象ID。源回归151项通过、30项跳过，原生候选验证单独记录；固定52验收与完整V1任务仍开放。[文字交付架构](docs/VectorCraft-Text-Outline.zh_CN.md)。
 
 公开固定51／源38已完成VC-DM-002全部四个当前场景，任务4.6完成：14组原生工作流、8组受控授权、2组原生SDK选择／子树拒绝，17项目标源测试通过；13技能摘要未变，9个Harness登记组停止。已知／未知失败在真实原生操作成功后显式注入，不是引擎缺陷报告；GUI、全Pathfinder上下文与创作拓扑判断保持独立。 [固定验收 / Fixed acceptance](docs/evidence/vectorcraft-boolean-fixed51-20261009.json).
 
@@ -135,7 +135,7 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.52 |
+| Metadata version | 0.1.0-dev.53 |
 | Stage | implementation-in-progress |
 | Skills source | vectorcraft-skills / v0.1.0-dev.39 |
 | Execution | 上游 CLI；ArtCraft 使用子适配器 |
@@ -369,3 +369,5 @@ Codex 0.153.4 在全新隔离配置中安装并发现13技能。13项独立空�
 普通Harness首用现已自动执行计划验证、固定安装与实际命令／工具schema核验；同版本并发复用选择，已完成任务按原回执读取。源码候选46项Node、5项空缓存／并发／拒绝场景与8项结构回归通过；已发布插件41不变，完整2.6仍开放。见[默认首用门禁](docs/Runtime-Gate.zh-CN.md)。
 
 公开固定51／源38已完成VC-TX-003全部五场景验收，OpenSpec任务3.9已勾选：五组真实原生用例、115项Node与43项Python回归通过，13技能摘要保持、13个登记组停止。见 [固定取消与预算验收](docs/evidence/vectorcraft-budget-cancel-fixed51-20261009.json)。完整V1、GUI、模型、其他平台与市场资格保持开放。
+
+开发53补齐历史测试字节归档，修正52 CI的历史证据依赖失配。公开固定52已通过实际宿主13技能发现、两种原生文字导出及18项入口拒绝；[有限验收记录](docs/evidence/vectorcraft-text-smoke-fixed52-20261009.json)。完整4.7–4.9与V1仍开放。

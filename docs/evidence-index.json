@@ -1,6 +1,6 @@
 {
   "schema": "vectorcraft-evidence-index/v1",
-  "identitySha256": "232a40ae6e86351a4acfe1e5541ac14a4491a78412669b0ea53f18dfd9045cd1",
+  "identitySha256": "4ca6b2f91c2887ea7cff01fe32dfcacee2b9dd719abe7ab03ae7b486ee074c5c",
   "entries": [
     {
       "path": "docs/evidence/craft-vector37-gateway-export-fixed-first-use-20261008.json",
@@ -534,7 +534,7 @@
         "tests/test_runtime_download_boundaries.py": "42b1a572db2c077ef06524c168e853777c1031fd681aff1b5f370d70473020a2",
         "tests/test_skill_vendor.py": "9c2e78e0de746a8acb010714a2503d9f91ba07193edbe6362b4d8cd08c527802",
         "tests/test_skill_vendor_self_contained.py": "3c28f7ebbabd27c751824c41b80c8c8b459dbbc2dffa733fe7070ac9863140e6",
-        "tests/test_source_plan_identity.py": "f5baa55086bb68f035322f70553385c29d9f5e1d1ef046db8bbdecd0d08e2965",
+        "docs/evidence/pre-brand-text-identity/tests/test_source_plan_identity.py": "f5baa55086bb68f035322f70553385c29d9f5e1d1ef046db8bbdecd0d08e2965",
         "scripts/acceptance/runtime_boundaries.ts": "9ea05b771ab9df8db34f1971f8610bde52b642c23a1741c48879cae8b9797652",
         "scripts/acceptance/runtime_native_child.py": "1ddf23c94d43bad1a943d6aeb7582ce1c72fe6d97bca6a36dd679f990e5c46d7",
         "scripts/acceptance/runtime_bridge_child.py": "3bd45a343e4113cfe495e7ca608e544e414d4b6f7ee7918cddc8924a918bb357",

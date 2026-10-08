@@ -10,9 +10,9 @@ Four-domain RT-001 runtime source/integrity acceptance now covers every current 
 
 Create Logo, icon and brand assets as `.vectorcraft` with applicable SVG, PDF and PNG exports.
 
-Current plugin: `0.1.0-dev.52`; skill source: `0.1.0-dev.39`; 13 independent skills.
+Current plugin: `0.1.0-dev.53`; skill source: `0.1.0-dev.39`; 13 independent skills.
 
-Development plugin52 pins source39: SVG records the actual text export mode and explicit editing loss for outlined text while retaining native text and font dependencies. All three public text editing routes require explicit object IDs. Source regression:151 passed,30 skipped; native candidate checks are recorded separately. Fixed52 acceptance and full V1 remain open. [Text delivery architecture](docs/VectorCraft-Text-Outline.en.md).
+Development plugin53 pins source39: SVG records the actual text export mode and explicit editing loss for outlined text while retaining native text and font dependencies. All three public text editing routes require explicit object IDs. Source regression:151 passed,30 skipped; native candidate checks are recorded separately. Fixed52 acceptance and full V1 remain open. [Text delivery architecture](docs/VectorCraft-Text-Outline.en.md).
 
 All four current VC-DM-002 scenarios passed against public installed51/source38; task4.6 is complete.14 native workflow cases,8 managed authorization cases,2 native SDK selection/subtree refusals and17 source tests passed;13 skills remain unchanged and9 Harness registered groups stopped. Known/unknown faults were explicitly injected after actual native success; this is not an engine defect report. GUI,all Pathfinder contexts and creative topology judgments remain separate. [固定验收 / Fixed acceptance](docs/evidence/vectorcraft-boolean-fixed51-20261009.json).
 
@@ -135,7 +135,7 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.52 |
+| Metadata version | 0.1.0-dev.53 |
 | Stage | implementation-in-progress |
 | Skills source | vectorcraft-skills / v0.1.0-dev.39 |
 | Execution | Upstream CLI; ArtCraft uses child adapters |
@@ -371,3 +371,5 @@ A new source candidate adds fixed runtime identity, live command/tool schemas, s
 Default Harness first use now validates plans, installs the fixed runtime and checks live command/tool schemas. Same-version concurrent tasks reuse selection; completed keys inspect original receipts. Source candidate evidence:46 Node tests,5 cold/concurrent/refusal scenarios and8 structural regressions passed. Published plugin41 is unchanged; complete2.6 remains open. See [default runtime gate](docs/Runtime-Gate.md).
 
 Public installed51/source38 passed all five VC-TX-003 scenarios and closes OpenSpec task3.9: five actual native cases,115 Node and43 Python tests,13 unchanged skills and13 stopped registered groups. See [fixed cancellation and budget acceptance](docs/evidence/vectorcraft-budget-cancel-fixed51-20261009.json). Full V1, GUI, model, other platforms and marketplace qualification remain open.
+
+Development53 archives original historical test bytes, resolving52 CI evidence dependency drift. Public installed52 passed actual host discovery of13 skills, two native text exports and18 route refusals; [limited qualification](docs/evidence/vectorcraft-text-smoke-fixed52-20261009.json). Full4.7–4.9 and V1 remain open.
