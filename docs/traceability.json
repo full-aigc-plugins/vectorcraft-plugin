@@ -231,9 +231,10 @@
         "6.6"
       ],
       "owner": "Harness owner",
-      "status": "in-progress",
+      "status": "verified",
       "candidateEvidence": "docs/evidence/vectorcraft-revision-budget-fixed62-20261009.json",
-      "scope": "actual public62/source43 native exhausted-budget higher-score preservation subset only; complete four-scenario6.6 qualification remains open"
+      "scope": "all four current VC-QA-002 scenarios;public63/source43 actual Codex0.153.4 macOS arm64;6 native revisions,15 native guards,owned signed desktop stale source;QA scores explicit;actual creative judgment and other platforms separate",
+      "evidence": "docs/evidence/vectorcraft-revision-fixed63-20261009.json"
     },
     {
       "requirement": "VC-RL-001",

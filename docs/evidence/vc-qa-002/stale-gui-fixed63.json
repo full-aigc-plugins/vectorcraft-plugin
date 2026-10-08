@@ -1,0 +1,329 @@
+{
+  "schema": "vectorcraft-revision-stale-gui-native/v1",
+  "driverSha256": "d8bf67d376d68afcb2fd4537e3c6d5099979f537a8ba89f976455d5e82628d49",
+  "guiDriverSha256": "1443f45680de566e1fb5406526d3a16b7c16f88bb44d4b7892efa56a7bc91110",
+  "result": "PASS",
+  "pluginVersion": "0.1.0-dev.63",
+  "sourceRef": "v0.1.0-dev.43",
+  "platform": "darwin-arm64",
+  "initialRequest": {
+    "schema": "vectorcraft-review-request/v1",
+    "id": "1fe368c0-fbe5-471f-97a6-ff01cef65758",
+    "bindingHash": "328c111679804ff1cbe4ed5ed4605c05602a6d91d3f1865dba24252b20f20355",
+    "input": {
+      "native": "QA_SOURCE/project.vectorcraft",
+      "projectRevision": "c1de3466c9af39d7756f6b1671c49eec23e4eaa6c09ea5d38be8ccd1aeb45a48",
+      "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "candidates": [
+        "QA_SOURCE/artboard-1.svg",
+        "QA_SOURCE/artboard-1.pdf",
+        "QA_SOURCE/artboard-1.png"
+      ],
+      "targets": [
+        {
+          "path": "QA_ROOT/brief.txt",
+          "role": "target"
+        }
+      ],
+      "rubric": "QA_ROOT/rubric.json",
+      "exchangeLoss": "QA_SOURCE/exchange-loss.json",
+      "technicalStatus": "PASS",
+      "authorization": {
+        "objects": [
+          2,
+          3
+        ],
+        "fields": [
+          "appearance.items.0.paint",
+          "kind.runs.0.text"
+        ],
+        "deadline": 1791492301905,
+        "maxAttempts": 20,
+        "maxBytes": 134217728,
+        "budgetId": "native-revision-probe",
+        "readRoots": [
+          "QA_ROOT",
+          "QA_SOURCE",
+          "QA_RUNTIME"
+        ],
+        "writeRoots": [
+          "QA_ROOT",
+          "QA_RUNTIME"
+        ]
+      },
+      "technicalEvidence": {
+        "acceptanceStatus": "pending",
+        "artifactIntegrityStatus": "PASS",
+        "artifactLogicalId": "vectorcraft:38a4a25f-15e2-4120-8f28-f043a1d6057b",
+        "artifactVersion": "d81a1b6b55bf2737687b229e112aa8d5ac88af7fe36dfe231eb0a11f0e06185b",
+        "checkId": "6f9f713a-677d-4085-b06e-24487274aa27",
+        "checkerFiles": {
+          "skills/vectorcraft-use/scripts/exchange_loss.py": "a4ba82ec8000a095dcf62813352621bdc42cfd7a81949baa6b0e896d1a2048e3",
+          "src/evaluation/delivery_quality.py": "60b81d1097d2a2ef84d5e8010ee698295e1184db1b3667f3e40fa03feb899070",
+          "src/harness/process_runner.py": "7332d0757aa01f03d00697f8eb8d93f849517cab34ea8a1355ba6c9513d5aba2"
+        },
+        "checkerSha256": "60b81d1097d2a2ef84d5e8010ee698295e1184db1b3667f3e40fa03feb899070",
+        "creativeStatus": "NOT_RUN",
+        "engineeringStatus": "NOT_RUN",
+        "exchangeStatus": "PASS",
+        "files": {
+          "artboard-1.pdf": "126366c97b6dc408264453e16e9be244281aca4b81d4cebf77772e62e7c91252",
+          "artboard-1.png": "02e13da3a0b0c7de68fadaa1c6f736a65b2a4a794c6311fbef84f036df2dc3bd",
+          "artboard-1.svg": "f9a16bac10a8d200a9f459e3d288ce81158a136ab96ed64fcf84e72d95ec3360",
+          "exchange-loss.json": "a853fb90b19ad18d01bda9e54cad5893bdda265789a8bcd8c1b4b6cf330d020d",
+          "lineage.json": "ea7c4ac08dcda4f832c09ea086d0e03dcef3daf8b42dc3feac73285938a1e28a",
+          "native.json": "9f4d77332c172915fd2b021138e6e7dff6e6e73b0bd554851c07329ce7d89ff9",
+          "operations.json": "8e223ade81a302f7cb83aac38430616f4a7d18d452e9aeae79ebf1c2e386e89d",
+          "pdf-export-date.json": "c7381343ea6046fcb36ee719065592fecfe43967d2e134483e683a1913f566d3",
+          "plan.json": "71a4846cb381a7f855db0211c83636dc17f30b8181617914156f6aef7b26a822",
+          "project.vectorcraft": "c1de3466c9af39d7756f6b1671c49eec23e4eaa6c09ea5d38be8ccd1aeb45a48"
+        },
+        "launcherSha256": "7332d0757aa01f03d00697f8eb8d93f849517cab34ea8a1355ba6c9513d5aba2",
+        "lineageStatus": "PASS",
+        "manifestSha256": "6904a4f6796e34b9845d8c4d793ea82e58ff13d6781613dbb6d48839c1a25140",
+        "nativeReopenStatus": "NOT_RUN",
+        "outputs": [
+          {
+            "decoder": "PyMuPDF",
+            "pages": 1,
+            "path": "artboard-1.svg",
+            "scope": "bounded raster decode; creative quality not assessed",
+            "sha256": "f9a16bac10a8d200a9f459e3d288ce81158a136ab96ed64fcf84e72d95ec3360",
+            "status": "PASS"
+          },
+          {
+            "decoder": "PyMuPDF",
+            "pages": 1,
+            "path": "artboard-1.pdf",
+            "scope": "bounded raster decode; creative quality not assessed",
+            "sha256": "126366c97b6dc408264453e16e9be244281aca4b81d4cebf77772e62e7c91252",
+            "status": "PASS"
+          },
+          {
+            "decoder": "Pillow",
+            "path": "artboard-1.png",
+            "sha256": "02e13da3a0b0c7de68fadaa1c6f736a65b2a4a794c6311fbef84f036df2dc3bd",
+            "size": [
+              128,
+              96
+            ],
+            "status": "PASS"
+          }
+        ],
+        "projectRevision": "c1de3466c9af39d7756f6b1671c49eec23e4eaa6c09ea5d38be8ccd1aeb45a48",
+        "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+        "schema": "vectorcraft-technical-review/v1",
+        "scope": "artifact integrity and export decode only; native reopening and creative review remain separate",
+        "sourceTask": {
+          "id": "execution-14612934-e6ef-4f4b-a828-ae77cd2afe4a",
+          "planSha256": "71a4846cb381a7f855db0211c83636dc17f30b8181617914156f6aef7b26a822",
+          "scope": "workflow-execution"
+        },
+        "technicalStatus": "PASS"
+      },
+      "technicalEvidenceOrigin": "checked-decoder",
+      "technicalCheckId": "6f9f713a-677d-4085-b06e-24487274aa27"
+    },
+    "fingerprints": {
+      "QA_ROOT/brief.txt": "f3857fcf89d0ce9355b27bdeecb83a52fd60f8ee97f581d9382e3931364f9ecc",
+      "QA_ROOT/rubric.json": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "QA_SOURCE/artboard-1.pdf": "126366c97b6dc408264453e16e9be244281aca4b81d4cebf77772e62e7c91252",
+      "QA_SOURCE/artboard-1.png": "02e13da3a0b0c7de68fadaa1c6f736a65b2a4a794c6311fbef84f036df2dc3bd",
+      "QA_SOURCE/artboard-1.svg": "f9a16bac10a8d200a9f459e3d288ce81158a136ab96ed64fcf84e72d95ec3360",
+      "QA_SOURCE/exchange-loss.json": "a853fb90b19ad18d01bda9e54cad5893bdda265789a8bcd8c1b4b6cf330d020d",
+      "QA_SOURCE/lineage.json": "ea7c4ac08dcda4f832c09ea086d0e03dcef3daf8b42dc3feac73285938a1e28a",
+      "QA_SOURCE/manifest.json": "6904a4f6796e34b9845d8c4d793ea82e58ff13d6781613dbb6d48839c1a25140",
+      "QA_SOURCE/native.json": "9f4d77332c172915fd2b021138e6e7dff6e6e73b0bd554851c07329ce7d89ff9",
+      "QA_SOURCE/operations.json": "8e223ade81a302f7cb83aac38430616f4a7d18d452e9aeae79ebf1c2e386e89d",
+      "QA_SOURCE/pdf-export-date.json": "c7381343ea6046fcb36ee719065592fecfe43967d2e134483e683a1913f566d3",
+      "QA_SOURCE/plan.json": "71a4846cb381a7f855db0211c83636dc17f30b8181617914156f6aef7b26a822",
+      "QA_SOURCE/project.vectorcraft": "c1de3466c9af39d7756f6b1671c49eec23e4eaa6c09ea5d38be8ccd1aeb45a48"
+    },
+    "state": "pending"
+  },
+  "proposal": {
+    "schema": "vectorcraft-local-revision-proposal/v1",
+    "requestId": "1fe368c0-fbe5-471f-97a6-ff01cef65758",
+    "bindingHash": "328c111679804ff1cbe4ed5ed4605c05602a6d91d3f1865dba24252b20f20355",
+    "expectedProjectRevision": "c1de3466c9af39d7756f6b1671c49eec23e4eaa6c09ea5d38be8ccd1aeb45a48",
+    "changes": [
+      {
+        "field": "appearance.items.0.paint",
+        "objectId": 2,
+        "value": {
+          "color": {
+            "b": 0,
+            "g": 1,
+            "model": "rgb",
+            "r": 0
+          },
+          "type": "solid"
+        }
+      }
+    ],
+    "authorization": {
+      "budgetId": "native-revision-probe",
+      "deadline": 1791492301905,
+      "fields": [
+        "appearance.items.0.paint"
+      ],
+      "maxAttempts": 20,
+      "maxBytes": 134217728,
+      "objects": [
+        2
+      ],
+      "readRoots": [
+        "QA_ROOT",
+        "QA_SOURCE",
+        "QA_RUNTIME"
+      ],
+      "writeRoots": [
+        "QA_ROOT",
+        "QA_RUNTIME"
+      ]
+    },
+    "state": "proposed",
+    "id": "a77a7ab4-7fef-4cb2-804e-581ddc8d796c",
+    "cycleId": "native-cycle",
+    "round": 1
+  },
+  "gui": {
+    "result": "PASS",
+    "actor": "owned signed desktop bridge; real GUI document mutation and save, not manual human interaction",
+    "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+    "desktopBinarySha256": "46d7846a765dd0c2a64a72dea17796f49d725203d2c5d91c339432572048f856",
+    "desktopVersion": "0.2.0",
+    "listenerOwnedByPID": true,
+    "desktopPID": 98400,
+    "sourceBeforeSha256": "c1de3466c9af39d7756f6b1671c49eec23e4eaa6c09ea5d38be8ccd1aeb45a48",
+    "sourceAfterSha256": "ff2c19e73a839b265246f7fecda5f2a6607d3f11a92fd9396db59ebd9891b635",
+    "nativeDocumentChanged": true,
+    "nativeReopened": true,
+    "persistedContentMatches": true,
+    "nativeSaveTimestamp": {
+      "before": 1791490131,
+      "after": 1791492182
+    },
+    "snapshotsSha256": "c98f7165bb65213776859d62f6d3aa33fc8f440d64cb35c34cbca6e783fe73c2",
+    "ownedProcessesStopped": true
+  },
+  "refusal": "Error: stale_review_binding",
+  "best": {
+    "cycleId": "native-cycle",
+    "requestId": "1fe368c0-fbe5-471f-97a6-ff01cef65758",
+    "score": 2,
+    "path": "QA_ROOT/.revision-best/1fe368c0-fbe5-471f-97a6-ff01cef65758",
+    "fingerprints": {
+      "artboard-1.pdf": "126366c97b6dc408264453e16e9be244281aca4b81d4cebf77772e62e7c91252",
+      "artboard-1.png": "02e13da3a0b0c7de68fadaa1c6f736a65b2a4a794c6311fbef84f036df2dc3bd",
+      "artboard-1.svg": "f9a16bac10a8d200a9f459e3d288ce81158a136ab96ed64fcf84e72d95ec3360",
+      "exchange-loss.json": "a853fb90b19ad18d01bda9e54cad5893bdda265789a8bcd8c1b4b6cf330d020d",
+      "inputs/0": "f3857fcf89d0ce9355b27bdeecb83a52fd60f8ee97f581d9382e3931364f9ecc",
+      "inputs/1": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "inputs/2": "a853fb90b19ad18d01bda9e54cad5893bdda265789a8bcd8c1b4b6cf330d020d",
+      "lineage.json": "ea7c4ac08dcda4f832c09ea086d0e03dcef3daf8b42dc3feac73285938a1e28a",
+      "manifest.json": "6904a4f6796e34b9845d8c4d793ea82e58ff13d6781613dbb6d48839c1a25140",
+      "native.json": "9f4d77332c172915fd2b021138e6e7dff6e6e73b0bd554851c07329ce7d89ff9",
+      "operations.json": "8e223ade81a302f7cb83aac38430616f4a7d18d452e9aeae79ebf1c2e386e89d",
+      "pdf-export-date.json": "c7381343ea6046fcb36ee719065592fecfe43967d2e134483e683a1913f566d3",
+      "plan.json": "71a4846cb381a7f855db0211c83636dc17f30b8181617914156f6aef7b26a822",
+      "project.vectorcraft": "c1de3466c9af39d7756f6b1671c49eec23e4eaa6c09ea5d38be8ccd1aeb45a48"
+    },
+    "projectRevision": "c1de3466c9af39d7756f6b1671c49eec23e4eaa6c09ea5d38be8ccd1aeb45a48",
+    "latestRequestId": "1fe368c0-fbe5-471f-97a6-ff01cef65758",
+    "goal": {
+      "rubric": {
+        "path": "QA_ROOT/rubric.json",
+        "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+      },
+      "targets": [
+        {
+          "path": "QA_ROOT/brief.txt",
+          "role": "target",
+          "sha256": "f3857fcf89d0ce9355b27bdeecb83a52fd60f8ee97f581d9382e3931364f9ecc"
+        }
+      ]
+    },
+    "unresolvedIssues": [
+      {
+        "evidence": [
+          "artboard-1.png"
+        ],
+        "field": "appearance.items.0.paint",
+        "message": "QA: test authorized green revision",
+        "objectId": 2
+      }
+    ],
+    "rounds": 1,
+    "stagnation": 0,
+    "sharedBudget": {
+      "id": "native-revision-probe",
+      "attempts": 2,
+      "bytes": 1345723
+    },
+    "technicalStatus": "PASS",
+    "engineeringStatus": "NOT_RUN",
+    "acceptanceStatus": "pending",
+    "reason": null
+  },
+  "sharedAttempts": 2,
+  "cycle": {
+    "id": "native-cycle",
+    "budget": "native-revision-probe",
+    "policy": {
+      "maxRounds": 2,
+      "minImprovement": 0.1,
+      "stagnationLimit": 1
+    },
+    "authorization": {
+      "budgetId": "native-revision-probe",
+      "deadline": 1791492301905,
+      "fields": [
+        "appearance.items.0.paint",
+        "kind.runs.0.text"
+      ],
+      "maxAttempts": 20,
+      "maxBytes": 134217728,
+      "objects": [
+        2,
+        3
+      ],
+      "readRoots": [
+        "QA_ROOT",
+        "QA_SOURCE",
+        "QA_RUNTIME"
+      ],
+      "writeRoots": [
+        "QA_ROOT",
+        "QA_RUNTIME"
+      ]
+    },
+    "goal": {
+      "rubric": {
+        "path": "QA_ROOT/rubric.json",
+        "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+      },
+      "targets": [
+        {
+          "path": "QA_ROOT/brief.txt",
+          "role": "target",
+          "sha256": "f3857fcf89d0ce9355b27bdeecb83a52fd60f8ee97f581d9382e3931364f9ecc"
+        }
+      ]
+    },
+    "runtime": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+    "state": "active",
+    "reason": null,
+    "rounds": 1,
+    "stagnation": 0,
+    "latest": "1fe368c0-fbe5-471f-97a6-ff01cef65758",
+    "best": "1fe368c0-fbe5-471f-97a6-ff01cef65758",
+    "best_score": 2
+  },
+  "originalSourcePreserved": true,
+  "newOutputAbsent": true,
+  "registeredGroupsBefore": 1,
+  "registeredGroupsAfter": 1,
+  "allGroupsStopped": true,
+  "scope": "owned signed desktop GUI source mutation rejects old proposal before native revision effects; preserved best; explicit QA feedback; not full6.6 qualification"
+}

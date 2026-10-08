@@ -283,6 +283,9 @@ def build(root=ROOT):
     revision_goal='docs/evidence/vectorcraft-revision-goal-candidate63-20261009.json'
     if (root/revision_goal).is_file():
         entries.append(bound_report(root,revision_goal,'native-candidate','Public62 goal-change feedback gap and three red units;candidate63 latest checked feedback and original best retention;15 real native guards;fixed63/full6.6 pending','VC-QA-002'))
+    revision_fixed='docs/evidence/vectorcraft-revision-fixed63-20261009.json'
+    if (root/revision_fixed).is_file():
+        entries.append(bound_report(root,revision_fixed,'fixed-install','All four current VC-QA-002 scenarios;actual public63/source43 Codex macOS arm64;6 native revisions,15 native guards and owned signed desktop stale source;QA scores,creative judgment separate','VC-QA-002',['6.6']))
     # 明确归档变更前执行字节；保留报告原摘要，不能把旧运行重绑定到新实现。
     for entry in entries:
         archived={}
