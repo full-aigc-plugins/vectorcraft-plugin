@@ -1,5 +1,7 @@
 # VectorCraft Agent Plugin
 
+Fixed installed appearance-skill verification now includes same-RGB objects without a brand-token link. Only linked consumers change; native properties, unrelated SVG/PNG/PDF and original deliveries remain preserved. Warm runtime verification; no additional V1 task closes. [Acceptance architecture](docs/VectorCraft-Same-Color-Token-Architecture.md).
+
 Four-domain RT-001 runtime source/integrity acceptance now covers every current scenario; existing pinned skill bytes remain unchanged. Runtime upgrades and fullV1 remain open. [Acceptance architecture](docs/Craft-Fixed-Runtime-Integrity-Architecture.md).
 
 Create Logo, icon and brand assets as `.vectorcraft` with applicable SVG, PDF and PNG exports.
