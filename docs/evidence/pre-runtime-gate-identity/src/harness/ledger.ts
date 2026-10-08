@@ -56,14 +56,6 @@ export class Ledger {
     return this.transaction(()=>{
       const previous=this.db.prepare('SELECT id,binding_hash FROM tasks WHERE key=?').get(key) as any;
       if(previous){if(previous.binding_hash!==fingerprint)throw new Error('idempotency_conflict');return this.get(previous.id);}
-      // 与升级激活共用BEGIN IMMEDIATE，阻止排空检查和新任务占用之间的竞争。
-      if(this.db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='runtime_selection'").get()){
-        const selected=this.db.prepare('SELECT active FROM runtime_selection WHERE id=1').get() as any;
-        if(selected){const active=strictJson(selected.active);
-          if(active.mode!=='headless')throw new Error('runtime_mode_mismatch');
-          if(active.binarySha256!==binding.runtimeIdentity)throw new Error('runtime_selection_mismatch');
-        }
-      }
       if(auth.deadline<=Date.now())throw new Error('budget_exceeded');
       if(this.db.prepare("SELECT id FROM tasks WHERE resource=? AND state IN ('ready','running','reconciling','cancel_requested')").get(owner))throw new Error('resource_busy');
       const id=randomUUID(),budgetId=auth.budgetId??id;

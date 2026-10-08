@@ -1,0 +1,52 @@
+{
+  "schema": "vectorcraft-runtime-gate-evidence/v1",
+  "result": "PASS",
+  "level": "native-candidate",
+  "platform": "darwin-arm64",
+  "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+  "version": "vectorcraft-cli 0.2.0-craft.2",
+  "skillSha256": "ed67eeb2fa57c957ecb7075a7da70a3227413dcc85baf589552bdc2efb685db8",
+  "commandCount": 585,
+  "toolCount": 25,
+  "cases": [
+    "live-schema",
+    "missing-command-refused",
+    "changed-schema-refused",
+    "bridge-substitution-refused",
+    "incompatible-state-refused",
+    "active-native-task-blocks-switch",
+    "native-create-with-selected-runtime",
+    "same-key-no-replay",
+    "idempotent-activation-preserves-history"
+  ],
+  "projectSha256": "d5b60092963d94fd05f0738220717aeacf15de98ada647b2ed3f9f7262968e5b",
+  "fingerprints": {
+    "src/runtime/runtime_gate.ts": "2195cc449e0725affaecd9ff8b0cfc1489c5187ab96d675a07d076ba2248b338",
+    "src/runtime/runtime_probe.py": "0d632442e63c4d6113ee6132b33ac3624ead4e4549cb89041311a2cdaf38eb00",
+    "src/cli.ts": "7ea7dd81e40aae4cdb9bbca6f9c10d4a47726ad759d5cd3547ecc8392b4a4c43",
+    "src/harness/ledger.ts": "fd53203575a46100e6456eb3c3a415ffeceb4c879349019ba6cde7e797a82f51",
+    "src/harness/controller.ts": "945eb80472cafb95d881b1ac40eee06e12b6e69a327f759e91a4368bf3d115c9",
+    "scripts/acceptance/runtime_gate.ts": "bd6f3c56ca3ea1b3ec88bb7392fc4a4de5ba555ff9451276be3d22ebcf751f29",
+    "tests/runtime_gate.test.ts": "15a880bca55edd06dda861a307894b147f671b7d0060601c15049b1116ba03f4",
+    "tests/runtime_selection.test.ts": "5798dc2c9c7da0d606c45de8cdc5ba70de32d9857a61ed1cf67bd168c6492972",
+    "docs/evidence/runtime-gate/behavior-red.log": "5b5eca00406501b213eae17420bae9b1506047c24f4a75f621facd0e43cc17b9",
+    "docs/evidence/runtime-gate/node-regression.log": "287101845a6aba764fc0762a84b0cf6dcc9debb9e8c6ee0803547f0b59860f09",
+    "docs/evidence/pre-runtime-gate-identity/identity.json": "92964dc7f7d2d15e4bced5ad332b4f26ec396ad6ee48ca1171b9b5d6dad503e8"
+  },
+  "scope": "same pinned headless runtime probing, activation, drain and managed native create; no different-version upgrade, desktop GUI, migration or rollback acceptance",
+  "baselineCommit": "9d171647baa2ab259f5d19d52064f51aa6469e5e",
+  "baselineScope": "historical baseline replay: selected identity missing guard raises Missing expected exception; module-absence log is not counted as a behavioral red test",
+  "localTests": {
+    "node": 42,
+    "passed": 42,
+    "skipped": 0
+  },
+  "tasksCompleted": [
+    "2.4"
+  ],
+  "tasksOpen": [
+    "2.5",
+    "2.6"
+  ],
+  "defaultWorkflowProbe": "NOT_IMPLEMENTED"
+}

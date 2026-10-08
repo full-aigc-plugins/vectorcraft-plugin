@@ -3,7 +3,6 @@ import { existsSync, lstatSync, readdirSync, readFileSync, mkdirSync, writeFileS
 import { relative, resolve, join, isAbsolute, dirname } from 'node:path';
 import { spawn } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
-import { RuntimeGate,validateCapabilities } from '../runtime/runtime_gate.ts';
 import { ProcessRegistry } from './process_registry.ts';
 import { Recovery } from './recovery.ts';
 import { Ledger, resourcePath } from './ledger.ts';
@@ -114,13 +113,6 @@ export class Controller {
     }
     if(geometryContract)inputHashes['contract:geometry']=sha(canonical(geometryContract));
     const runtimeIdentity=lock.artifacts['darwin-arm64'].binarySha256;
-    const selected=new RuntimeGate(this.ledger).current();
-    if(selected){
-      const catalog=strictJson(readFileSync(join(request.skill,'references/command-coverage.json'),'utf8'));
-      validateCapabilities(selected.active,{mode:'headless',commands:Object.fromEntries(catalog.commands.map((r:any)=>[r.id,r.params])),tools:{}});
-      inputHashes['runtime:capabilities']=sha(canonical({commands:selected.active.commands,tools:selected.active.tools,mode:selected.active.mode}));
-    }
-
     const binding={skillSha256:request.expectedSkillSha256,planHash:sha(canonical(plan)),inputHashes,projectRevision,runtimeIdentity,authorization:auth};
     const task=this.ledger.claim(request.key,request.source?join(request.source,'project.vectorcraft'):join(request.output,'project.vectorcraft'),request.output,binding);
     if(task.state!=='ready'){

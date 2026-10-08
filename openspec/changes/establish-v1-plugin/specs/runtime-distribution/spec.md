@@ -48,6 +48,19 @@
 - **THEN** 安装器 SHALL 丢弃半包并最多执行三次只读下载，之后仍执行原摘要／安全解压／版本检查，不重试原生编辑
 - **AND** 证书、权限、磁盘、大小限制、摘要及非临时HTTP拒绝错误 SHALL 不被重试或放宽；固定发行及安装首用另行验收
 
+#### Scenario: [VC-RT-002-SCHEMA] 实际能力签名与执行模式
+
+- **WHEN** 显式探测已安装的固定运行时
+- **THEN** 核验二进制摘要及版本输出，读取同一只读MCP会话的命令参数签名和工具inputSchema；缺失或变化时拒绝激活
+- **AND** headless与bridge独立绑定，不把空文档的enabled状态当作签名，也不静默替换模式
+
+#### Scenario: [VC-RT-002-DRAIN] 激活与任务登记竞争
+
+- **WHEN** 同一Harness账本有ready、running、reconciling、cancel_requested任务或未确认停止的原生进程组
+- **THEN** 拒绝激活并保留旧选择；激活与新任务登记共用写事务，任务不能抢入排空检查与选择切换之间
+- **AND** 保留上次选择的探测记录；不兼容当前账本schema的回退被拒绝，不自动迁移状态或删除旧版本目录
+
+
 ### Requirement: VC-DS-002 Verified Vector desktop export alias
 The standalone full-command gateway SHALL map `file.export` to `document.export` only in VectorCraft bridge mode, because the pinned official desktop advertises the engine operation while the CLI advertises its host alias. The gateway SHALL validate the complete mapped registry, check the actual operation's enabled state in the same session, preserve requested and backend command identities in its receipt, and fail on any unrelated missing command. Headless command identity SHALL remain unchanged.
 

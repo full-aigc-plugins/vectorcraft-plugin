@@ -142,6 +142,20 @@ def build(root=ROOT):
         entries.append(record(root,old_checked,'native-candidate','PASS',[],'original pre-cycle review coordinator proof; execution fingerprints preserved, not rebound',historical=True))
     if (root/previous).is_file():
         entries.append(record(root,previous,'local-tests','PASS',[],'original execution fingerprints retained inside historical report; never rebound to changed source',historical=True))
+    runtime_gate='docs/evidence/vectorcraft-runtime-gate-candidate-20261008.json'
+    if (root/runtime_gate).is_file():
+        entries.append(bound_report(root,runtime_gate,'native-candidate','live 585-command and25-tool headless probe, drain guard and managed native creation; different-version upgrades, rollback and desktop acceptance remain open','VC-RT-002',['2.4']))
+    # 明确归档变更前执行字节；保留报告原摘要，不能把旧运行重绑定到新实现。
+    for entry in entries:
+        archived={}
+        for name,digest in entry['dependencies'].items():
+            old='docs/evidence/pre-runtime-gate-identity/'+name
+            if sha(safe_file(root,name))!=digest and (root/old).is_file() and sha(safe_file(root,old))==digest:
+                archived[name]=old
+        if archived:
+            entry['dependencies']={archived.get(name,name):digest for name,digest in entry['dependencies'].items()}
+            entry['historical']=True
+            entry['scope']='historical before runtime-gate integration; '+entry['scope']
     return {'schema':'vectorcraft-evidence-index/v1',
             'identitySha256':sha(safe_file(root,'docs/current-identity.json')),
             'entries':entries,

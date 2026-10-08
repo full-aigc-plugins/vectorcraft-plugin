@@ -1,0 +1,8 @@
+{
+  "commit": "9d171647baa2ab259f5d19d52064f51aa6469e5e",
+  "files": {
+    "src/harness/ledger.ts": "c1aa8d6b7ad7c40d5fc0f1a8d87ddae1df0b29144c904690917e5b79355f660d",
+    "src/harness/controller.ts": "64def8f9d81aabacf8382ac55b05cc2fbfa81134939216d44d5a3bc89dad248f",
+    "src/cli.ts": "ee1ee1ba45ca4c2e50313b7ac09f20fdd7529e207d4cca0c466c8fca5b74f82a"
+  }
+}
