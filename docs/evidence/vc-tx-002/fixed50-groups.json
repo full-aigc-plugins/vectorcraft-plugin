@@ -1,0 +1,188 @@
+{
+  "result": "PASS",
+  "skills": 13,
+  "allSkillDigestsUnchanged": true,
+  "allRegisteredOwnedGroupsStopped": true,
+  "groups": [
+    {
+      "case": "launch-ready",
+      "task": "5a437153-8088-4328-9043-0bc9ad879163:inspect:00809dda-5bad-4b67-9c98-57e5abd96217",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": "launch-ready",
+      "task": "5a437153-8088-4328-9043-0bc9ad879163:inspect:0e426abe-8b6e-4277-ae84-85d9b4111a3d",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": "launch-prepared",
+      "task": "f93524ac-dce0-4211-ae71-4c5cce0a50aa:inspect:00e54e93-165f-4ba9-9b52-b1bb14c16b25",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": "launch-prepared",
+      "task": "f93524ac-dce0-4211-ae71-4c5cce0a50aa:inspect:a999121f-ddb2-45f2-8668-72517f0038c8",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": "launch-intent",
+      "task": "dc6991b1-4052-43a4-99ac-365e0970197c:inspect:a91fe6be-022e-4912-aba0-8308d654d023",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": "launch-intent",
+      "task": "dc6991b1-4052-43a4-99ac-365e0970197c:inspect:ccd1b64e-f2cb-4e55-815e-45bc8ba56bb4",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": "launch-registered",
+      "task": "6013adf4-8ac4-4656-b9e7-fb159f33dfed",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": "launch-registered",
+      "task": "6013adf4-8ac4-4656-b9e7-fb159f33dfed:inspect:18a8256e-e4e2-4427-a5da-198b307acb87",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": "launch-registered",
+      "task": "6013adf4-8ac4-4656-b9e7-fb159f33dfed:inspect:2b7ad044-76ac-4740-ae91-0f759b3dd827",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": "launch-authorized",
+      "task": "a6c7f054-593e-4ab0-8b49-b3473ba47cd9",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": "receipt-linked-before",
+      "task": "7251d747-1a3e-4550-a201-a1028de14375",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": "receipt-linked-before",
+      "task": "7251d747-1a3e-4550-a201-a1028de14375:inspect:a2ee0570-723e-49ce-b5fc-d89edcdd8285",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": "receipt-linked-after",
+      "task": "f139a942-3105-42d5-9624-170d6ad6fb26",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": "receipt-linked-after",
+      "task": "f139a942-3105-42d5-9624-170d6ad6fb26:inspect:0e288f1a-9ba3-4b08-b0f2-c64a11eff640",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": "receipt-linked-after",
+      "task": "f139a942-3105-42d5-9624-170d6ad6fb26:inspect:c3ce5859-1d6c-4dbb-89ac-06ebdb9c7410",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": "receipt-plain-before",
+      "task": "1125e1f2-ade0-4410-9150-c8d2def54a9e",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": "receipt-plain-before",
+      "task": "1125e1f2-ade0-4410-9150-c8d2def54a9e:inspect:d29c45c8-4d23-46fc-b43f-489bca771209",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": "receipt-plain-after",
+      "task": "1e15e1ab-cfd8-4c58-aa35-96d646f17047",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": "receipt-plain-after",
+      "task": "1e15e1ab-cfd8-4c58-aa35-96d646f17047:inspect:10b80bd4-1715-4a9b-bb1f-3be80ff69cff",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": "receipt-plain-after",
+      "task": "1e15e1ab-cfd8-4c58-aa35-96d646f17047:inspect:82edfbf8-1d9a-42c3-b979-b48630604caf",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": "linked",
+      "task": "6d4dbed3-a187-4fb7-88da-0b6321f8c77d",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": "linked",
+      "task": "6d4dbed3-a187-4fb7-88da-0b6321f8c77d:inspect:22ee13bd-9971-47f0-b83d-7793b15f0e3a",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": "linked",
+      "task": "6d4dbed3-a187-4fb7-88da-0b6321f8c77d:inspect:24c66694-ce8d-4faa-9794-5c0f32300682",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": "linked",
+      "task": "6d4dbed3-a187-4fb7-88da-0b6321f8c77d:inspect:c2f62b15-8427-4ad9-9717-fabcfa5db7b0",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": "linked",
+      "task": "6d4dbed3-a187-4fb7-88da-0b6321f8c77d:inspect:ea6e5ac9-f210-4891-8f06-22828df3cda3",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": "crash",
+      "task": "34f86af6-c173-4f3d-96e4-3acfeb02ed31",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": "crash",
+      "task": "f1bbdf79-dffb-491b-a603-c661ad185d70",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": "crash",
+      "task": "f1bbdf79-dffb-491b-a603-c661ad185d70:inspect:ca5bc195-6b39-47d2-b2c7-7419f86bfa93",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": "cancel",
+      "task": "400b94a0-4e31-429f-982b-cec1e13ebb90",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": "cancel",
+      "task": "400b94a0-4e31-429f-982b-cec1e13ebb90:inspect:c684331e-91c7-40e0-826c-7a3cde17d493",
+      "epoch": 1,
+      "stopped": true
+    }
+  ]
+}

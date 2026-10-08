@@ -38,7 +38,7 @@
 - [x] 3.3 [VC-TX-001] 完成“版本绑定与单写”真实边界验收并记录版本、平台、输入输出摘要及未验证项。责任：QA owner；前置：3.2。产物：evidence/vc-tx-001/；验证：规范所有场景有证据，且 README 能力状态与证据一致。
 - [x] 3.4 [VC-TX-002] 编写能暴露“幂等与不明确结果恢复”缺失的正向与失败测试并确认预期失败。责任：Harness owner；前置：技能/运行时合同已确定；业务调用依赖对应适配器。产物：fixture、断言及失败日志；验证：失败原因必须是目标行为缺失。
 - [x] 3.5 [VC-TX-002] 在 src/harness/ 账本、租约与恢复 实现“幂等与不明确结果恢复”的最小行为，不扩大支持范围。责任：Harness owner；前置：3.4。产物：对应源码/独立技能源/锁定材料；验证：目标测试和受影响回归通过。
-- [ ] 3.6 [VC-TX-002] 完成“幂等与不明确结果恢复”真实边界验收并记录版本、平台、输入输出摘要及未验证项。责任：QA owner；前置：3.5。产物：evidence/vc-tx-002/；验证：规范所有场景有证据，且 README 能力状态与证据一致。 固定48已覆盖源快照、真实保存后回执丢失及非空链接依赖缺失／改动／检查后改动拒绝；见 `docs/evidence/vectorcraft-source-recovery-fixed48-20261008.json`、`docs/evidence/vectorcraft-linked-recovery-fixed48-20261009.json`。公开固定49／源38另通过完成回执与打包目录身份的四种普通／链接崩溃场景，见 `docs/evidence/vectorcraft-receipt-recovery-fixed49-20261009.json`；候选50已通过原生GO前六种真实崩溃与源核验后改动拒绝，见 `docs/evidence/vectorcraft-launch-recovery-candidate50-20261009.json`；固定50复验与完整逐场景审计仍开放。
+- [x] 3.6 [VC-TX-002] 完成“幂等与不明确结果恢复”真实边界验收并记录版本、平台、输入输出摘要及未验证项。责任：QA owner；前置：3.5。产物：evidence/vc-tx-002/；验证：规范所有场景有证据，且 README 能力状态与证据一致。 公开固定50／实际宿主源38已完成全部七个当前VC-TX-002场景：13组真实原生崩溃／恢复验收、109项Node与43项Python回归通过，13技能摘要保持，30个登记进程组停止；见 `docs/evidence/vectorcraft-task-recovery-fixed50-20261009.json` 与 `docs/evidence/vc-tx-002/scenario-matrix-fixed50.json`。仅覆盖声明的macOS arm64，不关闭3.9、GUI、模型或完整V1。
 - [x] 3.7 [VC-TX-003] 编写能暴露“取消与预算边界”缺失的正向与失败测试并确认预期失败。责任：Harness owner；前置：技能/运行时合同已确定；业务调用依赖对应适配器。产物：fixture、断言及失败日志；验证：失败原因必须是目标行为缺失。
 - [x] 3.8 [VC-TX-003] 在 src/harness/ 账本、租约与恢复 实现“取消与预算边界”的最小行为，不扩大支持范围。责任：Harness owner；前置：3.7。产物：对应源码/独立技能源/锁定材料；验证：目标测试和受影响回归通过。
 - [ ] 3.9 [VC-TX-003] 完成“取消与预算边界”真实边界验收并记录版本、平台、输入输出摘要及未验证项。责任：QA owner；前置：3.8。产物：evidence/vc-tx-003/；验证：规范所有场景有证据，且 README 能力状态与证据一致。

@@ -79,9 +79,10 @@
         "3.6"
       ],
       "owner": "Harness owner",
-      "status": "in-progress",
-      "candidateEvidence": "docs/evidence/vectorcraft-execution-control-20261008.json",
-      "scope": "failure tests and minimum controlled execution implemented; bounded native cancellation/restart/original-file inspection proven; VC-TX-001 task3.3 verified at fixed47; full tasks3.6/3.9 remain open"
+      "status": "verified",
+      "candidateEvidence": "docs/evidence/vectorcraft-launch-recovery-candidate50-20261009.json",
+      "scope": "all seven current VC-TX-002 scenarios on public installed plugin50/source38 macOS arm64;13 actual native crash/recovery cases,109 Node and43 Python tests; full VC-TX-003 and V1 remain open",
+      "evidence": "docs/evidence/vectorcraft-task-recovery-fixed50-20261009.json"
     },
     {
       "requirement": "VC-TX-003",

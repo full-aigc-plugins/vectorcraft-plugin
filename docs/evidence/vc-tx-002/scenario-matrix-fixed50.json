@@ -1,0 +1,836 @@
+{
+  "schema": "vectorcraft-recovery-scenario-matrix/v1",
+  "result": "PASS",
+  "scope": "all current VC-TX-002 scenarios; public installed dev.50/source38; declared macOS arm64 only",
+  "scenarioContracts": {
+    "VC-TX-002-P": "9b604a15560b323590d38664a2cbe63384e91146dae993fb88e884debca838c0",
+    "VC-TX-002-N": "86515903878180cce3f7698378495afbf637a47b11b734c4d1a7908d0cdd1045",
+    "VC-TX-002-LOCAL": "e994309a5ba0e5249d321fda6d8cde837f72a9b258ec4c6b7e61e4a363683e31",
+    "VC-TX-002-LAUNCH": "69df651089b9e677dbf814a767274abbc20965c1f028485adb8d0c29c05e09dd",
+    "VC-TX-002-SNAPSHOT": "bc4838d4dab13878cf8b97244cd783d1f3478d8ec81c467293c5df17ca4f0ae0",
+    "VC-TX-002-RECEIPT": "47a71ba429ffadcfce4a69b7057eebd31e91f8191ded67571ffc447eef4450a5",
+    "VC-TX-002-DELIVERY": "2d5394092781f6b417f81fbf45ae00f27b3c0533bf66ec22693ebd60f6a0f5bf"
+  },
+  "entries": [
+    {
+      "scenario": "VC-TX-002-P",
+      "checks": [
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-crash.json",
+          "pointer": "/handoff/state",
+          "expected": "review_ready",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-crash.json",
+          "pointer": "/sourceUnchanged",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-crash.json",
+          "pointer": "/confirmedNativeStopped",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-crash.json",
+          "pointer": "/lateNativeReplyQuarantined",
+          "expected": true,
+          "level": "native-fixed-install"
+        }
+      ]
+    },
+    {
+      "scenario": "VC-TX-002-N",
+      "checks": [
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-crash.json",
+          "pointer": "/noAutomaticReplay",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-crash.json",
+          "pointer": "/changedOutputRejected",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-crash.json",
+          "pointer": "/secondSourceWriterRejected",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-crash.json",
+          "pointer": "/differentSourceSameOutputRejected",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-crash.json",
+          "pointer": "/competingTaskNotRegistered",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-crash.json",
+          "pointer": "/nativeAliveRefusedRecovery",
+          "expected": true,
+          "level": "native-fixed-install"
+        }
+      ]
+    },
+    {
+      "scenario": "VC-TX-002-LOCAL",
+      "checks": [
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-intent.json",
+          "pointer": "/proof/nativeInspection",
+          "expected": "readonly-original-source",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-intent.json",
+          "pointer": "/outputAbsent",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-registered.json",
+          "pointer": "/proof/nativeInspection",
+          "expected": "readonly-original-source",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-registered.json",
+          "pointer": "/outputAbsent",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-receipt-plain-before.json",
+          "pointer": "/receiptMissingOnRestart",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-receipt-plain-before.json",
+          "pointer": "/outputInodePreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-receipt-plain-before.json",
+          "pointer": "/actualLateReceiptQuarantined",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-receipt-linked-before.json",
+          "pointer": "/receiptMissingOnRestart",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-receipt-linked-before.json",
+          "pointer": "/outputInodePreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-receipt-linked-before.json",
+          "pointer": "/actualLateReceiptQuarantined",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-linked.json",
+          "pointer": "/allLinksInsideOriginalStage",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-linked.json",
+          "pointer": "/changedAfterInspectionRetainedOccupation",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-linked.json",
+          "pointer": "/allOwnedInspectionGroupsStopped",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-linked.json",
+          "pointer": "/sourceUnchanged",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-linked.json",
+          "pointer": "/checkpointInodePreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-linked.json",
+          "pointer": "/assetInodePreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-linked.json",
+          "pointer": "/refusals/0/error",
+          "expected": "original_dependency_unverified",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-linked.json",
+          "pointer": "/refusals/1/error",
+          "expected": "original_dependency_unverified",
+          "level": "native-fixed-install"
+        }
+      ]
+    },
+    {
+      "scenario": "VC-TX-002-LAUNCH",
+      "checks": [
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-ready.json",
+          "pointer": "/attemptsPreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-ready.json",
+          "pointer": "/bytesPreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-ready.json",
+          "pointer": "/outputAbsent",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-ready.json",
+          "pointer": "/noAutomaticReplay",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-ready.json",
+          "pointer": "/changedOutputRefused",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-ready.json",
+          "pointer": "/duplicateRefused",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-ready.json",
+          "pointer": "/settledState",
+          "expected": "interrupted_verified",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-ready.json",
+          "pointer": "/settledEpoch",
+          "expected": 2,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-ready.json",
+          "pointer": "/proof/nativeInspection",
+          "expected": "readonly-original-source",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-ready.json",
+          "pointer": "/postInspectionSourceChangeRefused",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-prepared.json",
+          "pointer": "/attemptsPreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-prepared.json",
+          "pointer": "/bytesPreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-prepared.json",
+          "pointer": "/outputAbsent",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-prepared.json",
+          "pointer": "/noAutomaticReplay",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-prepared.json",
+          "pointer": "/changedOutputRefused",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-prepared.json",
+          "pointer": "/duplicateRefused",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-prepared.json",
+          "pointer": "/settledState",
+          "expected": "interrupted_verified",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-prepared.json",
+          "pointer": "/settledEpoch",
+          "expected": 2,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-prepared.json",
+          "pointer": "/proof/nativeInspection",
+          "expected": "readonly-original-source",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-prepared.json",
+          "pointer": "/postInspectionSourceChangeRefused",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-intent.json",
+          "pointer": "/attemptsPreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-intent.json",
+          "pointer": "/bytesPreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-intent.json",
+          "pointer": "/outputAbsent",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-intent.json",
+          "pointer": "/noAutomaticReplay",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-intent.json",
+          "pointer": "/changedOutputRefused",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-intent.json",
+          "pointer": "/duplicateRefused",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-intent.json",
+          "pointer": "/settledState",
+          "expected": "interrupted_verified",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-intent.json",
+          "pointer": "/settledEpoch",
+          "expected": 2,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-intent.json",
+          "pointer": "/proof/nativeInspection",
+          "expected": "readonly-original-source",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-intent.json",
+          "pointer": "/postInspectionSourceChangeRefused",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-registered.json",
+          "pointer": "/attemptsPreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-registered.json",
+          "pointer": "/bytesPreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-registered.json",
+          "pointer": "/outputAbsent",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-registered.json",
+          "pointer": "/noAutomaticReplay",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-registered.json",
+          "pointer": "/changedOutputRefused",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-registered.json",
+          "pointer": "/duplicateRefused",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-registered.json",
+          "pointer": "/settledState",
+          "expected": "interrupted_verified",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-registered.json",
+          "pointer": "/settledEpoch",
+          "expected": 2,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-registered.json",
+          "pointer": "/proof/nativeInspection",
+          "expected": "readonly-original-source",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-registered.json",
+          "pointer": "/postInspectionSourceChangeRefused",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-authorized.json",
+          "pointer": "/attemptsPreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-authorized.json",
+          "pointer": "/bytesPreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-authorized.json",
+          "pointer": "/outputAbsent",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-authorized.json",
+          "pointer": "/noAutomaticReplay",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-authorized.json",
+          "pointer": "/changedOutputRefused",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-authorized.json",
+          "pointer": "/duplicateRefused",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-authorized.json",
+          "pointer": "/authorizedWithoutEventsRefused",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-authorized.json",
+          "pointer": "/settledState",
+          "expected": null,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-create-ready.json",
+          "pointer": "/attemptsPreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-create-ready.json",
+          "pointer": "/bytesPreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-create-ready.json",
+          "pointer": "/outputAbsent",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-create-ready.json",
+          "pointer": "/noAutomaticReplay",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-create-ready.json",
+          "pointer": "/changedOutputRefused",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-create-ready.json",
+          "pointer": "/duplicateRefused",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-create-ready.json",
+          "pointer": "/settledState",
+          "expected": "interrupted_verified",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-create-ready.json",
+          "pointer": "/settledEpoch",
+          "expected": 2,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-create-ready.json",
+          "pointer": "/proof/nativeInspection",
+          "expected": "not-applicable-no-source",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-node.log",
+          "contains": "independent SQLite connections serialize sealing against GO authorization",
+          "level": "installed-unit-test"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-node.log",
+          "contains": "missing new protocol gate is not proof",
+          "level": "installed-unit-test"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-node.log",
+          "contains": "legacy tasks do not acquire",
+          "level": "installed-unit-test"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-node.log",
+          "contains": "deadline expiry between intent and GO",
+          "level": "installed-unit-test"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-node.log",
+          "contains": "cancelling an unlaunched ready task",
+          "level": "installed-unit-test"
+        }
+      ]
+    },
+    {
+      "scenario": "VC-TX-002-SNAPSHOT",
+      "checks": [
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-cancel.json",
+          "pointer": "/snapshotRefusals/0/error",
+          "expected": "skill_snapshot_mismatch",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-cancel.json",
+          "pointer": "/snapshotRefusals/0/inspectionProcessStarted",
+          "expected": false,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-cancel.json",
+          "pointer": "/snapshotRefusals/1/error",
+          "expected": "recovery_plan_mismatch",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-cancel.json",
+          "pointer": "/snapshotRefusals/1/inspectionProcessStarted",
+          "expected": false,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-cancel.json",
+          "pointer": "/snapshotRefusals/2/error",
+          "expected": "recovery_control_mismatch",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-cancel.json",
+          "pointer": "/snapshotRefusals/2/inspectionProcessStarted",
+          "expected": false,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-cancel.json",
+          "pointer": "/snapshotRefusals/3/error",
+          "expected": "recovery_source_snapshot_mismatch",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-cancel.json",
+          "pointer": "/snapshotRefusals/3/inspectionProcessStarted",
+          "expected": false,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-node.log",
+          "contains": "missing-control-hash",
+          "level": "installed-unit-test"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-node.log",
+          "contains": "symlink-plan",
+          "level": "installed-unit-test"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-node.log",
+          "contains": "source-edited",
+          "level": "installed-unit-test"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-node.log",
+          "contains": "source-deleted",
+          "level": "installed-unit-test"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-node.log",
+          "contains": "source-added",
+          "level": "installed-unit-test"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-node.log",
+          "contains": "source-symlink",
+          "level": "installed-unit-test"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-node.log",
+          "contains": "source-missing-directory",
+          "level": "installed-unit-test"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-node.log",
+          "contains": "source-missing-hash",
+          "level": "installed-unit-test"
+        }
+      ]
+    },
+    {
+      "scenario": "VC-TX-002-RECEIPT",
+      "checks": [
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-receipt-linked-after.json",
+          "pointer": "/receiptPersistedOnRestart",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-receipt-linked-after.json",
+          "pointer": "/postInspectionReceiptChangeRefused",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-receipt-linked-after.json",
+          "pointer": "/receiptRefusals/0/inspectionStarted",
+          "expected": false,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-receipt-linked-after.json",
+          "pointer": "/receiptRefusals/0/occupationRetained",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-receipt-linked-after.json",
+          "pointer": "/receiptRefusals/1/inspectionStarted",
+          "expected": false,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-receipt-linked-after.json",
+          "pointer": "/receiptRefusals/1/occupationRetained",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-receipt-linked-after.json",
+          "pointer": "/receiptRefusals/2/inspectionStarted",
+          "expected": false,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-receipt-linked-after.json",
+          "pointer": "/receiptRefusals/2/occupationRetained",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-receipt-plain-after.json",
+          "pointer": "/receiptPersistedOnRestart",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-receipt-plain-after.json",
+          "pointer": "/postInspectionReceiptChangeRefused",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-receipt-plain-after.json",
+          "pointer": "/receiptRefusals/0/inspectionStarted",
+          "expected": false,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-receipt-plain-after.json",
+          "pointer": "/receiptRefusals/0/occupationRetained",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-receipt-plain-after.json",
+          "pointer": "/receiptRefusals/1/inspectionStarted",
+          "expected": false,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-receipt-plain-after.json",
+          "pointer": "/receiptRefusals/1/occupationRetained",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-receipt-plain-after.json",
+          "pointer": "/receiptRefusals/2/inspectionStarted",
+          "expected": false,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-receipt-plain-after.json",
+          "pointer": "/receiptRefusals/2/occupationRetained",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-node.log",
+          "contains": "receipt malformed",
+          "level": "installed-unit-test"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-node.log",
+          "contains": "receipt invalid-state",
+          "level": "installed-unit-test"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-node.log",
+          "contains": "receipt missing-result",
+          "level": "installed-unit-test"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-node.log",
+          "contains": "old proofs without step identity",
+          "level": "installed-unit-test"
+        }
+      ]
+    },
+    {
+      "scenario": "VC-TX-002-DELIVERY",
+      "checks": [
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-receipt-linked-before.json",
+          "pointer": "/recovery/preparedManifestSha256",
+          "expected": "b86a56b75799f3aca8e2f03d66e6c0c46cb8e97041a04dc23dfb66efc21558de",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-receipt-linked-before.json",
+          "pointer": "/outputInodePreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-receipt-linked-before.json",
+          "pointer": "/exportCount",
+          "expected": 9,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-receipt-linked-after.json",
+          "pointer": "/recovery/preparedManifestSha256",
+          "expected": "ea54f66f6143183ffa49b015e60b1def79cbbe75f527dbe5ad020b47839f98b5",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-receipt-linked-after.json",
+          "pointer": "/outputInodePreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-receipt-linked-after.json",
+          "pointer": "/exportCount",
+          "expected": 9,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-node.log",
+          "contains": "prepared-wrong-output",
+          "level": "installed-unit-test"
+        },
+        {
+          "report": "docs/evidence/vc-tx-002/fixed50-node.log",
+          "contains": "prepared-bad-digest",
+          "level": "installed-unit-test"
+        }
+      ]
+    }
+  ]
+}

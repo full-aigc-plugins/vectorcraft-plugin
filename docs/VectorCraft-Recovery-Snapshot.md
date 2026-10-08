@@ -1,5 +1,7 @@
 # Snapshot identity during interrupted recovery
 
+Current status: public installed50/source38 passes all seven current VC-TX-002 scenarios and closes3.6, with13 real cases,109 Node and43 Python tests,13 unchanged skills and30 stopped registered groups.96 tasks complete and31 remain;3.9 and complete V1 stay open. The chronology below preserves each earlier release evidence boundary. [Scenario acceptance](evidence/vectorcraft-task-recovery-fixed50-20261009.json).
+
 Plugin dev.45 persists the control file SHA-256 in the execution intent before side effects. Before launching any native inspection process, recovery checks the complete skill digest, plan snapshot digest and control file digest. Replaced scripts, changed plans or authorization and symbolic-link snapshot files are refused. Plan and skill digests must also match the task binding. An older unresolved task without its original control digest returns recovery_identity_missing and retains resource occupation; current bytes cannot manufacture its original identity. This is a compatibility limit for old unresolved tasks; completed deliveries and pinned skills remain unchanged.
 
 The [contract](../openspec/changes/establish-v1-plugin/specs/task-execution/spec.md) remains owned by establish-v1-plugin. Recovery reads the original files, dependencies and receipts without moving failed directories or replaying unknown edits. It never promotes interrupted files to successful delivery. Cancellation settles as cancelled; an unknown crash settles as interrupted_verified; both fence the old epoch.
