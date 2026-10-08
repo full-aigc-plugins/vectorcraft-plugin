@@ -181,6 +181,9 @@ def build(root=ROOT):
     writer47_candidate='docs/evidence/vectorcraft-single-writer-candidate47-20261008.json'
     if (root/writer47_candidate).is_file():
         entries.append(bound_report(root,writer47_candidate,'native-candidate','VC-TX-001 candidate including physical namespace replacement,77 Node and43 Python tests; fixed47 remains separate','VC-TX-001'))
+    writer47_fixed='docs/evidence/vectorcraft-single-writer-fixed47-20261008.json'
+    if (root/writer47_fixed).is_file():
+        entries.append(bound_report(root,writer47_fixed,'fixed-install','All seven VC-TX-001 scenarios including physical namespace replacement at public installed plugin47/source37 on macOS arm64; 77 Node and43 Python tests','VC-TX-001',['3.3']))
     # 明确归档变更前执行字节；保留报告原摘要，不能把旧运行重绑定到新实现。
     for entry in entries:
         archived={}

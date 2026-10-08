@@ -65,9 +65,10 @@
         "3.14"
       ],
       "owner": "Harness owner",
-      "status": "in-progress",
+      "status": "verified",
       "candidateEvidence": "docs/evidence/vectorcraft-execution-control-20261008.json",
-      "scope": "failure tests and minimum controlled execution implemented; bounded native cancellation/restart/original-file inspection proven; full acceptance tasks3.3/3.6/3.9 remain open"
+      "scope": "all seven current VC-TX-001 scenarios including namespace replacement in public installed plugin47/source37 on macOS arm64; manual human GUI and creative acceptance not claimed",
+      "evidence": "docs/evidence/vectorcraft-single-writer-fixed47-20261008.json"
     },
     {
       "requirement": "VC-TX-002",
@@ -80,7 +81,7 @@
       "owner": "Harness owner",
       "status": "in-progress",
       "candidateEvidence": "docs/evidence/vectorcraft-execution-control-20261008.json",
-      "scope": "failure tests and minimum controlled execution implemented; bounded native cancellation/restart/original-file inspection proven; full acceptance tasks3.3/3.6/3.9 remain open"
+      "scope": "failure tests and minimum controlled execution implemented; bounded native cancellation/restart/original-file inspection proven; VC-TX-001 task3.3 verified at fixed47; full tasks3.6/3.9 remain open"
     },
     {
       "requirement": "VC-TX-003",
@@ -93,7 +94,7 @@
       "owner": "Harness owner",
       "status": "in-progress",
       "candidateEvidence": "docs/evidence/vectorcraft-execution-control-20261008.json",
-      "scope": "failure tests and minimum controlled execution implemented; bounded native cancellation/restart/original-file inspection proven; full acceptance tasks3.3/3.6/3.9 remain open"
+      "scope": "failure tests and minimum controlled execution implemented; bounded native cancellation/restart/original-file inspection proven; VC-TX-001 task3.3 verified at fixed47; full tasks3.6/3.9 remain open"
     },
     {
       "requirement": "VC-DM-001",

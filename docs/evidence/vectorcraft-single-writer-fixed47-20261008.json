@@ -1,0 +1,143 @@
+{
+  "schema": "vectorcraft-single-writer-fixed-install/v1",
+  "result": "PASS",
+  "pluginVersion": "0.1.0-dev.47",
+  "pluginCommit": "98355218254159e1694a38df5056d96ef2abbb1b",
+  "sourceCommit": "2b75ad104b47fdb8fdad24fd90635ed9512fd4f6",
+  "hostVersion": "codex-cli 0.153.4",
+  "platform": "Darwin-arm64",
+  "skills": 13,
+  "postRegressionSkillDigestsUnchanged": true,
+  "tests": {
+    "nodePassed": 77,
+    "pythonPassed": 43,
+    "skipped": 0,
+    "nativeContractCases": 10
+  },
+  "requirement": "VC-TX-001",
+  "completedTask": "3.3",
+  "publishedSpecSha256": "2c4be321aa5889a2e09f2747d74752d3bac1a432b7294fed60b7d28b4b34e67d",
+  "acceptanceContractSha256": "34bbd3ff6065312f798ec49e5f0c971ff6b5b6780b012a98464c85ef44a5c017",
+  "scenarioMatrix": {
+    "VC-TX-001-P": {
+      "result": "PASS",
+      "proofPaths": [
+        "docs/evidence/single-writer47/fixed47-contract.json",
+        "docs/evidence/single-writer47/fixed47-source-snapshot-modes.json"
+      ]
+    },
+    "VC-TX-001-N": {
+      "result": "PASS",
+      "proofPaths": [
+        "docs/evidence/single-writer47/fixed47-contract.json",
+        "docs/evidence/single-writer47/fixed47-gui-snapshots.json"
+      ]
+    },
+    "VC-TX-001-OUTPUT": {
+      "result": "PASS",
+      "proofPaths": [
+        "docs/evidence/single-writer47/fixed47-contract.json",
+        "docs/evidence/single-writer47/fixed47-crash.json",
+        "docs/evidence/single-writer47/fixed47-node.log"
+      ]
+    },
+    "VC-TX-001-INTERRUPT": {
+      "result": "PASS",
+      "proofPaths": [
+        "docs/evidence/single-writer47/fixed47-crash.json"
+      ]
+    },
+    "VC-TX-001-SOURCE": {
+      "result": "PASS",
+      "proofPaths": [
+        "docs/evidence/single-writer47/fixed47-contract.json",
+        "docs/evidence/single-writer47/fixed47-crash.json"
+      ]
+    },
+    "VC-TX-001-AUTH-SNAPSHOT": {
+      "result": "PASS",
+      "proofPaths": [
+        "docs/evidence/single-writer47/fixed47-contract.json",
+        "docs/evidence/single-writer47/fixed47-node.log"
+      ]
+    },
+    "VC-TX-001-INPUTS": {
+      "result": "PASS",
+      "proofPaths": [
+        "docs/evidence/single-writer47/fixed47-contract.json",
+        "docs/evidence/single-writer47/fixed47-source-snapshot-modes.json",
+        "docs/evidence/single-writer47/fixed47-node.log"
+      ]
+    }
+  },
+  "scope": "all seven current VC-TX-001 scenarios including physical namespace replacement at public installed plugin47 and its actual host-loaded source37 on macOS arm64; signed desktop bridge mutation, real native branches and coordinator SIGKILL with owned surviving group",
+  "fingerprints": {
+    "src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
+    "src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
+    "src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
+    "src/evaluation/revision_cycle.ts": "019a80ddf7ca9fa80737934ad65efb3cf5e66c17b180e25d32091123ac25185f",
+    "src/evaluation/technical_review.ts": "59eb77085bde9573e049701748ed7b508c507386a3f7686ebcc75384666e43a3",
+    "src/harness/controller.ts": "740f5fc328e50297dfe49fa2ab1bc5c36ee2ca676189d3ffea5f4aef5f93adac",
+    "src/harness/ledger.ts": "5ca28bbb68a093f1c66ba6ca064a8d2dad16413929b823e259b3a86bbcd8073c",
+    "src/harness/process_registry.ts": "c19a3cb5d42cc33620bc5baeff7db71f1c6daa92f046a112951a7f50f7906162",
+    "src/harness/process_runner.py": "7332d0757aa01f03d00697f8eb8d93f849517cab34ea8a1355ba6c9513d5aba2",
+    "src/harness/recovery.ts": "dc06c77546730a48046c96a5fdc466b3421b0e0c12b2117bba2cd3c4ff74878c",
+    "src/harness/skill_digest.ts": "e4cd8dbbcacd338fc39ef6f114ad991a8c6c7274987d92ff62ce1b9bd8ab9d9e",
+    "src/planning/geometry.ts": "97650dc916111666a73bcfea6ddc797e48b5b9bc2d6b6e54a85f33b1a8766e2d",
+    "src/runtime/prepare_runtime.ts": "08ecee9238056335ac33710421b4b878cad01b4556ffad641d14c26819b2e6c1",
+    "src/runtime/runtime_gate.ts": "269966ae978c9afa7b9cdad719afce9ca0b57e54c52f3cb732777f3ddc23a68c",
+    "src/runtime/runtime_probe.py": "ee196f91dde9487bd1537d1c91a8f5957deb795431a54baa333be35bfc90e54c",
+    "src/strict_json.ts": "69a445339670e53f6a7fcb96770b53b896666dd1e60f114c1751a23981d5b7d0",
+    "scripts/acceptance/checked_review.ts": "bc619deda373358f3eff056323f495cc3288f40037cd98860a2a89b5edbce5fb",
+    "scripts/acceptance/execution_identity.ts": "923b35a9ddd6d6f7a2b6f22e2f597012a84bbee51b111c5a005d173af490a422",
+    "scripts/acceptance/fixed_brand_edges.py": "e3b4b53cb732a46b18cfbb1c36032b19aac1d07638be4ca8a46d6f8dd9daf703",
+    "scripts/acceptance/fixed_install.py": "b360544f751efe3c0f64a0f40a75d81a61588185956d17d7b9cca9ca766abd48",
+    "scripts/acceptance/fixed_native.py": "913e0656e13a8985335197684460ad40aecbe5440d96587252a92e096d96b09e",
+    "scripts/acceptance/fixed_plan_edges.py": "25888c90833418b32ae1cce4e0291ab88dd08083834981dca5835ba9d310d1e0",
+    "scripts/acceptance/fixed_protocol_edges.py": "f68075c81100dfbaff3655ee8e330ea153246253166e84dcc6a1e46441b8840f",
+    "scripts/acceptance/geometry.ts": "0f987e5c701a0d2af47529788b66f7e0d3de8482897edad8351d0a3b11a692c3",
+    "scripts/acceptance/managed_boolean.ts": "55fbffdf6d44a8b0b95b9902d7716037980eeaf5c2c437c69a06b740b889be52",
+    "scripts/acceptance/managed_cancel.ts": "2b3ff41a2dc03890d596130b12e67ed5d201325f8b6732a876add4bc80c3453b",
+    "scripts/acceptance/record_execution_control.py": "9ded1a54b482c84ff477e0c3a1d97aa2dd362e61a5cd749b327adae1f95dc37b",
+    "scripts/acceptance/revision_cycle.ts": "fb13c44b873841570fe4f3e46665da55e4007064260c2498899a5289dfa69c2a",
+    "scripts/acceptance/runtime_activation_race.ts": "dc7502d97180fbd92c3b690a6d73f2602f257bad182109fd7a2e472df2c6bf81",
+    "scripts/acceptance/runtime_activation_race_child.ts": "c58f0d1ac1db7f4223e417a4aaa06d668923fee7a99adf93fec3fb30d913ad19",
+    "scripts/acceptance/runtime_boundaries.ts": "9ea05b771ab9df8db34f1971f8610bde52b642c23a1741c48879cae8b9797652",
+    "scripts/acceptance/runtime_boundary_probe.py": "f4f795e97c61d48a73f3b0ad3ed4f4b0215cfc01095b84bcdb0f44568eab2ad5",
+    "scripts/acceptance/runtime_bridge_child.py": "3bd45a343e4113cfe495e7ca608e544e414d4b6f7ee7918cddc8924a918bb357",
+    "scripts/acceptance/runtime_bridge_drain.ts": "9c66c9a8f19835bb54f52de77517699e70fc1c72bab6c5bcaa964662af2f39bb",
+    "scripts/acceptance/runtime_default.ts": "ce238365dad5f30eec4a7c8029566a73c69323152fbefdd9ae6fcff8ee782648",
+    "scripts/acceptance/runtime_gate.ts": "cf94973f6475b5af35011dd60d0ed26a402acc306de9bf1609dd703284c2f7f5",
+    "scripts/acceptance/runtime_native_child.py": "1ddf23c94d43bad1a943d6aeb7582ce1c72fe6d97bca6a36dd679f990e5c46d7",
+    "scripts/acceptance/runtime_open_reader.ts": "d79d11da7dffd4ebe6c26d2ba368753f4e3584f7719228682e56522943962747",
+    "scripts/acceptance/single_round.ts": "309115ba29a4b5ea69e70099a58d657ff1e29d48284af42a9d3461fefee9c84f",
+    "scripts/acceptance/task_contract.ts": "a65bed865f7ec61bbe6e93f70fce383c0c10722a5c1b244ffd93fbcd84ceb8a1",
+    "scripts/acceptance/task_crash.ts": "44b1db20e97c778a67907b355a98289bc1b94d4cc030918a6e82fe5a7d68fc21",
+    "scripts/acceptance/task_crash_child.ts": "5152beab700d2ca9ff7033718c88d323bc17cf1b3cf1c26db51abcd7f636a9ce",
+    "scripts/acceptance/task_gui_edit.py": "d26eda2ae8b1d69167171d2067dbcc27e6617be23b49e84707e3133fff94bc68",
+    "scripts/acceptance/verify_fixed.py": "d4a5ea7c86ec7bc4939a055d40b8128db010ba7a73b7f7e8e27ee7613f908d15",
+    "schemas/vector-review-receipt.schema.json": "d1e94365af9e75ce55de82df50a36eb37a65d0da4b19f66e704b00e9b35641ab",
+    "schemas/vector-review-request.schema.json": "15951f56b14316c1b6d06b58194c178fbd13c20c85e1ce1e6e492c204ec3f4cd",
+    "schemas/vector-revision-policy.schema.json": "a68d6f6a5d639864edd34a24bd626f8668c49a6f7d8121febcc71353d4251073",
+    "plugin.json": "fd8b6418943ffde1928bb2de06ef6d2b63187a607e64a3d3e5fa7654a8ba1386",
+    "skills.lock.json": "37cf4e7a514193ff10b1f051915b931874f05a8f693c87e67d904657f040464e",
+    "docs/evidence/single-writer47/fixed47-node.log": "bf9405c0ef018d63ccac1cb9915e2300ee0594ec9e251eb30bd1ef60837bf5ba",
+    "docs/evidence/single-writer47/fixed-host.json": "a3d27b20fedc5d520f2dfc89e7fc6b58835fdfce58b0c644dfe2b813080b4fdb",
+    "docs/evidence/single-writer47/fixed47-contract.json": "d3d0adaa5e321fdb324654d1011aa5cad3d8e5658994d1d841bd3b9c80de350e",
+    "docs/evidence/single-writer47/fixed47-crash.json": "cc273bf9c46403abd21cc21cd17252aaa997629f10918e8c88855d6afb3a0da6",
+    "docs/evidence/single-writer47/fixed47-python.log": "33f202dcaeed51ce80c72ba2502a05470882a50f8dfd73a0d60e4ad90b0cfceb",
+    "docs/evidence/single-writer47/fixed47-source-snapshot-modes.json": "a3ae2bcddebdfe4adacfd550e34cff544730628ce39b24a469dfcce54933bdfe",
+    "docs/evidence/single-writer47/fixed47-gui-snapshots.json": "79ff186392339714b19619c06ddc96634d5db21b968bc47a34b308db4ec6b7ac"
+  },
+  "remainingOpenTasks": 32,
+  "excluded": [
+    "manual human GUI interaction",
+    "creative acceptance",
+    "complete3.6",
+    "complete3.9",
+    "model routing",
+    "other platforms",
+    "complete V1",
+    "marketplace eligibility"
+  ]
+}

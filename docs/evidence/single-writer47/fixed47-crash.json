@@ -1,0 +1,181 @@
+{
+  "result": "PASS",
+  "fingerprints": {
+    "src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
+    "src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
+    "src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
+    "src/evaluation/revision_cycle.ts": "019a80ddf7ca9fa80737934ad65efb3cf5e66c17b180e25d32091123ac25185f",
+    "src/evaluation/technical_review.ts": "59eb77085bde9573e049701748ed7b508c507386a3f7686ebcc75384666e43a3",
+    "src/harness/controller.ts": "740f5fc328e50297dfe49fa2ab1bc5c36ee2ca676189d3ffea5f4aef5f93adac",
+    "src/harness/ledger.ts": "5ca28bbb68a093f1c66ba6ca064a8d2dad16413929b823e259b3a86bbcd8073c",
+    "src/harness/process_registry.ts": "c19a3cb5d42cc33620bc5baeff7db71f1c6daa92f046a112951a7f50f7906162",
+    "src/harness/process_runner.py": "7332d0757aa01f03d00697f8eb8d93f849517cab34ea8a1355ba6c9513d5aba2",
+    "src/harness/recovery.ts": "dc06c77546730a48046c96a5fdc466b3421b0e0c12b2117bba2cd3c4ff74878c",
+    "src/harness/skill_digest.ts": "e4cd8dbbcacd338fc39ef6f114ad991a8c6c7274987d92ff62ce1b9bd8ab9d9e",
+    "src/planning/geometry.ts": "97650dc916111666a73bcfea6ddc797e48b5b9bc2d6b6e54a85f33b1a8766e2d",
+    "src/runtime/prepare_runtime.ts": "08ecee9238056335ac33710421b4b878cad01b4556ffad641d14c26819b2e6c1",
+    "src/runtime/runtime_gate.ts": "269966ae978c9afa7b9cdad719afce9ca0b57e54c52f3cb732777f3ddc23a68c",
+    "src/runtime/runtime_probe.py": "ee196f91dde9487bd1537d1c91a8f5957deb795431a54baa333be35bfc90e54c",
+    "src/strict_json.ts": "69a445339670e53f6a7fcb96770b53b896666dd1e60f114c1751a23981d5b7d0",
+    "scripts/acceptance/checked_review.ts": "bc619deda373358f3eff056323f495cc3288f40037cd98860a2a89b5edbce5fb",
+    "scripts/acceptance/execution_identity.ts": "923b35a9ddd6d6f7a2b6f22e2f597012a84bbee51b111c5a005d173af490a422",
+    "scripts/acceptance/fixed_brand_edges.py": "e3b4b53cb732a46b18cfbb1c36032b19aac1d07638be4ca8a46d6f8dd9daf703",
+    "scripts/acceptance/fixed_install.py": "b360544f751efe3c0f64a0f40a75d81a61588185956d17d7b9cca9ca766abd48",
+    "scripts/acceptance/fixed_native.py": "913e0656e13a8985335197684460ad40aecbe5440d96587252a92e096d96b09e",
+    "scripts/acceptance/fixed_plan_edges.py": "25888c90833418b32ae1cce4e0291ab88dd08083834981dca5835ba9d310d1e0",
+    "scripts/acceptance/fixed_protocol_edges.py": "f68075c81100dfbaff3655ee8e330ea153246253166e84dcc6a1e46441b8840f",
+    "scripts/acceptance/geometry.ts": "0f987e5c701a0d2af47529788b66f7e0d3de8482897edad8351d0a3b11a692c3",
+    "scripts/acceptance/managed_boolean.ts": "55fbffdf6d44a8b0b95b9902d7716037980eeaf5c2c437c69a06b740b889be52",
+    "scripts/acceptance/managed_cancel.ts": "2b3ff41a2dc03890d596130b12e67ed5d201325f8b6732a876add4bc80c3453b",
+    "scripts/acceptance/record_execution_control.py": "9ded1a54b482c84ff477e0c3a1d97aa2dd362e61a5cd749b327adae1f95dc37b",
+    "scripts/acceptance/revision_cycle.ts": "fb13c44b873841570fe4f3e46665da55e4007064260c2498899a5289dfa69c2a",
+    "scripts/acceptance/runtime_activation_race.ts": "dc7502d97180fbd92c3b690a6d73f2602f257bad182109fd7a2e472df2c6bf81",
+    "scripts/acceptance/runtime_activation_race_child.ts": "c58f0d1ac1db7f4223e417a4aaa06d668923fee7a99adf93fec3fb30d913ad19",
+    "scripts/acceptance/runtime_boundaries.ts": "9ea05b771ab9df8db34f1971f8610bde52b642c23a1741c48879cae8b9797652",
+    "scripts/acceptance/runtime_boundary_probe.py": "f4f795e97c61d48a73f3b0ad3ed4f4b0215cfc01095b84bcdb0f44568eab2ad5",
+    "scripts/acceptance/runtime_bridge_child.py": "3bd45a343e4113cfe495e7ca608e544e414d4b6f7ee7918cddc8924a918bb357",
+    "scripts/acceptance/runtime_bridge_drain.ts": "9c66c9a8f19835bb54f52de77517699e70fc1c72bab6c5bcaa964662af2f39bb",
+    "scripts/acceptance/runtime_default.ts": "ce238365dad5f30eec4a7c8029566a73c69323152fbefdd9ae6fcff8ee782648",
+    "scripts/acceptance/runtime_gate.ts": "cf94973f6475b5af35011dd60d0ed26a402acc306de9bf1609dd703284c2f7f5",
+    "scripts/acceptance/runtime_native_child.py": "1ddf23c94d43bad1a943d6aeb7582ce1c72fe6d97bca6a36dd679f990e5c46d7",
+    "scripts/acceptance/runtime_open_reader.ts": "d79d11da7dffd4ebe6c26d2ba368753f4e3584f7719228682e56522943962747",
+    "scripts/acceptance/single_round.ts": "309115ba29a4b5ea69e70099a58d657ff1e29d48284af42a9d3461fefee9c84f",
+    "scripts/acceptance/task_contract.ts": "a65bed865f7ec61bbe6e93f70fce383c0c10722a5c1b244ffd93fbcd84ceb8a1",
+    "scripts/acceptance/task_crash.ts": "44b1db20e97c778a67907b355a98289bc1b94d4cc030918a6e82fe5a7d68fc21",
+    "scripts/acceptance/task_crash_child.ts": "5152beab700d2ca9ff7033718c88d323bc17cf1b3cf1c26db51abcd7f636a9ce",
+    "scripts/acceptance/task_gui_edit.py": "d26eda2ae8b1d69167171d2067dbcc27e6617be23b49e84707e3133fff94bc68",
+    "scripts/acceptance/verify_fixed.py": "d4a5ea7c86ec7bc4939a055d40b8128db010ba7a73b7f7e8e27ee7613f908d15",
+    "schemas/vector-review-receipt.schema.json": "d1e94365af9e75ce55de82df50a36eb37a65d0da4b19f66e704b00e9b35641ab",
+    "schemas/vector-review-request.schema.json": "15951f56b14316c1b6d06b58194c178fbd13c20c85e1ce1e6e492c204ec3f4cd",
+    "schemas/vector-revision-policy.schema.json": "a68d6f6a5d639864edd34a24bd626f8668c49a6f7d8121febcc71353d4251073"
+  },
+  "scope": "real saved checkpoint then coordinator SIGKILL with paused owned native group; unknown readonly restart, no replay, confirmed group stop, original-file recovery, source handoff and durable late native reply record quarantine; no GUI or complete V1 claim",
+  "implementationRootIdentity": "current-worktree",
+  "skillSha256": "ed67eeb2fa57c957ecb7075a7da70a3227413dcc85baf589552bdc2efb685db8",
+  "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+  "sourceSha256": "9fc91755273aa5e7e56e84bd47e66b4ccf076f7ba28f421634d91b2de430eec5",
+  "sourceUnchanged": true,
+  "parentExit": {
+    "code": null,
+    "signal": "SIGKILL"
+  },
+  "taskId": "51339213-ca1d-4414-abb4-82892d997f12",
+  "originalEpoch": 1,
+  "checkpoint": {
+    "sha256": "ed7efc7a88e7941c1c79c034f57ae63f6bfb3434c1d046fd82f60af349441dc0",
+    "path": "<plugin-root>/.local/source-binding/fixed47-crash/.vectorcraft-a2c1hmvx/managed-checkpoint-2.vectorcraft"
+  },
+  "stateAfterRestart": "running",
+  "registeredNativeMembersAfterParentCrash": [
+    {
+      "pid": 30706,
+      "pgid": 30706,
+      "start": "Thu Oct 8 23:41:24 2026",
+      "status": "Ts"
+    },
+    {
+      "pid": 30711,
+      "pgid": 30706,
+      "start": "Thu Oct 8 23:41:24 2026",
+      "status": "T"
+    }
+  ],
+  "noAutomaticReplay": true,
+  "changedOutputRejected": true,
+  "secondSourceWriterRejected": true,
+  "differentSourceSameOutputRejected": true,
+  "competingTaskNotRegistered": true,
+  "attemptsAfterRestart": 1,
+  "nativeAliveRefusedRecovery": true,
+  "confirmedNativeStopped": true,
+  "recovery": {
+    "schema": "vectorcraft-original-inspection/v1",
+    "checkId": "e58c2b1f-7fb6-419f-9e6d-632504d02591",
+    "task": "51339213-ca1d-4414-abb4-82892d997f12",
+    "epoch": 1,
+    "owner": "51339213-ca1d-4414-abb4-82892d997f12:inspect:e58c2b1f-7fb6-419f-9e6d-632504d02591",
+    "stage": "<plugin-root>/.local/source-binding/fixed47-crash/.vectorcraft-a2c1hmvx",
+    "stageInode": 625670066,
+    "stageDevice": 16777233,
+    "files": {
+      "<plugin-root>/.local/source-binding/fixed47-crash/.vectorcraft-a2c1hmvx/brand-checkpoint-0.vectorcraft": {
+        "sha256": "ed7efc7a88e7941c1c79c034f57ae63f6bfb3434c1d046fd82f60af349441dc0",
+        "bytes": 33820,
+        "inode": 625670070
+      },
+      "<plugin-root>/.local/source-binding/fixed47-crash/.vectorcraft-a2c1hmvx/brand-checkpoint-1.vectorcraft": {
+        "sha256": "5d465fcb6f7856999670e4c3370b2363e3c7d1b3d13d06cba0712d8b3c71ef68",
+        "bytes": 33852,
+        "inode": 625670073
+      },
+      "<plugin-root>/.local/source-binding/fixed47-crash/.vectorcraft-a2c1hmvx/brand-dependencies.json": {
+        "sha256": "dfca2cbb15377eba514512aacef627bf19c9a8a1c9787e7cb48d23a00abae3b1",
+        "bytes": 1014,
+        "inode": 625670071
+      },
+      "<plugin-root>/.local/source-binding/fixed47-crash/.vectorcraft-a2c1hmvx/managed-checkpoint-2.vectorcraft": {
+        "sha256": "ed7efc7a88e7941c1c79c034f57ae63f6bfb3434c1d046fd82f60af349441dc0",
+        "bytes": 33820,
+        "inode": 625670069
+      },
+      "<plugin-root>/.local/source-binding/fixed47-crash/.vectorcraft-a2c1hmvx/managed-checkpoint-9.vectorcraft": {
+        "sha256": "5d465fcb6f7856999670e4c3370b2363e3c7d1b3d13d06cba0712d8b3c71ef68",
+        "bytes": 33852,
+        "inode": 625670072
+      }
+    },
+    "reopened": [
+      {
+        "path": "<plugin-root>/.local/source-binding/fixed47-crash/.vectorcraft-a2c1hmvx/brand-checkpoint-0.vectorcraft",
+        "layers": 1,
+        "artboards": 3,
+        "dependencies": {
+          "links": [],
+          "missing": 0,
+          "modified": 0
+        }
+      },
+      {
+        "path": "<plugin-root>/.local/source-binding/fixed47-crash/.vectorcraft-a2c1hmvx/brand-checkpoint-1.vectorcraft",
+        "layers": 1,
+        "artboards": 3,
+        "dependencies": {
+          "links": [],
+          "missing": 0,
+          "modified": 0
+        }
+      },
+      {
+        "path": "<plugin-root>/.local/source-binding/fixed47-crash/.vectorcraft-a2c1hmvx/managed-checkpoint-2.vectorcraft",
+        "layers": 1,
+        "artboards": 3,
+        "dependencies": {
+          "links": [],
+          "missing": 0,
+          "modified": 0
+        }
+      },
+      {
+        "path": "<plugin-root>/.local/source-binding/fixed47-crash/.vectorcraft-a2c1hmvx/managed-checkpoint-9.vectorcraft",
+        "layers": 1,
+        "artboards": 3,
+        "dependencies": {
+          "links": [],
+          "missing": 0,
+          "modified": 0
+        }
+      }
+    ],
+    "nativeStopped": true,
+    "classification": "verified-interrupted-files; not successful delivery"
+  },
+  "settledState": "interrupted_verified",
+  "settledEpoch": 2,
+  "handoff": {
+    "taskId": "d2e00925-55f7-4421-b06b-b0202303184e",
+    "manifestSha256": "e6df804d4c9c35b2ef4c54db2ea906dea6b7f63ae29d38342118b42b4a047065",
+    "state": "review_ready"
+  },
+  "lateNativeReplyQuarantined": true,
+  "lateReceiptPayloadSha256": "87362a8016353e28dd23c054d1b24e83c666cdd6ba7f95c2d760b77d42b46b6f"
+}
