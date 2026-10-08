@@ -364,3 +364,5 @@
 任务7.1–7.3完成：VC-RL-001两场景完成：发布者只读门禁分别核验插件结构、独立技能源、运行时、宿主加载、真实任务和原生交付。12项门禁测试先因缺少目标行为失败，最小实现后通过；另4项证据校验通过。实际隔离包中文档与OpenSpec均通过时，仅文档证明仍被门禁拒绝；原有有界记录保持原范围。复用未变化的公开63／源43实际安装、6次原生修订与独占桌面证据，并重新校验当前摘要，本轮没有新增原生或模型运行。7.1–7.3完成，120/127完成、7项开放；marketplaceEligible仍false，supportedPluginHosts仍空。权限与秘密、全命令、模型路由、完整分发和真实创作仍待独立验收。 [发布门禁证据](../../../docs/evidence/vectorcraft-release-gate-20261009.json)。
 
 源45已公开发布并正常vendor进入候选64。28项权限测试、13项独立冷安装、当前插件132项Node／146项Python及实际受限原生修订通过；Python素材预检授权、宿主秘密引用与固定64权限验收仍未完成，7.4–7.6保持开放。证据：`docs/evidence/vectorcraft-permissions-filesystem-integration-candidate64-20261009.json`。
+
+源46素材读取候选已完成本地回归：14项目标测试及255项回归（207通过、48跳过），修复素材元数据自行授权、登记输入链接替换复制及受管CLI在冻结授权前读取的问题。[独立源证据](https://github.com/full-aigc-skills/vectorcraft-skills/blob/9109271/docs/evidence/permissions-candidate46-20261009.json)。当前插件64继续锁源45，尚未vendor源46；源46新素材原生放置／继承返工／冷安装及固定插件验证未运行，7.4–7.6和其他开放任务不勾选。当前六层发布门禁因 `release_evidence_changed` 拒绝候选64发布，公开插件仍为63。
