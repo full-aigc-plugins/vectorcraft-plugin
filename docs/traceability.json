@@ -160,7 +160,9 @@
       ],
       "owner": "Domain owner",
       "status": "in-progress",
-      "evidence": "docs/evidence/vector-workflow-tests.json"
+      "evidence": "docs/evidence/vectorcraft-exchange-fixed55-20261009.json",
+      "candidateEvidence": "docs/evidence/vectorcraft-exchange-candidate55-20261009.json",
+      "scope": "Minimum4.13/4.14 complete;public55/source41 installed-copy three native reopening/nine decode/four explicit disclosure refusals;full4.15 automatic unsupported-effect fallback or refusal and original live-effect project preservation remain open"
     },
     {
       "requirement": "VC-DM-006",
