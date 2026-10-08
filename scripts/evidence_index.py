@@ -187,6 +187,9 @@ def build(root=ROOT):
     recovery48='docs/evidence/vectorcraft-source-recovery-candidate48-20261008.json'
     if (root/recovery48).is_file():
         entries.append(bound_report(root,recovery48,'native-candidate','Source snapshot gate, actual post-save receipt loss and readonly original-output recovery;84 Node and43 Python tests; full3.6 remains open','VC-TX-002'))
+    source_recovery_fixed='docs/evidence/vectorcraft-source-recovery-fixed48-20261008.json'
+    if (root/source_recovery_fixed).is_file():
+        entries.append(bound_report(root,source_recovery_fixed,'fixed-install','Public plugin48/source37 actual host installation, source snapshot refusal and post-save receipt loss;84 Node and43 Python tests; complete3.6 remains open','VC-TX-002'))
     # 明确归档变更前执行字节；保留报告原摘要，不能把旧运行重绑定到新实现。
     for entry in entries:
         archived={}

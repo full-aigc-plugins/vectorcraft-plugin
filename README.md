@@ -12,7 +12,7 @@ Create Logo, icon and brand assets as `.vectorcraft` with applicable SVG, PDF an
 
 Current plugin: `0.1.0-dev.48`; skill source: `0.1.0-dev.37`; 13 independent skills.
 
-Candidate plugin48 adds source-dependency snapshot identity checks before recovery. A coordinator SIGKILL after real native save and nine exports, before ledger receipt, passes readonly original-output recovery without replay. 84 Node and43 Python regressions pass; fixed48 acceptance is recorded separately and full task3.6 remains open.
+Plugin48 adds source-dependency snapshot identity checks before recovery. A coordinator SIGKILL after real native save and nine exports, before ledger receipt, passes readonly original-output recovery without replay. 84 Node and43 Python regressions pass; public fixed48/source37 installation and these native cases pass with all13 skill digests unchanged; full task3.6 remains open. [Fixed evidence](docs/evidence/vectorcraft-source-recovery-fixed48-20261008.json).
 
 Plugin47 additionally revalidates captured physical roots and request paths after probing, at launch and during supervision. Replacing a resolved root or output parent with a redirecting link is refused before task registration. Public installed plugin47 and its actual host-loaded source37 passed all seven current VC-TX-001 scenarios,77 Node and43 Python tests and10 native contract cases. Task3.3 is complete;32 OpenSpec tasks remain. [Fixed evidence](docs/evidence/vectorcraft-single-writer-fixed47-20261008.json).
 
