@@ -10,7 +10,7 @@ Four-domain RT-001 runtime source/integrity acceptance now covers every current 
 
 Create Logo, icon and brand assets as `.vectorcraft` with applicable SVG, PDF and PNG exports.
 
-Current plugin: `0.1.0-dev.38`; skill source: `0.1.0-dev.35`; 13 independent skills.
+Current plugin: `0.1.0-dev.39`; skill source: `0.1.0-dev.36`; 13 independent skills.
 
 Verified first-use platform: macOS arm64 and Python 3.11+. Pinned runtimes install into the user data directory; skill files stay in their host-loaded directory. These are development releases; complete V1 acceptance and generic Skills CLI installation remain open.
 
@@ -105,9 +105,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.38 |
+| Metadata version | 0.1.0-dev.39 |
 | Stage | implementation-in-progress |
-| Skills source | vectorcraft-skills / v0.1.0-dev.35 |
+| Skills source | vectorcraft-skills / v0.1.0-dev.36 |
 | Execution | Upstream CLI; ArtCraft uses child adapters |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |
@@ -312,3 +312,7 @@ This release pins source dev.35. Earlier dev.37/source33 installation and candid
 ### Fixed dev.38/source35 technical acceptance
 
 Codex 0.153.4 installed and discovered all13 skills in fresh isolated configuration. All13 cold native starts and12 declared create/revise pairs passed (setup is installation-only). Two workflow routes passed22 post-save protocol faults; the command entry passed9 faults, and10 ambiguous-plan cases stopped before setup/output. Brand boundary and nine-export preservation checks passed. Tasks9.3/9.6 close; model routing9.9, dependent9.18 and full V1 remain open. [Bound evidence](docs/evidence/vectorcraft-fixed38-optimization-20261008.json). Source36 is an unpublished contract-clarification candidate.
+
+### dev.39 development prerelease
+
+Pins source dev.36 with corrected revision object ID rendering. Adds `review-checked` with persisted actual decoding evidence, shared budgets and restart-safe file bindings. Technical failures block acceptance; unexecuted checks stay pending. Minimal task6.2 implementation is complete; native engineering acceptance6.3, model routing9.9 and full V1 remain open. Fixed dev.38 installation evidence is historical; new host installation acceptance has not been rerun for this version.

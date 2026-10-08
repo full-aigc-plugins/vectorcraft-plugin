@@ -1,6 +1,6 @@
 {
   "schema": "vectorcraft-evidence-index/v1",
-  "identitySha256": "beb0f50b74ff76cea7a86f250148d50707fd598f610eb5d3e7e9baa812742b6b",
+  "identitySha256": "b66c073b39ce9f5ba367766b3459bc781b7706340f6068a90a309ce55b4e9dd7",
   "entries": [
     {
       "path": "docs/evidence/craft-vector37-gateway-export-fixed-first-use-20261008.json",
@@ -82,34 +82,14 @@
       "sha256": "f328fc2e324dd0ed873e7d3fc7f6d24e79a584062cc8880e473d776ae7a18fa1",
       "level": "fixed-install",
       "status": "PASS",
-      "scope": "actual isolated host installation, 13 cold starts and protocol/brand technical tasks only",
+      "scope": "fixed plugin38/source35; retained at original execution identity",
       "requirement": null,
       "tasks": [
         "9.3",
         "9.6"
       ],
-      "historical": false,
-      "dependencies": {
-        "plugin.json": "efdcbf7092d8bb17dd6df0a12bd8b6d162309562abecabb69c1addd0e30799f5",
-        "skills.lock.json": "14612035acbed8c93908e1a8bfb50383e6e88811037b90f3ed2825256f0f3e5a",
-        "docs/current-identity.json": "beb0f50b74ff76cea7a86f250148d50707fd598f610eb5d3e7e9baa812742b6b",
-        "scripts/acceptance/fixed_brand_edges.py": "e3b4b53cb732a46b18cfbb1c36032b19aac1d07638be4ca8a46d6f8dd9daf703",
-        "scripts/acceptance/fixed_install.py": "b360544f751efe3c0f64a0f40a75d81a61588185956d17d7b9cca9ca766abd48",
-        "scripts/acceptance/fixed_native.py": "442e1322aff55d942843764086ac92ab2abe581157d2f7d7a10e1867101b83d5",
-        "scripts/acceptance/fixed_plan_edges.py": "25888c90833418b32ae1cce4e0291ab88dd08083834981dca5835ba9d310d1e0",
-        "scripts/acceptance/fixed_protocol_edges.py": "f68075c81100dfbaff3655ee8e330ea153246253166e84dcc6a1e46441b8840f",
-        "docs/evidence/fixed38-optimization/host.json": "fe95ad15a69a98595557f23bd3d6cb746b593ab27e0964a2c27a5279dd083b4f",
-        "docs/evidence/fixed38-optimization/native.json": "a08504dc0a8d2b1bcc3e2c6a82301874f6a560e9b89a0edef549ba29a076c576",
-        "docs/evidence/fixed38-optimization/protocol.json": "26b4a4ae45aa9efe20efd09f0226279f8a125004d47774a0daa44de785174dd8",
-        "docs/evidence/fixed38-optimization/plan.json": "6acd1233fe905649bedbfd574397154d7d8b490ea4a3d5b47fb4210eb95f3049",
-        "docs/evidence/fixed38-optimization/brandEdges.json": "1fa583688e5c692c155300d27d52dbbc0069286ccb39118c080c4e937a6b7ee6",
-        "docs/evidence/fixed38-optimization/brandGuard.json": "fd5e1f8245a754e7353be6deadbef38b10a657bbe9e3f35c687566eedd04f4f2",
-        "docs/evidence/fixed38-optimization/gateway.json": "5dc4cf5d34c63263e2ddf3b3d791ce32cc85189d671a9b4af286e4b13573e85f",
-        "docs/evidence/fixed38-optimization/commands.json": "784a288bacd79e0a197e82663c17bab7333c2deee03ea9fe22e9a36f0d85bbf5",
-        "docs/evidence/fixed38-optimization/preserved.json": "5760b489c68ab4d5f7a36219d95ddd8c20f58583e430863d8bbb3ec5a6ee6c7d",
-        "scripts/acceptance/verify_fixed.py": "d4a5ea7c86ec7bc4939a055d40b8128db010ba7a73b7f7e8e27ee7613f908d15",
-        "tests/test_fixed_acceptance.py": "15e6af665575ce3f1da674d31853c118b6f7083ceea45b9f913e274869dbb6e1"
-      }
+      "historical": true,
+      "dependencies": {}
     },
     {
       "path": "docs/evidence/vectorcraft-technical-quality-candidate-20261008.json",
@@ -133,6 +113,30 @@
         "docs/evidence/delivery-quality/proof.json": "2074b79ceae9e0be4c07c9ce42ae9f15a009aa7501b2cef944d0f80d59471929",
         "docs/evidence/delivery-quality/red.log": "c2d8679341323ae907dd9dc56c6c2099a0c829daafbe6afb793c605f9ff5caa0",
         "docs/evidence/delivery-quality/status-red.log": "45ae37ba26b58cb7d917bfcdb12d4b7fc05b0ed7d29daaa7b175c1f22b2a8e0e"
+      }
+    },
+    {
+      "path": "docs/evidence/vectorcraft-checked-review-candidate-20261008.json",
+      "sha256": "ec34360c1bf98ac034803b9478e8af7a53a622d20b2f66bc6fa9aea521cc82a9",
+      "level": "native-candidate",
+      "status": "PASS",
+      "scope": "persisted decoder checks of existing native export copies; fixture receipts only; native reopening and real creative acceptance remain open",
+      "requirement": null,
+      "tasks": [
+        "6.2"
+      ],
+      "historical": false,
+      "dependencies": {
+        "src/evaluation/technical_review.ts": "59eb77085bde9573e049701748ed7b508c507386a3f7686ebcc75384666e43a3",
+        "src/evaluation/review_store.ts": "85d09a6a5bd7b42a1ca15954cb6bc55a67fa72a9b8439ff83bda2fb3a96ddb16",
+        "src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
+        "src/harness/ledger.ts": "c1aa8d6b7ad7c40d5fc0f1a8d87ddae1df0b29144c904690917e5b79355f660d",
+        "src/harness/process_registry.ts": "c19a3cb5d42cc33620bc5baeff7db71f1c6daa92f046a112951a7f50f7906162",
+        "src/harness/process_runner.py": "7332d0757aa01f03d00697f8eb8d93f849517cab34ea8a1355ba6c9513d5aba2",
+        "src/strict_json.ts": "69a445339670e53f6a7fcb96770b53b896666dd1e60f114c1751a23981d5b7d0",
+        "src/cli.ts": "5027d0507edafd3f692d2f5cc8709bc289e94aeac21c59fe8f57d2b897d81324",
+        "tests/technical_review.test.ts": "de8753e4f561412b01a6629eff69cf73a86ba212398249bcbad7b491cff96f76",
+        "scripts/acceptance/checked_review.ts": "b32ff58cacf886c63dc6cff4bd1b50bafd67af3bf64500ca1acb80ff18da7d86"
       }
     },
     {

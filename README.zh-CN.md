@@ -10,7 +10,7 @@
 
 Logo、图标与品牌图形需求进入，交付 `.vectorcraft` 及适用的 SVG、PDF、PNG。
 
-当前插件：`0.1.0-dev.38`；技能源：`0.1.0-dev.35`；13 个独立技能。
+当前插件：`0.1.0-dev.39`；技能源：`0.1.0-dev.36`；13 个独立技能。
 
 已验证首次使用平台：macOS arm64、Python 3.11+。固定运行时安装在用户数据目录，技能文件保留在宿主加载目录。当前为开发版本；完整首版验收及通用 Skills CLI 实际安装仍未完成。
 
@@ -105,9 +105,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.38 |
+| Metadata version | 0.1.0-dev.39 |
 | Stage | implementation-in-progress |
-| Skills source | vectorcraft-skills / v0.1.0-dev.35 |
+| Skills source | vectorcraft-skills / v0.1.0-dev.36 |
 | Execution | 上游 CLI；ArtCraft 使用子适配器 |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |
@@ -310,3 +310,7 @@ python3 -I -B skills/vectorcraft-use/scripts/workflow.py --help
 ### 固定 dev.38／source35 技术验收
 
 Codex 0.153.4 在全新隔离配置中安装并发现13技能。13项独立空缓存原生启动、12项声明创建／返工合同通过，setup仅验证安装职责。两条工作流入口22项保存后协议异常、完整命令9项故障、10项安装／输出前歧义计划拒绝，以及品牌边界和九导出保全通过。关闭9.3／9.6；模型路由9.9、依赖它的9.18及完整V1仍开放。[绑定证据](docs/evidence/vectorcraft-fixed38-optimization-20261008.json)。source36为尚未发布的合同说明修正候选。
+
+### dev.39 开发预发布
+
+锁定技能源 dev.36，修正返工对象 ID 渲染说明；新增 `review-checked`，持久化真实解码报告、共享预算和重启后的文件绑定。技术失败阻止接受，未执行检查保持待处理。6.2 最小实现完成；6.3 原生工程完整验收、9.9 模型路由和完整 V1 仍开放。dev.38 固定安装证据保留为历史记录，本版尚未重新执行宿主安装验收。

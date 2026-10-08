@@ -120,3 +120,9 @@ For GUI prerequisites, use the skill-owned desktop.py entry and its pinned insta
 每个 JSON 对象中的键必须唯一，包括顶层、操作及嵌套参数。重复 `command`、`params` 或任何参数键会在公开 `check` / `run` 入口被拒绝，错误为 `duplicate_json_key`；不创建运行时缓存或输出目录，不进行原生调用。先修正计划，再重新校验。严格 JSON 校验还拒绝非有限数值。`check` 成功仍只证明计划结构与目录成员关系，不能证明原生参数、上下文或创作结果通过。
 
 Every object must use unique JSON keys, including the root, operations and nested parameters. Duplicate keys fail with `duplicate_json_key` before runtime installation, output creation or native execution. Correct the plan and check it again. Nonfinite values are also rejected. A successful `check` establishes structure and catalog membership only; native parameters, context and creative results require execution evidence.
+
+## 完整命令返工模板的实际对象绑定
+
+`object-layout-revise.json` 和 `selection-brand-revise.json` 中的 `{"$ref":"target.id"}` 是待填充模板。先从当前工程的创建或原生检查回执取得对象整数 ID，在新计划中将这些引用替换为该整数，再使用 `--input project=/absolute/project.vectorcraft` 执行。`--input NAME=FILE` 仅登记 `NAME.path` 和 `NAME.sha256`，不会读取 JSON 文件内容作为对象字段；传入 `--input target=object.json` 不能直接解析 `target.id`。保留原回执、原工程摘要及填充后计划摘要以供核验。
+
+For command revision templates, replace each `target.id` reference with the integer ID from the current native create/inspection receipt before running the new plan. `--input NAME=FILE` provides only `NAME.path` and `NAME.sha256`; it does not load JSON fields. Preserve the receipt, source project hash and rendered plan hash.

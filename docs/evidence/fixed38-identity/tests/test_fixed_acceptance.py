@@ -17,8 +17,7 @@ class FixedAcceptanceTests(unittest.TestCase):
     def fixture(self,root):
         report=json.loads((ROOT/REPORT).read_text())
         for name in {REPORT,*report['fingerprints']}:
-            destination=root/name;destination.parent.mkdir(parents=True,exist_ok=True);historical=ROOT/'docs/evidence/fixed38-identity'/name
-            shutil.copyfile(historical if historical.is_file() else ROOT/name,destination)
+            destination=root/name;destination.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/name,destination)
         self.assertEqual(gate.verify(root)['result'],'PASS')
         return report
 

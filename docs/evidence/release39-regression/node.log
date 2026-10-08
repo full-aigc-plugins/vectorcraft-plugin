@@ -1,0 +1,31 @@
+
+> test
+> node --test tests/*.test.ts
+
+✔ controller binds a supplied standalone snapshot, records intent and verifies actual files (348.588ms)
+✔ single writer keys the source resource, not output path; epochs fence old writers (18.04025ms)
+✔ idempotency binds input, authorization and runtime; budget and cancellation persist (22.961584ms)
+✔ single-round review binds fresh source, candidate, target and rubric and rejects duplicates (13.733833ms)
+✔ strict review JSON rejects duplicate keys, overflow, malformed values and accepts business error (0.775667ms)
+✔ revision proposals require actual assessed fields and preserve authorization without claiming independence (12.086042ms)
+✔ child tasks share one durable budget and late cancellation receipts are quarantined (4.962208ms)
+✔ review request rejects a claimed revision that differs from actual native bytes (3.884959ms)
+✔ review binds exchange loss and persists rejection reasons across restart (5.5165ms)
+✔ pending reviews survive restart and any bound source, candidate or rubric replacement invalidates acceptance (17.115334ms)
+✔ review target and authorization schemas reject undeclared target keys and invalid scopes (4.902083ms)
+✔ durable ownership survives registry restart and stops a TERM-ignoring descendant (491.826916ms)
+✔ a forged root identity never authorizes signalling a live group (182.318417ms)
+✔ settling a verified interruption fences the previous epoch and never claims delivery (21.831292ms)
+✔ new or changed original files after inspection keep writer occupation (16.373584ms)
+✔ checked requests use actual decode failures, persist evidence, and cannot be visually promoted (224.642958ms)
+✔ unsupported decoding stays pending and all delivered files remain bound (205.661125ms)
+✔ checked evidence cannot be injected through the legacy JSON request entry (3.188375ms)
+✔ readonly decoder cancellation consumes its shared attempt and does not replay after restart (916.328584ms)
+ℹ tests 19
+ℹ suites 0
+ℹ pass 19
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1474.272625

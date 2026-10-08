@@ -137,6 +137,20 @@
         "exchangeLoss": {
           "type": "string",
           "minLength": 1
+        },
+        "technicalEvidenceOrigin": {
+          "enum": [
+            "caller_unverified",
+            "checked-decoder"
+          ]
+        },
+        "technicalCheckId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "technicalEvidence": {
+          "type": "object",
+          "description": "Only generated from a persisted verified decoder check; rejected at the caller JSON entry."
         }
       }
     },

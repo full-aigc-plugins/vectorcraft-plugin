@@ -109,6 +109,9 @@ def build(root=ROOT):
     if (root/quality).is_file():
         entries.append(bound_report(root,quality,'native-candidate','standalone technical decoder and negative tests; coordinator and native engineering acceptance open',tasks=['6.1']))
     previous='docs/evidence/vectorcraft-optimization-local-before-execution-control-20261008.json'
+    checked='docs/evidence/vectorcraft-checked-review-candidate-20261008.json'
+    if (root/checked).is_file():
+        entries.append(bound_report(root,checked,'native-candidate','persisted decoder checks of existing native export copies; fixture receipts only; native reopening and real creative acceptance remain open',tasks=['6.2']))
     if (root/previous).is_file():
         entries.append(record(root,previous,'local-tests','PASS',[],'original execution fingerprints retained inside historical report; never rebound to changed source',historical=True))
     return {'schema':'vectorcraft-evidence-index/v1',

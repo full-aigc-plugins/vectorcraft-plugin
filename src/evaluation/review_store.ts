@@ -2,6 +2,7 @@ import { DatabaseSync } from 'node:sqlite';
 import { createHash, randomUUID } from 'node:crypto';
 import { readFileSync, realpathSync } from 'node:fs';
 import { dirname, resolve, relative, isAbsolute } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { canonical, strictJson } from '../strict_json.ts';
 
 const hash=(value:string|Buffer)=>createHash('sha256').update(value).digest('hex');
@@ -10,9 +11,9 @@ const dimensions=['structure','text','brand','layout','legibility'];
 
 /** 单轮评审交换存储；所有文件读取限制在调用方声明的工作根目录。 */
 export class ReviewStore {
-  db:DatabaseSync;roots:string[];
+  db:DatabaseSync;roots:string[];path:string;
   constructor(path:string,roots=[dirname(path)]) {
-    this.roots=roots.map(r=>realpathSync(r));
+    this.path=resolve(path);this.roots=roots.map(r=>realpathSync(r));
     this.db=new DatabaseSync(path);this.db.exec(`PRAGMA busy_timeout=3000;PRAGMA journal_mode=WAL;
       CREATE TABLE IF NOT EXISTS reviews(id TEXT PRIMARY KEY,binding_hash TEXT,input TEXT,fingerprints TEXT,state TEXT,receipt TEXT);
       CREATE TABLE IF NOT EXISTS review_events(n INTEGER PRIMARY KEY,request TEXT,reason TEXT,receipt TEXT);`);
@@ -23,6 +24,24 @@ export class ReviewStore {
     return hash(readFileSync(file));
   }
   request(input:any):any {
+    if(input?.technicalEvidence!==undefined||(input?.technicalEvidenceOrigin!==undefined&&input.technicalEvidenceOrigin!=='caller_unverified'))throw new Error('technical_evidence_requires_check');
+    return this.createRequest({...input,technicalEvidenceOrigin:'caller_unverified'});
+  }
+  /** 从账本中已核验的检查记录创建评审，禁止用请求 JSON 注入技术证据。 */
+  requestFromCheck(input:any,checkId:string):any {
+    const row=this.db.prepare("SELECT c.*,t.state,t.binding FROM technical_checks c JOIN tasks t ON t.id=c.task WHERE c.task=?").get(checkId) as any;
+    if(!row||row.state!=='review_ready'||hash(row.report)!==row.report_sha)throw new Error('technical_evidence_requires_check');
+    if(strictJson(row.binding).planHash!==hash(canonical(input)))throw new Error('technical_identity_mismatch');
+    if(row.review_id){const current=this.current(row.review_id);return {schema:'vectorcraft-review-request/v1',id:current.id,bindingHash:current.binding_hash,input:current.input,fingerprints:current.fingerprints,state:current.state};}
+    const evidence=strictJson(row.report),sources=strictJson(row.sources);
+    if(evidence.projectRevision!==input.projectRevision||evidence.runtimeIdentity!==input.runtimeIdentity)throw new Error('technical_identity_mismatch');
+    for(const [path,expected] of Object.entries(sources))if(hash(readFileSync(path))!==expected)throw new Error('stale_review_binding');
+    const request=this.createRequest({...input,technicalStatus:evidence.technicalStatus,technicalEvidence:evidence,
+      technicalEvidenceOrigin:'checked-decoder',technicalCheckId:checkId},sources);
+    this.db.prepare('UPDATE technical_checks SET review_id=? WHERE task=?').run(request.id,checkId);
+    return request;
+  }
+  validateInput(input:any):void {
     if(!input||typeof input.projectRevision!=='string'||!input.projectRevision||!/^[a-f0-9]{64}$/.test(input.runtimeIdentity??'')
       ||!['PASS','FAIL','NOT_RUN'].includes(input.technicalStatus)||!Array.isArray(input.candidates)||!input.candidates.length
       ||!Array.isArray(input.targets)||!input.targets.some((t:any)=>t.role==='target')
@@ -33,8 +52,11 @@ export class ReviewStore {
       ||input.candidates.some((v:any)=>typeof v!=='string'||!v)
       ||!['deadline','maxAttempts','maxBytes'].every(k=>Number.isSafeInteger(input.authorization[k])&&input.authorization[k]>0)
       ||input.authorization.deadline<=Date.now())throw new Error('invalid_review_request');
+  }
+  private createRequest(input:any,extra:Record<string,string>={}):any {
+    this.validateInput(input);
     const paths=[input.native,...input.candidates,...input.targets.map((t:any)=>t.path),input.rubric,input.exchangeLoss];
-    const fingerprints=Object.fromEntries(paths.map(path=>[path,this.fingerprint(path)]));
+    const fingerprints={...extra,...Object.fromEntries(paths.map(path=>[path,this.fingerprint(path)]))};
     if(fingerprints[input.native]!==input.projectRevision)throw new Error('project_revision_mismatch');
     const bindingHash=hash(canonical({input,fingerprints})),id=randomUUID();
     this.db.prepare("INSERT INTO reviews(id,binding_hash,input,fingerprints,state) VALUES(?,?,?,?,'pending')")
@@ -45,6 +67,11 @@ export class ReviewStore {
     const row=this.db.prepare('SELECT * FROM reviews WHERE id=?').get(id) as any;
     if(!row)throw new Error('unknown_review_request');
     const input=strictJson(row.input),fingerprints=strictJson(row.fingerprints);
+    if(input.technicalEvidenceOrigin==='checked-decoder'){
+      const helper=fileURLToPath(new URL('./delivery_quality.py',import.meta.url));
+      const launcher=fileURLToPath(new URL('../harness/process_runner.py',import.meta.url));
+      if(hash(readFileSync(helper))!==input.technicalEvidence.checkerSha256||hash(readFileSync(launcher))!==input.technicalEvidence.launcherSha256)throw new Error('stale_review_binding');
+    }
     for(const [path,expected] of Object.entries(fingerprints)) {
       try{if(this.fingerprint(path)!==expected)throw new Error('stale');}
       catch{throw new Error('stale_review_binding');}
@@ -77,12 +104,14 @@ export class ReviewStore {
       const row=this.current(receipt.requestId);
       if(row.state!=='pending')throw new Error('duplicate_review_receipt');
       if(row.binding_hash!==receipt.bindingHash)throw new Error('stale_review_binding');
-      const state=row.input.technicalStatus!=='PASS'?'technical_failed':receipt.verdict==='revise'?'revision_proposed':receipt.verdict==='accept'?'review_ready':'rejected';
+      const state=row.input.technicalStatus==='FAIL'?'technical_failed':row.input.technicalStatus==='NOT_RUN'?'technical_pending':receipt.verdict==='revise'?'revision_proposed':receipt.verdict==='accept'?'review_ready':'rejected';
       this.db.prepare('UPDATE reviews SET state=?,receipt=? WHERE id=?').run(state,canonical(receipt),row.id);
       this.db.exec('COMMIT');return {state,requestId:row.id,issues:receipt.issues,independent:false,
         independenceStatus:receipt.reviewer.independenceEvidence===null?'not_claimed':'unverified',
         independenceEvidence:receipt.reviewer.independenceEvidence,technicalStatus:row.input.technicalStatus,creativeVerdict:receipt.verdict,
-        scores:receipt.scores,exchangeLossSha256:row.fingerprints[row.input.exchangeLoss],acceptanceStatus:'pending'};
+        engineeringStatus:row.input.technicalEvidence?.engineeringStatus??'NOT_RUN',creativeStatus:receipt.verdict==='accept'?'PASS':'FAIL',
+        technicalEvidenceOrigin:row.input.technicalEvidenceOrigin,
+        scores:receipt.scores,exchangeLossSha256:row.fingerprints[row.input.exchangeLoss],acceptanceStatus:state==='technical_failed'?'blocked':'pending'};
     }catch(error){this.db.exec('ROLLBACK');throw error;}
   }
   revision(id:string,changes:{objectId:number,field:string,value:any}[]):any {
