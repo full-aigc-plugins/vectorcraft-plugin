@@ -1,0 +1,17 @@
+{
+  "first-use-red.log.txt": {
+    "originalSha256": "f4b2dd52a58a352e47cdbaee7653ea72766d822c79d891c52e85f31ec159bb00",
+    "sanitizedSha256": "db0f92fe7e9cebbd4fcd6ede4d8e37db5dd350a9841a68bd6dc320700a68e1dd",
+    "replacement": "source repository absolute root only",
+    "driver": "first-use-red-driver.py.txt",
+    "driverSha256": "02371d9ad818e4a02f942c55776af61fda2bba1b594b27f4cbf527606d5f08ee",
+    "sourceCommit": "7c63d9e959c3c99fa24b4eb27791b6292b86b33f"
+  },
+  "first-use-green.log.txt": {
+    "originalSha256": "d484e3da627d9de725ef89c9bc3d13bb8bbe3776da5c5bf32a2898fec5178e75",
+    "sanitizedSha256": "d484e3da627d9de725ef89c9bc3d13bb8bbe3776da5c5bf32a2898fec5178e75",
+    "replacement": "source repository absolute root only",
+    "driver": "first-use-driver.py.txt",
+    "driverSha256": "c7bacf62230673cb689dd5f82c5043bf8d120e47f3088b7d6eb3a9a780ddd68e"
+  }
+}

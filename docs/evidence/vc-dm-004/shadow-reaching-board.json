@@ -1,0 +1,4 @@
+{
+  "text": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"80\" height=\"64\" viewBox=\"0 0 80 64\">\n  <defs>\n    <filter id=\"filter-1\" filterUnits=\"userSpaceOnUse\" x=\"-100\" y=\"-34\" width=\"120\" height=\"120\" data-vc-blend=\"multiply\" color-interpolation-filters=\"sRGB\"><feGaussianBlur in=\"SourceAlpha\" stdDeviation=\"1\"/><feOffset dx=\"45\" dy=\"0\" result=\"shadow\"/><feFlood flood-color=\"#000000\" flood-opacity=\"1\"/><feComposite in2=\"shadow\" operator=\"in\" result=\"paint\"/><feMerge><feMergeNode in=\"paint\"/><feMergeNode in=\"SourceGraphic\"/></feMerge></filter>\n  </defs>\n  <title>Isolation qualification</title>\n  <g id=\"Layer_1\" data-name=\"Layer 1\">\n    <g filter=\"url(#filter-1)\">\n      <path d=\"M-50 16 L-30 16 L-30 36 L-50 36 Z\" fill=\"#2366e8\"/>\n    </g>\n  </g>\n</svg>\n",
+  "warnings": []
+}

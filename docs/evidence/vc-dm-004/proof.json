@@ -1,0 +1,362 @@
+{
+  "schema": "vectorcraft-artboard-isolation-native/v1",
+  "result": "PASS",
+  "cases": [
+    {
+      "name": "locked-visible",
+      "result": "PASS",
+      "sourceSelectionHistoryPreserved": true,
+      "receipt": "locked-visible.json",
+      "sha256": "237156bf36356487b53a8570988a137f62a98cefcae3bedefc4c2f516bd337c8",
+      "state": "locked-visible-state.json",
+      "stateSha256": "79676dcc0cb28104a5426285e2b4aaf8b6829168825be1ab9e8d703a0f12483a"
+    },
+    {
+      "name": "remote-change",
+      "result": "PASS",
+      "sourceSelectionHistoryPreserved": true,
+      "receipt": "remote-change.json",
+      "sha256": "237156bf36356487b53a8570988a137f62a98cefcae3bedefc4c2f516bd337c8",
+      "state": "remote-change-state.json",
+      "stateSha256": "943de16e24c95d3bf3c8ee0c8748228fd8811ac889e22ae33a72b48e93d180d3"
+    },
+    {
+      "name": "stroke-reaching-board",
+      "result": "PASS",
+      "sourceSelectionHistoryPreserved": true,
+      "receipt": "stroke-reaching-board.json",
+      "sha256": "14fcadff26814089bafd595c4e7c1497eb1b8dba8b61ba090a8102893536a9c8",
+      "state": "stroke-reaching-board-state.json",
+      "stateSha256": "853ec75f5a2e76d6870f131bdeb1fc686dfafe9c511d785542b72898c58516b8"
+    },
+    {
+      "name": "shadow-reaching-board",
+      "result": "PASS",
+      "sourceSelectionHistoryPreserved": true,
+      "receipt": "shadow-reaching-board.json",
+      "sha256": "fe1428f6a8d46c1cf3bc4a3181b5a7c3aa43922d52e3b0df197db8dc4ac788f2",
+      "state": "shadow-reaching-board-state.json",
+      "stateSha256": "59068c75d8771c2425dc0e306048be1cab2a0cb03be26c6ec46d765433ebe970"
+    },
+    {
+      "name": "indivisible-cross-board-group",
+      "result": "PASS",
+      "sourceSelectionHistoryPreserved": true,
+      "receipt": "indivisible-cross-board-group.json",
+      "sha256": "348e75769db7e11bbf1a613215e7e1596c28708bac335059e79b3c54bb3ebc79",
+      "state": "indivisible-cross-board-group-state.json",
+      "stateSha256": "b6b75013164887439a4b77e816109f5c621abca69e84b6359a31b8db52d83001"
+    },
+    {
+      "name": "complete-clipping-group",
+      "result": "PASS",
+      "sourceSelectionHistoryPreserved": true,
+      "receipt": "complete-clipping-group.json",
+      "sha256": "262748a6436877af0502c741b4837e41d8e1d271bede781c2b0bcd4c682dd739",
+      "state": "complete-clipping-group-state.json",
+      "stateSha256": "d35e2a0ae3615a789ebf6cd79cd55b00aa5c9510285e1dff469b18da91ec195f"
+    },
+    {
+      "name": "empty-board",
+      "result": "PASS",
+      "sourceSelectionHistoryPreserved": true,
+      "receipt": "empty-board.json",
+      "sha256": "e5cc50973aef1cdf5d793692bc74edc935ad0949fb9f7d47ea9062243cae8918",
+      "state": "empty-board-state.json",
+      "stateSha256": "5fb29ca758374b12f571da84f5d19db6de4967ba3520d151cdba21c3d7b3c15a"
+    },
+    {
+      "name": "legacy-default",
+      "result": "PASS",
+      "sourceSelectionHistoryPreserved": true,
+      "receipt": "legacy-default.json",
+      "sha256": "4ee717d0642aafe29803276bb2f37f4a43cdc01f95907350e0dc7347ec71fef0",
+      "state": "legacy-default-state.json",
+      "stateSha256": "5fb29ca758374b12f571da84f5d19db6de4967ba3520d151cdba21c3d7b3c15a"
+    },
+    {
+      "name": "isolation-off",
+      "result": "PASS",
+      "sourceSelectionHistoryPreserved": true,
+      "receipt": "isolation-off.json",
+      "sha256": "4ee717d0642aafe29803276bb2f37f4a43cdc01f95907350e0dc7347ec71fef0",
+      "state": "isolation-off-state.json",
+      "stateSha256": "5fb29ca758374b12f571da84f5d19db6de4967ba3520d151cdba21c3d7b3c15a"
+    },
+    {
+      "name": "invalid-isolation-0",
+      "result": "PASS",
+      "sourceSelectionHistoryPreserved": true,
+      "receipt": "invalid-isolation-0.json",
+      "sha256": "d1222d42a25e2fc0200514aa7c8331308ad4dae5bc0fa37d5c00798d930ccc4c",
+      "state": "invalid-isolation-0-state.json",
+      "stateSha256": "5fb29ca758374b12f571da84f5d19db6de4967ba3520d151cdba21c3d7b3c15a"
+    },
+    {
+      "name": "invalid-isolation-1",
+      "result": "PASS",
+      "sourceSelectionHistoryPreserved": true,
+      "receipt": "invalid-isolation-1.json",
+      "sha256": "d0e574ea79a246afb335458dab3389bb60193297b075a297d286087cb31e0b55",
+      "state": "invalid-isolation-1-state.json",
+      "stateSha256": "5fb29ca758374b12f571da84f5d19db6de4967ba3520d151cdba21c3d7b3c15a"
+    },
+    {
+      "name": "invalid-isolation-2",
+      "result": "PASS",
+      "sourceSelectionHistoryPreserved": true,
+      "receipt": "invalid-isolation-2.json",
+      "sha256": "91a37776b83e88231bdeaaf90526eb037c5d49a759bcaececaf5bd1d92853102",
+      "state": "invalid-isolation-2-state.json",
+      "stateSha256": "5fb29ca758374b12f571da84f5d19db6de4967ba3520d151cdba21c3d7b3c15a"
+    },
+    {
+      "name": "invalid-isolation-3",
+      "result": "PASS",
+      "sourceSelectionHistoryPreserved": true,
+      "receipt": "invalid-isolation-3.json",
+      "sha256": "81ec848fdfef1fa1df60607409c39ac83dafb77856e09b554065f33d45a1f4c7",
+      "state": "invalid-isolation-3-state.json",
+      "stateSha256": "5fb29ca758374b12f571da84f5d19db6de4967ba3520d151cdba21c3d7b3c15a"
+    },
+    {
+      "name": "invalid-isolation-4",
+      "result": "PASS",
+      "sourceSelectionHistoryPreserved": true,
+      "receipt": "invalid-isolation-4.json",
+      "sha256": "a4db2a5602a890f8199b7104beca6bd4666be7b8425c031dcab31f39f31f436b",
+      "state": "invalid-isolation-4-state.json",
+      "stateSha256": "5fb29ca758374b12f571da84f5d19db6de4967ba3520d151cdba21c3d7b3c15a"
+    },
+    {
+      "name": "invalid-isolation-5",
+      "result": "PASS",
+      "sourceSelectionHistoryPreserved": true,
+      "receipt": "invalid-isolation-5.json",
+      "sha256": "91a37776b83e88231bdeaaf90526eb037c5d49a759bcaececaf5bd1d92853102",
+      "state": "invalid-isolation-5-state.json",
+      "stateSha256": "5fb29ca758374b12f571da84f5d19db6de4967ba3520d151cdba21c3d7b3c15a"
+    },
+    {
+      "name": "invalid-isolation-6",
+      "result": "PASS",
+      "sourceSelectionHistoryPreserved": true,
+      "receipt": "invalid-isolation-6.json",
+      "sha256": "91a37776b83e88231bdeaaf90526eb037c5d49a759bcaececaf5bd1d92853102",
+      "state": "invalid-isolation-6-state.json",
+      "stateSha256": "5fb29ca758374b12f571da84f5d19db6de4967ba3520d151cdba21c3d7b3c15a"
+    },
+    {
+      "name": "invalid-isolation-7",
+      "result": "PASS",
+      "sourceSelectionHistoryPreserved": true,
+      "receipt": "invalid-isolation-7.json",
+      "sha256": "2c6ef0bd8c58010ce24808fbc2729f5e34ca382a9e11c05758e02a65be63d42f",
+      "state": "invalid-isolation-7-state.json",
+      "stateSha256": "5fb29ca758374b12f571da84f5d19db6de4967ba3520d151cdba21c3d7b3c15a"
+    },
+    {
+      "name": "invalid-isolation-8",
+      "result": "PASS",
+      "sourceSelectionHistoryPreserved": true,
+      "receipt": "invalid-isolation-8.json",
+      "sha256": "91a37776b83e88231bdeaaf90526eb037c5d49a759bcaececaf5bd1d92853102",
+      "state": "invalid-isolation-8-state.json",
+      "stateSha256": "5fb29ca758374b12f571da84f5d19db6de4967ba3520d151cdba21c3d7b3c15a"
+    },
+    {
+      "name": "invalid-isolation-9",
+      "result": "PASS",
+      "sourceSelectionHistoryPreserved": true,
+      "receipt": "invalid-isolation-9.json",
+      "sha256": "2c6ef0bd8c58010ce24808fbc2729f5e34ca382a9e11c05758e02a65be63d42f",
+      "state": "invalid-isolation-9-state.json",
+      "stateSha256": "5fb29ca758374b12f571da84f5d19db6de4967ba3520d151cdba21c3d7b3c15a"
+    },
+    {
+      "name": "unknown-descendant-conservative-parent",
+      "result": "PASS",
+      "sourceSelectionHistoryPreserved": true,
+      "receipt": "unknown-descendant-conservative-parent.json",
+      "sha256": "ef5930e2ba32af1b35ef79717ac9a35196a69baef122ff38dc53a0ad1e78866d",
+      "state": "unknown-descendant-conservative-parent-state.json",
+      "stateSha256": "85f395372d7aa2541423c6d7c234734c15d6d10cc2e296332eb709ca3be7415e"
+    },
+    {
+      "name": "pdf-fixed-date",
+      "result": "PASS",
+      "sourceSelectionHistoryPreserved": true,
+      "receipt": "pdf-fixed-date.json",
+      "sha256": "5ab3605c6fcbf6a8d58752395c737e68fb05f78181a7f21fa4983fc785dd4821",
+      "state": "pdf-fixed-date-state.json",
+      "stateSha256": "5ae9c6d5b29ceafb8189fe90ed6783d33516d4ae211da8e72fde7ff5bc269892"
+    },
+    {
+      "name": "pdf-fixed-date-later",
+      "result": "PASS",
+      "sourceSelectionHistoryPreserved": true,
+      "receipt": "pdf-fixed-date-later.json",
+      "sha256": "5ab3605c6fcbf6a8d58752395c737e68fb05f78181a7f21fa4983fc785dd4821",
+      "state": "pdf-fixed-date-later-state.json",
+      "stateSha256": "5ae9c6d5b29ceafb8189fe90ed6783d33516d4ae211da8e72fde7ff5bc269892"
+    },
+    {
+      "name": "invalid-pdf-date-0",
+      "result": "PASS",
+      "sourceSelectionHistoryPreserved": true,
+      "receipt": "invalid-pdf-date-0.json",
+      "sha256": "81d93a666f1a41ecc39e37605670c88805ac3f2e11edf657fe66332524860097",
+      "state": "invalid-pdf-date-0-state.json",
+      "stateSha256": "5ae9c6d5b29ceafb8189fe90ed6783d33516d4ae211da8e72fde7ff5bc269892"
+    },
+    {
+      "name": "invalid-pdf-date-1",
+      "result": "PASS",
+      "sourceSelectionHistoryPreserved": true,
+      "receipt": "invalid-pdf-date-1.json",
+      "sha256": "81d93a666f1a41ecc39e37605670c88805ac3f2e11edf657fe66332524860097",
+      "state": "invalid-pdf-date-1-state.json",
+      "stateSha256": "5ae9c6d5b29ceafb8189fe90ed6783d33516d4ae211da8e72fde7ff5bc269892"
+    },
+    {
+      "name": "invalid-pdf-date-2",
+      "result": "PASS",
+      "sourceSelectionHistoryPreserved": true,
+      "receipt": "invalid-pdf-date-2.json",
+      "sha256": "81d93a666f1a41ecc39e37605670c88805ac3f2e11edf657fe66332524860097",
+      "state": "invalid-pdf-date-2-state.json",
+      "stateSha256": "5ae9c6d5b29ceafb8189fe90ed6783d33516d4ae211da8e72fde7ff5bc269892"
+    },
+    {
+      "name": "invalid-pdf-date-3",
+      "result": "PASS",
+      "sourceSelectionHistoryPreserved": true,
+      "receipt": "invalid-pdf-date-3.json",
+      "sha256": "81d93a666f1a41ecc39e37605670c88805ac3f2e11edf657fe66332524860097",
+      "state": "invalid-pdf-date-3-state.json",
+      "stateSha256": "5ae9c6d5b29ceafb8189fe90ed6783d33516d4ae211da8e72fde7ff5bc269892"
+    },
+    {
+      "name": "invalid-pdf-date-4",
+      "result": "PASS",
+      "sourceSelectionHistoryPreserved": true,
+      "receipt": "invalid-pdf-date-4.json",
+      "sha256": "81d93a666f1a41ecc39e37605670c88805ac3f2e11edf657fe66332524860097",
+      "state": "invalid-pdf-date-4-state.json",
+      "stateSha256": "5ae9c6d5b29ceafb8189fe90ed6783d33516d4ae211da8e72fde7ff5bc269892"
+    },
+    {
+      "name": "invalid-pdf-date-5",
+      "result": "PASS",
+      "sourceSelectionHistoryPreserved": true,
+      "receipt": "invalid-pdf-date-5.json",
+      "sha256": "81d93a666f1a41ecc39e37605670c88805ac3f2e11edf657fe66332524860097",
+      "state": "invalid-pdf-date-5-state.json",
+      "stateSha256": "5ae9c6d5b29ceafb8189fe90ed6783d33516d4ae211da8e72fde7ff5bc269892"
+    },
+    {
+      "name": "pdf-default-now",
+      "result": "PASS",
+      "sourceSelectionHistoryPreserved": true,
+      "receipt": "pdf-default-now.json",
+      "sha256": "537548c76d61aa45f2aa7104b4e5a645263d520d2a2a7b4968da69c3a4548eae",
+      "state": "pdf-default-now-state.json",
+      "stateSha256": "5ae9c6d5b29ceafb8189fe90ed6783d33516d4ae211da8e72fde7ff5bc269892"
+    },
+    {
+      "name": "pdf-default-later",
+      "result": "PASS",
+      "sourceSelectionHistoryPreserved": true,
+      "receipt": "pdf-default-later.json",
+      "sha256": "de8345f98cf7836e169cd878c656091535b08ea675666a10f38c61e5912b877b",
+      "state": "pdf-default-later-state.json",
+      "stateSha256": "5ae9c6d5b29ceafb8189fe90ed6783d33516d4ae211da8e72fde7ff5bc269892"
+    },
+    {
+      "name": "pdf-null-default",
+      "result": "PASS",
+      "sourceSelectionHistoryPreserved": true,
+      "receipt": "pdf-null-default.json",
+      "sha256": "de8345f98cf7836e169cd878c656091535b08ea675666a10f38c61e5912b877b",
+      "state": "pdf-null-default-state.json",
+      "stateSha256": "5ae9c6d5b29ceafb8189fe90ed6783d33516d4ae211da8e72fde7ff5bc269892"
+    }
+  ],
+  "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+  "driverSha256": "90aaf0dd901945571fd9e20c5aa9d3c256f95357e1ada3c4a901e392e4d7730b",
+  "skillFiles": {
+    "SKILL.md": "5c47c947f2308b88e2528cf2a3651fd9707fc941ddd656531690568c306b316a",
+    "agents/openai.yaml": "a1499d95abd8447558c535fe5554adcc3c9b988a0a39264a6283d430effe1e94",
+    "examples/appearance-gradient-create.json": "ff974dd61eac86d7b5bb604ddc60f9ae97ce5c57cd43e65ac3fefc8f8c498aff",
+    "examples/appearance-gradient-revise.json": "3e464a7576f55684c45eaf4b3b4ce94bc53c52a4e360e2a1609372201686f616",
+    "examples/brand-assets.json": "d4c342c68791d7fb9ca0a966448947d7f9597af66e00245aec3c4d4c43cc6950",
+    "examples/brand-token-assets.json": "07f3a8acb45b3dd03ecbe96b75c53571a6b7960eb29b6bb10b777194ba3c1202",
+    "examples/chinese-text.json": "a5f1310bfba6102606079b62712096ae9e4298dffe860dcbab64448619613762",
+    "examples/commands-advanced.json": "eb456387da8df5ac16399c318ebb493fef1e716a537a777420baaa52b89030b8",
+    "examples/commands-revision-create.json": "c7668b298747a3dec9266826344778e8c977a36df293436531ea1ea8db4a44bc",
+    "examples/commands-revision.json": "8e416f9ed55a21862cfc6848ca4e9f97b3fbd2b405b9a56faf89dbc016cbe779",
+    "examples/desktop-first-use.json": "41461b895abe438b35cfa2fcedec42d883ceb0a77812cb5e21e071b5473f3b2b",
+    "examples/native-workflow.json": "e9a89a79c3bdf0ae8ca41958f2fbbdf523ac77da47ecceda6cc97d982e38b265",
+    "examples/object-layout-create.json": "81d4eda918c6e4a41f41b58658a79eee1841872c49fff0a57d72beb94016127b",
+    "examples/object-layout-reopen.json": "7ad1f4a35980a2a90198d8b140ba1b486e604f391322484452d88e110d98da5f",
+    "examples/object-layout-revise.json": "6e85a7f2e54a1e3126d30f12e41fe02320f30542bd6d0d1044c79e79fd539731",
+    "examples/operation-revise.json": "4ed5a5914075583eae05dfab6ac3fc909b2da20558eb466c683355d35443bd78",
+    "examples/provided-assets.json": "f5a3e15cc7a44b912fd87fc833c00c2e51893b553d90daa6f3682bd9ff4336cd",
+    "examples/selection-brand-create.json": "3343eab1f42ef16e5334382c01c861d523d15d41ff49b6946e02046e582a2e73",
+    "examples/selection-brand-reopen.json": "7ad1f4a35980a2a90198d8b140ba1b486e604f391322484452d88e110d98da5f",
+    "examples/selection-brand-revise.json": "10edd02b725c5b0a337d1eb6931942c1bc5e7127c494a1738fecee528ed4ae21",
+    "references/appearance-gradient.md": "712a5822162e95610515d21ee00af77e0c276445f573440fbb360803e94342b7",
+    "references/brand-tokens.md": "ed9b228ccc0376808a51a4a75cb58e75338832260ba6c148a30eae6531c4e9b8",
+    "references/business-scenes.md": "9d11ef8f28be9249f9f7f32e166f307f0cfa7d5ac27520adbbbe483abf043d74",
+    "references/chinese-text.md": "b2229e5054fe2a71ee069b4aba6fa6d87c3ebbf4afaf3d1a2f85a80256948294",
+    "references/command-coverage.json": "532d2fc467f4fc4c48856e11fdb97ea465276270c882e837a3214692de831a50",
+    "references/command-reference.md": "87f39638580025e3d5042da4bda71e255ce9d729850e840ff7baf14a027c08c0",
+    "references/command-usage.md": "49d6405db258efeb7c2a9726c7a858dce855db5ddd2e14afbcde8025a88b5440",
+    "references/commands.json": "e90909f491a2eb5f9a2bcb7d8fcf82e416c7dab99d150af30d58571ce64377c2",
+    "references/desktop-install.md": "db2db151b0eff30a3381a03ae377fb23ac09b2b4a919859740bd9343e7f14887",
+    "references/exchange-loss.md": "eee665f62b77274ca8ce0efc4117012ade85978905cdfd40ab488af64297b8ae",
+    "references/first-use-failures.md": "ce2a8d1a8ca6b8a29a084d52d105d510476de88d40b439d6c2ff79212581d61d",
+    "references/installation-concurrency.md": "69067acebcd47f1924a8d6aa9d8a4ce6f44ad0756d44888a21eb224bcdb1c215",
+    "references/native-command-snapshot.json": "1e63722f850930947c4cc6e9bdbe24638413e43c2e5127dd385f167d493e10e1",
+    "references/native-workflow.md": "42fee416c66a69f6f3802abe1be6f002963cf109e7e22a4d6297b6dcaf62b8e9",
+    "references/object-edit-scene.md": "ac760587eaabc1205b20325e48325463fd90efe343df4183fc7ae7f9d07e6550",
+    "references/object-selection-scene.md": "42593e844568184451bf648c84f4f0fafaee5a1644e39b1641fe49a078e336d9",
+    "references/operation-contract.json": "0a78a01e457e63f7184b0d8c0718eaaf0019835a188c127d6948b8aada2fe060",
+    "references/output-execution.md": "baa3d38af5f8d3b01cb36bcc6b89dee3d8449ec676bc52d6f5c2de9f563ba3ac",
+    "references/scenario.md": "1c276b2078c8ef97e5cc0717cc54c1bb6d058eec6c261e580250cea6654c760f",
+    "references/workflow.md": "8bc6e22c806cdc9097e91485918c17e3626648b54435ac052dba4b1d936ea6cd",
+    "scripts/artboard_mapping.py": "3b0f83f6a9515f8d8d82c6c96973255b62a7b3a7de3cdde56d678746f1e57638",
+    "scripts/asset_inputs.py": "b2868a4239ef50648f201be99bb29ad4ddf0d8bdeb5a626c54b3fc1aac701758",
+    "scripts/boolean_transactions.py": "22d311dfda26cadcd3fc6bb51596ab8b2cd9245cabf5f28dfe3d0d74e8ff9120",
+    "scripts/bootstrap.py": "78d5bdf16bf08e9abc96b4b23e5d071da72b648698b888b85fa1b90f81cf32a9",
+    "scripts/brand_variants.py": "d5973ec8f36312ae32cf5b3e07d3f96ea32df0bc8a7b07c17d3328918fbc3a55",
+    "scripts/cli.py": "f59eb61605f0f4ac7213e6f52b83a47a93bf6201101cffd64d332fbb025313d5",
+    "scripts/commands.py": "265f052228e12f0c21e1ea98e967c0552c15fa001e2d65441357b1bec05cfaea",
+    "scripts/desktop.lock.json": "f38c7cd5b837bc4f3275ef96c17308fc894f6be66c6a00ecf9c53378ad4bb486",
+    "scripts/desktop.py": "24dddb82f1c51ca8e835c582d9b7228aa9d643dfcada11b570bde9191f002f0f",
+    "scripts/desktop_session.py": "b6b07a9a18b77386d481a7f263190b0981a7a763dda4f46ad7417a92d416fbb5",
+    "scripts/exchange_loss.py": "16ffb14bf7fb32fc873ab0206ade1e1f462a00a5494fb07682a6e91417b5cd47",
+    "scripts/execution_control.py": "0acaa8fa01aae3689bb8c460efdd9bb19578d33e1572e24dc8dea00ef38ec008",
+    "scripts/mcp_session.py": "15395ead853349a24feab6ce364e5bc9795add12e1dbe62e8ed5718ffdd1ccd2",
+    "scripts/native_workflow.py": "770f981bc3340cf71c695752423aaf9e9123ae59f07ac5a9318cc9b8e8537d11",
+    "scripts/output_guard.py": "7c13abd891370058e670fbfb3db7992d4a8ed7934682c83bde1aabf47ad6846f",
+    "scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "scripts/runtime.lock.json": "7b6bd7f3fab84b757d4ea20ac91b74d89b417ec061efc6ae320dda97a422cc07",
+    "scripts/text_contract.py": "ff4af45ae39f4016befd94a9dd20899118da1bd85556c22313450b9851305838",
+    "scripts/workflow.py": "6a6cc338b6a052b6427856acae8a287024270b62ea8c7d964899b076493ae5dc"
+  },
+  "crossArtboardDependency": {
+    "id": 4,
+    "members": [
+      2,
+      3
+    ],
+    "scope": "whole indivisible cross-artboard group; remote child is a dependency"
+  },
+  "installedSkillPreserved": true,
+  "pdfLegacyDefaultDates": [
+    "D:20261008182211Z",
+    "D:20261008182213Z"
+  ],
+  "scope": "actual fixed native SVG locked/stroke/effect/group/clipping/empty/invalid/legacy/empty-sublayer conservative parent and PDF fixed/default/invalid dates; empty sublayer None bounds also requires pinned renderer source evidence"
+}

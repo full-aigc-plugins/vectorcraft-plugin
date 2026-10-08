@@ -226,6 +226,9 @@ def build(root=ROOT):
     artboard_mapping_fixed='docs/evidence/vectorcraft-artboard-mapping-fixed54-20261009.json'
     if (root/artboard_mapping_fixed).is_file():
         entries.append(bound_report(root,artboard_mapping_fixed,'fixed-install','Actual public54/source40 isolated host installation, three successful native mappings/four refusals/14 decoded outputs;13 skills unchanged;complete4.12 remains open','VC-DM-004'))
+    artboards='docs/evidence/vectorcraft-artboards-fixed54-20261009.json'
+    if (root/artboards).is_file():
+        entries.append(bound_report(root,artboards,'fixed-install','All four current VC-DM-004 scenarios on installed54/source40 macOS arm64;31 native boundary cases, standalone export cold first use, stable-ID mapping and pinned renderer unknown-bounds semantics;only4.12 closes','VC-DM-004',['4.12']))
     # 明确归档变更前执行字节；保留报告原摘要，不能把旧运行重绑定到新实现。
     for entry in entries:
         archived={}

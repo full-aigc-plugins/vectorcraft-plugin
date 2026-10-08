@@ -1,0 +1,551 @@
+{
+  "scenarioContracts": {
+    "VC-DM-004-P": "1c40c56817fca82f514120f1e7ca2e5e509e95f58fe37ea6687735f3acf57829",
+    "VC-DM-004-N": "78c04def3e4b0335c501193aa09c18f5b286fa9c0ae2c20b6a4eeecf550c3d0e",
+    "VC-DM-004-SVG": "54f8571c923f3d0458970a0ab21fd9aa2d70a2f9b6ebf92eee222b76efb4c614",
+    "VC-DM-004-PDF": "37428dc554a86e86f34ed21d98c85c324b60e3796c949a16c94316ad0362edae"
+  },
+  "entries": [
+    {
+      "scenario": "VC-DM-004-P",
+      "checks": [
+        {
+          "report": "docs/evidence/vc-dm-004-mapping/fixed54-native.json",
+          "pointer": "/result",
+          "expected": "PASS",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004-mapping/fixed54-native.json",
+          "pointer": "/cases/0/result",
+          "expected": "PASS",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004-mapping/fixed54-native.json",
+          "pointer": "/cases/1/result",
+          "expected": "PASS",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004-mapping/fixed54-native.json",
+          "pointer": "/cases/2/result",
+          "expected": "PASS",
+          "level": "native-fixed-install"
+        }
+      ]
+    },
+    {
+      "scenario": "VC-DM-004-N",
+      "checks": [
+        {
+          "report": "docs/evidence/vc-dm-004-mapping/fixed54-native.json",
+          "pointer": "/result",
+          "expected": "PASS",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004-mapping/fixed54-native.json",
+          "pointer": "/failures/0/noSuccessManifest",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004-mapping/fixed54-native.json",
+          "pointer": "/failures/0/noExportsBeforeFullMappingValidation",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004-mapping/fixed54-native.json",
+          "pointer": "/failures/0/replayAllowed",
+          "expected": false,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004-mapping/fixed54-native.json",
+          "pointer": "/failures/1/noSuccessManifest",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004-mapping/fixed54-native.json",
+          "pointer": "/failures/1/noExportsBeforeFullMappingValidation",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004-mapping/fixed54-native.json",
+          "pointer": "/failures/1/replayAllowed",
+          "expected": false,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004-mapping/fixed54-native.json",
+          "pointer": "/failures/2/noSuccessManifest",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004-mapping/fixed54-native.json",
+          "pointer": "/failures/2/noExportsBeforeFullMappingValidation",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004-mapping/fixed54-native.json",
+          "pointer": "/failures/2/replayAllowed",
+          "expected": false,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004-mapping/fixed54-native.json",
+          "pointer": "/failures/3/noSuccessManifest",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004-mapping/fixed54-native.json",
+          "pointer": "/failures/3/noExportsBeforeFullMappingValidation",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004-mapping/fixed54-native.json",
+          "pointer": "/failures/3/replayAllowed",
+          "expected": false,
+          "level": "native-fixed-install"
+        }
+      ]
+    },
+    {
+      "scenario": "VC-DM-004-SVG",
+      "checks": [
+        {
+          "report": "docs/evidence/vc-dm-004/first-use.json",
+          "pointer": "/unrelatedIconAllFormatsUnchanged",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/first-use.json",
+          "pointer": "/sourceAndSkillFilesPreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/0/result",
+          "expected": "PASS",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/0/sourceSelectionHistoryPreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/1/result",
+          "expected": "PASS",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/1/sourceSelectionHistoryPreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/2/result",
+          "expected": "PASS",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/2/sourceSelectionHistoryPreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/3/result",
+          "expected": "PASS",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/3/sourceSelectionHistoryPreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/4/result",
+          "expected": "PASS",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/4/sourceSelectionHistoryPreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/5/result",
+          "expected": "PASS",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/5/sourceSelectionHistoryPreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/6/result",
+          "expected": "PASS",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/6/sourceSelectionHistoryPreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/7/result",
+          "expected": "PASS",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/7/sourceSelectionHistoryPreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/8/result",
+          "expected": "PASS",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/8/sourceSelectionHistoryPreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/9/result",
+          "expected": "PASS",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/9/sourceSelectionHistoryPreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/10/result",
+          "expected": "PASS",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/10/sourceSelectionHistoryPreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/11/result",
+          "expected": "PASS",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/11/sourceSelectionHistoryPreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/12/result",
+          "expected": "PASS",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/12/sourceSelectionHistoryPreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/13/result",
+          "expected": "PASS",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/13/sourceSelectionHistoryPreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/14/result",
+          "expected": "PASS",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/14/sourceSelectionHistoryPreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/15/result",
+          "expected": "PASS",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/15/sourceSelectionHistoryPreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/16/result",
+          "expected": "PASS",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/16/sourceSelectionHistoryPreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/17/result",
+          "expected": "PASS",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/17/sourceSelectionHistoryPreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/18/result",
+          "expected": "PASS",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/18/sourceSelectionHistoryPreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/19/result",
+          "expected": "PASS",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/19/sourceSelectionHistoryPreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        }
+      ]
+    },
+    {
+      "scenario": "VC-DM-004-PDF",
+      "checks": [
+        {
+          "report": "docs/evidence/vc-dm-004/first-use.json",
+          "pointer": "/unrelatedIconAllFormatsUnchanged",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/first-use.json",
+          "pointer": "/sourceAndSkillFilesPreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/first-use.json",
+          "pointer": "/sameProjectPdfAcrossSecondsUnchanged",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/first-use.json",
+          "pointer": "/failedStagePreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/first-use.json",
+          "pointer": "/failureReplayAllowed",
+          "expected": false,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/20/result",
+          "expected": "PASS",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/20/sourceSelectionHistoryPreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/21/result",
+          "expected": "PASS",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/21/sourceSelectionHistoryPreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/22/result",
+          "expected": "PASS",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/22/sourceSelectionHistoryPreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/23/result",
+          "expected": "PASS",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/23/sourceSelectionHistoryPreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/24/result",
+          "expected": "PASS",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/24/sourceSelectionHistoryPreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/25/result",
+          "expected": "PASS",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/25/sourceSelectionHistoryPreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/26/result",
+          "expected": "PASS",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/26/sourceSelectionHistoryPreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/27/result",
+          "expected": "PASS",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/27/sourceSelectionHistoryPreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/28/result",
+          "expected": "PASS",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/28/sourceSelectionHistoryPreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/29/result",
+          "expected": "PASS",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/29/sourceSelectionHistoryPreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/source-regression.log.txt",
+          "contains": "test_missing_native_date_reuses_verified_initial_delivery_date",
+          "level": "local-tests"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/30/result",
+          "expected": "PASS",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-004/proof.json",
+          "pointer": "/cases/30/sourceSelectionHistoryPreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        }
+      ]
+    }
+  ]
+}

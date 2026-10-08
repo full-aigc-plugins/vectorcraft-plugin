@@ -1,0 +1,4 @@
+{
+  "rejected": true,
+  "error": "command_failed: [{\"text\": \"run_command: invalid parameters for `document.serialize`: no such isolated artboard\", \"type\": \"text\"}]"
+}

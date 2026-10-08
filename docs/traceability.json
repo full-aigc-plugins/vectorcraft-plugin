@@ -146,8 +146,9 @@
         "4.12"
       ],
       "owner": "Domain owner",
-      "status": "in-progress",
-      "evidence": "docs/evidence/vectorcraft-artboard-mapping-candidate54-20261009.json"
+      "status": "verified",
+      "evidence": "docs/evidence/vectorcraft-artboards-fixed54-20261009.json",
+      "scope": "All four current headless scenarios at installed54/source40 macOS arm64;31 native cases plus cold single-export and stable-ID mapping,87 scenario checks;unknown bounds exercised as empty native sublayer with pinned renderer source semantics;no GUI/model/other platform/V1 claim"
     },
     {
       "requirement": "VC-DM-005",

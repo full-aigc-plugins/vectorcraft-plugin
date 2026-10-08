@@ -376,6 +376,8 @@ Codex 0.153.4 在全新隔离配置中安装并发现13技能。13项独立空�
 
 公开固定53／源39完成VC-DM-003全部四场景，任务4.7–4.9完成，当前102项完成／25项开放。8组品牌误改注入、正常品牌／同色隔离、中文返工及独立重开、原位置文字拒绝、两种SVG文字模式、18项入口拒绝和30项目标源测试通过；13技能摘要保持不变。故障为QA显式注入，字体状态仅来自原生库，不声称GUI、全富文本或跨编辑器保真。[逐场景证据](docs/evidence/vectorcraft-brand-text-fixed53-20261009.json)。
 
-任务4.10／4.11的测试与最小实现门禁已完成，当前104项完成／23项开放；4.12完整验收保持开放。[映射候选证据](docs/evidence/vectorcraft-artboard-mapping-candidate54-20261009.json)。
+任务4.10／4.11的测试与最小实现门禁已完成，当前105项完成／22项开放；4.12完整验收证据见文末。[映射候选证据](docs/evidence/vectorcraft-artboard-mapping-candidate54-20261009.json)。
 
 公开固定54／源40已通过Codex0.153.4隔离安装与13技能发现，实际安装副本三种成功映射、四种拒绝及14份输出解码通过，13技能摘要保持；复用已核验运行时。仅映射子集，不关闭完整4.12。 [Fixed subset evidence](docs/evidence/vectorcraft-artboard-mapping-fixed54-20261009.json).
+
+固定54／源40的VC-DM-004四个当前场景已完成验收，任务4.12标记完成，当前105项完成／22项开放。31项原生边界、单导出技能空运行时首用、同工程跨秒PDF及局部品牌修改后的无关SVG／PNG／PDF字节一致性通过，13技能摘要保持。未知绘制范围以原生空子图层实测，并结合固定上游源码确认None语义；跨画板群组记录为完整依赖。源回归190项中160通过／30跳过，GUI、模型、其他平台和完整V1仍开放。 [Full scenario evidence](docs/evidence/vectorcraft-artboards-fixed54-20261009.json).

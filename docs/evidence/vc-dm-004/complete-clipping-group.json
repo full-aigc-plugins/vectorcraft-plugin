@@ -1,0 +1,4 @@
+{
+  "text": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"80\" height=\"64\" viewBox=\"0 0 80 64\">\n  <defs>\n    <clipPath id=\"clip-path-1\">\n      <path d=\"M10 10 L30 10 L30 30 L10 30 Z\"/>\n    </clipPath>\n  </defs>\n  <title>Isolation qualification</title>\n  <g id=\"Layer_1\" data-name=\"Layer 1\">\n    <g clip-path=\"url(#clip-path-1)\">\n      <path d=\"M200 20 L220 20 L220 40 L200 40 Z\" fill=\"#2366e8\"/>\n    </g>\n  </g>\n</svg>\n",
+  "warnings": []
+}

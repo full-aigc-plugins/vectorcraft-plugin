@@ -1,0 +1,29 @@
+pub(crate) fn cull_bounds(n: &Node) -> Option<Rect> {
+    match &n.kind {
+        // The object and its crop marks.
+        _ if effects::has_crop_marks(n) => effects::crop_marks_art(n).and_then(|art| cull_bounds(&art)),
+        // The evaluated art (its fills, strokes and geometry effects) and the raster effects' reach.
+        _ if effects::has_container_appearance(n) => {
+            let art = effects::evaluate_container(n);
+            let art = art.as_ref().unwrap_or(n);
+            let b = if art.clips() {
+                art.visual_bounds()
+            } else {
+                art.children()?.iter().fold(None, |acc, c| vectorcraft_geom::union_opt(acc, cull_bounds(c)))
+            }?;
+            let o = effects::outset(&n.appearance.effects);
+            Some(b.inflate(o, o))
+        }
+        NodeKind::Layer { children, clip: false, .. } | NodeKind::Group { children, clip: false } => {
+            children.iter().fold(None, |acc, c| vectorcraft_geom::union_opt(acc, cull_bounds(c)))
+        }
+        _ if has_fx(n) => visual_bounds(n),
+        // The reshaped art (a symbol's art needs the document: its instance box stands in).
+        _ if has_object_fx(n) => {
+            let b = effects::reshape(n, None).and_then(|r| r.visual_bounds()).or_else(|| n.visual_bounds())?;
+            let o = effects::outset(&n.appearance.effects);
+            Some(b.inflate(o, o))
+        }
+        _ => n.visual_bounds(),
+    }
+}

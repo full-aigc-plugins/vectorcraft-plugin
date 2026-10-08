@@ -1,0 +1,7 @@
+{
+  "commit": "90e022b0c05f12171a4e9bebe0894fa62f7bc95c",
+  "path": "crates/render/src/fx.rs",
+  "wholeFileSha256": "f21ab059e0c615f3348fa515d4669ab59602b88915ac3afcf07c7c78a80aac07",
+  "excerptSha256": "19f588c9d5cc41d9c18a07a0c3d166cb0f62eb7b271d105e782f23c762d10645",
+  "reason": "empty nonclipping sublayer has no container appearance; children.fold(None, ...) returns None. Patch export_bounds delegates to this function."
+}
