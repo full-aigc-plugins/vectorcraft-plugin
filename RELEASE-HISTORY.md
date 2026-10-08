@@ -1,5 +1,10 @@
 # Version-bound release records
 
+## dev.47 (2026-10-08)
+
+Revalidate captured physical roots and request paths so replacing a resolved root or output parent with a redirecting symlink cannot escape the captured scope.77 Node tests and10 real native contract cases pass; full3.3 awaits actual fixed47 installation. Source remains dev.37 and completeV1 remains open.
+
+
 ## dev.46 (2026-10-08)
 
 Bind complete source delivery inputs and execute from verified readonly source snapshots while retaining occupation of the original project. Reserve canonical outputs transactionally and guard old SQL connections. Real native branch, signed desktop GUI conflict, crash/restart and handoff cases pass; full3.3 awaits fixed-release acceptance. Source remains dev.37; completeV1 remains open. [Contract](docs/VectorCraft-Source-Single-Writer.md).

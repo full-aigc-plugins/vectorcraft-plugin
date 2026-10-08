@@ -123,10 +123,6 @@ export class Controller {
     const guards=request.inputFingerprints??{};
     if(!guards||typeof guards!=='object'||Array.isArray(guards)||Object.keys(guards).length>4096)throw new Error('invalid_input_fingerprints');
     const checkInputs=()=>{
-      // 解析后的物理目录本身或其父目录被替换为链接时，也不能重定向授权。
-      for(const path of [...auth.readRoots,...auth.writeRoots,request.skill,request.plan,request.output,request.runtimeHome,...(request.source?[request.source]:[])]){
-        if(resourcePath(path)!==path)throw new Error('authorization_path_changed');
-      }
       if(request.source){
         const project=join(request.source,'project.vectorcraft');
         if(lstatSync(project).isSymbolicLink())throw new Error('invalid_source_path');

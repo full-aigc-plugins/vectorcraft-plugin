@@ -1,0 +1,17 @@
+{
+  "result": "PASS",
+  "checks": [
+    {
+      "taskId": "f4d64429-938f-4e80-a16f-771f605888d6",
+      "sourceSnapshotSha256": "481d1fe5a2669a47279eee085046f4e06ee1e536d88f211af641983cc704ba2d",
+      "fileCount": 16,
+      "allFilesReadonly": true
+    },
+    {
+      "taskId": "94d10266-ebb3-4b3a-8beb-d29b49852bbd",
+      "sourceSnapshotSha256": "481d1fe5a2669a47279eee085046f4e06ee1e536d88f211af641983cc704ba2d",
+      "fileCount": 16,
+      "allFilesReadonly": true
+    }
+  ]
+}

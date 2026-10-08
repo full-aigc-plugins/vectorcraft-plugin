@@ -1,0 +1,43 @@
+✔ final output permission alone does not authorize sibling staging; refusal precedes probe (7.574041ms)
+✔ authorized physical roots and request paths stay fixed when a root alias changes during probe (214.945583ms)
+✔ caller mutation cannot replace the input fingerprint or broaden authorization after probe starts (5.148875ms)
+✖ replacing captured physical root with a new alias cannot redirect execution (181.751792ms)
+✖ replacing captured physical output-parent with a new alias cannot redirect execution (177.937917ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 3
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 670.483625
+
+✖ failing tests:
+
+test at tests/authorization_binding.test.ts:41:2
+✖ replacing captured physical root with a new alias cannot redirect execution (181.751792ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file://<plugin-root>/tests/authorization_binding.test.ts:44:7)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /authorization_path_changed/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/authorization_binding.test.ts:41:2
+✖ replacing captured physical output-parent with a new alias cannot redirect execution (177.937917ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file://<plugin-root>/tests/authorization_binding.test.ts:44:7)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /authorization_path_changed/,
+    operator: 'rejects',
+    diff: 'simple'
+  }

@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {mkdtempSync,mkdirSync,writeFileSync,readFileSync,rmSync,realpathSync,renameSync,symlinkSync,unlinkSync,existsSync} from 'node:fs';
+import {mkdtempSync,mkdirSync,writeFileSync,readFileSync,rmSync,realpathSync,symlinkSync,unlinkSync,existsSync} from 'node:fs';
 import {join} from 'node:path';
 import {tmpdir} from 'node:os';
 import {createHash} from 'node:crypto';
@@ -37,10 +37,3 @@ test('caller mutation cannot replace the input fingerprint or broaden authorizat
  const controller=new Controller(join(f.root,'state.sqlite'),async()=>{writeFileSync(brief,'changed');request.inputFingerprints[brief]=sha(brief);request.authorization.fields.push('structure');request.authorization.objects.push(999);return f.probe();});
  try{await assert.rejects(()=>controller.run(request),/stale_execution_inputs/);assert.equal(existsSync(request.output),false);assert.equal((controller.ledger.db.prepare('SELECT COUNT(*) AS n FROM tasks').get() as any).n,0);}finally{controller.close();f.close();}
 });
-for(const replacement of ['root','output-parent']){
- test('replacing captured physical '+replacement+' with a new alias cannot redirect execution',async()=>{
-  const f=fixture(),authorized=join(f.root,'authorized'),outside=join(f.root,'outside'),parent=join(authorized,'parent');mkdirSync(authorized);mkdirSync(outside);mkdirSync(join(outside,'parent'));mkdirSync(parent);writeFileSync(join(authorized,'plan.json'),'{"operations":[]}');
-  const controller=new Controller(join(f.root,'state.sqlite'),async()=>{const path=replacement==='root'?authorized:parent;renameSync(path,path+'-saved');symlinkSync(outside,path);return f.probe();});
-  try{await assert.rejects(()=>controller.run({...f.request,plan:join(authorized,'plan.json'),output:join(parent,'output'),runtimeHome:join(authorized,'runtime'),authorization:{...f.request.authorization,readRoots:[authorized],writeRoots:[authorized]}}),/authorization_path_changed/);assert.equal(existsSync(join(outside,'output')),false);assert.equal((controller.ledger.db.prepare('SELECT COUNT(*) AS n FROM tasks').get() as any).n,0);}finally{controller.close();f.close();}
- });
-}

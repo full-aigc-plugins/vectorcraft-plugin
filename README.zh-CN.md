@@ -10,9 +10,11 @@
 
 Logo、图标与品牌图形需求进入，交付 `.vectorcraft` 及适用的 SVG、PDF、PNG。
 
-当前插件：`0.1.0-dev.46`；技能源：`0.1.0-dev.37`；13 个独立技能。
+当前插件：`0.1.0-dev.47`；技能源：`0.1.0-dev.37`；13 个独立技能。
 
-源清单、继承计划与依赖现已绑定版本，并复制为逐文件核验的只读执行快照；编辑前同时占用原源工程和物理输出，旧SQL连接亦受输出门禁约束。原生分支、GUI改后冲突、崩溃交接候选通过。[源与单写合同](docs/VectorCraft-Source-Single-Writer.zh_CN.md)。完整3.3仍待固定46验收。
+插件47进一步在探测后、启动时和监督期间复核已解析物理根目录与请求路径；将原根目录或输出父目录替换为重定向链接时，在任务登记前拒绝。77项Node回归及10项原生合同案例候选通过；完整3.3待固定47验收。
+
+源清单、继承计划与依赖现已绑定版本，并复制为逐文件核验的只读执行快照；编辑前同时占用原源工程和物理输出，旧SQL连接亦受输出门禁约束。原生分支、GUI改后冲突、崩溃交接候选通过。[源与单写合同](docs/VectorCraft-Source-Single-Writer.zh_CN.md)。公开插件46／技能源37在macOS arm64通过已记录原生场景，但授权根目录替换边界仍开放。[子集证据](docs/evidence/vectorcraft-single-writer-fixed46-20261008.json)。任务3.3保持开放；共33项任务待完成。
 
 公开插件45／技能源37通过隔离Codex安装、63项Node与43项Python回归，已安装副本的真实取消与协调器崩溃恢复通过；13技能摘要保持不变。[固定安装证据](docs/evidence/vectorcraft-recovery-fixed45-20261008.json)。这些是有限恢复案例，本轮不关闭额外V1任务。
 
@@ -117,7 +119,7 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.46 |
+| Metadata version | 0.1.0-dev.47 |
 | Stage | implementation-in-progress |
 | Skills source | vectorcraft-skills / v0.1.0-dev.37 |
 | Execution | 上游 CLI；ArtCraft 使用子适配器 |

@@ -1,6 +1,6 @@
 /** 真实源分支、交付保护、异步授权快照与GUI源变更后的旧计划拒绝。 */
 import assert from 'node:assert/strict';
-import {mkdirSync,readFileSync,writeFileSync,existsSync,cpSync,readdirSync,lstatSync,chmodSync,realpathSync,symlinkSync,unlinkSync,renameSync} from 'node:fs';
+import {mkdirSync,readFileSync,writeFileSync,existsSync,cpSync,readdirSync,lstatSync,chmodSync,realpathSync,symlinkSync,unlinkSync} from 'node:fs';
 import {join,resolve,dirname,relative} from 'node:path';
 import {fileURLToPath,pathToFileURL} from 'node:url';
 import {execFileSync} from 'node:child_process';
@@ -75,20 +75,6 @@ for(const [name,file] of [['manifest','manifest.json'],['inherited-plan','plan.j
   assert.equal((guard.ledger.db.prepare('SELECT COUNT(*) AS n FROM native_processes').get() as any).n,0);
   cases.push({scenario:'VC-TX-001-INPUTS',name:'real probe then changed '+name,editingSessions:0,registeredTasks:0,sourceProjectUnchanged:true,error:'stale_source_dependencies'});
  }finally{guard.close();}
-}
-// 解析后的物理根目录或输出父目录本身被替换时，真实探测后也不能越界。
-for(const replacement of ['root','output-parent']){
- const originalRoot=join(root,'path-'+replacement),redirected=join(root,'escaped-'+replacement);mkdirSync(originalRoot);mkdirSync(redirected);mkdirSync(join(originalRoot,'parent'));mkdirSync(join(redirected,'parent'));
- cpSync(source,join(originalRoot,'source'),{recursive:true});cpSync(source,join(redirected,'source'),{recursive:true});cpSync(plan,join(originalRoot,'plan.json'));cpSync(plan,join(redirected,'plan.json'));
- let probed=false;
- const guarded=new Controller(join(root,'path-'+replacement+'.sqlite'),async(o:any)=>{
-  const result=await prepareRuntime(o);probed=true;const path=replacement==='root'?originalRoot:join(originalRoot,'parent');renameSync(path,path+'-saved');symlinkSync(redirected,path);return result;
- });
- try{
-  await assert.rejects(()=>guarded.run({...base,key:'path-'+replacement,plan:join(originalRoot,'plan.json'),source:join(originalRoot,'source'),output:join(originalRoot,'parent','output'),authorization:{...base.authorization,readRoots:[originalRoot],writeRoots:[originalRoot,runtime]}}),/authorization_path_changed/);
-  assert.equal(probed,true);assert.equal((guarded.ledger.db.prepare('SELECT COUNT(*) AS n FROM tasks').get() as any).n,0);assert.equal(existsSync(join(redirected,'output')),false);assert.equal(existsSync(join(redirected,'parent','output')),false);
-  cases.push({scenario:'VC-TX-001-AUTH-SNAPSHOT',name:'real probe then physical '+replacement+' replaced with redirecting alias',error:'authorization_path_changed',registeredTasks:0,editingSessions:0,redirectedOutputAbsent:true});
- }finally{guarded.close();}
 }
 // GUI桌面真正修改副本并保存；随后旧计划在启动新原生探测前拒绝。
 const guiSource=join(root,'gui-source');cpSync(source,guiSource,{recursive:true});

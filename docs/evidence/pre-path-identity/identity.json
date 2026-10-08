@@ -1,0 +1,10 @@
+{
+  "commit": "f9519eb80bf12575b75597978554883a2c976bcb",
+  "scope": "Exact plugin46 bytes before physical namespace revalidation",
+  "files": {
+    "src/harness/controller.ts": "971b29d6d090e709d78beb39fc255ff44b4d7e82b46d2a77c57f755d9efb80e2",
+    "plugin.json": "8520562da05f9d995f6b8d0fed78c307c0d83d99e0f00d2459d02487779939e8",
+    "tests/authorization_binding.test.ts": "bfad2a1ba70572b535285e6cd64b73b26518f1b856e9e13ebaddcc9a11a3eae2",
+    "scripts/acceptance/task_contract.ts": "794ebca875900dcc6ed7ef75d027185defdaa604c25eab705f176b5ebd933d55"
+  }
+}
