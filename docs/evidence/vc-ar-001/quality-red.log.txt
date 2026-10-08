@@ -1,0 +1,91 @@
+test_current_lineage_is_verified (test_artifact_lineage_quality.LineageQualityTests.test_current_lineage_is_verified) ... ERROR
+test_legacy_package_is_not_lineage_pass (test_artifact_lineage_quality.LineageQualityTests.test_legacy_package_is_not_lineage_pass) ... ERROR
+test_rehashed_semantic_faults_block_before_decoding (test_artifact_lineage_quality.LineageQualityTests.test_rehashed_semantic_faults_block_before_decoding) ... 
+  test_rehashed_semantic_faults_block_before_decoding (test_artifact_lineage_quality.LineageQualityTests.test_rehashed_semantic_faults_block_before_decoding) (fault='task') ... FAIL
+  test_rehashed_semantic_faults_block_before_decoding (test_artifact_lineage_quality.LineageQualityTests.test_rehashed_semantic_faults_block_before_decoding) (fault='native') ... FAIL
+  test_rehashed_semantic_faults_block_before_decoding (test_artifact_lineage_quality.LineageQualityTests.test_rehashed_semantic_faults_block_before_decoding) (fault='outputs') ... FAIL
+  test_rehashed_semantic_faults_block_before_decoding (test_artifact_lineage_quality.LineageQualityTests.test_rehashed_semantic_faults_block_before_decoding) (fault='version') ... FAIL
+  test_rehashed_semantic_faults_block_before_decoding (test_artifact_lineage_quality.LineageQualityTests.test_rehashed_semantic_faults_block_before_decoding) (fault='dependencies') ... FAIL
+
+======================================================================
+ERROR: test_current_lineage_is_verified (test_artifact_lineage_quality.LineageQualityTests.test_current_lineage_is_verified)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_REPO/tests/test_artifact_lineage_quality.py", line 26, in test_current_lineage_is_verified
+    root=Path(d);m,r=self.fixture(root);self.assertEqual(self.check(root,m)['lineageStatus'],'PASS')
+                                                         ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'lineageStatus'
+
+======================================================================
+ERROR: test_legacy_package_is_not_lineage_pass (test_artifact_lineage_quality.LineageQualityTests.test_legacy_package_is_not_lineage_pass)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_REPO/tests/test_artifact_lineage_quality.py", line 30, in test_legacy_package_is_not_lineage_pass
+    self.assertEqual(self.check(root,m)['lineageStatus'],'NOT_RUN')
+                     ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'lineageStatus'
+
+======================================================================
+FAIL: test_rehashed_semantic_faults_block_before_decoding (test_artifact_lineage_quality.LineageQualityTests.test_rehashed_semantic_faults_block_before_decoding) (fault='task')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_REPO/tests/test_artifact_lineage_quality.py", line 41, in test_rehashed_semantic_faults_block_before_decoding
+    result=self.check(root,m);self.assertEqual(result['artifactIntegrityStatus'],'FAIL');self.assertEqual(result['outputs'],[])
+                              ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'PASS' != 'FAIL'
+- PASS
++ FAIL
+
+
+======================================================================
+FAIL: test_rehashed_semantic_faults_block_before_decoding (test_artifact_lineage_quality.LineageQualityTests.test_rehashed_semantic_faults_block_before_decoding) (fault='native')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_REPO/tests/test_artifact_lineage_quality.py", line 41, in test_rehashed_semantic_faults_block_before_decoding
+    result=self.check(root,m);self.assertEqual(result['artifactIntegrityStatus'],'FAIL');self.assertEqual(result['outputs'],[])
+                              ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'PASS' != 'FAIL'
+- PASS
++ FAIL
+
+
+======================================================================
+FAIL: test_rehashed_semantic_faults_block_before_decoding (test_artifact_lineage_quality.LineageQualityTests.test_rehashed_semantic_faults_block_before_decoding) (fault='outputs')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_REPO/tests/test_artifact_lineage_quality.py", line 41, in test_rehashed_semantic_faults_block_before_decoding
+    result=self.check(root,m);self.assertEqual(result['artifactIntegrityStatus'],'FAIL');self.assertEqual(result['outputs'],[])
+                              ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'PASS' != 'FAIL'
+- PASS
++ FAIL
+
+
+======================================================================
+FAIL: test_rehashed_semantic_faults_block_before_decoding (test_artifact_lineage_quality.LineageQualityTests.test_rehashed_semantic_faults_block_before_decoding) (fault='version')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_REPO/tests/test_artifact_lineage_quality.py", line 41, in test_rehashed_semantic_faults_block_before_decoding
+    result=self.check(root,m);self.assertEqual(result['artifactIntegrityStatus'],'FAIL');self.assertEqual(result['outputs'],[])
+                              ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'PASS' != 'FAIL'
+- PASS
++ FAIL
+
+
+======================================================================
+FAIL: test_rehashed_semantic_faults_block_before_decoding (test_artifact_lineage_quality.LineageQualityTests.test_rehashed_semantic_faults_block_before_decoding) (fault='dependencies')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_REPO/tests/test_artifact_lineage_quality.py", line 41, in test_rehashed_semantic_faults_block_before_decoding
+    result=self.check(root,m);self.assertEqual(result['artifactIntegrityStatus'],'FAIL');self.assertEqual(result['outputs'],[])
+                              ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'PASS' != 'FAIL'
+- PASS
++ FAIL
+
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.025s
+
+FAILED (failures=5, errors=2)

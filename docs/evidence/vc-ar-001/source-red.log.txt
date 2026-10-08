@@ -1,0 +1,96 @@
+test_file_replacement_invalidates_without_renaming (test_artifact_lineage.ArtifactLineageTests.test_file_replacement_invalidates_without_renaming) ... ERROR
+test_move_preserves_identity_and_all_dependencies (test_artifact_lineage.ArtifactLineageTests.test_move_preserves_identity_and_all_dependencies) ... ERROR
+test_rehashed_missing_dependency_task_native_or_version_is_rejected (test_artifact_lineage.ArtifactLineageTests.test_rehashed_missing_dependency_task_native_or_version_is_rejected) ... 
+  test_rehashed_missing_dependency_task_native_or_version_is_rejected (test_artifact_lineage.ArtifactLineageTests.test_rehashed_missing_dependency_task_native_or_version_is_rejected) (fault='assets') ... ERROR
+  test_rehashed_missing_dependency_task_native_or_version_is_rejected (test_artifact_lineage.ArtifactLineageTests.test_rehashed_missing_dependency_task_native_or_version_is_rejected) (fault='task') ... ERROR
+  test_rehashed_missing_dependency_task_native_or_version_is_rejected (test_artifact_lineage.ArtifactLineageTests.test_rehashed_missing_dependency_task_native_or_version_is_rejected) (fault='native') ... ERROR
+  test_rehashed_missing_dependency_task_native_or_version_is_rejected (test_artifact_lineage.ArtifactLineageTests.test_rehashed_missing_dependency_task_native_or_version_is_rejected) (fault='version') ... ERROR
+  test_rehashed_missing_dependency_task_native_or_version_is_rejected (test_artifact_lineage.ArtifactLineageTests.test_rehashed_missing_dependency_task_native_or_version_is_rejected) (fault='files') ... ERROR
+test_revision_retains_logical_id_and_parent_version (test_artifact_lineage.ArtifactLineageTests.test_revision_retains_logical_id_and_parent_version) ... ERROR
+test_symlink_dependency_is_rejected (test_artifact_lineage.ArtifactLineageTests.test_symlink_dependency_is_rejected) ... ERROR
+
+======================================================================
+ERROR: test_file_replacement_invalidates_without_renaming (test_artifact_lineage.ArtifactLineageTests.test_file_replacement_invalidates_without_renaming)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "SOURCE_REPO/tests/test_artifact_lineage.py", line 43, in test_file_replacement_invalidates_without_renaming
+    root=Path(d);manifest=self.fixture(root);m.write_lineage(root,manifest,'task')
+                                             ^^^^^^^^^^^^^^^
+AttributeError: module 'lineage' has no attribute 'write_lineage'
+
+======================================================================
+ERROR: test_move_preserves_identity_and_all_dependencies (test_artifact_lineage.ArtifactLineageTests.test_move_preserves_identity_and_all_dependencies)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "SOURCE_REPO/tests/test_artifact_lineage.py", line 26, in test_move_preserves_identity_and_all_dependencies
+    result=m.write_lineage(root,manifest,'execution-1')
+           ^^^^^^^^^^^^^^^
+AttributeError: module 'lineage' has no attribute 'write_lineage'
+
+======================================================================
+ERROR: test_rehashed_missing_dependency_task_native_or_version_is_rejected (test_artifact_lineage.ArtifactLineageTests.test_rehashed_missing_dependency_task_native_or_version_is_rejected) (fault='assets')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "SOURCE_REPO/tests/test_artifact_lineage.py", line 50, in test_rehashed_missing_dependency_task_native_or_version_is_rejected
+    root=Path(d);manifest=self.fixture(root);r=m.write_lineage(root,manifest,'task')
+                                               ^^^^^^^^^^^^^^^
+AttributeError: module 'lineage' has no attribute 'write_lineage'
+
+======================================================================
+ERROR: test_rehashed_missing_dependency_task_native_or_version_is_rejected (test_artifact_lineage.ArtifactLineageTests.test_rehashed_missing_dependency_task_native_or_version_is_rejected) (fault='task')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "SOURCE_REPO/tests/test_artifact_lineage.py", line 50, in test_rehashed_missing_dependency_task_native_or_version_is_rejected
+    root=Path(d);manifest=self.fixture(root);r=m.write_lineage(root,manifest,'task')
+                                               ^^^^^^^^^^^^^^^
+AttributeError: module 'lineage' has no attribute 'write_lineage'
+
+======================================================================
+ERROR: test_rehashed_missing_dependency_task_native_or_version_is_rejected (test_artifact_lineage.ArtifactLineageTests.test_rehashed_missing_dependency_task_native_or_version_is_rejected) (fault='native')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "SOURCE_REPO/tests/test_artifact_lineage.py", line 50, in test_rehashed_missing_dependency_task_native_or_version_is_rejected
+    root=Path(d);manifest=self.fixture(root);r=m.write_lineage(root,manifest,'task')
+                                               ^^^^^^^^^^^^^^^
+AttributeError: module 'lineage' has no attribute 'write_lineage'
+
+======================================================================
+ERROR: test_rehashed_missing_dependency_task_native_or_version_is_rejected (test_artifact_lineage.ArtifactLineageTests.test_rehashed_missing_dependency_task_native_or_version_is_rejected) (fault='version')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "SOURCE_REPO/tests/test_artifact_lineage.py", line 50, in test_rehashed_missing_dependency_task_native_or_version_is_rejected
+    root=Path(d);manifest=self.fixture(root);r=m.write_lineage(root,manifest,'task')
+                                               ^^^^^^^^^^^^^^^
+AttributeError: module 'lineage' has no attribute 'write_lineage'
+
+======================================================================
+ERROR: test_rehashed_missing_dependency_task_native_or_version_is_rejected (test_artifact_lineage.ArtifactLineageTests.test_rehashed_missing_dependency_task_native_or_version_is_rejected) (fault='files')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "SOURCE_REPO/tests/test_artifact_lineage.py", line 50, in test_rehashed_missing_dependency_task_native_or_version_is_rejected
+    root=Path(d);manifest=self.fixture(root);r=m.write_lineage(root,manifest,'task')
+                                               ^^^^^^^^^^^^^^^
+AttributeError: module 'lineage' has no attribute 'write_lineage'
+
+======================================================================
+ERROR: test_revision_retains_logical_id_and_parent_version (test_artifact_lineage.ArtifactLineageTests.test_revision_retains_logical_id_and_parent_version)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "SOURCE_REPO/tests/test_artifact_lineage.py", line 34, in test_revision_retains_logical_id_and_parent_version
+    root=Path(d);manifest=self.fixture(root);old=m.write_lineage(root,manifest,'first')
+                                                 ^^^^^^^^^^^^^^^
+AttributeError: module 'lineage' has no attribute 'write_lineage'
+
+======================================================================
+ERROR: test_symlink_dependency_is_rejected (test_artifact_lineage.ArtifactLineageTests.test_symlink_dependency_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "SOURCE_REPO/tests/test_artifact_lineage.py", line 61, in test_symlink_dependency_is_rejected
+    root=Path(d);manifest=self.fixture(root);m.write_lineage(root,manifest,'task')
+                                             ^^^^^^^^^^^^^^^
+AttributeError: module 'lineage' has no attribute 'write_lineage'
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.029s
+
+FAILED (errors=9)

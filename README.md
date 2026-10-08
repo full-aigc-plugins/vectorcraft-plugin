@@ -10,7 +10,7 @@ Four-domain RT-001 runtime source/integrity acceptance now covers every current 
 
 Create Logo, icon and brand assets as `.vectorcraft` with applicable SVG, PDF and PNG exports.
 
-Current plugin: `0.1.0-dev.56`; skill source: `0.1.0-dev.42`; 13 independent skills.
+Current plugin: `0.1.0-dev.57`; skill source: `0.1.0-dev.43`; 13 independent skills.
 
 Plugin55/source41 adds actual SVG image scope and a digest-bound technical disclosure guard. Minimum tasks4.13/4.14 pass; 4.15 qualifies for its current headless scenarios. [Architecture](docs/VectorCraft-Exchange-Scope.en.md).
 
@@ -137,9 +137,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.56 |
+| Metadata version | 0.1.0-dev.57 |
 | Stage | implementation-in-progress |
-| Skills source | vectorcraft-skills / v0.1.0-dev.42 |
+| Skills source | vectorcraft-skills / v0.1.0-dev.43 |
 | Execution | Upstream CLI; ArtCraft uses child adapters |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |
@@ -395,3 +395,6 @@ Both current VC-DM-005-P and VC-DM-005-N scenarios qualify on fixed55/source41 m
 Plugin56 pins independent source42. Registered raster/SVG consumers follow real native identities; native SVG replacement scaling is corrected to preserve instance bounds. Ten targeted units, source172-pass/30-skip regression, nine native asset exports and three byte-identical unrelated outputs pass; two swatch routes and eight mutation refusals regress successfully. At the candidate stage tasks4.16/4.17 closed; fixed qualification follows below. [Evidence](docs/evidence/vectorcraft-brand-variants-candidate56-20261009.json).
 
 Actual public56/source42 isolated Codex0.153.4 installation qualifies all six current VC-DM-006 scenarios with13 unchanged skill digests. Two swatch routes,eight erroneous-update refusals,two raster and two SVG consumers,nine asset export decodes,three unchanged unrelated SVG/PDF/PNG outputs,unknown-token refusal and both linked-plan refusals pass. Failed checkpoints reopen independently without replay. Task4.18 closes:111 complete/16 open. GUI,model creative quality,other platforms,all formats,cross-file/external-editor behavior,Art bundled distribution and full V1 remain unverified. [Evidence](docs/evidence/vectorcraft-brand-variants-fixed56-20261009.json).
+
+
+Plugin57/source43 adds digest-bound portable artifact lineage and public semantic integrity checks. Native creation, movement/reopen, revision and five integrity refusals pass as candidates; source177 passed/30 skipped, plugin73 Python tests passed. Tasks5.1/5.2 complete (113/127); fixed-install5.3 remains open. [Evidence](docs/evidence/vectorcraft-lineage-candidate57-20261009.json).

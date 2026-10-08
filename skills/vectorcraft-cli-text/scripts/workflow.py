@@ -13,6 +13,7 @@ import shutil
 import subprocess
 import tempfile
 import time
+import uuid
 
 def exchange_report(root,outputs,warnings,text_modes=None):
     spec=importlib.util.spec_from_file_location('craft_exchange_loss',Path(__file__).with_name('exchange_loss.py'))
@@ -147,6 +148,7 @@ def execute(plan, output, runtime_home=None, source=None, control=None):
     bindings = {}
     source_hash = None
     prior = {}
+    parent_lineage = None
     if source:
         source = Path(source).resolve()
         source_project = source / 'project.vectorcraft'
@@ -156,6 +158,8 @@ def execute(plan, output, runtime_home=None, source=None, control=None):
         source_hash = sha(source_project)
         if source_hash != prior['files']['project.vectorcraft'] or source_hash != plan.get('expectedProjectSha256'):
             raise ValueError('revision_conflict')
+        if 'lineage' in prior:
+            parent_lineage = native_module().commands.load('exchange_loss').verify_lineage(source, prior)
         if 'document' in plan:
             raise ValueError('revision_cannot_recreate_document')
         bindings = prior['bindings']
@@ -449,6 +453,7 @@ def execute(plan, output, runtime_home=None, source=None, control=None):
                     **({'collection': {'links': packaged['links'], 'fonts': packaged['fonts'], 'skippedFonts': packaged['skippedFonts']}} if assets else {}),
                     'files': {str(f.relative_to(stage)): sha(f) for f in stage.rglob('*') if f.is_file()},
                     'lossReport': {'path':'exchange-loss.json','sha256':sha(stage/'exchange-loss.json')}, 'acceptance': 'requires-domain-and-visual-review'}
+        native_module().commands.load('exchange_loss').write_lineage(stage, manifest, 'execution-' + str(uuid.uuid4()), parent_lineage)
         (stage / 'manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n')
         if output.exists() or output.is_symlink():
             raise ValueError('output_exists')

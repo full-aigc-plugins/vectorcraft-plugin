@@ -1,0 +1,10 @@
+test_file_replacement_invalidates_without_renaming (test_artifact_lineage.ArtifactLineageTests.test_file_replacement_invalidates_without_renaming) ... ok
+test_move_preserves_identity_and_all_dependencies (test_artifact_lineage.ArtifactLineageTests.test_move_preserves_identity_and_all_dependencies) ... ok
+test_rehashed_missing_dependency_task_native_or_version_is_rejected (test_artifact_lineage.ArtifactLineageTests.test_rehashed_missing_dependency_task_native_or_version_is_rejected) ... ok
+test_revision_retains_logical_id_and_parent_version (test_artifact_lineage.ArtifactLineageTests.test_revision_retains_logical_id_and_parent_version) ... ok
+test_symlink_dependency_is_rejected (test_artifact_lineage.ArtifactLineageTests.test_symlink_dependency_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.058s
+
+OK

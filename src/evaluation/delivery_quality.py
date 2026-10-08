@@ -120,7 +120,7 @@ def check_delivery(directory,expected_runtime,expected_project,decoder=decode_ou
     directory=Path(directory)
     report={'schema':'vectorcraft-technical-review/v1','artifactIntegrityStatus':'FAIL','engineeringStatus':'NOT_RUN',
         'technicalStatus':'NOT_RUN','creativeStatus':'NOT_RUN','acceptanceStatus':'pending','nativeReopenStatus':'NOT_RUN',
-        'files':{},'outputs':[],'scope':'artifact integrity and export decode only; native reopening and creative review remain separate'}
+        'files':{},'outputs':[],'lineageStatus':'NOT_RUN','scope':'artifact integrity and export decode only; native reopening and creative review remain separate'}
     def file(name):
         if not isinstance(name,str) or '\\' in name or Path(name).is_absolute() or any(p in ('','.','..') for p in name.split('/')):raise ValueError('invalid_artifact_path')
         path=directory/name
@@ -142,6 +142,13 @@ def check_delivery(directory,expected_runtime,expected_project,decoder=decode_ou
         outputs=manifest.get('outputs')
         if not isinstance(outputs,list) or any(not isinstance(row,dict) or row.get('path') not in declared for row in outputs):raise ValueError('unbound_export')
         if len({row['path'] for row in outputs})!=len(outputs):raise ValueError('duplicate_export')
+        if 'lineage' in manifest:
+            spec=importlib.util.spec_from_file_location('delivery_lineage',Path(__file__).resolve().parents[2]/'skills/vectorcraft-use/scripts/exchange_loss.py')
+            lineage=importlib.util.module_from_spec(spec);spec.loader.exec_module(lineage)
+            identity=lineage.verify_lineage(directory,manifest)
+            report.update(lineageStatus='PASS',artifactLogicalId=identity['logicalId'],artifactVersion=identity['version'],sourceTask=identity['sourceTask'])
+        elif 'lineage.json' in declared:
+            raise ValueError('lineage_missing_binding')
         report.update(artifactIntegrityStatus='PASS',projectRevision=expected_project,runtimeIdentity=expected_runtime,
             manifestSha256=hashlib.sha256(manifest_path.read_bytes()).hexdigest())
         for row in outputs:

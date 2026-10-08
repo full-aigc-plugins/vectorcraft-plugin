@@ -1,6 +1,6 @@
 {
   "schema": "vectorcraft-evidence-index/v1",
-  "identitySha256": "81c75f5820403012dbb2c6fa90a6788fd209e8e1d4f05793ba9c0cb1a6ea9cf2",
+  "identitySha256": "67c381f116334597dc5bc9e07fcfa1d16b9b91562922886d4aa80dafa2d0bb71",
   "entries": [
     {
       "path": "docs/evidence/craft-vector37-gateway-export-fixed-first-use-20261008.json",
@@ -1822,7 +1822,7 @@
         "src/planning/geometry.ts": "97650dc916111666a73bcfea6ddc797e48b5b9bc2d6b6e54a85f33b1a8766e2d",
         "src/strict_json.ts": "69a445339670e53f6a7fcb96770b53b896666dd1e60f114c1751a23981d5b7d0",
         "scripts/qa/boolean_selection.py": "7022681c98efbd52369d0fcf1ce4fbafed56a4516bbd2dc1e00a53c0bde07537",
-        "skills/vectorcraft-use/SKILL.md": "5911290dba9e5797c25ec0d10a0cf442096b313681043dede24c7c37c97c9943",
+        "docs/evidence/pre-lineage-identity/skills/vectorcraft-use/SKILL.md": "5911290dba9e5797c25ec0d10a0cf442096b313681043dede24c7c37c97c9943",
         "skills/vectorcraft-use/agents/openai.yaml": "8619a54e8c098122a7f3881394f84ca89b684366e848233a29ad18b6ec363935",
         "skills/vectorcraft-use/examples/appearance-gradient-create.json": "ff974dd61eac86d7b5bb604ddc60f9ae97ce5c57cd43e65ac3fefc8f8c498aff",
         "skills/vectorcraft-use/examples/appearance-gradient-revise.json": "3e464a7576f55684c45eaf4b3b4ce94bc53c52a4e360e2a1609372201686f616",
@@ -2044,7 +2044,7 @@
         "skills/vectorcraft-cli-text/scripts/runtime.lock.json": "7b6bd7f3fab84b757d4ea20ac91b74d89b417ec061efc6ae320dda97a422cc07",
         "skills/vectorcraft-cli-text/scripts/text_contract.py": "ff4af45ae39f4016befd94a9dd20899118da1bd85556c22313450b9851305838",
         "docs/evidence/pre-artboard-mapping-identity/skills/vectorcraft-cli-text/scripts/workflow.py": "7c2e03480ce3a41bcc6418acb8e85ede5fbe8589c3c6271060562305acbc3db5",
-        "skills/vectorcraft-use/SKILL.md": "5911290dba9e5797c25ec0d10a0cf442096b313681043dede24c7c37c97c9943",
+        "docs/evidence/pre-lineage-identity/skills/vectorcraft-use/SKILL.md": "5911290dba9e5797c25ec0d10a0cf442096b313681043dede24c7c37c97c9943",
         "skills/vectorcraft-use/agents/openai.yaml": "8619a54e8c098122a7f3881394f84ca89b684366e848233a29ad18b6ec363935",
         "skills/vectorcraft-use/examples/appearance-gradient-create.json": "ff974dd61eac86d7b5bb604ddc60f9ae97ce5c57cd43e65ac3fefc8f8c498aff",
         "skills/vectorcraft-use/examples/appearance-gradient-revise.json": "3e464a7576f55684c45eaf4b3b4ce94bc53c52a4e360e2a1609372201686f616",
@@ -2135,7 +2135,7 @@
         "docs/evidence/pre-brand-variants-identity/openspec/changes/establish-v1-plugin/specs/domain-workflow/spec.md": "2b07f032d8f28b5095839ff94a16ab96fdb4bda40fbb178a6e4fd09c404ba81d",
         "docs/evidence/pre-exchange-identity/plugin.json": "7d6b6b8fe845577d650d8ab95248eee44a52496d6a39b7cce3c7478dcd22926d",
         "scripts/qa/artboard_mapping.py": "e59c207291296f4880fad94a5c0e0dce87061cd8f978b7d7463dbbb5153615d5",
-        "skills/vectorcraft-use/SKILL.md": "5911290dba9e5797c25ec0d10a0cf442096b313681043dede24c7c37c97c9943",
+        "docs/evidence/pre-lineage-identity/skills/vectorcraft-use/SKILL.md": "5911290dba9e5797c25ec0d10a0cf442096b313681043dede24c7c37c97c9943",
         "skills/vectorcraft-use/agents/openai.yaml": "8619a54e8c098122a7f3881394f84ca89b684366e848233a29ad18b6ec363935",
         "skills/vectorcraft-use/examples/appearance-gradient-create.json": "ff974dd61eac86d7b5bb604ddc60f9ae97ce5c57cd43e65ac3fefc8f8c498aff",
         "skills/vectorcraft-use/examples/appearance-gradient-revise.json": "3e464a7576f55684c45eaf4b3b4ce94bc53c52a4e360e2a1609372201686f616",
@@ -2432,18 +2432,51 @@
       }
     },
     {
+      "path": "docs/evidence/vectorcraft-lineage-candidate57-20261009.json",
+      "sha256": "14fb39d8ea891f1848f46eb020886e20cf6ca909d511bd8c745bc2b83fcc5df0",
+      "level": "native-candidate",
+      "status": "PASS",
+      "scope": "Source43 movable native artifact lineage and public57 integrity guard; source177 pass30 skip,plugin73 pass;fixed5.3 remains open",
+      "requirement": "VC-AR-001",
+      "tasks": [
+        "5.1",
+        "5.2"
+      ],
+      "historical": false,
+      "dependencies": {
+        "docs/evidence/vc-ar-001/public-quality-candidate57.json": "f3c3562e4a757f44f462e0660862ffe8b8210877a20941e7e0399a7470b27dd2",
+        "docs/evidence/vc-ar-001/quality-green.log.txt": "c821097e118ec3558e7bfa0a655986d060d9cab814165f2f765ccc292f8ce3ca",
+        "docs/evidence/vc-ar-001/source-green.log.txt": "6a22c6e34f7d049e1616582b88ef0c0f7b24ff3f0572a3459ef27e9655330c7f",
+        "docs/evidence/vc-ar-001/native-driver.py.txt": "df96c3960169ab415bd1fab0da710e65dca7b0d882f05cbe54af6510d2918968",
+        "docs/evidence/vc-ar-001/source-red.log.txt": "7cf5e4ad9265515c89d75a21ff272fb6fb88a0f862a82f12d9b1d136c8ba70e6",
+        "docs/evidence/vc-ar-001/plugin-regression.log.txt": "2dd3faa372dcd5ce7bbadf5cf0a3499c11eec0fc29fbba984c289f9ed6c47da0",
+        "docs/evidence/vc-ar-001/source-regression.log.txt": "f222075878325af4537d98b5bd37ddd71cb0b2ba72c757e8b8d96c4cb4cb9067",
+        "docs/evidence/vc-ar-001/native-candidate43.json": "0c11d0d1eb54500c22a195b504ecdb28f739d9c5a4199bfefce0f872eb950e83",
+        "docs/evidence/vc-ar-001/quality-red.log.txt": "7d6196a0fa378e30fe6aac6562ff917cb192b4147bf77057da6adaea0f7ba860",
+        "src/evaluation/delivery_quality.py": "fcb7fdb073d42a6711276b32078cab0d40ed3b64343e2f2732f19867aacd2dd6",
+        "scripts/qa/artifact_lineage.py": "ff6377025049fe2360687ad892f268d5558691ec71ca5b18082d247a08719fd3",
+        "tests/test_artifact_lineage_quality.py": "0a03bdabe1cddf05c512902db7910eff09ea35dc59c662db04b59599fea2f384",
+        "plugin.json": "d3a99fc6a5ccb142a56f4420cb1cc444a2c284a94a7e6cd9450cc4a13faecdb9",
+        "skills.lock.json": "46255b049f5e3d14b45ca9fecbaf037cd55b1e8b8bb447d407cb16c55eb3758c",
+        "docs/current-identity.json": "67c381f116334597dc5bc9e07fcfa1d16b9b91562922886d4aa80dafa2d0bb71",
+        "skills/vectorcraft-use/scripts/exchange_loss.py": "a4ba82ec8000a095dcf62813352621bdc42cfd7a81949baa6b0e896d1a2048e3",
+        "skills/vectorcraft-use/scripts/workflow.py": "c0cb25d760c57c72c4b47dda0670f761fba0e3a57b02985bba41cbc5ac198250",
+        "openspec/changes/establish-v1-plugin/specs/artifact-delivery/spec.md": "75b2055eb583871e9198b5c361565605dbe10bc0195692bf1bc978f956df105f"
+      }
+    },
+    {
       "path": "docs/evidence/vectorcraft-brand-variants-fixed56-20261009.json",
       "sha256": "50e6ad2389af49c1cc9fbe87166d5f00802b01aa7ca6afbe3069f4f6d916d47e",
       "level": "fixed-install",
       "status": "PASS",
-      "scope": "All six current VC-DM-006 scenarios on actual isolated Codex public56/source42 macOS arm64 installation; registered token and raster/SVG asset consumers, preserved unrelated exports and retained failure checkpoints; only4.18 closes",
+      "scope": "historical at original execution identity; All six current VC-DM-006 scenarios on actual isolated Codex public56/source42 macOS arm64 installation; registered token and raster/SVG asset consumers, preserved unrelated exports and retained failure checkpoints; only4.18 closes",
       "requirement": "VC-DM-006",
       "tasks": [
         "4.18"
       ],
-      "historical": false,
+      "historical": true,
       "dependencies": {
-        "docs/current-identity.json": "81c75f5820403012dbb2c6fa90a6788fd209e8e1d4f05793ba9c0cb1a6ea9cf2",
+        "docs/evidence/pre-lineage-identity/docs/current-identity.json": "81c75f5820403012dbb2c6fa90a6788fd209e8e1d4f05793ba9c0cb1a6ea9cf2",
         "docs/evidence/vc-dm-006/assets-fixed56.json": "9efa3892bcab91b7786fd4122b73397eb8fa1478de9e18a6db125e64c2c9fc97",
         "docs/evidence/vc-dm-006/fixed56-scenarios.json": "7d38359b49d7fe15bd5b793d5238183ba0a53c5c68fb770cb50f60ba918e2499",
         "docs/evidence/vc-dm-006/gateway-driver.py.txt": "6f9bc99fbd54328e1d0859a915b0ca6a2b58cc62c2fee8bd3bfd03827131c172",
@@ -2454,14 +2487,14 @@
         "docs/evidence/vc-dm-006/integrity-fixed56.json": "5626b47f646f9a3aae5ab6e86da0a2e3395dfbcf079fc8722d92dfaa21cfb6ae",
         "docs/evidence/vc-dm-006/unknown-fixed56.json": "fe301941c86e14281c7794485cd19b1c86741a8c6ce98acec92d052e15c4c0ec",
         "openspec/changes/establish-v1-plugin/specs/domain-workflow/spec.md": "b587e333367a44d77b588e052a498f4e8fd289b835f1739b793ec9cb1335f722",
-        "plugin.json": "bbd28acf3caedbd4e8f8cc61f960c060b7b59f21c6dcf5f36f3878ae7722461b",
+        "docs/evidence/pre-lineage-identity/plugin.json": "bbd28acf3caedbd4e8f8cc61f960c060b7b59f21c6dcf5f36f3878ae7722461b",
         "scripts/qa/brand_asset_variants.py": "1c9084fc3b43c98e8b28eb414e7e900301e2f4aea7f3b38a2d0420490ad1e876",
         "scripts/qa/brand_unknown_token.py": "86189f2f1212ea5e9d582960de341a972463a1def5494e56fe6edef336cabf84",
-        "skills.lock.json": "d3cfa17086478e3116618e33c355555be6631879c880d67437ec15ce95523c00",
+        "docs/evidence/pre-lineage-identity/skills.lock.json": "d3cfa17086478e3116618e33c355555be6631879c880d67437ec15ce95523c00",
         "skills/vectorcraft-cli-appearance/scripts/mcp_session.py": "15395ead853349a24feab6ce364e5bc9795add12e1dbe62e8ed5718ffdd1ccd2",
         "skills/vectorcraft-cli-assets/scripts/mcp_session.py": "15395ead853349a24feab6ce364e5bc9795add12e1dbe62e8ed5718ffdd1ccd2",
         "scripts/verify_brand_variant_evidence.py": "f07807bb9bff660c67c0b7b8c0b38c5e6ccf0dd88ae672502ac239790a78d80f",
-        "tests/test_brand_variant_evidence.py": "900057e40f324433027e026a9cd1ed771e335c3310f1335398878eaa6ce44537",
+        "docs/evidence/pre-lineage-identity/tests/test_brand_variant_evidence.py": "900057e40f324433027e026a9cd1ed771e335c3310f1335398878eaa6ce44537",
         "docs/evidence/vc-dm-006/closure-red.log.txt": "3d57ee2ea65f4d190cfaf4713c41e26bbabc7b30042057aad22a24a2099469b7",
         "docs/evidence/vc-dm-006/closure-green.log.txt": "58def85652c9f076b2c6305cec2975e1de37a2ff59e20d0282d07072aabbbf12",
         "docs/evidence/vc-dm-006/token-driver.py.txt": "158e1318561aa24214bd008499e8692c4865247c7500fab24ebae663596924a4",
@@ -2473,17 +2506,17 @@
       "sha256": "967e32fc46866278dc05a4d999a870870caa87a66e846eac8d74d9c646026ad6",
       "level": "native-candidate",
       "status": "PASS",
-      "scope": "Source42 registered asset guards and SVG instance bounds correction; real baseline55 gap, native candidate asset/token regressions; fixed56 qualification remains separate",
+      "scope": "historical at original execution identity; Source42 registered asset guards and SVG instance bounds correction; real baseline55 gap, native candidate asset/token regressions; fixed56 qualification remains separate",
       "requirement": "VC-DM-006",
       "tasks": [
         "4.16",
         "4.17"
       ],
-      "historical": false,
+      "historical": true,
       "dependencies": {
-        "plugin.json": "bbd28acf3caedbd4e8f8cc61f960c060b7b59f21c6dcf5f36f3878ae7722461b",
-        "skills.lock.json": "d3cfa17086478e3116618e33c355555be6631879c880d67437ec15ce95523c00",
-        "docs/current-identity.json": "81c75f5820403012dbb2c6fa90a6788fd209e8e1d4f05793ba9c0cb1a6ea9cf2",
+        "docs/evidence/pre-lineage-identity/plugin.json": "bbd28acf3caedbd4e8f8cc61f960c060b7b59f21c6dcf5f36f3878ae7722461b",
+        "docs/evidence/pre-lineage-identity/skills.lock.json": "d3cfa17086478e3116618e33c355555be6631879c880d67437ec15ce95523c00",
+        "docs/evidence/pre-lineage-identity/docs/current-identity.json": "81c75f5820403012dbb2c6fa90a6788fd209e8e1d4f05793ba9c0cb1a6ea9cf2",
         "scripts/qa/brand_asset_variants.py": "1c9084fc3b43c98e8b28eb414e7e900301e2f4aea7f3b38a2d0420490ad1e876",
         "docs/evidence/vc-dm-006/inheritance-green.log.txt": "131fc58c566687757b19a01da0e7b69c63f7b5d2106f7d1ff94f3d6902c22e24",
         "docs/evidence/vc-dm-006/guard-candidate.json": "d554984e0f5e821b18c442b234a7cfec14ce7ad8ce24e38b82dc62ca4d4f7981",
@@ -2524,10 +2557,10 @@
         "docs/evidence/pre-brand-variants-identity/plugin.json": "8c09f2fc1da8f218e20936dbdb5ddff884e92c985502eb016f32a17b2e20dd84",
         "docs/evidence/pre-brand-variants-identity/skills.lock.json": "0035adfa3fc09aae071c37cc03b78e307d9a92f0af947ffa4603a6da2f42cd06",
         "docs/evidence/pre-brand-variants-identity/docs/current-identity.json": "43742de0dcd2b2fd39ea182525d2640f80918e966224231b3c39d3c2785d81cf",
-        "src/evaluation/delivery_quality.py": "f3bb72202c70a8db138881b2ff89456d66c128103d5ed9a8a2006d876eca75dc",
+        "docs/evidence/pre-lineage-identity/src/evaluation/delivery_quality.py": "f3bb72202c70a8db138881b2ff89456d66c128103d5ed9a8a2006d876eca75dc",
         "scripts/qa/exchange_formats.py": "3f2e25009080470f6ee61fba32c3091c0c79d8b07fec29b5f618cc2d9d44d97f",
         "tests/test_delivery_quality.py": "a543f0fb714d004ae11be42fb073af8805cc82fd47675e1756832c81f90d0246",
-        "skills/vectorcraft-use/scripts/exchange_loss.py": "7fdee028008a20bd88bb1e27334f326a7fcc774a079b1621a1c0d06bebfd8f29",
+        "docs/evidence/pre-lineage-identity/skills/vectorcraft-use/scripts/exchange_loss.py": "7fdee028008a20bd88bb1e27334f326a7fcc774a079b1621a1c0d06bebfd8f29",
         "docs/evidence/vc-dm-005/node-green.log.txt": "bec663ce826704b9bbc4e150c3928d5d8f9be43ee18d644341f822c4d2d5af0c"
       }
     },
@@ -2545,7 +2578,7 @@
         "docs/evidence/vc-dm-005/automatic-freeform-driver.py.txt": "2cd1e31f0d84582e12664dd9e77e8e7e4b59ffae8a5b23e350dc15b9c554f43c",
         "docs/evidence/pre-brand-variants-identity/plugin.json": "8c09f2fc1da8f218e20936dbdb5ddff884e92c985502eb016f32a17b2e20dd84",
         "docs/evidence/pre-brand-variants-identity/skills.lock.json": "0035adfa3fc09aae071c37cc03b78e307d9a92f0af947ffa4603a6da2f42cd06",
-        "src/evaluation/delivery_quality.py": "f3bb72202c70a8db138881b2ff89456d66c128103d5ed9a8a2006d876eca75dc",
+        "docs/evidence/pre-lineage-identity/src/evaluation/delivery_quality.py": "f3bb72202c70a8db138881b2ff89456d66c128103d5ed9a8a2006d876eca75dc",
         "docs/evidence/vc-dm-005/fixed55-host.json": "b2cf3239db66592d2fa4b43a743b39c77c314478d34532f7a3f3df6ab31a4a4b"
       }
     },
@@ -2569,7 +2602,7 @@
         "docs/evidence/pre-brand-variants-identity/plugin.json": "8c09f2fc1da8f218e20936dbdb5ddff884e92c985502eb016f32a17b2e20dd84",
         "docs/evidence/pre-brand-variants-identity/scripts/verify_exchange_evidence.py": "5fabc5278e075bdc8f7ee246e80bb0ad0bb29ee4a51dace2bd0ad12b53823f9b",
         "docs/evidence/pre-brand-variants-identity/skills.lock.json": "0035adfa3fc09aae071c37cc03b78e307d9a92f0af947ffa4603a6da2f42cd06",
-        "src/evaluation/delivery_quality.py": "f3bb72202c70a8db138881b2ff89456d66c128103d5ed9a8a2006d876eca75dc",
+        "docs/evidence/pre-lineage-identity/src/evaluation/delivery_quality.py": "f3bb72202c70a8db138881b2ff89456d66c128103d5ed9a8a2006d876eca75dc",
         "docs/evidence/vc-dm-005/closure-red.log.txt": "88d4915ae32f3c3d6fe4cac54763b7c559e568785ed5c58510f123f74e181ab1",
         "docs/evidence/vc-dm-005/closure-green.log.txt": "fd788375b322e44f53e14aa394c5843dc2da589f0a5ba4e15d6eaca9867b0f74",
         "docs/evidence/pre-brand-variants-identity/tests/test_exchange_evidence.py": "839aed1cd32428b4dc37e779eb352f904b54ce3bc92b1eabef203ce0622a3dc7"
@@ -2590,7 +2623,7 @@
         "docs/evidence/pre-brand-variants-identity/plugin.json": "8c09f2fc1da8f218e20936dbdb5ddff884e92c985502eb016f32a17b2e20dd84",
         "docs/evidence/pre-brand-variants-identity/skills.lock.json": "0035adfa3fc09aae071c37cc03b78e307d9a92f0af947ffa4603a6da2f42cd06",
         "docs/evidence/pre-brand-variants-identity/docs/current-identity.json": "43742de0dcd2b2fd39ea182525d2640f80918e966224231b3c39d3c2785d81cf",
-        "src/evaluation/delivery_quality.py": "f3bb72202c70a8db138881b2ff89456d66c128103d5ed9a8a2006d876eca75dc",
+        "docs/evidence/pre-lineage-identity/src/evaluation/delivery_quality.py": "f3bb72202c70a8db138881b2ff89456d66c128103d5ed9a8a2006d876eca75dc",
         "scripts/qa/exchange_formats.py": "3f2e25009080470f6ee61fba32c3091c0c79d8b07fec29b5f618cc2d9d44d97f"
       }
     }

@@ -10,6 +10,10 @@ class BrandVariantEvidenceTests(unittest.TestCase):
   for name in set(self.report['fingerprints'])|{REPORT,'docs/evidence-index.json'}:
    p=self.root/name;p.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/name,p)
   s=importlib.util.spec_from_file_location('brand_verify_fixture',ROOT/'scripts/verify_brand_variant_evidence.py');self.m=importlib.util.module_from_spec(s);s.loader.exec_module(self.m);self.m.ROOT=self.root
+  for entry in json.loads((ROOT/'docs/evidence-index.json').read_text())['entries']:
+   for name in entry['dependencies']:
+    p=self.root/name
+    if not p.exists():p.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/name,p)
  def write(self,name,value):
   p=self.root/name;p.write_text(json.dumps(value));self.report['fingerprints'][name]=self.m.sha(p);(self.root/REPORT).write_text(json.dumps(self.report))
  def verify(self):

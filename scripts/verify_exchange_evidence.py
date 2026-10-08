@@ -36,7 +36,7 @@ def main():
         if row['level']!='native-fixed-install' or row['report']!=report['native'] or not row['checks']:raise ValueError('scenario_coverage')
     host=read(report['host']);lock=read('skills.lock.json')['sources'][0]
     if host['pluginCommit']!=report['pluginCommit'] or host['skillSourceCommit']!=report['sourceCommit'] or host['skillSourceRef']!=report['sourceRef'] or host['pluginVersion']!=report['pluginVersion'] or host['platform']!=report['platform']:raise ValueError('host_identity')
-    if len(host['skills'])!=13 or {x['name']:x['sha256'] for x in host['skills']}!=lock['sha256'] or host['skillsUnchangedAfterQa']!=13 or host['installedQualitySha256']!=sha(local('src/evaluation/delivery_quality.py')):raise ValueError('host_identity')
+    if len(host['skills'])!=13 or {x['name']:x['sha256'] for x in host['skills']}!=lock['sha256'] or host['skillsUnchangedAfterQa']!=13 or host['installedQualitySha256']!=sha(bound('src/evaluation/delivery_quality.py')):raise ValueError('host_identity')
     native=read(report['native'])
     if native['driverSha256']!=sha(local(report['driver'])) or native['runtimeSha256']!=report['runtimeSha256'] or native['platform']!=report['platform'] or native['level']!='fixed-install' or native['result']!='PASS':raise ValueError('native_identity')
     skill_digest=hashlib.sha256(''.join(name+'\0'+digest+'\n' for name,digest in sorted(native['skillFiles'].items())).encode()).hexdigest()

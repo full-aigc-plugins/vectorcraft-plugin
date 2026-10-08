@@ -116,3 +116,5 @@ GUI任务可先使用本技能自带的 [固定桌面安装](references/desktop-
 ## 操作合同与路由策略
 
 按需读取本技能的[输入、前置状态、副作用、结果、恢复与验收合同](references/operation-contract.json)。合同引用的示例分为创建与返工，使用前绑定当前源工程和真实回执；普通工作流与完整命令计划格式分别处理。支持调用策略的宿主默认由 **vectorcraft-use** 路由，专项技能可显式调用；其他宿主依实际能力派发。
+
+需要移动交付包或核验修订来源时，读取 [交付血缘](references/artifact-lineage.md)。

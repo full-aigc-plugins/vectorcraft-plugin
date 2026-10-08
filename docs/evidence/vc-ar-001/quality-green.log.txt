@@ -1,0 +1,8 @@
+test_current_lineage_is_verified (test_artifact_lineage_quality.LineageQualityTests.test_current_lineage_is_verified) ... ok
+test_legacy_package_is_not_lineage_pass (test_artifact_lineage_quality.LineageQualityTests.test_legacy_package_is_not_lineage_pass) ... ok
+test_rehashed_semantic_faults_block_before_decoding (test_artifact_lineage_quality.LineageQualityTests.test_rehashed_semantic_faults_block_before_decoding) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.040s
+
+OK

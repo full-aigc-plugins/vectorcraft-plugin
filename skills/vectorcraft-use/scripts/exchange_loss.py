@@ -133,3 +133,76 @@ def write_report(root,outputs,warnings,text_modes=None):
   report['outputs'].append({'location':location,'sha256':sha(path),'format':fmt,'role':'derivative','nativeSubstitute':False,'changes':changes,'observations':observations,'warnings':warnings.get(location,[])})
  (root/'exchange-loss.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
  return report
+
+
+def lineage_version(files):
+ """交付文件集合的内容寻址版本；血缘文件自身不参与循环摘要。"""
+ return hashlib.sha256(json.dumps(files,sort_keys=True,separators=(',',':'),ensure_ascii=False).encode()).hexdigest()
+
+
+def lineage_file(root,name):
+ """仅接受包内普通文件；逐级拒绝符号链接，支持整个包移动。"""
+ try:
+  if '.' in name.split('/'):raise ValueError('dot path')
+  path=safe_file(Path(root),name)
+  if any(p.is_symlink() for p in [path,*path.parents] if p.is_relative_to(Path(root))):raise ValueError('link')
+  return path
+ except (ValueError,TypeError,AttributeError):raise ValueError('lineage_path_invalid') from None
+
+
+def write_lineage(root,manifest,task_id,parent=None):
+ """为本次执行登记逻辑身份、父版本及所有包内依赖，并更新清单摘要。"""
+ import uuid
+ files={k:v for k,v in manifest['files'].items() if k!='lineage.json'}
+ assets={k:{field:v[field] for field in ('path','sha256')} for k,v in manifest.get('assets',{}).items()}
+ record={'schema':'vectorcraft-artifact-lineage/v1','logicalId':parent['logicalId'] if parent else 'vectorcraft:'+str(uuid.uuid4()),
+         'version':lineage_version(files),'sourceTask':{'id':task_id,'scope':'workflow-execution','planSha256':files['plan.json']},
+         'native':{'path':NATIVE,'sha256':files[NATIVE]},'files':files,'assets':assets,
+         'outputs':[{'path':r['path'],'sha256':files[r['path']]} for r in manifest['outputs']],
+         'parent':({'logicalId':parent['logicalId'],'version':parent['version'],'projectSha256':manifest['sourceProjectSha256'],'status':'versioned'} if parent else
+                   {'projectSha256':manifest.get('sourceProjectSha256'),'status':'legacy' if manifest.get('sourceProjectSha256') else 'creation'})}
+ root=Path(root);(root/'lineage.json').write_text(json.dumps(record,ensure_ascii=False,indent=2)+'\n')
+ manifest['executionId']=task_id
+ manifest['files']['lineage.json']=sha(root/'lineage.json')
+ manifest['lineage']={'path':'lineage.json','sha256':manifest['files']['lineage.json'],'logicalId':record['logicalId'],'version':record['version'],'parent':record['parent']}
+ verify_lineage(root,manifest)
+ return record
+
+
+def verify_lineage(root,manifest):
+ """重新读取全部文件及语义边；仅校验包身份，不声称原生重开或创作通过。"""
+ root=Path(root);binding=manifest.get('lineage')
+ if not isinstance(binding,dict) or binding.get('path')!='lineage.json':raise ValueError('lineage_missing')
+ files=manifest.get('files',{})
+ if files.get('lineage.json')!=binding.get('sha256') or sha(lineage_file(root,'lineage.json'))!=binding.get('sha256'):raise ValueError('lineage_digest_mismatch')
+ def pairs(items):
+  result={}
+  for k,v in items:
+   if k in result:raise ValueError('lineage_duplicate_key')
+   result[k]=v
+  return result
+ try:record=json.loads(lineage_file(root,'lineage.json').read_text(),object_pairs_hook=pairs)
+ except (json.JSONDecodeError,UnicodeError):raise ValueError('lineage_json_invalid') from None
+ if not isinstance(record,dict):raise ValueError('lineage_record_invalid')
+ declared={k:v for k,v in files.items() if k!='lineage.json'}
+ if record.get('files')!=declared or NATIVE not in declared or 'plan.json' not in declared:raise ValueError('lineage_files_mismatch')
+ for name,digest in declared.items():
+  if not isinstance(digest,str) or not re.fullmatch('[a-f0-9]{64}',digest) or sha(lineage_file(root,name))!=digest:raise ValueError('lineage_file_digest_mismatch')
+ logical=record.get('logicalId')
+ if record.get('schema')!='vectorcraft-artifact-lineage/v1' or not isinstance(logical,str) or not re.fullmatch(r'vectorcraft:[0-9a-f-]{36}',logical):raise ValueError('lineage_identity_invalid')
+ if logical!=binding.get('logicalId') or record.get('version')!=lineage_version(declared) or record['version']!=binding.get('version'):raise ValueError('lineage_version_mismatch')
+ task=record.get('sourceTask',{})
+ if not isinstance(task,dict) or task.get('scope')!='workflow-execution' or not isinstance(task.get('id'),str) or not 0<len(task['id'])<=128 or task['id']!=manifest.get('executionId') or task.get('planSha256')!=declared['plan.json']:raise ValueError('lineage_task_mismatch')
+ if record.get('native')!={'path':NATIVE,'sha256':declared[NATIVE]}:raise ValueError('lineage_native_mismatch')
+ expected_outputs=[{'path':r['path'],'sha256':declared.get(r['path'])} for r in manifest.get('outputs',[])]
+ if any(r['sha256'] is None for r in expected_outputs) or record.get('outputs')!=expected_outputs:raise ValueError('lineage_outputs_mismatch')
+ try:assets={k:{field:v[field] for field in ('path','sha256')} for k,v in manifest.get('assets',{}).items()}
+ except (KeyError,TypeError,AttributeError):raise ValueError('lineage_assets_invalid') from None
+ if record.get('assets')!=assets or any(declared.get(v['path'])!=v['sha256'] for v in assets.values()):raise ValueError('lineage_assets_mismatch')
+ parent=record.get('parent')
+ if not isinstance(parent,dict) or parent!=binding.get('parent') or parent.get('projectSha256')!=manifest.get('sourceProjectSha256'):raise ValueError('lineage_parent_mismatch')
+ source=manifest.get('sourceProjectSha256')
+ if parent.get('status') not in (('legacy','versioned') if source else ('creation',)):raise ValueError('lineage_parent_invalid')
+ if source and (not isinstance(source,str) or not re.fullmatch('[a-f0-9]{64}',source)):raise ValueError('lineage_parent_invalid')
+ if parent['status']=='versioned' and (parent.get('logicalId')!=logical or not isinstance(parent.get('version'),str) or not re.fullmatch('[a-f0-9]{64}',parent['version'])):raise ValueError('lineage_parent_invalid')
+ return record

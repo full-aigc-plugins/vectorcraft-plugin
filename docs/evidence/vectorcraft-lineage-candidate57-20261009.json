@@ -1,0 +1,50 @@
+{
+  "schema": "vectorcraft-lineage-candidate/v1",
+  "result": "PASS",
+  "pluginVersion": "0.1.0-dev.57",
+  "sourceRef": "v0.1.0-dev.43",
+  "sourceCommit": "36b79c603111fbf6c95f36d2f4c9ed43c9e7f155",
+  "tasksClosed": [
+    "5.1",
+    "5.2"
+  ],
+  "native": "docs/evidence/vc-ar-001/native-candidate43.json",
+  "publicQuality": "docs/evidence/vc-ar-001/public-quality-candidate57.json",
+  "fingerprints": {
+    "docs/evidence/vc-ar-001/public-quality-candidate57.json": "f3c3562e4a757f44f462e0660862ffe8b8210877a20941e7e0399a7470b27dd2",
+    "docs/evidence/vc-ar-001/quality-green.log.txt": "c821097e118ec3558e7bfa0a655986d060d9cab814165f2f765ccc292f8ce3ca",
+    "docs/evidence/vc-ar-001/source-green.log.txt": "6a22c6e34f7d049e1616582b88ef0c0f7b24ff3f0572a3459ef27e9655330c7f",
+    "docs/evidence/vc-ar-001/native-driver.py.txt": "df96c3960169ab415bd1fab0da710e65dca7b0d882f05cbe54af6510d2918968",
+    "docs/evidence/vc-ar-001/source-red.log.txt": "7cf5e4ad9265515c89d75a21ff272fb6fb88a0f862a82f12d9b1d136c8ba70e6",
+    "docs/evidence/vc-ar-001/plugin-regression.log.txt": "2dd3faa372dcd5ce7bbadf5cf0a3499c11eec0fc29fbba984c289f9ed6c47da0",
+    "docs/evidence/vc-ar-001/source-regression.log.txt": "f222075878325af4537d98b5bd37ddd71cb0b2ba72c757e8b8d96c4cb4cb9067",
+    "docs/evidence/vc-ar-001/native-candidate43.json": "0c11d0d1eb54500c22a195b504ecdb28f739d9c5a4199bfefce0f872eb950e83",
+    "docs/evidence/vc-ar-001/quality-red.log.txt": "7d6196a0fa378e30fe6aac6562ff917cb192b4147bf77057da6adaea0f7ba860",
+    "src/evaluation/delivery_quality.py": "fcb7fdb073d42a6711276b32078cab0d40ed3b64343e2f2732f19867aacd2dd6",
+    "scripts/qa/artifact_lineage.py": "ff6377025049fe2360687ad892f268d5558691ec71ca5b18082d247a08719fd3",
+    "tests/test_artifact_lineage_quality.py": "0a03bdabe1cddf05c512902db7910eff09ea35dc59c662db04b59599fea2f384",
+    "plugin.json": "d3a99fc6a5ccb142a56f4420cb1cc444a2c284a94a7e6cd9450cc4a13faecdb9",
+    "skills.lock.json": "46255b049f5e3d14b45ca9fecbaf037cd55b1e8b8bb447d407cb16c55eb3758c",
+    "docs/current-identity.json": "67c381f116334597dc5bc9e07fcfa1d16b9b91562922886d4aa80dafa2d0bb71",
+    "skills/vectorcraft-use/scripts/exchange_loss.py": "a4ba82ec8000a095dcf62813352621bdc42cfd7a81949baa6b0e896d1a2048e3",
+    "skills/vectorcraft-use/scripts/workflow.py": "c0cb25d760c57c72c4b47dda0670f761fba0e3a57b02985bba41cbc5ac198250",
+    "openspec/changes/establish-v1-plugin/specs/artifact-delivery/spec.md": "75b2055eb583871e9198b5c361565605dbe10bc0195692bf1bc978f956df105f"
+  },
+  "tests": {
+    "source": {
+      "total": 207,
+      "passed": 177,
+      "skipped": 30
+    },
+    "pluginPython": 73,
+    "lineageSource": 5,
+    "publicQuality": 3
+  },
+  "logSanitization": "repository and OS temporary paths replaced; raw local logs retained privately",
+  "unverified": [
+    "5.3 fixed published installation",
+    "creative quality",
+    "other platforms",
+    "full V1"
+  ]
+}
