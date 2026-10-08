@@ -10,7 +10,7 @@ Four-domain RT-001 runtime source/integrity acceptance now covers every current 
 
 Create Logo, icon and brand assets as `.vectorcraft` with applicable SVG, PDF and PNG exports.
 
-Current plugin: `0.1.0-dev.58`; skill source: `0.1.0-dev.43`; 13 independent skills.
+Current plugin: `0.1.0-dev.59`; skill source: `0.1.0-dev.43`; 13 independent skills.
 
 Plugin55/source41 adds actual SVG image scope and a digest-bound technical disclosure guard. Minimum tasks4.13/4.14 pass; 4.15 qualifies for its current headless scenarios. [Architecture](docs/VectorCraft-Exchange-Scope.en.md).
 
@@ -137,7 +137,7 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.58 |
+| Metadata version | 0.1.0-dev.59 |
 | Stage | implementation-in-progress |
 | Skills source | vectorcraft-skills / v0.1.0-dev.43 |
 | Execution | Upstream CLI; ArtCraft uses child adapters |
@@ -404,3 +404,6 @@ Plugin58 corrects public checker imports to preserve immutable installed skill b
 
 
 Actual public58/source43 installed on Codex0.153.4 macOS arm64 passes all three current VC-AR-001 scenarios: native creation, whole-package movement/reopen, parent-bound revision and public seven-case validation. All13 installed skill digests remain unchanged. Task5.3 closes;114/127 complete,13 open. Creative quality and other platforms remain separate. [Evidence](docs/evidence/vectorcraft-lineage-fixed58-20261009.json).
+
+
+Plugin59/source43 adds uniform exchange-report checks for SVG/PDF/PNG, native and reopened-inspection identity, derivative-only roles, conservative font/effect fidelity and SVG live-text loss matching native settings. The installed58 PDF substitute gap is reproduced; candidate three decodes,20 refusals and85 Python tests pass. Fixed task5.6 remains open. [Evidence](docs/evidence/vectorcraft-exchange-delivery-candidate59-20261009.json).

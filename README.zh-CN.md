@@ -137,7 +137,7 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.58 |
+| Metadata version | 0.1.0-dev.59 |
 | Stage | implementation-in-progress |
 | Skills source | vectorcraft-skills / v0.1.0-dev.43 |
 | Execution | 上游 CLI；ArtCraft 使用子适配器 |
@@ -402,3 +402,6 @@ Codex 0.153.4 在全新隔离配置中安装并发现13技能。13项独立空�
 
 
 公开58／源43实际安装于Codex0.153.4 macOS arm64，已通过当前VC-AR-001三个场景：原生创建、整包移动重开、父版本绑定修订及公开七案例校验。13项安装摘要保持不变。5.3关闭，总体114/127完成，13项开放；创作与其他平台验收独立。 [Evidence](docs/evidence/vectorcraft-lineage-fixed58-20261009.json).
+
+
+插件59／源43补齐SVG／PDF／PNG交换报告的统一校验：原生与重开记录身份、派生物角色、保守字体／效果状态及符合原生设置的SVG文字损失。已复现安装58的PDF替代误放行；候选三输出解码、20类拒绝和85项Python测试通过。固定任务5.6仍开放。 [Evidence](docs/evidence/vectorcraft-exchange-delivery-candidate59-20261009.json).

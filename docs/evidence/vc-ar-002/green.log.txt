@@ -1,0 +1,9 @@
+test_all_reported_outputs_are_checked_without_claiming_reopen_or_creative (test_exchange_delivery.ExchangeDeliveryTests.test_all_reported_outputs_are_checked_without_claiming_reopen_or_creative) ... ok
+test_missing_bound_report_and_invalid_report_json_refuse (test_exchange_delivery.ExchangeDeliveryTests.test_missing_bound_report_and_invalid_report_json_refuse) ... ok
+test_semantic_report_faults_refuse_before_decode (test_exchange_delivery.ExchangeDeliveryTests.test_semantic_report_faults_refuse_before_decode) ... ok
+test_svg_text_loss_matches_bound_native_mode (test_exchange_delivery.ExchangeDeliveryTests.test_svg_text_loss_matches_bound_native_mode) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.099s
+
+OK

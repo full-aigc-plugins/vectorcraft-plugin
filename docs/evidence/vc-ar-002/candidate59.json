@@ -1,0 +1,5422 @@
+{
+  "schema": "vectorcraft-exchange-delivery-native/v1",
+  "result": "PASS",
+  "level": "native-candidate",
+  "platform": "Darwin-arm64",
+  "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+  "qualitySha256": "60b81d1097d2a2ef84d5e8010ee698295e1184db1b3667f3e40fa03feb899070",
+  "driverSha256": "6b66ccae7d9051b5c4548202d1bd4856a0597d50ec9be73be4caef13724211b4",
+  "skillFiles": {
+    "SKILL.md": "5c47c947f2308b88e2528cf2a3651fd9707fc941ddd656531690568c306b316a",
+    "agents/openai.yaml": "a1499d95abd8447558c535fe5554adcc3c9b988a0a39264a6283d430effe1e94",
+    "examples/appearance-gradient-create.json": "ff974dd61eac86d7b5bb604ddc60f9ae97ce5c57cd43e65ac3fefc8f8c498aff",
+    "examples/appearance-gradient-revise.json": "3e464a7576f55684c45eaf4b3b4ce94bc53c52a4e360e2a1609372201686f616",
+    "examples/brand-asset-revise.json": "6f94219f6a447a94f8f5c8924e31eff4eb7815a7c1130ed7dcf4e1bbdbe80df0",
+    "examples/brand-assets.json": "d4c342c68791d7fb9ca0a966448947d7f9597af66e00245aec3c4d4c43cc6950",
+    "examples/brand-token-assets.json": "07f3a8acb45b3dd03ecbe96b75c53571a6b7960eb29b6bb10b777194ba3c1202",
+    "examples/chinese-text.json": "a5f1310bfba6102606079b62712096ae9e4298dffe860dcbab64448619613762",
+    "examples/commands-advanced.json": "eb456387da8df5ac16399c318ebb493fef1e716a537a777420baaa52b89030b8",
+    "examples/commands-revision-create.json": "c7668b298747a3dec9266826344778e8c977a36df293436531ea1ea8db4a44bc",
+    "examples/commands-revision.json": "8e416f9ed55a21862cfc6848ca4e9f97b3fbd2b405b9a56faf89dbc016cbe779",
+    "examples/desktop-first-use.json": "41461b895abe438b35cfa2fcedec42d883ceb0a77812cb5e21e071b5473f3b2b",
+    "examples/native-workflow.json": "e9a89a79c3bdf0ae8ca41958f2fbbdf523ac77da47ecceda6cc97d982e38b265",
+    "examples/object-layout-create.json": "81d4eda918c6e4a41f41b58658a79eee1841872c49fff0a57d72beb94016127b",
+    "examples/object-layout-reopen.json": "7ad1f4a35980a2a90198d8b140ba1b486e604f391322484452d88e110d98da5f",
+    "examples/object-layout-revise.json": "6e85a7f2e54a1e3126d30f12e41fe02320f30542bd6d0d1044c79e79fd539731",
+    "examples/operation-revise.json": "4ed5a5914075583eae05dfab6ac3fc909b2da20558eb466c683355d35443bd78",
+    "examples/provided-assets.json": "f5a3e15cc7a44b912fd87fc833c00c2e51893b553d90daa6f3682bd9ff4336cd",
+    "examples/selection-brand-create.json": "3343eab1f42ef16e5334382c01c861d523d15d41ff49b6946e02046e582a2e73",
+    "examples/selection-brand-reopen.json": "7ad1f4a35980a2a90198d8b140ba1b486e604f391322484452d88e110d98da5f",
+    "examples/selection-brand-revise.json": "10edd02b725c5b0a337d1eb6931942c1bc5e7127c494a1738fecee528ed4ae21",
+    "references/appearance-gradient.md": "712a5822162e95610515d21ee00af77e0c276445f573440fbb360803e94342b7",
+    "references/artifact-lineage.md": "d9634b826600a5d48d2f83b28579b017f96cec405fa55d170191fa74e80dd4e7",
+    "references/brand-tokens.md": "3d3f23f772f0d704f06ebc576f077e2f30e53f32820559c3aa1eb7d98901a4a8",
+    "references/business-scenes.md": "9d11ef8f28be9249f9f7f32e166f307f0cfa7d5ac27520adbbbe483abf043d74",
+    "references/chinese-text.md": "b2229e5054fe2a71ee069b4aba6fa6d87c3ebbf4afaf3d1a2f85a80256948294",
+    "references/command-coverage.json": "532d2fc467f4fc4c48856e11fdb97ea465276270c882e837a3214692de831a50",
+    "references/command-reference.md": "87f39638580025e3d5042da4bda71e255ce9d729850e840ff7baf14a027c08c0",
+    "references/command-usage.md": "49d6405db258efeb7c2a9726c7a858dce855db5ddd2e14afbcde8025a88b5440",
+    "references/commands.json": "e90909f491a2eb5f9a2bcb7d8fcf82e416c7dab99d150af30d58571ce64377c2",
+    "references/desktop-install.md": "db2db151b0eff30a3381a03ae377fb23ac09b2b4a919859740bd9343e7f14887",
+    "references/exchange-loss.md": "eee665f62b77274ca8ce0efc4117012ade85978905cdfd40ab488af64297b8ae",
+    "references/first-use-failures.md": "ce2a8d1a8ca6b8a29a084d52d105d510476de88d40b439d6c2ff79212581d61d",
+    "references/installation-concurrency.md": "69067acebcd47f1924a8d6aa9d8a4ce6f44ad0756d44888a21eb224bcdb1c215",
+    "references/native-command-snapshot.json": "1e63722f850930947c4cc6e9bdbe24638413e43c2e5127dd385f167d493e10e1",
+    "references/native-workflow.md": "42fee416c66a69f6f3802abe1be6f002963cf109e7e22a4d6297b6dcaf62b8e9",
+    "references/object-edit-scene.md": "ac760587eaabc1205b20325e48325463fd90efe343df4183fc7ae7f9d07e6550",
+    "references/object-selection-scene.md": "42593e844568184451bf648c84f4f0fafaee5a1644e39b1641fe49a078e336d9",
+    "references/operation-contract.json": "0a78a01e457e63f7184b0d8c0718eaaf0019835a188c127d6948b8aada2fe060",
+    "references/output-execution.md": "baa3d38af5f8d3b01cb36bcc6b89dee3d8449ec676bc52d6f5c2de9f563ba3ac",
+    "references/scenario.md": "1c276b2078c8ef97e5cc0717cc54c1bb6d058eec6c261e580250cea6654c760f",
+    "references/workflow.md": "b56eae84aded6e13a75e4c709fd14570d6bf5c472a682d5ba2ec4eb9345280b3",
+    "scripts/artboard_mapping.py": "3b0f83f6a9515f8d8d82c6c96973255b62a7b3a7de3cdde56d678746f1e57638",
+    "scripts/asset_inputs.py": "b2868a4239ef50648f201be99bb29ad4ddf0d8bdeb5a626c54b3fc1aac701758",
+    "scripts/boolean_transactions.py": "22d311dfda26cadcd3fc6bb51596ab8b2cd9245cabf5f28dfe3d0d74e8ff9120",
+    "scripts/bootstrap.py": "78d5bdf16bf08e9abc96b4b23e5d071da72b648698b888b85fa1b90f81cf32a9",
+    "scripts/brand_variants.py": "f04590952520139bf5d970ed0fdf3867082f15424b81c77495907c1d9ce73f41",
+    "scripts/cli.py": "f59eb61605f0f4ac7213e6f52b83a47a93bf6201101cffd64d332fbb025313d5",
+    "scripts/commands.py": "265f052228e12f0c21e1ea98e967c0552c15fa001e2d65441357b1bec05cfaea",
+    "scripts/desktop.lock.json": "f38c7cd5b837bc4f3275ef96c17308fc894f6be66c6a00ecf9c53378ad4bb486",
+    "scripts/desktop.py": "24dddb82f1c51ca8e835c582d9b7228aa9d643dfcada11b570bde9191f002f0f",
+    "scripts/desktop_session.py": "b6b07a9a18b77386d481a7f263190b0981a7a763dda4f46ad7417a92d416fbb5",
+    "scripts/exchange_loss.py": "a4ba82ec8000a095dcf62813352621bdc42cfd7a81949baa6b0e896d1a2048e3",
+    "scripts/execution_control.py": "0acaa8fa01aae3689bb8c460efdd9bb19578d33e1572e24dc8dea00ef38ec008",
+    "scripts/mcp_session.py": "15395ead853349a24feab6ce364e5bc9795add12e1dbe62e8ed5718ffdd1ccd2",
+    "scripts/native_workflow.py": "770f981bc3340cf71c695752423aaf9e9123ae59f07ac5a9318cc9b8e8537d11",
+    "scripts/output_guard.py": "7c13abd891370058e670fbfb3db7992d4a8ed7934682c83bde1aabf47ad6846f",
+    "scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "scripts/runtime.lock.json": "7b6bd7f3fab84b757d4ea20ac91b74d89b417ec061efc6ae320dda97a422cc07",
+    "scripts/text_contract.py": "ff4af45ae39f4016befd94a9dd20899118da1bd85556c22313450b9851305838",
+    "scripts/workflow.py": "c0cb25d760c57c72c4b47dda0670f761fba0e3a57b02985bba41cbc5ac198250"
+  },
+  "plan": {
+    "document": {
+      "name": "Editable original and derivative losses",
+      "width": 128,
+      "height": 96,
+      "units": "Pixels"
+    },
+    "operations": [
+      {
+        "command": "native.command",
+        "params": {
+          "command": "document.setup",
+          "params": {
+            "exportText": "appearance"
+          }
+        }
+      },
+      {
+        "command": "shape.rectangle",
+        "params": {
+          "x": 12,
+          "y": 12,
+          "width": 60,
+          "height": 36
+        },
+        "as": "gradient"
+      },
+      {
+        "command": "native.command",
+        "params": {
+          "command": "paint.setFill",
+          "params": {
+            "gradient": {
+              "kind": "freeform",
+              "stops": [
+                {
+                  "offset": 0,
+                  "color": "#ef5b36"
+                },
+                {
+                  "offset": 1,
+                  "color": "#2366e8"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "command": "paint.setStroke",
+        "params": {
+          "none": true
+        }
+      },
+      {
+        "command": "text.create",
+        "params": {
+          "x": 12,
+          "y": 72,
+          "text": "Editable source",
+          "font": "Source Sans 3",
+          "size": 12,
+          "color": "#223344"
+        },
+        "as": "title"
+      }
+    ],
+    "exports": []
+  },
+  "exportPlan": {
+    "expectedProjectSha256": "ead854f4b39a47948a0668b135993e7cf435ab24a339267f2c86bab69ebfcd71",
+    "operations": [],
+    "exports": [
+      {
+        "format": "svg",
+        "artboard": 0
+      },
+      {
+        "format": "pdf",
+        "artboard": 0
+      },
+      {
+        "format": "png",
+        "artboard": 0
+      }
+    ]
+  },
+  "sourceFiles": {
+    "exchange-loss.json": "a6490917223d8bc8e097f97e627436e2cb92a0db7197e8977932b247338ee420",
+    "lineage.json": "6117b954e6555349336f26907407708a036c3d73e0481408dd6efecf55a4418e",
+    "manifest.json": "060bd6e3784f97c90351a11fd829d39f3a7ac4477c71864bb7846a37d4714947",
+    "native.json": "fc6a58bc07cbc5c989ab749221efdc0b3a3dd35caa369f01f51db41d2c3ccaec",
+    "operations.json": "60f3b41b6db90ee245d0cae93d6ca268e09cc4545dfc72a900bffefa793c1027",
+    "plan.json": "e9a1751e017ed76621f2cfc6343bf340c634d9357cb31efa7817ecd1c17746c4",
+    "project.vectorcraft": "ead854f4b39a47948a0668b135993e7cf435ab24a339267f2c86bab69ebfcd71"
+  },
+  "exportedFiles": {
+    "artboard-1.pdf": "69ab54d2867c664f933afec42790775581184e170ca3a85ceae91b0b00033462",
+    "artboard-1.png": "39d2869a3019d9a8a1be21eb96d5151114d3936293fe5be97b36ac798ad54e71",
+    "artboard-1.svg": "f9a16bac10a8d200a9f459e3d288ce81158a136ab96ed64fcf84e72d95ec3360",
+    "exchange-loss.json": "daa9e34d71fe7c86013f2b38e24d4895e99e52ab1f38255e13f4de8e678f8215",
+    "lineage.json": "4514516d3c598729a0cb5aba4d6bb681c04191c7014e2e5f4fee339335c94a39",
+    "manifest.json": "91e01caa160fabdae06338cdc7146bd0e82d0d3d4447d9ad2b0752408bc384fb",
+    "native.json": "fc6a58bc07cbc5c989ab749221efdc0b3a3dd35caa369f01f51db41d2c3ccaec",
+    "operations.json": "4cd63fb2d0867e5d7b151c0d1dcb2984c46cf0e5edff646463481d63b11b44b2",
+    "pdf-export-date.json": "250d52b3115dbc99e8123429d408531fc9aadbc664ad97071371df02cd5b9401",
+    "plan.json": "68accdf2167257287a9b8a20157ef3d5ba89390fc94f4d1c6e560619d2cd1e97",
+    "project.vectorcraft": "ead854f4b39a47948a0668b135993e7cf435ab24a339267f2c86bab69ebfcd71"
+  },
+  "manifest": {
+    "schema": "vectorcraft-delivery/v1",
+    "sourceProjectSha256": "ead854f4b39a47948a0668b135993e7cf435ab24a339267f2c86bab69ebfcd71",
+    "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+    "bindings": {
+      "gradient": {
+        "id": 2
+      },
+      "title": {
+        "id": 3
+      }
+    },
+    "outputs": [
+      {
+        "format": "svg",
+        "artboardIndex": 0,
+        "artboardId": 1,
+        "artboardName": "Artboard 1",
+        "artboardRect": {
+          "x0": 0.0,
+          "x1": 128.0,
+          "y0": 0.0,
+          "y1": 96.0
+        },
+        "path": "artboard-1.svg",
+        "warnings": [
+          "freeform gradients are written as images clipped to their shapes"
+        ],
+        "isolationPolicy": "native-paint-bounds; whole-dependent-containers-and-unknown-bounds-retained"
+      },
+      {
+        "format": "pdf",
+        "artboardIndex": 0,
+        "artboardId": 1,
+        "artboardName": "Artboard 1",
+        "artboardRect": {
+          "x0": 0.0,
+          "x1": 128.0,
+          "y0": 0.0,
+          "y1": 96.0
+        },
+        "path": "artboard-1.pdf",
+        "warnings": [],
+        "pdfCreated": 1791488794,
+        "pdfDateBinding": "native-document-created"
+      },
+      {
+        "format": "png",
+        "artboardIndex": 0,
+        "artboardId": 1,
+        "artboardName": "Artboard 1",
+        "artboardRect": {
+          "x0": 0.0,
+          "x1": 128.0,
+          "y0": 0.0,
+          "y1": 96.0
+        },
+        "path": "artboard-1.png",
+        "warnings": []
+      }
+    ],
+    "fontDependencies": [
+      {
+        "family": "Source Sans 3",
+        "missing": false,
+        "objects": 1,
+        "runs": 1,
+        "style": "Regular"
+      }
+    ],
+    "assets": {},
+    "artboards": [
+      {
+        "id": 1,
+        "index": 0,
+        "name": "Artboard 1",
+        "rect": {
+          "x0": 0.0,
+          "x1": 128.0,
+          "y0": 0.0,
+          "y1": 96.0
+        },
+        "width": 128.0,
+        "height": 96.0
+      }
+    ],
+    "artboardOrder": [
+      1
+    ],
+    "previewOrder": [
+      "artboard-1.png"
+    ],
+    "files": {
+      "plan.json": "68accdf2167257287a9b8a20157ef3d5ba89390fc94f4d1c6e560619d2cd1e97",
+      "project.vectorcraft": "ead854f4b39a47948a0668b135993e7cf435ab24a339267f2c86bab69ebfcd71",
+      "exchange-loss.json": "daa9e34d71fe7c86013f2b38e24d4895e99e52ab1f38255e13f4de8e678f8215",
+      "pdf-export-date.json": "250d52b3115dbc99e8123429d408531fc9aadbc664ad97071371df02cd5b9401",
+      "native.json": "fc6a58bc07cbc5c989ab749221efdc0b3a3dd35caa369f01f51db41d2c3ccaec",
+      "artboard-1.pdf": "69ab54d2867c664f933afec42790775581184e170ca3a85ceae91b0b00033462",
+      "artboard-1.png": "39d2869a3019d9a8a1be21eb96d5151114d3936293fe5be97b36ac798ad54e71",
+      "artboard-1.svg": "f9a16bac10a8d200a9f459e3d288ce81158a136ab96ed64fcf84e72d95ec3360",
+      "operations.json": "4cd63fb2d0867e5d7b151c0d1dcb2984c46cf0e5edff646463481d63b11b44b2",
+      "lineage.json": "4514516d3c598729a0cb5aba4d6bb681c04191c7014e2e5f4fee339335c94a39"
+    },
+    "lossReport": {
+      "path": "exchange-loss.json",
+      "sha256": "daa9e34d71fe7c86013f2b38e24d4895e99e52ab1f38255e13f4de8e678f8215"
+    },
+    "acceptance": "requires-domain-and-visual-review",
+    "executionId": "execution-1d797332-e22d-44c1-842e-2726e4d0b0ce",
+    "lineage": {
+      "path": "lineage.json",
+      "sha256": "4514516d3c598729a0cb5aba4d6bb681c04191c7014e2e5f4fee339335c94a39",
+      "logicalId": "vectorcraft:e9e51177-378d-4284-b1fb-c8f1f5f66761",
+      "version": "fa3c88fc1ba588c86459b3b22eb5e5d6fef2194410e83bbbab2534caf63440be",
+      "parent": {
+        "logicalId": "vectorcraft:e9e51177-378d-4284-b1fb-c8f1f5f66761",
+        "version": "ab2e694f2b2e30848b57ff0caaf2a10f5a4c634cf0bcecb129750b9409fb2a5c",
+        "projectSha256": "ead854f4b39a47948a0668b135993e7cf435ab24a339267f2c86bab69ebfcd71",
+        "status": "versioned"
+      }
+    }
+  },
+  "lossReport": {
+    "schema": "craft-exchange-loss/v1",
+    "pluginId": "vectorcraft",
+    "native": {
+      "location": "project.vectorcraft",
+      "sha256": "ead854f4b39a47948a0668b135993e7cf435ab24a339267f2c86bab69ebfcd71"
+    },
+    "inspection": {
+      "location": "native.json",
+      "sha256": "fc6a58bc07cbc5c989ab749221efdc0b3a3dd35caa369f01f51db41d2c3ccaec"
+    },
+    "outputs": [
+      {
+        "location": "artboard-1.svg",
+        "sha256": "f9a16bac10a8d200a9f459e3d288ce81158a136ab96ed64fcf84e72d95ec3360",
+        "format": "svg",
+        "role": "derivative",
+        "nativeSubstitute": false,
+        "changes": [
+          {
+            "code": "native-editing-model",
+            "status": "lost",
+            "reason": "Derivative formats do not retain the complete application-native project model; the native project is delivered separately."
+          },
+          {
+            "code": "raster-content",
+            "status": "observed",
+            "reason": "Actual image/feImage elements and their local geometry are listed; references, effect attribution, visible clipping and complete paint bounds are not inferred."
+          },
+          {
+            "code": "lossless-vector-claim",
+            "status": "blocked",
+            "reason": "Derivative structure and unknown effect/font fidelity do not establish a lossless vector round-trip; retain the native project."
+          },
+          {
+            "code": "live-text-editability",
+            "status": "lost",
+            "reason": "Observed appearance export mode converts any emitted native live text to outlines; edit the separately retained native project. Native IDs do not prove which objects intersect this artboard."
+          },
+          {
+            "code": "vector-structure",
+            "status": "observed",
+            "reason": "XML element counts record actual vector/text/raster structure, not semantic round-trip equivalence."
+          },
+          {
+            "code": "font-portability",
+            "status": "unknown",
+            "reason": "Font embedding, substitution and text layout across consumers are not verified."
+          },
+          {
+            "code": "effect-fidelity",
+            "status": "unknown",
+            "reason": "Native effects, masks and grouping are not proven equivalent in SVG consumers."
+          }
+        ],
+        "observations": {
+          "svg": {
+            "path": 2,
+            "text": 0,
+            "image": 1,
+            "filter": 0,
+            "mask": 0,
+            "clipPath": 1
+          },
+          "rasterizationScope": {
+            "elements": [
+              {
+                "elementPath": "0/2/0/0/0",
+                "tag": "image",
+                "id": null,
+                "geometry": {
+                  "x": "12",
+                  "y": "12",
+                  "width": "60",
+                  "height": "36"
+                },
+                "transform": null,
+                "ancestorTransforms": [],
+                "ancestorElements": [
+                  "svg",
+                  "g",
+                  "g",
+                  "g"
+                ],
+                "referenceSha256": "ddc78bb51781f4b28f80028ea3a3b8c3153c69e05260265b0c814485c0e99696",
+                "mediaType": "image/png",
+                "payloadSha256": "8bdf3eea85a36d2e2cda028a5999fdbcffb191a3ac7e6b7d9749eb589481b6a6",
+                "payloadBytes": 1039,
+                "classification": "embedded-raster"
+              }
+            ],
+            "vectorOnly": false,
+            "losslessVectorClaimAllowed": false,
+            "coordinateSpace": "element-local geometry plus ancestor transforms",
+            "completePaintBounds": false,
+            "rasterOrigin": "unknown; image elements may be source assets or expanded effects",
+            "foreignObjectPresent": false
+          },
+          "svgTextExportMode": "appearance",
+          "nativeTextObjectIds": [
+            3
+          ],
+          "textScope": "Native text IDs are document dependencies, not a visibility or per-outline object mapping."
+        },
+        "warnings": [
+          "freeform gradients are written as images clipped to their shapes"
+        ]
+      },
+      {
+        "location": "artboard-1.pdf",
+        "sha256": "69ab54d2867c664f933afec42790775581184e170ca3a85ceae91b0b00033462",
+        "format": "pdf",
+        "role": "derivative",
+        "nativeSubstitute": false,
+        "changes": [
+          {
+            "code": "native-editing-model",
+            "status": "lost",
+            "reason": "Derivative formats do not retain the complete application-native project model; the native project is delivered separately."
+          },
+          {
+            "code": "font-portability",
+            "status": "unknown",
+            "reason": "PDF font embedding and substitution are not verified."
+          },
+          {
+            "code": "effect-fidelity",
+            "status": "unknown",
+            "reason": "Native effect/mask appearance in PDF consumers is not verified."
+          },
+          {
+            "code": "vector-structure",
+            "status": "unknown",
+            "reason": "PDF output does not prove editable vector-path round-trip."
+          }
+        ],
+        "observations": {},
+        "warnings": []
+      },
+      {
+        "location": "artboard-1.png",
+        "sha256": "39d2869a3019d9a8a1be21eb96d5151114d3936293fe5be97b36ac798ad54e71",
+        "format": "png",
+        "role": "derivative",
+        "nativeSubstitute": false,
+        "changes": [
+          {
+            "code": "native-editing-model",
+            "status": "lost",
+            "reason": "Derivative formats do not retain the complete application-native project model; the native project is delivered separately."
+          },
+          {
+            "code": "editable-layers-paths-text",
+            "status": "lost",
+            "reason": "Layer, path and live text editing are rendered into pixels; edit the retained native project."
+          },
+          {
+            "code": "effect-keyframe-parameters",
+            "status": "lost",
+            "reason": "Rendered pixels do not carry editable native effects, masks or keyframes."
+          },
+          {
+            "code": "font-appearance",
+            "status": "unknown",
+            "reason": "Rendered appearance has not been compared with an approved visual reference."
+          },
+          {
+            "code": "alpha-channel",
+            "status": "observed",
+            "reason": "PNG IHDR records channel representation; indexed transparency and visual alpha fidelity are not inferred."
+          }
+        ],
+        "observations": {
+          "pngColorType": 6
+        },
+        "warnings": []
+      }
+    ],
+    "acceptance": "technical-observations-only"
+  },
+  "quality": {
+    "schema": "vectorcraft-technical-review/v1",
+    "artifactIntegrityStatus": "PASS",
+    "engineeringStatus": "NOT_RUN",
+    "technicalStatus": "PASS",
+    "creativeStatus": "NOT_RUN",
+    "acceptanceStatus": "pending",
+    "nativeReopenStatus": "NOT_RUN",
+    "files": {
+      "plan.json": "68accdf2167257287a9b8a20157ef3d5ba89390fc94f4d1c6e560619d2cd1e97",
+      "project.vectorcraft": "ead854f4b39a47948a0668b135993e7cf435ab24a339267f2c86bab69ebfcd71",
+      "exchange-loss.json": "daa9e34d71fe7c86013f2b38e24d4895e99e52ab1f38255e13f4de8e678f8215",
+      "pdf-export-date.json": "250d52b3115dbc99e8123429d408531fc9aadbc664ad97071371df02cd5b9401",
+      "native.json": "fc6a58bc07cbc5c989ab749221efdc0b3a3dd35caa369f01f51db41d2c3ccaec",
+      "artboard-1.pdf": "69ab54d2867c664f933afec42790775581184e170ca3a85ceae91b0b00033462",
+      "artboard-1.png": "39d2869a3019d9a8a1be21eb96d5151114d3936293fe5be97b36ac798ad54e71",
+      "artboard-1.svg": "f9a16bac10a8d200a9f459e3d288ce81158a136ab96ed64fcf84e72d95ec3360",
+      "operations.json": "4cd63fb2d0867e5d7b151c0d1dcb2984c46cf0e5edff646463481d63b11b44b2",
+      "lineage.json": "4514516d3c598729a0cb5aba4d6bb681c04191c7014e2e5f4fee339335c94a39"
+    },
+    "outputs": [
+      {
+        "path": "artboard-1.svg",
+        "sha256": "f9a16bac10a8d200a9f459e3d288ce81158a136ab96ed64fcf84e72d95ec3360",
+        "status": "PASS",
+        "decoder": "PyMuPDF",
+        "pages": 1,
+        "scope": "bounded raster decode; creative quality not assessed"
+      },
+      {
+        "path": "artboard-1.pdf",
+        "sha256": "69ab54d2867c664f933afec42790775581184e170ca3a85ceae91b0b00033462",
+        "status": "PASS",
+        "decoder": "PyMuPDF",
+        "pages": 1,
+        "scope": "bounded raster decode; creative quality not assessed"
+      },
+      {
+        "path": "artboard-1.png",
+        "sha256": "39d2869a3019d9a8a1be21eb96d5151114d3936293fe5be97b36ac798ad54e71",
+        "status": "PASS",
+        "decoder": "Pillow",
+        "size": [
+          128,
+          96
+        ]
+      }
+    ],
+    "lineageStatus": "PASS",
+    "exchangeStatus": "PASS",
+    "scope": "artifact integrity and export decode only; native reopening and creative review remain separate",
+    "artifactLogicalId": "vectorcraft:e9e51177-378d-4284-b1fb-c8f1f5f66761",
+    "artifactVersion": "fa3c88fc1ba588c86459b3b22eb5e5d6fef2194410e83bbbab2534caf63440be",
+    "sourceTask": {
+      "id": "execution-1d797332-e22d-44c1-842e-2726e4d0b0ce",
+      "scope": "workflow-execution",
+      "planSha256": "68accdf2167257287a9b8a20157ef3d5ba89390fc94f4d1c6e560619d2cd1e97"
+    },
+    "projectRevision": "ead854f4b39a47948a0668b135993e7cf435ab24a339267f2c86bab69ebfcd71",
+    "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+    "manifestSha256": "91e01caa160fabdae06338cdc7146bd0e82d0d3d4447d9ad2b0752408bc384fb"
+  },
+  "independentReopens": [
+    {
+      "model": {
+        "artboards": [
+          {
+            "id": 1,
+            "name": "Artboard 1",
+            "rect": {
+              "x0": 0.0,
+              "x1": 128.0,
+              "y0": 0.0,
+              "y1": 96.0
+            },
+            "show_center_mark": false,
+            "show_cross_hairs": false
+          }
+        ],
+        "color_mode": "Rgb",
+        "graphic_styles": [
+          {
+            "appearance": {
+              "items": [
+                {
+                  "kind": "fill",
+                  "paint": {
+                    "color": {
+                      "b": 1.0,
+                      "g": 1.0,
+                      "model": "rgb",
+                      "r": 1.0
+                    },
+                    "type": "solid"
+                  }
+                },
+                {
+                  "kind": "stroke",
+                  "paint": {
+                    "color": {
+                      "b": 0.0,
+                      "g": 0.0,
+                      "model": "rgb",
+                      "r": 0.0
+                    },
+                    "type": "solid"
+                  },
+                  "width": 1.0
+                }
+              ]
+            },
+            "id": 1,
+            "name": "Default Graphic Style",
+            "unit_box": true
+          },
+          {
+            "appearance": {
+              "items": [
+                {
+                  "kind": "fill",
+                  "paint": {
+                    "type": "none"
+                  }
+                },
+                {
+                  "kind": "stroke",
+                  "paint": {
+                    "color": {
+                      "b": 0.0,
+                      "g": 0.0,
+                      "model": "rgb",
+                      "r": 0.0
+                    },
+                    "type": "solid"
+                  },
+                  "width": 1.0
+                }
+              ]
+            },
+            "id": 2,
+            "name": "Black Outline",
+            "unit_box": true
+          },
+          {
+            "appearance": {
+              "items": [
+                {
+                  "kind": "fill",
+                  "paint": {
+                    "color": {
+                      "b": 0.3921568691730499,
+                      "g": 0.0784313753247261,
+                      "model": "rgb",
+                      "r": 0.10588235408067703
+                    },
+                    "type": "solid"
+                  }
+                },
+                {
+                  "kind": "stroke",
+                  "paint": {
+                    "color": {
+                      "b": 0.0,
+                      "g": 0.0,
+                      "model": "rgb",
+                      "r": 0.0
+                    },
+                    "type": "solid"
+                  },
+                  "width": 4.0
+                }
+              ]
+            },
+            "id": 3,
+            "name": "Heavy Ink",
+            "unit_box": true
+          },
+          {
+            "appearance": {
+              "items": [
+                {
+                  "kind": "fill",
+                  "paint": {
+                    "color": {
+                      "b": 0.23137255012989044,
+                      "g": 0.6901960968971252,
+                      "model": "rgb",
+                      "r": 0.9843137264251709
+                    },
+                    "type": "solid"
+                  }
+                },
+                {
+                  "kind": "stroke",
+                  "paint": {
+                    "color": {
+                      "b": 0.1411764770746231,
+                      "g": 0.3529411852359772,
+                      "model": "rgb",
+                      "r": 0.9450980424880981
+                    },
+                    "type": "solid"
+                  },
+                  "width": 2.0
+                }
+              ]
+            },
+            "id": 4,
+            "name": "Sunshine",
+            "unit_box": true
+          }
+        ],
+        "grid": {
+          "spacing": 72.0,
+          "subdivisions": 8
+        },
+        "guides": [],
+        "images": {},
+        "layers": [
+          {
+            "id": 1,
+            "kind": {
+              "children": [
+                {
+                  "appearance": {
+                    "items": [
+                      {
+                        "kind": "fill",
+                        "paint": {
+                          "angle": 0.0,
+                          "gradient": {
+                            "kind": "Freeform",
+                            "stops": [
+                              {
+                                "color": {
+                                  "b": 0.21176470816135406,
+                                  "g": 0.35686275362968445,
+                                  "model": "rgb",
+                                  "r": 0.9372549057006836
+                                },
+                                "midpoint": 0.5,
+                                "offset": 0.0,
+                                "opacity": 1.0
+                              },
+                              {
+                                "color": {
+                                  "b": 0.9098039269447327,
+                                  "g": 0.4000000059604645,
+                                  "model": "rgb",
+                                  "r": 0.13725490868091583
+                                },
+                                "midpoint": 0.5,
+                                "offset": 1.0,
+                                "opacity": 1.0
+                              }
+                            ]
+                          },
+                          "type": "gradient"
+                        }
+                      },
+                      {
+                        "kind": "stroke",
+                        "paint": {
+                          "type": "none"
+                        },
+                        "width": 1.0
+                      }
+                    ]
+                  },
+                  "id": 2,
+                  "kind": {
+                    "live": {
+                      "h": 36.0,
+                      "radii": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0
+                      ],
+                      "shape": "rectangle",
+                      "w": 60.0,
+                      "xf": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        1.0,
+                        12.0,
+                        12.0
+                      ]
+                    },
+                    "path": {
+                      "subpaths": [
+                        {
+                          "anchors": [
+                            {
+                              "p": [
+                                12.0,
+                                12.0
+                              ]
+                            },
+                            {
+                              "p": [
+                                72.0,
+                                12.0
+                              ]
+                            },
+                            {
+                              "p": [
+                                72.0,
+                                48.0
+                              ]
+                            },
+                            {
+                              "p": [
+                                12.0,
+                                48.0
+                              ]
+                            }
+                          ],
+                          "closed": true
+                        }
+                      ]
+                    },
+                    "type": "path"
+                  }
+                },
+                {
+                  "id": 3,
+                  "kind": {
+                    "kind": {
+                      "kind": "point"
+                    },
+                    "para": {
+                      "first_line_indent": 0.0,
+                      "hyphenate": false,
+                      "justify": "Left",
+                      "left_indent": 0.0,
+                      "right_indent": 0.0,
+                      "space_after": 0.0,
+                      "space_before": 0.0
+                    },
+                    "runs": [
+                      {
+                        "style": {
+                          "all_caps": false,
+                          "baseline_shift": 0.0,
+                          "fill": {
+                            "color": {
+                              "b": 0.2666666805744171,
+                              "g": 0.20000000298023224,
+                              "model": "rgb",
+                              "r": 0.13333334028720856
+                            },
+                            "type": "solid"
+                          },
+                          "font_family": "Source Sans 3",
+                          "font_style": "Regular",
+                          "h_scale": 100.0,
+                          "rotation": 0.0,
+                          "size": 12.0,
+                          "strikethrough": false,
+                          "stroke": {
+                            "type": "none"
+                          },
+                          "stroke_width": 0.0,
+                          "tracking": 0.0,
+                          "underline": false,
+                          "v_scale": 100.0
+                        },
+                        "text": "Editable source"
+                      }
+                    ],
+                    "type": "text",
+                    "xf": [
+                      1.0,
+                      0.0,
+                      0.0,
+                      1.0,
+                      12.0,
+                      72.0
+                    ]
+                  }
+                }
+              ],
+              "color": {
+                "Preset": 0
+              },
+              "printable": true,
+              "template": false,
+              "type": "layer"
+            },
+            "name": "Layer 1"
+          }
+        ],
+        "metadata": {
+          "author": "",
+          "authorTitle": "",
+          "copyrightNotice": "",
+          "copyrightStatus": "unknown",
+          "copyrightUrl": "",
+          "created": 1791488794,
+          "description": "",
+          "keywords": [],
+          "modified": 1791488794,
+          "rating": 0
+        },
+        "next_id": 4,
+        "raster_effects_ppi": 72.0,
+        "setup": {
+          "background": "transparent",
+          "bleed": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "discardWhiteOverprint": true,
+          "exportText": "appearance",
+          "flattenerPreset": null,
+          "gridColors": [
+            {
+              "b": 1.0,
+              "g": 1.0,
+              "model": "rgb",
+              "r": 1.0
+            },
+            {
+              "b": 0.800000011920929,
+              "g": 0.800000011920929,
+              "model": "rgb",
+              "r": 0.800000011920929
+            }
+          ],
+          "gridSize": "medium",
+          "highlightSubstitutedFonts": true,
+          "highlightSubstitutedGlyphs": false,
+          "language": "English: USA",
+          "outlineImages": false,
+          "quotes": {
+            "double": [
+              "“",
+              "”"
+            ],
+            "single": [
+              "‘",
+              "’"
+            ]
+          },
+          "simulatePaper": false,
+          "smallCapsSize": 70.0,
+          "subscript": {
+            "position": 33.3,
+            "size": 58.3
+          },
+          "superscript": {
+            "position": 33.3,
+            "size": 58.3
+          },
+          "typographersQuotes": true
+        },
+        "swatch_groups": [
+          {
+            "name": "Grays",
+            "swatches": [
+              {
+                "global": false,
+                "name": "K=90",
+                "paint": {
+                  "color": {
+                    "k": 0.8999999761581421,
+                    "model": "gray"
+                  },
+                  "type": "solid"
+                },
+                "spot": false
+              },
+              {
+                "global": false,
+                "name": "K=80",
+                "paint": {
+                  "color": {
+                    "k": 0.800000011920929,
+                    "model": "gray"
+                  },
+                  "type": "solid"
+                },
+                "spot": false
+              },
+              {
+                "global": false,
+                "name": "K=70",
+                "paint": {
+                  "color": {
+                    "k": 0.699999988079071,
+                    "model": "gray"
+                  },
+                  "type": "solid"
+                },
+                "spot": false
+              },
+              {
+                "global": false,
+                "name": "K=60",
+                "paint": {
+                  "color": {
+                    "k": 0.6000000238418579,
+                    "model": "gray"
+                  },
+                  "type": "solid"
+                },
+                "spot": false
+              },
+              {
+                "global": false,
+                "name": "K=50",
+                "paint": {
+                  "color": {
+                    "k": 0.5,
+                    "model": "gray"
+                  },
+                  "type": "solid"
+                },
+                "spot": false
+              },
+              {
+                "global": false,
+                "name": "K=40",
+                "paint": {
+                  "color": {
+                    "k": 0.4000000059604645,
+                    "model": "gray"
+                  },
+                  "type": "solid"
+                },
+                "spot": false
+              },
+              {
+                "global": false,
+                "name": "K=30",
+                "paint": {
+                  "color": {
+                    "k": 0.30000001192092896,
+                    "model": "gray"
+                  },
+                  "type": "solid"
+                },
+                "spot": false
+              },
+              {
+                "global": false,
+                "name": "K=20",
+                "paint": {
+                  "color": {
+                    "k": 0.20000000298023224,
+                    "model": "gray"
+                  },
+                  "type": "solid"
+                },
+                "spot": false
+              },
+              {
+                "global": false,
+                "name": "K=10",
+                "paint": {
+                  "color": {
+                    "k": 0.10000000149011612,
+                    "model": "gray"
+                  },
+                  "type": "solid"
+                },
+                "spot": false
+              }
+            ]
+          },
+          {
+            "name": "Brights",
+            "swatches": [
+              {
+                "global": false,
+                "name": "Bright Red",
+                "paint": {
+                  "color": {
+                    "b": 0.14509804546833038,
+                    "g": 0.11372549086809158,
+                    "model": "rgb",
+                    "r": 1.0
+                  },
+                  "type": "solid"
+                },
+                "spot": false
+              },
+              {
+                "global": false,
+                "name": "Bright Yellow",
+                "paint": {
+                  "color": {
+                    "b": 0.0,
+                    "g": 0.9019607901573181,
+                    "model": "rgb",
+                    "r": 1.0
+                  },
+                  "type": "solid"
+                },
+                "spot": false
+              },
+              {
+                "global": false,
+                "name": "Bright Green",
+                "paint": {
+                  "color": {
+                    "b": 0.4627451002597809,
+                    "g": 0.9019607901573181,
+                    "model": "rgb",
+                    "r": 0.0
+                  },
+                  "type": "solid"
+                },
+                "spot": false
+              },
+              {
+                "global": false,
+                "name": "Bright Blue",
+                "paint": {
+                  "color": {
+                    "b": 1.0,
+                    "g": 0.4745098054409027,
+                    "model": "rgb",
+                    "r": 0.16078431904315948
+                  },
+                  "type": "solid"
+                },
+                "spot": false
+              },
+              {
+                "global": false,
+                "name": "Bright Violet",
+                "paint": {
+                  "color": {
+                    "b": 0.9764705896377563,
+                    "g": 0.0,
+                    "model": "rgb",
+                    "r": 0.8352941274642944
+                  },
+                  "type": "solid"
+                },
+                "spot": false
+              }
+            ]
+          }
+        ],
+        "swatches": [
+          {
+            "global": false,
+            "name": "[None]",
+            "paint": {
+              "type": "none"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "White",
+            "paint": {
+              "color": {
+                "b": 1.0,
+                "g": 1.0,
+                "model": "rgb",
+                "r": 1.0
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Black",
+            "paint": {
+              "color": {
+                "b": 0.0,
+                "g": 0.0,
+                "model": "rgb",
+                "r": 0.0
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Red",
+            "paint": {
+              "color": {
+                "b": 0.1411764770746231,
+                "g": 0.10980392247438431,
+                "model": "rgb",
+                "r": 0.929411768913269
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Orange Red",
+            "paint": {
+              "color": {
+                "b": 0.1411764770746231,
+                "g": 0.3529411852359772,
+                "model": "rgb",
+                "r": 0.9450980424880981
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Orange",
+            "paint": {
+              "color": {
+                "b": 0.11764705926179886,
+                "g": 0.5764706134796143,
+                "model": "rgb",
+                "r": 0.9686274528503418
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Amber",
+            "paint": {
+              "color": {
+                "b": 0.23137255012989044,
+                "g": 0.6901960968971252,
+                "model": "rgb",
+                "r": 0.9843137264251709
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Yellow",
+            "paint": {
+              "color": {
+                "b": 0.12941177189350128,
+                "g": 0.9333333373069763,
+                "model": "rgb",
+                "r": 0.9882352948188782
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Yellow Green",
+            "paint": {
+              "color": {
+                "b": 0.12941177189350128,
+                "g": 0.8784313797950745,
+                "model": "rgb",
+                "r": 0.8509804010391235
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Lime",
+            "paint": {
+              "color": {
+                "b": 0.24705882370471954,
+                "g": 0.7764706015586853,
+                "model": "rgb",
+                "r": 0.5490196347236633
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Green",
+            "paint": {
+              "color": {
+                "b": 0.29019609093666077,
+                "g": 0.7098039388656616,
+                "model": "rgb",
+                "r": 0.2235294133424759
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Emerald",
+            "paint": {
+              "color": {
+                "b": 0.2705882489681244,
+                "g": 0.572549045085907,
+                "model": "rgb",
+                "r": 0.0
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Teal",
+            "paint": {
+              "color": {
+                "b": 0.21568627655506134,
+                "g": 0.40784314274787903,
+                "model": "rgb",
+                "r": 0.0
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Aqua",
+            "paint": {
+              "color": {
+                "b": 0.45098039507865906,
+                "g": 0.7098039388656616,
+                "model": "rgb",
+                "r": 0.13333334028720856
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Cyan Green",
+            "paint": {
+              "color": {
+                "b": 0.615686297416687,
+                "g": 0.6627451181411743,
+                "model": "rgb",
+                "r": 0.0
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Cyan",
+            "paint": {
+              "color": {
+                "b": 0.886274516582489,
+                "g": 0.6705882549285889,
+                "model": "rgb",
+                "r": 0.16078431904315948
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Azure",
+            "paint": {
+              "color": {
+                "b": 0.7372549176216125,
+                "g": 0.4431372582912445,
+                "model": "rgb",
+                "r": 0.0
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Blue",
+            "paint": {
+              "color": {
+                "b": 0.572549045085907,
+                "g": 0.1921568661928177,
+                "model": "rgb",
+                "r": 0.18039216101169586
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Indigo",
+            "paint": {
+              "color": {
+                "b": 0.3921568691730499,
+                "g": 0.0784313753247261,
+                "model": "rgb",
+                "r": 0.10588235408067703
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Violet",
+            "paint": {
+              "color": {
+                "b": 0.5686274766921997,
+                "g": 0.1764705926179886,
+                "model": "rgb",
+                "r": 0.4000000059604645
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Purple",
+            "paint": {
+              "color": {
+                "b": 0.5607843399047852,
+                "g": 0.15294118225574493,
+                "model": "rgb",
+                "r": 0.5764706134796143
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Magenta",
+            "paint": {
+              "color": {
+                "b": 0.364705890417099,
+                "g": 0.0,
+                "model": "rgb",
+                "r": 0.6196078658103943
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Rose",
+            "paint": {
+              "color": {
+                "b": 0.3529411852359772,
+                "g": 0.0784313753247261,
+                "model": "rgb",
+                "r": 0.8313725590705872
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Pink",
+            "paint": {
+              "color": {
+                "b": 0.4745098054409027,
+                "g": 0.11764705926179886,
+                "model": "rgb",
+                "r": 0.929411768913269
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Brown",
+            "paint": {
+              "color": {
+                "b": 0.6000000238418579,
+                "g": 0.6980392336845398,
+                "model": "rgb",
+                "r": 0.7803921699523926
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Tan",
+            "paint": {
+              "color": {
+                "b": 0.4588235318660736,
+                "g": 0.5254902243614197,
+                "model": "rgb",
+                "r": 0.6000000238418579
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Coffee",
+            "paint": {
+              "color": {
+                "b": 0.34117648005485535,
+                "g": 0.38823530077934265,
+                "model": "rgb",
+                "r": 0.45098039507865906
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Chocolate",
+            "paint": {
+              "color": {
+                "b": 0.2549019753932953,
+                "g": 0.27843138575553894,
+                "model": "rgb",
+                "r": 0.32549020648002625
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Sand",
+            "paint": {
+              "color": {
+                "b": 0.4274509847164154,
+                "g": 0.6117647290229797,
+                "model": "rgb",
+                "r": 0.7764706015586853
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Copper",
+            "paint": {
+              "color": {
+                "b": 0.32156863808631897,
+                "g": 0.48627451062202454,
+                "model": "rgb",
+                "r": 0.6509804129600525
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Rust",
+            "paint": {
+              "color": {
+                "b": 0.2235294133424759,
+                "g": 0.3843137323856354,
+                "model": "rgb",
+                "r": 0.5490196347236633
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Walnut",
+            "paint": {
+              "color": {
+                "b": 0.1411764770746231,
+                "g": 0.2980392277240753,
+                "model": "rgb",
+                "r": 0.4588235318660736
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Espresso",
+            "paint": {
+              "color": {
+                "b": 0.07450980693101883,
+                "g": 0.21960784494876862,
+                "model": "rgb",
+                "r": 0.3764705955982208
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "White, Black",
+            "paint": {
+              "angle": 0.0,
+              "gradient": {
+                "kind": "Linear",
+                "stops": [
+                  {
+                    "color": {
+                      "b": 1.0,
+                      "g": 1.0,
+                      "model": "rgb",
+                      "r": 1.0
+                    },
+                    "midpoint": 0.5,
+                    "offset": 0.0,
+                    "opacity": 1.0
+                  },
+                  {
+                    "color": {
+                      "b": 0.0,
+                      "g": 0.0,
+                      "model": "rgb",
+                      "r": 0.0
+                    },
+                    "midpoint": 0.5,
+                    "offset": 1.0,
+                    "opacity": 1.0
+                  }
+                ]
+              },
+              "type": "gradient"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Radial White, Black",
+            "paint": {
+              "angle": 0.0,
+              "gradient": {
+                "kind": "Radial",
+                "stops": [
+                  {
+                    "color": {
+                      "b": 1.0,
+                      "g": 1.0,
+                      "model": "rgb",
+                      "r": 1.0
+                    },
+                    "midpoint": 0.5,
+                    "offset": 0.0,
+                    "opacity": 1.0
+                  },
+                  {
+                    "color": {
+                      "b": 0.0,
+                      "g": 0.0,
+                      "model": "rgb",
+                      "r": 0.0
+                    },
+                    "midpoint": 0.5,
+                    "offset": 1.0,
+                    "opacity": 1.0
+                  }
+                ]
+              },
+              "type": "gradient"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Sunset",
+            "paint": {
+              "angle": 0.0,
+              "gradient": {
+                "kind": "Linear",
+                "stops": [
+                  {
+                    "color": {
+                      "b": 0.23137255012989044,
+                      "g": 0.6901960968971252,
+                      "model": "rgb",
+                      "r": 0.9843137264251709
+                    },
+                    "midpoint": 0.5,
+                    "offset": 0.0,
+                    "opacity": 1.0
+                  },
+                  {
+                    "color": {
+                      "b": 0.3529411852359772,
+                      "g": 0.0784313753247261,
+                      "model": "rgb",
+                      "r": 0.8313725590705872
+                    },
+                    "midpoint": 0.5,
+                    "offset": 1.0,
+                    "opacity": 1.0
+                  }
+                ]
+              },
+              "type": "gradient"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Ocean",
+            "paint": {
+              "angle": 0.0,
+              "gradient": {
+                "kind": "Linear",
+                "stops": [
+                  {
+                    "color": {
+                      "b": 0.886274516582489,
+                      "g": 0.6705882549285889,
+                      "model": "rgb",
+                      "r": 0.16078431904315948
+                    },
+                    "midpoint": 0.5,
+                    "offset": 0.0,
+                    "opacity": 1.0
+                  },
+                  {
+                    "color": {
+                      "b": 0.572549045085907,
+                      "g": 0.1921568661928177,
+                      "model": "rgb",
+                      "r": 0.18039216101169586
+                    },
+                    "midpoint": 0.5,
+                    "offset": 1.0,
+                    "opacity": 1.0
+                  }
+                ]
+              },
+              "type": "gradient"
+            },
+            "spot": false
+          }
+        ],
+        "symbols": [],
+        "title": "Editable original and derivative losses",
+        "units": "Pixels",
+        "version": 1
+      },
+      "points": {
+        "lines": [],
+        "mode": "points",
+        "points": [
+          {
+            "at": [
+              22.0,
+              21.0
+            ],
+            "color": [
+              0.9372549057006836,
+              0.35686275362968445,
+              0.21176470816135406
+            ],
+            "opacity": 1.0,
+            "spread": 0.0
+          },
+          {
+            "at": [
+              42.0,
+              21.0
+            ],
+            "color": [
+              0.7772548794746399,
+              0.365490198135376,
+              0.35137253999710083
+            ],
+            "opacity": 1.0,
+            "spread": 0.0
+          },
+          {
+            "at": [
+              62.0,
+              21.0
+            ],
+            "color": [
+              0.6172548532485962,
+              0.3741176426410675,
+              0.4909803867340088
+            ],
+            "opacity": 1.0,
+            "spread": 0.0
+          },
+          {
+            "at": [
+              62.0,
+              39.0
+            ],
+            "color": [
+              0.45725488662719727,
+              0.3827451169490814,
+              0.6305882930755615
+            ],
+            "opacity": 1.0,
+            "spread": 0.0
+          },
+          {
+            "at": [
+              42.0,
+              39.0
+            ],
+            "color": [
+              0.29725486040115356,
+              0.39137256145477295,
+              0.7701960802078247
+            ],
+            "opacity": 1.0,
+            "spread": 0.0
+          },
+          {
+            "at": [
+              22.0,
+              39.0
+            ],
+            "color": [
+              0.13725489377975464,
+              0.4000000059604645,
+              0.9098039269447327
+            ],
+            "opacity": 1.0,
+            "spread": 0.0
+          }
+        ],
+        "selected": null
+      }
+    },
+    {
+      "model": {
+        "artboards": [
+          {
+            "id": 1,
+            "name": "Artboard 1",
+            "rect": {
+              "x0": 0.0,
+              "x1": 128.0,
+              "y0": 0.0,
+              "y1": 96.0
+            },
+            "show_center_mark": false,
+            "show_cross_hairs": false
+          }
+        ],
+        "color_mode": "Rgb",
+        "graphic_styles": [
+          {
+            "appearance": {
+              "items": [
+                {
+                  "kind": "fill",
+                  "paint": {
+                    "color": {
+                      "b": 1.0,
+                      "g": 1.0,
+                      "model": "rgb",
+                      "r": 1.0
+                    },
+                    "type": "solid"
+                  }
+                },
+                {
+                  "kind": "stroke",
+                  "paint": {
+                    "color": {
+                      "b": 0.0,
+                      "g": 0.0,
+                      "model": "rgb",
+                      "r": 0.0
+                    },
+                    "type": "solid"
+                  },
+                  "width": 1.0
+                }
+              ]
+            },
+            "id": 1,
+            "name": "Default Graphic Style",
+            "unit_box": true
+          },
+          {
+            "appearance": {
+              "items": [
+                {
+                  "kind": "fill",
+                  "paint": {
+                    "type": "none"
+                  }
+                },
+                {
+                  "kind": "stroke",
+                  "paint": {
+                    "color": {
+                      "b": 0.0,
+                      "g": 0.0,
+                      "model": "rgb",
+                      "r": 0.0
+                    },
+                    "type": "solid"
+                  },
+                  "width": 1.0
+                }
+              ]
+            },
+            "id": 2,
+            "name": "Black Outline",
+            "unit_box": true
+          },
+          {
+            "appearance": {
+              "items": [
+                {
+                  "kind": "fill",
+                  "paint": {
+                    "color": {
+                      "b": 0.3921568691730499,
+                      "g": 0.0784313753247261,
+                      "model": "rgb",
+                      "r": 0.10588235408067703
+                    },
+                    "type": "solid"
+                  }
+                },
+                {
+                  "kind": "stroke",
+                  "paint": {
+                    "color": {
+                      "b": 0.0,
+                      "g": 0.0,
+                      "model": "rgb",
+                      "r": 0.0
+                    },
+                    "type": "solid"
+                  },
+                  "width": 4.0
+                }
+              ]
+            },
+            "id": 3,
+            "name": "Heavy Ink",
+            "unit_box": true
+          },
+          {
+            "appearance": {
+              "items": [
+                {
+                  "kind": "fill",
+                  "paint": {
+                    "color": {
+                      "b": 0.23137255012989044,
+                      "g": 0.6901960968971252,
+                      "model": "rgb",
+                      "r": 0.9843137264251709
+                    },
+                    "type": "solid"
+                  }
+                },
+                {
+                  "kind": "stroke",
+                  "paint": {
+                    "color": {
+                      "b": 0.1411764770746231,
+                      "g": 0.3529411852359772,
+                      "model": "rgb",
+                      "r": 0.9450980424880981
+                    },
+                    "type": "solid"
+                  },
+                  "width": 2.0
+                }
+              ]
+            },
+            "id": 4,
+            "name": "Sunshine",
+            "unit_box": true
+          }
+        ],
+        "grid": {
+          "spacing": 72.0,
+          "subdivisions": 8
+        },
+        "guides": [],
+        "images": {},
+        "layers": [
+          {
+            "id": 1,
+            "kind": {
+              "children": [
+                {
+                  "appearance": {
+                    "items": [
+                      {
+                        "kind": "fill",
+                        "paint": {
+                          "angle": 0.0,
+                          "gradient": {
+                            "kind": "Freeform",
+                            "stops": [
+                              {
+                                "color": {
+                                  "b": 0.21176470816135406,
+                                  "g": 0.35686275362968445,
+                                  "model": "rgb",
+                                  "r": 0.9372549057006836
+                                },
+                                "midpoint": 0.5,
+                                "offset": 0.0,
+                                "opacity": 1.0
+                              },
+                              {
+                                "color": {
+                                  "b": 0.9098039269447327,
+                                  "g": 0.4000000059604645,
+                                  "model": "rgb",
+                                  "r": 0.13725490868091583
+                                },
+                                "midpoint": 0.5,
+                                "offset": 1.0,
+                                "opacity": 1.0
+                              }
+                            ]
+                          },
+                          "type": "gradient"
+                        }
+                      },
+                      {
+                        "kind": "stroke",
+                        "paint": {
+                          "type": "none"
+                        },
+                        "width": 1.0
+                      }
+                    ]
+                  },
+                  "id": 2,
+                  "kind": {
+                    "live": {
+                      "h": 36.0,
+                      "radii": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0
+                      ],
+                      "shape": "rectangle",
+                      "w": 60.0,
+                      "xf": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        1.0,
+                        12.0,
+                        12.0
+                      ]
+                    },
+                    "path": {
+                      "subpaths": [
+                        {
+                          "anchors": [
+                            {
+                              "p": [
+                                12.0,
+                                12.0
+                              ]
+                            },
+                            {
+                              "p": [
+                                72.0,
+                                12.0
+                              ]
+                            },
+                            {
+                              "p": [
+                                72.0,
+                                48.0
+                              ]
+                            },
+                            {
+                              "p": [
+                                12.0,
+                                48.0
+                              ]
+                            }
+                          ],
+                          "closed": true
+                        }
+                      ]
+                    },
+                    "type": "path"
+                  }
+                },
+                {
+                  "id": 3,
+                  "kind": {
+                    "kind": {
+                      "kind": "point"
+                    },
+                    "para": {
+                      "first_line_indent": 0.0,
+                      "hyphenate": false,
+                      "justify": "Left",
+                      "left_indent": 0.0,
+                      "right_indent": 0.0,
+                      "space_after": 0.0,
+                      "space_before": 0.0
+                    },
+                    "runs": [
+                      {
+                        "style": {
+                          "all_caps": false,
+                          "baseline_shift": 0.0,
+                          "fill": {
+                            "color": {
+                              "b": 0.2666666805744171,
+                              "g": 0.20000000298023224,
+                              "model": "rgb",
+                              "r": 0.13333334028720856
+                            },
+                            "type": "solid"
+                          },
+                          "font_family": "Source Sans 3",
+                          "font_style": "Regular",
+                          "h_scale": 100.0,
+                          "rotation": 0.0,
+                          "size": 12.0,
+                          "strikethrough": false,
+                          "stroke": {
+                            "type": "none"
+                          },
+                          "stroke_width": 0.0,
+                          "tracking": 0.0,
+                          "underline": false,
+                          "v_scale": 100.0
+                        },
+                        "text": "Editable source"
+                      }
+                    ],
+                    "type": "text",
+                    "xf": [
+                      1.0,
+                      0.0,
+                      0.0,
+                      1.0,
+                      12.0,
+                      72.0
+                    ]
+                  }
+                }
+              ],
+              "color": {
+                "Preset": 0
+              },
+              "printable": true,
+              "template": false,
+              "type": "layer"
+            },
+            "name": "Layer 1"
+          }
+        ],
+        "metadata": {
+          "author": "",
+          "authorTitle": "",
+          "copyrightNotice": "",
+          "copyrightStatus": "unknown",
+          "copyrightUrl": "",
+          "created": 1791488794,
+          "description": "",
+          "keywords": [],
+          "modified": 1791488794,
+          "rating": 0
+        },
+        "next_id": 4,
+        "raster_effects_ppi": 72.0,
+        "setup": {
+          "background": "transparent",
+          "bleed": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "discardWhiteOverprint": true,
+          "exportText": "appearance",
+          "flattenerPreset": null,
+          "gridColors": [
+            {
+              "b": 1.0,
+              "g": 1.0,
+              "model": "rgb",
+              "r": 1.0
+            },
+            {
+              "b": 0.800000011920929,
+              "g": 0.800000011920929,
+              "model": "rgb",
+              "r": 0.800000011920929
+            }
+          ],
+          "gridSize": "medium",
+          "highlightSubstitutedFonts": true,
+          "highlightSubstitutedGlyphs": false,
+          "language": "English: USA",
+          "outlineImages": false,
+          "quotes": {
+            "double": [
+              "“",
+              "”"
+            ],
+            "single": [
+              "‘",
+              "’"
+            ]
+          },
+          "simulatePaper": false,
+          "smallCapsSize": 70.0,
+          "subscript": {
+            "position": 33.3,
+            "size": 58.3
+          },
+          "superscript": {
+            "position": 33.3,
+            "size": 58.3
+          },
+          "typographersQuotes": true
+        },
+        "swatch_groups": [
+          {
+            "name": "Grays",
+            "swatches": [
+              {
+                "global": false,
+                "name": "K=90",
+                "paint": {
+                  "color": {
+                    "k": 0.8999999761581421,
+                    "model": "gray"
+                  },
+                  "type": "solid"
+                },
+                "spot": false
+              },
+              {
+                "global": false,
+                "name": "K=80",
+                "paint": {
+                  "color": {
+                    "k": 0.800000011920929,
+                    "model": "gray"
+                  },
+                  "type": "solid"
+                },
+                "spot": false
+              },
+              {
+                "global": false,
+                "name": "K=70",
+                "paint": {
+                  "color": {
+                    "k": 0.699999988079071,
+                    "model": "gray"
+                  },
+                  "type": "solid"
+                },
+                "spot": false
+              },
+              {
+                "global": false,
+                "name": "K=60",
+                "paint": {
+                  "color": {
+                    "k": 0.6000000238418579,
+                    "model": "gray"
+                  },
+                  "type": "solid"
+                },
+                "spot": false
+              },
+              {
+                "global": false,
+                "name": "K=50",
+                "paint": {
+                  "color": {
+                    "k": 0.5,
+                    "model": "gray"
+                  },
+                  "type": "solid"
+                },
+                "spot": false
+              },
+              {
+                "global": false,
+                "name": "K=40",
+                "paint": {
+                  "color": {
+                    "k": 0.4000000059604645,
+                    "model": "gray"
+                  },
+                  "type": "solid"
+                },
+                "spot": false
+              },
+              {
+                "global": false,
+                "name": "K=30",
+                "paint": {
+                  "color": {
+                    "k": 0.30000001192092896,
+                    "model": "gray"
+                  },
+                  "type": "solid"
+                },
+                "spot": false
+              },
+              {
+                "global": false,
+                "name": "K=20",
+                "paint": {
+                  "color": {
+                    "k": 0.20000000298023224,
+                    "model": "gray"
+                  },
+                  "type": "solid"
+                },
+                "spot": false
+              },
+              {
+                "global": false,
+                "name": "K=10",
+                "paint": {
+                  "color": {
+                    "k": 0.10000000149011612,
+                    "model": "gray"
+                  },
+                  "type": "solid"
+                },
+                "spot": false
+              }
+            ]
+          },
+          {
+            "name": "Brights",
+            "swatches": [
+              {
+                "global": false,
+                "name": "Bright Red",
+                "paint": {
+                  "color": {
+                    "b": 0.14509804546833038,
+                    "g": 0.11372549086809158,
+                    "model": "rgb",
+                    "r": 1.0
+                  },
+                  "type": "solid"
+                },
+                "spot": false
+              },
+              {
+                "global": false,
+                "name": "Bright Yellow",
+                "paint": {
+                  "color": {
+                    "b": 0.0,
+                    "g": 0.9019607901573181,
+                    "model": "rgb",
+                    "r": 1.0
+                  },
+                  "type": "solid"
+                },
+                "spot": false
+              },
+              {
+                "global": false,
+                "name": "Bright Green",
+                "paint": {
+                  "color": {
+                    "b": 0.4627451002597809,
+                    "g": 0.9019607901573181,
+                    "model": "rgb",
+                    "r": 0.0
+                  },
+                  "type": "solid"
+                },
+                "spot": false
+              },
+              {
+                "global": false,
+                "name": "Bright Blue",
+                "paint": {
+                  "color": {
+                    "b": 1.0,
+                    "g": 0.4745098054409027,
+                    "model": "rgb",
+                    "r": 0.16078431904315948
+                  },
+                  "type": "solid"
+                },
+                "spot": false
+              },
+              {
+                "global": false,
+                "name": "Bright Violet",
+                "paint": {
+                  "color": {
+                    "b": 0.9764705896377563,
+                    "g": 0.0,
+                    "model": "rgb",
+                    "r": 0.8352941274642944
+                  },
+                  "type": "solid"
+                },
+                "spot": false
+              }
+            ]
+          }
+        ],
+        "swatches": [
+          {
+            "global": false,
+            "name": "[None]",
+            "paint": {
+              "type": "none"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "White",
+            "paint": {
+              "color": {
+                "b": 1.0,
+                "g": 1.0,
+                "model": "rgb",
+                "r": 1.0
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Black",
+            "paint": {
+              "color": {
+                "b": 0.0,
+                "g": 0.0,
+                "model": "rgb",
+                "r": 0.0
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Red",
+            "paint": {
+              "color": {
+                "b": 0.1411764770746231,
+                "g": 0.10980392247438431,
+                "model": "rgb",
+                "r": 0.929411768913269
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Orange Red",
+            "paint": {
+              "color": {
+                "b": 0.1411764770746231,
+                "g": 0.3529411852359772,
+                "model": "rgb",
+                "r": 0.9450980424880981
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Orange",
+            "paint": {
+              "color": {
+                "b": 0.11764705926179886,
+                "g": 0.5764706134796143,
+                "model": "rgb",
+                "r": 0.9686274528503418
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Amber",
+            "paint": {
+              "color": {
+                "b": 0.23137255012989044,
+                "g": 0.6901960968971252,
+                "model": "rgb",
+                "r": 0.9843137264251709
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Yellow",
+            "paint": {
+              "color": {
+                "b": 0.12941177189350128,
+                "g": 0.9333333373069763,
+                "model": "rgb",
+                "r": 0.9882352948188782
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Yellow Green",
+            "paint": {
+              "color": {
+                "b": 0.12941177189350128,
+                "g": 0.8784313797950745,
+                "model": "rgb",
+                "r": 0.8509804010391235
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Lime",
+            "paint": {
+              "color": {
+                "b": 0.24705882370471954,
+                "g": 0.7764706015586853,
+                "model": "rgb",
+                "r": 0.5490196347236633
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Green",
+            "paint": {
+              "color": {
+                "b": 0.29019609093666077,
+                "g": 0.7098039388656616,
+                "model": "rgb",
+                "r": 0.2235294133424759
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Emerald",
+            "paint": {
+              "color": {
+                "b": 0.2705882489681244,
+                "g": 0.572549045085907,
+                "model": "rgb",
+                "r": 0.0
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Teal",
+            "paint": {
+              "color": {
+                "b": 0.21568627655506134,
+                "g": 0.40784314274787903,
+                "model": "rgb",
+                "r": 0.0
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Aqua",
+            "paint": {
+              "color": {
+                "b": 0.45098039507865906,
+                "g": 0.7098039388656616,
+                "model": "rgb",
+                "r": 0.13333334028720856
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Cyan Green",
+            "paint": {
+              "color": {
+                "b": 0.615686297416687,
+                "g": 0.6627451181411743,
+                "model": "rgb",
+                "r": 0.0
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Cyan",
+            "paint": {
+              "color": {
+                "b": 0.886274516582489,
+                "g": 0.6705882549285889,
+                "model": "rgb",
+                "r": 0.16078431904315948
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Azure",
+            "paint": {
+              "color": {
+                "b": 0.7372549176216125,
+                "g": 0.4431372582912445,
+                "model": "rgb",
+                "r": 0.0
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Blue",
+            "paint": {
+              "color": {
+                "b": 0.572549045085907,
+                "g": 0.1921568661928177,
+                "model": "rgb",
+                "r": 0.18039216101169586
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Indigo",
+            "paint": {
+              "color": {
+                "b": 0.3921568691730499,
+                "g": 0.0784313753247261,
+                "model": "rgb",
+                "r": 0.10588235408067703
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Violet",
+            "paint": {
+              "color": {
+                "b": 0.5686274766921997,
+                "g": 0.1764705926179886,
+                "model": "rgb",
+                "r": 0.4000000059604645
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Purple",
+            "paint": {
+              "color": {
+                "b": 0.5607843399047852,
+                "g": 0.15294118225574493,
+                "model": "rgb",
+                "r": 0.5764706134796143
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Magenta",
+            "paint": {
+              "color": {
+                "b": 0.364705890417099,
+                "g": 0.0,
+                "model": "rgb",
+                "r": 0.6196078658103943
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Rose",
+            "paint": {
+              "color": {
+                "b": 0.3529411852359772,
+                "g": 0.0784313753247261,
+                "model": "rgb",
+                "r": 0.8313725590705872
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Pink",
+            "paint": {
+              "color": {
+                "b": 0.4745098054409027,
+                "g": 0.11764705926179886,
+                "model": "rgb",
+                "r": 0.929411768913269
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Brown",
+            "paint": {
+              "color": {
+                "b": 0.6000000238418579,
+                "g": 0.6980392336845398,
+                "model": "rgb",
+                "r": 0.7803921699523926
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Tan",
+            "paint": {
+              "color": {
+                "b": 0.4588235318660736,
+                "g": 0.5254902243614197,
+                "model": "rgb",
+                "r": 0.6000000238418579
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Coffee",
+            "paint": {
+              "color": {
+                "b": 0.34117648005485535,
+                "g": 0.38823530077934265,
+                "model": "rgb",
+                "r": 0.45098039507865906
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Chocolate",
+            "paint": {
+              "color": {
+                "b": 0.2549019753932953,
+                "g": 0.27843138575553894,
+                "model": "rgb",
+                "r": 0.32549020648002625
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Sand",
+            "paint": {
+              "color": {
+                "b": 0.4274509847164154,
+                "g": 0.6117647290229797,
+                "model": "rgb",
+                "r": 0.7764706015586853
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Copper",
+            "paint": {
+              "color": {
+                "b": 0.32156863808631897,
+                "g": 0.48627451062202454,
+                "model": "rgb",
+                "r": 0.6509804129600525
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Rust",
+            "paint": {
+              "color": {
+                "b": 0.2235294133424759,
+                "g": 0.3843137323856354,
+                "model": "rgb",
+                "r": 0.5490196347236633
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Walnut",
+            "paint": {
+              "color": {
+                "b": 0.1411764770746231,
+                "g": 0.2980392277240753,
+                "model": "rgb",
+                "r": 0.4588235318660736
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Espresso",
+            "paint": {
+              "color": {
+                "b": 0.07450980693101883,
+                "g": 0.21960784494876862,
+                "model": "rgb",
+                "r": 0.3764705955982208
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "White, Black",
+            "paint": {
+              "angle": 0.0,
+              "gradient": {
+                "kind": "Linear",
+                "stops": [
+                  {
+                    "color": {
+                      "b": 1.0,
+                      "g": 1.0,
+                      "model": "rgb",
+                      "r": 1.0
+                    },
+                    "midpoint": 0.5,
+                    "offset": 0.0,
+                    "opacity": 1.0
+                  },
+                  {
+                    "color": {
+                      "b": 0.0,
+                      "g": 0.0,
+                      "model": "rgb",
+                      "r": 0.0
+                    },
+                    "midpoint": 0.5,
+                    "offset": 1.0,
+                    "opacity": 1.0
+                  }
+                ]
+              },
+              "type": "gradient"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Radial White, Black",
+            "paint": {
+              "angle": 0.0,
+              "gradient": {
+                "kind": "Radial",
+                "stops": [
+                  {
+                    "color": {
+                      "b": 1.0,
+                      "g": 1.0,
+                      "model": "rgb",
+                      "r": 1.0
+                    },
+                    "midpoint": 0.5,
+                    "offset": 0.0,
+                    "opacity": 1.0
+                  },
+                  {
+                    "color": {
+                      "b": 0.0,
+                      "g": 0.0,
+                      "model": "rgb",
+                      "r": 0.0
+                    },
+                    "midpoint": 0.5,
+                    "offset": 1.0,
+                    "opacity": 1.0
+                  }
+                ]
+              },
+              "type": "gradient"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Sunset",
+            "paint": {
+              "angle": 0.0,
+              "gradient": {
+                "kind": "Linear",
+                "stops": [
+                  {
+                    "color": {
+                      "b": 0.23137255012989044,
+                      "g": 0.6901960968971252,
+                      "model": "rgb",
+                      "r": 0.9843137264251709
+                    },
+                    "midpoint": 0.5,
+                    "offset": 0.0,
+                    "opacity": 1.0
+                  },
+                  {
+                    "color": {
+                      "b": 0.3529411852359772,
+                      "g": 0.0784313753247261,
+                      "model": "rgb",
+                      "r": 0.8313725590705872
+                    },
+                    "midpoint": 0.5,
+                    "offset": 1.0,
+                    "opacity": 1.0
+                  }
+                ]
+              },
+              "type": "gradient"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Ocean",
+            "paint": {
+              "angle": 0.0,
+              "gradient": {
+                "kind": "Linear",
+                "stops": [
+                  {
+                    "color": {
+                      "b": 0.886274516582489,
+                      "g": 0.6705882549285889,
+                      "model": "rgb",
+                      "r": 0.16078431904315948
+                    },
+                    "midpoint": 0.5,
+                    "offset": 0.0,
+                    "opacity": 1.0
+                  },
+                  {
+                    "color": {
+                      "b": 0.572549045085907,
+                      "g": 0.1921568661928177,
+                      "model": "rgb",
+                      "r": 0.18039216101169586
+                    },
+                    "midpoint": 0.5,
+                    "offset": 1.0,
+                    "opacity": 1.0
+                  }
+                ]
+              },
+              "type": "gradient"
+            },
+            "spot": false
+          }
+        ],
+        "symbols": [],
+        "title": "Editable original and derivative losses",
+        "units": "Pixels",
+        "version": 1
+      },
+      "points": {
+        "lines": [],
+        "mode": "points",
+        "points": [
+          {
+            "at": [
+              22.0,
+              21.0
+            ],
+            "color": [
+              0.9372549057006836,
+              0.35686275362968445,
+              0.21176470816135406
+            ],
+            "opacity": 1.0,
+            "spread": 0.0
+          },
+          {
+            "at": [
+              42.0,
+              21.0
+            ],
+            "color": [
+              0.7772548794746399,
+              0.365490198135376,
+              0.35137253999710083
+            ],
+            "opacity": 1.0,
+            "spread": 0.0
+          },
+          {
+            "at": [
+              62.0,
+              21.0
+            ],
+            "color": [
+              0.6172548532485962,
+              0.3741176426410675,
+              0.4909803867340088
+            ],
+            "opacity": 1.0,
+            "spread": 0.0
+          },
+          {
+            "at": [
+              62.0,
+              39.0
+            ],
+            "color": [
+              0.45725488662719727,
+              0.3827451169490814,
+              0.6305882930755615
+            ],
+            "opacity": 1.0,
+            "spread": 0.0
+          },
+          {
+            "at": [
+              42.0,
+              39.0
+            ],
+            "color": [
+              0.29725486040115356,
+              0.39137256145477295,
+              0.7701960802078247
+            ],
+            "opacity": 1.0,
+            "spread": 0.0
+          },
+          {
+            "at": [
+              22.0,
+              39.0
+            ],
+            "color": [
+              0.13725489377975464,
+              0.4000000059604645,
+              0.9098039269447327
+            ],
+            "opacity": 1.0,
+            "spread": 0.0
+          }
+        ],
+        "selected": null
+      }
+    }
+  ],
+  "editedNativeModel": {
+    "artboards": [
+      {
+        "id": 1,
+        "name": "Artboard 1",
+        "rect": {
+          "x0": 0.0,
+          "x1": 128.0,
+          "y0": 0.0,
+          "y1": 96.0
+        },
+        "show_center_mark": false,
+        "show_cross_hairs": false
+      }
+    ],
+    "color_mode": "Rgb",
+    "graphic_styles": [
+      {
+        "appearance": {
+          "items": [
+            {
+              "kind": "fill",
+              "paint": {
+                "color": {
+                  "b": 1.0,
+                  "g": 1.0,
+                  "model": "rgb",
+                  "r": 1.0
+                },
+                "type": "solid"
+              }
+            },
+            {
+              "kind": "stroke",
+              "paint": {
+                "color": {
+                  "b": 0.0,
+                  "g": 0.0,
+                  "model": "rgb",
+                  "r": 0.0
+                },
+                "type": "solid"
+              },
+              "width": 1.0
+            }
+          ]
+        },
+        "id": 1,
+        "name": "Default Graphic Style",
+        "unit_box": true
+      },
+      {
+        "appearance": {
+          "items": [
+            {
+              "kind": "fill",
+              "paint": {
+                "type": "none"
+              }
+            },
+            {
+              "kind": "stroke",
+              "paint": {
+                "color": {
+                  "b": 0.0,
+                  "g": 0.0,
+                  "model": "rgb",
+                  "r": 0.0
+                },
+                "type": "solid"
+              },
+              "width": 1.0
+            }
+          ]
+        },
+        "id": 2,
+        "name": "Black Outline",
+        "unit_box": true
+      },
+      {
+        "appearance": {
+          "items": [
+            {
+              "kind": "fill",
+              "paint": {
+                "color": {
+                  "b": 0.3921568691730499,
+                  "g": 0.0784313753247261,
+                  "model": "rgb",
+                  "r": 0.10588235408067703
+                },
+                "type": "solid"
+              }
+            },
+            {
+              "kind": "stroke",
+              "paint": {
+                "color": {
+                  "b": 0.0,
+                  "g": 0.0,
+                  "model": "rgb",
+                  "r": 0.0
+                },
+                "type": "solid"
+              },
+              "width": 4.0
+            }
+          ]
+        },
+        "id": 3,
+        "name": "Heavy Ink",
+        "unit_box": true
+      },
+      {
+        "appearance": {
+          "items": [
+            {
+              "kind": "fill",
+              "paint": {
+                "color": {
+                  "b": 0.23137255012989044,
+                  "g": 0.6901960968971252,
+                  "model": "rgb",
+                  "r": 0.9843137264251709
+                },
+                "type": "solid"
+              }
+            },
+            {
+              "kind": "stroke",
+              "paint": {
+                "color": {
+                  "b": 0.1411764770746231,
+                  "g": 0.3529411852359772,
+                  "model": "rgb",
+                  "r": 0.9450980424880981
+                },
+                "type": "solid"
+              },
+              "width": 2.0
+            }
+          ]
+        },
+        "id": 4,
+        "name": "Sunshine",
+        "unit_box": true
+      }
+    ],
+    "grid": {
+      "spacing": 72.0,
+      "subdivisions": 8
+    },
+    "guides": [],
+    "images": {},
+    "layers": [
+      {
+        "id": 1,
+        "kind": {
+          "children": [
+            {
+              "appearance": {
+                "items": [
+                  {
+                    "kind": "fill",
+                    "paint": {
+                      "angle": 0.0,
+                      "freeform": {
+                        "points": [
+                          {
+                            "at": {
+                              "x": 22.0,
+                              "y": 21.0
+                            },
+                            "color": {
+                              "b": 0.4000000059604645,
+                              "g": 0.6666666865348816,
+                              "model": "rgb",
+                              "r": 0.13333334028720856
+                            },
+                            "opacity": 1.0,
+                            "spread": 0.0
+                          },
+                          {
+                            "at": {
+                              "x": 42.0,
+                              "y": 21.0
+                            },
+                            "color": {
+                              "b": 0.35137253999710083,
+                              "g": 0.365490198135376,
+                              "model": "rgb",
+                              "r": 0.7772548794746399
+                            },
+                            "opacity": 1.0,
+                            "spread": 0.0
+                          },
+                          {
+                            "at": {
+                              "x": 62.0,
+                              "y": 21.0
+                            },
+                            "color": {
+                              "b": 0.4909803867340088,
+                              "g": 0.3741176426410675,
+                              "model": "rgb",
+                              "r": 0.6172548532485962
+                            },
+                            "opacity": 1.0,
+                            "spread": 0.0
+                          },
+                          {
+                            "at": {
+                              "x": 62.0,
+                              "y": 39.0
+                            },
+                            "color": {
+                              "b": 0.6305882930755615,
+                              "g": 0.3827451169490814,
+                              "model": "rgb",
+                              "r": 0.45725488662719727
+                            },
+                            "opacity": 1.0,
+                            "spread": 0.0
+                          },
+                          {
+                            "at": {
+                              "x": 42.0,
+                              "y": 39.0
+                            },
+                            "color": {
+                              "b": 0.7701960802078247,
+                              "g": 0.39137256145477295,
+                              "model": "rgb",
+                              "r": 0.29725486040115356
+                            },
+                            "opacity": 1.0,
+                            "spread": 0.0
+                          },
+                          {
+                            "at": {
+                              "x": 22.0,
+                              "y": 39.0
+                            },
+                            "color": {
+                              "b": 0.9098039269447327,
+                              "g": 0.4000000059604645,
+                              "model": "rgb",
+                              "r": 0.13725489377975464
+                            },
+                            "opacity": 1.0,
+                            "spread": 0.0
+                          }
+                        ]
+                      },
+                      "gradient": {
+                        "kind": "Freeform",
+                        "stops": [
+                          {
+                            "color": {
+                              "b": 0.4000000059604645,
+                              "g": 0.6666666865348816,
+                              "model": "rgb",
+                              "r": 0.13333334028720856
+                            },
+                            "midpoint": 0.5,
+                            "offset": 0.0,
+                            "opacity": 1.0
+                          },
+                          {
+                            "color": {
+                              "b": 0.35137253999710083,
+                              "g": 0.365490198135376,
+                              "model": "rgb",
+                              "r": 0.7772548794746399
+                            },
+                            "midpoint": 0.5,
+                            "offset": 0.20000000298023224,
+                            "opacity": 1.0
+                          },
+                          {
+                            "color": {
+                              "b": 0.4909803867340088,
+                              "g": 0.3741176426410675,
+                              "model": "rgb",
+                              "r": 0.6172548532485962
+                            },
+                            "midpoint": 0.5,
+                            "offset": 0.4000000059604645,
+                            "opacity": 1.0
+                          },
+                          {
+                            "color": {
+                              "b": 0.6305882930755615,
+                              "g": 0.3827451169490814,
+                              "model": "rgb",
+                              "r": 0.45725488662719727
+                            },
+                            "midpoint": 0.5,
+                            "offset": 0.6000000238418579,
+                            "opacity": 1.0
+                          },
+                          {
+                            "color": {
+                              "b": 0.7701960802078247,
+                              "g": 0.39137256145477295,
+                              "model": "rgb",
+                              "r": 0.29725486040115356
+                            },
+                            "midpoint": 0.5,
+                            "offset": 0.800000011920929,
+                            "opacity": 1.0
+                          },
+                          {
+                            "color": {
+                              "b": 0.9098039269447327,
+                              "g": 0.4000000059604645,
+                              "model": "rgb",
+                              "r": 0.13725489377975464
+                            },
+                            "midpoint": 0.5,
+                            "offset": 1.0,
+                            "opacity": 1.0
+                          }
+                        ]
+                      },
+                      "type": "gradient"
+                    }
+                  },
+                  {
+                    "kind": "stroke",
+                    "paint": {
+                      "type": "none"
+                    },
+                    "width": 1.0
+                  }
+                ]
+              },
+              "id": 2,
+              "kind": {
+                "live": {
+                  "h": 36.0,
+                  "radii": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "shape": "rectangle",
+                  "w": 60.0,
+                  "xf": [
+                    1.0,
+                    0.0,
+                    0.0,
+                    1.0,
+                    12.0,
+                    12.0
+                  ]
+                },
+                "path": {
+                  "subpaths": [
+                    {
+                      "anchors": [
+                        {
+                          "p": [
+                            12.0,
+                            12.0
+                          ]
+                        },
+                        {
+                          "p": [
+                            72.0,
+                            12.0
+                          ]
+                        },
+                        {
+                          "p": [
+                            72.0,
+                            48.0
+                          ]
+                        },
+                        {
+                          "p": [
+                            12.0,
+                            48.0
+                          ]
+                        }
+                      ],
+                      "closed": true
+                    }
+                  ]
+                },
+                "type": "path"
+              }
+            },
+            {
+              "id": 3,
+              "kind": {
+                "kind": {
+                  "kind": "point"
+                },
+                "para": {
+                  "first_line_indent": 0.0,
+                  "hyphenate": false,
+                  "justify": "Left",
+                  "left_indent": 0.0,
+                  "right_indent": 0.0,
+                  "space_after": 0.0,
+                  "space_before": 0.0
+                },
+                "runs": [
+                  {
+                    "style": {
+                      "all_caps": false,
+                      "baseline_shift": 0.0,
+                      "fill": {
+                        "color": {
+                          "b": 0.2666666805744171,
+                          "g": 0.20000000298023224,
+                          "model": "rgb",
+                          "r": 0.13333334028720856
+                        },
+                        "type": "solid"
+                      },
+                      "font_family": "Source Sans 3",
+                      "font_style": "Regular",
+                      "h_scale": 100.0,
+                      "rotation": 0.0,
+                      "size": 12.0,
+                      "strikethrough": false,
+                      "stroke": {
+                        "type": "none"
+                      },
+                      "stroke_width": 0.0,
+                      "tracking": 0.0,
+                      "underline": false,
+                      "v_scale": 100.0
+                    },
+                    "text": "Still editable"
+                  }
+                ],
+                "type": "text",
+                "xf": [
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  12.0,
+                  72.0
+                ]
+              }
+            }
+          ],
+          "color": {
+            "Preset": 0
+          },
+          "printable": true,
+          "template": false,
+          "type": "layer"
+        },
+        "name": "Layer 1"
+      }
+    ],
+    "metadata": {
+      "author": "",
+      "authorTitle": "",
+      "copyrightNotice": "",
+      "copyrightStatus": "unknown",
+      "copyrightUrl": "",
+      "created": 1791488794,
+      "description": "",
+      "keywords": [],
+      "modified": 1791488795,
+      "rating": 0
+    },
+    "next_id": 4,
+    "raster_effects_ppi": 72.0,
+    "setup": {
+      "background": "transparent",
+      "bleed": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "discardWhiteOverprint": true,
+      "exportText": "appearance",
+      "flattenerPreset": null,
+      "gridColors": [
+        {
+          "b": 1.0,
+          "g": 1.0,
+          "model": "rgb",
+          "r": 1.0
+        },
+        {
+          "b": 0.800000011920929,
+          "g": 0.800000011920929,
+          "model": "rgb",
+          "r": 0.800000011920929
+        }
+      ],
+      "gridSize": "medium",
+      "highlightSubstitutedFonts": true,
+      "highlightSubstitutedGlyphs": false,
+      "language": "English: USA",
+      "outlineImages": false,
+      "quotes": {
+        "double": [
+          "“",
+          "”"
+        ],
+        "single": [
+          "‘",
+          "’"
+        ]
+      },
+      "simulatePaper": false,
+      "smallCapsSize": 70.0,
+      "subscript": {
+        "position": 33.3,
+        "size": 58.3
+      },
+      "superscript": {
+        "position": 33.3,
+        "size": 58.3
+      },
+      "typographersQuotes": true
+    },
+    "swatch_groups": [
+      {
+        "name": "Grays",
+        "swatches": [
+          {
+            "global": false,
+            "name": "K=90",
+            "paint": {
+              "color": {
+                "k": 0.8999999761581421,
+                "model": "gray"
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "K=80",
+            "paint": {
+              "color": {
+                "k": 0.800000011920929,
+                "model": "gray"
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "K=70",
+            "paint": {
+              "color": {
+                "k": 0.699999988079071,
+                "model": "gray"
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "K=60",
+            "paint": {
+              "color": {
+                "k": 0.6000000238418579,
+                "model": "gray"
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "K=50",
+            "paint": {
+              "color": {
+                "k": 0.5,
+                "model": "gray"
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "K=40",
+            "paint": {
+              "color": {
+                "k": 0.4000000059604645,
+                "model": "gray"
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "K=30",
+            "paint": {
+              "color": {
+                "k": 0.30000001192092896,
+                "model": "gray"
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "K=20",
+            "paint": {
+              "color": {
+                "k": 0.20000000298023224,
+                "model": "gray"
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "K=10",
+            "paint": {
+              "color": {
+                "k": 0.10000000149011612,
+                "model": "gray"
+              },
+              "type": "solid"
+            },
+            "spot": false
+          }
+        ]
+      },
+      {
+        "name": "Brights",
+        "swatches": [
+          {
+            "global": false,
+            "name": "Bright Red",
+            "paint": {
+              "color": {
+                "b": 0.14509804546833038,
+                "g": 0.11372549086809158,
+                "model": "rgb",
+                "r": 1.0
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Bright Yellow",
+            "paint": {
+              "color": {
+                "b": 0.0,
+                "g": 0.9019607901573181,
+                "model": "rgb",
+                "r": 1.0
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Bright Green",
+            "paint": {
+              "color": {
+                "b": 0.4627451002597809,
+                "g": 0.9019607901573181,
+                "model": "rgb",
+                "r": 0.0
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Bright Blue",
+            "paint": {
+              "color": {
+                "b": 1.0,
+                "g": 0.4745098054409027,
+                "model": "rgb",
+                "r": 0.16078431904315948
+              },
+              "type": "solid"
+            },
+            "spot": false
+          },
+          {
+            "global": false,
+            "name": "Bright Violet",
+            "paint": {
+              "color": {
+                "b": 0.9764705896377563,
+                "g": 0.0,
+                "model": "rgb",
+                "r": 0.8352941274642944
+              },
+              "type": "solid"
+            },
+            "spot": false
+          }
+        ]
+      }
+    ],
+    "swatches": [
+      {
+        "global": false,
+        "name": "[None]",
+        "paint": {
+          "type": "none"
+        },
+        "spot": false
+      },
+      {
+        "global": false,
+        "name": "White",
+        "paint": {
+          "color": {
+            "b": 1.0,
+            "g": 1.0,
+            "model": "rgb",
+            "r": 1.0
+          },
+          "type": "solid"
+        },
+        "spot": false
+      },
+      {
+        "global": false,
+        "name": "Black",
+        "paint": {
+          "color": {
+            "b": 0.0,
+            "g": 0.0,
+            "model": "rgb",
+            "r": 0.0
+          },
+          "type": "solid"
+        },
+        "spot": false
+      },
+      {
+        "global": false,
+        "name": "Red",
+        "paint": {
+          "color": {
+            "b": 0.1411764770746231,
+            "g": 0.10980392247438431,
+            "model": "rgb",
+            "r": 0.929411768913269
+          },
+          "type": "solid"
+        },
+        "spot": false
+      },
+      {
+        "global": false,
+        "name": "Orange Red",
+        "paint": {
+          "color": {
+            "b": 0.1411764770746231,
+            "g": 0.3529411852359772,
+            "model": "rgb",
+            "r": 0.9450980424880981
+          },
+          "type": "solid"
+        },
+        "spot": false
+      },
+      {
+        "global": false,
+        "name": "Orange",
+        "paint": {
+          "color": {
+            "b": 0.11764705926179886,
+            "g": 0.5764706134796143,
+            "model": "rgb",
+            "r": 0.9686274528503418
+          },
+          "type": "solid"
+        },
+        "spot": false
+      },
+      {
+        "global": false,
+        "name": "Amber",
+        "paint": {
+          "color": {
+            "b": 0.23137255012989044,
+            "g": 0.6901960968971252,
+            "model": "rgb",
+            "r": 0.9843137264251709
+          },
+          "type": "solid"
+        },
+        "spot": false
+      },
+      {
+        "global": false,
+        "name": "Yellow",
+        "paint": {
+          "color": {
+            "b": 0.12941177189350128,
+            "g": 0.9333333373069763,
+            "model": "rgb",
+            "r": 0.9882352948188782
+          },
+          "type": "solid"
+        },
+        "spot": false
+      },
+      {
+        "global": false,
+        "name": "Yellow Green",
+        "paint": {
+          "color": {
+            "b": 0.12941177189350128,
+            "g": 0.8784313797950745,
+            "model": "rgb",
+            "r": 0.8509804010391235
+          },
+          "type": "solid"
+        },
+        "spot": false
+      },
+      {
+        "global": false,
+        "name": "Lime",
+        "paint": {
+          "color": {
+            "b": 0.24705882370471954,
+            "g": 0.7764706015586853,
+            "model": "rgb",
+            "r": 0.5490196347236633
+          },
+          "type": "solid"
+        },
+        "spot": false
+      },
+      {
+        "global": false,
+        "name": "Green",
+        "paint": {
+          "color": {
+            "b": 0.29019609093666077,
+            "g": 0.7098039388656616,
+            "model": "rgb",
+            "r": 0.2235294133424759
+          },
+          "type": "solid"
+        },
+        "spot": false
+      },
+      {
+        "global": false,
+        "name": "Emerald",
+        "paint": {
+          "color": {
+            "b": 0.2705882489681244,
+            "g": 0.572549045085907,
+            "model": "rgb",
+            "r": 0.0
+          },
+          "type": "solid"
+        },
+        "spot": false
+      },
+      {
+        "global": false,
+        "name": "Teal",
+        "paint": {
+          "color": {
+            "b": 0.21568627655506134,
+            "g": 0.40784314274787903,
+            "model": "rgb",
+            "r": 0.0
+          },
+          "type": "solid"
+        },
+        "spot": false
+      },
+      {
+        "global": false,
+        "name": "Aqua",
+        "paint": {
+          "color": {
+            "b": 0.45098039507865906,
+            "g": 0.7098039388656616,
+            "model": "rgb",
+            "r": 0.13333334028720856
+          },
+          "type": "solid"
+        },
+        "spot": false
+      },
+      {
+        "global": false,
+        "name": "Cyan Green",
+        "paint": {
+          "color": {
+            "b": 0.615686297416687,
+            "g": 0.6627451181411743,
+            "model": "rgb",
+            "r": 0.0
+          },
+          "type": "solid"
+        },
+        "spot": false
+      },
+      {
+        "global": false,
+        "name": "Cyan",
+        "paint": {
+          "color": {
+            "b": 0.886274516582489,
+            "g": 0.6705882549285889,
+            "model": "rgb",
+            "r": 0.16078431904315948
+          },
+          "type": "solid"
+        },
+        "spot": false
+      },
+      {
+        "global": false,
+        "name": "Azure",
+        "paint": {
+          "color": {
+            "b": 0.7372549176216125,
+            "g": 0.4431372582912445,
+            "model": "rgb",
+            "r": 0.0
+          },
+          "type": "solid"
+        },
+        "spot": false
+      },
+      {
+        "global": false,
+        "name": "Blue",
+        "paint": {
+          "color": {
+            "b": 0.572549045085907,
+            "g": 0.1921568661928177,
+            "model": "rgb",
+            "r": 0.18039216101169586
+          },
+          "type": "solid"
+        },
+        "spot": false
+      },
+      {
+        "global": false,
+        "name": "Indigo",
+        "paint": {
+          "color": {
+            "b": 0.3921568691730499,
+            "g": 0.0784313753247261,
+            "model": "rgb",
+            "r": 0.10588235408067703
+          },
+          "type": "solid"
+        },
+        "spot": false
+      },
+      {
+        "global": false,
+        "name": "Violet",
+        "paint": {
+          "color": {
+            "b": 0.5686274766921997,
+            "g": 0.1764705926179886,
+            "model": "rgb",
+            "r": 0.4000000059604645
+          },
+          "type": "solid"
+        },
+        "spot": false
+      },
+      {
+        "global": false,
+        "name": "Purple",
+        "paint": {
+          "color": {
+            "b": 0.5607843399047852,
+            "g": 0.15294118225574493,
+            "model": "rgb",
+            "r": 0.5764706134796143
+          },
+          "type": "solid"
+        },
+        "spot": false
+      },
+      {
+        "global": false,
+        "name": "Magenta",
+        "paint": {
+          "color": {
+            "b": 0.364705890417099,
+            "g": 0.0,
+            "model": "rgb",
+            "r": 0.6196078658103943
+          },
+          "type": "solid"
+        },
+        "spot": false
+      },
+      {
+        "global": false,
+        "name": "Rose",
+        "paint": {
+          "color": {
+            "b": 0.3529411852359772,
+            "g": 0.0784313753247261,
+            "model": "rgb",
+            "r": 0.8313725590705872
+          },
+          "type": "solid"
+        },
+        "spot": false
+      },
+      {
+        "global": false,
+        "name": "Pink",
+        "paint": {
+          "color": {
+            "b": 0.4745098054409027,
+            "g": 0.11764705926179886,
+            "model": "rgb",
+            "r": 0.929411768913269
+          },
+          "type": "solid"
+        },
+        "spot": false
+      },
+      {
+        "global": false,
+        "name": "Brown",
+        "paint": {
+          "color": {
+            "b": 0.6000000238418579,
+            "g": 0.6980392336845398,
+            "model": "rgb",
+            "r": 0.7803921699523926
+          },
+          "type": "solid"
+        },
+        "spot": false
+      },
+      {
+        "global": false,
+        "name": "Tan",
+        "paint": {
+          "color": {
+            "b": 0.4588235318660736,
+            "g": 0.5254902243614197,
+            "model": "rgb",
+            "r": 0.6000000238418579
+          },
+          "type": "solid"
+        },
+        "spot": false
+      },
+      {
+        "global": false,
+        "name": "Coffee",
+        "paint": {
+          "color": {
+            "b": 0.34117648005485535,
+            "g": 0.38823530077934265,
+            "model": "rgb",
+            "r": 0.45098039507865906
+          },
+          "type": "solid"
+        },
+        "spot": false
+      },
+      {
+        "global": false,
+        "name": "Chocolate",
+        "paint": {
+          "color": {
+            "b": 0.2549019753932953,
+            "g": 0.27843138575553894,
+            "model": "rgb",
+            "r": 0.32549020648002625
+          },
+          "type": "solid"
+        },
+        "spot": false
+      },
+      {
+        "global": false,
+        "name": "Sand",
+        "paint": {
+          "color": {
+            "b": 0.4274509847164154,
+            "g": 0.6117647290229797,
+            "model": "rgb",
+            "r": 0.7764706015586853
+          },
+          "type": "solid"
+        },
+        "spot": false
+      },
+      {
+        "global": false,
+        "name": "Copper",
+        "paint": {
+          "color": {
+            "b": 0.32156863808631897,
+            "g": 0.48627451062202454,
+            "model": "rgb",
+            "r": 0.6509804129600525
+          },
+          "type": "solid"
+        },
+        "spot": false
+      },
+      {
+        "global": false,
+        "name": "Rust",
+        "paint": {
+          "color": {
+            "b": 0.2235294133424759,
+            "g": 0.3843137323856354,
+            "model": "rgb",
+            "r": 0.5490196347236633
+          },
+          "type": "solid"
+        },
+        "spot": false
+      },
+      {
+        "global": false,
+        "name": "Walnut",
+        "paint": {
+          "color": {
+            "b": 0.1411764770746231,
+            "g": 0.2980392277240753,
+            "model": "rgb",
+            "r": 0.4588235318660736
+          },
+          "type": "solid"
+        },
+        "spot": false
+      },
+      {
+        "global": false,
+        "name": "Espresso",
+        "paint": {
+          "color": {
+            "b": 0.07450980693101883,
+            "g": 0.21960784494876862,
+            "model": "rgb",
+            "r": 0.3764705955982208
+          },
+          "type": "solid"
+        },
+        "spot": false
+      },
+      {
+        "global": false,
+        "name": "White, Black",
+        "paint": {
+          "angle": 0.0,
+          "gradient": {
+            "kind": "Linear",
+            "stops": [
+              {
+                "color": {
+                  "b": 1.0,
+                  "g": 1.0,
+                  "model": "rgb",
+                  "r": 1.0
+                },
+                "midpoint": 0.5,
+                "offset": 0.0,
+                "opacity": 1.0
+              },
+              {
+                "color": {
+                  "b": 0.0,
+                  "g": 0.0,
+                  "model": "rgb",
+                  "r": 0.0
+                },
+                "midpoint": 0.5,
+                "offset": 1.0,
+                "opacity": 1.0
+              }
+            ]
+          },
+          "type": "gradient"
+        },
+        "spot": false
+      },
+      {
+        "global": false,
+        "name": "Radial White, Black",
+        "paint": {
+          "angle": 0.0,
+          "gradient": {
+            "kind": "Radial",
+            "stops": [
+              {
+                "color": {
+                  "b": 1.0,
+                  "g": 1.0,
+                  "model": "rgb",
+                  "r": 1.0
+                },
+                "midpoint": 0.5,
+                "offset": 0.0,
+                "opacity": 1.0
+              },
+              {
+                "color": {
+                  "b": 0.0,
+                  "g": 0.0,
+                  "model": "rgb",
+                  "r": 0.0
+                },
+                "midpoint": 0.5,
+                "offset": 1.0,
+                "opacity": 1.0
+              }
+            ]
+          },
+          "type": "gradient"
+        },
+        "spot": false
+      },
+      {
+        "global": false,
+        "name": "Sunset",
+        "paint": {
+          "angle": 0.0,
+          "gradient": {
+            "kind": "Linear",
+            "stops": [
+              {
+                "color": {
+                  "b": 0.23137255012989044,
+                  "g": 0.6901960968971252,
+                  "model": "rgb",
+                  "r": 0.9843137264251709
+                },
+                "midpoint": 0.5,
+                "offset": 0.0,
+                "opacity": 1.0
+              },
+              {
+                "color": {
+                  "b": 0.3529411852359772,
+                  "g": 0.0784313753247261,
+                  "model": "rgb",
+                  "r": 0.8313725590705872
+                },
+                "midpoint": 0.5,
+                "offset": 1.0,
+                "opacity": 1.0
+              }
+            ]
+          },
+          "type": "gradient"
+        },
+        "spot": false
+      },
+      {
+        "global": false,
+        "name": "Ocean",
+        "paint": {
+          "angle": 0.0,
+          "gradient": {
+            "kind": "Linear",
+            "stops": [
+              {
+                "color": {
+                  "b": 0.886274516582489,
+                  "g": 0.6705882549285889,
+                  "model": "rgb",
+                  "r": 0.16078431904315948
+                },
+                "midpoint": 0.5,
+                "offset": 0.0,
+                "opacity": 1.0
+              },
+              {
+                "color": {
+                  "b": 0.572549045085907,
+                  "g": 0.1921568661928177,
+                  "model": "rgb",
+                  "r": 0.18039216101169586
+                },
+                "midpoint": 0.5,
+                "offset": 1.0,
+                "opacity": 1.0
+              }
+            ]
+          },
+          "type": "gradient"
+        },
+        "spot": false
+      }
+    ],
+    "symbols": [],
+    "title": "Editable original and derivative losses",
+    "units": "Pixels",
+    "version": 1
+  },
+  "editedPoints": {
+    "lines": [],
+    "mode": "points",
+    "points": [
+      {
+        "at": [
+          22.0,
+          21.0
+        ],
+        "color": [
+          0.13333334028720856,
+          0.6666666865348816,
+          0.4000000059604645
+        ],
+        "opacity": 1.0,
+        "spread": 0.0
+      },
+      {
+        "at": [
+          42.0,
+          21.0
+        ],
+        "color": [
+          0.7772548794746399,
+          0.365490198135376,
+          0.35137253999710083
+        ],
+        "opacity": 1.0,
+        "spread": 0.0
+      },
+      {
+        "at": [
+          62.0,
+          21.0
+        ],
+        "color": [
+          0.6172548532485962,
+          0.3741176426410675,
+          0.4909803867340088
+        ],
+        "opacity": 1.0,
+        "spread": 0.0
+      },
+      {
+        "at": [
+          62.0,
+          39.0
+        ],
+        "color": [
+          0.45725488662719727,
+          0.3827451169490814,
+          0.6305882930755615
+        ],
+        "opacity": 1.0,
+        "spread": 0.0
+      },
+      {
+        "at": [
+          42.0,
+          39.0
+        ],
+        "color": [
+          0.29725486040115356,
+          0.39137256145477295,
+          0.7701960802078247
+        ],
+        "opacity": 1.0,
+        "spread": 0.0
+      },
+      {
+        "at": [
+          22.0,
+          39.0
+        ],
+        "color": [
+          0.13725489377975464,
+          0.4000000059604645,
+          0.9098039269447327
+        ],
+        "opacity": 1.0,
+        "spread": 0.0
+      }
+    ],
+    "selected": null
+  },
+  "editedManifest": {
+    "schema": "vectorcraft-delivery/v1",
+    "sourceProjectSha256": "ead854f4b39a47948a0668b135993e7cf435ab24a339267f2c86bab69ebfcd71",
+    "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+    "bindings": {
+      "gradient": {
+        "id": 2
+      },
+      "title": {
+        "id": 3
+      }
+    },
+    "outputs": [],
+    "fontDependencies": [
+      {
+        "family": "Source Sans 3",
+        "missing": false,
+        "objects": 1,
+        "runs": 1,
+        "style": "Regular"
+      }
+    ],
+    "assets": {},
+    "artboards": [
+      {
+        "id": 1,
+        "index": 0,
+        "name": "Artboard 1",
+        "rect": {
+          "x0": 0.0,
+          "x1": 128.0,
+          "y0": 0.0,
+          "y1": 96.0
+        },
+        "width": 128.0,
+        "height": 96.0
+      }
+    ],
+    "artboardOrder": [
+      1
+    ],
+    "previewOrder": [],
+    "files": {
+      "plan.json": "64caaf9b11c8d8352dad7e20f88ed69867fd6dcc7fe598596defe735607bf3eb",
+      "project.vectorcraft": "d596afda01f8c5a44310fb912fb170912361d4586384c48080f0040f15a44a40",
+      "exchange-loss.json": "2241139eafae80dc32bbf46e8aa96554883c2828f43e2e9d4891f5cbbff1191b",
+      "native.json": "b8aea20ca7be5109af319a9fec2bc1418ba2fafd78ab2a665649e6f15f15faea",
+      "operations.json": "fcbc018aa840535960f997c25bdc7e95ea01199a41b6ad037ddd647acd62f9e9",
+      "lineage.json": "ed1c59288a78f3036d819c043308185cc3796c6b25c150310ab573f48b7ad8ab"
+    },
+    "lossReport": {
+      "path": "exchange-loss.json",
+      "sha256": "2241139eafae80dc32bbf46e8aa96554883c2828f43e2e9d4891f5cbbff1191b"
+    },
+    "acceptance": "requires-domain-and-visual-review",
+    "executionId": "execution-45026ad5-1a7b-4c1b-a0da-44b52ab1ce5a",
+    "lineage": {
+      "path": "lineage.json",
+      "sha256": "ed1c59288a78f3036d819c043308185cc3796c6b25c150310ab573f48b7ad8ab",
+      "logicalId": "vectorcraft:e9e51177-378d-4284-b1fb-c8f1f5f66761",
+      "version": "4abcbc071f5076a637c04bc30f970518a53d0ed03b02280da842a66d100f62d7",
+      "parent": {
+        "logicalId": "vectorcraft:e9e51177-378d-4284-b1fb-c8f1f5f66761",
+        "version": "ab2e694f2b2e30848b57ff0caaf2a10f5a4c634cf0bcecb129750b9409fb2a5c",
+        "projectSha256": "ead854f4b39a47948a0668b135993e7cf435ab24a339267f2c86bab69ebfcd71",
+        "status": "versioned"
+      }
+    }
+  },
+  "nativeTextAndGradientEditable": true,
+  "sourceAndPreviousExportsPreserved": true,
+  "installedSkillPreserved": true,
+  "refusals": [
+    {
+      "case": "native-substitute-svg",
+      "result": "PASS",
+      "freshManifestAndLineageHashes": true,
+      "quality": {
+        "schema": "vectorcraft-technical-review/v1",
+        "artifactIntegrityStatus": "PASS",
+        "engineeringStatus": "NOT_RUN",
+        "technicalStatus": "FAIL",
+        "creativeStatus": "NOT_RUN",
+        "acceptanceStatus": "blocked",
+        "nativeReopenStatus": "NOT_RUN",
+        "files": {
+          "plan.json": "68accdf2167257287a9b8a20157ef3d5ba89390fc94f4d1c6e560619d2cd1e97",
+          "project.vectorcraft": "ead854f4b39a47948a0668b135993e7cf435ab24a339267f2c86bab69ebfcd71",
+          "exchange-loss.json": "dd138c0b94b6bda9cf69f82db87698ecf02773140c5db38944b02069d893431c",
+          "pdf-export-date.json": "250d52b3115dbc99e8123429d408531fc9aadbc664ad97071371df02cd5b9401",
+          "native.json": "fc6a58bc07cbc5c989ab749221efdc0b3a3dd35caa369f01f51db41d2c3ccaec",
+          "artboard-1.pdf": "69ab54d2867c664f933afec42790775581184e170ca3a85ceae91b0b00033462",
+          "artboard-1.png": "39d2869a3019d9a8a1be21eb96d5151114d3936293fe5be97b36ac798ad54e71",
+          "artboard-1.svg": "f9a16bac10a8d200a9f459e3d288ce81158a136ab96ed64fcf84e72d95ec3360",
+          "operations.json": "4cd63fb2d0867e5d7b151c0d1dcb2984c46cf0e5edff646463481d63b11b44b2",
+          "lineage.json": "1e23100c8100047477e19bf74a43f98b26bdd94b70efc2b2665985d6c06d83b1"
+        },
+        "outputs": [],
+        "lineageStatus": "PASS",
+        "exchangeStatus": "NOT_RUN",
+        "scope": "artifact integrity and export decode only; native reopening and creative review remain separate",
+        "artifactLogicalId": "vectorcraft:500652f3-c06a-44be-bea6-819c7d98015c",
+        "artifactVersion": "7ee2bf8f4e36c1a3fbd079942310f859e2493b876bd9bc4c59cb1455525596db",
+        "sourceTask": {
+          "id": "explicit-qa-rebind-native-substitute-svg",
+          "scope": "workflow-execution",
+          "planSha256": "68accdf2167257287a9b8a20157ef3d5ba89390fc94f4d1c6e560619d2cd1e97"
+        },
+        "projectRevision": "ead854f4b39a47948a0668b135993e7cf435ab24a339267f2c86bab69ebfcd71",
+        "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+        "manifestSha256": "f6888134715f4ebaee1b1419b9226394bcfaeb40748bfa88a2a328a8fb00162b",
+        "error": "exchange_report_derivative_mismatch"
+      }
+    },
+    {
+      "case": "native-substitute-pdf",
+      "result": "PASS",
+      "freshManifestAndLineageHashes": true,
+      "quality": {
+        "schema": "vectorcraft-technical-review/v1",
+        "artifactIntegrityStatus": "PASS",
+        "engineeringStatus": "NOT_RUN",
+        "technicalStatus": "FAIL",
+        "creativeStatus": "NOT_RUN",
+        "acceptanceStatus": "blocked",
+        "nativeReopenStatus": "NOT_RUN",
+        "files": {
+          "plan.json": "68accdf2167257287a9b8a20157ef3d5ba89390fc94f4d1c6e560619d2cd1e97",
+          "project.vectorcraft": "ead854f4b39a47948a0668b135993e7cf435ab24a339267f2c86bab69ebfcd71",
+          "exchange-loss.json": "e7138bfb71a143976fd49318b08f2dafaf01b73ad23c6370e7b9d6ee2496f244",
+          "pdf-export-date.json": "250d52b3115dbc99e8123429d408531fc9aadbc664ad97071371df02cd5b9401",
+          "native.json": "fc6a58bc07cbc5c989ab749221efdc0b3a3dd35caa369f01f51db41d2c3ccaec",
+          "artboard-1.pdf": "69ab54d2867c664f933afec42790775581184e170ca3a85ceae91b0b00033462",
+          "artboard-1.png": "39d2869a3019d9a8a1be21eb96d5151114d3936293fe5be97b36ac798ad54e71",
+          "artboard-1.svg": "f9a16bac10a8d200a9f459e3d288ce81158a136ab96ed64fcf84e72d95ec3360",
+          "operations.json": "4cd63fb2d0867e5d7b151c0d1dcb2984c46cf0e5edff646463481d63b11b44b2",
+          "lineage.json": "3e9a11b8854be9ee0de2ca8d88ccaad97453ac7dfbd7ef85d18b0fca35a23e1e"
+        },
+        "outputs": [],
+        "lineageStatus": "PASS",
+        "exchangeStatus": "NOT_RUN",
+        "scope": "artifact integrity and export decode only; native reopening and creative review remain separate",
+        "artifactLogicalId": "vectorcraft:e85f4fb7-70a0-4651-bec5-8efb373d4e9e",
+        "artifactVersion": "c980f3d55eebb721742e7854f67b223db105ed5db1c851c2aefd0556db1449ed",
+        "sourceTask": {
+          "id": "explicit-qa-rebind-native-substitute-pdf",
+          "scope": "workflow-execution",
+          "planSha256": "68accdf2167257287a9b8a20157ef3d5ba89390fc94f4d1c6e560619d2cd1e97"
+        },
+        "projectRevision": "ead854f4b39a47948a0668b135993e7cf435ab24a339267f2c86bab69ebfcd71",
+        "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+        "manifestSha256": "f45d3eea356faf52a13b1282d9cdd8a4b97c9a8210da8d78755090c75b0ba72f",
+        "error": "exchange_report_derivative_mismatch"
+      }
+    },
+    {
+      "case": "native-substitute-png",
+      "result": "PASS",
+      "freshManifestAndLineageHashes": true,
+      "quality": {
+        "schema": "vectorcraft-technical-review/v1",
+        "artifactIntegrityStatus": "PASS",
+        "engineeringStatus": "NOT_RUN",
+        "technicalStatus": "FAIL",
+        "creativeStatus": "NOT_RUN",
+        "acceptanceStatus": "blocked",
+        "nativeReopenStatus": "NOT_RUN",
+        "files": {
+          "plan.json": "68accdf2167257287a9b8a20157ef3d5ba89390fc94f4d1c6e560619d2cd1e97",
+          "project.vectorcraft": "ead854f4b39a47948a0668b135993e7cf435ab24a339267f2c86bab69ebfcd71",
+          "exchange-loss.json": "3f0170452856e5b21af812ddfa6c1d4a59a291a81e38db4dfcc1484601cfee33",
+          "pdf-export-date.json": "250d52b3115dbc99e8123429d408531fc9aadbc664ad97071371df02cd5b9401",
+          "native.json": "fc6a58bc07cbc5c989ab749221efdc0b3a3dd35caa369f01f51db41d2c3ccaec",
+          "artboard-1.pdf": "69ab54d2867c664f933afec42790775581184e170ca3a85ceae91b0b00033462",
+          "artboard-1.png": "39d2869a3019d9a8a1be21eb96d5151114d3936293fe5be97b36ac798ad54e71",
+          "artboard-1.svg": "f9a16bac10a8d200a9f459e3d288ce81158a136ab96ed64fcf84e72d95ec3360",
+          "operations.json": "4cd63fb2d0867e5d7b151c0d1dcb2984c46cf0e5edff646463481d63b11b44b2",
+          "lineage.json": "50e5edd34fc65744ab68861cd7f64c8d31f4e6c410f362a1121811bdc40ac5b3"
+        },
+        "outputs": [],
+        "lineageStatus": "PASS",
+        "exchangeStatus": "NOT_RUN",
+        "scope": "artifact integrity and export decode only; native reopening and creative review remain separate",
+        "artifactLogicalId": "vectorcraft:a47e3cf8-f89f-4de0-a426-ffab528cb1eb",
+        "artifactVersion": "b04419e1008d3d79fa1bc898ec0e0645217ee2953c3fae3e8ac5c9971639c613",
+        "sourceTask": {
+          "id": "explicit-qa-rebind-native-substitute-png",
+          "scope": "workflow-execution",
+          "planSha256": "68accdf2167257287a9b8a20157ef3d5ba89390fc94f4d1c6e560619d2cd1e97"
+        },
+        "projectRevision": "ead854f4b39a47948a0668b135993e7cf435ab24a339267f2c86bab69ebfcd71",
+        "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+        "manifestSha256": "6a7fcb19776acf5c3d7704832d21bf74e65018407b5a0caff971613bba64d85d",
+        "error": "exchange_report_derivative_mismatch"
+      }
+    },
+    {
+      "case": "wrong-native",
+      "result": "PASS",
+      "freshManifestAndLineageHashes": true,
+      "quality": {
+        "schema": "vectorcraft-technical-review/v1",
+        "artifactIntegrityStatus": "PASS",
+        "engineeringStatus": "NOT_RUN",
+        "technicalStatus": "FAIL",
+        "creativeStatus": "NOT_RUN",
+        "acceptanceStatus": "blocked",
+        "nativeReopenStatus": "NOT_RUN",
+        "files": {
+          "plan.json": "68accdf2167257287a9b8a20157ef3d5ba89390fc94f4d1c6e560619d2cd1e97",
+          "project.vectorcraft": "ead854f4b39a47948a0668b135993e7cf435ab24a339267f2c86bab69ebfcd71",
+          "exchange-loss.json": "862d5f1243dbea11489109da9fdeb9778a9bce5ae25b2e17f64a76016bbbcfcf",
+          "pdf-export-date.json": "250d52b3115dbc99e8123429d408531fc9aadbc664ad97071371df02cd5b9401",
+          "native.json": "fc6a58bc07cbc5c989ab749221efdc0b3a3dd35caa369f01f51db41d2c3ccaec",
+          "artboard-1.pdf": "69ab54d2867c664f933afec42790775581184e170ca3a85ceae91b0b00033462",
+          "artboard-1.png": "39d2869a3019d9a8a1be21eb96d5151114d3936293fe5be97b36ac798ad54e71",
+          "artboard-1.svg": "f9a16bac10a8d200a9f459e3d288ce81158a136ab96ed64fcf84e72d95ec3360",
+          "operations.json": "4cd63fb2d0867e5d7b151c0d1dcb2984c46cf0e5edff646463481d63b11b44b2",
+          "lineage.json": "38f0cafa36c284388800753b9867af35b60a1ff64d38c85e5bc618db911d1877"
+        },
+        "outputs": [],
+        "lineageStatus": "PASS",
+        "exchangeStatus": "NOT_RUN",
+        "scope": "artifact integrity and export decode only; native reopening and creative review remain separate",
+        "artifactLogicalId": "vectorcraft:02d498a7-e649-4403-9e10-e6c40811fb63",
+        "artifactVersion": "887a35eb51a6cb8723e08576cd6c85ea6e7ac56d6af3571eb5c4ee5501a452ef",
+        "sourceTask": {
+          "id": "explicit-qa-rebind-wrong-native",
+          "scope": "workflow-execution",
+          "planSha256": "68accdf2167257287a9b8a20157ef3d5ba89390fc94f4d1c6e560619d2cd1e97"
+        },
+        "projectRevision": "ead854f4b39a47948a0668b135993e7cf435ab24a339267f2c86bab69ebfcd71",
+        "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+        "manifestSha256": "add40ac973af692fee8837be86359cba5afb4ec1c074cb46b7fc1d488a1e6ec9",
+        "error": "exchange_report_native_mismatch"
+      }
+    },
+    {
+      "case": "wrong-inspection",
+      "result": "PASS",
+      "freshManifestAndLineageHashes": true,
+      "quality": {
+        "schema": "vectorcraft-technical-review/v1",
+        "artifactIntegrityStatus": "PASS",
+        "engineeringStatus": "NOT_RUN",
+        "technicalStatus": "FAIL",
+        "creativeStatus": "NOT_RUN",
+        "acceptanceStatus": "blocked",
+        "nativeReopenStatus": "NOT_RUN",
+        "files": {
+          "plan.json": "68accdf2167257287a9b8a20157ef3d5ba89390fc94f4d1c6e560619d2cd1e97",
+          "project.vectorcraft": "ead854f4b39a47948a0668b135993e7cf435ab24a339267f2c86bab69ebfcd71",
+          "exchange-loss.json": "79274db4965527f64818e49dbb7473a35c8bffb2b95917b195f87754ba7f5985",
+          "pdf-export-date.json": "250d52b3115dbc99e8123429d408531fc9aadbc664ad97071371df02cd5b9401",
+          "native.json": "fc6a58bc07cbc5c989ab749221efdc0b3a3dd35caa369f01f51db41d2c3ccaec",
+          "artboard-1.pdf": "69ab54d2867c664f933afec42790775581184e170ca3a85ceae91b0b00033462",
+          "artboard-1.png": "39d2869a3019d9a8a1be21eb96d5151114d3936293fe5be97b36ac798ad54e71",
+          "artboard-1.svg": "f9a16bac10a8d200a9f459e3d288ce81158a136ab96ed64fcf84e72d95ec3360",
+          "operations.json": "4cd63fb2d0867e5d7b151c0d1dcb2984c46cf0e5edff646463481d63b11b44b2",
+          "lineage.json": "e8a4479fed32ed7ef99e7a126dc21bc33338f48b3c505f3d2938f899bb4120a0"
+        },
+        "outputs": [],
+        "lineageStatus": "PASS",
+        "exchangeStatus": "NOT_RUN",
+        "scope": "artifact integrity and export decode only; native reopening and creative review remain separate",
+        "artifactLogicalId": "vectorcraft:84431173-93b4-4a08-a2b7-4f387f44a668",
+        "artifactVersion": "9fa61cec94b1504f061c6d5f01acaa84d4f11c20abc32e85d4a232bc0f1a8050",
+        "sourceTask": {
+          "id": "explicit-qa-rebind-wrong-inspection",
+          "scope": "workflow-execution",
+          "planSha256": "68accdf2167257287a9b8a20157ef3d5ba89390fc94f4d1c6e560619d2cd1e97"
+        },
+        "projectRevision": "ead854f4b39a47948a0668b135993e7cf435ab24a339267f2c86bab69ebfcd71",
+        "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+        "manifestSha256": "6cea54abcc7bb7cf22ce7713e731ab533aa468072365eca9476443d73a802339",
+        "error": "exchange_report_inspection_mismatch"
+      }
+    },
+    {
+      "case": "wrong-export",
+      "result": "PASS",
+      "freshManifestAndLineageHashes": true,
+      "quality": {
+        "schema": "vectorcraft-technical-review/v1",
+        "artifactIntegrityStatus": "PASS",
+        "engineeringStatus": "NOT_RUN",
+        "technicalStatus": "FAIL",
+        "creativeStatus": "NOT_RUN",
+        "acceptanceStatus": "blocked",
+        "nativeReopenStatus": "NOT_RUN",
+        "files": {
+          "plan.json": "68accdf2167257287a9b8a20157ef3d5ba89390fc94f4d1c6e560619d2cd1e97",
+          "project.vectorcraft": "ead854f4b39a47948a0668b135993e7cf435ab24a339267f2c86bab69ebfcd71",
+          "exchange-loss.json": "d7dfa038ce2f5297b944e9d68c9e1d065907d188a06ad33c6371aca735919c24",
+          "pdf-export-date.json": "250d52b3115dbc99e8123429d408531fc9aadbc664ad97071371df02cd5b9401",
+          "native.json": "fc6a58bc07cbc5c989ab749221efdc0b3a3dd35caa369f01f51db41d2c3ccaec",
+          "artboard-1.pdf": "69ab54d2867c664f933afec42790775581184e170ca3a85ceae91b0b00033462",
+          "artboard-1.png": "39d2869a3019d9a8a1be21eb96d5151114d3936293fe5be97b36ac798ad54e71",
+          "artboard-1.svg": "f9a16bac10a8d200a9f459e3d288ce81158a136ab96ed64fcf84e72d95ec3360",
+          "operations.json": "4cd63fb2d0867e5d7b151c0d1dcb2984c46cf0e5edff646463481d63b11b44b2",
+          "lineage.json": "64bf9197fdc8cdc80e65a5daf5d15b758b18524e0c34c364e26ded51af8e7cb0"
+        },
+        "outputs": [],
+        "lineageStatus": "PASS",
+        "exchangeStatus": "NOT_RUN",
+        "scope": "artifact integrity and export decode only; native reopening and creative review remain separate",
+        "artifactLogicalId": "vectorcraft:21e05664-4a64-4092-b569-14c0481a1d24",
+        "artifactVersion": "7a7e02660ad8998c72298b45ce84d4cf50f3cb63587ec37c7cc822f538c75693",
+        "sourceTask": {
+          "id": "explicit-qa-rebind-wrong-export",
+          "scope": "workflow-execution",
+          "planSha256": "68accdf2167257287a9b8a20157ef3d5ba89390fc94f4d1c6e560619d2cd1e97"
+        },
+        "projectRevision": "ead854f4b39a47948a0668b135993e7cf435ab24a339267f2c86bab69ebfcd71",
+        "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+        "manifestSha256": "8e769768b8fe96230ae7010d6219f15e2740ec0a2714c7dee78f455bb441ffc4",
+        "error": "exchange_report_derivative_mismatch"
+      }
+    },
+    {
+      "case": "false-font-fidelity",
+      "result": "PASS",
+      "freshManifestAndLineageHashes": true,
+      "quality": {
+        "schema": "vectorcraft-technical-review/v1",
+        "artifactIntegrityStatus": "PASS",
+        "engineeringStatus": "NOT_RUN",
+        "technicalStatus": "FAIL",
+        "creativeStatus": "NOT_RUN",
+        "acceptanceStatus": "blocked",
+        "nativeReopenStatus": "NOT_RUN",
+        "files": {
+          "plan.json": "68accdf2167257287a9b8a20157ef3d5ba89390fc94f4d1c6e560619d2cd1e97",
+          "project.vectorcraft": "ead854f4b39a47948a0668b135993e7cf435ab24a339267f2c86bab69ebfcd71",
+          "exchange-loss.json": "ae36112bbf5b073c098f4aab653e19f97f57c31133e3b80934d201246f7df361",
+          "pdf-export-date.json": "250d52b3115dbc99e8123429d408531fc9aadbc664ad97071371df02cd5b9401",
+          "native.json": "fc6a58bc07cbc5c989ab749221efdc0b3a3dd35caa369f01f51db41d2c3ccaec",
+          "artboard-1.pdf": "69ab54d2867c664f933afec42790775581184e170ca3a85ceae91b0b00033462",
+          "artboard-1.png": "39d2869a3019d9a8a1be21eb96d5151114d3936293fe5be97b36ac798ad54e71",
+          "artboard-1.svg": "f9a16bac10a8d200a9f459e3d288ce81158a136ab96ed64fcf84e72d95ec3360",
+          "operations.json": "4cd63fb2d0867e5d7b151c0d1dcb2984c46cf0e5edff646463481d63b11b44b2",
+          "lineage.json": "ee986c2b1cb5b9f457b988364e95be62958b808bbb3ee1a9e0dc2405851cffbf"
+        },
+        "outputs": [],
+        "lineageStatus": "PASS",
+        "exchangeStatus": "NOT_RUN",
+        "scope": "artifact integrity and export decode only; native reopening and creative review remain separate",
+        "artifactLogicalId": "vectorcraft:3f8a0b3c-992e-4d8a-b8d2-ec25c6b718b7",
+        "artifactVersion": "662d5727ead166eb868e50472808c9ca53f5fa9cdb761d4f20b9fc85779978e3",
+        "sourceTask": {
+          "id": "explicit-qa-rebind-false-font-fidelity",
+          "scope": "workflow-execution",
+          "planSha256": "68accdf2167257287a9b8a20157ef3d5ba89390fc94f4d1c6e560619d2cd1e97"
+        },
+        "projectRevision": "ead854f4b39a47948a0668b135993e7cf435ab24a339267f2c86bab69ebfcd71",
+        "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+        "manifestSha256": "24274163f534ca01b476c27c91af7a6237e145958402901a896bd724917c0bc0",
+        "error": "exchange_report_loss_semantics"
+      }
+    },
+    {
+      "case": "false-effect-fidelity",
+      "result": "PASS",
+      "freshManifestAndLineageHashes": true,
+      "quality": {
+        "schema": "vectorcraft-technical-review/v1",
+        "artifactIntegrityStatus": "PASS",
+        "engineeringStatus": "NOT_RUN",
+        "technicalStatus": "FAIL",
+        "creativeStatus": "NOT_RUN",
+        "acceptanceStatus": "blocked",
+        "nativeReopenStatus": "NOT_RUN",
+        "files": {
+          "plan.json": "68accdf2167257287a9b8a20157ef3d5ba89390fc94f4d1c6e560619d2cd1e97",
+          "project.vectorcraft": "ead854f4b39a47948a0668b135993e7cf435ab24a339267f2c86bab69ebfcd71",
+          "exchange-loss.json": "4961a2e8f356ed52d75df76534659777655bec4bef897fa8b95290fb696a4fdc",
+          "pdf-export-date.json": "250d52b3115dbc99e8123429d408531fc9aadbc664ad97071371df02cd5b9401",
+          "native.json": "fc6a58bc07cbc5c989ab749221efdc0b3a3dd35caa369f01f51db41d2c3ccaec",
+          "artboard-1.pdf": "69ab54d2867c664f933afec42790775581184e170ca3a85ceae91b0b00033462",
+          "artboard-1.png": "39d2869a3019d9a8a1be21eb96d5151114d3936293fe5be97b36ac798ad54e71",
+          "artboard-1.svg": "f9a16bac10a8d200a9f459e3d288ce81158a136ab96ed64fcf84e72d95ec3360",
+          "operations.json": "4cd63fb2d0867e5d7b151c0d1dcb2984c46cf0e5edff646463481d63b11b44b2",
+          "lineage.json": "463bd1b70bef1e49c0068344d82458781d3bef2404a5948cefb239e0119866ce"
+        },
+        "outputs": [],
+        "lineageStatus": "PASS",
+        "exchangeStatus": "NOT_RUN",
+        "scope": "artifact integrity and export decode only; native reopening and creative review remain separate",
+        "artifactLogicalId": "vectorcraft:99c30b24-aecd-4bb5-a68b-806c67a23f3b",
+        "artifactVersion": "fda200436594f9adb1ce97b74dd7865120011f83dfd99e858d36005bdda3496b",
+        "sourceTask": {
+          "id": "explicit-qa-rebind-false-effect-fidelity",
+          "scope": "workflow-execution",
+          "planSha256": "68accdf2167257287a9b8a20157ef3d5ba89390fc94f4d1c6e560619d2cd1e97"
+        },
+        "projectRevision": "ead854f4b39a47948a0668b135993e7cf435ab24a339267f2c86bab69ebfcd71",
+        "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+        "manifestSha256": "0a870f6d30a331b13710e845c3c80b32606b9ac3c174c7c16a6973949e89e0aa",
+        "error": "exchange_report_loss_semantics"
+      }
+    },
+    {
+      "case": "missing-output",
+      "result": "PASS",
+      "freshManifestAndLineageHashes": true,
+      "quality": {
+        "schema": "vectorcraft-technical-review/v1",
+        "artifactIntegrityStatus": "PASS",
+        "engineeringStatus": "NOT_RUN",
+        "technicalStatus": "FAIL",
+        "creativeStatus": "NOT_RUN",
+        "acceptanceStatus": "blocked",
+        "nativeReopenStatus": "NOT_RUN",
+        "files": {
+          "plan.json": "68accdf2167257287a9b8a20157ef3d5ba89390fc94f4d1c6e560619d2cd1e97",
+          "project.vectorcraft": "ead854f4b39a47948a0668b135993e7cf435ab24a339267f2c86bab69ebfcd71",
+          "exchange-loss.json": "5a140b78b048ba5ad74445e27a0190214399010cdf70282ba8db58bf83bc3374",
+          "pdf-export-date.json": "250d52b3115dbc99e8123429d408531fc9aadbc664ad97071371df02cd5b9401",
+          "native.json": "fc6a58bc07cbc5c989ab749221efdc0b3a3dd35caa369f01f51db41d2c3ccaec",
+          "artboard-1.pdf": "69ab54d2867c664f933afec42790775581184e170ca3a85ceae91b0b00033462",
+          "artboard-1.png": "39d2869a3019d9a8a1be21eb96d5151114d3936293fe5be97b36ac798ad54e71",
+          "artboard-1.svg": "f9a16bac10a8d200a9f459e3d288ce81158a136ab96ed64fcf84e72d95ec3360",
+          "operations.json": "4cd63fb2d0867e5d7b151c0d1dcb2984c46cf0e5edff646463481d63b11b44b2",
+          "lineage.json": "11c34e5262c242eb33ed99a9d58f6dde816faac23c7a8db3f022ee1643f9f17b"
+        },
+        "outputs": [],
+        "lineageStatus": "PASS",
+        "exchangeStatus": "NOT_RUN",
+        "scope": "artifact integrity and export decode only; native reopening and creative review remain separate",
+        "artifactLogicalId": "vectorcraft:bd15bb52-619b-4a66-a82e-cd97fb97fede",
+        "artifactVersion": "a47c7860edc28c3716bedada6c1bb46c8249a666ca736d2dba1a94f3d1088563",
+        "sourceTask": {
+          "id": "explicit-qa-rebind-missing-output",
+          "scope": "workflow-execution",
+          "planSha256": "68accdf2167257287a9b8a20157ef3d5ba89390fc94f4d1c6e560619d2cd1e97"
+        },
+        "projectRevision": "ead854f4b39a47948a0668b135993e7cf435ab24a339267f2c86bab69ebfcd71",
+        "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+        "manifestSha256": "bb0451b34088cd46e7be31df2c16d7cb992ce0481c58bebe6e518ac3ae6fdb74",
+        "error": "exchange_report_output_coverage"
+      }
+    },
+    {
+      "case": "duplicate-output",
+      "result": "PASS",
+      "freshManifestAndLineageHashes": true,
+      "quality": {
+        "schema": "vectorcraft-technical-review/v1",
+        "artifactIntegrityStatus": "PASS",
+        "engineeringStatus": "NOT_RUN",
+        "technicalStatus": "FAIL",
+        "creativeStatus": "NOT_RUN",
+        "acceptanceStatus": "blocked",
+        "nativeReopenStatus": "NOT_RUN",
+        "files": {
+          "plan.json": "68accdf2167257287a9b8a20157ef3d5ba89390fc94f4d1c6e560619d2cd1e97",
+          "project.vectorcraft": "ead854f4b39a47948a0668b135993e7cf435ab24a339267f2c86bab69ebfcd71",
+          "exchange-loss.json": "4dc262cd3a63e7f9dd5e16d153bc20d355d47464af83bf63026dbb06d51dd48f",
+          "pdf-export-date.json": "250d52b3115dbc99e8123429d408531fc9aadbc664ad97071371df02cd5b9401",
+          "native.json": "fc6a58bc07cbc5c989ab749221efdc0b3a3dd35caa369f01f51db41d2c3ccaec",
+          "artboard-1.pdf": "69ab54d2867c664f933afec42790775581184e170ca3a85ceae91b0b00033462",
+          "artboard-1.png": "39d2869a3019d9a8a1be21eb96d5151114d3936293fe5be97b36ac798ad54e71",
+          "artboard-1.svg": "f9a16bac10a8d200a9f459e3d288ce81158a136ab96ed64fcf84e72d95ec3360",
+          "operations.json": "4cd63fb2d0867e5d7b151c0d1dcb2984c46cf0e5edff646463481d63b11b44b2",
+          "lineage.json": "c880b4f81f50974775d5be8b221b47d8c1e740e244e3b26d80ba4396030ee7df"
+        },
+        "outputs": [],
+        "lineageStatus": "PASS",
+        "exchangeStatus": "NOT_RUN",
+        "scope": "artifact integrity and export decode only; native reopening and creative review remain separate",
+        "artifactLogicalId": "vectorcraft:3c2ead1e-1e0c-4116-a810-e677a60da87e",
+        "artifactVersion": "3ba091846f9ba796cbca5ab4c141e67f42f034d51594d862e92c2cac95b20972",
+        "sourceTask": {
+          "id": "explicit-qa-rebind-duplicate-output",
+          "scope": "workflow-execution",
+          "planSha256": "68accdf2167257287a9b8a20157ef3d5ba89390fc94f4d1c6e560619d2cd1e97"
+        },
+        "projectRevision": "ead854f4b39a47948a0668b135993e7cf435ab24a339267f2c86bab69ebfcd71",
+        "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+        "manifestSha256": "e3d540ef5e8f36e5f9b240131efeba47aadb5c319986f7368b0003895ba2a93a",
+        "error": "exchange_report_output_coverage"
+      }
+    },
+    {
+      "case": "false-approval",
+      "result": "PASS",
+      "freshManifestAndLineageHashes": true,
+      "quality": {
+        "schema": "vectorcraft-technical-review/v1",
+        "artifactIntegrityStatus": "PASS",
+        "engineeringStatus": "NOT_RUN",
+        "technicalStatus": "FAIL",
+        "creativeStatus": "NOT_RUN",
+        "acceptanceStatus": "blocked",
+        "nativeReopenStatus": "NOT_RUN",
+        "files": {
+          "plan.json": "68accdf2167257287a9b8a20157ef3d5ba89390fc94f4d1c6e560619d2cd1e97",
+          "project.vectorcraft": "ead854f4b39a47948a0668b135993e7cf435ab24a339267f2c86bab69ebfcd71",
+          "exchange-loss.json": "02bb4c5730a9044d57ae7eb5b6c430c7f46b0d6318f99e5fea6340bb0c92b421",
+          "pdf-export-date.json": "250d52b3115dbc99e8123429d408531fc9aadbc664ad97071371df02cd5b9401",
+          "native.json": "fc6a58bc07cbc5c989ab749221efdc0b3a3dd35caa369f01f51db41d2c3ccaec",
+          "artboard-1.pdf": "69ab54d2867c664f933afec42790775581184e170ca3a85ceae91b0b00033462",
+          "artboard-1.png": "39d2869a3019d9a8a1be21eb96d5151114d3936293fe5be97b36ac798ad54e71",
+          "artboard-1.svg": "f9a16bac10a8d200a9f459e3d288ce81158a136ab96ed64fcf84e72d95ec3360",
+          "operations.json": "4cd63fb2d0867e5d7b151c0d1dcb2984c46cf0e5edff646463481d63b11b44b2",
+          "lineage.json": "43d252b40e8b93d8abdc2536a82ce22cfac4eea6d5d695613aaaad882be6e396"
+        },
+        "outputs": [],
+        "lineageStatus": "PASS",
+        "exchangeStatus": "NOT_RUN",
+        "scope": "artifact integrity and export decode only; native reopening and creative review remain separate",
+        "artifactLogicalId": "vectorcraft:0187685b-7b89-4894-b833-9ec6d6f05f29",
+        "artifactVersion": "038493adb1bb877f11fd5a03d41c99ee2de1c32491dd2cbcce944aa390fdf082",
+        "sourceTask": {
+          "id": "explicit-qa-rebind-false-approval",
+          "scope": "workflow-execution",
+          "planSha256": "68accdf2167257287a9b8a20157ef3d5ba89390fc94f4d1c6e560619d2cd1e97"
+        },
+        "projectRevision": "ead854f4b39a47948a0668b135993e7cf435ab24a339267f2c86bab69ebfcd71",
+        "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+        "manifestSha256": "0ac4859bd3900223a12a8c76badbc6c99d914b56f97da447b07628b3ef3d8338",
+        "error": "exchange_report_invalid_identity"
+      }
+    },
+    {
+      "case": "false-text-editability",
+      "result": "PASS",
+      "freshManifestAndLineageHashes": true,
+      "quality": {
+        "schema": "vectorcraft-technical-review/v1",
+        "artifactIntegrityStatus": "PASS",
+        "engineeringStatus": "NOT_RUN",
+        "technicalStatus": "FAIL",
+        "creativeStatus": "NOT_RUN",
+        "acceptanceStatus": "blocked",
+        "nativeReopenStatus": "NOT_RUN",
+        "files": {
+          "plan.json": "68accdf2167257287a9b8a20157ef3d5ba89390fc94f4d1c6e560619d2cd1e97",
+          "project.vectorcraft": "ead854f4b39a47948a0668b135993e7cf435ab24a339267f2c86bab69ebfcd71",
+          "exchange-loss.json": "6aa1ba142e14ee6d9ec82b9a295d7d841916904baa5fd52f8d0872ff2185c490",
+          "pdf-export-date.json": "250d52b3115dbc99e8123429d408531fc9aadbc664ad97071371df02cd5b9401",
+          "native.json": "fc6a58bc07cbc5c989ab749221efdc0b3a3dd35caa369f01f51db41d2c3ccaec",
+          "artboard-1.pdf": "69ab54d2867c664f933afec42790775581184e170ca3a85ceae91b0b00033462",
+          "artboard-1.png": "39d2869a3019d9a8a1be21eb96d5151114d3936293fe5be97b36ac798ad54e71",
+          "artboard-1.svg": "f9a16bac10a8d200a9f459e3d288ce81158a136ab96ed64fcf84e72d95ec3360",
+          "operations.json": "4cd63fb2d0867e5d7b151c0d1dcb2984c46cf0e5edff646463481d63b11b44b2",
+          "lineage.json": "6724291919cca273e427edd40ee06d0ff5b821319193797b0723ed09798e502d"
+        },
+        "outputs": [],
+        "lineageStatus": "PASS",
+        "exchangeStatus": "NOT_RUN",
+        "scope": "artifact integrity and export decode only; native reopening and creative review remain separate",
+        "artifactLogicalId": "vectorcraft:fc06f9d1-3e10-473d-ac72-351f4baf0d40",
+        "artifactVersion": "493ba2acd6248924eae6537aa2d9d31c87a3b5d9eab5cca90d775ae8b023f550",
+        "sourceTask": {
+          "id": "explicit-qa-rebind-false-text-editability",
+          "scope": "workflow-execution",
+          "planSha256": "68accdf2167257287a9b8a20157ef3d5ba89390fc94f4d1c6e560619d2cd1e97"
+        },
+        "projectRevision": "ead854f4b39a47948a0668b135993e7cf435ab24a339267f2c86bab69ebfcd71",
+        "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+        "manifestSha256": "354dead085ef35ddf9b42ebee9f9279e876421436fc658a4a052d961651d8a81",
+        "error": "exchange_report_svg_loss_mismatch"
+      }
+    },
+    {
+      "case": "wrong-text-mode",
+      "result": "PASS",
+      "freshManifestAndLineageHashes": true,
+      "quality": {
+        "schema": "vectorcraft-technical-review/v1",
+        "artifactIntegrityStatus": "PASS",
+        "engineeringStatus": "NOT_RUN",
+        "technicalStatus": "FAIL",
+        "creativeStatus": "NOT_RUN",
+        "acceptanceStatus": "blocked",
+        "nativeReopenStatus": "NOT_RUN",
+        "files": {
+          "plan.json": "68accdf2167257287a9b8a20157ef3d5ba89390fc94f4d1c6e560619d2cd1e97",
+          "project.vectorcraft": "ead854f4b39a47948a0668b135993e7cf435ab24a339267f2c86bab69ebfcd71",
+          "exchange-loss.json": "b28fe8fd46f91fc702fb7da1ff9dddc3eb5219cdcf8219547842caff503f2fde",
+          "pdf-export-date.json": "250d52b3115dbc99e8123429d408531fc9aadbc664ad97071371df02cd5b9401",
+          "native.json": "fc6a58bc07cbc5c989ab749221efdc0b3a3dd35caa369f01f51db41d2c3ccaec",
+          "artboard-1.pdf": "69ab54d2867c664f933afec42790775581184e170ca3a85ceae91b0b00033462",
+          "artboard-1.png": "39d2869a3019d9a8a1be21eb96d5151114d3936293fe5be97b36ac798ad54e71",
+          "artboard-1.svg": "f9a16bac10a8d200a9f459e3d288ce81158a136ab96ed64fcf84e72d95ec3360",
+          "operations.json": "4cd63fb2d0867e5d7b151c0d1dcb2984c46cf0e5edff646463481d63b11b44b2",
+          "lineage.json": "b183acb5370d7909cef0efcbd89553a2f23deabb61c650053c5de1c16265e8b4"
+        },
+        "outputs": [],
+        "lineageStatus": "PASS",
+        "exchangeStatus": "NOT_RUN",
+        "scope": "artifact integrity and export decode only; native reopening and creative review remain separate",
+        "artifactLogicalId": "vectorcraft:ccd79d06-ddb3-4c3f-bbb0-00418d253e3d",
+        "artifactVersion": "600383ebc4c99bdbacdae505f260564c96dc4065c71cbc6e8733683b491751d8",
+        "sourceTask": {
+          "id": "explicit-qa-rebind-wrong-text-mode",
+          "scope": "workflow-execution",
+          "planSha256": "68accdf2167257287a9b8a20157ef3d5ba89390fc94f4d1c6e560619d2cd1e97"
+        },
+        "projectRevision": "ead854f4b39a47948a0668b135993e7cf435ab24a339267f2c86bab69ebfcd71",
+        "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+        "manifestSha256": "f3a7c3bcea2c1ae1bedc79f953f425c4268c5493bf97b7f2143805e08f47440b",
+        "error": "exchange_report_svg_observation_mismatch"
+      }
+    },
+    {
+      "case": "missing-report",
+      "result": "PASS",
+      "freshManifestAndLineageHashes": true,
+      "quality": {
+        "schema": "vectorcraft-technical-review/v1",
+        "artifactIntegrityStatus": "PASS",
+        "engineeringStatus": "NOT_RUN",
+        "technicalStatus": "FAIL",
+        "creativeStatus": "NOT_RUN",
+        "acceptanceStatus": "blocked",
+        "nativeReopenStatus": "NOT_RUN",
+        "files": {
+          "plan.json": "68accdf2167257287a9b8a20157ef3d5ba89390fc94f4d1c6e560619d2cd1e97",
+          "project.vectorcraft": "ead854f4b39a47948a0668b135993e7cf435ab24a339267f2c86bab69ebfcd71",
+          "pdf-export-date.json": "250d52b3115dbc99e8123429d408531fc9aadbc664ad97071371df02cd5b9401",
+          "native.json": "fc6a58bc07cbc5c989ab749221efdc0b3a3dd35caa369f01f51db41d2c3ccaec",
+          "artboard-1.pdf": "69ab54d2867c664f933afec42790775581184e170ca3a85ceae91b0b00033462",
+          "artboard-1.png": "39d2869a3019d9a8a1be21eb96d5151114d3936293fe5be97b36ac798ad54e71",
+          "artboard-1.svg": "f9a16bac10a8d200a9f459e3d288ce81158a136ab96ed64fcf84e72d95ec3360",
+          "operations.json": "4cd63fb2d0867e5d7b151c0d1dcb2984c46cf0e5edff646463481d63b11b44b2",
+          "lineage.json": "1366b347922d122acecd99cd0e36b8da0ccedaa0708c674bec3d3438d8885a69"
+        },
+        "outputs": [],
+        "lineageStatus": "PASS",
+        "exchangeStatus": "NOT_RUN",
+        "scope": "artifact integrity and export decode only; native reopening and creative review remain separate",
+        "artifactLogicalId": "vectorcraft:84247d26-450f-421f-9103-631a9f9e2775",
+        "artifactVersion": "4cb9e8f5b8559e61d22d2306d251a0ae173547654a1059ed9417cba8fcdd204b",
+        "sourceTask": {
+          "id": "explicit-qa-rebind-missing-report",
+          "scope": "workflow-execution",
+          "planSha256": "68accdf2167257287a9b8a20157ef3d5ba89390fc94f4d1c6e560619d2cd1e97"
+        },
+        "projectRevision": "ead854f4b39a47948a0668b135993e7cf435ab24a339267f2c86bab69ebfcd71",
+        "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+        "manifestSha256": "ea205ac85dc031495f4e22058a779f0c70e4385ca885f1b7e104899b0e9d13a8",
+        "error": "exchange_report_missing_or_unbound"
+      }
+    },
+    {
+      "case": "invalid-report-json",
+      "result": "PASS",
+      "freshManifestAndLineageHashes": true,
+      "quality": {
+        "schema": "vectorcraft-technical-review/v1",
+        "artifactIntegrityStatus": "PASS",
+        "engineeringStatus": "NOT_RUN",
+        "technicalStatus": "FAIL",
+        "creativeStatus": "NOT_RUN",
+        "acceptanceStatus": "blocked",
+        "nativeReopenStatus": "NOT_RUN",
+        "files": {
+          "plan.json": "68accdf2167257287a9b8a20157ef3d5ba89390fc94f4d1c6e560619d2cd1e97",
+          "project.vectorcraft": "ead854f4b39a47948a0668b135993e7cf435ab24a339267f2c86bab69ebfcd71",
+          "exchange-loss.json": "021fb596db81e6d02bf3d2586ee3981fe519f275c0ac9ca76bbcf2ebb4097d96",
+          "pdf-export-date.json": "250d52b3115dbc99e8123429d408531fc9aadbc664ad97071371df02cd5b9401",
+          "native.json": "fc6a58bc07cbc5c989ab749221efdc0b3a3dd35caa369f01f51db41d2c3ccaec",
+          "artboard-1.pdf": "69ab54d2867c664f933afec42790775581184e170ca3a85ceae91b0b00033462",
+          "artboard-1.png": "39d2869a3019d9a8a1be21eb96d5151114d3936293fe5be97b36ac798ad54e71",
+          "artboard-1.svg": "f9a16bac10a8d200a9f459e3d288ce81158a136ab96ed64fcf84e72d95ec3360",
+          "operations.json": "4cd63fb2d0867e5d7b151c0d1dcb2984c46cf0e5edff646463481d63b11b44b2",
+          "lineage.json": "fa0b8180318c85d1fd04db231b5d26be67a003008aa673406326dd8542e81b2b"
+        },
+        "outputs": [],
+        "lineageStatus": "PASS",
+        "exchangeStatus": "NOT_RUN",
+        "scope": "artifact integrity and export decode only; native reopening and creative review remain separate",
+        "artifactLogicalId": "vectorcraft:00daa31f-dfa3-40c7-a1df-1d63456a8ae3",
+        "artifactVersion": "c45a755431102f4fe15c323f4621554d8ffc74f0183e682b9188a39751d2ed2a",
+        "sourceTask": {
+          "id": "explicit-qa-rebind-invalid-report-json",
+          "scope": "workflow-execution",
+          "planSha256": "68accdf2167257287a9b8a20157ef3d5ba89390fc94f4d1c6e560619d2cd1e97"
+        },
+        "projectRevision": "ead854f4b39a47948a0668b135993e7cf435ab24a339267f2c86bab69ebfcd71",
+        "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+        "manifestSha256": "9eebd98ab4ec5d093f24bacbea78cacdf7c82fb3bc677d3a08b9b312e1aa184d",
+        "error": "Expecting property name enclosed in double quotes: line 1 column 2 (char 1)"
+      }
+    },
+    {
+      "case": "invalid-inspection",
+      "result": "PASS",
+      "freshManifestAndLineageHashes": true,
+      "quality": {
+        "schema": "vectorcraft-technical-review/v1",
+        "artifactIntegrityStatus": "PASS",
+        "engineeringStatus": "NOT_RUN",
+        "technicalStatus": "FAIL",
+        "creativeStatus": "NOT_RUN",
+        "acceptanceStatus": "blocked",
+        "nativeReopenStatus": "NOT_RUN",
+        "files": {
+          "plan.json": "68accdf2167257287a9b8a20157ef3d5ba89390fc94f4d1c6e560619d2cd1e97",
+          "project.vectorcraft": "ead854f4b39a47948a0668b135993e7cf435ab24a339267f2c86bab69ebfcd71",
+          "exchange-loss.json": "daa9e34d71fe7c86013f2b38e24d4895e99e52ab1f38255e13f4de8e678f8215",
+          "pdf-export-date.json": "250d52b3115dbc99e8123429d408531fc9aadbc664ad97071371df02cd5b9401",
+          "native.json": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "artboard-1.pdf": "69ab54d2867c664f933afec42790775581184e170ca3a85ceae91b0b00033462",
+          "artboard-1.png": "39d2869a3019d9a8a1be21eb96d5151114d3936293fe5be97b36ac798ad54e71",
+          "artboard-1.svg": "f9a16bac10a8d200a9f459e3d288ce81158a136ab96ed64fcf84e72d95ec3360",
+          "operations.json": "4cd63fb2d0867e5d7b151c0d1dcb2984c46cf0e5edff646463481d63b11b44b2",
+          "lineage.json": "1d74c4f943415cfd71eae1179174393efb5469dce65f1f29a49c332b394c82e1"
+        },
+        "outputs": [],
+        "lineageStatus": "PASS",
+        "exchangeStatus": "NOT_RUN",
+        "scope": "artifact integrity and export decode only; native reopening and creative review remain separate",
+        "artifactLogicalId": "vectorcraft:c7d1ab01-f555-4481-b3d0-289ddc4ef167",
+        "artifactVersion": "b71ffc4b41db1f134494333b39505e681000db1acecda5ab3b9dd2d2c88db7ff",
+        "sourceTask": {
+          "id": "explicit-qa-rebind-invalid-inspection",
+          "scope": "workflow-execution",
+          "planSha256": "68accdf2167257287a9b8a20157ef3d5ba89390fc94f4d1c6e560619d2cd1e97"
+        },
+        "projectRevision": "ead854f4b39a47948a0668b135993e7cf435ab24a339267f2c86bab69ebfcd71",
+        "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+        "manifestSha256": "8cb739ad069e11330faf2f018098ce4ccc3c25f92b9442e79ba3d251db23ee99",
+        "error": "exchange_report_inspection_mismatch"
+      }
+    },
+    {
+      "case": "corrupt-png",
+      "result": "PASS",
+      "freshManifestAndLineageHashes": true,
+      "quality": {
+        "schema": "vectorcraft-technical-review/v1",
+        "artifactIntegrityStatus": "PASS",
+        "engineeringStatus": "NOT_RUN",
+        "technicalStatus": "FAIL",
+        "creativeStatus": "NOT_RUN",
+        "acceptanceStatus": "blocked",
+        "nativeReopenStatus": "NOT_RUN",
+        "files": {
+          "plan.json": "68accdf2167257287a9b8a20157ef3d5ba89390fc94f4d1c6e560619d2cd1e97",
+          "project.vectorcraft": "ead854f4b39a47948a0668b135993e7cf435ab24a339267f2c86bab69ebfcd71",
+          "exchange-loss.json": "68e1087523939e04d809e1ebfcfe736335766a4dd0f63f12999b4fa6b0294e7a",
+          "pdf-export-date.json": "250d52b3115dbc99e8123429d408531fc9aadbc664ad97071371df02cd5b9401",
+          "native.json": "fc6a58bc07cbc5c989ab749221efdc0b3a3dd35caa369f01f51db41d2c3ccaec",
+          "artboard-1.pdf": "69ab54d2867c664f933afec42790775581184e170ca3a85ceae91b0b00033462",
+          "artboard-1.png": "c96b4adc5e8588e4243d099dc3cc2871c6fd3c9cb54c073660865bc4f99ea70d",
+          "artboard-1.svg": "f9a16bac10a8d200a9f459e3d288ce81158a136ab96ed64fcf84e72d95ec3360",
+          "operations.json": "4cd63fb2d0867e5d7b151c0d1dcb2984c46cf0e5edff646463481d63b11b44b2",
+          "lineage.json": "e553ad8a2eb32fbc9037a1aca0f6d070bdadcdd3ddccc2b7e70753ce45cd4c85"
+        },
+        "outputs": [
+          {
+            "path": "artboard-1.svg",
+            "sha256": "f9a16bac10a8d200a9f459e3d288ce81158a136ab96ed64fcf84e72d95ec3360",
+            "status": "PASS",
+            "decoder": "PyMuPDF",
+            "pages": 1,
+            "scope": "bounded raster decode; creative quality not assessed"
+          },
+          {
+            "path": "artboard-1.pdf",
+            "sha256": "69ab54d2867c664f933afec42790775581184e170ca3a85ceae91b0b00033462",
+            "status": "PASS",
+            "decoder": "PyMuPDF",
+            "pages": 1,
+            "scope": "bounded raster decode; creative quality not assessed"
+          },
+          {
+            "path": "artboard-1.png",
+            "sha256": "c96b4adc5e8588e4243d099dc3cc2871c6fd3c9cb54c073660865bc4f99ea70d",
+            "status": "FAIL",
+            "reason": "invalid_png_header"
+          }
+        ],
+        "lineageStatus": "PASS",
+        "exchangeStatus": "PASS",
+        "scope": "artifact integrity and export decode only; native reopening and creative review remain separate",
+        "artifactLogicalId": "vectorcraft:941e57e6-a349-4992-84a5-8635efac1135",
+        "artifactVersion": "6dea8315a1ea94ac40b411e059c28d7c2ea119486f090518955843db6e0b4841",
+        "sourceTask": {
+          "id": "explicit-qa-rebind-corrupt-png",
+          "scope": "workflow-execution",
+          "planSha256": "68accdf2167257287a9b8a20157ef3d5ba89390fc94f4d1c6e560619d2cd1e97"
+        },
+        "projectRevision": "ead854f4b39a47948a0668b135993e7cf435ab24a339267f2c86bab69ebfcd71",
+        "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+        "manifestSha256": "5f3e3be101b95bede3ee6a8861e559cb46c73646f8b49f393efa41880277e89c"
+      }
+    },
+    {
+      "case": "corrupt-pdf",
+      "result": "PASS",
+      "freshManifestAndLineageHashes": true,
+      "quality": {
+        "schema": "vectorcraft-technical-review/v1",
+        "artifactIntegrityStatus": "PASS",
+        "engineeringStatus": "NOT_RUN",
+        "technicalStatus": "FAIL",
+        "creativeStatus": "NOT_RUN",
+        "acceptanceStatus": "blocked",
+        "nativeReopenStatus": "NOT_RUN",
+        "files": {
+          "plan.json": "68accdf2167257287a9b8a20157ef3d5ba89390fc94f4d1c6e560619d2cd1e97",
+          "project.vectorcraft": "ead854f4b39a47948a0668b135993e7cf435ab24a339267f2c86bab69ebfcd71",
+          "exchange-loss.json": "7f589319ea5d7c678df0ccb6013eab842544be315ad6ad02d2d67840857b3df9",
+          "pdf-export-date.json": "250d52b3115dbc99e8123429d408531fc9aadbc664ad97071371df02cd5b9401",
+          "native.json": "fc6a58bc07cbc5c989ab749221efdc0b3a3dd35caa369f01f51db41d2c3ccaec",
+          "artboard-1.pdf": "3af3705f6c6b6339d2763652305ac18935482a19c4fe88b9589472d1e82ac3a7",
+          "artboard-1.png": "39d2869a3019d9a8a1be21eb96d5151114d3936293fe5be97b36ac798ad54e71",
+          "artboard-1.svg": "f9a16bac10a8d200a9f459e3d288ce81158a136ab96ed64fcf84e72d95ec3360",
+          "operations.json": "4cd63fb2d0867e5d7b151c0d1dcb2984c46cf0e5edff646463481d63b11b44b2",
+          "lineage.json": "d011b3d786b30fdf4545a8a134057c1727ff676c6cb6426f07ff71b558b74ed6"
+        },
+        "outputs": [
+          {
+            "path": "artboard-1.svg",
+            "sha256": "f9a16bac10a8d200a9f459e3d288ce81158a136ab96ed64fcf84e72d95ec3360",
+            "status": "PASS",
+            "decoder": "PyMuPDF",
+            "pages": 1,
+            "scope": "bounded raster decode; creative quality not assessed"
+          },
+          {
+            "path": "artboard-1.pdf",
+            "sha256": "3af3705f6c6b6339d2763652305ac18935482a19c4fe88b9589472d1e82ac3a7",
+            "status": "FAIL",
+            "reason": "Failed to open stream"
+          },
+          {
+            "path": "artboard-1.png",
+            "sha256": "39d2869a3019d9a8a1be21eb96d5151114d3936293fe5be97b36ac798ad54e71",
+            "status": "PASS",
+            "decoder": "Pillow",
+            "size": [
+              128,
+              96
+            ]
+          }
+        ],
+        "lineageStatus": "PASS",
+        "exchangeStatus": "PASS",
+        "scope": "artifact integrity and export decode only; native reopening and creative review remain separate",
+        "artifactLogicalId": "vectorcraft:6994ac53-470a-4c78-b136-4243e8366207",
+        "artifactVersion": "e5df7437f44de0f05d1e21906118f0380d61a8653dfde32ef799340b6765b734",
+        "sourceTask": {
+          "id": "explicit-qa-rebind-corrupt-pdf",
+          "scope": "workflow-execution",
+          "planSha256": "68accdf2167257287a9b8a20157ef3d5ba89390fc94f4d1c6e560619d2cd1e97"
+        },
+        "projectRevision": "ead854f4b39a47948a0668b135993e7cf435ab24a339267f2c86bab69ebfcd71",
+        "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+        "manifestSha256": "125c7fae5cec848b011aad7a135da7263335baf421b17adf1e8360ecc8b400e5"
+      }
+    },
+    {
+      "case": "corrupt-svg",
+      "result": "PASS",
+      "freshManifestAndLineageHashes": true,
+      "quality": {
+        "schema": "vectorcraft-technical-review/v1",
+        "artifactIntegrityStatus": "PASS",
+        "engineeringStatus": "NOT_RUN",
+        "technicalStatus": "FAIL",
+        "creativeStatus": "NOT_RUN",
+        "acceptanceStatus": "blocked",
+        "nativeReopenStatus": "NOT_RUN",
+        "files": {
+          "plan.json": "68accdf2167257287a9b8a20157ef3d5ba89390fc94f4d1c6e560619d2cd1e97",
+          "project.vectorcraft": "ead854f4b39a47948a0668b135993e7cf435ab24a339267f2c86bab69ebfcd71",
+          "exchange-loss.json": "b98985096fd19b29ceb57adaf861ef34d329d4b1c8db64882d8ac3172261a8b8",
+          "pdf-export-date.json": "250d52b3115dbc99e8123429d408531fc9aadbc664ad97071371df02cd5b9401",
+          "native.json": "fc6a58bc07cbc5c989ab749221efdc0b3a3dd35caa369f01f51db41d2c3ccaec",
+          "artboard-1.pdf": "69ab54d2867c664f933afec42790775581184e170ca3a85ceae91b0b00033462",
+          "artboard-1.png": "39d2869a3019d9a8a1be21eb96d5151114d3936293fe5be97b36ac798ad54e71",
+          "artboard-1.svg": "191b4c6976b2883929964c056b7a8cfd6c70103ddb1a586c7a775fd25f08822f",
+          "operations.json": "4cd63fb2d0867e5d7b151c0d1dcb2984c46cf0e5edff646463481d63b11b44b2",
+          "lineage.json": "f3825187ede44595b2ce2cdac4047ab67733f479e8ad8527c67d7a86e8dd97c5"
+        },
+        "outputs": [],
+        "lineageStatus": "PASS",
+        "exchangeStatus": "NOT_RUN",
+        "scope": "artifact integrity and export decode only; native reopening and creative review remain separate",
+        "artifactLogicalId": "vectorcraft:f5b1ff27-d0bb-4d91-9f90-e0675fee23d2",
+        "artifactVersion": "97fcba9d2aad193fe9fffe3c6c14282ed56bf0c0a010ff0f00d5cb727893ae23",
+        "sourceTask": {
+          "id": "explicit-qa-rebind-corrupt-svg",
+          "scope": "workflow-execution",
+          "planSha256": "68accdf2167257287a9b8a20157ef3d5ba89390fc94f4d1c6e560619d2cd1e97"
+        },
+        "projectRevision": "ead854f4b39a47948a0668b135993e7cf435ab24a339267f2c86bab69ebfcd71",
+        "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+        "manifestSha256": "019adefbaf383bd0f9ab7a4e963e5ec1d1cf65ee0629ac336b1f96d0c2b6470e",
+        "error": "exchange_report_invalid_svg"
+      }
+    },
+    {
+      "case": "corrupt-native",
+      "result": "PASS",
+      "knownNativeRefusal": "command_failed: [{\"text\": \"run_command: not a VectorCraft file: expected value at line 1 column 1\", \"type\": \"text\"}]"
+    }
+  ],
+  "scope": "actual native project preservation, live text/freeform edit, SVG/PDF/PNG loss semantics and decode; no creative,GUI,other platform,external editor or universal fidelity claim"
+}

@@ -1,0 +1,38 @@
+{
+  "schema": "vectorcraft-exchange-delivery-candidate/v1",
+  "result": "PASS",
+  "pluginVersion": "0.1.0-dev.59",
+  "sourceRef": "v0.1.0-dev.43",
+  "sourceCommit": "36b79c603111fbf6c95f36d2f4c9ed43c9e7f155",
+  "tasksClosed": [],
+  "baseline": "docs/evidence/vc-ar-002/baseline58.json",
+  "native": "docs/evidence/vc-ar-002/candidate59.json",
+  "fingerprints": {
+    "docs/evidence/vc-ar-002/candidate59.json": "5278a5e06d63e5e47a8727b7def80fd7349a5be12dc491ad9633db62a9b0ff77",
+    "docs/evidence/vc-ar-002/red.log.txt": "41c2b68f41c5786583a17c903e7346b58cf3747dd95bfce9e2a27fc6c6fe7b40",
+    "docs/evidence/vc-ar-002/baseline58.json": "fbd6459d334a6e3da87dfe71d9da6b59e40263bf1b45fcf6273f22e9204af3e0",
+    "docs/evidence/vc-ar-002/green.log.txt": "e2ea235931ae9e1b9f6778f049eba1ef3e80c13e09364b48bdca0d8167478650",
+    "docs/evidence/vc-ar-002/regression85.log.txt": "92793a5bfccf78d2b660d894abbd97c47a2a4c41af83ce318018700ec8e2a63c",
+    "docs/evidence/vc-ar-002/text-red.log.txt": "cb10ad622b10bbc5e1f462379d445a999b1a33092fc39fa47dfe723e7c7b1929",
+    "src/evaluation/delivery_quality.py": "60b81d1097d2a2ef84d5e8010ee698295e1184db1b3667f3e40fa03feb899070",
+    "scripts/qa/exchange_delivery.py": "6b66ccae7d9051b5c4548202d1bd4856a0597d50ec9be73be4caef13724211b4",
+    "tests/test_exchange_delivery.py": "ab6692eafe66d6d08a66356d53a658f332fc029312b0e56e5e7f6658f297df0c",
+    "plugin.json": "4e9e9aa436ba557fc61a6662e869051243ee67f464e935af8fa61c08ff995d5a",
+    "skills.lock.json": "46255b049f5e3d14b45ca9fecbaf037cd55b1e8b8bb447d407cb16c55eb3758c",
+    "docs/current-identity.json": "884ebb14f3e5d599d95e4028abb4e56f1024764ec6997228a49583ec22625bc3",
+    "openspec/changes/establish-v1-plugin/specs/artifact-delivery/spec.md": "75b2055eb583871e9198b5c361565605dbe10bc0195692bf1bc978f956df105f"
+  },
+  "tests": {
+    "python": 85,
+    "target": 4
+  },
+  "scope": "Supplemental public AR-002 report guard; fixed58 rehashed PDF native-substitute gap reproduced; actual native text/freeform preserved, three decodes,20 refusals; fixed59 qualification5.6 remains open",
+  "unverified": [
+    "5.6 fixed59 installation",
+    "creative",
+    "GUI",
+    "other platforms",
+    "external editor fidelity",
+    "full V1"
+  ]
+}

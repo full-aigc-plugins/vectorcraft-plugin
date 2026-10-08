@@ -1,0 +1,225 @@
+test_all_reported_outputs_are_checked_without_claiming_reopen_or_creative (test_exchange_delivery.ExchangeDeliveryTests.test_all_reported_outputs_are_checked_without_claiming_reopen_or_creative) ... ERROR
+test_missing_bound_report_and_invalid_report_json_refuse (test_exchange_delivery.ExchangeDeliveryTests.test_missing_bound_report_and_invalid_report_json_refuse) ... 
+  test_missing_bound_report_and_invalid_report_json_refuse (test_exchange_delivery.ExchangeDeliveryTests.test_missing_bound_report_and_invalid_report_json_refuse) (fault='missing-binding') ... FAIL
+  test_missing_bound_report_and_invalid_report_json_refuse (test_exchange_delivery.ExchangeDeliveryTests.test_missing_bound_report_and_invalid_report_json_refuse) (fault='invalid-json') ... FAIL
+  test_missing_bound_report_and_invalid_report_json_refuse (test_exchange_delivery.ExchangeDeliveryTests.test_missing_bound_report_and_invalid_report_json_refuse) (fault='invalid-type') ... FAIL
+test_semantic_report_faults_refuse_before_decode (test_exchange_delivery.ExchangeDeliveryTests.test_semantic_report_faults_refuse_before_decode) ... 
+  test_semantic_report_faults_refuse_before_decode (test_exchange_delivery.ExchangeDeliveryTests.test_semantic_report_faults_refuse_before_decode) (fault='native-substitute') ... FAIL
+  test_semantic_report_faults_refuse_before_decode (test_exchange_delivery.ExchangeDeliveryTests.test_semantic_report_faults_refuse_before_decode) (fault='native-hash') ... FAIL
+  test_semantic_report_faults_refuse_before_decode (test_exchange_delivery.ExchangeDeliveryTests.test_semantic_report_faults_refuse_before_decode) (fault='inspection-hash') ... FAIL
+  test_semantic_report_faults_refuse_before_decode (test_exchange_delivery.ExchangeDeliveryTests.test_semantic_report_faults_refuse_before_decode) (fault='output-hash') ... FAIL
+  test_semantic_report_faults_refuse_before_decode (test_exchange_delivery.ExchangeDeliveryTests.test_semantic_report_faults_refuse_before_decode) (fault='missing-output') ... FAIL
+  test_semantic_report_faults_refuse_before_decode (test_exchange_delivery.ExchangeDeliveryTests.test_semantic_report_faults_refuse_before_decode) (fault='extra-output') ... FAIL
+  test_semantic_report_faults_refuse_before_decode (test_exchange_delivery.ExchangeDeliveryTests.test_semantic_report_faults_refuse_before_decode) (fault='false-font-fidelity') ... FAIL
+  test_semantic_report_faults_refuse_before_decode (test_exchange_delivery.ExchangeDeliveryTests.test_semantic_report_faults_refuse_before_decode) (fault='missing-effect-loss') ... FAIL
+  test_semantic_report_faults_refuse_before_decode (test_exchange_delivery.ExchangeDeliveryTests.test_semantic_report_faults_refuse_before_decode) (fault='wrong-plugin') ... FAIL
+  test_semantic_report_faults_refuse_before_decode (test_exchange_delivery.ExchangeDeliveryTests.test_semantic_report_faults_refuse_before_decode) (fault='false-approval') ... FAIL
+  test_semantic_report_faults_refuse_before_decode (test_exchange_delivery.ExchangeDeliveryTests.test_semantic_report_faults_refuse_before_decode) (fault='duplicate-code') ... FAIL
+  test_semantic_report_faults_refuse_before_decode (test_exchange_delivery.ExchangeDeliveryTests.test_semantic_report_faults_refuse_before_decode) (fault='invalid-state') ... FAIL
+  test_semantic_report_faults_refuse_before_decode (test_exchange_delivery.ExchangeDeliveryTests.test_semantic_report_faults_refuse_before_decode) (fault='wrong-format') ... FAIL
+
+======================================================================
+ERROR: test_all_reported_outputs_are_checked_without_claiming_reopen_or_creative (test_exchange_delivery.ExchangeDeliveryTests.test_all_reported_outputs_are_checked_without_claiming_reopen_or_creative)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_REPO/tests/test_exchange_delivery.py", line 21, in test_all_reported_outputs_are_checked_without_claiming_reopen_or_creative
+    self.assertEqual(q['exchangeStatus'],'PASS');self.assertEqual(q['technicalStatus'],'PASS');self.assertEqual(q['nativeReopenStatus'],'NOT_RUN');self.assertEqual(q['creativeStatus'],'NOT_RUN')
+                     ~^^^^^^^^^^^^^^^^^^
+KeyError: 'exchangeStatus'
+
+======================================================================
+FAIL: test_missing_bound_report_and_invalid_report_json_refuse (test_exchange_delivery.ExchangeDeliveryTests.test_missing_bound_report_and_invalid_report_json_refuse) (fault='missing-binding')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_REPO/tests/test_exchange_delivery.py", line 48, in test_missing_bound_report_and_invalid_report_json_refuse
+    (root/'manifest.json').write_text(json.dumps(m));q=self.check(root,m);self.assertEqual(q['technicalStatus'],'FAIL')
+                                                                          ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'PASS' != 'FAIL'
+- PASS
++ FAIL
+
+
+======================================================================
+FAIL: test_missing_bound_report_and_invalid_report_json_refuse (test_exchange_delivery.ExchangeDeliveryTests.test_missing_bound_report_and_invalid_report_json_refuse) (fault='invalid-json')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_REPO/tests/test_exchange_delivery.py", line 48, in test_missing_bound_report_and_invalid_report_json_refuse
+    (root/'manifest.json').write_text(json.dumps(m));q=self.check(root,m);self.assertEqual(q['technicalStatus'],'FAIL')
+                                                                          ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'PASS' != 'FAIL'
+- PASS
++ FAIL
+
+
+======================================================================
+FAIL: test_missing_bound_report_and_invalid_report_json_refuse (test_exchange_delivery.ExchangeDeliveryTests.test_missing_bound_report_and_invalid_report_json_refuse) (fault='invalid-type')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_REPO/tests/test_exchange_delivery.py", line 48, in test_missing_bound_report_and_invalid_report_json_refuse
+    (root/'manifest.json').write_text(json.dumps(m));q=self.check(root,m);self.assertEqual(q['technicalStatus'],'FAIL')
+                                                                          ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'PASS' != 'FAIL'
+- PASS
++ FAIL
+
+
+======================================================================
+FAIL: test_semantic_report_faults_refuse_before_decode (test_exchange_delivery.ExchangeDeliveryTests.test_semantic_report_faults_refuse_before_decode) (fault='native-substitute')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_REPO/tests/test_exchange_delivery.py", line 39, in test_semantic_report_faults_refuse_before_decode
+    self.save(root,m,r);q=self.check(root,m);self.assertEqual(q['technicalStatus'],'FAIL');self.assertEqual(q['outputs'],[])
+                                             ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'PASS' != 'FAIL'
+- PASS
++ FAIL
+
+
+======================================================================
+FAIL: test_semantic_report_faults_refuse_before_decode (test_exchange_delivery.ExchangeDeliveryTests.test_semantic_report_faults_refuse_before_decode) (fault='native-hash')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_REPO/tests/test_exchange_delivery.py", line 39, in test_semantic_report_faults_refuse_before_decode
+    self.save(root,m,r);q=self.check(root,m);self.assertEqual(q['technicalStatus'],'FAIL');self.assertEqual(q['outputs'],[])
+                                             ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'PASS' != 'FAIL'
+- PASS
++ FAIL
+
+
+======================================================================
+FAIL: test_semantic_report_faults_refuse_before_decode (test_exchange_delivery.ExchangeDeliveryTests.test_semantic_report_faults_refuse_before_decode) (fault='inspection-hash')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_REPO/tests/test_exchange_delivery.py", line 39, in test_semantic_report_faults_refuse_before_decode
+    self.save(root,m,r);q=self.check(root,m);self.assertEqual(q['technicalStatus'],'FAIL');self.assertEqual(q['outputs'],[])
+                                             ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'PASS' != 'FAIL'
+- PASS
++ FAIL
+
+
+======================================================================
+FAIL: test_semantic_report_faults_refuse_before_decode (test_exchange_delivery.ExchangeDeliveryTests.test_semantic_report_faults_refuse_before_decode) (fault='output-hash')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_REPO/tests/test_exchange_delivery.py", line 39, in test_semantic_report_faults_refuse_before_decode
+    self.save(root,m,r);q=self.check(root,m);self.assertEqual(q['technicalStatus'],'FAIL');self.assertEqual(q['outputs'],[])
+                                             ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'PASS' != 'FAIL'
+- PASS
++ FAIL
+
+
+======================================================================
+FAIL: test_semantic_report_faults_refuse_before_decode (test_exchange_delivery.ExchangeDeliveryTests.test_semantic_report_faults_refuse_before_decode) (fault='missing-output')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_REPO/tests/test_exchange_delivery.py", line 39, in test_semantic_report_faults_refuse_before_decode
+    self.save(root,m,r);q=self.check(root,m);self.assertEqual(q['technicalStatus'],'FAIL');self.assertEqual(q['outputs'],[])
+                                             ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'PASS' != 'FAIL'
+- PASS
++ FAIL
+
+
+======================================================================
+FAIL: test_semantic_report_faults_refuse_before_decode (test_exchange_delivery.ExchangeDeliveryTests.test_semantic_report_faults_refuse_before_decode) (fault='extra-output')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_REPO/tests/test_exchange_delivery.py", line 39, in test_semantic_report_faults_refuse_before_decode
+    self.save(root,m,r);q=self.check(root,m);self.assertEqual(q['technicalStatus'],'FAIL');self.assertEqual(q['outputs'],[])
+                                             ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'PASS' != 'FAIL'
+- PASS
++ FAIL
+
+
+======================================================================
+FAIL: test_semantic_report_faults_refuse_before_decode (test_exchange_delivery.ExchangeDeliveryTests.test_semantic_report_faults_refuse_before_decode) (fault='false-font-fidelity')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_REPO/tests/test_exchange_delivery.py", line 39, in test_semantic_report_faults_refuse_before_decode
+    self.save(root,m,r);q=self.check(root,m);self.assertEqual(q['technicalStatus'],'FAIL');self.assertEqual(q['outputs'],[])
+                                             ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'PASS' != 'FAIL'
+- PASS
++ FAIL
+
+
+======================================================================
+FAIL: test_semantic_report_faults_refuse_before_decode (test_exchange_delivery.ExchangeDeliveryTests.test_semantic_report_faults_refuse_before_decode) (fault='missing-effect-loss')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_REPO/tests/test_exchange_delivery.py", line 39, in test_semantic_report_faults_refuse_before_decode
+    self.save(root,m,r);q=self.check(root,m);self.assertEqual(q['technicalStatus'],'FAIL');self.assertEqual(q['outputs'],[])
+                                             ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'PASS' != 'FAIL'
+- PASS
++ FAIL
+
+
+======================================================================
+FAIL: test_semantic_report_faults_refuse_before_decode (test_exchange_delivery.ExchangeDeliveryTests.test_semantic_report_faults_refuse_before_decode) (fault='wrong-plugin')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_REPO/tests/test_exchange_delivery.py", line 39, in test_semantic_report_faults_refuse_before_decode
+    self.save(root,m,r);q=self.check(root,m);self.assertEqual(q['technicalStatus'],'FAIL');self.assertEqual(q['outputs'],[])
+                                             ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'PASS' != 'FAIL'
+- PASS
++ FAIL
+
+
+======================================================================
+FAIL: test_semantic_report_faults_refuse_before_decode (test_exchange_delivery.ExchangeDeliveryTests.test_semantic_report_faults_refuse_before_decode) (fault='false-approval')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_REPO/tests/test_exchange_delivery.py", line 39, in test_semantic_report_faults_refuse_before_decode
+    self.save(root,m,r);q=self.check(root,m);self.assertEqual(q['technicalStatus'],'FAIL');self.assertEqual(q['outputs'],[])
+                                             ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'PASS' != 'FAIL'
+- PASS
++ FAIL
+
+
+======================================================================
+FAIL: test_semantic_report_faults_refuse_before_decode (test_exchange_delivery.ExchangeDeliveryTests.test_semantic_report_faults_refuse_before_decode) (fault='duplicate-code')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_REPO/tests/test_exchange_delivery.py", line 39, in test_semantic_report_faults_refuse_before_decode
+    self.save(root,m,r);q=self.check(root,m);self.assertEqual(q['technicalStatus'],'FAIL');self.assertEqual(q['outputs'],[])
+                                             ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'PASS' != 'FAIL'
+- PASS
++ FAIL
+
+
+======================================================================
+FAIL: test_semantic_report_faults_refuse_before_decode (test_exchange_delivery.ExchangeDeliveryTests.test_semantic_report_faults_refuse_before_decode) (fault='invalid-state')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_REPO/tests/test_exchange_delivery.py", line 39, in test_semantic_report_faults_refuse_before_decode
+    self.save(root,m,r);q=self.check(root,m);self.assertEqual(q['technicalStatus'],'FAIL');self.assertEqual(q['outputs'],[])
+                                             ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'PASS' != 'FAIL'
+- PASS
++ FAIL
+
+
+======================================================================
+FAIL: test_semantic_report_faults_refuse_before_decode (test_exchange_delivery.ExchangeDeliveryTests.test_semantic_report_faults_refuse_before_decode) (fault='wrong-format')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_REPO/tests/test_exchange_delivery.py", line 39, in test_semantic_report_faults_refuse_before_decode
+    self.save(root,m,r);q=self.check(root,m);self.assertEqual(q['technicalStatus'],'FAIL');self.assertEqual(q['outputs'],[])
+                                             ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'PASS' != 'FAIL'
+- PASS
++ FAIL
+
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.037s
+
+FAILED (failures=16, errors=1)

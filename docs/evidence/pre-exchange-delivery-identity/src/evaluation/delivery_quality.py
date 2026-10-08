@@ -64,57 +64,6 @@ def check_raster_disclosure(directory,manifest,path,file):
     if not isinstance(changes,list) or any(not isinstance(c,dict) for c in changes) or not any(change.get('code')=='lossless-vector-claim' and change.get('status')=='blocked' for change in changes):raise ValueError('raster_disclosure_claim_not_blocked')
 
 
-def check_exchange_report(directory,manifest,file):
-    """核对原生／检查记录及每个派生输出的损失语义，不推断保真或批准。"""
-    binding=manifest.get('lossReport');declared=manifest['files']
-    if binding is None and 'exchange-loss.json' not in declared and 'lineage' not in manifest:return 'NOT_RUN'
-    if not isinstance(binding,dict) or binding.get('path')!='exchange-loss.json' or declared.get('exchange-loss.json')!=binding.get('sha256'):raise ValueError('exchange_report_missing_or_unbound')
-    path=file('exchange-loss.json')
-    if hashlib.sha256(path.read_bytes()).hexdigest()!=binding.get('sha256'):raise ValueError('exchange_report_digest_mismatch')
-    loss=strict_json(path.read_text())
-    if not isinstance(loss,dict) or loss.get('schema')!='craft-exchange-loss/v1' or loss.get('pluginId')!='vectorcraft' or loss.get('acceptance')!='technical-observations-only':raise ValueError('exchange_report_invalid_identity')
-    for key,name in [('native','project.vectorcraft'),('inspection','native.json')]:
-        if loss.get(key)!={'location':name,'sha256':declared.get(name)} or name not in declared:raise ValueError('exchange_report_'+key+'_mismatch')
-    inspection=strict_json(file('native.json').read_text())
-    if not isinstance(inspection,dict):raise ValueError('exchange_report_invalid_inspection')
-    rows=loss.get('outputs');wanted=[r['path'] for r in manifest['outputs']]
-    if not isinstance(rows,list) or len(rows)!=len(wanted) or any(not isinstance(r,dict) for r in rows) or sorted(r.get('location','') for r in rows)!=sorted(wanted):raise ValueError('exchange_report_output_coverage')
-    required={
-        'pdf':{'font-portability':'unknown','effect-fidelity':'unknown','vector-structure':'unknown'},
-        'svg':{'font-portability':'unknown','effect-fidelity':'unknown','vector-structure':'observed','lossless-vector-claim':'blocked'},
-        'png':{'editable-layers-paths-text':'lost','effect-keyframe-parameters':'lost','font-appearance':'unknown'}}
-    for row in rows:
-        name=row['location'];fmt=Path(name).suffix.removeprefix('.').lower()
-        if fmt not in required or row.get('format')!=fmt or row.get('sha256')!=declared[name] or row.get('role')!='derivative' or row.get('nativeSubstitute') is not False:raise ValueError('exchange_report_derivative_mismatch')
-        changes=row.get('changes')
-        if not isinstance(changes,list) or any(not isinstance(c,dict) or not isinstance(c.get('code'),str) or c.get('status') not in ('lost','observed','unknown','blocked') or not isinstance(c.get('reason'),str) or not c['reason'] for c in changes):raise ValueError('exchange_report_invalid_changes')
-        states={c['code']:c['status'] for c in changes}
-        if len(states)!=len(changes) or any(states.get(code)!=state for code,state in {'native-editing-model':'lost',**required[fmt]}.items()):raise ValueError('exchange_report_loss_semantics')
-        if not isinstance(row.get('observations'),dict) or not isinstance(row.get('warnings'),list) or any(not isinstance(v,str) for v in row['warnings']):raise ValueError('exchange_report_invalid_observations')
-        if fmt=='svg':
-            try:xml=ET.fromstring(file(name).read_bytes())
-            except ET.ParseError:raise ValueError('exchange_report_invalid_svg') from None
-            tags=[n.tag.rsplit('}',1)[-1] for n in xml.iter()]
-            counts={tag:tags.count(tag) for tag in ['path','text','image','filter','mask','clipPath']}
-            observation=row['observations'];setup=inspection.get('setup',{})
-            if not isinstance(setup,dict):raise ValueError('exchange_report_invalid_setup')
-            mode=setup.get('exportText')
-            def text_ids(value):
-                found=[]
-                if isinstance(value,dict):
-                    if type(value.get('id')) is int and value['id']>0 and isinstance(value.get('kind'),dict) and value['kind'].get('type')=='text':found.append(value['id'])
-                    for child in value.values():found.extend(text_ids(child))
-                elif isinstance(value,list):
-                    for child in value:found.extend(text_ids(child))
-                return found
-            ids=sorted(set(text_ids(inspection.get('layers',[]))))
-            if observation.get('svg')!=counts or observation.get('nativeTextObjectIds')!=ids or observation.get('svgTextExportMode')!=(mode if mode in ('editable','appearance') else None):raise ValueError('exchange_report_svg_observation_mismatch')
-            text_state='lost' if mode=='appearance' and ids else 'observed' if counts['text'] else 'unknown'
-            raster_state='observed' if any(tag in ('image','feImage') for tag in tags) else 'unknown'
-            if states.get('live-text-editability')!=text_state or states.get('raster-content')!=raster_state:raise ValueError('exchange_report_svg_loss_mismatch')
-    return 'PASS'
-
-
 def strict_json(text):
     """计划及清单不接受重复键、非有限数值或溢出。"""
     def pairs(items):
@@ -179,7 +128,7 @@ def check_delivery(directory,expected_runtime,expected_project,decoder=decode_ou
     directory=Path(directory)
     report={'schema':'vectorcraft-technical-review/v1','artifactIntegrityStatus':'FAIL','engineeringStatus':'NOT_RUN',
         'technicalStatus':'NOT_RUN','creativeStatus':'NOT_RUN','acceptanceStatus':'pending','nativeReopenStatus':'NOT_RUN',
-        'files':{},'outputs':[],'lineageStatus':'NOT_RUN','exchangeStatus':'NOT_RUN','scope':'artifact integrity and export decode only; native reopening and creative review remain separate'}
+        'files':{},'outputs':[],'lineageStatus':'NOT_RUN','scope':'artifact integrity and export decode only; native reopening and creative review remain separate'}
     def file(name):
         if not isinstance(name,str) or '\\' in name or Path(name).is_absolute() or any(p in ('','.','..') for p in name.split('/')):raise ValueError('invalid_artifact_path')
         path=directory/name
@@ -209,7 +158,6 @@ def check_delivery(directory,expected_runtime,expected_project,decoder=decode_ou
             raise ValueError('lineage_missing_binding')
         report.update(artifactIntegrityStatus='PASS',projectRevision=expected_project,runtimeIdentity=expected_runtime,
             manifestSha256=hashlib.sha256(manifest_path.read_bytes()).hexdigest())
-        report['exchangeStatus']=check_exchange_report(directory,manifest,file)
         for row in outputs:
             if row['path'].endswith('.svg'):check_raster_disclosure(directory,manifest,file(row['path']),file)
             result=decoder(file(row['path']))
