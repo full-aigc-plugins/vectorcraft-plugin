@@ -1,0 +1,233 @@
+{
+  "schema": "vectorcraft-boolean-transactions-candidate/v1",
+  "result": "PASS",
+  "level": "native-candidate",
+  "platform": "darwin",
+  "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+  "cases": [
+    {
+      "name": "direct-unite",
+      "participantIds": [
+        2,
+        3
+      ],
+      "resultIds": [
+        5
+      ],
+      "checkpointReopened": true,
+      "projectReopened": true,
+      "checkpointSha256": "7094f3f7d336f2c761ba2a26777c3525cda0f26686aef5133a0dbb390672c992",
+      "projectSha256": "b27cfe0ccc7945309aff0a8fa6711483d42574a88d0e65b48c63aada0cda2620"
+    },
+    {
+      "name": "direct-minusFront",
+      "participantIds": [
+        2,
+        3
+      ],
+      "resultIds": [
+        5
+      ],
+      "checkpointReopened": true,
+      "projectReopened": true,
+      "checkpointSha256": "7094f3f7d336f2c761ba2a26777c3525cda0f26686aef5133a0dbb390672c992",
+      "projectSha256": "3fa21cf70d8d6ccb6928315c15c8347024827d8a9a4c9ebe3af482107ca8df9f"
+    },
+    {
+      "name": "direct-intersect",
+      "participantIds": [
+        2,
+        3
+      ],
+      "resultIds": [
+        5
+      ],
+      "checkpointReopened": true,
+      "projectReopened": true,
+      "checkpointSha256": "7094f3f7d336f2c761ba2a26777c3525cda0f26686aef5133a0dbb390672c992",
+      "projectSha256": "dc213e871cd07f6598e8d046b4cb7a597e55c304f51972e5a5b84f20e8cadc12"
+    },
+    {
+      "name": "direct-exclude",
+      "participantIds": [
+        2,
+        3
+      ],
+      "resultIds": [
+        5
+      ],
+      "checkpointReopened": true,
+      "projectReopened": true,
+      "checkpointSha256": "7094f3f7d336f2c761ba2a26777c3525cda0f26686aef5133a0dbb390672c992",
+      "projectSha256": "3fa21cf70d8d6ccb6928315c15c8347024827d8a9a4c9ebe3af482107ca8df9f"
+    },
+    {
+      "name": "direct-group",
+      "participantIds": [
+        2,
+        3
+      ],
+      "resultIds": [
+        5
+      ],
+      "checkpointReopened": true,
+      "projectReopened": true,
+      "checkpointSha256": "7094f3f7d336f2c761ba2a26777c3525cda0f26686aef5133a0dbb390672c992",
+      "projectSha256": "c08559a254453ae38ab8584d0bc9ee5a4b4ffe75ecebe1b4175e24343c17633f"
+    },
+    {
+      "name": "gateway-unite",
+      "participantIds": [
+        2,
+        3
+      ],
+      "resultIds": [
+        5
+      ],
+      "checkpointReopened": true,
+      "projectReopened": true,
+      "checkpointSha256": "7094f3f7d336f2c761ba2a26777c3525cda0f26686aef5133a0dbb390672c992",
+      "projectSha256": "b27cfe0ccc7945309aff0a8fa6711483d42574a88d0e65b48c63aada0cda2620"
+    },
+    {
+      "name": "gateway-minusFront",
+      "participantIds": [
+        2,
+        3
+      ],
+      "resultIds": [
+        5
+      ],
+      "checkpointReopened": true,
+      "projectReopened": true,
+      "checkpointSha256": "72e2be5da5b5520627e17658a268842af891e4ebacb1dcc3eed886171f9aa62c",
+      "projectSha256": "c03b25b1b7fd78b995c030f72cffe3b73690199376097eee546e3bf839f9bc02"
+    },
+    {
+      "name": "gateway-intersect",
+      "participantIds": [
+        2,
+        3
+      ],
+      "resultIds": [
+        5
+      ],
+      "checkpointReopened": true,
+      "projectReopened": true,
+      "checkpointSha256": "72e2be5da5b5520627e17658a268842af891e4ebacb1dcc3eed886171f9aa62c",
+      "projectSha256": "efafcf63dd1fa2eda0bf5a8a0a54a2c843ebb17f04cb0ae030487440d8312f6b"
+    },
+    {
+      "name": "gateway-exclude",
+      "participantIds": [
+        2,
+        3
+      ],
+      "resultIds": [
+        5
+      ],
+      "checkpointReopened": true,
+      "projectReopened": true,
+      "checkpointSha256": "72e2be5da5b5520627e17658a268842af891e4ebacb1dcc3eed886171f9aa62c",
+      "projectSha256": "c03b25b1b7fd78b995c030f72cffe3b73690199376097eee546e3bf839f9bc02"
+    },
+    {
+      "name": "gateway-group",
+      "participantIds": [
+        2,
+        3
+      ],
+      "resultIds": [
+        5
+      ],
+      "checkpointReopened": true,
+      "projectReopened": true,
+      "checkpointSha256": "72e2be5da5b5520627e17658a268842af891e4ebacb1dcc3eed886171f9aa62c",
+      "projectSha256": "bb700ef5e10b5cd1ded4a971f170a59fb6d57dbb77c6669393710c2ac29bf930"
+    },
+    {
+      "name": "linked-asset-checkpoint-relocation",
+      "checkpointReopened": true,
+      "movedLinksValid": true,
+      "participantIds": [
+        2,
+        3
+      ]
+    },
+    {
+      "name": "complete-command-group-ungroup",
+      "transactions": 2,
+      "result": "PASS"
+    },
+    {
+      "name": "real-native-injected-known",
+      "status": "restored_after_failure",
+      "invocations": 1,
+      "checkpointReopened": true,
+      "replayAllowed": false
+    },
+    {
+      "name": "real-native-injected-unknown",
+      "status": "unknown",
+      "invocations": 1,
+      "checkpointReopened": true,
+      "replayAllowed": false
+    }
+  ],
+  "fingerprints": {
+    "skills/vectorcraft-use/scripts/boolean_transactions.py": "cc832a6336efd70713c60c4e1431e4b55217bf82c46322f00502dfc9a923f9a0",
+    "skills/vectorcraft-use/scripts/workflow.py": "7e00c5adac012dcedd656ed9f4b1e3a6d61ed5d17f264072178c29e428180f3b",
+    "skills/vectorcraft-use/scripts/native_workflow.py": "395f83ad24ecce458e70305e79a0aec2daf749017a616ae7323706cdfd066139",
+    "skills/vectorcraft-use/scripts/commands.py": "42b72f9da9ca9cf429c1ccd50b52cf1f6ed7cbe7411a70b2561317feef7f6017",
+    "skills/vectorcraft-use/scripts/mcp_session.py": "15395ead853349a24feab6ce364e5bc9795add12e1dbe62e8ed5718ffdd1ccd2",
+    "skills/vectorcraft-use/scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "tests/test_boolean_transactions.py": "712f616ff158153f5d196092de2ae96e64fe645e214e8d013ad3ee0b66d73bd8",
+    "scripts/acceptance_boolean_transactions.py": "583941a85b8b2f64dc73feece96e0d06b1461d21ba06f7d6f11e2601203e3790",
+    "scripts/verify_optimization_evidence.py": "c1437148bfd684cece90918db02831b1783b4ce527a7e458704465d6d6b8bba4",
+    "docs/evidence/boolean-transactions/red.log": "197be54a2d84db4629ff15a3a5dc78dec7264f6a35425543d189f09d734eaee4",
+    "docs/evidence/boolean-transactions/native.log": "6010dec5b60242ee0f9ea84185464c9ed58f3842f096831aa4bad719c2052bd9",
+    "docs/evidence/boolean-transactions/regression.log": "c641d9c2ec6979d3484d488bd529512c442678c3a39d02e2b9fe299931024db0",
+    "docs/evidence/boolean-transactions/baseline-red-test.py": "9faa6c35a482de3c74328c6f67cd1b610b377e38e291ba821091608ebb380207"
+  },
+  "installedFilesSha256": "15624ca440a31f3956d94d3c8b073c357100efe13cf5dfcdf7af7a0732cbdf37",
+  "sourcePreserved": true,
+  "isolatedSkillPreserved": true,
+  "skills": {
+    "vectorcraft-cli-setup": "8cade2072bc80a77760e3a5ac439fa0cd9e8290a80ca51ab2c4cb0a76ceef7f1",
+    "vectorcraft-cli-export": "418f8ea34cf6164160ec818f3d5a6c6b3fcb47ef1bffef1e5aa4b67058a3d41c",
+    "vectorcraft-cli-appearance": "384b790241cb73fd6b003cae063b7096ad7df985fc5a10a687546c248ead6438",
+    "vectorcraft-cli-artboards": "b4685fd7bb7cb98c932d81bf2957619f14ac7a1717208c7e3e58d74707315339",
+    "vectorcraft-use": "61f3ddf145a7924844f1705f8dfb7ac30597e51df5fdd79565fdd394ec239e6b",
+    "vectorcraft-cli-paths": "f1e3ab6a7aa2d53a28542591a352754fa00745b6e95405cf958461261ace41d5",
+    "vectorcraft-cli-assets": "cae603f87f380aa4e144caffafcd16a5fe6d5650e50a6e15d2add635593a764e",
+    "vectorcraft-cli-text": "2523d76979875ae6f86c6107924f0ef4ca7f1b64b62ad397e1a5ec2aea42d92d",
+    "vectorcraft-cli-shapes": "56060341f75eb4ed60d863a0473b7fbefa16b34ec4a5d7611d0241f4af8a45b5",
+    "vectorcraft-cli-boolean": "9f485cabfb109ecff1ef2f635dffd14ed9ae28f9e0cb4f297a5041a39ca20e48",
+    "vectorcraft-cli": "45bc2f78c5f0f8b092a0fff9f80baa1db2d260527a38ea0a7801e590e63ef312",
+    "vectorcraft-cli-project": "e850b0ef81c75b3499b5a36bc3c8342a69077b40a329a85f33b96af1e6f37be4",
+    "vectorcraft-cli-selection": "29c8bc85d977beac68aaa9e9a78adda230c7ed5351820cfcf25886aa48e062cb"
+  },
+  "sourceCandidateBase": "v0.1.0-dev.36",
+  "unpublished": true,
+  "scope": "14 real native cases: direct/gateway operations, complete group/ungroup and explicit post-success fault injection; not public fixed installation, all Pathfinder contexts, GUI or creative acceptance",
+  "completedTasks": [
+    "4.4",
+    "4.5"
+  ],
+  "fullAcceptanceTask": "4.6 remains open",
+  "regression": {
+    "tests": 170,
+    "passed": 140,
+    "skipped": 30,
+    "failures": 0,
+    "python": "3.13.5",
+    "targetedTransactionTests": 8
+  },
+  "redBaseline": {
+    "commit": "5f1c7e3735de97d82af75ca9fb573326b501dc19",
+    "tests": 1,
+    "expectedBehaviorFailures": 1,
+    "failure": "known partial native mutation had no checkpoint restoration or non_atomic_operation_defect report",
+    "nativeWorkflowSha256": "290108267b948b6ddda6f0865e20f1bdfadd7558442fb1d617125a1ed25eb116"
+  }
+}

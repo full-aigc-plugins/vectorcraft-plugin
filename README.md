@@ -324,3 +324,7 @@ Minimal durable rounds, shared budgets, stagnation, native execution lineage and
 ### dev.40 geometry and revision prerelease
 
 Native geometry contracts check units, artboard offsets, controls, closure and strokes with persisted receipts. Bounded revision cycles retain the best verified candidate. Full4.3,6.6, host and creative acceptance remain open. [Geometry contract](docs/VectorCraft-Geometry-Contract.md).
+
+### Boolean transaction source candidate
+
+Independent source implements retained checkpoints, live participant/result IDs and restoration after known partial failures; linked checkpoints remain portable. Tasks4.4/4.5 are checked; complete4.6 and fixed snapshot uptake remain open. Published dev.40/source36 are unchanged. [Architecture](docs/VectorCraft-Boolean-Transactions.md).

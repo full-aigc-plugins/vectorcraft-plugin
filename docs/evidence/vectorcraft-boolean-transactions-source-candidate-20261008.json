@@ -1,0 +1,28 @@
+{
+  "schema": "vectorcraft-boolean-transactions-source-candidate/v1",
+  "result": "PASS",
+  "level": "native-candidate",
+  "sourceRepository": "https://github.com/full-aigc-skills/vectorcraft-skills",
+  "sourceCommit": "0105d5cbca3675cc5d18486d35b2bd5753e15f6e",
+  "sourceReport": "docs/evidence/boolean-transactions/source-proof.json",
+  "unpublished": true,
+  "publishedPluginUnchanged": "0.1.0-dev.40",
+  "publishedSkillSourceUnchanged": "v0.1.0-dev.36",
+  "completedTasks": [
+    "4.4",
+    "4.5"
+  ],
+  "openAcceptanceTask": "4.6",
+  "validation": {
+    "sourceTests": 170,
+    "passed": 140,
+    "skipped": 30,
+    "targetedTests": 8,
+    "realNativeCases": 14,
+    "faults": "explicit post-success injection"
+  },
+  "fingerprints": {
+    "docs/evidence/boolean-transactions/source-proof.json": "972c9e13d5ff877fef5243825e438ac3cd40fbbe463cf7821d2583b2b1507824"
+  },
+  "scope": "independent source implementation only; not yet consumed by fixed plugin snapshot; all Pathfinder contexts, topology, GUI, creative acceptance and full4.6 remain open"
+}

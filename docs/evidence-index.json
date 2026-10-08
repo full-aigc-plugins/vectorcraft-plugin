@@ -203,6 +203,22 @@
       }
     },
     {
+      "path": "docs/evidence/vectorcraft-boolean-transactions-source-candidate-20261008.json",
+      "sha256": "76d680fbfb66e72c40f5555b0db3c5db55c14aacb1390a304a15459862e40ead",
+      "level": "native-candidate",
+      "status": "PASS",
+      "scope": "independent source candidate at recorded commit; not consumed by fixed plugin snapshot; full4.6 remains open",
+      "requirement": "VC-DM-002",
+      "tasks": [
+        "4.4",
+        "4.5"
+      ],
+      "historical": false,
+      "dependencies": {
+        "docs/evidence/boolean-transactions/source-proof.json": "972c9e13d5ff877fef5243825e438ac3cd40fbbe463cf7821d2583b2b1507824"
+      }
+    },
+    {
       "path": "docs/evidence/vectorcraft-revision-cycle-before-geometry-20261008.json",
       "sha256": "73696354fa6652ad5c511cd783a25d7f572069dc64e925139bd883d790892ae5",
       "level": "native-candidate",

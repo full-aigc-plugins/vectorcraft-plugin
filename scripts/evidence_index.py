@@ -118,6 +118,9 @@ def build(root=ROOT):
     geometry='docs/evidence/vectorcraft-geometry-candidate-20261008.json'
     if (root/geometry).is_file():
         entries.append(bound_report(root,geometry,'native-candidate','explicit units, offset artboard controls and retained closure failure; full4.3 remains open','VC-DM-001',['4.1','4.2']))
+    boolean='docs/evidence/vectorcraft-boolean-transactions-source-candidate-20261008.json'
+    if (root/boolean).is_file():
+        entries.append(bound_report(root,boolean,'native-candidate','independent source candidate at recorded commit; not consumed by fixed plugin snapshot; full4.6 remains open','VC-DM-002',['4.4','4.5']))
     old_cycle='docs/evidence/vectorcraft-revision-cycle-before-geometry-20261008.json'
     if (root/old_cycle).is_file():
         entries.append(record(root,old_cycle,'native-candidate','PASS',[],'original pre-geometry execution fingerprints preserved; not rebound',historical=True))
