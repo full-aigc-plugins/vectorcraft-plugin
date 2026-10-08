@@ -154,12 +154,15 @@ def build(root=ROOT):
     boundaries='docs/evidence/vectorcraft-runtime-boundaries-candidate-20261008.json'
     if (root/boundaries).is_file():
         entries.append(bound_report(root,boundaries,'native-candidate','Two real CLI versions,11 native cases, schema3 backup and old-reader refusal; complete2.6 remains open','VC-RT-002'))
+    open_reader='docs/evidence/vectorcraft-open-reader-candidate-20261008.json'
+    if (root/open_reader).is_file():
+        entries.append(bound_report(root,open_reader,'native-candidate','Candidate database guard with open-reader red, WAL preservation and native/race/default cases; full2.6 awaits fixed43','VC-RT-002'))
     # 明确归档变更前执行字节；保留报告原摘要，不能把旧运行重绑定到新实现。
     for entry in entries:
         archived={}
         for name,digest in entry['dependencies'].items():
             if sha(safe_file(root,name))==digest:continue
-            for prefix in ['docs/evidence/pre-runtime-gate-identity/','docs/evidence/pre-runtime-default-identity/','docs/evidence/pre-runtime-artifacts-identity/','docs/evidence/pre-runtime-boundaries-identity/']:
+            for prefix in ['docs/evidence/pre-runtime-gate-identity/','docs/evidence/pre-runtime-default-identity/','docs/evidence/pre-runtime-artifacts-identity/','docs/evidence/pre-runtime-boundaries-identity/','docs/evidence/pre-open-reader-identity/']:
                 old=prefix+name
                 if (root/old).is_file() and sha(safe_file(root,old))==digest:
                     archived[name]=old

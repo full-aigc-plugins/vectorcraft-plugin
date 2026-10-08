@@ -17,3 +17,7 @@ Controller now validates plans, installs the fixed version, probes live schemas 
 Opening schema1/2 with plugin42 first creates a consistent VACUUM INTO snapshot including committed WAL in state-schema-backups, marks it readonly and records schemas and SHA256. Backup failure prevents migration. DDL and schema3 commit atomically. The actual previous schema2 reader rejects schema3. Existing selections lacking schema3 support must drain before reactivation. Ledger accepts explicit executionMode=bridge bindings; the default remains headless and Controller still executes headless only.
 
 [Cross-version candidate evidence](evidence/vectorcraft-runtime-boundaries-candidate-20261008.json) covers actual CLI0.2.0/0.2.0-craft.2 drain, version retention, upgrade/rollback reopen and schema-drift refusal, plus an independent owned signed desktop bridge probe/save/reopen. Complete task2.6 remains open: registered live bridge-session drain, the full install/upgrade matrix and other platforms are not accepted.
+
+Plugin43 adds the database selected_runtime_writer trigger: connections opened before migration must also satisfy selected mode, digest and state schema when inserting tasks. A real previous reader reproduced the bypass before the fix; the write is now refused while original WAL snapshots, selections, tasks and consumed budgets remain preserved. Task2.6 awaits fixed plugin43 acceptance.
+
+[Plugin43 candidate / 插件43候选证据](evidence/vectorcraft-open-reader-candidate-20261008.json).

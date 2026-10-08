@@ -1,0 +1,45 @@
+{
+  "schema": "vectorcraft-open-reader-candidate/v1",
+  "result": "PASS",
+  "pluginVersion": "0.1.0-dev.43",
+  "platform": "darwin-arm64",
+  "fingerprints": {
+    "src/harness/ledger.ts": "eaaf703dd51fd63a5d82826ec30ff7e07277aa8a94f3568369b0af142c9e7a9e",
+    "src/harness/controller.ts": "4ae925154e193e139100c938af4f26157c5cc321c6504b69c163330bf3b60b23",
+    "src/harness/process_registry.ts": "c19a3cb5d42cc33620bc5baeff7db71f1c6daa92f046a112951a7f50f7906162",
+    "src/runtime/runtime_gate.ts": "269966ae978c9afa7b9cdad719afce9ca0b57e54c52f3cb732777f3ddc23a68c",
+    "src/strict_json.ts": "69a445339670e53f6a7fcb96770b53b896666dd1e60f114c1751a23981d5b7d0",
+    "tests/runtime_state_preservation.test.ts": "746e6cc0f5db35310377f0cc3a04bd20899e2f33e2d564b0a765f5dfa8058df3",
+    "tests/runtime_selection.test.ts": "8aac8e66544a94d3a91cd6a9c2dc01ec35e97a1819dec35606b591bb8df06170",
+    "tests/test_runtime_download_boundaries.py": "51c6e494e1d62ef337a0cb8e1fc40a61fccc429d203395e84862bafc2fd5e0c9",
+    "tests/state_migration.test.ts": "d99ebba9cf4224da61145c58bc293964cfe205651bf30decd7a5060ad7f91c3a",
+    "skills.lock.json": "37cf4e7a514193ff10b1f051915b931874f05a8f693c87e67d904657f040464e",
+    "scripts/acceptance/runtime_bridge_child.py": "3bd45a343e4113cfe495e7ca608e544e414d4b6f7ee7918cddc8924a918bb357",
+    "scripts/acceptance/runtime_bridge_drain.ts": "9c66c9a8f19835bb54f52de77517699e70fc1c72bab6c5bcaa964662af2f39bb",
+    "scripts/acceptance/runtime_activation_race.ts": "dc7502d97180fbd92c3b690a6d73f2602f257bad182109fd7a2e472df2c6bf81",
+    "scripts/acceptance/runtime_activation_race_child.ts": "c58f0d1ac1db7f4223e417a4aaa06d668923fee7a99adf93fec3fb30d913ad19",
+    "docs/evidence/pre-open-reader-identity/identity.json": "d4266d7712ea171c1dbed76ba610ff3b388dc5856261831e862396635c5b416f",
+    "docs/evidence/open-reader/bridge.json": "1b44f5bb7b35cfde993edfb81780ce08eff0ef8bf445212d344395f7a05a10ef",
+    "docs/evidence/open-reader/races.json": "0e2f537ebfa03f8bf1139890cd2ed6a87dc5d585362c4e5ae9dfd3bd28661980",
+    "docs/evidence/open-reader/red.log": "903d324b78e5e179fd8fa1eff1c72aeab51157078e3349ee987229bc39c20ddc",
+    "docs/evidence/open-reader/node.log": "72d4717b53f03ca5f5e1759aa54a2224d1715145ac9bec546ef402d66450cecf",
+    "docs/evidence/open-reader/native.json": "1333814995d1ad0a5555cadf073059414a4f65994ee3443aea38e5d6e2d116a4",
+    "docs/evidence/open-reader/default.json": "5422233eac367f53a6f2cf0f0de87c68ede783fa9e29f9cb4e966a31c81049e6",
+    "docs/evidence/open-reader/python.log": "520843ca3ecce6fbb456695e22f238c215525b423745fe5ab002ccaa00b674bd"
+  },
+  "tests": {
+    "nodePassed": 54,
+    "nodeSkipped": 0,
+    "pythonPassed": 43,
+    "pythonSkipped": 0,
+    "nativeCases": 11,
+    "registeredBridgeCases": 5,
+    "activationRaceRounds": 8,
+    "defaultCases": 5
+  },
+  "tasksCompleted": [],
+  "tasksOpen": [
+    "2.6"
+  ],
+  "scope": "Candidate trigger fix, original open-reader red, real WAL selection/task/budget preservation, real native and bridge drain, interprocess races and public runtime cold default. Full2.6 awaits immutable plugin43 installation; historical42 evidence remains unchanged. Python run preceded manifest-only version bump; new-version documentation checks and CI are separate."
+}

@@ -30,3 +30,7 @@ flowchart LR
 插件42打开schema1／2账本时，先以VACUUM INTO保存包含已提交WAL的一致快照至state-schema-backups，文件只读，记录原schema、目标schema和SHA256；备份失败则拒绝迁移。DDL和schema3标记在同一事务提交。schema2旧阅读器明确拒绝新账本。旧选择策略未声明schema3时，必须排空后才能重新激活。Ledger可显式登记executionMode=bridge的原生任务，默认仍为headless；Controller仅执行headless。
 
 本次[跨版本候选证据](evidence/vectorcraft-runtime-boundaries-candidate-20261008.json)覆盖实际CLI0.2.0与0.2.0-craft.2的会话排空、保留旧版、升级／回退重开及签名漂移拒绝；包含owned签名桌面bridge独立探测与原生保存／重开。完整2.6继续开放，尤其真实登记bridge会话排空、完整安装／升级矩阵及其他平台尚未验收。
+
+插件43补充数据库级selected_runtime_writer触发器：迁移前已打开的旧连接在插入任务时也核验选择的模式、摘要和状态schema。真实旧连接已复现绕过的红灯；修复后拒绝该写入，原WAL快照、选择、任务与已消耗预算完整保留。当前仍等待插件43固定安装复验再关闭2.6。
+
+[Plugin43 candidate / 插件43候选证据](evidence/vectorcraft-open-reader-candidate-20261008.json).

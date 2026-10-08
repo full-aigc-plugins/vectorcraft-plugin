@@ -1,0 +1,8 @@
+{
+  "commit": "12fabb574b588b759a040a10535e3773b1908de0",
+  "scope": "Exact release42 implementation before legacy open-reader guard; not rebound",
+  "files": {
+    "src/harness/ledger.ts": "451ad750c34d3e662cdeb4bcf5ad2607133361c8d54b919cc8cdf7ed799f21a2",
+    "tests/runtime_selection.test.ts": "5798dc2c9c7da0d606c45de8cdc5ba70de32d9857a61ed1cf67bd168c6492972"
+  }
+}

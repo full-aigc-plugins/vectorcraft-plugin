@@ -74,6 +74,7 @@
 - **THEN** 先保留包含已提交WAL的只读一致快照和SHA256，再在单一事务内迁移到schema3；备份失败不得迁移
 - **AND** 原任务、已消耗预算与选择保留；旧schema2阅读器拒绝schema3，未声明schema3兼容的旧选择须排空后重新激活
 - **AND** 原生登记可显式绑定bridge模式，默认headless；Controller继续只执行headless，禁止隐式模式替换
+- **AND** 升级前已打开的旧数据库连接也不能绕过选择的模式、运行时摘要和状态schema约束；插入失败不留下新任务或消耗预算
 
 
 ### Requirement: VC-DS-002 Verified Vector desktop export alias

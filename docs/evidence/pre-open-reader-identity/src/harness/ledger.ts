@@ -51,23 +51,6 @@ export class Ledger {
         state TEXT NOT NULL, result TEXT, PRIMARY KEY(task,n));
       CREATE TABLE IF NOT EXISTS budgets(id TEXT PRIMARY KEY,policy TEXT NOT NULL,attempts INTEGER NOT NULL DEFAULT 0,bytes INTEGER NOT NULL DEFAULT 0);
       CREATE TABLE IF NOT EXISTS late_receipts(id INTEGER PRIMARY KEY,task TEXT NOT NULL,epoch INTEGER NOT NULL,n INTEGER NOT NULL,result TEXT NOT NULL,received_at INTEGER NOT NULL);
-      CREATE TABLE IF NOT EXISTS runtime_selection(id INTEGER PRIMARY KEY CHECK(id=1),active TEXT NOT NULL,previous TEXT);
-      -- 旧阅读器可能已经打开连接；数据库触发器使它同样遵守新选择与schema约束。
-      CREATE TRIGGER IF NOT EXISTS selected_runtime_writer BEFORE INSERT ON tasks
-      WHEN EXISTS(SELECT 1 FROM runtime_selection WHERE id=1)
-      BEGIN
-        SELECT CASE
-          WHEN (SELECT json_extract(active,'$.mode') FROM runtime_selection WHERE id=1)
-            IS NOT COALESCE(json_extract(NEW.binding,'$.executionMode'),'headless')
-            THEN RAISE(ABORT,'runtime_mode_mismatch')
-          WHEN (SELECT json_extract(active,'$.binarySha256') FROM runtime_selection WHERE id=1)
-            IS NOT json_extract(NEW.binding,'$.runtimeIdentity')
-            THEN RAISE(ABORT,'runtime_selection_mismatch')
-          WHEN NOT EXISTS(SELECT 1 FROM runtime_selection,json_each(runtime_selection.active,'$.stateSchemas')
-            WHERE runtime_selection.id=1 AND json_each.value=(SELECT user_version FROM pragma_user_version))
-            THEN RAISE(ABORT,'incompatible_state_schema')
-        END;
-      END;
       PRAGMA user_version=3;`);
       this.db.exec('COMMIT');
     }catch(error){try{this.db.exec('ROLLBACK');}catch{}this.db.close();this.closed=true;throw error;}

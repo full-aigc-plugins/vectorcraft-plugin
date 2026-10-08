@@ -1,0 +1,70 @@
+{
+  "schema": "vectorcraft-registered-bridge-drain/v1",
+  "result": "PASS",
+  "platform": "darwin-arm64",
+  "pluginVersion": "0.1.0-dev.43",
+  "cases": [
+    {
+      "case": "registered-bridge-live-bridge-blocks-version-switch",
+      "result": "PASS",
+      "liveRegisteredMembers": 3,
+      "listenerOwnedByPID": true
+    },
+    {
+      "case": "registered-bridge-stopped-confirmed-and-native-reopened",
+      "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "desktopBinarySha256": "46d7846a765dd0c2a64a72dea17796f49d725203d2c5d91c339432572048f856",
+      "desktopVersion": "0.2.0",
+      "listenerOwnedByPID": true,
+      "projectSha256": "424e54e690855ec5c30f72a4660ab23e3bc2c66b3fa33623648fe23aa4553ae3",
+      "commandCount": 762,
+      "toolCount": 25,
+      "requirementsSha256": "0ca7cec80bf9fc72c7c04f0bb06e981d0d0b4e0c87ab6cdaaa3372a083b94810",
+      "reopened": true,
+      "ownedProcessesStopped": true
+    },
+    {
+      "case": "old-reopens-bridge-stopped-confirmed-and-native-reopened",
+      "runtimeIdentity": "4ba62138ff64d7f701fd2d8fd4c833bd3bb077b6ed78244a8909a4fa0129b766",
+      "projectSha256": "860856f0529b18c043eb657e3c12745cfc156fe9d9951beabf6b2e59d873951a",
+      "nativeFormat": 3,
+      "reopened": true
+    },
+    {
+      "case": "restored-bridge-live-bridge-blocks-version-switch",
+      "result": "PASS",
+      "liveRegisteredMembers": 3,
+      "listenerOwnedByPID": true
+    },
+    {
+      "case": "restored-bridge-stopped-confirmed-and-native-reopened",
+      "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "desktopBinarySha256": "46d7846a765dd0c2a64a72dea17796f49d725203d2c5d91c339432572048f856",
+      "desktopVersion": "0.2.0",
+      "listenerOwnedByPID": true,
+      "projectSha256": "860856f0529b18c043eb657e3c12745cfc156fe9d9951beabf6b2e59d873951a",
+      "commandCount": 762,
+      "toolCount": 25,
+      "requirementsSha256": "0ca7cec80bf9fc72c7c04f0bb06e981d0d0b4e0c87ab6cdaaa3372a083b94810",
+      "reopened": true,
+      "ownedProcessesStopped": true
+    }
+  ],
+  "fingerprints": {
+    "src/harness/controller.ts": "4ae925154e193e139100c938af4f26157c5cc321c6504b69c163330bf3b60b23",
+    "src/harness/ledger.ts": "eaaf703dd51fd63a5d82826ec30ff7e07277aa8a94f3568369b0af142c9e7a9e",
+    "src/harness/process_registry.ts": "c19a3cb5d42cc33620bc5baeff7db71f1c6daa92f046a112951a7f50f7906162",
+    "src/runtime/runtime_gate.ts": "269966ae978c9afa7b9cdad719afce9ca0b57e54c52f3cb732777f3ddc23a68c",
+    "src/strict_json.ts": "69a445339670e53f6a7fcb96770b53b896666dd1e60f114c1751a23981d5b7d0",
+    "skills.lock.json": "37cf4e7a514193ff10b1f051915b931874f05a8f693c87e67d904657f040464e",
+    "plugin.json": "b8e5376af2b7ccb3415edf7dd532504c8196f56ac5ceb821e56fda6f031d0ef2"
+  },
+  "driverFingerprints": {
+    "scripts/acceptance/runtime_bridge_drain.ts": "9c66c9a8f19835bb54f52de77517699e70fc1c72bab6c5bcaa964662af2f39bb",
+    "scripts/acceptance/runtime_bridge_child.py": "3bd45a343e4113cfe495e7ca608e544e414d4b6f7ee7918cddc8924a918bb357"
+  },
+  "skillSha256": "ed67eeb2fa57c957ecb7075a7da70a3227413dcc85baf589552bdc2efb685db8",
+  "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+  "oldRuntimeSha256": "4ba62138ff64d7f701fd2d8fd4c833bd3bb077b6ed78244a8909a4fa0129b766",
+  "scope": "Actual registered owned signed bridge and CLI processes; live and unconfirmed stop prevent switching, drained rollback and reactivation preserve full native document except save timestamp; no model or creative visual acceptance"
+}

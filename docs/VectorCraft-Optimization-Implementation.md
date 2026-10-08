@@ -1,6 +1,6 @@
 # VectorCraft optimization implementation and acceptance
 
-This increment implements section9 of establish-v1-plugin and its dependencies. The independent source candidate is dev.34; the plugin still consumes published source dev.33 in fixed plugin dev.37. Source changes do not enter installed plugins until a separately pinned release and vendor update.
+This increment implements section9 and its dependencies. Plugin source is dev.43 and continues to pin published skill source dev.37. Full task2.6 remains open until public plugin43 fixed-install validation. Independent skill source is unchanged; historical candidate reports retain their execution identities.
 
 ## Implemented modules
 
