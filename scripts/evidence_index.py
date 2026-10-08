@@ -229,6 +229,9 @@ def build(root=ROOT):
     artboards='docs/evidence/vectorcraft-artboards-fixed54-20261009.json'
     if (root/artboards).is_file():
         entries.append(bound_report(root,artboards,'fixed-install','All four current VC-DM-004 scenarios on installed54/source40 macOS arm64;31 native boundary cases, standalone export cold first use, stable-ID mapping and pinned renderer unknown-bounds semantics;only4.12 closes','VC-DM-004',['4.12']))
+    lineage58='docs/evidence/vectorcraft-lineage-candidate58-20261009.json'
+    if (root/lineage58).is_file():
+        entries.append(bound_report(root,lineage58,'native-candidate','Source43/public58 read-only artifact lineage guard; real57 CI cache-write failure reproduced and fixed;74 Python regressions;fixed5.3 remains open','VC-AR-001',['5.1','5.2']))
     lineage='docs/evidence/vectorcraft-lineage-candidate57-20261009.json'
     if (root/lineage).is_file():
         entries.append(bound_report(root,lineage,'native-candidate','Source43 movable native artifact lineage and public57 integrity guard; source177 pass30 skip,plugin73 pass;fixed5.3 remains open','VC-AR-001',['5.1','5.2']))
@@ -255,7 +258,7 @@ def build(root=ROOT):
         archived={}
         for name,digest in entry['dependencies'].items():
             if sha(safe_file(root,name))==digest:continue
-            for prefix in ['docs/evidence/pre-runtime-gate-identity/','docs/evidence/pre-runtime-default-identity/','docs/evidence/pre-runtime-artifacts-identity/','docs/evidence/pre-runtime-boundaries-identity/','docs/evidence/pre-open-reader-identity/','docs/evidence/pre-download-test-cache-identity/','docs/evidence/pre-authorization-identity/','docs/evidence/pre-recovery-binding-identity/','docs/evidence/pre-source-dependencies-identity/','docs/evidence/pre-task3-closure-identity/','docs/evidence/pre-path-identity/','docs/evidence/pre-source-recovery-identity/','docs/evidence/pre-receipt-recovery-identity/','docs/evidence/pre-launch-recovery-identity/','docs/evidence/pre-task3-6-closure-identity/','docs/evidence/pre-budget-cancel-identity/','docs/evidence/pre-budget-cancel-closure-identity/','docs/evidence/pre-brand-text-identity/','docs/evidence/pre-artboard-mapping-identity/','docs/evidence/pre-exchange-identity/','docs/evidence/pre-brand-variants-identity/','docs/evidence/pre-lineage-identity/']:
+            for prefix in ['docs/evidence/pre-runtime-gate-identity/','docs/evidence/pre-runtime-default-identity/','docs/evidence/pre-runtime-artifacts-identity/','docs/evidence/pre-runtime-boundaries-identity/','docs/evidence/pre-open-reader-identity/','docs/evidence/pre-download-test-cache-identity/','docs/evidence/pre-authorization-identity/','docs/evidence/pre-recovery-binding-identity/','docs/evidence/pre-source-dependencies-identity/','docs/evidence/pre-task3-closure-identity/','docs/evidence/pre-path-identity/','docs/evidence/pre-source-recovery-identity/','docs/evidence/pre-receipt-recovery-identity/','docs/evidence/pre-launch-recovery-identity/','docs/evidence/pre-task3-6-closure-identity/','docs/evidence/pre-budget-cancel-identity/','docs/evidence/pre-budget-cancel-closure-identity/','docs/evidence/pre-brand-text-identity/','docs/evidence/pre-artboard-mapping-identity/','docs/evidence/pre-exchange-identity/','docs/evidence/pre-brand-variants-identity/','docs/evidence/pre-lineage-identity/','docs/evidence/pre-lineage-cache-fix-identity/']:
                 old=prefix+name
                 if (root/old).is_file() and sha(safe_file(root,old))==digest:
                     archived[name]=old

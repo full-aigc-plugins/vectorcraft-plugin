@@ -16,15 +16,6 @@ import xml.etree.ElementTree as ET
 MAX_FILE=64*1024*1024
 MAX_TOTAL=256*1024*1024
 
-def exchange_module():
-    """从不可变技能快照读取源码，不向安装目录写入Python缓存。"""
-    path=Path(__file__).resolve().parents[2]/'skills/vectorcraft-use/scripts/exchange_loss.py'
-    spec=importlib.util.spec_from_file_location('quality_exchange',path)
-    module=importlib.util.module_from_spec(spec)
-    exec(compile(path.read_bytes(),str(path),'exec'),module.__dict__)
-    return module
-
-
 def embedded_svg_image(value):
     """仅放行有界PNG／JPEG内嵌数据；验证像素后才交给SVG渲染器。"""
     match=re.fullmatch(r'data:image/(png|jpeg);base64,([A-Za-z0-9+/=]+)',value,re.I)
@@ -57,7 +48,8 @@ def check_raster_disclosure(directory,manifest,path,file):
             or loss['inspection'].get('location')!='native.json' or 'native.json' not in manifest['files']
             or loss['inspection'].get('sha256')!=manifest['files']['native.json']):raise ValueError('raster_disclosure_identity_mismatch')
     row=matches[0]
-    module=exchange_module()
+    spec=importlib.util.spec_from_file_location('quality_exchange',Path(__file__).resolve().parents[2]/'skills/vectorcraft-use/scripts/exchange_loss.py')
+    module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
     if (row.get('format')!='svg' or row.get('nativeSubstitute') is not False or not isinstance(row.get('observations'),dict)
             or row.get('sha256')!=hashlib.sha256(path.read_bytes()).hexdigest() or row['observations'].get('rasterizationScope')!=module.svg_image_scope(xml)):raise ValueError('raster_disclosure_scope_mismatch')
     changes=row.get('changes')
@@ -151,7 +143,8 @@ def check_delivery(directory,expected_runtime,expected_project,decoder=decode_ou
         if not isinstance(outputs,list) or any(not isinstance(row,dict) or row.get('path') not in declared for row in outputs):raise ValueError('unbound_export')
         if len({row['path'] for row in outputs})!=len(outputs):raise ValueError('duplicate_export')
         if 'lineage' in manifest:
-            lineage=exchange_module()
+            spec=importlib.util.spec_from_file_location('delivery_lineage',Path(__file__).resolve().parents[2]/'skills/vectorcraft-use/scripts/exchange_loss.py')
+            lineage=importlib.util.module_from_spec(spec);spec.loader.exec_module(lineage)
             identity=lineage.verify_lineage(directory,manifest)
             report.update(lineageStatus='PASS',artifactLogicalId=identity['logicalId'],artifactVersion=identity['version'],sourceTask=identity['sourceTask'])
         elif 'lineage.json' in declared:

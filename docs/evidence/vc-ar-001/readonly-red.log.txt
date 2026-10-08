@@ -1,0 +1,22 @@
+test_readonly_check_does_not_write_skill_cache (readonly_regression.LineageQualityTests.test_readonly_check_does_not_write_skill_cache) ... FAIL
+
+======================================================================
+FAIL: test_readonly_check_does_not_write_skill_cache (readonly_regression.LineageQualityTests.test_readonly_check_does_not_write_skill_cache)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_REPO/tests/test_artifact_lineage_quality.py", line 34, in test_readonly_check_does_not_write_skill_cache
+    self.assertEqual(before,after)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+AssertionError: {'vec[101 chars]48e3'} != {'vec[101 chars]48e3', 'vectorcraft-use/scripts/__pycache__/ex[92 chars]d22'}
++ {'vectorcraft-use/scripts/__pycache__/exchange_loss.cpython-313.pyc': 'e8cbb5afe8bedf078a7855d9f692443ed49b2cfc9c262fedbb6784e1950fdd22',
+- {'vectorcraft-use/scripts/exchange_loss.py': 'a4ba82ec8000a095dcf62813352621bdc42cfd7a81949baa6b0e896d1a2048e3'}
+? ^
+
++  'vectorcraft-use/scripts/exchange_loss.py': 'a4ba82ec8000a095dcf62813352621bdc42cfd7a81949baa6b0e896d1a2048e3'}
+? ^
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.012s
+
+FAILED (failures=1)

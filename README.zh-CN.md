@@ -137,7 +137,7 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.57 |
+| Metadata version | 0.1.0-dev.58 |
 | Stage | implementation-in-progress |
 | Skills source | vectorcraft-skills / v0.1.0-dev.43 |
 | Execution | 上游 CLI；ArtCraft 使用子适配器 |
@@ -396,3 +396,6 @@ Codex 0.153.4 在全新隔离配置中安装并发现13技能。13项独立空�
 
 
 插件57锁定源43，新增摘要绑定的可移动产物血缘和公开语义完整性校验。真实原生创建、移动重开、修订及五类拒绝候选通过；源177通过／30跳过，插件73项Python通过。5.1／5.2完成（113/127），固定安装验收5.3仍开放。 [Evidence](docs/evidence/vectorcraft-lineage-candidate57-20261009.json).
+
+
+插件58修正公开校验的导入方式，保持安装技能字节不变。57真实CI缓存写入失败记录保留；只读回归在57失败、58通过。本地74项Python通过，固定58验收仍待完成。 [Evidence](docs/evidence/vectorcraft-lineage-candidate58-20261009.json).

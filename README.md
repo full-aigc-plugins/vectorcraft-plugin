@@ -10,7 +10,7 @@ Four-domain RT-001 runtime source/integrity acceptance now covers every current 
 
 Create Logo, icon and brand assets as `.vectorcraft` with applicable SVG, PDF and PNG exports.
 
-Current plugin: `0.1.0-dev.57`; skill source: `0.1.0-dev.43`; 13 independent skills.
+Current plugin: `0.1.0-dev.58`; skill source: `0.1.0-dev.43`; 13 independent skills.
 
 Plugin55/source41 adds actual SVG image scope and a digest-bound technical disclosure guard. Minimum tasks4.13/4.14 pass; 4.15 qualifies for its current headless scenarios. [Architecture](docs/VectorCraft-Exchange-Scope.en.md).
 
@@ -137,7 +137,7 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.57 |
+| Metadata version | 0.1.0-dev.58 |
 | Stage | implementation-in-progress |
 | Skills source | vectorcraft-skills / v0.1.0-dev.43 |
 | Execution | Upstream CLI; ArtCraft uses child adapters |
@@ -398,3 +398,6 @@ Actual public56/source42 isolated Codex0.153.4 installation qualifies all six cu
 
 
 Plugin57/source43 adds digest-bound portable artifact lineage and public semantic integrity checks. Native creation, movement/reopen, revision and five integrity refusals pass as candidates; source177 passed/30 skipped, plugin73 Python tests passed. Tasks5.1/5.2 complete (113/127); fixed-install5.3 remains open. [Evidence](docs/evidence/vectorcraft-lineage-candidate57-20261009.json).
+
+
+Plugin58 corrects public checker imports to preserve immutable installed skill bytes. The actual57 CI cache-write failure is retained; its read-only regression failed on57 and passes on58. All74 Python tests pass locally; fixed58 qualification remains pending. [Evidence](docs/evidence/vectorcraft-lineage-candidate58-20261009.json).

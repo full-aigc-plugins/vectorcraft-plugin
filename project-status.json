@@ -111,8 +111,8 @@
     "4.16": "docs/evidence/vectorcraft-brand-variants-candidate56-20261009.json",
     "4.17": "docs/evidence/vectorcraft-brand-variants-candidate56-20261009.json",
     "4.18": "docs/evidence/vectorcraft-brand-variants-fixed56-20261009.json",
-    "5.1": "docs/evidence/vectorcraft-lineage-candidate57-20261009.json",
-    "5.2": "docs/evidence/vectorcraft-lineage-candidate57-20261009.json"
+    "5.1": "docs/evidence/vectorcraft-lineage-candidate58-20261009.json",
+    "5.2": "docs/evidence/vectorcraft-lineage-candidate58-20261009.json"
   },
   "hostValidationEvidence": "docs/evidence/craft-full-command-fixed-first-use-20261007.json",
   "hostValidationStatus": "fixed-five-plugin58-discovery-and-standalone-desktop-passed",

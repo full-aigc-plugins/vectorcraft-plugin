@@ -193,8 +193,8 @@
       ],
       "owner": "Harness owner",
       "status": "implemented",
-      "evidence": "docs/evidence/vectorcraft-lineage-candidate57-20261009.json",
-      "scope": "source43 and public57 candidate; fixed installation qualification5.3 remains open"
+      "evidence": "docs/evidence/vectorcraft-lineage-candidate58-20261009.json",
+      "scope": "source43 and public58 candidate; fixed installation qualification5.3 remains open"
     },
     {
       "requirement": "VC-AR-002",

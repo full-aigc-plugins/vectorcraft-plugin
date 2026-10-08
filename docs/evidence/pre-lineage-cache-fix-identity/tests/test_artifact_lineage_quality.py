@@ -21,18 +21,6 @@ class LineageQualityTests(unittest.TestCase):
   return m,r
  def check(self,root,m):
   (root/'manifest.json').write_text(json.dumps(m));return load(ROOT/'src/evaluation/delivery_quality.py').check_delivery(root,'a'*64,m['files']['project.vectorcraft'],decoder=lambda p:{'status':'PASS','scope':'unit fixture only'})
- def test_readonly_check_does_not_write_skill_cache(self):
-  module=load(ROOT/'src/evaluation/delivery_quality.py')
-  import sys
-  original=sys.dont_write_bytecode
-  try:
-   sys.dont_write_bytecode=False
-   before={p.relative_to(ROOT/'skills').as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in (ROOT/'skills').rglob('*') if p.is_file()}
-   with tempfile.TemporaryDirectory() as d:
-    root=Path(d);manifest,record=self.fixture(root);self.check(root,manifest)
-   after={p.relative_to(ROOT/'skills').as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in (ROOT/'skills').rglob('*') if p.is_file()}
-   self.assertEqual(before,after)
-  finally:sys.dont_write_bytecode=original
  def test_current_lineage_is_verified(self):
   with tempfile.TemporaryDirectory() as d:
    root=Path(d);m,r=self.fixture(root);self.assertEqual(self.check(root,m)['lineageStatus'],'PASS')
