@@ -10,7 +10,7 @@ Four-domain RT-001 runtime source/integrity acceptance now covers every current 
 
 Create Logo, icon and brand assets as `.vectorcraft` with applicable SVG, PDF and PNG exports.
 
-Current plugin: `0.1.0-dev.59`; skill source: `0.1.0-dev.43`; 13 independent skills.
+Current plugin: `0.1.0-dev.60`; skill source: `0.1.0-dev.43`; 13 independent skills.
 
 Plugin55/source41 adds actual SVG image scope and a digest-bound technical disclosure guard. Minimum tasks4.13/4.14 pass; 4.15 qualifies for its current headless scenarios. [Architecture](docs/VectorCraft-Exchange-Scope.en.md).
 
@@ -137,7 +137,7 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.59 |
+| Metadata version | 0.1.0-dev.60 |
 | Stage | implementation-in-progress |
 | Skills source | vectorcraft-skills / v0.1.0-dev.43 |
 | Execution | Upstream CLI; ArtCraft uses child adapters |
@@ -410,3 +410,5 @@ Plugin59/source43 adds uniform exchange-report checks for SVG/PDF/PNG, native an
 
 
 Actual public59/source43 on Codex0.153.4 macOS arm64 passes all three current VC-AR-002 scenarios: independent native reopening, retained live-text/freeform editing, three decoded exports and20 refusals. All13 skill digests remain unchanged. Task5.6 closes;115/127 complete,12 open. GUI,creative,external editor fidelity and other platforms remain separate. [Evidence](docs/evidence/vectorcraft-native-exchange-fixed59-20261009.json).
+
+Plugin60/source43 binds the decoder, process launcher and local exchange-loss dependency to a readonly execution snapshot. Dependency drift invalidates checked reviews before first handoff and after restart; older checked evidence requires a fresh check. Three targeted tests,118 Node tests and92 Python tests pass locally. Task6.3 remains open;115/127 complete,12 open. [Local evidence](docs/evidence/vectorcraft-quality-checker-candidate60-20261009.json).

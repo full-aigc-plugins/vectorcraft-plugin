@@ -2,7 +2,7 @@ import { DatabaseSync } from 'node:sqlite';
 import { createHash, randomUUID } from 'node:crypto';
 import { readFileSync, realpathSync } from 'node:fs';
 import { dirname, resolve, relative, isAbsolute } from 'node:path';
-import { checkerFiles } from './checker_bundle.ts';
+import { fileURLToPath } from 'node:url';
 import { canonical, strictJson } from '../strict_json.ts';
 
 const hash=(value:string|Buffer)=>createHash('sha256').update(value).digest('hex');
@@ -32,9 +32,8 @@ export class ReviewStore {
     const row=this.db.prepare("SELECT c.*,t.state,t.binding FROM technical_checks c JOIN tasks t ON t.id=c.task WHERE c.task=?").get(checkId) as any;
     if(!row||row.state!=='review_ready'||hash(row.report)!==row.report_sha)throw new Error('technical_evidence_requires_check');
     if(strictJson(row.binding).planHash!==hash(canonical(input)))throw new Error('technical_identity_mismatch');
-    const evidence=strictJson(row.report),sources=strictJson(row.sources);
-    if(!evidence.checkerFiles||canonical(evidence.checkerFiles)!==canonical(checkerFiles()))throw new Error('stale_review_binding');
     if(row.review_id){const current=this.current(row.review_id);return {schema:'vectorcraft-review-request/v1',id:current.id,bindingHash:current.binding_hash,input:current.input,fingerprints:current.fingerprints,state:current.state};}
+    const evidence=strictJson(row.report),sources=strictJson(row.sources);
     if(evidence.projectRevision!==input.projectRevision||evidence.runtimeIdentity!==input.runtimeIdentity)throw new Error('technical_identity_mismatch');
     for(const [path,expected] of Object.entries(sources))if(hash(readFileSync(path))!==expected)throw new Error('stale_review_binding');
     const request=this.createRequest({...input,technicalStatus:evidence.technicalStatus,technicalEvidence:evidence,
@@ -69,8 +68,9 @@ export class ReviewStore {
     if(!row)throw new Error('unknown_review_request');
     const input=strictJson(row.input),fingerprints=strictJson(row.fingerprints);
     if(input.technicalEvidenceOrigin==='checked-decoder'){
-      const current=checkerFiles(),evidence=input.technicalEvidence;
-      if(!evidence.checkerFiles||canonical(evidence.checkerFiles)!==canonical(current)||current['src/evaluation/delivery_quality.py']!==evidence.checkerSha256||current['src/harness/process_runner.py']!==evidence.launcherSha256)throw new Error('stale_review_binding');
+      const helper=fileURLToPath(new URL('./delivery_quality.py',import.meta.url));
+      const launcher=fileURLToPath(new URL('../harness/process_runner.py',import.meta.url));
+      if(hash(readFileSync(helper))!==input.technicalEvidence.checkerSha256||hash(readFileSync(launcher))!==input.technicalEvidence.launcherSha256)throw new Error('stale_review_binding');
     }
     for(const [path,expected] of Object.entries(fingerprints)) {
       try{if(this.fingerprint(path)!==expected)throw new Error('stale');}

@@ -9,11 +9,6 @@ class NativeExchangeEvidenceTests(unittest.TestCase):
   for n in set(self.report['fingerprints'])|{REPORT}:
    p=self.root/n;p.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/n,p)
   spec=importlib.util.spec_from_file_location('native_exchange_verifier',ROOT/'scripts/verify_native_exchange_evidence.py');self.m=importlib.util.module_from_spec(spec);spec.loader.exec_module(self.m);self.m.ROOT=self.root
-  p=self.root/'docs/evidence-index.json';p.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/'docs/evidence-index.json',p)
-  for entry in json.loads(p.read_text())['entries']:
-   for name in entry['dependencies']:
-    p=self.root/name
-    if not p.exists():p.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/name,p)
  def write(self,n,r):
   p=self.root/n;p.write_text(json.dumps(r));self.report['fingerprints'][n]=self.m.sha(p);(self.root/REPORT).write_text(json.dumps(self.report))
  def verify(self):

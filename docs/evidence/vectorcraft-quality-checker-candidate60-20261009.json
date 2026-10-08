@@ -1,0 +1,36 @@
+{
+  "schema": "vectorcraft-quality-checker-candidate/v1",
+  "result": "PASS",
+  "pluginVersion": "0.1.0-dev.60",
+  "sourceRef": "v0.1.0-dev.43",
+  "tasksClosed": [],
+  "tests": {
+    "baselineTargetFailures": 2,
+    "targetPass": 3,
+    "nodePass": 118,
+    "pythonPass": 92
+  },
+  "fingerprints": {
+    "docs/evidence/vc-qa-001/python92.log.txt": "402f3a1464f161172fa73f0a44e27bb86055d750d8bb3e91ff6cc1ae014567cd",
+    "docs/evidence/vc-qa-001/node118.log.txt": "dae354094954715f9f57bd42df8b123e0a922614f9678f86e38627414bfc5eb8",
+    "docs/evidence/vc-qa-001/dependencies-green.log.txt": "8f2e919b7aaf6ccd31b576c1a6709d9046c06c6728977c722c9fcc2dd45cb967",
+    "docs/evidence/vc-qa-001/dependencies-red.log.txt": "80f0ee09d97a746b82e4735a819179adbe7d3465fa57815002641a812f45e000",
+    "src/evaluation/checker_bundle.ts": "c2b57712374d5b2dcb7f5c6fc5c9d2f39a93353a4d74df54dd8e286e3fc90526",
+    "src/evaluation/review_store.ts": "615b436f7d60450f8913d7fb2224ebddc68f8679699b4a7ae40ba7499081ead4",
+    "src/evaluation/technical_review.ts": "503b8f9d8b3f62965eaf5237361bda2a0c7a406ab1768dc77be2ea182fe64f8d",
+    "tests/technical_checker_identity.test.ts": "ae62fa3d4dce870f3c4bf0ce3df0a58299779ea2c40d72813903b56ba01c33e8",
+    "tests/revision_cycle.test.ts": "7ef695d713f7b782a1c301876d40cd3e228f8c5886b165379f6a75132d2618b0",
+    "plugin.json": "3a3556b0f4d2f18eef6bbcfe127c0d828715bdfa604a4c838b9e87174798de8f",
+    "docs/current-identity.json": "31787cfda06f181c34c858ca98eda504bcb11bc454814274343f7e18a36ac909",
+    "skills.lock.json": "46255b049f5e3d14b45ca9fecbaf037cd55b1e8b8bb447d407cb16c55eb3758c",
+    "openspec/changes/establish-v1-plugin/specs/quality-review/spec.md": "60b8491854042fc69fe12898fefb57a85731ea7c23f264190b7fdf764fb32c54"
+  },
+  "scope": "Local checker identity regression only: readonly three-file execution snapshot, dependency drift at initial handoff and after restart, legacy incomplete checked evidence rejected. Unit native fixtures do not establish native or creative acceptance. Logs redact temporary local paths.",
+  "unverified": [
+    "task6.3 full fixed native scenario qualification",
+    "GUI",
+    "creative quality",
+    "other hosts and platforms",
+    "complete V1"
+  ]
+}

@@ -5,7 +5,6 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
-import { checkerFiles } from '../src/evaluation/checker_bundle.ts';
 import { canonical } from '../src/strict_json.ts';
 import { RevisionCycle } from '../src/evaluation/revision_cycle.ts';
 import { ReviewStore } from '../src/evaluation/review_store.ts';
@@ -37,7 +36,7 @@ function seedChecked(f:any,score=2,revision='native',directory=f.root){
  writeFileSync(manifest,JSON.stringify({schema:'vectorcraft-delivery/v1',runtimeSha256:f.input.runtimeIdentity,sourceProjectSha256:hash('native'),files,outputs:[{path:'preview.png'}],fontDependencies:[]}));
  const request=f.store.request({...f.input,native,projectRevision:digest(native),candidates:[preview]});
  f.store.importReceipt({schema:'vectorcraft-review-receipt/v1',requestId:request.id,bindingHash:request.bindingHash,reviewer:{kind:'human',identity:'unit fixture only',contextOrigin:'trusted SQL fixture',independenceEvidence:null},verdict:'revise',issues:[{objectId:2,field:'paint.color',message:'unit issue',evidence:['preview.png']}],scores:{structure:score,text:score,brand:score,layout:score,legibility:score}});
- const input={...request.input,technicalEvidenceOrigin:'checked-decoder',technicalEvidence:{checkerFiles:checkerFiles(),artifactIntegrityStatus:'PASS',technicalStatus:'PASS',engineeringStatus:'NOT_RUN',checkerSha256:digest(fileURLToPath(new URL('../src/evaluation/delivery_quality.py',import.meta.url))),launcherSha256:digest(fileURLToPath(new URL('../src/harness/process_runner.py',import.meta.url)))}};
+ const input={...request.input,technicalEvidenceOrigin:'checked-decoder',technicalEvidence:{artifactIntegrityStatus:'PASS',technicalStatus:'PASS',engineeringStatus:'NOT_RUN',checkerSha256:digest(fileURLToPath(new URL('../src/evaluation/delivery_quality.py',import.meta.url))),launcherSha256:digest(fileURLToPath(new URL('../src/harness/process_runner.py',import.meta.url)))}};
  const fingerprints={...request.fingerprints,[native]:digest(native),[preview]:digest(preview),[model]:digest(model),[manifest]:digest(manifest)};
  f.store.db.prepare('UPDATE reviews SET input=?,fingerprints=?,binding_hash=? WHERE id=?').run(canonical(input),canonical(fingerprints),hash(canonical({input,fingerprints})),request.id);
  return request.id;

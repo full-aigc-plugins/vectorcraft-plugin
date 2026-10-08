@@ -2,13 +2,15 @@ import { spawn } from 'node:child_process';
 import { createHash,randomUUID } from 'node:crypto';
 import { readFileSync,writeFileSync,mkdirSync,lstatSync,realpathSync } from 'node:fs';
 import { dirname,resolve,relative,isAbsolute,join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { Ledger } from '../harness/ledger.ts';
 import { ProcessRegistry } from '../harness/process_registry.ts';
 import { canonical,strictJson } from '../strict_json.ts';
 import { ReviewStore } from './review_store.ts';
-import { captureChecker,checkerFiles } from './checker_bundle.ts';
 
 const hash=(value:string|Buffer)=>createHash('sha256').update(value).digest('hex');
+const helper=fileURLToPath(new URL('./delivery_quality.py',import.meta.url));
+const launcher=fileURLToPath(new URL('../harness/process_runner.py',import.meta.url));
 const inside=(root:string,path:string)=>{const sub=relative(root,path);return !isAbsolute(sub)&&sub!=='..'&&!sub.startsWith('../');};
 const pause=(ms:number)=>new Promise(r=>setTimeout(r,ms));
 
@@ -39,8 +41,8 @@ export class TechnicalReview {
     }
     if(!Array.isArray(input.candidates)||!input.candidates.length||input.candidates.some((p:string)=>!data.outputs.some((o:any)=>typeof o.path==='string'&&resolve(source,o.path)===resolve(p)&&o.path in data.files)))throw new Error('unbound_candidate');
     for(const path of [...input.candidates,...input.targets.map((t:any)=>t.path),input.rubric,input.exchangeLoss])capture(path);
-    const checker=captureChecker(),checkerSha=checker.files['src/evaluation/delivery_quality.py'],launcherSha=checker.files['src/harness/process_runner.py'];
-    const digest=hash(canonical({input,sources,checkerFiles:checker.files}));
+    const checkerSha=hash(readFileSync(helper)),launcherSha=hash(readFileSync(launcher));
+    const digest=hash(canonical({input,sources,checkerSha,launcherSha}));
     const base=join(realpathSync(dirname(this.store.path)),'.technical-checks');
     const writeRoots=input.authorization?.writeRoots;
     if(!Array.isArray(writeRoots)||!writeRoots.some((r:string)=>inside(realpathSync(r),resolve(base))))throw new Error('technical_write_outside_roots');
@@ -50,18 +52,15 @@ export class TechnicalReview {
     ledger.db.exec('CREATE TABLE IF NOT EXISTS technical_checks(task TEXT PRIMARY KEY,report TEXT NOT NULL,report_sha TEXT NOT NULL,sources TEXT NOT NULL,review_id TEXT);');
     let task:any;
     try{
-      task=ledger.claim('technical-review:'+digest,output,output,{planHash:hash(canonical(input)),inputHashes:{...sources,checkerBundle:hash(canonical(checker.files))},
+      task=ledger.claim('technical-review:'+digest,output,output,{planHash:hash(canonical(input)),inputHashes:{...sources,checker:checkerSha,launcher:launcherSha},
         projectRevision:input.projectRevision,runtimeIdentity:input.runtimeIdentity,authorization:input.authorization});
       if(task.state==='review_ready')return this.store.requestFromCheck(input,task.id);
       if(task.state!=='ready')throw new Error('reconcile_required');
       this.store.validateInput(input);
-      ledger.intent(task.id,task.epoch,0,{kind:'readonly-delivery-decode',checkerFiles:checker.files,sources},bytes+[...checker.contents.values()].reduce((total,value)=>total+value.length,0)+1024*1024);
+      ledger.intent(task.id,task.epoch,0,{kind:'readonly-delivery-decode',checkerSha,launcherSha,sources},bytes+1024*1024);
       try{
         mkdirSync(base,{recursive:true});mkdirSync(output);const snapshot=join(output,'delivery');mkdirSync(snapshot);
         for(const [name,value] of contents){const path=join(snapshot,name);mkdirSync(dirname(path),{recursive:true});writeFileSync(path,value,{flag:'wx',mode:0o400});}
-        const checkerRoot=join(output,'checker');
-        for(const [name,value] of checker.contents){const path=join(checkerRoot,name);mkdirSync(dirname(path),{recursive:true});writeFileSync(path,value,{flag:'wx',mode:0o400});}
-        const helper=join(checkerRoot,'src/evaluation/delivery_quality.py'),launcher=join(checkerRoot,'src/harness/process_runner.py');
         const marker=randomUUID();
         // nonce 留在 exec 后的命令行，供持久进程组身份核对；不向解码器增加公开参数。
         const code=`import runpy,sys\nsys.argv=${JSON.stringify([helper,snapshot,'--runtime-sha256',input.runtimeIdentity,'--project-sha256',input.projectRevision])}\nrunpy.run_path(${JSON.stringify(helper)},run_name='__main__')\n# ${marker}`;
@@ -84,8 +83,8 @@ export class TechnicalReview {
           ||report.manifestSha256!==sources[manifest]||canonical(report.files)!==canonical(data.files)||!['PASS','FAIL','NOT_RUN'].includes(report.technicalStatus)
           ||report.engineeringStatus!=='NOT_RUN'||report.nativeReopenStatus!=='NOT_RUN')throw new Error('invalid_technical_report');
         for(const [path,expected] of Object.entries(sources))if(this.store.fingerprint(path)!==expected)throw new Error('stale_review_binding');
-        if(canonical(checkerFiles())!==canonical(checker.files)||Object.entries(checker.files).some(([name,expected])=>hash(readFileSync(join(checkerRoot,name)))!==expected))throw new Error('technical_checker_changed');
-        report.checkId=task.id;report.checkerSha256=checkerSha;report.launcherSha256=launcherSha;report.checkerFiles=checker.files;
+        if(hash(readFileSync(helper))!==checkerSha||hash(readFileSync(launcher))!==launcherSha)throw new Error('technical_checker_changed');
+        report.checkId=task.id;report.checkerSha256=checkerSha;report.launcherSha256=launcherSha;
         const serialized=canonical(report),reportPath=join(output,'report.json');writeFileSync(reportPath,serialized,{flag:'wx',mode:0o400});
         ledger.receipt(task.id,task.epoch,0,{reportSha256:hash(serialized)});ledger.verified(task.id,task.epoch,{path:reportPath,sha256:hash(serialized)});
         ledger.db.prepare('INSERT INTO technical_checks(task,report,report_sha,sources) VALUES(?,?,?,?)').run(task.id,serialized,hash(serialized),canonical(sources));
