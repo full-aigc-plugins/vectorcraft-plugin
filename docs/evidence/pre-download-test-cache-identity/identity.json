@@ -1,0 +1,7 @@
+{
+  "commit": "13b9d2a1ccf0c6a31fb51788b7b60770550993c1",
+  "scope": "Exact original test bytes before preventing imports from writing into the pinned vendor tree",
+  "files": {
+    "tests/test_runtime_download_boundaries.py": "51c6e494e1d62ef337a0cb8e1fc40a61fccc429d203395e84862bafc2fd5e0c9"
+  }
+}

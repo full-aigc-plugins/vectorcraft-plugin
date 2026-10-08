@@ -162,7 +162,7 @@ def build(root=ROOT):
         archived={}
         for name,digest in entry['dependencies'].items():
             if sha(safe_file(root,name))==digest:continue
-            for prefix in ['docs/evidence/pre-runtime-gate-identity/','docs/evidence/pre-runtime-default-identity/','docs/evidence/pre-runtime-artifacts-identity/','docs/evidence/pre-runtime-boundaries-identity/','docs/evidence/pre-open-reader-identity/']:
+            for prefix in ['docs/evidence/pre-runtime-gate-identity/','docs/evidence/pre-runtime-default-identity/','docs/evidence/pre-runtime-artifacts-identity/','docs/evidence/pre-runtime-boundaries-identity/','docs/evidence/pre-open-reader-identity/','docs/evidence/pre-download-test-cache-identity/']:
                 old=prefix+name
                 if (root/old).is_file() and sha(safe_file(root,old))==digest:
                     archived[name]=old

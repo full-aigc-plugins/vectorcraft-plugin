@@ -1,5 +1,5 @@
 """用当前固定安装器逐项验证RT-002下载失败分类；故障注入不冒充真实网络故障。"""
-import errno,hashlib,importlib.util,json,os,ssl,sys,tempfile,unittest
+import errno,hashlib,importlib.util,json,os,ssl,tempfile,unittest
 from pathlib import Path
 from unittest.mock import patch
 from urllib.error import HTTPError,URLError
@@ -19,8 +19,7 @@ class RuntimeDownloadBoundaryTests(unittest.TestCase):
  def setUp(self):
   source=Path(os.environ.get('VECTORCRAFT_INSTALLED_BOOTSTRAP',SOURCE))
   self.assertEqual(hashlib.sha256(source.read_bytes()).hexdigest(),hashlib.sha256(SOURCE.read_bytes()).hexdigest())
-  spec=importlib.util.spec_from_file_location('fixed_runtime_download',source);self.module=importlib.util.module_from_spec(spec)
-  with patch.object(sys,'dont_write_bytecode',True):spec.loader.exec_module(self.module)
+  spec=importlib.util.spec_from_file_location('fixed_runtime_download',source);self.module=importlib.util.module_from_spec(spec);spec.loader.exec_module(self.module)
   self.lock=json.loads(SOURCE.with_name('runtime.lock.json').read_text());self.url=self.lock['artifacts']['darwin-arm64']['url'];self.temp=tempfile.TemporaryDirectory();self.addCleanup(self.temp.cleanup);self.root=Path(self.temp.name);self.target=self.root/'download.zip'
  def transient(self):
   return [ssl.SSLEOFError('EOF'),TimeoutError('timeout'),ConnectionResetError('reset'),URLError(ConnectionAbortedError('aborted'))]+[HTTPError(self.url,c,'transient',{},None) for c in [408,429,500,502,503,504,599]]
