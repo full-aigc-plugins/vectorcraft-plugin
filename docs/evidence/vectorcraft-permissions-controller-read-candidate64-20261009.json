@@ -1,0 +1,85 @@
+{
+  "schema": "vectorcraft-permissions-controller-read-candidate/v1",
+  "result": "PASS",
+  "pluginVersion": "0.1.0-dev.64",
+  "sourceRef": "v0.1.0-dev.46",
+  "sourceCommit": "91092712e427542e9c8383e346f0ad94f0e3f029",
+  "baseCommit": "847b5966ed6189960446c71723b3296f46b433de",
+  "platform": "darwin-arm64",
+  "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+  "filesystemPython": "Python 3.14.8",
+  "nativeDecoderPython": "Python3.13.5",
+  "tasksClosed": [],
+  "marketplaceEligible": false,
+  "fixedPluginAcceptance": "NOT_RUN",
+  "readBoundaryCases": [
+    "plan-ancestor-swap",
+    "source-project-ancestor-swap",
+    "guarded-input-ancestor-swap"
+  ],
+  "redTests": {
+    "failed": 3,
+    "reason": "Node parent read outside bytes after path authorization"
+  },
+  "greenTests": {
+    "passed": 3
+  },
+  "batchTests": {
+    "passed": 2,
+    "largeFileBytes": 68157440,
+    "inputEntries": 4098,
+    "helperBatchLimit": 4096,
+    "sourceDigestSizeLimit": "none added",
+    "capturedContentLimit": 67108864
+  },
+  "nodeRegression": {
+    "passed": 146,
+    "failed": 0
+  },
+  "pythonRegression": {
+    "passed": 154,
+    "failed": 0
+  },
+  "native": {
+    "path": "docs/evidence/vc-rl-002/controller-read-native.json",
+    "sharedAttempts": 4,
+    "stop": "budget_exceeded",
+    "sourcePreserved": true,
+    "controlTextPreserved": true,
+    "allGroupsStopped": true,
+    "creativeAssessment": "NOT_RUN; explicitly injected QA scores only"
+  },
+  "scope": "Descriptor-safe plan/source preflight and batched guarded-input freshness digests. Partial VC-RL-002 implementation,not complete permission or release qualification.",
+  "remaining": [
+    "Controller source snapshot copy reads",
+    "Controller verifyDelivery and receipt-manifest reads",
+    "complete parent write audit",
+    "real host secret-reference resolver",
+    "current fixed public plugin installation and permissions acceptance"
+  ],
+  "fingerprints": {
+    "docs/current-identity.json": "e559e00b4d74b41b716e3697b7477a4760790222a8d5e7ec4d1525ca55167ecc",
+    "docs/evidence/vc-rl-002/controller-read-batch.log.txt": "11ef28892e73a4c2081be3d1514b242a6ceefbeff6e8f215486246c51b9ab372",
+    "docs/evidence/vc-rl-002/controller-read-green.log.txt": "bd6683b141e65843b862fe2a0fddf86666cfc34aa3dddc1b7402f28d5fb4ea7d",
+    "docs/evidence/vc-rl-002/controller-read-native.json": "60c6edd4b6a3792baa28e1899f699752193f346153191403261ad7c6496464e5",
+    "docs/evidence/vc-rl-002/controller-read-native.log.txt": "c0001f21291126dc73fd527bd6d09f61a9c7974ae6aeff64704c1c747617170e",
+    "docs/evidence/vc-rl-002/controller-read-node146.log.txt": "cbcc3540e6b861c84f5c4b42952faae2448e8fa285438260e3592911f98046ec",
+    "docs/evidence/vc-rl-002/controller-read-red.log.txt": "2cf5a6f38c81d6b55477303c072a513a2cae848b287bf1884b74bcd671b8eaed",
+    "plugin.json": "60e59b0f5f44bf657e0554e25a20c5e99e774af7c2ad9f1602590cd5bff6f712",
+    "project-status.json": "ece0a6511b947bbe8c5a017b8449de528fbf17501809cf248be33649a60d8041",
+    "scripts/qa/revision_budget.ts": "a5601841c8e76d9ca143060df7a21e27722612c2b4b7892e3215218ca3275e47",
+    "skills.lock.json": "44bd17666c6ef2a79641245a239a4f29a1f4a79162bba0de8b8329347f0a8fd1",
+    "skills/vectorcraft-use/scripts/asset_reader.py": "d067708d2355c0aa4415027ae2cff53c5559611c90854447fd7595b6535939f3",
+    "src/evaluation/checker_bundle.ts": "7f57b688c4dae338743d6dcd5a955e00d3d33516526bc5dada5fd3952fa82fde",
+    "src/evaluation/review_store.ts": "992b6914c453d674eeb3e02e006c0acda75892f0757efcd1d33e990d306aa7f8",
+    "src/evaluation/technical_review.ts": "c049122036dd2ff5ad8f3fa3644480f058b1105049b2e49b61a1c8dfdfe6195f",
+    "src/harness/asset_digest.py": "a08d26cef0e86fa5298778dd857006a00ab7541709ce53de5d8bde8d3a34a861",
+    "src/harness/asset_digest.ts": "f1ad1d239eb56da52d29098b69b96b62677293c3542d95a3a999e00e2c69789d",
+    "src/harness/authorized_file.ts": "68661f81d3c5fe4fe0e13cbfbce687f9a266e4c3e3479552d8044b3b4360447b",
+    "src/harness/controller.ts": "9623e51a5c6a86fc969954e991385533dfc47cb0325357bd62a3abc3a5018263",
+    "src/harness/native_environment.ts": "fec69bc8d8aa148feb7708af2ac9e10bc140389cc8e27e24468c8fb9bf318dc0",
+    "tests/authorized_file.test.ts": "b8837f2bf337a4273fb054f6246733c6c90932e8a8d9e7e7892a933cf3333a69",
+    "tests/controller_read_permissions.test.ts": "9434aca0269bc38f879c46c4612ca15cb6b599ae8f30d9ac2cae4b8ab1ff08da",
+    "docs/evidence/vc-rl-002/controller-read-python154.log.txt": "a5a2d6138e7d05534eafcc1444013858ed58db0aba92f5a3cc42e2b19b57dc91"
+  }
+}

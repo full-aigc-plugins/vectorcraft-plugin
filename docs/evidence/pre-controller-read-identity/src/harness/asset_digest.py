@@ -18,16 +18,6 @@ def main():
     spec.loader.exec_module(reader)
     # 根已由Controller冻结为物理路径；不能再次resolve根来跟随后续替换。
     operation = request.get('operation', 'asset-digest')
-    if operation == 'file-digests':
-        paths = request.get('paths')
-        if (not isinstance(paths, list) or len(paths) > 4096
-                or any(not isinstance(path, str) or not Path(path).is_absolute() for path in paths)):
-            raise ValueError('asset_input_invalid')
-        digests = {}
-        for path in paths:
-            digests[path], _ = reader.digest_authorized(path, roots)
-        print(json.dumps({'digests': digests}))
-        return
     if operation == 'file-digest':
         digest, _ = reader.digest_authorized(request['path'], roots)
         print(json.dumps({'sha256': digest}))

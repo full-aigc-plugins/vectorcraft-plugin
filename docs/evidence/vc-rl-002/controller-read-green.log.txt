@@ -1,0 +1,11 @@
+✔ Controller refuses replaced plan ancestor before external bytes (71.368791ms)
+✔ Controller refuses replaced source ancestor before external bytes (74.798959ms)
+✔ Controller refuses replaced guard ancestor before external bytes (77.12975ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 319.573834

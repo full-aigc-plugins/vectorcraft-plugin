@@ -1,5 +1,4 @@
 import {assetDigest} from './asset_digest.ts';
-import {authorizedRead,authorizedDigest,authorizedDigests} from './authorized_file.ts';
 import {assertNoLiteralSecrets,validateAssetRecords} from './input_policy.ts';
 import {nativeEnvironment} from './native_environment.ts';
 import { createHash } from 'node:crypto';
@@ -93,7 +92,7 @@ export class Controller {
     if(!auth.writeRoots.some((root:string)=>inside(root,dirname(request.output))))throw new Error('staging_parent_not_authorized');
     if(skillDigest(request.skill)!==request.expectedSkillSha256)throw new Error('skill_snapshot_mismatch');
     if(!existsSync(join(request.skill,'scripts/execution_control.py')))throw new Error('managed_execution_control_required');
-    const plan=strictJson(authorizedRead(request.plan,auth.readRoots).toString('utf8'));
+    const plan=strictJson(readFileSync(request.plan,'utf8'));
     assertNoLiteralSecrets(plan);validateAssetRecords(plan);
     if(plan.schema)throw new Error('workflow_plan_required; complete-command plans use the independent commands entry');
     const lock=strictJson(readFileSync(join(request.skill,'scripts/runtime.lock.json'),'utf8'));
@@ -101,7 +100,7 @@ export class Controller {
     if(request.source){
       if(!auth.readRoots.some(root=>inside(root,join(request.source!,'project.vectorcraft'))))throw new Error('outside_authorized_roots');
       if(lstatSync(join(request.source,'project.vectorcraft')).isSymbolicLink())throw new Error('invalid_source_path');
-      projectRevision=authorizedDigest(join(request.source,'project.vectorcraft'),auth.readRoots);
+      projectRevision=sha(readFileSync(join(request.source,'project.vectorcraft')));
       if(projectRevision!==plan.expectedProjectSha256)throw new Error('revision_conflict');
     }
     const inputHashes:Record<string,string>={};
@@ -110,23 +109,22 @@ export class Controller {
     if(request.source){
       const manifestFile=join(request.source,'manifest.json'),stat=lstatSync(manifestFile,{throwIfNoEntry:false});
       if(!stat?.isFile()||stat.isSymbolicLink())throw new Error('invalid_source_dependency');
-      const manifestBytes=authorizedRead(manifestFile,auth.readRoots),manifest=strictJson(manifestBytes.toString());
+      const manifestBytes=readFileSync(manifestFile),manifest=strictJson(manifestBytes.toString());
       if(manifest.schema!=='vectorcraft-delivery/v1'||!manifest.files||typeof manifest.files!=='object'||Array.isArray(manifest.files)||Object.keys(manifest.files).length>4096||manifest.files['project.vectorcraft']!==projectRevision)throw new Error('invalid_source_dependency');
       sourceDependencies['manifest.json']=sha(manifestBytes);inputHashes['source:manifest.json']=sha(manifestBytes);
       for(const [name,expected] of Object.entries(manifest.files) as [string,any][]){
         if(isAbsolute(name)||name.includes('\\')||name.split('/').some(p=>['','..','.'].includes(p))||typeof expected!=='string'||!/^[a-f0-9]{64}$/.test(expected))throw new Error('invalid_source_dependency');
         const file=join(request.source,name),stat=lstatSync(file,{throwIfNoEntry:false});
         if(!stat?.isFile()||sourcePathLinked(name)||!auth.readRoots.some(root=>inside(root,file)))throw new Error('invalid_source_dependency');
+        if(sha(readFileSync(file))!==expected)throw new Error('source_dependency_digest_mismatch');
         sourceDependencies[name]=expected;inputHashes['source:file:'+name]=expected;
       }
-      const initialHashes=authorizedDigests(Object.keys(manifest.files).map(name=>join(request.source!,name)),auth.readRoots);
-      for(const [name,expected] of Object.entries(manifest.files))if(initialHashes[join(request.source,name)]!==expected)throw new Error('source_dependency_digest_mismatch');
       // 这些可选元数据也会改变继承导出；缺失本身必须被绑定，防止探测后补入。
       for(const name of ['plan.json','pdf-export-date.json']){
         if(name in sourceDependencies)continue;
         const file=join(request.source,name),stat=lstatSync(file,{throwIfNoEntry:false});
         if(stat&&(!stat.isFile()||stat.isSymbolicLink()))throw new Error('invalid_source_dependency');
-        const expected=stat?authorizedDigest(file,auth.readRoots):null;sourceDependencies[name]=expected;
+        const expected=stat?sha(readFileSync(file)):null;sourceDependencies[name]=expected;
         inputHashes['source:optional:'+name]=expected??sha('absent:'+name);
       }
     }
@@ -137,28 +135,20 @@ export class Controller {
       for(const path of [...auth.readRoots,...auth.writeRoots,request.skill,request.plan,request.output,request.runtimeHome,...(request.source?[request.source]:[])]){
         if(resourcePath(path)!==path)throw new Error('authorization_path_changed');
       }
-      const digestInputs:string[]=[];
       if(request.source){
         const project=join(request.source,'project.vectorcraft');
         if(lstatSync(project).isSymbolicLink())throw new Error('invalid_source_path');
-        digestInputs.push(project);
+        if(sha(readFileSync(project))!==projectRevision)throw new Error('revision_conflict');
       }
       for(const [name,expected] of Object.entries(sourceDependencies)){
         const file=join(request.source!,name),stat=lstatSync(file,{throwIfNoEntry:false});
         if(expected===null){if(stat)throw new Error('stale_source_dependencies');}
-        else{
-          if(!stat?.isFile()||sourcePathLinked(name)||!auth.readRoots.some(root=>inside(root,file)))throw new Error('stale_source_dependencies');
-          digestInputs.push(file);
-        }
+        else if(!stat?.isFile()||sourcePathLinked(name)||!auth.readRoots.some(root=>inside(root,file))||sha(readFileSync(file))!==expected)throw new Error('stale_source_dependencies');
       }
       for(const [path,expected] of Object.entries(guards)){
         if(!/^[a-f0-9]{64}$/.test(expected)||!auth.readRoots.some(root=>inside(root,path)))throw new Error('outside_authorized_roots');
-        digestInputs.push(path);
+        if(sha(readFileSync(path))!==expected)throw new Error('stale_execution_inputs');
       }
-      const currentHashes=authorizedDigests(digestInputs,auth.readRoots);
-      if(request.source&&currentHashes[join(request.source,'project.vectorcraft')]!==projectRevision)throw new Error('revision_conflict');
-      for(const [name,expected] of Object.entries(sourceDependencies))if(expected!==null&&currentHashes[join(request.source!,name)]!==expected)throw new Error('stale_source_dependencies');
-      for(const [path,expected] of Object.entries(guards))if(currentHashes[path]!==expected)throw new Error('stale_execution_inputs');
     };
     checkInputs();
     for(const [path,expected] of Object.entries(guards))inputHashes['guard:'+path]=expected;
@@ -189,7 +179,7 @@ export class Controller {
       const report=await this.probe({skill:request.skill,runtimeHome:request.runtimeHome,install:true,plan,platform:'darwin-arm64',requirements,python:request.python,deadline:auth.deadline});
       if(skillDigest(request.skill)!==request.expectedSkillSha256)throw new Error('skill_snapshot_mismatch');
       checkInputs();
-      if(request.source&&authorizedDigest(join(request.source,'project.vectorcraft'),auth.readRoots)!==projectRevision)throw new Error('revision_conflict');
+      if(request.source&&sha(readFileSync(join(request.source,'project.vectorcraft')))!==projectRevision)throw new Error('revision_conflict');
       if(report.binarySha256!==runtimeIdentity)throw new Error('runtime_identity_mismatch');
       validateCapabilities(report,requirements);
       const active=gate.initialize(report,requirements,[3]).active;
@@ -299,7 +289,7 @@ export class Controller {
       checkInputs();
       const bytes=Object.keys(manifest.files).reduce((total,path)=>total+lstatSync(join(request.output,path)).size,0);
       if(bytes>request.estimatedBytes||bytes>auth.maxBytes)throw new Error('budget_exceeded: output exceeds reservation');
-      if(request.source&&authorizedDigest(join(request.source,'project.vectorcraft'),auth.readRoots)!==projectRevision)throw new Error('revision_conflict');
+      if(request.source&&sha(readFileSync(join(request.source,'project.vectorcraft')))!==projectRevision)throw new Error('revision_conflict');
       this.ledger.receipt(task.id,task.epoch,0,{manifestSha256:sha(readFileSync(join(request.output,'manifest.json'))),runtimeIdentity,...(geometryContract?{geometryVerification:manifest.geometryVerification}:{})});
       const verified=this.ledger.verified(task.id,task.epoch,{path:join(request.output,'project.vectorcraft'),sha256:manifest.files['project.vectorcraft']});
       return {...verified,...(geometryContract?{geometryVerification:manifest.geometryVerification}:{})};

@@ -1,0 +1,64 @@
+✖ Controller refuses replaced plan ancestor before external bytes (23.69725ms)
+✖ Controller refuses replaced source ancestor before external bytes (11.769292ms)
+✖ Controller refuses replaced guard ancestor before external bytes (12.111458ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 0
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 137.27425
+
+✖ failing tests:
+
+test at tests/controller_read_permissions.test.ts:12:45
+✖ Controller refuses replaced plan ancestor before external bytes (23.69725ms)
+  AssertionError [ERR_ASSERTION]: Node parent read bytes outside frozen roots
+  
+  true !== false
+  
+      at TestContext.<anonymous> (file://PLUGIN_REPOSITORY/tests/controller_read_permissions.test.ts:35:70)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/controller_read_permissions.test.ts:12:45
+✖ Controller refuses replaced source ancestor before external bytes (11.769292ms)
+  AssertionError [ERR_ASSERTION]: Node parent read bytes outside frozen roots
+  
+  true !== false
+  
+      at TestContext.<anonymous> (file://PLUGIN_REPOSITORY/tests/controller_read_permissions.test.ts:35:70)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/controller_read_permissions.test.ts:12:45
+✖ Controller refuses replaced guard ancestor before external bytes (12.111458ms)
+  AssertionError [ERR_ASSERTION]: Node parent read bytes outside frozen roots
+  
+  true !== false
+  
+      at TestContext.<anonymous> (file://PLUGIN_REPOSITORY/tests/controller_read_permissions.test.ts:35:70)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
