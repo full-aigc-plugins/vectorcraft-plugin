@@ -1,0 +1,66 @@
+test_changed_instance_bounds_rejected_after_rehash (test_brand_variant_evidence.BrandVariantEvidenceTests.test_changed_instance_bounds_rejected_after_rehash) ... FAIL
+test_changed_unrelated_export_rejected_after_rehash (test_brand_variant_evidence.BrandVariantEvidenceTests.test_changed_unrelated_export_rejected_after_rehash) ... FAIL
+test_complete_current_evidence_passes (test_brand_variant_evidence.BrandVariantEvidenceTests.test_complete_current_evidence_passes) ... ok
+test_forged_installed_digest_rejected_after_rehash (test_brand_variant_evidence.BrandVariantEvidenceTests.test_forged_installed_digest_rejected_after_rehash) ... FAIL
+test_missing_native_fault_rejected_after_rehash (test_brand_variant_evidence.BrandVariantEvidenceTests.test_missing_native_fault_rejected_after_rehash) ... FAIL
+test_missing_scenario_rejected_after_rehash (test_brand_variant_evidence.BrandVariantEvidenceTests.test_missing_scenario_rejected_after_rehash) ... FAIL
+test_unknown_token_replay_rejected_after_rehash (test_brand_variant_evidence.BrandVariantEvidenceTests.test_unknown_token_replay_rejected_after_rehash) ... FAIL
+
+======================================================================
+FAIL: test_changed_instance_bounds_rejected_after_rehash (test_brand_variant_evidence.BrandVariantEvidenceTests.test_changed_instance_bounds_rejected_after_rehash)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_ROOT/tests/test_brand_variant_evidence.py", line 29, in test_changed_instance_bounds_rejected_after_rehash
+    with self.assertRaisesRegex(ValueError,'asset_dependency'):self.verify()
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_changed_unrelated_export_rejected_after_rehash (test_brand_variant_evidence.BrandVariantEvidenceTests.test_changed_unrelated_export_rejected_after_rehash)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_ROOT/tests/test_brand_variant_evidence.py", line 23, in test_changed_unrelated_export_rejected_after_rehash
+    with self.assertRaisesRegex(ValueError,'unrelated_exports'):self.verify()
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_forged_installed_digest_rejected_after_rehash (test_brand_variant_evidence.BrandVariantEvidenceTests.test_forged_installed_digest_rejected_after_rehash)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_ROOT/tests/test_brand_variant_evidence.py", line 32, in test_forged_installed_digest_rejected_after_rehash
+    with self.assertRaisesRegex(ValueError,'installed_identity'):self.verify()
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_missing_native_fault_rejected_after_rehash (test_brand_variant_evidence.BrandVariantEvidenceTests.test_missing_native_fault_rejected_after_rehash)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_ROOT/tests/test_brand_variant_evidence.py", line 26, in test_missing_native_fault_rejected_after_rehash
+    with self.assertRaisesRegex(ValueError,'guard_coverage'):self.verify()
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_missing_scenario_rejected_after_rehash (test_brand_variant_evidence.BrandVariantEvidenceTests.test_missing_scenario_rejected_after_rehash)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_ROOT/tests/test_brand_variant_evidence.py", line 20, in test_missing_scenario_rejected_after_rehash
+    with self.assertRaisesRegex(ValueError,'scenario_coverage'):self.verify()
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_unknown_token_replay_rejected_after_rehash (test_brand_variant_evidence.BrandVariantEvidenceTests.test_unknown_token_replay_rejected_after_rehash)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_ROOT/tests/test_brand_variant_evidence.py", line 35, in test_unknown_token_replay_rejected_after_rehash
+    with self.assertRaisesRegex(ValueError,'unknown_refusal'):self.verify()
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.073s
+
+FAILED (failures=6)

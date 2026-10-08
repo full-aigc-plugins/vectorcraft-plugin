@@ -1,0 +1,12 @@
+test_changed_instance_bounds_rejected_after_rehash (test_brand_variant_evidence.BrandVariantEvidenceTests.test_changed_instance_bounds_rejected_after_rehash) ... ok
+test_changed_unrelated_export_rejected_after_rehash (test_brand_variant_evidence.BrandVariantEvidenceTests.test_changed_unrelated_export_rejected_after_rehash) ... ok
+test_complete_current_evidence_passes (test_brand_variant_evidence.BrandVariantEvidenceTests.test_complete_current_evidence_passes) ... ok
+test_forged_installed_digest_rejected_after_rehash (test_brand_variant_evidence.BrandVariantEvidenceTests.test_forged_installed_digest_rejected_after_rehash) ... ok
+test_missing_native_fault_rejected_after_rehash (test_brand_variant_evidence.BrandVariantEvidenceTests.test_missing_native_fault_rejected_after_rehash) ... ok
+test_missing_scenario_rejected_after_rehash (test_brand_variant_evidence.BrandVariantEvidenceTests.test_missing_scenario_rejected_after_rehash) ... ok
+test_unknown_token_replay_rejected_after_rehash (test_brand_variant_evidence.BrandVariantEvidenceTests.test_unknown_token_replay_rejected_after_rehash) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.127s
+
+OK

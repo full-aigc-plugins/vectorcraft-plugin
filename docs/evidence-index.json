@@ -2432,6 +2432,43 @@
       }
     },
     {
+      "path": "docs/evidence/vectorcraft-brand-variants-fixed56-20261009.json",
+      "sha256": "50e6ad2389af49c1cc9fbe87166d5f00802b01aa7ca6afbe3069f4f6d916d47e",
+      "level": "fixed-install",
+      "status": "PASS",
+      "scope": "All six current VC-DM-006 scenarios on actual isolated Codex public56/source42 macOS arm64 installation; registered token and raster/SVG asset consumers, preserved unrelated exports and retained failure checkpoints; only4.18 closes",
+      "requirement": "VC-DM-006",
+      "tasks": [
+        "4.18"
+      ],
+      "historical": false,
+      "dependencies": {
+        "docs/current-identity.json": "81c75f5820403012dbb2c6fa90a6788fd209e8e1d4f05793ba9c0cb1a6ea9cf2",
+        "docs/evidence/vc-dm-006/assets-fixed56.json": "9efa3892bcab91b7786fd4122b73397eb8fa1478de9e18a6db125e64c2c9fc97",
+        "docs/evidence/vc-dm-006/fixed56-scenarios.json": "7d38359b49d7fe15bd5b793d5238183ba0a53c5c68fb770cb50f60ba918e2499",
+        "docs/evidence/vc-dm-006/gateway-driver.py.txt": "6f9bc99fbd54328e1d0859a915b0ca6a2b58cc62c2fee8bd3bfd03827131c172",
+        "docs/evidence/vc-dm-006/gateway-fixed56.json": "f7eaf06080e24d8cfcac14beed7bca8356138e06f609b9b15e611089869e657b",
+        "docs/evidence/vc-dm-006/guard-driver.py.txt": "0d206a92e0289759a4381a7fe3aafcb9d835b3f0e381e44824f666b0764e43b0",
+        "docs/evidence/vc-dm-006/guard-fixed56.json": "7fe9fe8f8d925dc24ef53c9061db123e835b71bed10957f06993626ea6b7d8af",
+        "docs/evidence/vc-dm-006/host-fixed56.json": "4f2d6b8018a8a19bc34cb4a1362599382b7d3abb59469ac038a30708c1f6b484",
+        "docs/evidence/vc-dm-006/integrity-fixed56.json": "5626b47f646f9a3aae5ab6e86da0a2e3395dfbcf079fc8722d92dfaa21cfb6ae",
+        "docs/evidence/vc-dm-006/unknown-fixed56.json": "fe301941c86e14281c7794485cd19b1c86741a8c6ce98acec92d052e15c4c0ec",
+        "openspec/changes/establish-v1-plugin/specs/domain-workflow/spec.md": "b587e333367a44d77b588e052a498f4e8fd289b835f1739b793ec9cb1335f722",
+        "plugin.json": "bbd28acf3caedbd4e8f8cc61f960c060b7b59f21c6dcf5f36f3878ae7722461b",
+        "scripts/qa/brand_asset_variants.py": "1c9084fc3b43c98e8b28eb414e7e900301e2f4aea7f3b38a2d0420490ad1e876",
+        "scripts/qa/brand_unknown_token.py": "86189f2f1212ea5e9d582960de341a972463a1def5494e56fe6edef336cabf84",
+        "skills.lock.json": "d3cfa17086478e3116618e33c355555be6631879c880d67437ec15ce95523c00",
+        "skills/vectorcraft-cli-appearance/scripts/mcp_session.py": "15395ead853349a24feab6ce364e5bc9795add12e1dbe62e8ed5718ffdd1ccd2",
+        "skills/vectorcraft-cli-assets/scripts/mcp_session.py": "15395ead853349a24feab6ce364e5bc9795add12e1dbe62e8ed5718ffdd1ccd2",
+        "scripts/verify_brand_variant_evidence.py": "f07807bb9bff660c67c0b7b8c0b38c5e6ccf0dd88ae672502ac239790a78d80f",
+        "tests/test_brand_variant_evidence.py": "900057e40f324433027e026a9cd1ed771e335c3310f1335398878eaa6ce44537",
+        "docs/evidence/vc-dm-006/closure-red.log.txt": "3d57ee2ea65f4d190cfaf4713c41e26bbabc7b30042057aad22a24a2099469b7",
+        "docs/evidence/vc-dm-006/closure-green.log.txt": "58def85652c9f076b2c6305cec2975e1de37a2ff59e20d0282d07072aabbbf12",
+        "docs/evidence/vc-dm-006/token-driver.py.txt": "158e1318561aa24214bd008499e8692c4865247c7500fab24ebae663596924a4",
+        "docs/evidence/vc-dm-006/token-fixed56.log.txt": "de45017dbe8a5ccdcbd689c98f38f50a7016ce9e7df3b3c7b53186e4facbd763"
+      }
+    },
+    {
       "path": "docs/evidence/vectorcraft-brand-variants-candidate56-20261009.json",
       "sha256": "967e32fc46866278dc05a4d999a870870caa87a66e846eac8d74d9c646026ad6",
       "level": "native-candidate",

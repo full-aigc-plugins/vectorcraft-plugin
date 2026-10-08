@@ -1,0 +1,413 @@
+{
+  "schema": "vectorcraft-brand-guard-native/v1",
+  "status": "passed",
+  "fixedInstalled": true,
+  "runtimeReused": true,
+  "nativeRuntimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+  "faultInjection": "QA-only extra real native consumer text/geometry/stroke and non-consumer fill after swatch.edit reply",
+  "failures": [
+    {
+      "mode": "direct-nonconsumer",
+      "report": {
+        "schema": "vectorcraft-brand-dependency-check/v1",
+        "status": "failed",
+        "token": "Brand Primary",
+        "paletteChangedUnexpectedly": false,
+        "tokenTargetMismatch": false,
+        "targetMismatchObjectIds": [],
+        "effect": "updated",
+        "consumerIds": [
+          2,
+          4
+        ],
+        "affectedObjectIds": [
+          3
+        ],
+        "unexpectedDependencies": [
+          {
+            "token": "Brand Primary",
+            "objectId": 3,
+            "reason": "unbound_object_changed"
+          }
+        ],
+        "artboardsChanged": false,
+        "beforeSha256": "8ad20b3bae2295eb84eeb520a23df93cc028cf11e0c59cc78e311821d54e3879",
+        "afterSha256": "3fe32a70ac4cbce667fd09cff690ad2e2cc359660c59ce7c175cee9f59c1cdea",
+        "scope": "native explicit swatch color fields; consumer noncolor fields, palette, identities, artboards and requested authoring-model target",
+        "checkpoint": "brand-checkpoint-0.vectorcraft",
+        "checkpointSha256": "c14ab863f0fcb0cec9ab85e982d69966c37580a88018f0fd1b09f09c27f14ad5",
+        "checkpointRetained": true
+      },
+      "retainedFileHashesVerified": true,
+      "checkpointIndependentlyReopened": true,
+      "injectionCount": 1
+    },
+    {
+      "mode": "direct-consumer-geometry",
+      "report": {
+        "schema": "vectorcraft-brand-dependency-check/v1",
+        "status": "failed",
+        "token": "Brand Primary",
+        "paletteChangedUnexpectedly": false,
+        "tokenTargetMismatch": false,
+        "targetMismatchObjectIds": [],
+        "effect": "updated",
+        "consumerIds": [
+          2,
+          4
+        ],
+        "affectedObjectIds": [
+          2
+        ],
+        "unexpectedDependencies": [
+          {
+            "token": "Brand Primary",
+            "objectId": 2,
+            "reason": "consumer_noncolor_changed"
+          }
+        ],
+        "artboardsChanged": false,
+        "beforeSha256": "605cb921ece25fd10fa86573da61a3911f129d6b01586b99a8bce9e97e094998",
+        "afterSha256": "8f6ac065abd06b289ad209549419533a2ce80955ddfa8d0e2481201fe66863be",
+        "scope": "native explicit swatch color fields; consumer noncolor fields, palette, identities, artboards and requested authoring-model target",
+        "checkpoint": "brand-checkpoint-0.vectorcraft",
+        "checkpointSha256": "25643fc5b96525653a2793b8f64b2e3e7e3fd31d63607b69286be5f3fce9e631",
+        "checkpointRetained": true
+      },
+      "retainedFileHashesVerified": true,
+      "checkpointIndependentlyReopened": true,
+      "injectionCount": 1
+    },
+    {
+      "mode": "direct-consumer-text",
+      "report": {
+        "schema": "vectorcraft-brand-dependency-check/v1",
+        "status": "failed",
+        "token": "Brand Primary",
+        "paletteChangedUnexpectedly": false,
+        "tokenTargetMismatch": false,
+        "targetMismatchObjectIds": [],
+        "effect": "updated",
+        "consumerIds": [
+          2,
+          4
+        ],
+        "affectedObjectIds": [
+          4
+        ],
+        "unexpectedDependencies": [
+          {
+            "token": "Brand Primary",
+            "objectId": 4,
+            "reason": "consumer_noncolor_changed"
+          }
+        ],
+        "artboardsChanged": false,
+        "beforeSha256": "3bd4aaf6c4558934c073b3dc31aa810e3e28a65409b5d762e1d4300867a2feb0",
+        "afterSha256": "8f535709bbb56333f96b4c3f7d1d81a5b02ee4d519530e3c9d968a85bd3c9732",
+        "scope": "native explicit swatch color fields; consumer noncolor fields, palette, identities, artboards and requested authoring-model target",
+        "checkpoint": "brand-checkpoint-0.vectorcraft",
+        "checkpointSha256": "b694971b331ec17d9d7760fe4a42d0c0cd9638720aed5acc9279c51b06046fa5",
+        "checkpointRetained": true
+      },
+      "retainedFileHashesVerified": true,
+      "checkpointIndependentlyReopened": true,
+      "injectionCount": 1
+    },
+    {
+      "mode": "direct-consumer-stroke",
+      "report": {
+        "schema": "vectorcraft-brand-dependency-check/v1",
+        "status": "failed",
+        "token": "Brand Primary",
+        "paletteChangedUnexpectedly": false,
+        "tokenTargetMismatch": false,
+        "targetMismatchObjectIds": [],
+        "effect": "updated",
+        "consumerIds": [
+          2,
+          4
+        ],
+        "affectedObjectIds": [
+          2
+        ],
+        "unexpectedDependencies": [
+          {
+            "token": "Brand Primary",
+            "objectId": 2,
+            "reason": "consumer_noncolor_changed"
+          }
+        ],
+        "artboardsChanged": false,
+        "beforeSha256": "59b887fec7859099b649f0eb01e7d86f8aef2364f11b9be20cc0d8aaec048224",
+        "afterSha256": "26247fd53f637309d3aaba6e377976087706e835229a1a18d4d602d5566d7d88",
+        "scope": "native explicit swatch color fields; consumer noncolor fields, palette, identities, artboards and requested authoring-model target",
+        "checkpoint": "brand-checkpoint-0.vectorcraft",
+        "checkpointSha256": "7d6526762cb4102d7a6b3a07e5c31aae173d1c12afe4e009408f591fd7a3e737",
+        "checkpointRetained": true
+      },
+      "retainedFileHashesVerified": true,
+      "checkpointIndependentlyReopened": true,
+      "injectionCount": 1
+    },
+    {
+      "mode": "native-gateway-nonconsumer",
+      "report": {
+        "schema": "vectorcraft-brand-dependency-check/v1",
+        "status": "failed",
+        "token": "Brand Primary",
+        "paletteChangedUnexpectedly": false,
+        "tokenTargetMismatch": false,
+        "targetMismatchObjectIds": [],
+        "effect": "updated",
+        "consumerIds": [
+          2,
+          4
+        ],
+        "affectedObjectIds": [
+          3
+        ],
+        "unexpectedDependencies": [
+          {
+            "token": "Brand Primary",
+            "objectId": 3,
+            "reason": "unbound_object_changed"
+          }
+        ],
+        "artboardsChanged": false,
+        "beforeSha256": "a7da6745932dfda67e2bfc429bf86645d460d0ccb666f2e367e169efb6b637de",
+        "afterSha256": "57034f649d3d5199b45d7d6f05845b1a40b7dedf11dada9896aa78bce0340080",
+        "scope": "native explicit swatch color fields; consumer noncolor fields, palette, identities, artboards and requested authoring-model target",
+        "checkpoint": "brand-checkpoint-0.vectorcraft",
+        "checkpointSha256": "bac7992e33d651c18ee4633baf1bde17d8e321780325e8cddbb6646b70945af4",
+        "checkpointRetained": true
+      },
+      "retainedFileHashesVerified": true,
+      "checkpointIndependentlyReopened": true,
+      "injectionCount": 1
+    },
+    {
+      "mode": "native-gateway-consumer-geometry",
+      "report": {
+        "schema": "vectorcraft-brand-dependency-check/v1",
+        "status": "failed",
+        "token": "Brand Primary",
+        "paletteChangedUnexpectedly": false,
+        "tokenTargetMismatch": false,
+        "targetMismatchObjectIds": [],
+        "effect": "updated",
+        "consumerIds": [
+          2,
+          4
+        ],
+        "affectedObjectIds": [
+          2
+        ],
+        "unexpectedDependencies": [
+          {
+            "token": "Brand Primary",
+            "objectId": 2,
+            "reason": "consumer_noncolor_changed"
+          }
+        ],
+        "artboardsChanged": false,
+        "beforeSha256": "826dbe2bd675cc3d6d48cfcfc8664378f89abd884aa1345f8f2adc6d07aef2cd",
+        "afterSha256": "a46bc004084a25d13ba6043257399ccdd61c7933ff1163802bf3f9c84e31da95",
+        "scope": "native explicit swatch color fields; consumer noncolor fields, palette, identities, artboards and requested authoring-model target",
+        "checkpoint": "brand-checkpoint-0.vectorcraft",
+        "checkpointSha256": "e6bdcc762a03b5ea408356af244a3e060e7af920b01835f250b8360493bebbe1",
+        "checkpointRetained": true
+      },
+      "retainedFileHashesVerified": true,
+      "checkpointIndependentlyReopened": true,
+      "injectionCount": 1
+    },
+    {
+      "mode": "native-gateway-consumer-text",
+      "report": {
+        "schema": "vectorcraft-brand-dependency-check/v1",
+        "status": "failed",
+        "token": "Brand Primary",
+        "paletteChangedUnexpectedly": false,
+        "tokenTargetMismatch": false,
+        "targetMismatchObjectIds": [],
+        "effect": "updated",
+        "consumerIds": [
+          2,
+          4
+        ],
+        "affectedObjectIds": [
+          4
+        ],
+        "unexpectedDependencies": [
+          {
+            "token": "Brand Primary",
+            "objectId": 4,
+            "reason": "consumer_noncolor_changed"
+          }
+        ],
+        "artboardsChanged": false,
+        "beforeSha256": "17b844bc509b9cdd85f5b8966abfc7f8333104d788716d5824f1fa00d136d98d",
+        "afterSha256": "e08dafb7f0ef3b6a80fbf389e8e4db0c49c2fb6d76bd54115953bddfe46171e8",
+        "scope": "native explicit swatch color fields; consumer noncolor fields, palette, identities, artboards and requested authoring-model target",
+        "checkpoint": "brand-checkpoint-0.vectorcraft",
+        "checkpointSha256": "2c260e394793012f17ffe5b937e2ab8e29ff6a6ed4b06fb10a9dda3819b71193",
+        "checkpointRetained": true
+      },
+      "retainedFileHashesVerified": true,
+      "checkpointIndependentlyReopened": true,
+      "injectionCount": 1
+    },
+    {
+      "mode": "native-gateway-consumer-stroke",
+      "report": {
+        "schema": "vectorcraft-brand-dependency-check/v1",
+        "status": "failed",
+        "token": "Brand Primary",
+        "paletteChangedUnexpectedly": false,
+        "tokenTargetMismatch": false,
+        "targetMismatchObjectIds": [],
+        "effect": "updated",
+        "consumerIds": [
+          2,
+          4
+        ],
+        "affectedObjectIds": [
+          2
+        ],
+        "unexpectedDependencies": [
+          {
+            "token": "Brand Primary",
+            "objectId": 2,
+            "reason": "consumer_noncolor_changed"
+          }
+        ],
+        "artboardsChanged": false,
+        "beforeSha256": "be037bf3f1bb872cd6d7b5198d81021e3f96bd9460a43b7a3fbf124e99b401fa",
+        "afterSha256": "019af8894b444739eee834ac4b780758f6a0f52ceaeba01a8a8b73058af7cba8",
+        "scope": "native explicit swatch color fields; consumer noncolor fields, palette, identities, artboards and requested authoring-model target",
+        "checkpoint": "brand-checkpoint-0.vectorcraft",
+        "checkpointSha256": "e74e5874f717e4d1347f2d3c52e73d409b8b71b3a7516997770e3416058d7cca",
+        "checkpointRetained": true
+      },
+      "retainedFileHashesVerified": true,
+      "checkpointIndependentlyReopened": true,
+      "injectionCount": 1
+    }
+  ],
+  "healthyReport": {
+    "schema": "vectorcraft-brand-dependencies/v1",
+    "checks": [
+      {
+        "schema": "vectorcraft-brand-dependency-check/v1",
+        "status": "passed",
+        "token": "Brand Primary",
+        "paletteChangedUnexpectedly": false,
+        "tokenTargetMismatch": false,
+        "targetMismatchObjectIds": [],
+        "effect": "updated",
+        "consumerIds": [
+          2,
+          4
+        ],
+        "affectedObjectIds": [],
+        "unexpectedDependencies": [],
+        "artboardsChanged": false,
+        "beforeSha256": "c86936d0556f068b3e6303f936cf9403eb8c0f588717b4e4e78b5b3fbc5656ab",
+        "afterSha256": "c0190e6955cf555f508b89360e815efdbb67944c56915d27991fbb4ab21432bd",
+        "scope": "native explicit swatch color fields; consumer noncolor fields, palette, identities, artboards and requested authoring-model target",
+        "checkpoint": "brand-checkpoint-0.vectorcraft",
+        "checkpointSha256": "7a4e8f97b031dd96e3c91221f865e845754d4221e54f7dbffd7838019c1df058",
+        "checkpointRetained": false
+      }
+    ]
+  },
+  "sourceFiles": {
+    "Fonts/SourceSans3-Regular.ttf": "4644c81b86ec9caaa76b634889968ed3c4f4f52f054855933acc7c2b21e53b0f",
+    "Links/badge.png": "008d68f16bc1e45860f34d133fe966ef6fc6dd1e64f55286392995e23d9fefde",
+    "artboard-1.png": "dc607f3a574e176d753f48c3cf16979a509c31a96e36bffb15476726c2928716",
+    "artboard-1.svg": "6e24a7a11853abac930bb51a68331710c4c95ea3c316f41510250dcc23a88e11",
+    "exchange-loss.json": "eddfbfc7fbba3118ac5bdc765b42102f2ed10c1aaf7493cee6f4933be54b4f55",
+    "manifest.json": "3d008c80b15aef4d7e503c2905b3bfe1de71bdbee9739de85e1657ab67280eba",
+    "native.json": "10fd31a3fa475b5d7ef46ca1c72f15ba27d66a568238915aff09594632a520bb",
+    "operations.json": "ee0ba983b1fcba5536e6cb2568e708f6546e6f258ba68280ba198c0e0673409b",
+    "plan.json": "cfda8c8c129987bddff2fb9ddf901345c62ce2fc3aacd322a368b4f5c6dce8e0",
+    "project.vectorcraft": "4c9e95bd3983680bd5e402d67b725ebc1a05ad5294cf3b7402507f0d5f381493"
+  },
+  "healthyFiles": {
+    "Fonts/SourceSans3-Regular.ttf": "4644c81b86ec9caaa76b634889968ed3c4f4f52f054855933acc7c2b21e53b0f",
+    "Links/badge.png": "008d68f16bc1e45860f34d133fe966ef6fc6dd1e64f55286392995e23d9fefde",
+    "artboard-1.png": "d4d20e5f561c851073e19fd33cc0c156a4609b8b994fe8e4a2c52a690f81542d",
+    "artboard-1.svg": "064b436bf593cce1bf86e09c945fa228ccd429e5ecbb51c000c35651ccdd4c0f",
+    "brand-dependencies.json": "33210ebbe743bf8c063e68401721da3fb1885c2b28de8dd4076028ce44d118ce",
+    "exchange-loss.json": "2e0f1eea2a804018dc6a9ecad53ad49f6023dcc571f671c940622f6b62dc960e",
+    "manifest.json": "64c5214fd86b39785ed587e022575cfa2845c3ee937e3e378191e5fc9d8f6f08",
+    "native.json": "86be09fec7145c38ab31b35c68196e329ed1a78057c290c4887acf41c1a63278",
+    "operations.json": "d9b1aa8a56940912d5ec2d34971a16ece64526deeb92e6251b1b55db482dcdec",
+    "plan.json": "254b6e0dc01590a49a143b8d66519c7ee028a9763c8d6ae84ee01eb2ef3535a4",
+    "project.vectorcraft": "0cee800444a7f4273c206dd81cfa4d9ecf1f369a5713140e42f94681268aad5e"
+  },
+  "instrumentedSkillFiles": {
+    "SKILL.md": "af3ef5937285b2b6cdbe906b2502c1c52ba459cb649d1b1210d2af42317319d4",
+    "agents/openai.yaml": "a1499d95abd8447558c535fe5554adcc3c9b988a0a39264a6283d430effe1e94",
+    "examples/appearance-gradient-create.json": "ff974dd61eac86d7b5bb604ddc60f9ae97ce5c57cd43e65ac3fefc8f8c498aff",
+    "examples/appearance-gradient-revise.json": "3e464a7576f55684c45eaf4b3b4ce94bc53c52a4e360e2a1609372201686f616",
+    "examples/brand-asset-revise.json": "6f94219f6a447a94f8f5c8924e31eff4eb7815a7c1130ed7dcf4e1bbdbe80df0",
+    "examples/brand-assets.json": "d4c342c68791d7fb9ca0a966448947d7f9597af66e00245aec3c4d4c43cc6950",
+    "examples/brand-token-assets.json": "07f3a8acb45b3dd03ecbe96b75c53571a6b7960eb29b6bb10b777194ba3c1202",
+    "examples/chinese-text.json": "a5f1310bfba6102606079b62712096ae9e4298dffe860dcbab64448619613762",
+    "examples/commands-advanced.json": "eb456387da8df5ac16399c318ebb493fef1e716a537a777420baaa52b89030b8",
+    "examples/commands-revision-create.json": "c7668b298747a3dec9266826344778e8c977a36df293436531ea1ea8db4a44bc",
+    "examples/commands-revision.json": "8e416f9ed55a21862cfc6848ca4e9f97b3fbd2b405b9a56faf89dbc016cbe779",
+    "examples/desktop-first-use.json": "41461b895abe438b35cfa2fcedec42d883ceb0a77812cb5e21e071b5473f3b2b",
+    "examples/native-workflow.json": "e9a89a79c3bdf0ae8ca41958f2fbbdf523ac77da47ecceda6cc97d982e38b265",
+    "examples/object-layout-create.json": "81d4eda918c6e4a41f41b58658a79eee1841872c49fff0a57d72beb94016127b",
+    "examples/object-layout-reopen.json": "7ad1f4a35980a2a90198d8b140ba1b486e604f391322484452d88e110d98da5f",
+    "examples/object-layout-revise.json": "6e85a7f2e54a1e3126d30f12e41fe02320f30542bd6d0d1044c79e79fd539731",
+    "examples/operation-revise.json": "4ed5a5914075583eae05dfab6ac3fc909b2da20558eb466c683355d35443bd78",
+    "examples/provided-assets.json": "f5a3e15cc7a44b912fd87fc833c00c2e51893b553d90daa6f3682bd9ff4336cd",
+    "examples/selection-brand-create.json": "3343eab1f42ef16e5334382c01c861d523d15d41ff49b6946e02046e582a2e73",
+    "examples/selection-brand-reopen.json": "7ad1f4a35980a2a90198d8b140ba1b486e604f391322484452d88e110d98da5f",
+    "examples/selection-brand-revise.json": "10edd02b725c5b0a337d1eb6931942c1bc5e7127c494a1738fecee528ed4ae21",
+    "references/appearance-gradient.md": "712a5822162e95610515d21ee00af77e0c276445f573440fbb360803e94342b7",
+    "references/brand-tokens.md": "3d3f23f772f0d704f06ebc576f077e2f30e53f32820559c3aa1eb7d98901a4a8",
+    "references/business-scenes.md": "9d11ef8f28be9249f9f7f32e166f307f0cfa7d5ac27520adbbbe483abf043d74",
+    "references/chinese-text.md": "b2229e5054fe2a71ee069b4aba6fa6d87c3ebbf4afaf3d1a2f85a80256948294",
+    "references/command-coverage.json": "532d2fc467f4fc4c48856e11fdb97ea465276270c882e837a3214692de831a50",
+    "references/command-reference.md": "87f39638580025e3d5042da4bda71e255ce9d729850e840ff7baf14a027c08c0",
+    "references/command-usage.md": "49d6405db258efeb7c2a9726c7a858dce855db5ddd2e14afbcde8025a88b5440",
+    "references/commands.json": "179e46514c1854aa47f3ee989b03c1c10b0e81496d9cc62440179674dcdc5aed",
+    "references/desktop-install.md": "db2db151b0eff30a3381a03ae377fb23ac09b2b4a919859740bd9343e7f14887",
+    "references/exchange-loss.md": "eee665f62b77274ca8ce0efc4117012ade85978905cdfd40ab488af64297b8ae",
+    "references/first-use-failures.md": "ce2a8d1a8ca6b8a29a084d52d105d510476de88d40b439d6c2ff79212581d61d",
+    "references/installation-concurrency.md": "69067acebcd47f1924a8d6aa9d8a4ce6f44ad0756d44888a21eb224bcdb1c215",
+    "references/native-command-snapshot.json": "1e63722f850930947c4cc6e9bdbe24638413e43c2e5127dd385f167d493e10e1",
+    "references/native-workflow.md": "42fee416c66a69f6f3802abe1be6f002963cf109e7e22a4d6297b6dcaf62b8e9",
+    "references/object-edit-scene.md": "ac760587eaabc1205b20325e48325463fd90efe343df4183fc7ae7f9d07e6550",
+    "references/object-selection-scene.md": "42593e844568184451bf648c84f4f0fafaee5a1644e39b1641fe49a078e336d9",
+    "references/operation-contract.json": "0ca37ff5cb4f1b690339054f329638cf71f78d0aeca677b28c153f7a7e22f7a9",
+    "references/output-execution.md": "baa3d38af5f8d3b01cb36bcc6b89dee3d8449ec676bc52d6f5c2de9f563ba3ac",
+    "references/scenario.md": "c6b6b1345495c25e76ced4fa2d30069c33d3984074f5d01ee2c29f58103b7c99",
+    "references/workflow.md": "b56eae84aded6e13a75e4c709fd14570d6bf5c472a682d5ba2ec4eb9345280b3",
+    "scripts/artboard_mapping.py": "3b0f83f6a9515f8d8d82c6c96973255b62a7b3a7de3cdde56d678746f1e57638",
+    "scripts/asset_inputs.py": "b2868a4239ef50648f201be99bb29ad4ddf0d8bdeb5a626c54b3fc1aac701758",
+    "scripts/boolean_transactions.py": "22d311dfda26cadcd3fc6bb51596ab8b2cd9245cabf5f28dfe3d0d74e8ff9120",
+    "scripts/bootstrap.py": "78d5bdf16bf08e9abc96b4b23e5d071da72b648698b888b85fa1b90f81cf32a9",
+    "scripts/brand_variants.py": "f04590952520139bf5d970ed0fdf3867082f15424b81c77495907c1d9ce73f41",
+    "scripts/cli.py": "f59eb61605f0f4ac7213e6f52b83a47a93bf6201101cffd64d332fbb025313d5",
+    "scripts/commands.py": "265f052228e12f0c21e1ea98e967c0552c15fa001e2d65441357b1bec05cfaea",
+    "scripts/desktop.lock.json": "f38c7cd5b837bc4f3275ef96c17308fc894f6be66c6a00ecf9c53378ad4bb486",
+    "scripts/desktop.py": "24dddb82f1c51ca8e835c582d9b7228aa9d643dfcada11b570bde9191f002f0f",
+    "scripts/desktop_session.py": "b6b07a9a18b77386d481a7f263190b0981a7a763dda4f46ad7417a92d416fbb5",
+    "scripts/exchange_loss.py": "7fdee028008a20bd88bb1e27334f326a7fcc774a079b1621a1c0d06bebfd8f29",
+    "scripts/execution_control.py": "0acaa8fa01aae3689bb8c460efdd9bb19578d33e1572e24dc8dea00ef38ec008",
+    "scripts/mcp_session.py": "e27693d884c208fc099fdf65a27c7a027cc4eddfc3a795f528cdba968a6f06f9",
+    "scripts/native_workflow.py": "770f981bc3340cf71c695752423aaf9e9123ae59f07ac5a9318cc9b8e8537d11",
+    "scripts/output_guard.py": "7c13abd891370058e670fbfb3db7992d4a8ed7934682c83bde1aabf47ad6846f",
+    "scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "scripts/runtime.lock.json": "7b6bd7f3fab84b757d4ea20ac91b74d89b417ec061efc6ae320dda97a422cc07",
+    "scripts/text_contract.py": "ff4af45ae39f4016befd94a9dd20899118da1bd85556c22313450b9851305838",
+    "scripts/workflow.py": "67c0cfd21e3357ebc0b2097d2b00774f8f84cffdbd5c9ca2b7ca75b06f245434"
+  },
+  "driverSha256": "0d206a92e0289759a4381a7fe3aafcb9d835b3f0e381e44824f666b0764e43b0"
+}

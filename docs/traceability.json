@@ -178,10 +178,10 @@
         "4.30"
       ],
       "owner": "Domain owner",
-      "status": "in-progress",
-      "evidence": "docs/evidence/craft-vector36-guard-fixed-first-use-20261008.json",
+      "status": "verified",
+      "evidence": "docs/evidence/vectorcraft-brand-variants-fixed56-20261009.json",
       "candidateEvidence": "docs/evidence/vectorcraft-brand-variants-candidate56-20261009.json",
-      "scope": "registered asset and token candidate coverage; current six-scene fixed56 installation qualification pending"
+      "scope": "All six current VC-DM-006 scenarios on actual public56/source42 macOS arm64 installed skills; registered RGB tokens and raster/SVG assets; GUI/model/other platforms/Art bundle/fullV1 separate"
     },
     {
       "requirement": "VC-AR-001",

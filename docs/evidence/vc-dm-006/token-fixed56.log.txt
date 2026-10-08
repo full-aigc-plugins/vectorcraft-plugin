@@ -1,0 +1,6 @@
+test_native_global_swatch_updates_registered_variants_and_preserves_accent (test_brand_tokens_native.BrandTokenNativeTests.test_native_global_swatch_updates_registered_variants_and_preserves_accent) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.446s
+
+OK

@@ -1,0 +1,180 @@
+{
+  "scenarioContracts": {
+    "VC-DM-006-P": "be23125a4750c9a4ae6a3d3ba7f7e6ceec64320ebbeecb7ad252681937d14f73",
+    "VC-DM-006-N": "4ae383a153f6b2fa3dbd8e496348f049cdafc2949747a3bfd0dbcb9807ffb263",
+    "VC-DM-006-SWATCH": "ef4c44a44386a7141738d086e12e242b4eb88cf70a74db4b9a8a1f4182cb54d3",
+    "VC-DM-006-GATEWAY-EXPORT": "a263501e95e46ecaeb5df1e2969c7976cad71ca188152752b4695654bf453c39",
+    "VC-DM-006-GUARD": "7ddbe975c8b77189247c60173df2052bfc4b0309959a9be8f9e9226ea25475eb",
+    "VC-DM-006-ASSET": "7b4a2d6ffb32fd9834f558cb0963805f5379f528704d56bd7c18fe0b5fe8e9e5"
+  },
+  "entries": [
+    {
+      "scenario": "VC-DM-006-P",
+      "checks": [
+        {
+          "report": "docs/evidence/vc-dm-006/gateway-fixed56.json",
+          "pointer": "/cases/0/boundPreviewChanged",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-006/gateway-fixed56.json",
+          "pointer": "/cases/1/unrelatedSVGPNGPDFFilesUnchanged",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-006/assets-fixed56.json",
+          "pointer": "/sourceAndInstalledSkillPreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        }
+      ]
+    },
+    {
+      "scenario": "VC-DM-006-N",
+      "checks": [
+        {
+          "report": "docs/evidence/vc-dm-006/guard-fixed56.json",
+          "pointer": "/fixedInstalled",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-006/guard-fixed56.json",
+          "pointer": "/failures/0/checkpointIndependentlyReopened",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-006/guard-fixed56.json",
+          "pointer": "/failures/0/report/status",
+          "expected": "failed",
+          "level": "native-fixed-install"
+        }
+      ]
+    },
+    {
+      "scenario": "VC-DM-006-SWATCH",
+      "checks": [
+        {
+          "report": "docs/evidence/vc-dm-006/gateway-fixed56.json",
+          "pointer": "/cases/0/guardPassed",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-006/gateway-fixed56.json",
+          "pointer": "/cases/1/sourcePreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-006/unknown-fixed56.json",
+          "pointer": "/unknownSwatchRefused",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-006/gateway-fixed56.json",
+          "pointer": "/tamperedPlanRefusedBeforeInstallation",
+          "expected": true,
+          "level": "native-fixed-install"
+        }
+      ]
+    },
+    {
+      "scenario": "VC-DM-006-GATEWAY-EXPORT",
+      "checks": [
+        {
+          "report": "docs/evidence/vc-dm-006/gateway-fixed56.json",
+          "pointer": "/cases/0/inheritedOutputs",
+          "expected": 9,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-006/gateway-fixed56.json",
+          "pointer": "/cases/1/inheritedOutputs",
+          "expected": 9,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-006/gateway-fixed56.json",
+          "pointer": "/explicitEmptyExportsRespected",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-006/unknown-fixed56.json",
+          "pointer": "/linkedPlanRefusals/0/beforeRuntimeAndOutput",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-006/unknown-fixed56.json",
+          "pointer": "/linkedPlanRefusals/1/beforeRuntimeAndOutput",
+          "expected": true,
+          "level": "native-fixed-install"
+        }
+      ]
+    },
+    {
+      "scenario": "VC-DM-006-GUARD",
+      "checks": [
+        {
+          "report": "docs/evidence/vc-dm-006/guard-fixed56.json",
+          "pointer": "/failures/7/checkpointIndependentlyReopened",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-006/guard-fixed56.json",
+          "pointer": "/failures/7/retainedFileHashesVerified",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-006/guard-fixed56.json",
+          "pointer": "/healthyReport/checks/0/status",
+          "expected": "passed",
+          "level": "native-fixed-install"
+        }
+      ]
+    },
+    {
+      "scenario": "VC-DM-006-ASSET",
+      "checks": [
+        {
+          "report": "docs/evidence/vc-dm-006/assets-fixed56.json",
+          "pointer": "/level",
+          "expected": "fixed-install",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-006/assets-fixed56.json",
+          "pointer": "/fault/checkpointIndependentlyReopened",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-006/assets-fixed56.json",
+          "pointer": "/fault/failure/replayAllowed",
+          "expected": false,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-006/assets-fixed56.json",
+          "pointer": "/explicitEmptyExportsPreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-dm-006/assets-fixed56.json",
+          "pointer": "/preflight/1/beforeRuntimeAndOutput",
+          "expected": true,
+          "level": "native-fixed-install"
+        }
+      ]
+    }
+  ]
+}

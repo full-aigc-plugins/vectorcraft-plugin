@@ -1,0 +1,85 @@
+{
+  "schema": "vectorcraft-fixed-host-install/v1",
+  "result": "PASS",
+  "pluginVersion": "0.1.0-dev.56",
+  "pluginCommit": "cfea0f92fd49f3deda00e0f6338430c2a4e1898f",
+  "skillSourceRef": "v0.1.0-dev.42",
+  "skillSourceCommit": "87dc3cb5eeff8dd0b39ebec6217bd96496d04f8a",
+  "hostVersion": "codex-cli 0.153.4",
+  "platform": "Darwin-arm64",
+  "skills": [
+    {
+      "name": "vectorcraft-use",
+      "sha256": "daf0e90f23d4a01b3f719004f9dc37557af6bde75875d14dfe0413286cc9734e",
+      "enabled": true
+    },
+    {
+      "name": "vectorcraft-cli",
+      "sha256": "e2db64a93087b99fe9368f9ba932eae0c9d9ade96657890bbcffca3c2410c230",
+      "enabled": true
+    },
+    {
+      "name": "vectorcraft-cli-setup",
+      "sha256": "6375cc38e8388914cd7844ee5aa1e97bd08ef3260576ff20a7078562d676aa24",
+      "enabled": true
+    },
+    {
+      "name": "vectorcraft-cli-project",
+      "sha256": "f1e940318c62d0344138cee05b0a1204d97a16e78b2e4bf587e865dfe3f2d9aa",
+      "enabled": true
+    },
+    {
+      "name": "vectorcraft-cli-paths",
+      "sha256": "e81951b4829738efe64d5c7958f2242e02517fe81fe7934e59df4c224321236a",
+      "enabled": true
+    },
+    {
+      "name": "vectorcraft-cli-shapes",
+      "sha256": "824b0636350736d13df2ddca49493725eb26bc8e37001a6fef46706acc68c777",
+      "enabled": true
+    },
+    {
+      "name": "vectorcraft-cli-boolean",
+      "sha256": "b91259d284d580ae309475a1cecf3c40ab0a3861602ddc1521e847c43f7c70eb",
+      "enabled": true
+    },
+    {
+      "name": "vectorcraft-cli-text",
+      "sha256": "7f10394c8c940adce7284c999867c299a99dd6c235765841f76819d4c8acc8fc",
+      "enabled": true
+    },
+    {
+      "name": "vectorcraft-cli-appearance",
+      "sha256": "1a387d07690584aad900988163008a448842363b4b77efbd3eb3626062dc6828",
+      "enabled": true
+    },
+    {
+      "name": "vectorcraft-cli-artboards",
+      "sha256": "52af2169311224c7c5a896ab1dfd587246275891b717f3cde133b816abcb0796",
+      "enabled": true
+    },
+    {
+      "name": "vectorcraft-cli-assets",
+      "sha256": "741415f3717b772e27bbb27d6458db2f3c5fb1879c796f18927a441bdf246629",
+      "enabled": true
+    },
+    {
+      "name": "vectorcraft-cli-export",
+      "sha256": "06d51d5e5e38c41e6c9d345074b6435cd9bd6a96dc8cdf4bda2e4f43381caac6",
+      "enabled": true
+    },
+    {
+      "name": "vectorcraft-cli-selection",
+      "sha256": "0d3677eca3f446d9969b4301f675c4aaa95356600271659cf59ddb0a402da6a3",
+      "enabled": true
+    }
+  ],
+  "scope": "isolated actual published-tag plugin installation and host discovery; private acceptance catalog only",
+  "excluded": [
+    "model implicit routing",
+    "GUI",
+    "complete V1",
+    "public marketplace eligibility"
+  ],
+  "skillsUnchangedAfterQa": 13
+}

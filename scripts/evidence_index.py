@@ -229,6 +229,9 @@ def build(root=ROOT):
     artboards='docs/evidence/vectorcraft-artboards-fixed54-20261009.json'
     if (root/artboards).is_file():
         entries.append(bound_report(root,artboards,'fixed-install','All four current VC-DM-004 scenarios on installed54/source40 macOS arm64;31 native boundary cases, standalone export cold first use, stable-ID mapping and pinned renderer unknown-bounds semantics;only4.12 closes','VC-DM-004',['4.12']))
+    brand_fixed='docs/evidence/vectorcraft-brand-variants-fixed56-20261009.json'
+    if (root/brand_fixed).is_file():
+        entries.append(bound_report(root,brand_fixed,'fixed-install','All six current VC-DM-006 scenarios on actual isolated Codex public56/source42 macOS arm64 installation; registered token and raster/SVG asset consumers, preserved unrelated exports and retained failure checkpoints; only4.18 closes','VC-DM-006',['4.18']))
     brand_variants='docs/evidence/vectorcraft-brand-variants-candidate56-20261009.json'
     if (root/brand_variants).is_file():
         entries.append(bound_report(root,brand_variants,'native-candidate','Source42 registered asset guards and SVG instance bounds correction; real baseline55 gap, native candidate asset/token regressions; fixed56 qualification remains separate','VC-DM-006',['4.16','4.17']))
