@@ -1,0 +1,264 @@
+{
+  "schema": "vectorcraft-cancellation-scenario-matrix/v1",
+  "result": "PASS",
+  "scope": "all current VC-TX-003 scenarios at public installed51/source38 macOS arm64; native and unit evidence distinguished",
+  "scenarioContracts": {
+    "VC-TX-003-P": "db1557b4288d2cbf49f0149ca60087ce9e9f5630cb708456d73323676793669a",
+    "VC-TX-003-N": "d37696dcac8618707c6ec78063bea6d680831571d0976115b771bedb6e881871",
+    "VC-TX-003-RESTART": "4b9ce29b080a2076a4d58eaec4ccc1e76a54bb1207305de12860c4cb7f9159dd",
+    "VC-TX-003-GROUP": "4915ab3602a6a3656300de8e3426d0885f99b2d43d85cfab4344b2ceb678cca1",
+    "VC-TX-003-QUOTA": "13c0eb358888e6e06f271721067ece8e2c8a129503b5aec8ea2523ea884b07b8"
+  },
+  "entries": [
+    {
+      "scenario": "VC-TX-003-P",
+      "checks": [
+        {
+          "report": "docs/evidence/vc-tx-003/attempt.json",
+          "pointer": "/exportCount",
+          "expected": 9,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-003/attempt.json",
+          "pointer": "/sourceUnchanged",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-003/attempt.json",
+          "pointer": "/readonlyResumeNoExtraAttempt",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-003/shared.json",
+          "pointer": "/allCancelRequestedBeforeStop",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-003/shared.json",
+          "pointer": "/allRegisteredGroupsStopped",
+          "expected": true,
+          "level": "native-fixed-install"
+        }
+      ]
+    },
+    {
+      "scenario": "VC-TX-003-N",
+      "checks": [
+        {
+          "report": "docs/evidence/vc-tx-003/shared.json",
+          "pointer": "/liveNativeGroupsAtCancellation",
+          "expected": 2,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-003/shared.json",
+          "pointer": "/aliveGroupsRefusedSettlement",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-003/shared.json",
+          "pointer": "/newDependentRejected",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-003/shared.json",
+          "pointer": "/recovered/0/state",
+          "expected": "cancelled",
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-003/shared.json",
+          "pointer": "/recovered/1/state",
+          "expected": "cancelled",
+          "level": "native-fixed-install"
+        }
+      ]
+    },
+    {
+      "scenario": "VC-TX-003-RESTART",
+      "checks": [
+        {
+          "report": "docs/evidence/vc-tx-003/deadline.json",
+          "pointer": "/waitedPastOriginalDeadline",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-003/deadline.json",
+          "pointer": "/budgetBefore/attempts",
+          "expected": 2,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-003/deadline.json",
+          "pointer": "/budgetAfter/attempts",
+          "expected": 2,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-003/deadline.json",
+          "pointer": "/budgetAfter/bytes",
+          "expected": 10000000,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-003/late.json",
+          "pointer": "/sameEpochActualReceiptQuarantined",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-003/late.json",
+          "pointer": "/lateOldEpochActualReceiptQuarantined",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-003/late.json",
+          "pointer": "/noAutomaticReplay",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-003/late.json",
+          "pointer": "/outputInodePreserved",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-003/late.json",
+          "pointer": "/outputUnchanged",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-003/late.json",
+          "pointer": "/settledState",
+          "expected": "cancelled",
+          "level": "native-fixed-install"
+        }
+      ]
+    },
+    {
+      "scenario": "VC-TX-003-GROUP",
+      "checks": [
+        {
+          "report": "docs/evidence/vc-tx-003/shared.json",
+          "pointer": "/members",
+          "expected": 3,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-003/shared.json",
+          "pointer": "/allCancelRequestedBeforeStop",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-003/shared.json",
+          "pointer": "/newStepsRejected",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-003/shared.json",
+          "pointer": "/newDependentRejected",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-003/shared.json",
+          "pointer": "/recovered/0/epoch",
+          "expected": 2,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-003/shared.json",
+          "pointer": "/recovered/1/epoch",
+          "expected": 2,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-003/shared.json",
+          "pointer": "/recovered/2/epoch",
+          "expected": 2,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-003/node.log",
+          "contains": "✔ database guards reject stale readers admitting cancelled-budget tasks or native steps (",
+          "level": "unit-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-003/node.log",
+          "contains": "✔ private cancellation leaves independent and already reviewed tasks untouched (",
+          "level": "unit-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-003/node.log",
+          "contains": "✔ one failed stop observation still persists cancellation and attempts the other group (",
+          "level": "unit-fixed-install"
+        }
+      ]
+    },
+    {
+      "scenario": "VC-TX-003-QUOTA",
+      "checks": [
+        {
+          "report": "docs/evidence/vc-tx-003/attempt.json",
+          "pointer": "/newTaskNotAdmitted",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-003/attempt.json",
+          "pointer": "/newNativeGroupNotStarted",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-003/bytes.json",
+          "pointer": "/newTaskNotAdmitted",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-003/bytes.json",
+          "pointer": "/newNativeGroupNotStarted",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-003/attempt.json",
+          "pointer": "/budgetAfter/attempts",
+          "expected": 1,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-003/bytes.json",
+          "pointer": "/budgetAfter/bytes",
+          "expected": 5000000,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-003/deadline.json",
+          "pointer": "/waitedPastOriginalDeadline",
+          "expected": true,
+          "level": "native-fixed-install"
+        },
+        {
+          "report": "docs/evidence/vc-tx-003/deadline.json",
+          "pointer": "/allCancelRequestedBeforeStop",
+          "expected": true,
+          "level": "native-fixed-install"
+        }
+      ]
+    }
+  ]
+}

@@ -12,7 +12,7 @@ Create Logo, icon and brand assets as `.vectorcraft` with applicable SVG, PDF an
 
 Current plugin: `0.1.0-dev.51`; skill source: `0.1.0-dev.38`; 13 independent skills.
 
-Candidate51 makes an explicit budgetId a shared workflow cancellation boundary. Cancellation fences all active members and future tasks/steps durably, including stale readers; each native group stops and each original artifact is inspected independently before epoch settlement. Expired resumes cancel the workflow; spent attempt/reserved-output quotas refuse admission. Five native candidate cases and115 Node regressions pass; fixed51 and task3.9 remain open. [Architecture](docs/VectorCraft-Shared-Cancellation.md).
+Candidate51 makes an explicit budgetId a shared workflow cancellation boundary. Cancellation fences all active members and future tasks/steps durably, including stale readers; each native group stops and each original artifact is inspected independently before epoch settlement. Expired resumes cancel the workflow; spent attempt/reserved-output quotas refuse admission. Public installed51 passed five actual native cases,115 Node and43 Python regressions; task3.9 is complete. [Architecture](docs/VectorCraft-Shared-Cancellation.md).
 
 Public installed plugin50/source38 passes all seven current VC-TX-002 scenarios:13 actual native crash/recovery cases,109 Node and43 Python tests; all13 skill digests unchanged and30 registered groups stopped. Durable GO authorization and recovery sealing are mutually exclusive; original files and completed receipts are checked without replay. Task3.6 is complete;96 tasks completed and31 remain open. Full cancellation/budget, GUI, model and V1 acceptance remain separate. [Fixed scenario evidence](docs/evidence/vectorcraft-task-recovery-fixed50-20261009.json).
 
@@ -28,7 +28,7 @@ Source manifests, inherited plans and dependencies are now version-bound and cop
 
 Published plugin45/source37 passed isolated Codex installation,63 Node and43 Python tests, and real cancellation and coordinator-crash recovery from the installed copy. All13 skill digests remain unchanged. [Fixed-install evidence](docs/evidence/vectorcraft-recovery-fixed45-20261008.json). These are bounded recovery cases; no additional V1 task closes.
 
-Recovery now verifies retained skill, plan and control identities before launching native inspection; old unresolved tasks without an original control digest remain occupied. Real cancellation and coordinator-crash cases pass without replay. [Recovery contract](docs/VectorCraft-Recovery-Snapshot.md). Tasks3.3/3.6 have fixed scenario acceptance;3.9 and complete V1 remain open.
+Recovery now verifies retained skill, plan and control identities before launching native inspection; old unresolved tasks without an original control digest remain occupied. Real cancellation and coordinator-crash cases pass without replay. [Recovery contract](docs/VectorCraft-Recovery-Snapshot.md). Tasks3.3/3.6/3.9 have fixed scenario acceptance; complete V1 remains open.
 
 Authorization now freezes caller scope, input fingerprints and physical paths before asynchronous probing, and requires write permission for the staging parent. Three coordinator regression cases cover these boundaries; complete task3.3 and V1 acceptance remain open.
 
@@ -363,3 +363,5 @@ A new source candidate adds fixed runtime identity, live command/tool schemas, s
 
 
 Default Harness first use now validates plans, installs the fixed runtime and checks live command/tool schemas. Same-version concurrent tasks reuse selection; completed keys inspect original receipts. Source candidate evidence:46 Node tests,5 cold/concurrent/refusal scenarios and8 structural regressions passed. Published plugin41 is unchanged; complete2.6 remains open. See [default runtime gate](docs/Runtime-Gate.md).
+
+Public installed51/source38 passed all five VC-TX-003 scenarios and closes OpenSpec task3.9: five actual native cases,115 Node and43 Python tests,13 unchanged skills and13 stopped registered groups. See [fixed cancellation and budget acceptance](docs/evidence/vectorcraft-budget-cancel-fixed51-20261009.json). Full V1, GUI, model, other platforms and marketplace qualification remain open.

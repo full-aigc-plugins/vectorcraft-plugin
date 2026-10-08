@@ -93,9 +93,10 @@
         "3.9"
       ],
       "owner": "Harness owner",
-      "status": "in-progress",
+      "status": "verified",
       "candidateEvidence": "docs/evidence/vectorcraft-execution-control-20261008.json",
-      "scope": "failure tests and minimum controlled execution implemented; bounded native cancellation/restart/original-file inspection proven; VC-TX-001 task3.3 verified at fixed47; full tasks3.6/3.9 remain open"
+      "scope": "all five current VC-TX-003 scenarios at public installed plugin51/source38 macOS arm64;five actual native cases,115 Node and43 Python tests; reserved output quota, not filesystem hard quota or remote credits; complete V1 remains open",
+      "evidence": "docs/evidence/vectorcraft-budget-cancel-fixed51-20261009.json"
     },
     {
       "requirement": "VC-DM-001",

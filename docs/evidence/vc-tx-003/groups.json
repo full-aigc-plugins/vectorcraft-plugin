@@ -1,0 +1,84 @@
+{
+  "result": "PASS",
+  "skillsUnchanged": 13,
+  "groups": [
+    {
+      "case": "shared",
+      "task": "34a7df0b-e124-4ae7-bf5c-84645a3621db",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": "shared",
+      "task": "34a7df0b-e124-4ae7-bf5c-84645a3621db:inspect:7ea9a2f5-1f7e-488c-b874-885c0b6b4202",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": "shared",
+      "task": "a2866285-0243-46a8-af33-2031a7bb8273:inspect:0b983c55-c9df-4879-bd4c-f6602c1fae8a",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": "shared",
+      "task": "e81e2d5f-146e-492d-939b-d6a930a9b02e",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": "shared",
+      "task": "e81e2d5f-146e-492d-939b-d6a930a9b02e:inspect:76170a29-3194-4634-beb8-76d634dd2fe9",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": "deadline",
+      "task": "64a992a1-fc8b-45ad-b1a9-0086063d4df0",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": "deadline",
+      "task": "64a992a1-fc8b-45ad-b1a9-0086063d4df0:inspect:5e389894-b269-41bf-aef6-a12d28826eaa",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": "deadline",
+      "task": "efc8d672-2ee3-42cc-b4cd-1208cd702296",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": "deadline",
+      "task": "efc8d672-2ee3-42cc-b4cd-1208cd702296:inspect:97b041e4-43ec-4500-b87a-f36f43ecfcc0",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": "late",
+      "task": "38e09676-5964-42d0-a4b3-0012ec17fc9d",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": "late",
+      "task": "38e09676-5964-42d0-a4b3-0012ec17fc9d:inspect:d17bda10-798e-453d-92a0-245720a7aac1",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": "attempt",
+      "task": "2632e829-d899-442e-b3f0-94a604cd120c",
+      "epoch": 1,
+      "stopped": true
+    },
+    {
+      "case": "bytes",
+      "task": "ccf5d413-de16-456c-896d-cd7113041c69",
+      "epoch": 1,
+      "stopped": true
+    }
+  ]
+}

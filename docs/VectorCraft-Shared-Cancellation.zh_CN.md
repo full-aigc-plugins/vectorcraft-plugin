@@ -18,3 +18,5 @@ flowchart LR
   F --> G[each epoch advances: cancelled]
   E -->|observation fails| H[retain occupation and reason]
 ```
+
+公开固定51／源38已完成VC-TX-003全部五场景验收，OpenSpec任务3.9已勾选：五组真实原生用例、115项Node与43项Python回归通过，13技能摘要保持、13个登记组停止。见 [固定取消与预算验收](evidence/vectorcraft-budget-cancel-fixed51-20261009.json)。完整V1、GUI、模型、其他平台与市场资格保持开放。

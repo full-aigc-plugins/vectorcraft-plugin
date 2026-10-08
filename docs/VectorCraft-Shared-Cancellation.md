@@ -18,3 +18,5 @@ flowchart LR
   F --> G[each epoch advances: cancelled]
   E -->|observation fails| H[retain occupation and reason]
 ```
+
+Public installed51/source38 passed all five VC-TX-003 scenarios and closes OpenSpec task3.9: five actual native cases,115 Node and43 Python tests,13 unchanged skills and13 stopped registered groups. See [fixed cancellation and budget acceptance](evidence/vectorcraft-budget-cancel-fixed51-20261009.json). Full V1, GUI, model, other platforms and marketplace qualification remain open.
