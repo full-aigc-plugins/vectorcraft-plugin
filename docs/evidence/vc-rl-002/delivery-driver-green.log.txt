@@ -1,0 +1,8 @@
+test_original_driver_remains_valid_after_candidate_driver_changes (test_geometry_driver_evidence.GeometryDriverEvidenceTests.test_original_driver_remains_valid_after_candidate_driver_changes) ... ok
+test_rehashed_native_report_cannot_forge_the_driver_identity (test_geometry_driver_evidence.GeometryDriverEvidenceTests.test_rehashed_native_report_cannot_forge_the_driver_identity) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.069s
+
+OK
+{"result": "PASS", "scope": "VC-DM-001 current scenarios on fixed51/source38 macOS arm64 only", "scenarios": 2, "checks": 48, "taskClosed": "4.3"}

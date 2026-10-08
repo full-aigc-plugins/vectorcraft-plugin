@@ -19,8 +19,6 @@ import { validateGeometryContract,verifyGeometry } from '../planning/geometry.ts
 import type { GeometryContract } from '../planning/geometry.ts';
 
 const sha=(value:string|Buffer)=>createHash('sha256').update(value).digest('hex');
-// 交付验收绑定实际检查过的清单字节；不向公开清单添加可伪造的证明字段。
-const verifiedManifests=new WeakMap<object,string>();
 const inside=(root:string,path:string)=>{const sub=relative(resourcePath(root),resourcePath(path));return !isAbsolute(sub)&&sub!=='..'&&!sub.startsWith('../');};
 
 import {skillDigest} from './skill_digest.ts';
@@ -59,28 +57,22 @@ export class Controller {
     const proof=await recovery.inspect(id,epoch);
     return {proof,task:recovery.settle(id,epoch,proof.checkId)};
   }
-  verifyDelivery(output:string,runtime:string,geometryContract?:GeometryContract,readRoots=[resourcePath(output)]):any {
-    const manifestBytes=authorizedRead(join(output,'manifest.json'),readRoots);
-    const manifest=strictJson(manifestBytes.toString('utf8'));
+  verifyDelivery(output:string,runtime:string,geometryContract?:GeometryContract):any {
+    const manifest=strictJson(readFileSync(join(output,'manifest.json'),'utf8'));
     if(manifest.schema!=='vectorcraft-delivery/v1'||manifest.runtimeSha256!==runtime)throw new Error('runtime_identity_mismatch');
-    if(!manifest.files||typeof manifest.files!=='object'||Array.isArray(manifest.files)||Object.keys(manifest.files).length>4096||!manifest.files['project.vectorcraft'])throw new Error('invalid_delivery_manifest');
+    if(!manifest.files||typeof manifest.files!=='object'||!manifest.files['project.vectorcraft'])throw new Error('invalid_delivery_manifest');
     for(const [path,digest] of Object.entries(manifest.files)){
       if(isAbsolute(path)||path.split('/').some(p=>['','..','.'].includes(p))||path.includes('\\'))throw new Error('invalid_artifact_path');
       const file=join(output,path);
-      if(typeof digest!=='string'||!/^[a-f0-9]{64}$/.test(digest)||!inside(output,file)||lstatSync(file).isSymbolicLink()||!lstatSync(file).isFile())throw new Error('artifact_digest_mismatch');
+      if(!inside(output,file)||lstatSync(file).isSymbolicLink()||!lstatSync(file).isFile()||sha(readFileSync(file))!==digest)throw new Error('artifact_digest_mismatch');
     }
-    const hashes=authorizedDigests(Object.keys(manifest.files).map(path=>join(output,path)),readRoots);
-    for(const [path,digest] of Object.entries(manifest.files))if(hashes[join(output,path)]!==digest)throw new Error('artifact_digest_mismatch');
     if(geometryContract){
       if(!manifest.files['native.json'])throw new Error('geometry_native_snapshot_missing');
-      const nativeBytes=authorizedRead(join(output,'native.json'),readRoots);
-      if(sha(nativeBytes)!==manifest.files['native.json'])throw new Error('artifact_digest_mismatch');
-      const report=verifyGeometry(strictJson(nativeBytes.toString('utf8')),manifest.bindings??{},geometryContract);
+      const report=verifyGeometry(strictJson(readFileSync(join(output,'native.json'),'utf8')),manifest.bindings??{},geometryContract);
       const bound={...report,nativeSha256:manifest.files['native.json'],projectRevision:manifest.files['project.vectorcraft'],runtimeIdentity:runtime,contractSha256:sha(canonical(geometryContract))};
       if(report.status!=='PASS')throw new Error('geometry_acceptance_failed: '+canonical(bound));
       manifest.geometryVerification=bound;
     }
-    verifiedManifests.set(manifest,sha(manifestBytes));
     return manifest;
   }
   async run(request:RunRequest):Promise<any> {
@@ -213,11 +205,9 @@ export class Controller {
     if(task.state!=='ready'||existing){
       let geometryVerification:any;
       if(task.state==='review_ready'||task.state==='completed'){
-        const manifest=this.verifyDelivery(request.output,runtimeIdentity,geometryContract,[request.output]);
-        geometryVerification=manifest.geometryVerification;
+        geometryVerification=this.verifyDelivery(request.output,runtimeIdentity,geometryContract).geometryVerification;
         const received=this.ledger.db.prepare('SELECT result FROM steps WHERE task=? AND n=0').get(task.id) as any;
-        const checked=verifiedManifests.get(manifest);
-        if(!received?.result||strictJson(received.result).manifestSha256!==checked||authorizedDigest(join(request.output,'manifest.json'),[request.output])!==checked)throw new Error('receipt_manifest_mismatch');
+        if(!received?.result||strictJson(received.result).manifestSha256!==sha(readFileSync(join(request.output,'manifest.json'))))throw new Error('receipt_manifest_mismatch');
       }
       return {...task,...(geometryContract&&geometryVerification?{geometryVerification}:{}),resumePolicy:'inspect original files and request; no automatic replay'};
     }
@@ -305,14 +295,12 @@ export class Controller {
         });
       });
       if(['cancel_requested','cancelled'].includes(this.ledger.get(task.id).state))return {id:task.id,state:'quarantined',output:request.output};
-      const manifest=this.verifyDelivery(request.output,runtimeIdentity,geometryContract,[request.output]);
+      const manifest=this.verifyDelivery(request.output,runtimeIdentity,geometryContract);
       checkInputs();
       const bytes=Object.keys(manifest.files).reduce((total,path)=>total+lstatSync(join(request.output,path)).size,0);
       if(bytes>request.estimatedBytes||bytes>auth.maxBytes)throw new Error('budget_exceeded: output exceeds reservation');
       if(request.source&&authorizedDigest(join(request.source,'project.vectorcraft'),auth.readRoots)!==projectRevision)throw new Error('revision_conflict');
-      const checked=verifiedManifests.get(manifest);
-      if(!checked||authorizedDigest(join(request.output,'manifest.json'),[request.output])!==checked)throw new Error('receipt_manifest_mismatch');
-      this.ledger.receipt(task.id,task.epoch,0,{manifestSha256:checked,runtimeIdentity,...(geometryContract?{geometryVerification:manifest.geometryVerification}:{})});
+      this.ledger.receipt(task.id,task.epoch,0,{manifestSha256:sha(readFileSync(join(request.output,'manifest.json'))),runtimeIdentity,...(geometryContract?{geometryVerification:manifest.geometryVerification}:{})});
       const verified=this.ledger.verified(task.id,task.epoch,{path:join(request.output,'project.vectorcraft'),sha256:manifest.files['project.vectorcraft']});
       return {...verified,...(geometryContract?{geometryVerification:manifest.geometryVerification}:{})};
     }catch(error){this.ledger.unknown(task.id,task.epoch,String(error));throw error;}

@@ -442,3 +442,5 @@ Node父进程素材读取竞态已复现并修复：过滤环境的Python摘要�
 评审读取边界继续修复：技术清单在解析前授权，捕获文件读取根取请求与评审存储的交集；目录替换后描述符读取拒绝外部字节。评审摘要流式读取，检查器身份同时绑定固定读取器及宿主适配代码，旧回执不能沿用变化后的依赖。该候选增量不关闭7.4–7.6；完整父进程读写、宿主秘密引用及固定发行继续开放。 [Evidence](docs/evidence/vectorcraft-permissions-review-read-candidate64-20261009.json).
 
 Controller读取边界继续实现：计划与源清单先经冻结根授权读取；源工程、依赖与额外输入的摘要使用安全流式读取，运行期指纹采用批量核验。3类目录替换失败用例修复，65MiB稀疏文件摘要与超过4096项输入的分批行为通过。源快照复制、交付检查、写入根完整审计、宿主秘密引用和固定发行继续开放，7.4–7.6不勾选。 [Evidence](docs/evidence/vectorcraft-permissions-controller-read-candidate64-20261009.json).
+
+交付读取边界增量：交付清单、文件摘要与几何JSON在冻结根内安全读取；几何验收重新核对实际JSON摘要。账本只接收实际验过的清单字节摘要，并在接收前检查清单未被改写。交付根／嵌套目录替换及未绑定几何JSON三个失败用例已修复。源快照复制、写入边界、宿主秘密引用和固定发行仍开放，7.4–7.6不勾选。 [Evidence](docs/evidence/vectorcraft-permissions-delivery-read-candidate64-20261009.json).

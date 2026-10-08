@@ -1,0 +1,11 @@
+✔ delivery refuses replaced root ancestor before external bytes (66.219834ms)
+✔ delivery refuses replaced nested ancestor before external bytes (63.957ms)
+✔ geometry cannot use native JSON changed after its manifest digest was checked (64.146459ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 276.573125

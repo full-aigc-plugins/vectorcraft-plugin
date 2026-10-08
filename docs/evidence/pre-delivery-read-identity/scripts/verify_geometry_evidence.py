@@ -49,7 +49,6 @@ def main():
     for case in native['cases']:
         check=case['geometryVerification']
         if check['projectRevision']!=case['files']['project.vectorcraft'] or check['nativeSha256']!=case['files']['native.json'] or not check['checkedObjectIds'] or any(issue['objectId']!=case['objectId'] for issue in check['issues']):raise ValueError('geometry_identity_mismatch')
-    # 驱动属于历史执行身份；上面的摘要／归档核验已验证其原始字节。
-    if native['driverSha256']!=report['fingerprints'].get('scripts/qa/geometry_fixed.ts'):raise ValueError('qa_driver_drift')
+    if native['driverSha256']!=sha(local('scripts/qa/geometry_fixed.ts')):raise ValueError('qa_driver_drift')
     print(json.dumps({'result':'PASS','scope':'VC-DM-001 current scenarios on fixed51/source38 macOS arm64 only','scenarios':len(current),'checks':checks,'taskClosed':'4.3'}))
 if __name__=='__main__':main()

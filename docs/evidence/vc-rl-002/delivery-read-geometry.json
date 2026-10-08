@@ -1,0 +1,1644 @@
+{
+  "schema": "vectorcraft-geometry-fixed-qa/v1",
+  "result": "PASS",
+  "level": "native-current64-source46-candidate",
+  "fingerprints": {
+    "src/cli.ts": "19ca97519319f9d694a060e7bde94da300d0feed4bc69de69e7799f59816dd2d",
+    "src/evaluation/checker_bundle.ts": "7f57b688c4dae338743d6dcd5a955e00d3d33516526bc5dada5fd3952fa82fde",
+    "src/evaluation/delivery_quality.py": "60b81d1097d2a2ef84d5e8010ee698295e1184db1b3667f3e40fa03feb899070",
+    "src/evaluation/review_store.ts": "992b6914c453d674eeb3e02e006c0acda75892f0757efcd1d33e990d306aa7f8",
+    "src/evaluation/revision_cycle.ts": "86280433e21003262200266b0a1a7666ac232091ab40b5490571e4ba58715fe7",
+    "src/evaluation/technical_review.ts": "c049122036dd2ff5ad8f3fa3644480f058b1105049b2e49b61a1c8dfdfe6195f",
+    "src/harness/asset_digest.py": "a08d26cef0e86fa5298778dd857006a00ab7541709ce53de5d8bde8d3a34a861",
+    "src/harness/asset_digest.ts": "f1ad1d239eb56da52d29098b69b96b62677293c3542d95a3a999e00e2c69789d",
+    "src/harness/authorized_file.ts": "68661f81d3c5fe4fe0e13cbfbce687f9a266e4c3e3479552d8044b3b4360447b",
+    "src/harness/controller.ts": "22cb3b51fad857ee4cc74b805995159c0c7f26191eb1b2787f194df839f44ef3",
+    "src/harness/input_policy.ts": "02e153e37675821008226edffed71bab0055205dfa75602e954f51086bcbf3a5",
+    "src/harness/launch_recovery.ts": "baae4fc69b2577df52f576b6ff5e593d5b48e6f871574d13910eab96f0b11b89",
+    "src/harness/ledger.ts": "d2a336ad4f52e2fc1f839514fd4d3ed351b323f5cfa230152f796d55b336db6c",
+    "src/harness/native_environment.ts": "fec69bc8d8aa148feb7708af2ac9e10bc140389cc8e27e24468c8fb9bf318dc0",
+    "src/harness/process_registry.ts": "50fccff148a0aa11b2b84e9c4ddb44b8ff45dca554e0fc3c2e24ce0d754caa15",
+    "src/harness/process_runner.py": "7332d0757aa01f03d00697f8eb8d93f849517cab34ea8a1355ba6c9513d5aba2",
+    "src/harness/recovery.ts": "7a07a0296921d2e6b75f9ce05c506503f95cd3fe7ac7cffd0a49cd42ae8f0a94",
+    "src/harness/skill_digest.ts": "e4cd8dbbcacd338fc39ef6f114ad991a8c6c7274987d92ff62ce1b9bd8ab9d9e",
+    "src/planning/geometry.ts": "97650dc916111666a73bcfea6ddc797e48b5b9bc2d6b6e54a85f33b1a8766e2d",
+    "src/runtime/prepare_runtime.ts": "5ded468dbc3074d1a770bb438527474d2f2a86a35aaa01dc6ee1b27fa8c05fd5",
+    "src/runtime/runtime_gate.ts": "269966ae978c9afa7b9cdad719afce9ca0b57e54c52f3cb732777f3ddc23a68c",
+    "src/runtime/runtime_probe.py": "ee196f91dde9487bd1537d1c91a8f5957deb795431a54baa333be35bfc90e54c",
+    "src/strict_json.ts": "69a445339670e53f6a7fcb96770b53b896666dd1e60f114c1751a23981d5b7d0",
+    "scripts/acceptance/checked_review.ts": "bc619deda373358f3eff056323f495cc3288f40037cd98860a2a89b5edbce5fb",
+    "scripts/acceptance/execution_identity.ts": "923b35a9ddd6d6f7a2b6f22e2f597012a84bbee51b111c5a005d173af490a422",
+    "scripts/acceptance/fixed_brand_edges.py": "e3b4b53cb732a46b18cfbb1c36032b19aac1d07638be4ca8a46d6f8dd9daf703",
+    "scripts/acceptance/fixed_install.py": "b360544f751efe3c0f64a0f40a75d81a61588185956d17d7b9cca9ca766abd48",
+    "scripts/acceptance/fixed_native.py": "913e0656e13a8985335197684460ad40aecbe5440d96587252a92e096d96b09e",
+    "scripts/acceptance/fixed_plan_edges.py": "25888c90833418b32ae1cce4e0291ab88dd08083834981dca5835ba9d310d1e0",
+    "scripts/acceptance/fixed_protocol_edges.py": "f68075c81100dfbaff3655ee8e330ea153246253166e84dcc6a1e46441b8840f",
+    "scripts/acceptance/geometry.ts": "0f987e5c701a0d2af47529788b66f7e0d3de8482897edad8351d0a3b11a692c3",
+    "scripts/acceptance/late_cancel.ts": "ba0f28d2d8ebb4518e50d5999ceefe93811b06ce3b3880ab2213ec5560f88669",
+    "scripts/acceptance/late_cancel_child.ts": "8d4b22f899cc706769a581ba27552ee1499f78e72d5f6700729a75c851d5c0da",
+    "scripts/acceptance/linked_recovery.ts": "cfebebdb49ee5d1e6f53eb73b8bc6c0af2cde53a5dd2973e844ea73b05bae60b",
+    "scripts/acceptance/linked_source.py": "cee98fc076c102c2afafcd2637832d53d3d03627d6ebaec486e5e44d8350c284",
+    "scripts/acceptance/managed_boolean.ts": "55fbffdf6d44a8b0b95b9902d7716037980eeaf5c2c437c69a06b740b889be52",
+    "scripts/acceptance/managed_cancel.ts": "bd63c54b247e78e90ea7237ce8c91c98dfd0f93d4be7d520d42eb071ddb1c76a",
+    "scripts/acceptance/record_execution_control.py": "9ded1a54b482c84ff477e0c3a1d97aa2dd362e61a5cd749b327adae1f95dc37b",
+    "scripts/acceptance/revision_cycle.ts": "fb13c44b873841570fe4f3e46665da55e4007064260c2498899a5289dfa69c2a",
+    "scripts/acceptance/runtime_activation_race.ts": "dc7502d97180fbd92c3b690a6d73f2602f257bad182109fd7a2e472df2c6bf81",
+    "scripts/acceptance/runtime_activation_race_child.ts": "c58f0d1ac1db7f4223e417a4aaa06d668923fee7a99adf93fec3fb30d913ad19",
+    "scripts/acceptance/runtime_boundaries.ts": "9ea05b771ab9df8db34f1971f8610bde52b642c23a1741c48879cae8b9797652",
+    "scripts/acceptance/runtime_boundary_probe.py": "f4f795e97c61d48a73f3b0ad3ed4f4b0215cfc01095b84bcdb0f44568eab2ad5",
+    "scripts/acceptance/runtime_bridge_child.py": "3bd45a343e4113cfe495e7ca608e544e414d4b6f7ee7918cddc8924a918bb357",
+    "scripts/acceptance/runtime_bridge_drain.ts": "9c66c9a8f19835bb54f52de77517699e70fc1c72bab6c5bcaa964662af2f39bb",
+    "scripts/acceptance/runtime_default.ts": "ce238365dad5f30eec4a7c8029566a73c69323152fbefdd9ae6fcff8ee782648",
+    "scripts/acceptance/runtime_gate.ts": "cf94973f6475b5af35011dd60d0ed26a402acc306de9bf1609dd703284c2f7f5",
+    "scripts/acceptance/runtime_native_child.py": "1ddf23c94d43bad1a943d6aeb7582ce1c72fe6d97bca6a36dd679f990e5c46d7",
+    "scripts/acceptance/runtime_open_reader.ts": "d79d11da7dffd4ebe6c26d2ba368753f4e3584f7719228682e56522943962747",
+    "scripts/acceptance/shared_cancel.ts": "a0035caf9c7de00c8914add97df0ed0ade830f8a983e71ea057cb2e677a6feac",
+    "scripts/acceptance/shared_quota.ts": "7a4967f4d9927d82560bf98410943e582d16256f7f4471729e8191b8a51c8397",
+    "scripts/acceptance/single_round.ts": "309115ba29a4b5ea69e70099a58d657ff1e29d48284af42a9d3461fefee9c84f",
+    "scripts/acceptance/task_contract.ts": "a65bed865f7ec61bbe6e93f70fce383c0c10722a5c1b244ffd93fbcd84ceb8a1",
+    "scripts/acceptance/task_crash.ts": "44b1db20e97c778a67907b355a98289bc1b94d4cc030918a6e82fe5a7d68fc21",
+    "scripts/acceptance/task_crash_child.ts": "5152beab700d2ca9ff7033718c88d323bc17cf1b3cf1c26db51abcd7f636a9ce",
+    "scripts/acceptance/task_gui_edit.py": "d26eda2ae8b1d69167171d2067dbcc27e6617be23b49e84707e3133fff94bc68",
+    "scripts/acceptance/task_launch.ts": "6c7dc3bb3914d27d3043d2a7bcff1f030c98db0c73ae4c263cd629473ffaee33",
+    "scripts/acceptance/task_launch_child.ts": "0e1080002aaf70b0ccab0dc55b978fcac8ae7c27ffbae464769a18070ab4a9be",
+    "scripts/acceptance/task_receipt_loss.ts": "c5a924bc214e8c080b3f8207129c12b7fe40b44b75c1f0b3b40e593825895a20",
+    "scripts/acceptance/task_receipt_loss_child.ts": "701350be6312c9aa9eda1ff8299c2367852bea561e9add39b03f8a045b042f17",
+    "scripts/acceptance/verify_fixed.py": "d4a5ea7c86ec7bc4939a055d40b8128db010ba7a73b7f7e8e27ee7613f908d15",
+    "schemas/vector-review-receipt.schema.json": "d1e94365af9e75ce55de82df50a36eb37a65d0da4b19f66e704b00e9b35641ab",
+    "schemas/vector-review-request.schema.json": "15951f56b14316c1b6d06b58194c178fbd13c20c85e1ce1e6e492c204ec3f4cd",
+    "schemas/vector-revision-policy.schema.json": "a68d6f6a5d639864edd34a24bd626f8668c49a6f7d8121febcc71353d4251073"
+  },
+  "driverSha256": "aebc02e2b3ce3063515755932d699025d9dc73007e9c40d88343f3b9d61d5ecb",
+  "pluginVersion": "0.1.0-dev.64",
+  "sourceRef": "v0.1.0-dev.46",
+  "sourceCommit": "91092712e427542e9c8383e346f0ad94f0e3f029",
+  "skillSha256": "130fad49c28526e11952d484b949ab620d86344a7d9bc8464599af8e73b3e170",
+  "platform": "darwin-arm64",
+  "cases": [
+    {
+      "name": "pixels-local",
+      "result": "PASS",
+      "expectedFailure": null,
+      "objectId": 2,
+      "state": "review_ready",
+      "planSha256": "472e0b34c664ef1accf61c881ad01d5fbcda8b81f88170ad0366af1450a7ad06",
+      "contract": {
+        "schema": "vectorcraft-geometry-contract/v1",
+        "units": "Pixels",
+        "coordinateSpace": "artboard-local",
+        "tolerance": 0.000001,
+        "artboards": [
+          {
+            "id": 2,
+            "rect": [
+              300,
+              40,
+              500,
+              160
+            ]
+          }
+        ],
+        "paths": [
+          {
+            "binding": "curve.id",
+            "artboardId": 2,
+            "subpaths": [
+              {
+                "closed": true,
+                "anchors": [
+                  {
+                    "p": [
+                      20,
+                      20
+                    ],
+                    "out": [
+                      40,
+                      20
+                    ]
+                  },
+                  {
+                    "p": [
+                      150,
+                      20
+                    ],
+                    "in": [
+                      130,
+                      20
+                    ]
+                  },
+                  {
+                    "p": [
+                      150,
+                      90
+                    ]
+                  }
+                ]
+              }
+            ],
+            "strokes": [
+              {
+                "width": 3,
+                "paint": {
+                  "type": "solid",
+                  "color": {
+                    "model": "rgb",
+                    "r": 0,
+                    "g": 0,
+                    "b": 0
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "plan": {
+        "document": {
+          "name": "Fixed native geometry QA",
+          "width": 200,
+          "height": 120,
+          "units": "Pixels"
+        },
+        "operations": [
+          {
+            "command": "artboard.new",
+            "params": {
+              "x": 300,
+              "y": 40,
+              "width": 200,
+              "height": 120,
+              "name": "Offset"
+            }
+          },
+          {
+            "command": "path.create",
+            "params": {
+              "anchors": [
+                {
+                  "x": 320,
+                  "y": 60,
+                  "out": [
+                    340,
+                    60
+                  ]
+                },
+                {
+                  "x": 450,
+                  "y": 60,
+                  "in": [
+                    430,
+                    60
+                  ]
+                },
+                {
+                  "x": 450,
+                  "y": 130
+                }
+              ],
+              "closed": true
+            },
+            "as": "curve"
+          },
+          {
+            "command": "paint.setStroke",
+            "params": {
+              "ids": [
+                {
+                  "$ref": "curve.id"
+                }
+              ],
+              "color": "#000000"
+            }
+          },
+          {
+            "command": "native.command",
+            "params": {
+              "command": "stroke.set",
+              "params": {
+                "ids": [
+                  {
+                    "$ref": "curve.id"
+                  }
+                ],
+                "weight": 3
+              }
+            }
+          }
+        ],
+        "exports": [
+          {
+            "format": "svg",
+            "artboard": 1
+          },
+          {
+            "format": "png",
+            "artboard": 1
+          },
+          {
+            "format": "pdf",
+            "artboard": 1
+          }
+        ]
+      },
+      "manifestSha256": "954dc9b5e11dbbe91bd317b6a73b07f7686c657bc4b0387a8d8d8b646c7a3ed7",
+      "files": {
+        "plan.json": "4049e447826e8c38494de9bb54edfee068dedbe302cb432deedbf9c294ec93ae",
+        "project.vectorcraft": "cbcfd495df72c496a963f0664cbff3c256ccd5b97d45bac547426b9ca6392bd8",
+        "exchange-loss.json": "f9629255b647ea88c2f46a503e288fd6ee5346b77143f67c80762146bf84bf75",
+        "pdf-export-date.json": "0cd95cf3bd22126d0b0c5a3929fadee55c12c4917458d47be9a3d06202ef8326",
+        "native.json": "0f16f08f2ed6cabf5d4ed66935fe9c4d8f8f171aa676b9f4cda5f8a4bd12e062",
+        "artboard-2.png": "812ea6a5b07b0bcfb98b3805a14a75a6662bc4d8e03b0e0edf7e74604ed5803b",
+        "artboard-2.pdf": "5b32859df0c4a87face2c44bae86192e0a7e0dc323f7488d47c5aed54c2db942",
+        "artboard-2.svg": "06ad5f549cf0a446123f59c9027326ff35fe5e3ceda21c28c3da38d47d7e6f24",
+        "operations.json": "81f2d1abb1876cbd97e31a8ed09eb569180fd0d493e4b3777552f935c7eb4a66",
+        "lineage.json": "4aeb64ef5c8654c1571b5816ec35522a7b9196b90d1e175544be0ba25997a42d"
+      },
+      "outputs": [
+        {
+          "format": "svg",
+          "artboardIndex": 1,
+          "artboardId": 2,
+          "artboardName": "Offset",
+          "artboardRect": {
+            "x0": 300,
+            "x1": 500,
+            "y0": 40,
+            "y1": 160
+          },
+          "path": "artboard-2.svg",
+          "warnings": [],
+          "isolationPolicy": "native-paint-bounds; whole-dependent-containers-and-unknown-bounds-retained"
+        },
+        {
+          "format": "png",
+          "artboardIndex": 1,
+          "artboardId": 2,
+          "artboardName": "Offset",
+          "artboardRect": {
+            "x0": 300,
+            "x1": 500,
+            "y0": 40,
+            "y1": 160
+          },
+          "path": "artboard-2.png",
+          "warnings": []
+        },
+        {
+          "format": "pdf",
+          "artboardIndex": 1,
+          "artboardId": 2,
+          "artboardName": "Offset",
+          "artboardRect": {
+            "x0": 300,
+            "x1": 500,
+            "y0": 40,
+            "y1": 160
+          },
+          "path": "artboard-2.pdf",
+          "warnings": [
+            "Preserve editing was left out: it needs a PDF of every artboard, in order (reopened, this one would show the others too)"
+          ],
+          "pdfCreated": 1791502645,
+          "pdfDateBinding": "native-document-created"
+        }
+      ],
+      "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "planHash": "6eca1be0de078a89590f274bec2d05ca3679c1fda92c9db63308f2e586d3733f",
+      "inputHashes": {
+        "contract:geometry": "b0e29aebea7a21ad3e3e18a8d62bef4ca2690848e89fa4de7a0eb196d7e672ff",
+        "runtime:capabilities": "7c0afe0413020b0edfe7d39420640a30e6aa3d4cf7a35fe60003679d030efcc5"
+      },
+      "geometryVerification": {
+        "checkedObjectIds": [
+          2
+        ],
+        "contractSha256": "b0e29aebea7a21ad3e3e18a8d62bef4ca2690848e89fa4de7a0eb196d7e672ff",
+        "coordinateSpace": "artboard-local",
+        "issues": [],
+        "nativeSha256": "0f16f08f2ed6cabf5d4ed66935fe9c4d8f8f171aa676b9f4cda5f8a4bd12e062",
+        "projectRevision": "cbcfd495df72c496a963f0664cbff3c256ccd5b97d45bac547426b9ca6392bd8",
+        "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+        "schema": "vectorcraft-geometry-verification/v1",
+        "scope": "explicit native JSON geometry only; no preview inference, native reopening or creative acceptance claim",
+        "status": "PASS",
+        "units": "Pixels"
+      },
+      "receiptPersisted": true,
+      "originalOutputRetained": true,
+      "replayRefused": true,
+      "changedContractRejected": true,
+      "budgetUnchangedOnResume": true,
+      "registeredGroups": 1,
+      "allRegisteredGroupsStopped": true
+    },
+    {
+      "name": "points-document-open",
+      "result": "PASS",
+      "expectedFailure": null,
+      "objectId": 2,
+      "state": "review_ready",
+      "planSha256": "ea2295d18b24fa9012816b1441608d991854d90c07edcde4a9b196026d806ad8",
+      "contract": {
+        "schema": "vectorcraft-geometry-contract/v1",
+        "units": "Points",
+        "coordinateSpace": "document",
+        "tolerance": 0.000001,
+        "artboards": [
+          {
+            "id": 2,
+            "rect": [
+              300,
+              40,
+              500,
+              160
+            ]
+          }
+        ],
+        "paths": [
+          {
+            "binding": "curve.id",
+            "artboardId": 2,
+            "subpaths": [
+              {
+                "closed": false,
+                "anchors": [
+                  {
+                    "p": [
+                      320,
+                      60
+                    ],
+                    "out": [
+                      340,
+                      60
+                    ]
+                  },
+                  {
+                    "p": [
+                      450,
+                      60
+                    ],
+                    "in": [
+                      430,
+                      60
+                    ]
+                  },
+                  {
+                    "p": [
+                      450,
+                      130
+                    ]
+                  }
+                ]
+              }
+            ],
+            "strokes": [
+              {
+                "width": 3,
+                "paint": {
+                  "type": "solid",
+                  "color": {
+                    "model": "rgb",
+                    "r": 0,
+                    "g": 0,
+                    "b": 0
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "plan": {
+        "document": {
+          "name": "Fixed native geometry QA",
+          "width": 200,
+          "height": 120,
+          "units": "Points"
+        },
+        "operations": [
+          {
+            "command": "artboard.new",
+            "params": {
+              "x": 300,
+              "y": 40,
+              "width": 200,
+              "height": 120,
+              "name": "Offset"
+            }
+          },
+          {
+            "command": "path.create",
+            "params": {
+              "anchors": [
+                {
+                  "x": 320,
+                  "y": 60,
+                  "out": [
+                    340,
+                    60
+                  ]
+                },
+                {
+                  "x": 450,
+                  "y": 60,
+                  "in": [
+                    430,
+                    60
+                  ]
+                },
+                {
+                  "x": 450,
+                  "y": 130
+                }
+              ],
+              "closed": false
+            },
+            "as": "curve"
+          },
+          {
+            "command": "paint.setStroke",
+            "params": {
+              "ids": [
+                {
+                  "$ref": "curve.id"
+                }
+              ],
+              "color": "#000000"
+            }
+          },
+          {
+            "command": "native.command",
+            "params": {
+              "command": "stroke.set",
+              "params": {
+                "ids": [
+                  {
+                    "$ref": "curve.id"
+                  }
+                ],
+                "weight": 3
+              }
+            }
+          }
+        ],
+        "exports": [
+          {
+            "format": "svg",
+            "artboard": 1
+          },
+          {
+            "format": "png",
+            "artboard": 1
+          },
+          {
+            "format": "pdf",
+            "artboard": 1
+          }
+        ]
+      },
+      "manifestSha256": "0511345c4bf1a62c17ee60e783f24ee2fd4262a125000d03f84829fef5091ff3",
+      "files": {
+        "plan.json": "ccb350c95fefeb52b5a90e69977354627c63cbb17af00551f8372b3f95170ebf",
+        "project.vectorcraft": "c1705af9b92b5407766d157bf51b8ebaa1e36fa621a29cfa495989a7f885ba55",
+        "exchange-loss.json": "8dfc23c42c4b411acb1e4d75d4872b16d58ae3b6c69de2915f5558147d97a910",
+        "pdf-export-date.json": "d537f17467386069b7bae0472eed58d68b618cebbf9fdb7a7f0115146ee85998",
+        "native.json": "ec75e76be18b03cc3d9f92dd3296222ffe8e8017e1945690bd3be50c6fb89779",
+        "artboard-2.png": "5add500e7673e726f1522cc1f8c2c0665176798281fa78b1bc82af3ad3f1d804",
+        "artboard-2.pdf": "0f3be71ad8fccdef4b213b59ca18fc9131d30acccda176b813b3493a92fc5bdb",
+        "artboard-2.svg": "809675477819350bf9590367e16036bd29e8f842db970f9e9c32f04b5927e7fb",
+        "operations.json": "a228e3c117aa0e131b6fae693f79e19ac1d1bf81561698ed272d76fc39dfc365",
+        "lineage.json": "e5ac90eacd8aea06f3227cbed9874d6251c0ba26556e9b2857eae7dc2db2c49b"
+      },
+      "outputs": [
+        {
+          "format": "svg",
+          "artboardIndex": 1,
+          "artboardId": 2,
+          "artboardName": "Offset",
+          "artboardRect": {
+            "x0": 300,
+            "x1": 500,
+            "y0": 40,
+            "y1": 160
+          },
+          "path": "artboard-2.svg",
+          "warnings": [],
+          "isolationPolicy": "native-paint-bounds; whole-dependent-containers-and-unknown-bounds-retained"
+        },
+        {
+          "format": "png",
+          "artboardIndex": 1,
+          "artboardId": 2,
+          "artboardName": "Offset",
+          "artboardRect": {
+            "x0": 300,
+            "x1": 500,
+            "y0": 40,
+            "y1": 160
+          },
+          "path": "artboard-2.png",
+          "warnings": []
+        },
+        {
+          "format": "pdf",
+          "artboardIndex": 1,
+          "artboardId": 2,
+          "artboardName": "Offset",
+          "artboardRect": {
+            "x0": 300,
+            "x1": 500,
+            "y0": 40,
+            "y1": 160
+          },
+          "path": "artboard-2.pdf",
+          "warnings": [
+            "Preserve editing was left out: it needs a PDF of every artboard, in order (reopened, this one would show the others too)"
+          ],
+          "pdfCreated": 1791502646,
+          "pdfDateBinding": "native-document-created"
+        }
+      ],
+      "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "planHash": "7f4a75bb41a6ac0a89ce7455567618537f09aa99b36c6363e73813950c3716f5",
+      "inputHashes": {
+        "contract:geometry": "f492246139a6583dd3ba43dfce311e81a0633ff49879fa0e1ffb2264af1e2363",
+        "runtime:capabilities": "7c0afe0413020b0edfe7d39420640a30e6aa3d4cf7a35fe60003679d030efcc5"
+      },
+      "geometryVerification": {
+        "checkedObjectIds": [
+          2
+        ],
+        "contractSha256": "f492246139a6583dd3ba43dfce311e81a0633ff49879fa0e1ffb2264af1e2363",
+        "coordinateSpace": "document",
+        "issues": [],
+        "nativeSha256": "ec75e76be18b03cc3d9f92dd3296222ffe8e8017e1945690bd3be50c6fb89779",
+        "projectRevision": "c1705af9b92b5407766d157bf51b8ebaa1e36fa621a29cfa495989a7f885ba55",
+        "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+        "schema": "vectorcraft-geometry-verification/v1",
+        "scope": "explicit native JSON geometry only; no preview inference, native reopening or creative acceptance claim",
+        "status": "PASS",
+        "units": "Points"
+      },
+      "receiptPersisted": true,
+      "originalOutputRetained": true,
+      "replayRefused": true,
+      "changedContractRejected": true,
+      "budgetUnchangedOnResume": true,
+      "registeredGroups": 1,
+      "allRegisteredGroupsStopped": true
+    },
+    {
+      "name": "closed-mismatch",
+      "result": "PASS",
+      "expectedFailure": "path_closed_mismatch",
+      "objectId": 2,
+      "state": "reconciling",
+      "planSha256": "472e0b34c664ef1accf61c881ad01d5fbcda8b81f88170ad0366af1450a7ad06",
+      "contract": {
+        "schema": "vectorcraft-geometry-contract/v1",
+        "units": "Pixels",
+        "coordinateSpace": "artboard-local",
+        "tolerance": 0.000001,
+        "artboards": [
+          {
+            "id": 2,
+            "rect": [
+              300,
+              40,
+              500,
+              160
+            ]
+          }
+        ],
+        "paths": [
+          {
+            "binding": "curve.id",
+            "artboardId": 2,
+            "subpaths": [
+              {
+                "closed": false,
+                "anchors": [
+                  {
+                    "p": [
+                      20,
+                      20
+                    ],
+                    "out": [
+                      40,
+                      20
+                    ]
+                  },
+                  {
+                    "p": [
+                      150,
+                      20
+                    ],
+                    "in": [
+                      130,
+                      20
+                    ]
+                  },
+                  {
+                    "p": [
+                      150,
+                      90
+                    ]
+                  }
+                ]
+              }
+            ],
+            "strokes": [
+              {
+                "width": 3,
+                "paint": {
+                  "type": "solid",
+                  "color": {
+                    "model": "rgb",
+                    "r": 0,
+                    "g": 0,
+                    "b": 0
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "plan": {
+        "document": {
+          "name": "Fixed native geometry QA",
+          "width": 200,
+          "height": 120,
+          "units": "Pixels"
+        },
+        "operations": [
+          {
+            "command": "artboard.new",
+            "params": {
+              "x": 300,
+              "y": 40,
+              "width": 200,
+              "height": 120,
+              "name": "Offset"
+            }
+          },
+          {
+            "command": "path.create",
+            "params": {
+              "anchors": [
+                {
+                  "x": 320,
+                  "y": 60,
+                  "out": [
+                    340,
+                    60
+                  ]
+                },
+                {
+                  "x": 450,
+                  "y": 60,
+                  "in": [
+                    430,
+                    60
+                  ]
+                },
+                {
+                  "x": 450,
+                  "y": 130
+                }
+              ],
+              "closed": true
+            },
+            "as": "curve"
+          },
+          {
+            "command": "paint.setStroke",
+            "params": {
+              "ids": [
+                {
+                  "$ref": "curve.id"
+                }
+              ],
+              "color": "#000000"
+            }
+          },
+          {
+            "command": "native.command",
+            "params": {
+              "command": "stroke.set",
+              "params": {
+                "ids": [
+                  {
+                    "$ref": "curve.id"
+                  }
+                ],
+                "weight": 3
+              }
+            }
+          }
+        ],
+        "exports": [
+          {
+            "format": "svg",
+            "artboard": 1
+          },
+          {
+            "format": "png",
+            "artboard": 1
+          },
+          {
+            "format": "pdf",
+            "artboard": 1
+          }
+        ]
+      },
+      "manifestSha256": "664b41695243e7b7163d711f5e5fcdbb800cf80b79356a5dd1ab03bb3ef5ad58",
+      "files": {
+        "plan.json": "4049e447826e8c38494de9bb54edfee068dedbe302cb432deedbf9c294ec93ae",
+        "project.vectorcraft": "c14459cdda9530cb10d5734159bade4bc6b0ee4746d75d9c3f36057c7fbfa517",
+        "exchange-loss.json": "885da1fc8fb32c779897c22c7b7227e2a4d4df971b3060e8091594256466319a",
+        "pdf-export-date.json": "533ba1dad41cc3173a559e686cb79d5c1265e6b10f07336a53f4f0902c5390fa",
+        "native.json": "7a8df0b5a3bd19de4582609e3a8e9f0580b74ed57155343762e2bbfe82dca711",
+        "artboard-2.png": "b4b99a6852bf8edfa7e82ae45f76669fdcf72446aae264cd5d2684aae0495b1a",
+        "artboard-2.pdf": "22be3d5585e146b4093f6b3e23a5adc8f98b675f48124bd2976d302233bd1851",
+        "artboard-2.svg": "06ad5f549cf0a446123f59c9027326ff35fe5e3ceda21c28c3da38d47d7e6f24",
+        "operations.json": "b816023d15c11765d6ed68a803e5e242c7e764a93135272b1b2d1f47b3ac1d07",
+        "lineage.json": "c16638c807388fb79eb3faa883b3e7ad813cd472b25cdaab12b58f564248fb4c"
+      },
+      "outputs": [
+        {
+          "format": "svg",
+          "artboardIndex": 1,
+          "artboardId": 2,
+          "artboardName": "Offset",
+          "artboardRect": {
+            "x0": 300,
+            "x1": 500,
+            "y0": 40,
+            "y1": 160
+          },
+          "path": "artboard-2.svg",
+          "warnings": [],
+          "isolationPolicy": "native-paint-bounds; whole-dependent-containers-and-unknown-bounds-retained"
+        },
+        {
+          "format": "png",
+          "artboardIndex": 1,
+          "artboardId": 2,
+          "artboardName": "Offset",
+          "artboardRect": {
+            "x0": 300,
+            "x1": 500,
+            "y0": 40,
+            "y1": 160
+          },
+          "path": "artboard-2.png",
+          "warnings": []
+        },
+        {
+          "format": "pdf",
+          "artboardIndex": 1,
+          "artboardId": 2,
+          "artboardName": "Offset",
+          "artboardRect": {
+            "x0": 300,
+            "x1": 500,
+            "y0": 40,
+            "y1": 160
+          },
+          "path": "artboard-2.pdf",
+          "warnings": [
+            "Preserve editing was left out: it needs a PDF of every artboard, in order (reopened, this one would show the others too)"
+          ],
+          "pdfCreated": 1791502647,
+          "pdfDateBinding": "native-document-created"
+        }
+      ],
+      "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "planHash": "6eca1be0de078a89590f274bec2d05ca3679c1fda92c9db63308f2e586d3733f",
+      "inputHashes": {
+        "contract:geometry": "275058a24d2fc299aaeef19d729f5be38aefe30fab9f6707a664e8d115ba41f9",
+        "runtime:capabilities": "7c0afe0413020b0edfe7d39420640a30e6aa3d4cf7a35fe60003679d030efcc5"
+      },
+      "geometryVerification": {
+        "checkedObjectIds": [
+          2
+        ],
+        "contractSha256": "275058a24d2fc299aaeef19d729f5be38aefe30fab9f6707a664e8d115ba41f9",
+        "coordinateSpace": "artboard-local",
+        "issues": [
+          {
+            "objectId": 2,
+            "reason": "path_closed_mismatch",
+            "subpath": 0
+          }
+        ],
+        "nativeSha256": "7a8df0b5a3bd19de4582609e3a8e9f0580b74ed57155343762e2bbfe82dca711",
+        "projectRevision": "c14459cdda9530cb10d5734159bade4bc6b0ee4746d75d9c3f36057c7fbfa517",
+        "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+        "schema": "vectorcraft-geometry-verification/v1",
+        "scope": "explicit native JSON geometry only; no preview inference, native reopening or creative acceptance claim",
+        "status": "FAIL",
+        "units": "Pixels"
+      },
+      "receiptPersisted": false,
+      "originalOutputRetained": true,
+      "replayRefused": true,
+      "changedContractRejected": true,
+      "budgetUnchangedOnResume": true,
+      "registeredGroups": 1,
+      "allRegisteredGroupsStopped": true
+    },
+    {
+      "name": "units-mismatch",
+      "result": "PASS",
+      "expectedFailure": "units_mismatch",
+      "objectId": 2,
+      "state": "reconciling",
+      "planSha256": "472e0b34c664ef1accf61c881ad01d5fbcda8b81f88170ad0366af1450a7ad06",
+      "contract": {
+        "schema": "vectorcraft-geometry-contract/v1",
+        "units": "Points",
+        "coordinateSpace": "artboard-local",
+        "tolerance": 0.000001,
+        "artboards": [
+          {
+            "id": 2,
+            "rect": [
+              300,
+              40,
+              500,
+              160
+            ]
+          }
+        ],
+        "paths": [
+          {
+            "binding": "curve.id",
+            "artboardId": 2,
+            "subpaths": [
+              {
+                "closed": true,
+                "anchors": [
+                  {
+                    "p": [
+                      20,
+                      20
+                    ],
+                    "out": [
+                      40,
+                      20
+                    ]
+                  },
+                  {
+                    "p": [
+                      150,
+                      20
+                    ],
+                    "in": [
+                      130,
+                      20
+                    ]
+                  },
+                  {
+                    "p": [
+                      150,
+                      90
+                    ]
+                  }
+                ]
+              }
+            ],
+            "strokes": [
+              {
+                "width": 3,
+                "paint": {
+                  "type": "solid",
+                  "color": {
+                    "model": "rgb",
+                    "r": 0,
+                    "g": 0,
+                    "b": 0
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "plan": {
+        "document": {
+          "name": "Fixed native geometry QA",
+          "width": 200,
+          "height": 120,
+          "units": "Pixels"
+        },
+        "operations": [
+          {
+            "command": "artboard.new",
+            "params": {
+              "x": 300,
+              "y": 40,
+              "width": 200,
+              "height": 120,
+              "name": "Offset"
+            }
+          },
+          {
+            "command": "path.create",
+            "params": {
+              "anchors": [
+                {
+                  "x": 320,
+                  "y": 60,
+                  "out": [
+                    340,
+                    60
+                  ]
+                },
+                {
+                  "x": 450,
+                  "y": 60,
+                  "in": [
+                    430,
+                    60
+                  ]
+                },
+                {
+                  "x": 450,
+                  "y": 130
+                }
+              ],
+              "closed": true
+            },
+            "as": "curve"
+          },
+          {
+            "command": "paint.setStroke",
+            "params": {
+              "ids": [
+                {
+                  "$ref": "curve.id"
+                }
+              ],
+              "color": "#000000"
+            }
+          },
+          {
+            "command": "native.command",
+            "params": {
+              "command": "stroke.set",
+              "params": {
+                "ids": [
+                  {
+                    "$ref": "curve.id"
+                  }
+                ],
+                "weight": 3
+              }
+            }
+          }
+        ],
+        "exports": [
+          {
+            "format": "svg",
+            "artboard": 1
+          },
+          {
+            "format": "png",
+            "artboard": 1
+          },
+          {
+            "format": "pdf",
+            "artboard": 1
+          }
+        ]
+      },
+      "manifestSha256": "cb7e94ad5a6d007aff62749fb0d866f7ff02a36ffa1dcfbd12ee897d47f73e18",
+      "files": {
+        "plan.json": "4049e447826e8c38494de9bb54edfee068dedbe302cb432deedbf9c294ec93ae",
+        "project.vectorcraft": "b28176c6962f3e97cf03232d54f2f0a969ed21b68f6ab824453e7454eda50a75",
+        "exchange-loss.json": "7e7dec4e5020cc99a3b0c464566fc509f00e2efea23f7100b55e15cb273b1054",
+        "pdf-export-date.json": "13f247c4de838e50ecd72d881e9f47ba4eb08955bc90a0dc8518de2ba7e1baf7",
+        "native.json": "665520780d863633a4ed0457c564fe89bd56613c14ef9e5f43698d31eb714598",
+        "artboard-2.png": "926d8777ef8d9a70e4a040161ea3e77048b24370d7f4c4f9542dc5a634f3b19b",
+        "artboard-2.pdf": "532819b4f96b7f03c5f8321e8f59ade0935e1e7ef4650228c0a1c986e86a4c55",
+        "artboard-2.svg": "06ad5f549cf0a446123f59c9027326ff35fe5e3ceda21c28c3da38d47d7e6f24",
+        "operations.json": "2f040cd4b5d565c1d892c22f5af43ab000454e201817bac39956d5f6c40c0905",
+        "lineage.json": "25b267a71f75ab7ed162302893aeb3ed9bf46b7a39d67c03646b8da45caae816"
+      },
+      "outputs": [
+        {
+          "format": "svg",
+          "artboardIndex": 1,
+          "artboardId": 2,
+          "artboardName": "Offset",
+          "artboardRect": {
+            "x0": 300,
+            "x1": 500,
+            "y0": 40,
+            "y1": 160
+          },
+          "path": "artboard-2.svg",
+          "warnings": [],
+          "isolationPolicy": "native-paint-bounds; whole-dependent-containers-and-unknown-bounds-retained"
+        },
+        {
+          "format": "png",
+          "artboardIndex": 1,
+          "artboardId": 2,
+          "artboardName": "Offset",
+          "artboardRect": {
+            "x0": 300,
+            "x1": 500,
+            "y0": 40,
+            "y1": 160
+          },
+          "path": "artboard-2.png",
+          "warnings": []
+        },
+        {
+          "format": "pdf",
+          "artboardIndex": 1,
+          "artboardId": 2,
+          "artboardName": "Offset",
+          "artboardRect": {
+            "x0": 300,
+            "x1": 500,
+            "y0": 40,
+            "y1": 160
+          },
+          "path": "artboard-2.pdf",
+          "warnings": [
+            "Preserve editing was left out: it needs a PDF of every artboard, in order (reopened, this one would show the others too)"
+          ],
+          "pdfCreated": 1791502648,
+          "pdfDateBinding": "native-document-created"
+        }
+      ],
+      "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "planHash": "6eca1be0de078a89590f274bec2d05ca3679c1fda92c9db63308f2e586d3733f",
+      "inputHashes": {
+        "contract:geometry": "0e6a43e02bb2abafe3272aec783f5e417a9d7a6fd2eb41b72de1346650e74dd6",
+        "runtime:capabilities": "7c0afe0413020b0edfe7d39420640a30e6aa3d4cf7a35fe60003679d030efcc5"
+      },
+      "geometryVerification": {
+        "checkedObjectIds": [
+          2
+        ],
+        "contractSha256": "0e6a43e02bb2abafe3272aec783f5e417a9d7a6fd2eb41b72de1346650e74dd6",
+        "coordinateSpace": "artboard-local",
+        "issues": [
+          {
+            "expected": "Points",
+            "objectId": 2,
+            "observed": "Pixels",
+            "reason": "units_mismatch"
+          }
+        ],
+        "nativeSha256": "665520780d863633a4ed0457c564fe89bd56613c14ef9e5f43698d31eb714598",
+        "projectRevision": "b28176c6962f3e97cf03232d54f2f0a969ed21b68f6ab824453e7454eda50a75",
+        "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+        "schema": "vectorcraft-geometry-verification/v1",
+        "scope": "explicit native JSON geometry only; no preview inference, native reopening or creative acceptance claim",
+        "status": "FAIL",
+        "units": "Points"
+      },
+      "receiptPersisted": false,
+      "originalOutputRetained": true,
+      "replayRefused": true,
+      "changedContractRejected": true,
+      "budgetUnchangedOnResume": true,
+      "registeredGroups": 1,
+      "allRegisteredGroupsStopped": true
+    },
+    {
+      "name": "control-mismatch",
+      "result": "PASS",
+      "expectedFailure": "path_control_point_mismatch",
+      "objectId": 2,
+      "state": "reconciling",
+      "planSha256": "472e0b34c664ef1accf61c881ad01d5fbcda8b81f88170ad0366af1450a7ad06",
+      "contract": {
+        "schema": "vectorcraft-geometry-contract/v1",
+        "units": "Pixels",
+        "coordinateSpace": "artboard-local",
+        "tolerance": 0.000001,
+        "artboards": [
+          {
+            "id": 2,
+            "rect": [
+              300,
+              40,
+              500,
+              160
+            ]
+          }
+        ],
+        "paths": [
+          {
+            "binding": "curve.id",
+            "artboardId": 2,
+            "subpaths": [
+              {
+                "closed": true,
+                "anchors": [
+                  {
+                    "p": [
+                      20,
+                      20
+                    ],
+                    "out": [
+                      41,
+                      20
+                    ]
+                  },
+                  {
+                    "p": [
+                      150,
+                      20
+                    ],
+                    "in": [
+                      130,
+                      20
+                    ]
+                  },
+                  {
+                    "p": [
+                      150,
+                      90
+                    ]
+                  }
+                ]
+              }
+            ],
+            "strokes": [
+              {
+                "width": 3,
+                "paint": {
+                  "type": "solid",
+                  "color": {
+                    "model": "rgb",
+                    "r": 0,
+                    "g": 0,
+                    "b": 0
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "plan": {
+        "document": {
+          "name": "Fixed native geometry QA",
+          "width": 200,
+          "height": 120,
+          "units": "Pixels"
+        },
+        "operations": [
+          {
+            "command": "artboard.new",
+            "params": {
+              "x": 300,
+              "y": 40,
+              "width": 200,
+              "height": 120,
+              "name": "Offset"
+            }
+          },
+          {
+            "command": "path.create",
+            "params": {
+              "anchors": [
+                {
+                  "x": 320,
+                  "y": 60,
+                  "out": [
+                    340,
+                    60
+                  ]
+                },
+                {
+                  "x": 450,
+                  "y": 60,
+                  "in": [
+                    430,
+                    60
+                  ]
+                },
+                {
+                  "x": 450,
+                  "y": 130
+                }
+              ],
+              "closed": true
+            },
+            "as": "curve"
+          },
+          {
+            "command": "paint.setStroke",
+            "params": {
+              "ids": [
+                {
+                  "$ref": "curve.id"
+                }
+              ],
+              "color": "#000000"
+            }
+          },
+          {
+            "command": "native.command",
+            "params": {
+              "command": "stroke.set",
+              "params": {
+                "ids": [
+                  {
+                    "$ref": "curve.id"
+                  }
+                ],
+                "weight": 3
+              }
+            }
+          }
+        ],
+        "exports": [
+          {
+            "format": "svg",
+            "artboard": 1
+          },
+          {
+            "format": "png",
+            "artboard": 1
+          },
+          {
+            "format": "pdf",
+            "artboard": 1
+          }
+        ]
+      },
+      "manifestSha256": "5781348878b77b2baa47e64f812ba5998ddd88269e101250f7260a5201f3daa1",
+      "files": {
+        "plan.json": "4049e447826e8c38494de9bb54edfee068dedbe302cb432deedbf9c294ec93ae",
+        "project.vectorcraft": "b28176c6962f3e97cf03232d54f2f0a969ed21b68f6ab824453e7454eda50a75",
+        "exchange-loss.json": "7e7dec4e5020cc99a3b0c464566fc509f00e2efea23f7100b55e15cb273b1054",
+        "pdf-export-date.json": "13f247c4de838e50ecd72d881e9f47ba4eb08955bc90a0dc8518de2ba7e1baf7",
+        "native.json": "665520780d863633a4ed0457c564fe89bd56613c14ef9e5f43698d31eb714598",
+        "artboard-2.png": "926d8777ef8d9a70e4a040161ea3e77048b24370d7f4c4f9542dc5a634f3b19b",
+        "artboard-2.pdf": "532819b4f96b7f03c5f8321e8f59ade0935e1e7ef4650228c0a1c986e86a4c55",
+        "artboard-2.svg": "06ad5f549cf0a446123f59c9027326ff35fe5e3ceda21c28c3da38d47d7e6f24",
+        "operations.json": "2f040cd4b5d565c1d892c22f5af43ab000454e201817bac39956d5f6c40c0905",
+        "lineage.json": "d3396648f003deba6fd2b1f5c2463fde238913ff806de678b32d84fb3453c361"
+      },
+      "outputs": [
+        {
+          "format": "svg",
+          "artboardIndex": 1,
+          "artboardId": 2,
+          "artboardName": "Offset",
+          "artboardRect": {
+            "x0": 300,
+            "x1": 500,
+            "y0": 40,
+            "y1": 160
+          },
+          "path": "artboard-2.svg",
+          "warnings": [],
+          "isolationPolicy": "native-paint-bounds; whole-dependent-containers-and-unknown-bounds-retained"
+        },
+        {
+          "format": "png",
+          "artboardIndex": 1,
+          "artboardId": 2,
+          "artboardName": "Offset",
+          "artboardRect": {
+            "x0": 300,
+            "x1": 500,
+            "y0": 40,
+            "y1": 160
+          },
+          "path": "artboard-2.png",
+          "warnings": []
+        },
+        {
+          "format": "pdf",
+          "artboardIndex": 1,
+          "artboardId": 2,
+          "artboardName": "Offset",
+          "artboardRect": {
+            "x0": 300,
+            "x1": 500,
+            "y0": 40,
+            "y1": 160
+          },
+          "path": "artboard-2.pdf",
+          "warnings": [
+            "Preserve editing was left out: it needs a PDF of every artboard, in order (reopened, this one would show the others too)"
+          ],
+          "pdfCreated": 1791502648,
+          "pdfDateBinding": "native-document-created"
+        }
+      ],
+      "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "planHash": "6eca1be0de078a89590f274bec2d05ca3679c1fda92c9db63308f2e586d3733f",
+      "inputHashes": {
+        "contract:geometry": "d705dadcfb49fccc04245f7c43623a340b0d23df33479bef1f634a6c0634f582",
+        "runtime:capabilities": "7c0afe0413020b0edfe7d39420640a30e6aa3d4cf7a35fe60003679d030efcc5"
+      },
+      "geometryVerification": {
+        "checkedObjectIds": [
+          2
+        ],
+        "contractSha256": "d705dadcfb49fccc04245f7c43623a340b0d23df33479bef1f634a6c0634f582",
+        "coordinateSpace": "artboard-local",
+        "issues": [
+          {
+            "anchor": 0,
+            "field": "out",
+            "objectId": 2,
+            "reason": "path_control_point_mismatch",
+            "subpath": 0
+          }
+        ],
+        "nativeSha256": "665520780d863633a4ed0457c564fe89bd56613c14ef9e5f43698d31eb714598",
+        "projectRevision": "b28176c6962f3e97cf03232d54f2f0a969ed21b68f6ab824453e7454eda50a75",
+        "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+        "schema": "vectorcraft-geometry-verification/v1",
+        "scope": "explicit native JSON geometry only; no preview inference, native reopening or creative acceptance claim",
+        "status": "FAIL",
+        "units": "Pixels"
+      },
+      "receiptPersisted": false,
+      "originalOutputRetained": true,
+      "replayRefused": true,
+      "changedContractRejected": true,
+      "budgetUnchangedOnResume": true,
+      "registeredGroups": 1,
+      "allRegisteredGroupsStopped": true
+    },
+    {
+      "name": "stroke-mismatch",
+      "result": "PASS",
+      "expectedFailure": "stroke_mismatch",
+      "objectId": 2,
+      "state": "reconciling",
+      "planSha256": "472e0b34c664ef1accf61c881ad01d5fbcda8b81f88170ad0366af1450a7ad06",
+      "contract": {
+        "schema": "vectorcraft-geometry-contract/v1",
+        "units": "Pixels",
+        "coordinateSpace": "artboard-local",
+        "tolerance": 0.000001,
+        "artboards": [
+          {
+            "id": 2,
+            "rect": [
+              300,
+              40,
+              500,
+              160
+            ]
+          }
+        ],
+        "paths": [
+          {
+            "binding": "curve.id",
+            "artboardId": 2,
+            "subpaths": [
+              {
+                "closed": true,
+                "anchors": [
+                  {
+                    "p": [
+                      20,
+                      20
+                    ],
+                    "out": [
+                      40,
+                      20
+                    ]
+                  },
+                  {
+                    "p": [
+                      150,
+                      20
+                    ],
+                    "in": [
+                      130,
+                      20
+                    ]
+                  },
+                  {
+                    "p": [
+                      150,
+                      90
+                    ]
+                  }
+                ]
+              }
+            ],
+            "strokes": [
+              {
+                "width": 4,
+                "paint": {
+                  "type": "solid",
+                  "color": {
+                    "model": "rgb",
+                    "r": 0,
+                    "g": 0,
+                    "b": 0
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "plan": {
+        "document": {
+          "name": "Fixed native geometry QA",
+          "width": 200,
+          "height": 120,
+          "units": "Pixels"
+        },
+        "operations": [
+          {
+            "command": "artboard.new",
+            "params": {
+              "x": 300,
+              "y": 40,
+              "width": 200,
+              "height": 120,
+              "name": "Offset"
+            }
+          },
+          {
+            "command": "path.create",
+            "params": {
+              "anchors": [
+                {
+                  "x": 320,
+                  "y": 60,
+                  "out": [
+                    340,
+                    60
+                  ]
+                },
+                {
+                  "x": 450,
+                  "y": 60,
+                  "in": [
+                    430,
+                    60
+                  ]
+                },
+                {
+                  "x": 450,
+                  "y": 130
+                }
+              ],
+              "closed": true
+            },
+            "as": "curve"
+          },
+          {
+            "command": "paint.setStroke",
+            "params": {
+              "ids": [
+                {
+                  "$ref": "curve.id"
+                }
+              ],
+              "color": "#000000"
+            }
+          },
+          {
+            "command": "native.command",
+            "params": {
+              "command": "stroke.set",
+              "params": {
+                "ids": [
+                  {
+                    "$ref": "curve.id"
+                  }
+                ],
+                "weight": 3
+              }
+            }
+          }
+        ],
+        "exports": [
+          {
+            "format": "svg",
+            "artboard": 1
+          },
+          {
+            "format": "png",
+            "artboard": 1
+          },
+          {
+            "format": "pdf",
+            "artboard": 1
+          }
+        ]
+      },
+      "manifestSha256": "e8b5e8e8493eb4e14cce8b5ab3b7b74bb7969d16b8f0752f6906731072f81b9f",
+      "files": {
+        "plan.json": "4049e447826e8c38494de9bb54edfee068dedbe302cb432deedbf9c294ec93ae",
+        "project.vectorcraft": "21cf3d892da10612c78b77e8f2655f3baea26302ee3a2c6f288da34e48dab791",
+        "exchange-loss.json": "3b450ab24056077d9860c52d5675a2f8f9795e3c971477e2172724cad237099e",
+        "pdf-export-date.json": "965ebd4897a9afc35e63c8bf5b6c05eda7e57a2e2b7a39aab3da048acb089626",
+        "native.json": "5f3e3ac510792562022d50067549c2f48a36c71d84e10d7b0eb32baca459a435",
+        "artboard-2.png": "0d137782d05ec51fca16b98b2de352a52b8a494266547229f369a187a4ddf7cb",
+        "artboard-2.pdf": "30cfe4441a670dc8adf9c7f8cbf1fa01911024fd2960a2eae780a4e2d79c28f4",
+        "artboard-2.svg": "06ad5f549cf0a446123f59c9027326ff35fe5e3ceda21c28c3da38d47d7e6f24",
+        "operations.json": "ef528f1fe523055d85f0cd050f302e44416c2a9498c5b98ac2b50d619950666c",
+        "lineage.json": "41eac5307f6e1a9b7f68ad6a38d8af255306c838b168f100c4a9e23b3ffcb034"
+      },
+      "outputs": [
+        {
+          "format": "svg",
+          "artboardIndex": 1,
+          "artboardId": 2,
+          "artboardName": "Offset",
+          "artboardRect": {
+            "x0": 300,
+            "x1": 500,
+            "y0": 40,
+            "y1": 160
+          },
+          "path": "artboard-2.svg",
+          "warnings": [],
+          "isolationPolicy": "native-paint-bounds; whole-dependent-containers-and-unknown-bounds-retained"
+        },
+        {
+          "format": "png",
+          "artboardIndex": 1,
+          "artboardId": 2,
+          "artboardName": "Offset",
+          "artboardRect": {
+            "x0": 300,
+            "x1": 500,
+            "y0": 40,
+            "y1": 160
+          },
+          "path": "artboard-2.png",
+          "warnings": []
+        },
+        {
+          "format": "pdf",
+          "artboardIndex": 1,
+          "artboardId": 2,
+          "artboardName": "Offset",
+          "artboardRect": {
+            "x0": 300,
+            "x1": 500,
+            "y0": 40,
+            "y1": 160
+          },
+          "path": "artboard-2.pdf",
+          "warnings": [
+            "Preserve editing was left out: it needs a PDF of every artboard, in order (reopened, this one would show the others too)"
+          ],
+          "pdfCreated": 1791502649,
+          "pdfDateBinding": "native-document-created"
+        }
+      ],
+      "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "planHash": "6eca1be0de078a89590f274bec2d05ca3679c1fda92c9db63308f2e586d3733f",
+      "inputHashes": {
+        "contract:geometry": "231b79a21c4c4bf464b8717746c23edf4abf68c986a7feaa6ae51ecb14c1ecde",
+        "runtime:capabilities": "7c0afe0413020b0edfe7d39420640a30e6aa3d4cf7a35fe60003679d030efcc5"
+      },
+      "geometryVerification": {
+        "checkedObjectIds": [
+          2
+        ],
+        "contractSha256": "231b79a21c4c4bf464b8717746c23edf4abf68c986a7feaa6ae51ecb14c1ecde",
+        "coordinateSpace": "artboard-local",
+        "issues": [
+          {
+            "objectId": 2,
+            "reason": "stroke_mismatch",
+            "stroke": 0
+          }
+        ],
+        "nativeSha256": "5f3e3ac510792562022d50067549c2f48a36c71d84e10d7b0eb32baca459a435",
+        "projectRevision": "21cf3d892da10612c78b77e8f2655f3baea26302ee3a2c6f288da34e48dab791",
+        "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+        "schema": "vectorcraft-geometry-verification/v1",
+        "scope": "explicit native JSON geometry only; no preview inference, native reopening or creative acceptance claim",
+        "status": "FAIL",
+        "units": "Pixels"
+      },
+      "receiptPersisted": false,
+      "originalOutputRetained": true,
+      "replayRefused": true,
+      "changedContractRejected": true,
+      "budgetUnchangedOnResume": true,
+      "registeredGroups": 1,
+      "allRegisteredGroupsStopped": true
+    }
+  ],
+  "invalidPreviewRejectedBeforeEffects": true,
+  "scope": "six real native saves/reopens with manifest-bound geometry and SVG/PNG/PDF; two healthy units/spaces, four actual geometry contract refusals; no GUI, arbitrary transforms, pixels-as-geometry or creative claim"
+}

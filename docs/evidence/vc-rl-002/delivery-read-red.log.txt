@@ -1,0 +1,71 @@
+✖ delivery refuses replaced root ancestor before external bytes (6.388ms)
+✖ delivery refuses replaced nested ancestor before external bytes (4.303292ms)
+✖ geometry cannot use native JSON changed after its manifest digest was checked (5.010958ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 0
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 95.362583
+
+✖ failing tests:
+
+test at .local/delivery-read-baseline/tests/delivery_read_permissions.test.ts:12:37
+✖ delivery refuses replaced root ancestor before external bytes (6.388ms)
+  AssertionError [ERR_ASSERTION]: delivery parent read outside bytes
+  
+  true !== false
+  
+      at TestContext.<anonymous> (file://PLUGIN_REPOSITORY/.local/delivery-read-baseline/tests/delivery_read_permissions.test.ts:22:26)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1325:25)
+      at Test.start (node:internal/test_runner/test:1191:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at .local/delivery-read-baseline/tests/delivery_read_permissions.test.ts:12:37
+✖ delivery refuses replaced nested ancestor before external bytes (4.303292ms)
+  AssertionError [ERR_ASSERTION]: delivery parent read outside bytes
+  
+  true !== false
+  
+      at TestContext.<anonymous> (file://PLUGIN_REPOSITORY/.local/delivery-read-baseline/tests/delivery_read_permissions.test.ts:22:26)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1325:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+      at Test.postRun (node:internal/test_runner/test:1465:19)
+      at Test.run (node:internal/test_runner/test:1390:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at .local/delivery-read-baseline/tests/delivery_read_permissions.test.ts:25:1
+✖ geometry cannot use native JSON changed after its manifest digest was checked (5.010958ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (file://PLUGIN_REPOSITORY/.local/delivery-read-baseline/tests/delivery_read_permissions.test.ts:35:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1325:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+      at Test.postRun (node:internal/test_runner/test:1465:19)
+      at Test.run (node:internal/test_runner/test:1390:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /artifact_digest_mismatch/,
+    operator: 'throws',
+    diff: 'simple'
+  }
