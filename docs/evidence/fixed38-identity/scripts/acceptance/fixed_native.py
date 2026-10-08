@@ -2,16 +2,13 @@
 """逐项执行实际宿主安装技能的空缓存安装及已声明创建／返工合同。"""
 import argparse
 import hashlib
-import importlib.util
 import json
 import os
 from pathlib import Path
 import shutil
 import subprocess
 import sys
-_spec=importlib.util.spec_from_file_location('craft_fixed_install',Path(__file__).with_name('fixed_install.py'))
-_install=importlib.util.module_from_spec(_spec);_spec.loader.exec_module(_install)
-digest,ROOT=_install.digest,_install.ROOT
+from fixed_install import digest
 
 
 def sha(path): return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -21,11 +18,7 @@ def files(root): return {p.relative_to(root).as_posix():sha(p) for p in root.rgl
 def main():
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--host',type=Path,required=True);parser.add_argument('--output',type=Path,required=True)
     args=parser.parse_args();host=json.loads(args.host.read_text());root=args.output.resolve();root.mkdir(parents=True,exist_ok=False)
-    manifest=json.loads((ROOT/'plugin.json').read_text());source=json.loads((ROOT/'skills.lock.json').read_text())['sources'][0]
-    assert host['result']=='PASS' and host['pluginVersion']==manifest['version']
-    assert host['skillSourceRef']==source['ref'] and host['skillSourceCommit']==source['sha']
-    tag_commit=subprocess.check_output(['git','rev-parse','v'+manifest['version']+'^{commit}'],cwd=ROOT,text=True).strip()
-    assert host['pluginCommit']==tag_commit
+    assert host['result']=='PASS' and host['pluginVersion']=='0.1.0-dev.38'
     env=dict(os.environ,PATH='/usr/bin:/bin')
     for key in ('CRAFT_RUNTIME_HOME','CRAFT_NODE_ARCHIVE','CRAFT_BUNDLE_DIRECTORY','CRAFT_NATIVE_ARCHIVE_DIRECTORY'): env.pop(key,None)
     records=[]

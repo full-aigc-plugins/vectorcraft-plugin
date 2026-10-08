@@ -1,0 +1,232 @@
+{
+  "schema": "vectorcraft-fixed-standalone-native/v1",
+  "result": "PASS",
+  "hostProofSha256": "17a23ce910070251678fb433bc1254ab5c538e59717a45eeb0f8b7abefe1a660",
+  "pluginVersion": "0.1.0-dev.41",
+  "pluginCommit": "e1806995033634002437e7ee391e43a3c10330cd",
+  "skillSourceRef": "v0.1.0-dev.37",
+  "skillSourceCommit": "2b75ad104b47fdb8fdad24fd90635ed9512fd4f6",
+  "python": "3.13.5 | packaged by Anaconda, Inc. | (main, Jun 12 2025, 11:23:37) [Clang 14.0.6 ]",
+  "platform": "Darwin-arm64",
+  "driverSha256": "913e0656e13a8985335197684460ad40aecbe5440d96587252a92e096d96b09e",
+  "cases": [
+    {
+      "skill": "vectorcraft-use",
+      "sha256": "ed67eeb2fa57c957ecb7075a7da70a3227413dcc85baf589552bdc2efb685db8",
+      "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "runtimeVersion": "vectorcraft-cli 0.2.0-craft.2",
+      "freshRuntime": true,
+      "commandCount": 585,
+      "createRevise": "PASS",
+      "installedBytesPreserved": true,
+      "contractSha256": "a68a5b834e075059708c9cf555a9bd9acf9074236e9e367861378073ccbf459a",
+      "case": "<PLUGIN_ROOT>/.local/fixed41 native/vectorcraft-use",
+      "runtimeHome": "<PLUGIN_ROOT>/.local/fixed41 native/vectorcraft-use/empty runtime",
+      "postRunProjectSha256": {
+        "created": "1670f60f91751f2b6cab2226860174f558b34bd19027a79d35320e4f4f073448",
+        "revised": "d85a132e35b7750e0bc9cc569f3be6cb914432b8d01695d40af965c0324e4d67"
+      }
+    },
+    {
+      "skill": "vectorcraft-cli",
+      "sha256": "d7d1c9dbb903d063ebb3c40a13c00d8a2e6b1f74e77345471258dfdabe602410",
+      "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "runtimeVersion": "vectorcraft-cli 0.2.0-craft.2",
+      "freshRuntime": true,
+      "commandCount": 585,
+      "createRevise": "PASS",
+      "installedBytesPreserved": true,
+      "contractSha256": "4b8251ad1d9a00c0ffad4a9ab9a580e426b4122baade96b39ec26d3552c8d9a5",
+      "case": "<PLUGIN_ROOT>/.local/fixed41 native/vectorcraft-cli",
+      "runtimeHome": "<PLUGIN_ROOT>/.local/fixed41 native/vectorcraft-cli/empty runtime",
+      "postRunProjectSha256": {
+        "created": "cf7d958c327453c91e114c0f3024a2b47ccfe5fa79121deafa34e2f3dfa663e0",
+        "revised": "be8572052cfd08115a8188fb82352d4cb10c71187c9d38b6dd694df24c0923f6"
+      }
+    },
+    {
+      "skill": "vectorcraft-cli-setup",
+      "sha256": "72807d460015dc6e871ad6da7c9ae81370906024bb71d23dbd346be62b32756f",
+      "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "runtimeVersion": "vectorcraft-cli 0.2.0-craft.2",
+      "freshRuntime": true,
+      "commandCount": 585,
+      "createRevise": "NOT_APPLICABLE_SETUP_ONLY",
+      "installedBytesPreserved": true,
+      "contractSha256": "494b1a30e503e3a37d905944086de893d16ab4a67e40401945f975051b28f0be",
+      "case": "<PLUGIN_ROOT>/.local/fixed41 native/vectorcraft-cli-setup",
+      "runtimeHome": "<PLUGIN_ROOT>/.local/fixed41 native/vectorcraft-cli-setup/empty runtime"
+    },
+    {
+      "skill": "vectorcraft-cli-project",
+      "sha256": "19ab2c709b55e346be4d7206a83aa69bf6a71cb99d17f5ecdc813ca7d892cb2e",
+      "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "runtimeVersion": "vectorcraft-cli 0.2.0-craft.2",
+      "freshRuntime": true,
+      "commandCount": 585,
+      "createRevise": "PASS",
+      "installedBytesPreserved": true,
+      "contractSha256": "4f13ac6c817abf658f9d731d1e4c8f03b12b8b6981abaafb99ef64302a5173eb",
+      "case": "<PLUGIN_ROOT>/.local/fixed41 native/vectorcraft-cli-project",
+      "runtimeHome": "<PLUGIN_ROOT>/.local/fixed41 native/vectorcraft-cli-project/empty runtime",
+      "postRunProjectSha256": {
+        "created": "f89e67dabe0a1477d8996674ee8908f7ec49aae67ae440243617e48e1e31cfdd",
+        "revised": "93d6d340184f3137f0862cbff3f3d2a2ca1a6b1407e56a3b10813910976fcbdb"
+      }
+    },
+    {
+      "skill": "vectorcraft-cli-paths",
+      "sha256": "65110d15bd4b9234ee55078e3e48c144aae215370b27cb7c8bc5ad62b697ffdf",
+      "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "runtimeVersion": "vectorcraft-cli 0.2.0-craft.2",
+      "freshRuntime": true,
+      "commandCount": 585,
+      "createRevise": "PASS",
+      "installedBytesPreserved": true,
+      "contractSha256": "4cf3c2581d1830ee1338c5ad296ef55615bbb9770022b04d63a5641247fd6e86",
+      "case": "<PLUGIN_ROOT>/.local/fixed41 native/vectorcraft-cli-paths",
+      "runtimeHome": "<PLUGIN_ROOT>/.local/fixed41 native/vectorcraft-cli-paths/empty runtime",
+      "postRunProjectSha256": {
+        "created": "6f8f844a8c6ac57199680e4c9ea6a9c20d4859bbe650c6477fa0bcfa8eb29214",
+        "revised": "56cfabd089488a81ad64a1a28ef89ca18f3ed934df76fd92c295d6521a71fbb0"
+      }
+    },
+    {
+      "skill": "vectorcraft-cli-shapes",
+      "sha256": "d7ef77352f8abc63e742205a4d8fcb87bffe5308d3092f4d9acc9b62b9b2c011",
+      "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "runtimeVersion": "vectorcraft-cli 0.2.0-craft.2",
+      "freshRuntime": true,
+      "commandCount": 585,
+      "createRevise": "PASS",
+      "installedBytesPreserved": true,
+      "contractSha256": "b4086e188ba7ead5526810cbffd0d28a2d264e07d5c5f3a6ca1302a9083c2c31",
+      "case": "<PLUGIN_ROOT>/.local/fixed41 native/vectorcraft-cli-shapes",
+      "runtimeHome": "<PLUGIN_ROOT>/.local/fixed41 native/vectorcraft-cli-shapes/empty runtime",
+      "postRunProjectSha256": {
+        "created": "2c66dc842534c9287f6b9600bf14b57d19923d13665959359813467c37763c06",
+        "revised": "01fea1fe1709bf8224b15cf7ddcd8b65572643a95110088fc8126f2cc0fd690c"
+      }
+    },
+    {
+      "skill": "vectorcraft-cli-boolean",
+      "sha256": "f4f550c587857b70840d8c32b29aabada5dba1cf1bfb22fde3c3d626793bc75e",
+      "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "runtimeVersion": "vectorcraft-cli 0.2.0-craft.2",
+      "freshRuntime": true,
+      "commandCount": 585,
+      "createRevise": "PASS",
+      "installedBytesPreserved": true,
+      "contractSha256": "9620d4b8e58092c8636241d3989e4343a3de288e086eef43a703acb1bee4b068",
+      "case": "<PLUGIN_ROOT>/.local/fixed41 native/vectorcraft-cli-boolean",
+      "runtimeHome": "<PLUGIN_ROOT>/.local/fixed41 native/vectorcraft-cli-boolean/empty runtime",
+      "postRunProjectSha256": {
+        "created": "97db8831de66c0b9419c6c118080d2bb3199ddfd6ea5d5c9612758143054ad18",
+        "revised": "b7e500ebdae288c70df240f900bc89955bad7645718df48be353b485414b046f"
+      }
+    },
+    {
+      "skill": "vectorcraft-cli-text",
+      "sha256": "ddc983da95171b4cd25a25ff2f96fd2bbf855215c3cf1ac87ec58ba0504ddbd1",
+      "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "runtimeVersion": "vectorcraft-cli 0.2.0-craft.2",
+      "freshRuntime": true,
+      "commandCount": 585,
+      "createRevise": "PASS",
+      "installedBytesPreserved": true,
+      "contractSha256": "130211ef4adaa14a92262ce62898343ba7a7efd8dec611062f9da00873bcee1b",
+      "case": "<PLUGIN_ROOT>/.local/fixed41 native/vectorcraft-cli-text",
+      "runtimeHome": "<PLUGIN_ROOT>/.local/fixed41 native/vectorcraft-cli-text/empty runtime",
+      "postRunProjectSha256": {
+        "created": "b12b0bcda1fb1712111a563305d8165c563cdc029573232e7f8c2a4f0758223a",
+        "revised": "4e35bb128394a7dc816f161d66c783d231c657b8def67fc225726918fb2f57e9"
+      }
+    },
+    {
+      "skill": "vectorcraft-cli-appearance",
+      "sha256": "6941ed1ab9f5c520e1e76821bcd123e93e3656037abefc1d3a2f696e135e2a4b",
+      "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "runtimeVersion": "vectorcraft-cli 0.2.0-craft.2",
+      "freshRuntime": true,
+      "commandCount": 585,
+      "createRevise": "PASS",
+      "installedBytesPreserved": true,
+      "contractSha256": "0ca37ff5cb4f1b690339054f329638cf71f78d0aeca677b28c153f7a7e22f7a9",
+      "case": "<PLUGIN_ROOT>/.local/fixed41 native/vectorcraft-cli-appearance",
+      "runtimeHome": "<PLUGIN_ROOT>/.local/fixed41 native/vectorcraft-cli-appearance/empty runtime",
+      "postRunProjectSha256": {
+        "created": "01ae4bebaf338b39e352d22a7adbf654b559f9d2a45c5f4274e800aa08f88feb",
+        "revised": "7e924662eb4c86a492842c292b586322635017bc44226c82fd639d7321537e06"
+      }
+    },
+    {
+      "skill": "vectorcraft-cli-artboards",
+      "sha256": "eaa99f7ea2a4baa45c77cb9b38c9c28d8942e5c31a6f8e35bbc41b713863eb4c",
+      "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "runtimeVersion": "vectorcraft-cli 0.2.0-craft.2",
+      "freshRuntime": true,
+      "commandCount": 585,
+      "createRevise": "PASS",
+      "installedBytesPreserved": true,
+      "contractSha256": "59f48d11d74470aa97770c823cd22be73888213fe6fca00a44f7145783af9900",
+      "case": "<PLUGIN_ROOT>/.local/fixed41 native/vectorcraft-cli-artboards",
+      "runtimeHome": "<PLUGIN_ROOT>/.local/fixed41 native/vectorcraft-cli-artboards/empty runtime",
+      "postRunProjectSha256": {
+        "created": "fc34c32b4cf79e324934e463dbcaedf388fdafc7410b86eefe23f47e52b3f7e3",
+        "revised": "3249efb75550d6a0f7976fd71243a9ab1dee7059be71c72cbc6b5ecf650fd1a1"
+      }
+    },
+    {
+      "skill": "vectorcraft-cli-assets",
+      "sha256": "0cde094914ebe6407bb230aa0d4b383e94f4df062c4fc5c0b6411424431d1068",
+      "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "runtimeVersion": "vectorcraft-cli 0.2.0-craft.2",
+      "freshRuntime": true,
+      "commandCount": 585,
+      "createRevise": "PASS",
+      "installedBytesPreserved": true,
+      "contractSha256": "ba1fb9db7e5d6e98b52fc706d77d37c22217c9826914cf07323e4fba244621a2",
+      "case": "<PLUGIN_ROOT>/.local/fixed41 native/vectorcraft-cli-assets",
+      "runtimeHome": "<PLUGIN_ROOT>/.local/fixed41 native/vectorcraft-cli-assets/empty runtime",
+      "postRunProjectSha256": {
+        "created": "3dfcbbb74a8b6b4c08071966a0f083a2578aa53858e16b79d77a99542b58faf4",
+        "revised": "4a0f4ec769c06fd7016a67f6f0a01f142b119931ec995ccc7198a5e75007d9f3"
+      }
+    },
+    {
+      "skill": "vectorcraft-cli-export",
+      "sha256": "d9018a28acce66ec2a0a17326e33aa7d5277b55098325c203c8da22afcc28cee",
+      "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "runtimeVersion": "vectorcraft-cli 0.2.0-craft.2",
+      "freshRuntime": true,
+      "commandCount": 585,
+      "createRevise": "PASS",
+      "installedBytesPreserved": true,
+      "contractSha256": "0a78a01e457e63f7184b0d8c0718eaaf0019835a188c127d6948b8aada2fe060",
+      "case": "<PLUGIN_ROOT>/.local/fixed41 native/vectorcraft-cli-export",
+      "runtimeHome": "<PLUGIN_ROOT>/.local/fixed41 native/vectorcraft-cli-export/empty runtime",
+      "postRunProjectSha256": {
+        "created": "d9ebabf552f3a46239be777d7884a9b8af7875ea0398691b4fb75d784247605b",
+        "revised": "9e8b44fd7e8760d578237ac47c4582995bcc7ee5a1fe4ad98c3205b09817bc7c"
+      }
+    },
+    {
+      "skill": "vectorcraft-cli-selection",
+      "sha256": "c6d5376351c7c3c23593034c850b158595b4372c6c9a9d750d4e63d8e6662c81",
+      "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "runtimeVersion": "vectorcraft-cli 0.2.0-craft.2",
+      "freshRuntime": true,
+      "commandCount": 585,
+      "createRevise": "PASS",
+      "installedBytesPreserved": true,
+      "contractSha256": "4cbe1f5b7d3698455e55723423524f8f3170cf732d76acbe63137635d704633a",
+      "case": "<PLUGIN_ROOT>/.local/fixed41 native/vectorcraft-cli-selection",
+      "runtimeHome": "<PLUGIN_ROOT>/.local/fixed41 native/vectorcraft-cli-selection/empty runtime",
+      "postRunProjectSha256": {
+        "created": "0b16cfadb0e54dc113e69f917838688b1c9b7bd1654b0a2e657e8549dd26a1fe",
+        "revised": "26095faef1ae7c513f4ae0e6d233a1eda06e3ea9acebf1a9f678c6271fa95699"
+      }
+    }
+  ],
+  "scope": "13 installed skills independently cold-start; 12 declared create/revise pairs, setup-only excluded; not model routing or exhaustive domain acceptance"
+}

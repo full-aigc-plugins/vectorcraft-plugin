@@ -127,6 +127,13 @@ def build(root=ROOT):
     for old in ['vectorcraft-geometry-before-source37-20261008.json','vectorcraft-revision-cycle-before-source37-20261008.json','vectorcraft-boolean-transactions-before-source37-20261008.json']:
         if (root/'docs/evidence'/old).is_file():
             entries.append(record(root,'docs/evidence/'+old,'native-candidate','PASS',[],'source36 or earlier independent candidate at original execution identity; not rebound',historical=True))
+    fixed41='docs/evidence/vectorcraft-fixed41-structural-20261008.json'
+    if (root/fixed41).is_file():
+        data=json.loads(safe_file(root,fixed41).read_text())
+        if data['pluginVersion']==plugin['version'] and data['sourceCommit']==source['sha']:
+            entries.append(bound_report(root,fixed41,'fixed-install','13 actual installed cold skills,12 declared create/revise pairs and8 managed structural cases; full4.6 and model/GUI/creative gates remain open','VC-DM-002'))
+        else:
+            entries.append(record(root,fixed41,'fixed-install','PASS',[],'plugin41/source37 installed structural proof at original execution identity',historical=True))
     old_cycle='docs/evidence/vectorcraft-revision-cycle-before-geometry-20261008.json'
     if (root/old_cycle).is_file():
         entries.append(record(root,old_cycle,'native-candidate','PASS',[],'original pre-geometry execution fingerprints preserved; not rebound',historical=True))

@@ -1,0 +1,49 @@
+{
+  "schema": "vectorcraft-fixed41-structural/v1",
+  "result": "PASS",
+  "level": "fixed-install",
+  "pluginVersion": "0.1.0-dev.41",
+  "pluginCommit": "e1806995033634002437e7ee391e43a3c10330cd",
+  "sourceRef": "v0.1.0-dev.37",
+  "sourceCommit": "2b75ad104b47fdb8fdad24fd90635ed9512fd4f6",
+  "hostVersion": "codex-cli 0.153.4",
+  "platform": "Darwin-arm64",
+  "matrix": {
+    "installedSkills": 13,
+    "coldSkillStarts": 13,
+    "declaredCreateRevisePairs": 12,
+    "setupOnly": 1,
+    "managedStructuralCases": 8
+  },
+  "reports": {
+    "host": {
+      "path": "docs/evidence/fixed41/host.json",
+      "sha256": "9b8b9f980ae450ea6eb797a400d4ef6cfe0d72ffd4b743ab26dcc11b3f8ca260",
+      "originalReportSha256": "17a23ce910070251678fb433bc1254ab5c538e59717a45eeb0f8b7abefe1a660",
+      "privacy": "absolute paths redacted; original retained in ignored local acceptance directory"
+    },
+    "native": {
+      "path": "docs/evidence/fixed41/native.json",
+      "sha256": "5fb5d482fa3f65a577aadd539fcdaccac6985eee29268c540fbbe769d5187e9d",
+      "originalReportSha256": "fd89d408b4ef4b39db746acdfc460c6d5114cf25372b6bda6abf3e73b49447fa",
+      "privacy": "absolute paths redacted; original retained in ignored local acceptance directory"
+    },
+    "managed": {
+      "path": "docs/evidence/fixed41/managed.json",
+      "sha256": "c33c55e042674e572ea58b64cbf6b092b009ff3f8605dd5ec393dce9cbe38fd7",
+      "originalReportSha256": "c33c55e042674e572ea58b64cbf6b092b009ff3f8605dd5ec393dce9cbe38fd7",
+      "privacy": "absolute paths redacted; original retained in ignored local acceptance directory"
+    }
+  },
+  "fingerprints": {
+    "docs/evidence/fixed41/host.json": "9b8b9f980ae450ea6eb797a400d4ef6cfe0d72ffd4b743ab26dcc11b3f8ca260",
+    "docs/evidence/fixed41/native.json": "5fb5d482fa3f65a577aadd539fcdaccac6985eee29268c540fbbe769d5187e9d",
+    "docs/evidence/fixed41/managed.json": "c33c55e042674e572ea58b64cbf6b092b009ff3f8605dd5ec393dce9cbe38fd7",
+    "plugin.json": "4d65a577e7c146d11d68635f2618a210a1addb6432f4955a657b087300105936",
+    "skills.lock.json": "37cf4e7a514193ff10b1f051915b931874f05a8f693c87e67d904657f040464e",
+    "scripts/acceptance/fixed_install.py": "b360544f751efe3c0f64a0f40a75d81a61588185956d17d7b9cca9ca766abd48",
+    "scripts/acceptance/fixed_native.py": "913e0656e13a8985335197684460ad40aecbe5440d96587252a92e096d96b09e",
+    "scripts/acceptance/managed_boolean.ts": "55fbffdf6d44a8b0b95b9902d7716037980eeaf5c2c437c69a06b740b889be52"
+  },
+  "scope": "actual isolated Codex published-tag installation, per-skill public cold native setup and declared contracts, and managed structural revisions from installed skill; full4.6, model dispatch, GUI, creative and marketplace acceptance remain open"
+}

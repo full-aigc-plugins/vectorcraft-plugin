@@ -332,3 +332,5 @@ Independent source implements retained checkpoints, live participant/result IDs 
 ### dev.41 structural revision prerelease
 
 Pins source37 boolean checkpoints and explicit Harness `structure` authorization. Actual selection, participant subtrees, result IDs and unaffected model fields are checked. Published source36 and plugin40 stay immutable. Full4.6, host/model/GUI and creative acceptance remain open.
+
+Published dev.41/source37 now passes actual isolated Codex0.153.4 installation:13 skill identities,13 independent public cold starts,12 declared create/revise pairs and8 managed structural cases. Installed bytes remain unchanged. [Fixed evidence](docs/evidence/vectorcraft-fixed41-structural-20261008.json). Complete4.6, model dispatch, GUI and creative acceptance remain open.

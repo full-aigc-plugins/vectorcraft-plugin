@@ -213,5 +213,15 @@
     "evidence": "docs/evidence/vectorcraft-boolean-transactions-source-candidate-20261008.json",
     "fullBoundaryAcceptance": "NOT_RUN",
     "fullV1": "incomplete"
+  },
+  "structuralRevisionFixed41": {
+    "evidence": "docs/evidence/vectorcraft-fixed41-structural-20261008.json",
+    "installedSkills": 13,
+    "coldSkillStarts": 13,
+    "declaredCreateRevisePairs": 12,
+    "managedStructuralCases": 8,
+    "fullBoundaryAcceptance": "NOT_RUN",
+    "modelDispatch": "NOT_RUN",
+    "creativeAssessment": "NOT_RUN"
   }
 }
