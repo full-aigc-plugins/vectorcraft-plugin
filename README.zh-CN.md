@@ -1,5 +1,7 @@
 # VectorCraft Agent Plugin
 
+源码候选：公开色板工作流新增依赖守卫，拒绝非消费者误改，失败保留修改前原生检查点与错误依赖边。已同步13技能；固定发行、安装副本和Art领域包验收仍开放。[守卫架构](docs/VectorCraft-Brand-Dependency-Guard-Architecture.zh_CN.md)。
+
 固定安装外观技能新增“同色但未绑定 token”验收：仅已绑定消费者更新，非消费者原生属性、无关 SVG／PNG／PDF 与原交付保持不变。本轮复用运行时，不关闭新增 V1 任务。[验收架构](docs/VectorCraft-Same-Color-Token-Architecture.zh_CN.md)。
 
 四领域RT-001运行时来源与完整性已完成当前全部场景验收，固定技能字节保持不变；运行时升级与完整首版仍开放。[验收架构](docs/Craft-Fixed-Runtime-Integrity-Architecture.zh_CN.md)。

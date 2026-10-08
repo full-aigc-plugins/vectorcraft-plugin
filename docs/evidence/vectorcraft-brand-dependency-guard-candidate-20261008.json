@@ -1,0 +1,417 @@
+{
+  "schema": "vectorcraft-brand-guard-candidate/v1",
+  "status": "candidate_passed",
+  "fixedReleaseVerified": false,
+  "sourceBaselineCommit": "6212e42a7557c4e73ecdae5ae5dd5ab55b30e159",
+  "baselineWorkflowSha256": "80f4904f6f4f898e32ba0e81901b933d5e5adb628a20a3e33aa1b28795542212",
+  "historicalRedReconstructed": true,
+  "behavioralRed": "QA proxy executes one real extra paint.setFill after native swatch.edit; old public workflow publishes wrong-change manifest",
+  "unitRegression": {
+    "newGuardTests": 7,
+    "sourceTotal": 143,
+    "sourcePassed": 114,
+    "sourceConditionalSkips": 29,
+    "seconds": 20.702
+  },
+  "nativeCandidateCases": [
+    {
+      "schema": "vectorcraft-brand-guard-native/v1",
+      "status": "passed",
+      "fixedInstalled": false,
+      "runtimeReused": true,
+      "nativeRuntimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "faultInjection": "QA-only extra real native paint.setFill after swatch.edit reply",
+      "failures": [
+        {
+          "mode": "direct",
+          "report": {
+            "schema": "vectorcraft-brand-dependency-check/v1",
+            "status": "failed",
+            "token": "Brand Primary",
+            "consumerIds": [
+              2,
+              4
+            ],
+            "affectedObjectIds": [
+              3
+            ],
+            "unexpectedDependencies": [
+              {
+                "token": "Brand Primary",
+                "objectId": 3,
+                "reason": "unbound_object_changed"
+              }
+            ],
+            "artboardsChanged": false,
+            "beforeSha256": "d6d97d095c5d010c89a5391fd35c84f8d3f11296939c9f4c1bc772a2ffd1926e",
+            "afterSha256": "dbad3b15448a61ec7411691827363a8437e9042a0aa5563f0e0cf3385f32ff24",
+            "scope": "native explicit swatch consumers; unbound own properties, identities and artboards",
+            "checkpoint": "brand-checkpoint-0.vectorcraft",
+            "checkpointSha256": "d49ff10ee06dc77b9e12881466c643c1c794bf925c8daf8283b20c7a84d1ecbe",
+            "checkpointRetained": true
+          },
+          "retainedFileHashesVerified": true,
+          "checkpointIndependentlyReopened": true,
+          "injectionCount": 1
+        },
+        {
+          "mode": "native-gateway",
+          "report": {
+            "schema": "vectorcraft-brand-dependency-check/v1",
+            "status": "failed",
+            "token": "Brand Primary",
+            "consumerIds": [
+              2,
+              4
+            ],
+            "affectedObjectIds": [
+              3
+            ],
+            "unexpectedDependencies": [
+              {
+                "token": "Brand Primary",
+                "objectId": 3,
+                "reason": "unbound_object_changed"
+              }
+            ],
+            "artboardsChanged": false,
+            "beforeSha256": "d6d97d095c5d010c89a5391fd35c84f8d3f11296939c9f4c1bc772a2ffd1926e",
+            "afterSha256": "dbad3b15448a61ec7411691827363a8437e9042a0aa5563f0e0cf3385f32ff24",
+            "scope": "native explicit swatch consumers; unbound own properties, identities and artboards",
+            "checkpoint": "brand-checkpoint-0.vectorcraft",
+            "checkpointSha256": "d49ff10ee06dc77b9e12881466c643c1c794bf925c8daf8283b20c7a84d1ecbe",
+            "checkpointRetained": true
+          },
+          "retainedFileHashesVerified": true,
+          "checkpointIndependentlyReopened": true,
+          "injectionCount": 1
+        }
+      ],
+      "healthyReport": {
+        "schema": "vectorcraft-brand-dependencies/v1",
+        "checks": [
+          {
+            "schema": "vectorcraft-brand-dependency-check/v1",
+            "status": "passed",
+            "token": "Brand Primary",
+            "consumerIds": [
+              2,
+              4
+            ],
+            "affectedObjectIds": [],
+            "unexpectedDependencies": [],
+            "artboardsChanged": false,
+            "beforeSha256": "d6d97d095c5d010c89a5391fd35c84f8d3f11296939c9f4c1bc772a2ffd1926e",
+            "afterSha256": "bea17f2042e6459c0c3ab4beef76f3b64a38a4656a6f57cf1c00bfb3012c27d3",
+            "scope": "native explicit swatch consumers; unbound own properties, identities and artboards",
+            "checkpoint": "brand-checkpoint-0.vectorcraft",
+            "checkpointSha256": "d49ff10ee06dc77b9e12881466c643c1c794bf925c8daf8283b20c7a84d1ecbe",
+            "checkpointRetained": false
+          }
+        ]
+      },
+      "sourceFiles": {
+        "artboard-1.png": "10f09b1f63ac34d81186b2dfabccb8d75b2d780e325b00ab9c57c820bc42f3de",
+        "artboard-1.svg": "ddec81fc6b623a805040dbabc5eac7c078bad67150c0dc29e0c9b1dc0ecfeae2",
+        "exchange-loss.json": "90015a4ce540c8f7e1c1426c93eb5cd586198a86f5b6b1028cc426ac3af1d87c",
+        "manifest.json": "21fc38f7bd916ce9db874e81691748962adec342fe3fa90e0d1dcd4b9a743d2e",
+        "native.json": "78d388bd1364c77b75a499b098ae84637a6a06e814574857ca1a592681ab5083",
+        "operations.json": "41d14e6b7279feafb37d77805f53c2d3b53a29cf2c10bf506e231abcb6536f0f",
+        "plan.json": "8ce4307165d48dda4503e06140016fc4f2e33ef42ec50195a5ae0bc588d09dee",
+        "project.vectorcraft": "d49ff10ee06dc77b9e12881466c643c1c794bf925c8daf8283b20c7a84d1ecbe"
+      },
+      "healthyFiles": {
+        "artboard-1.png": "b2be20ab7bad58e235b1984277d47dea86c4d65fafae636423eeb2a1502affb2",
+        "artboard-1.svg": "5908059085888e16b757a16683c607526d4ff66c9f057b585fb1948b12cdfe9a",
+        "brand-dependencies.json": "a463a950849ebf781dcf9175f94c84833fbfb234c7e320a3f2785565298ef139",
+        "exchange-loss.json": "5a9bc3607cfad487d15e960773563bd4aea325f1d531eaa4d38477b68f47251d",
+        "manifest.json": "b099a9a2415ead27a5c959ad8ecb90ceecd219f376a8762b0440315bbf027bc0",
+        "native.json": "da331fbc8e9d194f1502becde05c8ddb46f8bdd1d7d26467b02b5d7116ac4147",
+        "operations.json": "477a5bc76180ad19316f7e6a332607d5be6098723e76dafb6dfe4cebfb272f0c",
+        "plan.json": "845b4c40dce79682d59ef6ed06a85775a940acc0e8b03e0b3868a4f54d4e8c41",
+        "project.vectorcraft": "48b41274b68d31d176278e95e74c380580e994be8f044cde0c662ca5f343ee82"
+      },
+      "instrumentedSkillFiles": {
+        "SKILL.md": "7ba0547dc1846e7704e386888d45660799a7b352cf46dfc0b81042424429ece3",
+        "examples/appearance-gradient-create.json": "ff974dd61eac86d7b5bb604ddc60f9ae97ce5c57cd43e65ac3fefc8f8c498aff",
+        "examples/appearance-gradient-revise.json": "3e464a7576f55684c45eaf4b3b4ce94bc53c52a4e360e2a1609372201686f616",
+        "examples/brand-assets.json": "d4c342c68791d7fb9ca0a966448947d7f9597af66e00245aec3c4d4c43cc6950",
+        "examples/brand-token-assets.json": "07f3a8acb45b3dd03ecbe96b75c53571a6b7960eb29b6bb10b777194ba3c1202",
+        "examples/chinese-text.json": "a5f1310bfba6102606079b62712096ae9e4298dffe860dcbab64448619613762",
+        "examples/commands-advanced.json": "eb456387da8df5ac16399c318ebb493fef1e716a537a777420baaa52b89030b8",
+        "examples/commands-revision-create.json": "c7668b298747a3dec9266826344778e8c977a36df293436531ea1ea8db4a44bc",
+        "examples/commands-revision.json": "8e416f9ed55a21862cfc6848ca4e9f97b3fbd2b405b9a56faf89dbc016cbe779",
+        "examples/desktop-first-use.json": "41461b895abe438b35cfa2fcedec42d883ceb0a77812cb5e21e071b5473f3b2b",
+        "examples/native-workflow.json": "e9a89a79c3bdf0ae8ca41958f2fbbdf523ac77da47ecceda6cc97d982e38b265",
+        "examples/object-layout-create.json": "81d4eda918c6e4a41f41b58658a79eee1841872c49fff0a57d72beb94016127b",
+        "examples/object-layout-reopen.json": "7ad1f4a35980a2a90198d8b140ba1b486e604f391322484452d88e110d98da5f",
+        "examples/provided-assets.json": "f5a3e15cc7a44b912fd87fc833c00c2e51893b553d90daa6f3682bd9ff4336cd",
+        "examples/selection-brand-create.json": "3343eab1f42ef16e5334382c01c861d523d15d41ff49b6946e02046e582a2e73",
+        "examples/selection-brand-reopen.json": "7ad1f4a35980a2a90198d8b140ba1b486e604f391322484452d88e110d98da5f",
+        "references/appearance-gradient.md": "712a5822162e95610515d21ee00af77e0c276445f573440fbb360803e94342b7",
+        "references/brand-tokens.md": "f165cdab01c49c04bdc06bf20779c2dcb0b3978ee73d72173e92c8c7d069b223",
+        "references/business-scenes.md": "9d11ef8f28be9249f9f7f32e166f307f0cfa7d5ac27520adbbbe483abf043d74",
+        "references/chinese-text.md": "b2229e5054fe2a71ee069b4aba6fa6d87c3ebbf4afaf3d1a2f85a80256948294",
+        "references/command-coverage.json": "532d2fc467f4fc4c48856e11fdb97ea465276270c882e837a3214692de831a50",
+        "references/command-reference.md": "87f39638580025e3d5042da4bda71e255ce9d729850e840ff7baf14a027c08c0",
+        "references/command-usage.md": "bd06e79a5c61670fccf4665618637231b48dba31d9d19bde3d5820510167a789",
+        "references/commands.json": "179e46514c1854aa47f3ee989b03c1c10b0e81496d9cc62440179674dcdc5aed",
+        "references/desktop-install.md": "db2db151b0eff30a3381a03ae377fb23ac09b2b4a919859740bd9343e7f14887",
+        "references/exchange-loss.md": "eee665f62b77274ca8ce0efc4117012ade85978905cdfd40ab488af64297b8ae",
+        "references/first-use-failures.md": "ce2a8d1a8ca6b8a29a084d52d105d510476de88d40b439d6c2ff79212581d61d",
+        "references/installation-concurrency.md": "69067acebcd47f1924a8d6aa9d8a4ce6f44ad0756d44888a21eb224bcdb1c215",
+        "references/native-command-snapshot.json": "1e63722f850930947c4cc6e9bdbe24638413e43c2e5127dd385f167d493e10e1",
+        "references/native-workflow.md": "42fee416c66a69f6f3802abe1be6f002963cf109e7e22a4d6297b6dcaf62b8e9",
+        "references/object-edit-scene.md": "ac760587eaabc1205b20325e48325463fd90efe343df4183fc7ae7f9d07e6550",
+        "references/object-selection-scene.md": "42593e844568184451bf648c84f4f0fafaee5a1644e39b1641fe49a078e336d9",
+        "references/output-execution.md": "baa3d38af5f8d3b01cb36bcc6b89dee3d8449ec676bc52d6f5c2de9f563ba3ac",
+        "references/scenario.md": "c6b6b1345495c25e76ced4fa2d30069c33d3984074f5d01ee2c29f58103b7c99",
+        "references/workflow.md": "c4a311a9e370bc965531f1d23cecd0a147cae8d5723f7c05fe51e642320ecdda",
+        "scripts/asset_inputs.py": "b2868a4239ef50648f201be99bb29ad4ddf0d8bdeb5a626c54b3fc1aac701758",
+        "scripts/bootstrap.py": "78d5bdf16bf08e9abc96b4b23e5d071da72b648698b888b85fa1b90f81cf32a9",
+        "scripts/brand_variants.py": "a600e765e8d2dccbae5c048e70e28e4272844c45fbc0d2eb9d43ca076559daa5",
+        "scripts/cli.py": "f59eb61605f0f4ac7213e6f52b83a47a93bf6201101cffd64d332fbb025313d5",
+        "scripts/commands.py": "a3da9d5c5167a0195163596a9aa5b318f7d29838497f74c7956391d053f7548f",
+        "scripts/desktop.lock.json": "f38c7cd5b837bc4f3275ef96c17308fc894f6be66c6a00ecf9c53378ad4bb486",
+        "scripts/desktop.py": "24dddb82f1c51ca8e835c582d9b7228aa9d643dfcada11b570bde9191f002f0f",
+        "scripts/desktop_session.py": "b6b07a9a18b77386d481a7f263190b0981a7a763dda4f46ad7417a92d416fbb5",
+        "scripts/exchange_loss.py": "b1e68eb2e4887dc52b3c2e4d071ea4364c1254b3f96ffb6511ad42f9dfc0dff6",
+        "scripts/mcp_session.py": "c8e703e605d357cdd6b7b22f2749367a8660a4e1ad2d66efdbec70670ee43799",
+        "scripts/native_workflow.py": "290108267b948b6ddda6f0865e20f1bdfadd7558442fb1d617125a1ed25eb116",
+        "scripts/output_guard.py": "7c13abd891370058e670fbfb3db7992d4a8ed7934682c83bde1aabf47ad6846f",
+        "scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+        "scripts/runtime.lock.json": "7b6bd7f3fab84b757d4ea20ac91b74d89b417ec061efc6ae320dda97a422cc07",
+        "scripts/workflow.py": "c3b6b8effbcf7c6be243161ad4c6902977c8b2e4814e1d0aacc08cb5317f6f27"
+      },
+      "driverSha256": "3b3d5e22784331cd9af40f50904890f9ee8a29481d9655dcb09d614e493ebf80"
+    },
+    {
+      "schema": "vectorcraft-brand-guard-native/v1",
+      "status": "passed",
+      "fixedInstalled": false,
+      "runtimeReused": true,
+      "nativeRuntimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "faultInjection": "QA-only extra real native paint.setFill after swatch.edit reply",
+      "failures": [
+        {
+          "mode": "direct",
+          "report": {
+            "schema": "vectorcraft-brand-dependency-check/v1",
+            "status": "failed",
+            "token": "Brand Primary",
+            "consumerIds": [
+              2,
+              4
+            ],
+            "affectedObjectIds": [
+              3
+            ],
+            "unexpectedDependencies": [
+              {
+                "token": "Brand Primary",
+                "objectId": 3,
+                "reason": "unbound_object_changed"
+              }
+            ],
+            "artboardsChanged": false,
+            "beforeSha256": "5fabd0bc47bf4eea51c9ded91302b6a24b84b881c5e4dfcf435454deab44acdd",
+            "afterSha256": "7d1dc84ef74156d9a2e3819b11cfa4a7f1adb7bf61b24c9d1dcf13168bc41795",
+            "scope": "native explicit swatch consumers; unbound own properties, identities and artboards",
+            "checkpoint": "brand-checkpoint-0.vectorcraft",
+            "checkpointSha256": "e6a072b0bc504329f7cefc67154680fea3ddee42655278683ada30b65ceb9ed2",
+            "checkpointRetained": true
+          },
+          "retainedFileHashesVerified": true,
+          "checkpointIndependentlyReopened": true,
+          "injectionCount": 1
+        },
+        {
+          "mode": "native-gateway",
+          "report": {
+            "schema": "vectorcraft-brand-dependency-check/v1",
+            "status": "failed",
+            "token": "Brand Primary",
+            "consumerIds": [
+              2,
+              4
+            ],
+            "affectedObjectIds": [
+              3
+            ],
+            "unexpectedDependencies": [
+              {
+                "token": "Brand Primary",
+                "objectId": 3,
+                "reason": "unbound_object_changed"
+              }
+            ],
+            "artboardsChanged": false,
+            "beforeSha256": "7d884298a5d881ac7fb2b80c49d1a5705b3f24753155411da6cffbc9d06a85ce",
+            "afterSha256": "06205addc4da9004656ca3afc442f31c67a917dbd369e0720efe402933dd8209",
+            "scope": "native explicit swatch consumers; unbound own properties, identities and artboards",
+            "checkpoint": "brand-checkpoint-0.vectorcraft",
+            "checkpointSha256": "6ab52aa02639fc2740d3890d9e02127dbe79ac18638e0376a96c9b487e11c2cf",
+            "checkpointRetained": true
+          },
+          "retainedFileHashesVerified": true,
+          "checkpointIndependentlyReopened": true,
+          "injectionCount": 1
+        }
+      ],
+      "healthyReport": {
+        "schema": "vectorcraft-brand-dependencies/v1",
+        "checks": [
+          {
+            "schema": "vectorcraft-brand-dependency-check/v1",
+            "status": "passed",
+            "token": "Brand Primary",
+            "consumerIds": [
+              2,
+              4
+            ],
+            "affectedObjectIds": [],
+            "unexpectedDependencies": [],
+            "artboardsChanged": false,
+            "beforeSha256": "55cdd2cb9bae5f143960340947a41f162effbbfbf96dc85be2dff8bbfd37c69e",
+            "afterSha256": "9821aa4b6c2ead4a331ad6e55958fe217ad4cd6a2a418a112e617dbcbf245e66",
+            "scope": "native explicit swatch consumers; unbound own properties, identities and artboards",
+            "checkpoint": "brand-checkpoint-0.vectorcraft",
+            "checkpointSha256": "5ccc54e1d43c23b0f7a4b2e72a579170b4bbf62cd6a62668cd670172afeee830",
+            "checkpointRetained": false
+          }
+        ]
+      },
+      "sourceFiles": {
+        "Fonts/SourceSans3-Regular.ttf": "4644c81b86ec9caaa76b634889968ed3c4f4f52f054855933acc7c2b21e53b0f",
+        "Links/badge.png": "008d68f16bc1e45860f34d133fe966ef6fc6dd1e64f55286392995e23d9fefde",
+        "artboard-1.png": "2077187eae261cc87e9e762168b9ab85156346b3a6b0c448d51fe33853a14d67",
+        "artboard-1.svg": "6e24a7a11853abac930bb51a68331710c4c95ea3c316f41510250dcc23a88e11",
+        "exchange-loss.json": "510a00a1803c167e0ac59ed08384aff23564385dcb9c06fa9c2531a2d4e075ac",
+        "manifest.json": "121a9a663e702aba4067829418b5d28268fb12573e2481f874218c8fb7687943",
+        "native.json": "74fb3f154e45bbe7cb267a67c085a3ceefd7754105c26b67ea84381b109f1a08",
+        "operations.json": "122ba09446435be9645f7697c764c50ed33136016fa2ada648d7527c374ede77",
+        "plan.json": "cfda8c8c129987bddff2fb9ddf901345c62ce2fc3aacd322a368b4f5c6dce8e0",
+        "project.vectorcraft": "29663704bb46f70b2cc78caabd95f558fd1e4a7f89de5b62dbf363c408ac14c7"
+      },
+      "healthyFiles": {
+        "Fonts/SourceSans3-Regular.ttf": "4644c81b86ec9caaa76b634889968ed3c4f4f52f054855933acc7c2b21e53b0f",
+        "Links/badge.png": "008d68f16bc1e45860f34d133fe966ef6fc6dd1e64f55286392995e23d9fefde",
+        "artboard-1.png": "205717b9059ef25e15525a9a11b9215c83008b563091079acbb3340c77400067",
+        "artboard-1.svg": "064b436bf593cce1bf86e09c945fa228ccd429e5ecbb51c000c35651ccdd4c0f",
+        "brand-dependencies.json": "92e9bea6df585756c707b1e303e31ec610823b31c63cb438090d9386eb56e354",
+        "exchange-loss.json": "6c48d9fa119f2cb0b4b12f1cc8e6a67e1039779edf3a599f463cccf23c84b33f",
+        "manifest.json": "4bc4d68e3534f2f4f5792b75aa52c5a96f5b5fb33f01a5af15928f88608fc4bc",
+        "native.json": "e2fddcd0452d7ed8752a1adfdf7bbf8f149b070d52a06beaa92a25f1ffc24b08",
+        "operations.json": "771fb9633d97ea1bcf7ad578d5d39d82ba3279ba5faf165a70f8722f05d1caed",
+        "plan.json": "50425d26a08b41d6386dcb2733aeea33496c6ad8eb83059a690a63fd0b31ce2d",
+        "project.vectorcraft": "c4f3112a9e4d138643a70a7f10dbf3ae1bd546cf6d66d32c01c63a2197f5b836"
+      },
+      "instrumentedSkillFiles": {
+        "SKILL.md": "7ba0547dc1846e7704e386888d45660799a7b352cf46dfc0b81042424429ece3",
+        "examples/appearance-gradient-create.json": "ff974dd61eac86d7b5bb604ddc60f9ae97ce5c57cd43e65ac3fefc8f8c498aff",
+        "examples/appearance-gradient-revise.json": "3e464a7576f55684c45eaf4b3b4ce94bc53c52a4e360e2a1609372201686f616",
+        "examples/brand-assets.json": "d4c342c68791d7fb9ca0a966448947d7f9597af66e00245aec3c4d4c43cc6950",
+        "examples/brand-token-assets.json": "07f3a8acb45b3dd03ecbe96b75c53571a6b7960eb29b6bb10b777194ba3c1202",
+        "examples/chinese-text.json": "a5f1310bfba6102606079b62712096ae9e4298dffe860dcbab64448619613762",
+        "examples/commands-advanced.json": "eb456387da8df5ac16399c318ebb493fef1e716a537a777420baaa52b89030b8",
+        "examples/commands-revision-create.json": "c7668b298747a3dec9266826344778e8c977a36df293436531ea1ea8db4a44bc",
+        "examples/commands-revision.json": "8e416f9ed55a21862cfc6848ca4e9f97b3fbd2b405b9a56faf89dbc016cbe779",
+        "examples/desktop-first-use.json": "41461b895abe438b35cfa2fcedec42d883ceb0a77812cb5e21e071b5473f3b2b",
+        "examples/native-workflow.json": "e9a89a79c3bdf0ae8ca41958f2fbbdf523ac77da47ecceda6cc97d982e38b265",
+        "examples/object-layout-create.json": "81d4eda918c6e4a41f41b58658a79eee1841872c49fff0a57d72beb94016127b",
+        "examples/object-layout-reopen.json": "7ad1f4a35980a2a90198d8b140ba1b486e604f391322484452d88e110d98da5f",
+        "examples/provided-assets.json": "f5a3e15cc7a44b912fd87fc833c00c2e51893b553d90daa6f3682bd9ff4336cd",
+        "examples/selection-brand-create.json": "3343eab1f42ef16e5334382c01c861d523d15d41ff49b6946e02046e582a2e73",
+        "examples/selection-brand-reopen.json": "7ad1f4a35980a2a90198d8b140ba1b486e604f391322484452d88e110d98da5f",
+        "references/appearance-gradient.md": "712a5822162e95610515d21ee00af77e0c276445f573440fbb360803e94342b7",
+        "references/brand-tokens.md": "f165cdab01c49c04bdc06bf20779c2dcb0b3978ee73d72173e92c8c7d069b223",
+        "references/business-scenes.md": "9d11ef8f28be9249f9f7f32e166f307f0cfa7d5ac27520adbbbe483abf043d74",
+        "references/chinese-text.md": "b2229e5054fe2a71ee069b4aba6fa6d87c3ebbf4afaf3d1a2f85a80256948294",
+        "references/command-coverage.json": "532d2fc467f4fc4c48856e11fdb97ea465276270c882e837a3214692de831a50",
+        "references/command-reference.md": "87f39638580025e3d5042da4bda71e255ce9d729850e840ff7baf14a027c08c0",
+        "references/command-usage.md": "bd06e79a5c61670fccf4665618637231b48dba31d9d19bde3d5820510167a789",
+        "references/commands.json": "179e46514c1854aa47f3ee989b03c1c10b0e81496d9cc62440179674dcdc5aed",
+        "references/desktop-install.md": "db2db151b0eff30a3381a03ae377fb23ac09b2b4a919859740bd9343e7f14887",
+        "references/exchange-loss.md": "eee665f62b77274ca8ce0efc4117012ade85978905cdfd40ab488af64297b8ae",
+        "references/first-use-failures.md": "ce2a8d1a8ca6b8a29a084d52d105d510476de88d40b439d6c2ff79212581d61d",
+        "references/installation-concurrency.md": "69067acebcd47f1924a8d6aa9d8a4ce6f44ad0756d44888a21eb224bcdb1c215",
+        "references/native-command-snapshot.json": "1e63722f850930947c4cc6e9bdbe24638413e43c2e5127dd385f167d493e10e1",
+        "references/native-workflow.md": "42fee416c66a69f6f3802abe1be6f002963cf109e7e22a4d6297b6dcaf62b8e9",
+        "references/object-edit-scene.md": "ac760587eaabc1205b20325e48325463fd90efe343df4183fc7ae7f9d07e6550",
+        "references/object-selection-scene.md": "42593e844568184451bf648c84f4f0fafaee5a1644e39b1641fe49a078e336d9",
+        "references/output-execution.md": "baa3d38af5f8d3b01cb36bcc6b89dee3d8449ec676bc52d6f5c2de9f563ba3ac",
+        "references/scenario.md": "c6b6b1345495c25e76ced4fa2d30069c33d3984074f5d01ee2c29f58103b7c99",
+        "references/workflow.md": "c4a311a9e370bc965531f1d23cecd0a147cae8d5723f7c05fe51e642320ecdda",
+        "scripts/asset_inputs.py": "b2868a4239ef50648f201be99bb29ad4ddf0d8bdeb5a626c54b3fc1aac701758",
+        "scripts/bootstrap.py": "78d5bdf16bf08e9abc96b4b23e5d071da72b648698b888b85fa1b90f81cf32a9",
+        "scripts/brand_variants.py": "a600e765e8d2dccbae5c048e70e28e4272844c45fbc0d2eb9d43ca076559daa5",
+        "scripts/cli.py": "f59eb61605f0f4ac7213e6f52b83a47a93bf6201101cffd64d332fbb025313d5",
+        "scripts/commands.py": "a3da9d5c5167a0195163596a9aa5b318f7d29838497f74c7956391d053f7548f",
+        "scripts/desktop.lock.json": "f38c7cd5b837bc4f3275ef96c17308fc894f6be66c6a00ecf9c53378ad4bb486",
+        "scripts/desktop.py": "24dddb82f1c51ca8e835c582d9b7228aa9d643dfcada11b570bde9191f002f0f",
+        "scripts/desktop_session.py": "b6b07a9a18b77386d481a7f263190b0981a7a763dda4f46ad7417a92d416fbb5",
+        "scripts/exchange_loss.py": "b1e68eb2e4887dc52b3c2e4d071ea4364c1254b3f96ffb6511ad42f9dfc0dff6",
+        "scripts/mcp_session.py": "c8e703e605d357cdd6b7b22f2749367a8660a4e1ad2d66efdbec70670ee43799",
+        "scripts/native_workflow.py": "290108267b948b6ddda6f0865e20f1bdfadd7558442fb1d617125a1ed25eb116",
+        "scripts/output_guard.py": "7c13abd891370058e670fbfb3db7992d4a8ed7934682c83bde1aabf47ad6846f",
+        "scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+        "scripts/runtime.lock.json": "7b6bd7f3fab84b757d4ea20ac91b74d89b417ec061efc6ae320dda97a422cc07",
+        "scripts/workflow.py": "c3b6b8effbcf7c6be243161ad4c6902977c8b2e4814e1d0aacc08cb5317f6f27"
+      },
+      "driverSha256": "3b3d5e22784331cd9af40f50904890f9ee8a29481d9655dcb09d614e493ebf80"
+    }
+  ],
+  "installedOldMatrix": {
+    "skills": 64,
+    "identity": "passed",
+    "scope": "installed fixed snapshots unchanged; does not include new candidate code"
+  },
+  "excluded": [
+    "fixed source/plugin release",
+    "actual installed candidate",
+    "Art bundled-domain upgrade",
+    "full VC-DM-006",
+    "all commands",
+    "GUI",
+    "generic Skills CLI installation"
+  ],
+  "candidateSkillHashes": {
+    "vectorcraft-cli": "35919994bc7d005216598a31c0134331a9f14b0226e2df6ef13c935a36f668b9",
+    "vectorcraft-cli-appearance": "2778ef5edb01704032f36eed8dd3dce058530bf3406f3b00f2a1ed971f0454e0",
+    "vectorcraft-cli-artboards": "753fc5ca5fca7b557eb115358d9740487a0c0f4a952689a37077e8afcf4a3ab8",
+    "vectorcraft-cli-assets": "bb0ae1cc14877d240ee76bb3292de635d23b854df0a93b169c42008989391653",
+    "vectorcraft-cli-boolean": "cc5befbac8d934459f7f7af425cc4c81aaab09125e5ce3db883250461d1c2d5f",
+    "vectorcraft-cli-export": "3689db2a9b4b7a12c5ff557fc0db2ea1c1a6932b0cc6006160abe98b50076913",
+    "vectorcraft-cli-paths": "95343808fc4e763809f37b9db41b4b9c3722061c95bfaf6280bd28c68d36e45a",
+    "vectorcraft-cli-project": "35f5d7a2aafbfc4c057fd4ae2d1e387428c5fb36fe1487a2d264b7cb862fb8cb",
+    "vectorcraft-cli-selection": "d9c7567553d765d09a928eea3eed6585535d8467943485fc4a4af34353eb3c7c",
+    "vectorcraft-cli-setup": "d1f1290fd7ee68eaf8fadc87da15174d86b1f7ae3750807c55a61f6280854e8a",
+    "vectorcraft-cli-shapes": "c45bf57931785462f708f0bb5c44e3b809993a00a19726fa584c1a166454044e",
+    "vectorcraft-cli-text": "c26de5fae0b1ce786feccdfa25174a17b5410cc0d0e387c046e3d956f7aaa314",
+    "vectorcraft-use": "d5d7cf907c60e54f99ec618025a7e7454723ebeee21d4bda08b2cd55e530d7eb"
+  },
+  "validation": {
+    "pluginTests": {
+      "total": 23,
+      "passed": 23,
+      "seconds": 3.206
+    },
+    "documentation": {
+      "status": "passed",
+      "scope": "documentation structure, local links, status honesty and spec/task traceability only",
+      "markdownFiles": 325,
+      "capabilities": 7,
+      "requirements": 26,
+      "scenarios": 82,
+      "openImplementationTasks": 48,
+      "errors": []
+    },
+    "openSpecStrict": "passed",
+    "globalRequirementCount": 120,
+    "globalOpenTasks": 240,
+    "tasksClosed": [
+      "4.27"
+    ],
+    "fixedAcceptanceTaskOpen": "4.28"
+  }
+}

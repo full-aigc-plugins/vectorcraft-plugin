@@ -155,11 +155,13 @@
         "4.16",
         "4.17",
         "4.18",
-        "4.19"
+        "4.19",
+        "4.27",
+        "4.28"
       ],
       "owner": "Domain owner",
       "status": "in-progress",
-      "evidence": "docs/evidence/native-brand-token-first-use.json"
+      "evidence": "docs/evidence/vectorcraft-brand-dependency-guard-candidate-20261008.json"
     },
     {
       "requirement": "VC-AR-001",
