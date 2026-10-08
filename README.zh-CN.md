@@ -1,5 +1,7 @@
 # VectorCraft Agent Plugin
 
+开发 plugin37／source33 修复完整网关品牌返工遗漏变体。原生候选通过，固定安装验收另行执行。[架构](docs/VectorCraft-Brand-Gateway-Export-Architecture.zh_CN.md)。
+
 固定插件36／技能源32通过13项独立原生冷安装、26项真实工作流测试和52个误改拒绝案例。64安装身份保持；51项未变技能复用已复核的历史冷启动证据。Art内置升级与完整V1仍开放。[固定验收](docs/VectorCraft-Fixed-Brand-Guard-Architecture.zh_CN.md)。
 
 固定安装外观技能新增“同色但未绑定 token”验收：仅已绑定消费者更新，非消费者原生属性、无关 SVG／PNG／PDF 与原交付保持不变。本轮复用运行时，不关闭新增 V1 任务。[验收架构](docs/VectorCraft-Same-Color-Token-Architecture.zh_CN.md)。
@@ -8,7 +10,7 @@
 
 Logo、图标与品牌图形需求进入，交付 `.vectorcraft` 及适用的 SVG、PDF、PNG。
 
-当前插件：`0.1.0-dev.36`；技能源：`0.1.0-dev.32`；13 个独立技能。
+当前插件：`0.1.0-dev.37`；技能源：`0.1.0-dev.33`；13 个独立技能。
 
 已验证首次使用平台：macOS arm64、Python 3.11+。固定运行时安装在用户数据目录，技能文件保留在宿主加载目录。当前为开发版本；完整首版验收及通用 Skills CLI 实际安装仍未完成。
 
@@ -103,9 +105,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.36 |
+| Metadata version | 0.1.0-dev.37 |
 | Stage | implementation-in-progress |
-| Skills source | vectorcraft-skills / v0.1.0-dev.32 |
+| Skills source | vectorcraft-skills / v0.1.0-dev.33 |
 | Execution | 上游 CLI；ArtCraft 使用子适配器 |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |

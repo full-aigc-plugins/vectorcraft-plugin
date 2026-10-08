@@ -146,6 +146,13 @@ VectorCraft SHALL 根据 token 与素材依赖更新相关变体，核对无关�
 - **AND** 修订未指定导出列表时沿用摘要核验后的原计划清单；清单篡改或未知色板不发布成功交付
 - **AND** 外部编辑器 token 保真、其他颜色模型及跨文件消费者不得由本场景推断为已验证
 
+#### Scenario: VC-DM-006-GATEWAY-EXPORT 两条品牌入口继承变体交付
+
+- **WHEN** 基于已核验原工程通过 swatch.edit 或等价 native.command 修改具名色板，且修订没有 exports 字段
+- **THEN** 两条入口 SHALL 在安装和原生编辑前核验原 plan.json 的摘要，并沿用全部原导出范围，保存新原生工程及 SVG／PNG／PDF 变体，不将缺失清单解释为无导出
+- **AND** 显式 exports 空列表 SHALL 保留只交付原生工程的意图；清单摘要不符或符号链接拒绝，不创建运行时或新交付，不覆盖原工程
+- **AND** 真实原生验收 SHALL 检查关联输出变化、无关 SVG／PNG／PDF 字节保持和旧交付保全；候选、固定发行与 Art 捆绑包升级分别记录
+
 #### Scenario: VC-DM-006-GUARD 品牌返工的执行时依赖检查
 
 - **WHEN** 公开工作流通过 swatch.edit 或等价 native.command 修改具名色板

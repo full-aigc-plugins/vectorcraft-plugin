@@ -1,0 +1,50 @@
+{
+  "result": "PASS",
+  "skill": "vectorcraft-cli-export",
+  "originSkillName": "vectorcraft-cli-export",
+  "scope": "unpublished source candidate; actual independent export-skill public native cold installation, direct and native gateway brand revisions with9 variants; fixed release and Art upgrade separate",
+  "coldNativeRuntime": true,
+  "cases": [
+    {
+      "mode": "native-gateway",
+      "inheritedOutputs": 9,
+      "boundPreviewChanged": true,
+      "unrelatedSVGPNGPDFFilesUnchanged": true,
+      "sourcePreserved": true,
+      "guardPassed": true
+    },
+    {
+      "mode": "direct",
+      "inheritedOutputs": 9,
+      "boundPreviewChanged": true,
+      "unrelatedSVGPNGPDFFilesUnchanged": true,
+      "sourcePreserved": true,
+      "guardPassed": true
+    }
+  ],
+  "explicitEmptyExportsRespected": true,
+  "tamperedPlanRefusedBeforeInstallation": true,
+  "skillFilesUnchanged": true,
+  "nativeRuntimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+  "schema": "vectorcraft-gateway-export-candidate/v1",
+  "sourceRegression": {
+    "total": 147,
+    "passed": 117,
+    "skipped": 30
+  },
+  "preInstallRegression": {
+    "total": 3,
+    "passed": 3
+  },
+  "regressionObserved": {
+    "plugin": "0.1.0-dev.36",
+    "source": "0.1.0-dev.32",
+    "nativeGatewayMissingOutputs": 9,
+    "unitRedFailures": 1,
+    "unitRedErrors": 1
+  },
+  "workflowSha256": "5c6b72d061afce38e7bc95bb0d2d250443215c39674cdfc16850c6e1358362a1",
+  "nativeDriverSha256": "6f9bc99fbd54328e1d0859a915b0ca6a2b58cc62c2fee8bd3bfd03827131c172",
+  "fixedInstalled": "NOT_RUN",
+  "ArtBundledUpgrade": "NOT_RUN"
+}

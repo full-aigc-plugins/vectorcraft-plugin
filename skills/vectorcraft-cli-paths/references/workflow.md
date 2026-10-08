@@ -66,3 +66,12 @@ python3 "$SKILL_DIR/scripts/workflow.py" \
 先用本技能 `commands.py` 的新会话执行打开／检查计划，并显式登记恢复工程作为 `--input project=原暂存工程绝对路径`；按真实对象状态建立新的修改计划。`failure.json` 不是交付 manifest，不能把失败输出直接传给 `workflow.py --source`。成功保存、重开、依赖收集及派生输出检查后才形成新的交付。诊断写入权限不足时仍保留暂存并返回原异常，不能假定失败输出目录一定存在。
 
 After staged failure, retain both the output recovery record and its original sibling stage. Verify all file hashes and the last submitted attempt; an unknown reply may follow a successful native operation. Open/inspect the retained project in a fresh commands.py session before an explicit new revision. Do not replay the original plan, move the stage or pass the failed directory as a successful workflow source package.
+
+
+## 两条品牌入口的变体导出
+
+基于 source 修订时，普通 swatch.edit 与等价 native.command 均支持省略 exports：先按原 manifest 核验 plan.json 摘要，再沿用原清单内全部 SVG／PNG／PDF 和画板范围。不能把省略清单解释为无需导出。显式 `"exports": []` 则表示只交付原生工程，必须保留该意图。
+
+网关操作写成 `{"command":"native.command","params":{"command":"swatch.edit","params":{"name":{"$ref":"primary.name"},"color":"#175cce"}}}`。expectedProjectSha256 取原 manifest 中 project.vectorcraft 的摘要；源目录仍由公开 --source 参数传入。旧 plan.json 摘要不符或为符号链接时，在安装与原生编辑前拒绝，不创建新交付。完成后比较所有输出路径、关联颜色及无关画板 SVG／PNG／PDF 字节，保留旧交付。
+
+Both direct swatch.edit and its native.command equivalent inherit the verified source export list when exports is omitted. An explicit empty list remains an intentional native-only delivery. Verify source-plan integrity before installation, and check affected variants plus byte-identical unrelated SVG/PNG/PDF outputs after native reopening.
