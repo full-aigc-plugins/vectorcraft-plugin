@@ -1,0 +1,37 @@
+{
+  "schema": "vectorcraft-revision-budget-fixed/v1",
+  "result": "PASS",
+  "pluginVersion": "0.1.0-dev.62",
+  "pluginCommit": "6885139e2fe2cb1aada98a1ad3a2070cce87a14d",
+  "sourceRef": "v0.1.0-dev.43",
+  "sourceCommit": "36b79c603111fbf6c95f36d2f4c9ed43c9e7f155",
+  "platform": "Darwin-arm64",
+  "hostVersion": "codex-cli 0.153.4",
+  "tasksClosed": [],
+  "host": "docs/evidence/vc-qa-002/host-fixed62.json",
+  "integrity": "docs/evidence/vc-qa-002/integrity-fixed62.json",
+  "native": "docs/evidence/vc-qa-002/budget-fixed62.json",
+  "fingerprints": {
+    "docs/evidence/vc-qa-002/host-fixed62.json": "511c30b22d900e04f8452f2077f2ef6e2d719484f49ce93b5f75ffdb47f84fcd",
+    "docs/evidence/vc-qa-002/integrity-fixed62.json": "a20b30c15c84783ce1974b7eeb0e38cd1fc1e52510df983d3a44ca69b65b5d9d",
+    "docs/evidence/vc-qa-002/budget-fixed62.json": "36c416eb8ceb2e56573fd0564b43d54635d87e0aa32bd08c431bc70d4a53d969",
+    "plugin.json": "6872798261b7181e8385227de055beac917ec275ce6dce0550037d8c68112941",
+    "skills.lock.json": "46255b049f5e3d14b45ca9fecbaf037cd55b1e8b8bb447d407cb16c55eb3758c",
+    "docs/current-identity.json": "e54139673f809b267f6f58a3775417be19a3e0587164a1a29f5081278b51062f",
+    "src/evaluation/revision_cycle.ts": "a44508a02bc9f57cf5d0ef11a5e755cfd0950a2d890232aca05ee19c1abddc75",
+    "src/evaluation/technical_review.ts": "503b8f9d8b3f62965eaf5237361bda2a0c7a406ab1768dc77be2ea182fe64f8d",
+    "src/evaluation/review_store.ts": "615b436f7d60450f8913d7fb2224ebddc68f8679699b4a7ae40ba7499081ead4",
+    "scripts/qa/revision_budget.ts": "a5601841c8e76d9ca143060df7a21e27722612c2b4b7892e3215218ca3275e47",
+    "tests/revision_cycle.test.ts": "ec70b121b732944acd7ed14dc45ef8c3134499326b47192661fe37b7238101a9",
+    "docs/evidence/vc-qa-001/native-fixed61.json": "034a862e9057f2cefac128d946874327d29472721c910532dda2d6428d6b0085",
+    "openspec/changes/establish-v1-plugin/specs/quality-review/spec.md": "60b8491854042fc69fe12898fefb57a85731ea7c23f264190b7fdf764fb32c54"
+  },
+  "scope": "Actual published62/source43 installed code repeats native higher-score exhausted-budget subset; four charged attempts, readonly best candidate and preserved source/control; input native is unchanged source43 project freshly created in fixed61 QA; not complete6.6 qualification",
+  "unverified": [
+    "complete VC-QA-002 four-scenario qualification",
+    "actual creative review",
+    "GUI",
+    "other platforms",
+    "full V1"
+  ]
+}

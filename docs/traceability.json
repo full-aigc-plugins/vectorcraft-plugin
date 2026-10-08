@@ -232,8 +232,8 @@
       ],
       "owner": "Harness owner",
       "status": "in-progress",
-      "candidateEvidence": "docs/evidence/vectorcraft-optimization-local-20261008.json",
-      "scope": "new SQLite/controller/review units and bounded native single round; complete native stop/reconciliation/authorization/plateau acceptance open"
+      "candidateEvidence": "docs/evidence/vectorcraft-revision-budget-fixed62-20261009.json",
+      "scope": "actual public62/source43 native exhausted-budget higher-score preservation subset only; complete four-scenario6.6 qualification remains open"
     },
     {
       "requirement": "VC-RL-001",
