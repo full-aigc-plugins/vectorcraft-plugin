@@ -334,19 +334,5 @@
       "complete entrypoint audit",
       "current immutable fixed plugin installation acceptance"
     ]
-  },
-  "permissionsStateWriteIncrement": {
-    "implementationVersion": "0.1.0-dev.64",
-    "sourceRef": "v0.1.0-dev.46",
-    "evidence": "docs/evidence/vectorcraft-permissions-state-write-candidate64-20261009.json",
-    "result": "PASS",
-    "tasksClosed": [],
-    "remaining": [
-      "directory creation",
-      "skill tree snapshot copy",
-      "other parent writers",
-      "actual host secret references",
-      "current immutable fixed plugin installation qualification"
-    ]
   }
 }

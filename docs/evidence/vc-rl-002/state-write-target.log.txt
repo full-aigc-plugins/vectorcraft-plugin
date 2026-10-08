@@ -1,0 +1,24 @@
+✔ exclusive writes return the held identity and preserve existing plan bytes (80.964167ms)
+✔ atomic state replaces a final link without following it and leaves no temporary files (63.780333ms)
+✔ write refuses traversal, outside targets and linked parents without external effects (92.674333ms)
+✔ controller binds a supplied standalone snapshot, records intent and verifies actual files (896.906834ms)
+✔ changing a bound brief during execution stops the owned group and retains the unresolved task (577.764666ms)
+✔ source manifest cannot change while runtime is probing (184.937333ms)
+✔ source inherited plan cannot change while runtime is probing (182.360208ms)
+✔ source declared asset cannot change while runtime is probing (179.575625ms)
+✔ source previously absent PDF date cannot change while runtime is probing (151.063958ms)
+✔ source manifest and declared dependency digests enter immutable task identity (819.278917ms)
+✔ source manifest cannot introduce path traversal or linked inputs before probing (185.529625ms)
+✔ ordinary dependency filenames cannot bypass guards through object prototype setters (179.72425ms)
+✔ a declared dependency cannot escape its source bundle through a parent directory link (97.825917ms)
+✔ execution uses a hash-verified readonly source snapshot while resource identity stays on the user source (786.046375ms)
+✔ state publication preserves external files under temporary-link (39.461166ms)
+✔ state publication preserves external files under parent-swap (34.9285ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2863.109125

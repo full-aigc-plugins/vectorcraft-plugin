@@ -3531,12 +3531,12 @@
       "sha256": "c04bcb7d1880f3c5005bbb6bed7a58387abffc249cae2c0b5b5634693476377a",
       "level": "native-candidate",
       "status": "PASS",
-      "scope": "Descriptor-safe streaming source snapshot copy;source swap refusal,large-file and destination guards,actual native revision;remaining parent writes,host secrets and fixed installation qualification stay open",
+      "scope": "historical at original execution identity; Descriptor-safe streaming source snapshot copy;source swap refusal,large-file and destination guards,actual native revision;remaining parent writes,host secrets and fixed installation qualification stay open",
       "requirement": "VC-RL-002",
       "tasks": [],
-      "historical": false,
+      "historical": true,
       "dependencies": {
-        "src/harness/controller.ts": "ad042d8b5797c2188df961f6ec11f1d9c097e58e0b37e0bdbbbabb64d1dcdc33",
+        "docs/evidence/pre-state-write-identity/src/harness/controller.ts": "ad042d8b5797c2188df961f6ec11f1d9c097e58e0b37e0bdbbbabb64d1dcdc33",
         "src/harness/authorized_file.ts": "42a8c74b646c4598a7652493a63ba772bf28eb791c816a6d345ad6b3daa0cd33",
         "src/harness/asset_digest.py": "8ddd6bc9e07f7b111da43b4c7d5564ef623be438924ddbaa215b749b701f3465",
         "skills/vectorcraft-use/scripts/asset_reader.py": "d067708d2355c0aa4415027ae2cff53c5559611c90854447fd7595b6535939f3",
@@ -3553,6 +3553,36 @@
         "docs/evidence/vc-rl-002/source-copy-native.log.txt": "c0001f21291126dc73fd527bd6d09f61a9c7974ae6aeff64704c1c747617170e",
         "docs/evidence/vc-rl-002/source-copy-python156.log.txt": "4730621e83d318e3954e9ea91870c9a3d34c45480ed6c8aa31f3fcbe454c2039",
         "docs/evidence/vc-rl-002/source-copy-python-source-plan-retry.log.txt": "f97fa48616c82773355ad4676ba6ad357a2906fb6a58289607e5537d90430cad"
+      }
+    },
+    {
+      "path": "docs/evidence/vectorcraft-permissions-state-write-candidate64-20261009.json",
+      "sha256": "e85b398fe77f90299522bbbb3473838e542ccb63528d14c819ed05da8ac5b033",
+      "level": "native-candidate",
+      "status": "PASS",
+      "scope": "Descriptor-safe Controller state/plan/event/control content writes;two old-code failures and actual native revision;directory creation,skill tree copy,other writers,host secrets and fixed qualification remain open",
+      "requirement": "VC-RL-002",
+      "tasks": [],
+      "historical": false,
+      "dependencies": {
+        "src/harness/controller.ts": "3f2339b932a0a3a882cd9aef20cdfe5516c54d88cc66bb8a9eab6bd71270f47c",
+        "src/harness/authorized_write.ts": "216f8fc9ab1cef8a2ed3e95624200e7b4e2bbf3f717b8e28e62fe6a895758e15",
+        "src/harness/authorized_write.py": "867e7b247eea15c82340fc5c8c3cfe68b3647099d30797a165a3afa9c2932e81",
+        "src/harness/authorized_file.ts": "42a8c74b646c4598a7652493a63ba772bf28eb791c816a6d345ad6b3daa0cd33",
+        "src/harness/asset_digest.py": "8ddd6bc9e07f7b111da43b4c7d5564ef623be438924ddbaa215b749b701f3465",
+        "skills/vectorcraft-use/scripts/asset_reader.py": "d067708d2355c0aa4415027ae2cff53c5559611c90854447fd7595b6535939f3",
+        "skills.lock.json": "44bd17666c6ef2a79641245a239a4f29a1f4a79162bba0de8b8329347f0a8fd1",
+        "plugin.json": "60e59b0f5f44bf657e0554e25a20c5e99e774af7c2ad9f1602590cd5bff6f712",
+        "scripts/qa/revision_budget.ts": "a5601841c8e76d9ca143060df7a21e27722612c2b4b7892e3215218ca3275e47",
+        "tests/state_write_permissions.test.ts": "86c1dee8981c094dc6bdd3986f809bb91f41a94f52ef7b5df738b29840c97501",
+        "tests/authorized_write.test.ts": "88b4b4533ed8a5b36ac79f720075d6b3536153eb5a924ae84c95162f0c571bfa",
+        "docs/evidence/vc-rl-002/state-write-red.log.txt": "3aa89715ed9b97a9a8ac675b78a669d36a1972ec596b49502427c7cdf177502e",
+        "docs/evidence/vc-rl-002/state-write-green.log.txt": "d055935a7ffda22be45b10c3278874e74e7ffe486f4a09ebbdc2627ce7237670",
+        "docs/evidence/vc-rl-002/state-write-target.log.txt": "11eb53eae2f72ffa9a69bf2df589d013d89d55e18fe00174a972411e00afd550",
+        "docs/evidence/vc-rl-002/state-write-node158.log.txt": "3c1c600019edb5f5395a8d51c3b609f6a79a3206df25aa1de796e2c27ed2c98e",
+        "docs/evidence/vc-rl-002/state-write-native.json": "6a53b17f25e06905240b0d7104fc228815dd9ba895e6b7d8242a04aa175fbed9",
+        "docs/evidence/vc-rl-002/state-write-native.log.txt": "c0001f21291126dc73fd527bd6d09f61a9c7974ae6aeff64704c1c747617170e",
+        "docs/evidence/vc-rl-002/state-write-python156.log.txt": "8322122afcd5e66dc3b8b887a5371b37e3f1c0bff62bc2d5e289d530505b5bbb"
       }
     }
   ],

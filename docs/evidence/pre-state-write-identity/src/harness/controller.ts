@@ -1,10 +1,9 @@
 import {assetDigest} from './asset_digest.ts';
 import {authorizedRead,authorizedDigest,authorizedDigests,authorizedCopy} from './authorized_file.ts';
-import {authorizedWrite} from './authorized_write.ts';
 import {assertNoLiteralSecrets,validateAssetRecords} from './input_policy.ts';
 import {nativeEnvironment} from './native_environment.ts';
 import { createHash } from 'node:crypto';
-import { existsSync, lstatSync, readFileSync, mkdirSync, cpSync } from 'node:fs';
+import { existsSync, lstatSync, readFileSync, mkdirSync, writeFileSync, cpSync, statSync, openSync, closeSync, fsyncSync, renameSync } from 'node:fs';
 import { relative, resolve, join, isAbsolute, dirname } from 'node:path';
 import { spawn } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
@@ -50,8 +49,10 @@ export class Controller {
   }
   publishState(id:string,epoch:number,state:string){
     mkdirSync(this.snapshotRoot,{recursive:true,mode:0o700});
-    const path=join(this.snapshotRoot,id+'-state.json');
-    authorizedWrite(path,this.snapshotRoot,canonical({task:id,epoch,state}),0o600,true);
+    const path=join(this.snapshotRoot,id+'-state.json'),temporary=path+'.next';
+    writeFileSync(temporary,canonical({task:id,epoch,state}),{mode:0o600});
+    const fd=openSync(temporary,'r');try{fsyncSync(fd);}finally{closeSync(fd);}
+    renameSync(temporary,path);
   }
   async reconcileOriginal(id:string,epoch:number){
     const recovery=new Recovery(this.ledger,this.processes);
@@ -238,18 +239,18 @@ export class Controller {
       checkInputs();sourceSnapshotSha256=skillDigest(sourceSnapshot);
     }
     const planSnapshot=join(this.snapshotRoot,task.id+'.json');
-    authorizedWrite(planSnapshot,this.snapshotRoot,canonical(plan),0o400);
+    writeFileSync(planSnapshot,canonical(plan),{flag:'wx',mode:0o400});
     const eventFile=join(this.snapshotRoot,task.id+'-events.jsonl');
-    const eventStat=authorizedWrite(eventFile,this.snapshotRoot,'',0o600);
+    writeFileSync(eventFile,'',{flag:'wx',mode:0o600});const eventStat=statSync(eventFile);
     this.publishState(task.id,task.epoch,'running');
     const controlFile=join(this.snapshotRoot,task.id+'-control.json');
-    const controlBytes=canonical({schema:'vectorcraft-execution-control/v1',task:task.id,epoch:task.epoch,
+    writeFileSync(controlFile,canonical({schema:'vectorcraft-execution-control/v1',task:task.id,epoch:task.epoch,
       deadline:auth.deadline,maxBytes:Math.min(auth.maxBytes,request.estimatedBytes),runtimeIdentity,authorization:auth,
       planFile:planSnapshot,planHash:binding.planHash,stateFile:join(this.snapshotRoot,task.id+'-state.json'),
-      eventFile,eventDevice:eventStat.device,eventInode:eventStat.inode,
-      ...(request.source?{source:{path:join(resourcePath(request.source),'project.vectorcraft'),sha256:projectRevision}}:{})});
-    const controlIdentity=authorizedWrite(controlFile,this.snapshotRoot,controlBytes,0o400);
-    this.ledger.intent(task.id,task.epoch,0,{skillSha256:request.expectedSkillSha256,planHash:binding.planHash,plan,planSnapshot,skillSnapshot,output:resourcePath(request.output),controlFile,controlSha256:controlIdentity.sha256,runtimeHome:resourcePath(request.runtimeHome),source:request.source?resourcePath(request.source):null,python:request.python??'python3',...(sourceSnapshot?{sourceSnapshot,sourceSnapshotSha256}:{}),...(geometryContract?{geometryContract}:{})},request.estimatedBytes);
+      eventFile,eventDevice:eventStat.dev,eventInode:eventStat.ino,
+      ...(request.source?{source:{path:join(resourcePath(request.source),'project.vectorcraft'),sha256:projectRevision}}:{})}),{flag:'wx',mode:0o400});
+    for(const file of [planSnapshot,controlFile,eventFile]){const fd=openSync(file,'r');try{fsyncSync(fd);}finally{closeSync(fd);}}
+    this.ledger.intent(task.id,task.epoch,0,{skillSha256:request.expectedSkillSha256,planHash:binding.planHash,plan,planSnapshot,skillSnapshot,output:resourcePath(request.output),controlFile,controlSha256:sha(readFileSync(controlFile)),runtimeHome:resourcePath(request.runtimeHome),source:request.source?resourcePath(request.source):null,python:request.python??'python3',...(sourceSnapshot?{sourceSnapshot,sourceSnapshotSha256}:{}),...(geometryContract?{geometryContract}:{})},request.estimatedBytes);
     const args=['-I','-B',join(skillSnapshot,'scripts/workflow.py'),planSnapshot,'--output',request.output,'--runtime-home',request.runtimeHome,'--control',controlFile];
     if(sourceSnapshot)args.push('--source',sourceSnapshot);
     let stdout='',stderr='';
