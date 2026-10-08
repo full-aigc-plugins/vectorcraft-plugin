@@ -10,7 +10,7 @@ Four-domain RT-001 runtime source/integrity acceptance now covers every current 
 
 Create Logo, icon and brand assets as `.vectorcraft` with applicable SVG, PDF and PNG exports.
 
-Current plugin: `0.1.0-dev.40`; skill source: `0.1.0-dev.36`; 13 independent skills.
+Current plugin: `0.1.0-dev.41`; skill source: `0.1.0-dev.37`; 13 independent skills.
 
 Verified first-use platform: macOS arm64 and Python 3.11+. Pinned runtimes install into the user data directory; skill files stay in their host-loaded directory. These are development releases; complete V1 acceptance and generic Skills CLI installation remain open.
 
@@ -105,9 +105,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.40 |
+| Metadata version | 0.1.0-dev.41 |
 | Stage | implementation-in-progress |
-| Skills source | vectorcraft-skills / v0.1.0-dev.36 |
+| Skills source | vectorcraft-skills / v0.1.0-dev.37 |
 | Execution | Upstream CLI; ArtCraft uses child adapters |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |
@@ -328,3 +328,7 @@ Native geometry contracts check units, artboard offsets, controls, closure and s
 ### Boolean transaction source candidate
 
 Independent source implements retained checkpoints, live participant/result IDs and restoration after known partial failures; linked checkpoints remain portable. Tasks4.4/4.5 are checked; complete4.6 and fixed snapshot uptake remain open. Published dev.40/source36 are unchanged. [Architecture](docs/VectorCraft-Boolean-Transactions.md).
+
+### dev.41 structural revision prerelease
+
+Pins source37 boolean checkpoints and explicit Harness `structure` authorization. Actual selection, participant subtrees, result IDs and unaffected model fields are checked. Published source36 and plugin40 stay immutable. Full4.6, host/model/GUI and creative acceptance remain open.

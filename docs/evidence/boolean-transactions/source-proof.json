@@ -16,8 +16,8 @@
       ],
       "checkpointReopened": true,
       "projectReopened": true,
-      "checkpointSha256": "7094f3f7d336f2c761ba2a26777c3525cda0f26686aef5133a0dbb390672c992",
-      "projectSha256": "b27cfe0ccc7945309aff0a8fa6711483d42574a88d0e65b48c63aada0cda2620"
+      "checkpointSha256": "51fb8ce5116767f5d5f82dcb8988fddc162136aca563ccfb4ba2bc0f617df1f2",
+      "projectSha256": "02c3a63b42729137ab8a1b1838806f67421a493a45fddba7905d314e641e3f1b"
     },
     {
       "name": "direct-minusFront",
@@ -30,8 +30,8 @@
       ],
       "checkpointReopened": true,
       "projectReopened": true,
-      "checkpointSha256": "7094f3f7d336f2c761ba2a26777c3525cda0f26686aef5133a0dbb390672c992",
-      "projectSha256": "3fa21cf70d8d6ccb6928315c15c8347024827d8a9a4c9ebe3af482107ca8df9f"
+      "checkpointSha256": "51fb8ce5116767f5d5f82dcb8988fddc162136aca563ccfb4ba2bc0f617df1f2",
+      "projectSha256": "8ac20320fac35e32b6b0cf2ee7c5377f9bb98ebabf7ebb563c6f7f9ac6aa3310"
     },
     {
       "name": "direct-intersect",
@@ -44,8 +44,8 @@
       ],
       "checkpointReopened": true,
       "projectReopened": true,
-      "checkpointSha256": "7094f3f7d336f2c761ba2a26777c3525cda0f26686aef5133a0dbb390672c992",
-      "projectSha256": "dc213e871cd07f6598e8d046b4cb7a597e55c304f51972e5a5b84f20e8cadc12"
+      "checkpointSha256": "51fb8ce5116767f5d5f82dcb8988fddc162136aca563ccfb4ba2bc0f617df1f2",
+      "projectSha256": "ac477b11655c3eec7077cb3d53929cb16f8cfd2e6a6409e20ac5d5a0bce3fb97"
     },
     {
       "name": "direct-exclude",
@@ -58,8 +58,8 @@
       ],
       "checkpointReopened": true,
       "projectReopened": true,
-      "checkpointSha256": "7094f3f7d336f2c761ba2a26777c3525cda0f26686aef5133a0dbb390672c992",
-      "projectSha256": "3fa21cf70d8d6ccb6928315c15c8347024827d8a9a4c9ebe3af482107ca8df9f"
+      "checkpointSha256": "51fb8ce5116767f5d5f82dcb8988fddc162136aca563ccfb4ba2bc0f617df1f2",
+      "projectSha256": "8ac20320fac35e32b6b0cf2ee7c5377f9bb98ebabf7ebb563c6f7f9ac6aa3310"
     },
     {
       "name": "direct-group",
@@ -72,8 +72,8 @@
       ],
       "checkpointReopened": true,
       "projectReopened": true,
-      "checkpointSha256": "7094f3f7d336f2c761ba2a26777c3525cda0f26686aef5133a0dbb390672c992",
-      "projectSha256": "c08559a254453ae38ab8584d0bc9ee5a4b4ffe75ecebe1b4175e24343c17633f"
+      "checkpointSha256": "51fb8ce5116767f5d5f82dcb8988fddc162136aca563ccfb4ba2bc0f617df1f2",
+      "projectSha256": "f8a6bf326676d2ed32496162129db3df23e0321db0435bea3ce7159394e4f23d"
     },
     {
       "name": "gateway-unite",
@@ -86,8 +86,8 @@
       ],
       "checkpointReopened": true,
       "projectReopened": true,
-      "checkpointSha256": "7094f3f7d336f2c761ba2a26777c3525cda0f26686aef5133a0dbb390672c992",
-      "projectSha256": "b27cfe0ccc7945309aff0a8fa6711483d42574a88d0e65b48c63aada0cda2620"
+      "checkpointSha256": "51fb8ce5116767f5d5f82dcb8988fddc162136aca563ccfb4ba2bc0f617df1f2",
+      "projectSha256": "02c3a63b42729137ab8a1b1838806f67421a493a45fddba7905d314e641e3f1b"
     },
     {
       "name": "gateway-minusFront",
@@ -100,8 +100,8 @@
       ],
       "checkpointReopened": true,
       "projectReopened": true,
-      "checkpointSha256": "72e2be5da5b5520627e17658a268842af891e4ebacb1dcc3eed886171f9aa62c",
-      "projectSha256": "c03b25b1b7fd78b995c030f72cffe3b73690199376097eee546e3bf839f9bc02"
+      "checkpointSha256": "abd79e702537142298339734e3d0660df6eb43885cc3dee9c71bd56f760c7000",
+      "projectSha256": "72024494485f7e7bb1416c360e2597089eec868ee0d265076cb757871b4fab4f"
     },
     {
       "name": "gateway-intersect",
@@ -114,8 +114,8 @@
       ],
       "checkpointReopened": true,
       "projectReopened": true,
-      "checkpointSha256": "72e2be5da5b5520627e17658a268842af891e4ebacb1dcc3eed886171f9aa62c",
-      "projectSha256": "efafcf63dd1fa2eda0bf5a8a0a54a2c843ebb17f04cb0ae030487440d8312f6b"
+      "checkpointSha256": "abd79e702537142298339734e3d0660df6eb43885cc3dee9c71bd56f760c7000",
+      "projectSha256": "079d900a3cd218b3a98a45a5a71a1a2b4179e763bb06c8c9dafbbbafc3ea2646"
     },
     {
       "name": "gateway-exclude",
@@ -128,8 +128,8 @@
       ],
       "checkpointReopened": true,
       "projectReopened": true,
-      "checkpointSha256": "72e2be5da5b5520627e17658a268842af891e4ebacb1dcc3eed886171f9aa62c",
-      "projectSha256": "c03b25b1b7fd78b995c030f72cffe3b73690199376097eee546e3bf839f9bc02"
+      "checkpointSha256": "abd79e702537142298339734e3d0660df6eb43885cc3dee9c71bd56f760c7000",
+      "projectSha256": "72024494485f7e7bb1416c360e2597089eec868ee0d265076cb757871b4fab4f"
     },
     {
       "name": "gateway-group",
@@ -142,8 +142,8 @@
       ],
       "checkpointReopened": true,
       "projectReopened": true,
-      "checkpointSha256": "72e2be5da5b5520627e17658a268842af891e4ebacb1dcc3eed886171f9aa62c",
-      "projectSha256": "bb700ef5e10b5cd1ded4a971f170a59fb6d57dbb77c6669393710c2ac29bf930"
+      "checkpointSha256": "abd79e702537142298339734e3d0660df6eb43885cc3dee9c71bd56f760c7000",
+      "projectSha256": "69449b45ed57dd3326bbcc255eee4e134b625d84217a3c8b5ac7782ab467b220"
     },
     {
       "name": "linked-asset-checkpoint-relocation",
@@ -175,59 +175,62 @@
     }
   ],
   "fingerprints": {
-    "skills/vectorcraft-use/scripts/boolean_transactions.py": "cc832a6336efd70713c60c4e1431e4b55217bf82c46322f00502dfc9a923f9a0",
-    "skills/vectorcraft-use/scripts/workflow.py": "7e00c5adac012dcedd656ed9f4b1e3a6d61ed5d17f264072178c29e428180f3b",
+    "skills/vectorcraft-use/scripts/boolean_transactions.py": "22d311dfda26cadcd3fc6bb51596ab8b2cd9245cabf5f28dfe3d0d74e8ff9120",
+    "skills/vectorcraft-use/scripts/workflow.py": "2b385bde922d562b2662d251ec7d044e8d49aa7418a5209ba49eed6fbbf25dd2",
     "skills/vectorcraft-use/scripts/native_workflow.py": "395f83ad24ecce458e70305e79a0aec2daf749017a616ae7323706cdfd066139",
     "skills/vectorcraft-use/scripts/commands.py": "42b72f9da9ca9cf429c1ccd50b52cf1f6ed7cbe7411a70b2561317feef7f6017",
     "skills/vectorcraft-use/scripts/mcp_session.py": "15395ead853349a24feab6ce364e5bc9795add12e1dbe62e8ed5718ffdd1ccd2",
     "skills/vectorcraft-use/scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "skills/vectorcraft-use/scripts/execution_control.py": "0710db8cf1fc964b6b7338f213510565eeb5aa0b00315f43706b7f29aed0b6be",
     "tests/test_boolean_transactions.py": "712f616ff158153f5d196092de2ae96e64fe645e214e8d013ad3ee0b66d73bd8",
-    "scripts/acceptance_boolean_transactions.py": "583941a85b8b2f64dc73feece96e0d06b1461d21ba06f7d6f11e2601203e3790",
+    "tests/test_execution_control.py": "1532fc55e27285121872cec87ad50893b22c976457ce12f8392efe2a5016b11b",
+    "scripts/acceptance_boolean_transactions.py": "655a0553c89130d3d4c2982780c1159399128628bbf72ce1bf1d0d748c3b39ce",
+    "skill-suite.json": "c388dd37fc2ca31792641c2b971d46d48c6470b303b10e0387eb7d3291388849",
+    ".claude-plugin/plugin.json": "ab111d599417470560c033bfedc52b3ad679a7dcb74655a8a8d7c3d71f85028c",
     "scripts/verify_optimization_evidence.py": "c1437148bfd684cece90918db02831b1783b4ce527a7e458704465d6d6b8bba4",
-    "docs/evidence/boolean-transactions/red.log": "197be54a2d84db4629ff15a3a5dc78dec7264f6a35425543d189f09d734eaee4",
-    "docs/evidence/boolean-transactions/native.log": "6010dec5b60242ee0f9ea84185464c9ed58f3842f096831aa4bad719c2052bd9",
-    "docs/evidence/boolean-transactions/regression.log": "c641d9c2ec6979d3484d488bd529512c442678c3a39d02e2b9fe299931024db0",
-    "docs/evidence/boolean-transactions/baseline-red-test.py": "9faa6c35a482de3c74328c6f67cd1b610b377e38e291ba821091608ebb380207"
+    "docs/evidence/managed-boolean/native-proof.json": "66051d63413132b5581cea4ff6a58af12c5299333fd1b01e1f0f8263343dff1b",
+    "docs/evidence/managed-boolean/driver.ts": "a5deb27c32125a054bcb0b5e4b8edf5ef673ce53f7b58c5eb034ad9f630f8c07",
+    "docs/evidence/managed-boolean/red.log": "451bf600df7715af432a3459e5feeea0c90f523ac7eec56c9f34660f5aac4023",
+    "docs/evidence/managed-boolean/regression.log": "a4315a1cd41c1d4e7cbbe0ac0b480f0d823054a3fddb936b3f4d6ef408529549",
+    "docs/evidence/managed-boolean/native.log": "cf339dd1f8ea5b346317a9f21e67c5013845136b2edad581c4316855505c70c9",
+    "docs/evidence/managed-boolean/baseline-test_execution_control.py": "1fcd27766b0f2a19e306065a777396126439940fa9936bd25b57aeaf9dcd3f94"
   },
-  "installedFilesSha256": "15624ca440a31f3956d94d3c8b073c357100efe13cf5dfcdf7af7a0732cbdf37",
+  "installedFilesSha256": "9780ac7dea45fe7e9213e7b7f1246ee43d471a7b3f9f365730a3763b4947ae8d",
   "sourcePreserved": true,
   "isolatedSkillPreserved": true,
   "skills": {
-    "vectorcraft-cli-setup": "8cade2072bc80a77760e3a5ac439fa0cd9e8290a80ca51ab2c4cb0a76ceef7f1",
-    "vectorcraft-cli-export": "418f8ea34cf6164160ec818f3d5a6c6b3fcb47ef1bffef1e5aa4b67058a3d41c",
-    "vectorcraft-cli-appearance": "384b790241cb73fd6b003cae063b7096ad7df985fc5a10a687546c248ead6438",
-    "vectorcraft-cli-artboards": "b4685fd7bb7cb98c932d81bf2957619f14ac7a1717208c7e3e58d74707315339",
-    "vectorcraft-use": "61f3ddf145a7924844f1705f8dfb7ac30597e51df5fdd79565fdd394ec239e6b",
-    "vectorcraft-cli-paths": "f1e3ab6a7aa2d53a28542591a352754fa00745b6e95405cf958461261ace41d5",
-    "vectorcraft-cli-assets": "cae603f87f380aa4e144caffafcd16a5fe6d5650e50a6e15d2add635593a764e",
-    "vectorcraft-cli-text": "2523d76979875ae6f86c6107924f0ef4ca7f1b64b62ad397e1a5ec2aea42d92d",
-    "vectorcraft-cli-shapes": "56060341f75eb4ed60d863a0473b7fbefa16b34ec4a5d7611d0241f4af8a45b5",
-    "vectorcraft-cli-boolean": "9f485cabfb109ecff1ef2f635dffd14ed9ae28f9e0cb4f297a5041a39ca20e48",
-    "vectorcraft-cli": "45bc2f78c5f0f8b092a0fff9f80baa1db2d260527a38ea0a7801e590e63ef312",
-    "vectorcraft-cli-project": "e850b0ef81c75b3499b5a36bc3c8342a69077b40a329a85f33b96af1e6f37be4",
-    "vectorcraft-cli-selection": "29c8bc85d977beac68aaa9e9a78adda230c7ed5351820cfcf25886aa48e062cb"
+    "vectorcraft-cli-setup": "72807d460015dc6e871ad6da7c9ae81370906024bb71d23dbd346be62b32756f",
+    "vectorcraft-cli-export": "d9018a28acce66ec2a0a17326e33aa7d5277b55098325c203c8da22afcc28cee",
+    "vectorcraft-cli-appearance": "6941ed1ab9f5c520e1e76821bcd123e93e3656037abefc1d3a2f696e135e2a4b",
+    "vectorcraft-cli-artboards": "eaa99f7ea2a4baa45c77cb9b38c9c28d8942e5c31a6f8e35bbc41b713863eb4c",
+    "vectorcraft-use": "ed67eeb2fa57c957ecb7075a7da70a3227413dcc85baf589552bdc2efb685db8",
+    "vectorcraft-cli-paths": "65110d15bd4b9234ee55078e3e48c144aae215370b27cb7c8bc5ad62b697ffdf",
+    "vectorcraft-cli-assets": "0cde094914ebe6407bb230aa0d4b383e94f4df062c4fc5c0b6411424431d1068",
+    "vectorcraft-cli-text": "ddc983da95171b4cd25a25ff2f96fd2bbf855215c3cf1ac87ec58ba0504ddbd1",
+    "vectorcraft-cli-shapes": "d7ef77352f8abc63e742205a4d8fcb87bffe5308d3092f4d9acc9b62b9b2c011",
+    "vectorcraft-cli-boolean": "f4f550c587857b70840d8c32b29aabada5dba1cf1bfb22fde3c3d626793bc75e",
+    "vectorcraft-cli": "d7d1c9dbb903d063ebb3c40a13c00d8a2e6b1f74e77345471258dfdabe602410",
+    "vectorcraft-cli-project": "19ab2c709b55e346be4d7206a83aa69bf6a71cb99d17f5ecdc813ca7d892cb2e",
+    "vectorcraft-cli-selection": "c6d5376351c7c3c23593034c850b158595b4372c6c9a9d750d4e63d8e6662c81"
   },
   "sourceCandidateBase": "v0.1.0-dev.36",
   "unpublished": true,
   "scope": "14 real native cases: direct/gateway operations, complete group/ungroup and explicit post-success fault injection; not public fixed installation, all Pathfinder contexts, GUI or creative acceptance",
-  "completedTasks": [
-    "4.4",
-    "4.5"
-  ],
-  "fullAcceptanceTask": "4.6 remains open",
-  "regression": {
-    "tests": 170,
-    "passed": 140,
+  "managedControlEvidence": "docs/evidence/managed-boolean/native-proof.json",
+  "validation": {
+    "sourceTests": 174,
+    "passed": 144,
     "skipped": 30,
-    "failures": 0,
-    "python": "3.13.5",
-    "targetedTransactionTests": 8
+    "executionControlTests": 7,
+    "booleanTransactionTests": 8,
+    "managedNativeCases": 8,
+    "standaloneNativeCases": 14
   },
-  "redBaseline": {
-    "commit": "5f1c7e3735de97d82af75ca9fb573326b501dc19",
-    "tests": 1,
+  "managedRedBaseline": {
+    "commit": "0105d5cbca3675cc5d18486d35b2bd5753e15f6e",
+    "tests": 4,
+    "passed": 3,
     "expectedBehaviorFailures": 1,
-    "failure": "known partial native mutation had no checkpoint restoration or non_atomic_operation_defect report",
-    "nativeWorkflowSha256": "290108267b948b6ddda6f0865e20f1bdfadd7558442fb1d617125a1ed25eb116"
+    "error": "managed_revision_command_unclassified for explicitly authorized structural selection"
   }
 }

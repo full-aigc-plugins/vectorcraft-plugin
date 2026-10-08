@@ -1,6 +1,6 @@
 {
   "schema": "vectorcraft-evidence-index/v1",
-  "identitySha256": "25d137943ca82fd3ea5593d5bf014abc32794bcc8db9bb0aa243e345aa0c7f82",
+  "identitySha256": "5ba84ed90cdbf23053a7ebb3f1a18c65cddc32e07b8cdb79904af6a573aafe80",
   "entries": [
     {
       "path": "docs/evidence/craft-vector37-gateway-export-fixed-first-use-20261008.json",
@@ -141,7 +141,7 @@
     },
     {
       "path": "docs/evidence/vectorcraft-revision-cycle-candidate-20261008.json",
-      "sha256": "7719ed23c54223706f8f935349a3aa7f7e9183598b638266d7016040194ceaca",
+      "sha256": "318a7d9dd0867304f2b97b0d74fdd2631b74dc503ba262fbcf241baef7286e17",
       "level": "native-candidate",
       "status": "PASS",
       "scope": "bounded revision minimum: two actual native color revisions with injected scores; full6.6 and real creative acceptance remain open",
@@ -153,7 +153,7 @@
       "historical": false,
       "dependencies": {
         "src/planning/geometry.ts": "97650dc916111666a73bcfea6ddc797e48b5b9bc2d6b6e54a85f33b1a8766e2d",
-        "skills.lock.json": "a7f279a89c98826f61a6b5004af8b8a717c1d0b3bbc161e4b677e3e771bd5b49",
+        "skills.lock.json": "37cf4e7a514193ff10b1f051915b931874f05a8f693c87e67d904657f040464e",
         "src/cli.ts": "ee1ee1ba45ca4c2e50313b7ac09f20fdd7529e207d4cca0c466c8fca5b74f82a",
         "src/evaluation/revision_cycle.ts": "019a80ddf7ca9fa80737934ad65efb3cf5e66c17b180e25d32091123ac25185f",
         "src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
@@ -166,17 +166,17 @@
         "tests/revision_cycle.test.ts": "f9d47867efb96fa52424c03e893c1e64dca95cffeecad6fe065ab59b634ab96f",
         "tests/controller.test.ts": "db1943dedd63caf3ccd55e88a0002c18c1843669cbc0bed1187c52b1d4139fc5",
         "scripts/acceptance/revision_cycle.ts": "fb13c44b873841570fe4f3e46665da55e4007064260c2498899a5289dfa69c2a",
-        "docs/evidence/release40-regression/node-green.log": "494e049e32ae36723cb9c2ddf14492a14d720de183a74faae661f7582b164f5a",
-        "docs/evidence/release40-regression/python-green.log": "0dd719892ce49b3628c53ff404b318276b64b400df42229ee8e2e9bb1efbcd3a",
-        "docs/evidence/release40-regression/revision-native.log": "8485ef213f22608152486bd727b606f44607db0d11090be09220f11aeb5878bd",
         "docs/evidence/revision-cycle/baseline-controller.test.ts": "db1943dedd63caf3ccd55e88a0002c18c1843669cbc0bed1187c52b1d4139fc5",
         "docs/evidence/revision-cycle/baseline-revision_cycle.test.ts": "1f136acaa92382d1eb3f16a8d8a74113d617a1ed4d7c7312cfb1ce657764ae31",
-        "docs/evidence/revision-cycle/baseline-red.log": "64b5246e46739f4e6bdc40568a027d6bf4a617746f6ea3c2741e27ea6b712d07"
+        "docs/evidence/revision-cycle/baseline-red.log": "64b5246e46739f4e6bdc40568a027d6bf4a617746f6ea3c2741e27ea6b712d07",
+        "docs/evidence/plugin41-regression/node.log": "ca438bc4e752071216cd31df791958f23ed3d752ac0fb4d9d2b228298a338491",
+        "docs/evidence/plugin41-regression/python.log": "fa03dc3cc7aa83942cb6e86f3aff59eb4bd108ec9201b768700254b71b901065",
+        "docs/evidence/plugin41-regression/cycle-native.log": "8485ef213f22608152486bd727b606f44607db0d11090be09220f11aeb5878bd"
       }
     },
     {
       "path": "docs/evidence/vectorcraft-geometry-candidate-20261008.json",
-      "sha256": "458c7e9324f35aed83e2ed7166c5f5c794f92d0ff28569beae1c566eb3f989df",
+      "sha256": "5101571f33a3bb9bb99d39ad7dd9230e1f823a5f07bae74930fde678b1a2a3b3",
       "level": "native-candidate",
       "status": "PASS",
       "scope": "explicit units, offset artboard controls and retained closure failure; full4.3 remains open",
@@ -187,7 +187,7 @@
       ],
       "historical": false,
       "dependencies": {
-        "skills.lock.json": "a7f279a89c98826f61a6b5004af8b8a717c1d0b3bbc161e4b677e3e771bd5b49",
+        "skills.lock.json": "37cf4e7a514193ff10b1f051915b931874f05a8f693c87e67d904657f040464e",
         "src/planning/geometry.ts": "97650dc916111666a73bcfea6ddc797e48b5b9bc2d6b6e54a85f33b1a8766e2d",
         "src/harness/controller.ts": "64def8f9d81aabacf8382ac55b05cc2fbfa81134939216d44d5a3bc89dad248f",
         "src/harness/ledger.ts": "c1aa8d6b7ad7c40d5fc0f1a8d87ddae1df0b29144c904690917e5b79355f660d",
@@ -196,18 +196,19 @@
         "src/strict_json.ts": "69a445339670e53f6a7fcb96770b53b896666dd1e60f114c1751a23981d5b7d0",
         "tests/geometry.test.ts": "02f80267ae9247af6f9f24d32452f180d8739e08972d1380003f358741087625",
         "scripts/acceptance/geometry.ts": "0f987e5c701a0d2af47529788b66f7e0d3de8482897edad8351d0a3b11a692c3",
-        "docs/evidence/release40-regression/node-green.log": "494e049e32ae36723cb9c2ddf14492a14d720de183a74faae661f7582b164f5a",
-        "docs/evidence/release40-regression/python-green.log": "0dd719892ce49b3628c53ff404b318276b64b400df42229ee8e2e9bb1efbcd3a",
         "docs/evidence/release40-regression/geometry-red.log": "14ce9aef0d7b663d80b6277bacefc93565789129eb5ad9d07a97341e0ef645c9",
-        "docs/evidence/release40-regression/baseline-geometry.test.ts": "71403c09ce5c968aa467422198fbabeeb6e97d0b1aecd623cd3e9d28bcdb310c"
+        "docs/evidence/release40-regression/baseline-geometry.test.ts": "71403c09ce5c968aa467422198fbabeeb6e97d0b1aecd623cd3e9d28bcdb310c",
+        "docs/evidence/plugin41-regression/node.log": "ca438bc4e752071216cd31df791958f23ed3d752ac0fb4d9d2b228298a338491",
+        "docs/evidence/plugin41-regression/python.log": "fa03dc3cc7aa83942cb6e86f3aff59eb4bd108ec9201b768700254b71b901065",
+        "docs/evidence/plugin41-regression/geometry-native.log": "105b738f494ca427471226853e12dd3ba3a1d002c4931bc2636d61cfc3940fbe"
       }
     },
     {
       "path": "docs/evidence/vectorcraft-boolean-transactions-source-candidate-20261008.json",
-      "sha256": "76d680fbfb66e72c40f5555b0db3c5db55c14aacb1390a304a15459862e40ead",
+      "sha256": "48a666ac50dbc40ae7b2097e7a2683d070895aaa528c87a8a81e772b928751cd",
       "level": "native-candidate",
       "status": "PASS",
-      "scope": "independent source candidate at recorded commit; not consumed by fixed plugin snapshot; full4.6 remains open",
+      "scope": "source37 candidate at recorded commit is consumed by plugin41; full4.6 remains open",
       "requirement": "VC-DM-002",
       "tasks": [
         "4.4",
@@ -215,8 +216,64 @@
       ],
       "historical": false,
       "dependencies": {
-        "docs/evidence/boolean-transactions/source-proof.json": "972c9e13d5ff877fef5243825e438ac3cd40fbbe463cf7821d2583b2b1507824"
+        "docs/evidence/boolean-transactions/source-proof.json": "08f7294b665cabcdcd28ab232dbd7b01c5644ee58d6c6dde75c7b124f2713ef2"
       }
+    },
+    {
+      "path": "docs/evidence/vectorcraft-managed-boolean-pinned37-20261008.json",
+      "sha256": "601028d9bf7b9cbb8ad1511f8853b2cdfaaa4edf0edb8ba43ae7b4f89f829a61",
+      "level": "native-candidate",
+      "status": "PASS",
+      "scope": "actual supplied pinned source37 in Harness; structure scope checks; not host installation or full4.6",
+      "requirement": "VC-DM-002",
+      "tasks": [],
+      "historical": false,
+      "dependencies": {
+        "skills.lock.json": "37cf4e7a514193ff10b1f051915b931874f05a8f693c87e67d904657f040464e",
+        "scripts/acceptance/managed_boolean.ts": "55fbffdf6d44a8b0b95b9902d7716037980eeaf5c2c437c69a06b740b889be52",
+        "src/harness/controller.ts": "64def8f9d81aabacf8382ac55b05cc2fbfa81134939216d44d5a3bc89dad248f",
+        "src/harness/ledger.ts": "c1aa8d6b7ad7c40d5fc0f1a8d87ddae1df0b29144c904690917e5b79355f660d",
+        "src/harness/process_registry.ts": "c19a3cb5d42cc33620bc5baeff7db71f1c6daa92f046a112951a7f50f7906162",
+        "src/harness/process_runner.py": "7332d0757aa01f03d00697f8eb8d93f849517cab34ea8a1355ba6c9513d5aba2",
+        "src/planning/geometry.ts": "97650dc916111666a73bcfea6ddc797e48b5b9bc2d6b6e54a85f33b1a8766e2d",
+        "src/strict_json.ts": "69a445339670e53f6a7fcb96770b53b896666dd1e60f114c1751a23981d5b7d0",
+        "docs/evidence/plugin41-regression/node.log": "ca438bc4e752071216cd31df791958f23ed3d752ac0fb4d9d2b228298a338491",
+        "docs/evidence/plugin41-regression/python.log": "fa03dc3cc7aa83942cb6e86f3aff59eb4bd108ec9201b768700254b71b901065",
+        "docs/evidence/plugin41-regression/managed-native.log": "5a1ca08727b4b070bdf441b83968982ba3e3bd2b62a44d8e217b1d4578086e03"
+      }
+    },
+    {
+      "path": "docs/evidence/vectorcraft-geometry-before-source37-20261008.json",
+      "sha256": "458c7e9324f35aed83e2ed7166c5f5c794f92d0ff28569beae1c566eb3f989df",
+      "level": "native-candidate",
+      "status": "PASS",
+      "scope": "source36 or earlier independent candidate at original execution identity; not rebound",
+      "requirement": null,
+      "tasks": [],
+      "historical": true,
+      "dependencies": {}
+    },
+    {
+      "path": "docs/evidence/vectorcraft-revision-cycle-before-source37-20261008.json",
+      "sha256": "7719ed23c54223706f8f935349a3aa7f7e9183598b638266d7016040194ceaca",
+      "level": "native-candidate",
+      "status": "PASS",
+      "scope": "source36 or earlier independent candidate at original execution identity; not rebound",
+      "requirement": null,
+      "tasks": [],
+      "historical": true,
+      "dependencies": {}
+    },
+    {
+      "path": "docs/evidence/vectorcraft-boolean-transactions-before-source37-20261008.json",
+      "sha256": "76d680fbfb66e72c40f5555b0db3c5db55c14aacb1390a304a15459862e40ead",
+      "level": "native-candidate",
+      "status": "PASS",
+      "scope": "source36 or earlier independent candidate at original execution identity; not rebound",
+      "requirement": null,
+      "tasks": [],
+      "historical": true,
+      "dependencies": {}
     },
     {
       "path": "docs/evidence/vectorcraft-revision-cycle-before-geometry-20261008.json",

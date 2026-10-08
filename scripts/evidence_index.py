@@ -120,7 +120,13 @@ def build(root=ROOT):
         entries.append(bound_report(root,geometry,'native-candidate','explicit units, offset artboard controls and retained closure failure; full4.3 remains open','VC-DM-001',['4.1','4.2']))
     boolean='docs/evidence/vectorcraft-boolean-transactions-source-candidate-20261008.json'
     if (root/boolean).is_file():
-        entries.append(bound_report(root,boolean,'native-candidate','independent source candidate at recorded commit; not consumed by fixed plugin snapshot; full4.6 remains open','VC-DM-002',['4.4','4.5']))
+        entries.append(bound_report(root,boolean,'native-candidate','source37 candidate at recorded commit is consumed by plugin41; full4.6 remains open','VC-DM-002',['4.4','4.5']))
+    managed='docs/evidence/vectorcraft-managed-boolean-pinned37-20261008.json'
+    if (root/managed).is_file():
+        entries.append(bound_report(root,managed,'native-candidate','actual supplied pinned source37 in Harness; structure scope checks; not host installation or full4.6','VC-DM-002'))
+    for old in ['vectorcraft-geometry-before-source37-20261008.json','vectorcraft-revision-cycle-before-source37-20261008.json','vectorcraft-boolean-transactions-before-source37-20261008.json']:
+        if (root/'docs/evidence'/old).is_file():
+            entries.append(record(root,'docs/evidence/'+old,'native-candidate','PASS',[],'source36 or earlier independent candidate at original execution identity; not rebound',historical=True))
     old_cycle='docs/evidence/vectorcraft-revision-cycle-before-geometry-20261008.json'
     if (root/old_cycle).is_file():
         entries.append(record(root,old_cycle,'native-candidate','PASS',[],'original pre-geometry execution fingerprints preserved; not rebound',historical=True))

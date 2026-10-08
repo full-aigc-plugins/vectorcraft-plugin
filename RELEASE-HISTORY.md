@@ -1,5 +1,10 @@
 # Version-bound release records
 
+## dev.41 (2026-10-08)
+
+Source37 is pinned by plugin41. Explicit structure authorization, complete participant subtree checks and actual selection/result verification enable managed boolean/group revisions. New supplied-snapshot proofs cover8 structural,3 geometry and2 bounded color revision cases. Local36 Node and38 Python tests pass. Full4.6, host/model/GUI and creative acceptance remain open.
+
+
 ## dev.40 (2026-10-08)
 
 VectorCraft development prerelease dev.40 includes explicit native geometry contracts and durable bounded revision cycles. Pinned skill source stays dev.36. Local36 Node and38 Python tests pass, alongside3 native geometry cases and2 native revision regressions with injected scoring. OpenSpec remains89 checked/38 open. Full geometry, revision, host, model, GUI and creative acceptance remain open; marketplace eligibility remains false.

@@ -10,7 +10,7 @@
 
 Logo、图标与品牌图形需求进入，交付 `.vectorcraft` 及适用的 SVG、PDF、PNG。
 
-当前插件：`0.1.0-dev.40`；技能源：`0.1.0-dev.36`；13 个独立技能。
+当前插件：`0.1.0-dev.41`；技能源：`0.1.0-dev.37`；13 个独立技能。
 
 已验证首次使用平台：macOS arm64、Python 3.11+。固定运行时安装在用户数据目录，技能文件保留在宿主加载目录。当前为开发版本；完整首版验收及通用 Skills CLI 实际安装仍未完成。
 
@@ -105,9 +105,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.40 |
+| Metadata version | 0.1.0-dev.41 |
 | Stage | implementation-in-progress |
-| Skills source | vectorcraft-skills / v0.1.0-dev.36 |
+| Skills source | vectorcraft-skills / v0.1.0-dev.37 |
 | Execution | 上游 CLI；ArtCraft 使用子适配器 |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |
@@ -326,3 +326,7 @@ Codex 0.153.4 在全新隔离配置中安装并发现13技能。13项独立空�
 ### 布尔事务独立源码候选
 
 独立技能源加入保留检查点、实时参与／结果ID与明确部分失败后的恢复，链接素材检查点可随交付迁移。4.4／4.5已完成，完整4.6及固定快照接收仍开放；已发布dev.40／source36保持不变。[架构](docs/VectorCraft-Boolean-Transactions.zh-CN.md)。
+
+### dev.41结构修订开发版
+
+锁定技能源37的布尔检查点与Harness显式structure授权，核对实际选择、参与子树、结果ID及未选模型字段。旧source36和插件40保持不变。完整4.6、宿主／模型／GUI和创作验收继续开放。

@@ -1,0 +1,94 @@
+{
+  "schema": "vectorcraft-geometry-candidate/v1",
+  "result": "PASS",
+  "level": "native-candidate",
+  "platform": "darwin-arm64",
+  "sourceRef": "v0.1.0-dev.36",
+  "sourceCommit": "5f1c7e3735de97d82af75ca9fb573326b501dc19",
+  "skillSha256": "27d28fc73148dbab5569d4be68e7aedcc1379a45c375e5b12caeedf962e87ec3",
+  "cases": [
+    {
+      "name": "Pixels",
+      "report": {
+        "schema": "vectorcraft-geometry-verification/v1",
+        "status": "PASS",
+        "units": "Pixels",
+        "coordinateSpace": "artboard-local",
+        "checkedObjectIds": [
+          2
+        ],
+        "issues": [],
+        "scope": "explicit native JSON geometry only; no preview inference, native reopening or creative acceptance claim",
+        "nativeSha256": "6b327325964b74b7eb69d747b8582d57e40cc4b29e5d70cfdfa02a5b7d3315b7",
+        "projectRevision": "2557d8ae4c12e062ea9c730a4d09f114451039c169221c98a34c6d1502bc69c8",
+        "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+        "contractSha256": "dba268ad322194499982f6ec2123e1fc605e985699a36a39c494809e04070a00"
+      },
+      "geometryReceiptPersisted": true,
+      "sameKeyStable": true,
+      "changedContractRejected": true,
+      "wrongUnitAndClosureRejected": true
+    },
+    {
+      "name": "Points",
+      "report": {
+        "schema": "vectorcraft-geometry-verification/v1",
+        "status": "PASS",
+        "units": "Points",
+        "coordinateSpace": "artboard-local",
+        "checkedObjectIds": [
+          2
+        ],
+        "issues": [],
+        "scope": "explicit native JSON geometry only; no preview inference, native reopening or creative acceptance claim",
+        "nativeSha256": "87c459c84df85854ac572a1c61945c58596491d91d32e7806439b06ff312d246",
+        "projectRevision": "af09fc65b8f8ff76f2585a216406aaef4b2f01650d4385c68faea46a738b13bb",
+        "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+        "contractSha256": "5a13319b90cc92b59c1bf5b8c370f69200ef68438f11ab22fa6af7a4bda9bf49"
+      },
+      "geometryReceiptPersisted": true,
+      "sameKeyStable": true,
+      "changedContractRejected": true,
+      "wrongUnitAndClosureRejected": true
+    },
+    {
+      "name": "closed-mismatch",
+      "expectedFailure": "path_closed_mismatch",
+      "objectId": 2,
+      "projectRevision": "2557d8ae4c12e062ea9c730a4d09f114451039c169221c98a34c6d1502bc69c8",
+      "originalStageRetained": true,
+      "replayRefused": true,
+      "ownedProcessStopped": true
+    }
+  ],
+  "fingerprints": {
+    "skills.lock.json": "a7f279a89c98826f61a6b5004af8b8a717c1d0b3bbc161e4b677e3e771bd5b49",
+    "src/planning/geometry.ts": "97650dc916111666a73bcfea6ddc797e48b5b9bc2d6b6e54a85f33b1a8766e2d",
+    "src/harness/controller.ts": "64def8f9d81aabacf8382ac55b05cc2fbfa81134939216d44d5a3bc89dad248f",
+    "src/harness/ledger.ts": "c1aa8d6b7ad7c40d5fc0f1a8d87ddae1df0b29144c904690917e5b79355f660d",
+    "src/harness/process_registry.ts": "c19a3cb5d42cc33620bc5baeff7db71f1c6daa92f046a112951a7f50f7906162",
+    "src/harness/process_runner.py": "7332d0757aa01f03d00697f8eb8d93f849517cab34ea8a1355ba6c9513d5aba2",
+    "src/strict_json.ts": "69a445339670e53f6a7fcb96770b53b896666dd1e60f114c1751a23981d5b7d0",
+    "tests/geometry.test.ts": "02f80267ae9247af6f9f24d32452f180d8739e08972d1380003f358741087625",
+    "scripts/acceptance/geometry.ts": "0f987e5c701a0d2af47529788b66f7e0d3de8482897edad8351d0a3b11a692c3",
+    "docs/evidence/release40-regression/node-green.log": "494e049e32ae36723cb9c2ddf14492a14d720de183a74faae661f7582b164f5a",
+    "docs/evidence/release40-regression/python-green.log": "0dd719892ce49b3628c53ff404b318276b64b400df42229ee8e2e9bb1efbcd3a",
+    "docs/evidence/release40-regression/geometry-red.log": "14ce9aef0d7b663d80b6277bacefc93565789129eb5ad9d07a97341e0ef645c9",
+    "docs/evidence/release40-regression/baseline-geometry.test.ts": "71403c09ce5c968aa467422198fbabeeb6e97d0b1aecd623cd3e9d28bcdb310c"
+  },
+  "scope": "two real native document units, offset artboard, explicit controls/stroke and a retained real closure failure; full4.3, arbitrary transforms and visual acceptance remain open",
+  "completedTasks": [
+    "4.1",
+    "4.2"
+  ],
+  "regression": {
+    "nodeTests": 36,
+    "nodePassed": 36,
+    "pythonTests": 38,
+    "pythonPassed": 38,
+    "pythonRuntime": "3.13.5",
+    "baselineCommit": "f111c87cb837a53e607a89eb628d1b6aa867bc0c",
+    "baselineFailure": "Missing expected rejection: geometryContract was ignored before implementation",
+    "baselineControllerSha256": "5fba06afff29c87ef529a009df515608b273f79d626c9af3caee206d54946c9f"
+  }
+}

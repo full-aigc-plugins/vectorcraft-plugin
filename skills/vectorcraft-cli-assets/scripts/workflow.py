@@ -252,9 +252,12 @@ def execute(plan, output, runtime_home=None, source=None, control=None):
             managed_command = params.get('command') if operation['command']=='native.command' else operation['command']
             managed_params = params.get('params',{}) if operation['command']=='native.command' else params
             managed_checkpoint = None
+            managed_selection = None
             if control and source_project:
                 managed_before = command('document.json', {}, save=False)
-                control.authorize_operation(managed_command,managed_params,managed_before)
+                if managed_command in control.structural_module().COMMANDS:
+                    managed_selection = command('document.inspect', {}, save=False).get('selection')
+                control.authorize_operation(managed_command,managed_params,managed_before,managed_selection)
                 managed_checkpoint = stage / ('managed-checkpoint-' + str(len(receipts)) + '.vectorcraft')
                 command('document.save', {'path':str(managed_checkpoint)}, save=False)
                 managed_checkpoints.append(managed_checkpoint)
@@ -302,9 +305,14 @@ def execute(plan, output, runtime_home=None, source=None, control=None):
                 assets[params['asset']] = new
                 del assets[params['replacement']]
             else:
-                value = command(operation['command'], params)
+                guard = native_module().commands.load('boolean_transactions')
+                value = guard.execute(session, operation['command'], params,
+                                      lambda: command(operation['command'], params), stage)
             if managed_checkpoint:
-                control.verify_revision(managed_before,command('document.json',{},save=False),managed_command,managed_params)
+                after_selection = (command('document.inspect', {}, save=False).get('selection')
+                                   if managed_command in ('object.ungroup','select.set') else None)
+                control.verify_revision(managed_before,command('document.json',{},save=False),managed_command,managed_params,
+                                        result=value,selection=managed_selection,after_selection=after_selection)
             if brand_params is not None:
                 check = brand_module().inspect_update(brand_before, command('document.json', {}),
                     brand_params.get('name'), brand_params.get('color', brand_params.get('paint', {}).get('color')))
@@ -409,6 +417,9 @@ def execute(plan, output, runtime_home=None, source=None, control=None):
                 (Path(temporary) / check['checkpoint']).unlink()
             (stage / 'brand-dependencies.json').write_text(json.dumps({'schema': 'vectorcraft-brand-dependencies/v1',
                 'checks': brand_checks}, ensure_ascii=False, indent=2) + '\n')
+        native_module().commands.load('boolean_transactions').collect_checkpoints(
+            Path(temporary), stage, lambda: (session_module.Session([cli, 'mcp', '--headless'], control=control)
+                                            if control else session_module.Session([cli, 'mcp', '--headless'])))
         for checkpoint in managed_checkpoints:
             checkpoint.unlink()
         saved_plan = {**plan, **({'assets': {name: {'path': entry['path'], 'sha256': entry['sha256']} for name, entry in assets.items()}} if assets else {})}

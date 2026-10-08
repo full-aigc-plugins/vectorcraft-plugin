@@ -78,14 +78,38 @@ class ExecutionControl:
         spec=importlib.util.spec_from_file_location('craft_control_brand',Path(__file__).with_name('brand_variants.py'))
         module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);return module
 
+    def structural_module(self):
+        spec=importlib.util.spec_from_file_location('craft_control_structure',Path(__file__).with_name('boolean_transactions.py'))
+        module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);return module
+
+    def structural_authorization(self,command,params,before,selection=None):
+        """结构修改须显式授权，选择整个子树时每个参与对象均须在范围内。"""
+        auth=self.profile['authorization'];guard=self.structural_module();objects=guard.nodes(before)
+        if not isinstance(params,dict):raise RuntimeError('revision_outside_authorization')
+        ids=params.get('ids') if command=='select.set' else selection
+        if (('structure' not in auth['fields']) or not isinstance(params,dict)
+                or (set(params)!={'ids'} if command=='select.set' else bool(params))
+                or not isinstance(ids,list) or not ids
+                or any(type(i) is not int or i not in objects or i not in auth['objects'] for i in ids)
+                or len(set(ids))!=len(ids)):
+            raise RuntimeError('revision_outside_authorization')
+        if command!='select.set':
+            affected=guard.nodes({'layers':[objects[i] for i in ids]})
+            if any(i not in auth['objects'] for i in affected):
+                raise RuntimeError('revision_outside_authorization')
+        return ids
+
     def allowed_field(self,path):
         return any(path==field or path.startswith(field+'.') for field in self.profile['authorization']['fields'])
 
-    def authorize_operation(self,command,params,before):
+    def authorize_operation(self,command,params,before,selection=None):
         """局部修订只接受已分类操作，并按真实对象与全局色板消费者核对授权。"""
         self.check();auth=self.profile.get('authorization')
         if not isinstance(auth,dict) or not isinstance(auth.get('objects'),list) or not isinstance(auth.get('fields'),list):
             raise RuntimeError('managed_revision_authorization_required')
+        if command=='select.set' or command in self.structural_module().COMMANDS:
+            self.structural_authorization(command,params,before,selection)
+            return
         brand=self.brand_module();objects=brand.snapshot(before)
         if command=='swatch.edit':
             if set(params)-{'name','color'} or not isinstance(params.get('name'),str) or 'color' not in params:
@@ -101,8 +125,22 @@ class ExecutionControl:
                 raise RuntimeError('revision_outside_authorization')
         else:raise RuntimeError('managed_revision_command_unclassified')
 
-    def verify_revision(self,before,after,command,params):
+    def verify_revision(self,before,after,command,params,result=None,selection=None,after_selection=None):
         """修改后逐字段比较；对象顺序、非目标对象与文档属性不能被评分豁免。"""
+        guard=self.structural_module()
+        if command=='select.set' or command in guard.COMMANDS:
+            self.check();ids=self.structural_authorization(command,params,before,selection)
+            if command=='select.set':
+                if guard.normalized(before)!=guard.normalized(after):
+                    raise RuntimeError('revision_selection_document_violation')
+                if (not isinstance(after_selection,list) or any(type(i) is not int for i in after_selection)
+                        or len(set(after_selection))!=len(after_selection) or set(after_selection)!=set(ids)):
+                    raise RuntimeError('revision_selection_identity_mismatch')
+                result_ids=ids
+            else:
+                result_ids=guard.verify_result(before,after,command,ids,result,after_selection)
+            self.emit('revision_verified',command=command,objectIds=ids,resultIds=result_ids,fields=['structure'])
+            return
         brand=self.brand_module();old,new=brand.snapshot(before),brand.snapshot(after)
         if old.keys()!=new.keys() or [o['id'] for o in before['layers']]!=[o['id'] for o in after['layers']]:
             raise RuntimeError('revision_structure_violation')

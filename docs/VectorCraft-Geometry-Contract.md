@@ -17,4 +17,4 @@ flowchart LR
 
 Unit or closure failures report actual object IDs. Post-execution failure retains the original stage and refuses automatic replay; the existing recovery mechanism must reconcile it. Requests without a contract preserve existing behavior.
 
-Seven targeted tests and three real native cases cover Pixels/Points, offset artboards, curved controls and retained closure failure. See [candidate evidence](evidence/vectorcraft-geometry-candidate-20261008.json). Arbitrary transforms, native reopening, GUI and real creative acceptance remain unqualified. Geometry and revision use pinned source dev.36 without changing independent skill snapshots.
+Seven targeted tests and three real native cases cover Pixels/Points, offset artboards, curved controls and retained closure failure. See [candidate evidence](evidence/vectorcraft-geometry-candidate-20261008.json). Arbitrary transforms, native reopening, GUI and real creative acceptance remain unqualified. Geometry and revision use pinned source dev.37 without changing independent skill snapshots.

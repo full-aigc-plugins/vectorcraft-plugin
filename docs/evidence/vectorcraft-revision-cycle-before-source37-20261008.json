@@ -1,0 +1,93 @@
+{
+  "schema": "vectorcraft-revision-cycle-candidate/v1",
+  "result": "PASS",
+  "level": "native-candidate",
+  "platform": "darwin-arm64",
+  "skillSha256": "27d28fc73148dbab5569d4be68e7aedcc1379a45c375e5b12caeedf962e87ec3",
+  "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+  "cases": [
+    {
+      "reason": "stagnation",
+      "sourceProjectRevision": "c3fab1c8567336dd3f335f0e43eeb42620b50d8ba2531f5dad12c979801e3884",
+      "outputProjectRevision": "673185397546ffeb8b28820976fe23f6dc2300ef22986e2d94f712e832623e19",
+      "bestProjectRevision": "c3fab1c8567336dd3f335f0e43eeb42620b50d8ba2531f5dad12c979801e3884",
+      "bestScore": 2,
+      "nativeExecution": "awaiting_review",
+      "sourcePreserved": true,
+      "technicalStatus": "PASS",
+      "decodedExports": 9,
+      "sharedAttempts": 4,
+      "restartVerified": true,
+      "legacyBypassRefused": true,
+      "cliBestVerified": true,
+      "engineeringStatus": "NOT_RUN",
+      "creativeAssessment": "fixture only; NOT_RUN",
+      "acceptanceStatus": "pending"
+    },
+    {
+      "reason": "round_limit",
+      "sourceProjectRevision": "c3fab1c8567336dd3f335f0e43eeb42620b50d8ba2531f5dad12c979801e3884",
+      "outputProjectRevision": "edf184f7fecfc7820803925012b36ecbbef87738bdbac0419c2d73866e6262b2",
+      "bestProjectRevision": "edf184f7fecfc7820803925012b36ecbbef87738bdbac0419c2d73866e6262b2",
+      "bestScore": 3,
+      "nativeExecution": "awaiting_review",
+      "sourcePreserved": true,
+      "technicalStatus": "PASS",
+      "decodedExports": 9,
+      "sharedAttempts": 5,
+      "restartVerified": true,
+      "legacyBypassRefused": true,
+      "cliBestVerified": true,
+      "engineeringStatus": "NOT_RUN",
+      "creativeAssessment": "fixture only; NOT_RUN",
+      "acceptanceStatus": "pending"
+    }
+  ],
+  "fingerprints": {
+    "src/planning/geometry.ts": "97650dc916111666a73bcfea6ddc797e48b5b9bc2d6b6e54a85f33b1a8766e2d",
+    "skills.lock.json": "a7f279a89c98826f61a6b5004af8b8a717c1d0b3bbc161e4b677e3e771bd5b49",
+    "src/cli.ts": "ee1ee1ba45ca4c2e50313b7ac09f20fdd7529e207d4cca0c466c8fca5b74f82a",
+    "src/evaluation/revision_cycle.ts": "019a80ddf7ca9fa80737934ad65efb3cf5e66c17b180e25d32091123ac25185f",
+    "src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
+    "src/evaluation/technical_review.ts": "59eb77085bde9573e049701748ed7b508c507386a3f7686ebcc75384666e43a3",
+    "src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
+    "src/harness/controller.ts": "64def8f9d81aabacf8382ac55b05cc2fbfa81134939216d44d5a3bc89dad248f",
+    "src/harness/ledger.ts": "c1aa8d6b7ad7c40d5fc0f1a8d87ddae1df0b29144c904690917e5b79355f660d",
+    "src/harness/process_registry.ts": "c19a3cb5d42cc33620bc5baeff7db71f1c6daa92f046a112951a7f50f7906162",
+    "src/harness/process_runner.py": "7332d0757aa01f03d00697f8eb8d93f849517cab34ea8a1355ba6c9513d5aba2",
+    "tests/revision_cycle.test.ts": "f9d47867efb96fa52424c03e893c1e64dca95cffeecad6fe065ab59b634ab96f",
+    "tests/controller.test.ts": "db1943dedd63caf3ccd55e88a0002c18c1843669cbc0bed1187c52b1d4139fc5",
+    "scripts/acceptance/revision_cycle.ts": "fb13c44b873841570fe4f3e46665da55e4007064260c2498899a5289dfa69c2a",
+    "docs/evidence/release40-regression/node-green.log": "494e049e32ae36723cb9c2ddf14492a14d720de183a74faae661f7582b164f5a",
+    "docs/evidence/release40-regression/python-green.log": "0dd719892ce49b3628c53ff404b318276b64b400df42229ee8e2e9bb1efbcd3a",
+    "docs/evidence/release40-regression/revision-native.log": "8485ef213f22608152486bd727b606f44607db0d11090be09220f11aeb5878bd",
+    "docs/evidence/revision-cycle/baseline-controller.test.ts": "db1943dedd63caf3ccd55e88a0002c18c1843669cbc0bed1187c52b1d4139fc5",
+    "docs/evidence/revision-cycle/baseline-revision_cycle.test.ts": "1f136acaa92382d1eb3f16a8d8a74113d617a1ed4d7c7312cfb1ce657764ae31",
+    "docs/evidence/revision-cycle/baseline-red.log": "64b5246e46739f4e6bdc40568a027d6bf4a617746f6ea3c2741e27ea6b712d07"
+  },
+  "scope": "two actual managed native color revisions and current decoder checks; source preserved; fixture scoring; full6.6, real creative acceptance, other revision families and model routing remain open",
+  "completedTasks": [
+    "6.4",
+    "6.5"
+  ],
+  "releaseVersion": "0.1.0-dev.40",
+  "regression": {
+    "nodeTests": 36,
+    "nodePassed": 36,
+    "pythonTests": 38,
+    "pythonPassed": 38,
+    "pythonRuntime": "3.13.5",
+    "baselineCommit": "a8dcece90eb8e503b048356187251867437a372c",
+    "baselineReplay": {
+      "tests": 3,
+      "expectedBehaviorFailures": 2,
+      "passed": 1,
+      "replayedAfterFixtureFormatting": true
+    },
+    "scope": "baseline replay exposes cycle bypass and stale-input admission; synthetic state fixtures do not prove native acceptance",
+    "baselineSourceFingerprints": {
+      "src/evaluation/review_store.ts": "85d09a6a5bd7b42a1ca15954cb6bc55a67fa72a9b8439ff83bda2fb3a96ddb16",
+      "src/harness/controller.ts": "c1fc21a4549db0f65235a89b6dc53faaaba55250a2deb83a28552fdfb70fa5d3"
+    }
+  }
+}

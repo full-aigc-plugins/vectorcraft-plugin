@@ -326,8 +326,15 @@ def execute(plan, output, runtime_home=None, mode="headless", connect=None, toke
                     tool, args = step["tool"], params
                 receipt["steps"].append(record)
                 write(output / "journal.json", receipt)
-                result = parse_reply(session.request("tools/call", {"name": tool, "arguments": args}),
-                                     output if "tool" in step else None, index)
+                invoke = lambda: parse_reply(session.request("tools/call", {"name": tool, "arguments": args}),
+                                             output if "tool" in step else None, index)
+                guard = load("boolean_transactions")
+                guarded_command = step.get("command")
+                guarded_params = params
+                if tool == ROUTES[DOMAIN][1] and isinstance(args, dict):
+                    guarded_command = args.get(ROUTES[DOMAIN][2])
+                    guarded_params = args.get("params", {})
+                result = guard.execute(session, guarded_command, guarded_params, invoke, output)
                 record["result"] = result
                 record["state"] = "succeeded"
                 if "as" in step:

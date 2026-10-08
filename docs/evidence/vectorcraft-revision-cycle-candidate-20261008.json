@@ -3,13 +3,13 @@
   "result": "PASS",
   "level": "native-candidate",
   "platform": "darwin-arm64",
-  "skillSha256": "27d28fc73148dbab5569d4be68e7aedcc1379a45c375e5b12caeedf962e87ec3",
+  "skillSha256": "ed67eeb2fa57c957ecb7075a7da70a3227413dcc85baf589552bdc2efb685db8",
   "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
   "cases": [
     {
       "reason": "stagnation",
       "sourceProjectRevision": "c3fab1c8567336dd3f335f0e43eeb42620b50d8ba2531f5dad12c979801e3884",
-      "outputProjectRevision": "673185397546ffeb8b28820976fe23f6dc2300ef22986e2d94f712e832623e19",
+      "outputProjectRevision": "e68c73bdee238f18c552d12c0e8eb5edc7e7b677aca025b17523f0e760cc63cc",
       "bestProjectRevision": "c3fab1c8567336dd3f335f0e43eeb42620b50d8ba2531f5dad12c979801e3884",
       "bestScore": 2,
       "nativeExecution": "awaiting_review",
@@ -27,8 +27,8 @@
     {
       "reason": "round_limit",
       "sourceProjectRevision": "c3fab1c8567336dd3f335f0e43eeb42620b50d8ba2531f5dad12c979801e3884",
-      "outputProjectRevision": "edf184f7fecfc7820803925012b36ecbbef87738bdbac0419c2d73866e6262b2",
-      "bestProjectRevision": "edf184f7fecfc7820803925012b36ecbbef87738bdbac0419c2d73866e6262b2",
+      "outputProjectRevision": "c874809e63d2a361c20a35e3282a413d09082e1bcca44502cdc6dae727301f95",
+      "bestProjectRevision": "c874809e63d2a361c20a35e3282a413d09082e1bcca44502cdc6dae727301f95",
       "bestScore": 3,
       "nativeExecution": "awaiting_review",
       "sourcePreserved": true,
@@ -45,7 +45,7 @@
   ],
   "fingerprints": {
     "src/planning/geometry.ts": "97650dc916111666a73bcfea6ddc797e48b5b9bc2d6b6e54a85f33b1a8766e2d",
-    "skills.lock.json": "a7f279a89c98826f61a6b5004af8b8a717c1d0b3bbc161e4b677e3e771bd5b49",
+    "skills.lock.json": "37cf4e7a514193ff10b1f051915b931874f05a8f693c87e67d904657f040464e",
     "src/cli.ts": "ee1ee1ba45ca4c2e50313b7ac09f20fdd7529e207d4cca0c466c8fca5b74f82a",
     "src/evaluation/revision_cycle.ts": "019a80ddf7ca9fa80737934ad65efb3cf5e66c17b180e25d32091123ac25185f",
     "src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
@@ -58,19 +58,15 @@
     "tests/revision_cycle.test.ts": "f9d47867efb96fa52424c03e893c1e64dca95cffeecad6fe065ab59b634ab96f",
     "tests/controller.test.ts": "db1943dedd63caf3ccd55e88a0002c18c1843669cbc0bed1187c52b1d4139fc5",
     "scripts/acceptance/revision_cycle.ts": "fb13c44b873841570fe4f3e46665da55e4007064260c2498899a5289dfa69c2a",
-    "docs/evidence/release40-regression/node-green.log": "494e049e32ae36723cb9c2ddf14492a14d720de183a74faae661f7582b164f5a",
-    "docs/evidence/release40-regression/python-green.log": "0dd719892ce49b3628c53ff404b318276b64b400df42229ee8e2e9bb1efbcd3a",
-    "docs/evidence/release40-regression/revision-native.log": "8485ef213f22608152486bd727b606f44607db0d11090be09220f11aeb5878bd",
     "docs/evidence/revision-cycle/baseline-controller.test.ts": "db1943dedd63caf3ccd55e88a0002c18c1843669cbc0bed1187c52b1d4139fc5",
     "docs/evidence/revision-cycle/baseline-revision_cycle.test.ts": "1f136acaa92382d1eb3f16a8d8a74113d617a1ed4d7c7312cfb1ce657764ae31",
-    "docs/evidence/revision-cycle/baseline-red.log": "64b5246e46739f4e6bdc40568a027d6bf4a617746f6ea3c2741e27ea6b712d07"
+    "docs/evidence/revision-cycle/baseline-red.log": "64b5246e46739f4e6bdc40568a027d6bf4a617746f6ea3c2741e27ea6b712d07",
+    "docs/evidence/plugin41-regression/node.log": "ca438bc4e752071216cd31df791958f23ed3d752ac0fb4d9d2b228298a338491",
+    "docs/evidence/plugin41-regression/python.log": "fa03dc3cc7aa83942cb6e86f3aff59eb4bd108ec9201b768700254b71b901065",
+    "docs/evidence/plugin41-regression/cycle-native.log": "8485ef213f22608152486bd727b606f44607db0d11090be09220f11aeb5878bd"
   },
   "scope": "two actual managed native color revisions and current decoder checks; source preserved; fixture scoring; full6.6, real creative acceptance, other revision families and model routing remain open",
-  "completedTasks": [
-    "6.4",
-    "6.5"
-  ],
-  "releaseVersion": "0.1.0-dev.40",
+  "releaseVersion": "0.1.0-dev.41",
   "regression": {
     "nodeTests": 36,
     "nodePassed": 36,
@@ -89,5 +85,9 @@
       "src/evaluation/review_store.ts": "85d09a6a5bd7b42a1ca15954cb6bc55a67fa72a9b8439ff83bda2fb3a96ddb16",
       "src/harness/controller.ts": "c1fc21a4549db0f65235a89b6dc53faaaba55250a2deb83a28552fdfb70fa5d3"
     }
-  }
+  },
+  "completedTasks": [
+    "6.4",
+    "6.5"
+  ]
 }

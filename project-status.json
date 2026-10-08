@@ -193,7 +193,7 @@
   "revisionCycleCandidate": {
     "status": "minimal-implemented",
     "published": true,
-    "fixedPublishedPlugin": "0.1.0-dev.40",
+    "fixedPublishedPlugin": "0.1.0-dev.41",
     "evidence": "docs/evidence/vectorcraft-revision-cycle-candidate-20261008.json",
     "fullBoundaryAcceptance": "NOT_RUN",
     "realCreativeAssessment": "NOT_RUN",
@@ -207,9 +207,9 @@
   },
   "booleanTransactionCandidate": {
     "status": "minimal-implemented-in-independent-source",
-    "sourceCommit": "0105d5cbca3675cc5d18486d35b2bd5753e15f6e",
-    "published": false,
-    "consumedByFixedPlugin": false,
+    "sourceCommit": "2b75ad104b47fdb8fdad24fd90635ed9512fd4f6",
+    "published": true,
+    "consumedByFixedPlugin": true,
     "evidence": "docs/evidence/vectorcraft-boolean-transactions-source-candidate-20261008.json",
     "fullBoundaryAcceptance": "NOT_RUN",
     "fullV1": "incomplete"

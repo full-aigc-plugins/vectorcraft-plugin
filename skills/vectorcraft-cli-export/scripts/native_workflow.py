@@ -23,7 +23,7 @@ def validate(params):
         raise ValueError('invalid_native_parameters') from None
 
 
-def execute(session, params, state, receipts, stage):
+def _execute(session, params, state, receipts, stage):
     validate(params)
     identifier = params['command']
     rows = commands.runtime_rows(session)
@@ -40,3 +40,10 @@ def execute(session, params, state, receipts, stage):
     state['lastAttempt']['phase'] = 'reply_received'
     receipts.append({'tool': tool, 'arguments': arguments, 'command': identifier, 'params': params['params'], 'nativeCommand': identifier, 'result': result})
     return result
+
+
+def execute(session, params, state, receipts, stage):
+    validate(params)
+    guard = commands.load('boolean_transactions')
+    return guard.execute(session, params['command'], params['params'],
+                         lambda: _execute(session, params, state, receipts, stage), stage)
