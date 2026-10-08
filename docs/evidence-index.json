@@ -2889,6 +2889,38 @@
         "docs/evidence/vc-qa-001/native-fixed61.json": "034a862e9057f2cefac128d946874327d29472721c910532dda2d6428d6b0085",
         "openspec/changes/establish-v1-plugin/specs/quality-review/spec.md": "60b8491854042fc69fe12898fefb57a85731ea7c23f264190b7fdf764fb32c54"
       }
+    },
+    {
+      "path": "docs/evidence/vectorcraft-revision-limits-fixed62-20261009.json",
+      "sha256": "9031e47c07e55a5c79f43c40be313b3931e1b348bc7071aab8cb7de387e61d56",
+      "level": "fixed-install",
+      "status": "PASS",
+      "scope": "Public62/source43 three native revisions: small improvement, lower score and round limit; owned signed desktop mutation rejects stale source before effects; complete6.6 remains open",
+      "requirement": "VC-QA-002",
+      "tasks": [],
+      "historical": false,
+      "dependencies": {
+        "docs/evidence/vc-qa-002/limits-small-improvement-fixed62.json": "a31969babd2f89f2afc40724c543e6a9bfaeec17b4ea957b5f586170e3a0d1d2",
+        "docs/evidence/vc-qa-002/limits-lower-score-fixed62.json": "0f0600355ea9c96aef2dd53af1a253383daa005b33ec92ee76076a66069dec65",
+        "docs/evidence/vc-qa-002/limits-round-limit-fixed62.json": "ffbf0ede6e017a6bbeebce50d48d03a200eda372521c578b38d67e4d9140db36",
+        "docs/evidence/vc-qa-002/stale-gui-fixed62.json": "be7481eeebcdc589919a239d7f3217699e30f02e79859fa1855495be660a82cf",
+        "docs/evidence/vc-qa-002/stale-gui-snapshots-fixed62.json": "df7e077cd296aa32c1f5ae4661aadcf77a14a663fec0e4217218249dd028020e",
+        "scripts/qa/revision_limits.ts": "3d308642d3a672566a0ac48c3d46c22597b97c0d6910fe9f844ee2c32cfd9050",
+        "scripts/qa/revision_stale_gui.ts": "d8bf67d376d68afcb2fd4537e3c6d5099979f537a8ba89f976455d5e82628d49",
+        "scripts/qa/revision_gui_edit.py": "1443f45680de566e1fb5406526d3a16b7c16f88bb44d4b7892efa56a7bc91110",
+        "plugin.json": "6872798261b7181e8385227de055beac917ec275ce6dce0550037d8c68112941",
+        "skills.lock.json": "46255b049f5e3d14b45ca9fecbaf037cd55b1e8b8bb447d407cb16c55eb3758c",
+        "src/evaluation/revision_cycle.ts": "a44508a02bc9f57cf5d0ef11a5e755cfd0950a2d890232aca05ee19c1abddc75",
+        "src/evaluation/technical_review.ts": "503b8f9d8b3f62965eaf5237361bda2a0c7a406ab1768dc77be2ea182fe64f8d",
+        "src/evaluation/review_store.ts": "615b436f7d60450f8913d7fb2224ebddc68f8679699b4a7ae40ba7499081ead4",
+        "src/harness/controller.ts": "1dfbd182d7228eb20c21dd8f70a85c24c75a4b22fcf9a1f11d5b19f8eea7a8f5",
+        "openspec/changes/establish-v1-plugin/specs/quality-review/spec.md": "60b8491854042fc69fe12898fefb57a85731ea7c23f264190b7fdf764fb32c54",
+        "docs/evidence/vc-qa-002/host-fixed62.json": "511c30b22d900e04f8452f2077f2ef6e2d719484f49ce93b5f75ffdb47f84fcd",
+        "scripts/verify_revision_limits_evidence.py": "59918b00ba26c3273625caca0e89e38a0325e5e43698fa8de84afdf4fa61deba",
+        "tests/test_revision_limits_evidence.py": "2d4dee52e31df13b8a0537830ce54084268788896deaa1ee3deb247075d2e05b",
+        "docs/evidence/vc-qa-002/integrity-limits-fixed62.json": "a20b30c15c84783ce1974b7eeb0e38cd1fc1e52510df983d3a44ca69b65b5d9d",
+        "docs/evidence/vc-qa-002/limits-python114.log.txt": "7424914fefc943e45990b61a74aac49c80a9554037dba60626f478587d4635b5"
+      }
     }
   ],
   "commandAcceptance": "Use version-bound command catalog executionAcceptance; directory discovery never promotes NOT_RUN",

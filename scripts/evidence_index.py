@@ -277,6 +277,9 @@ def build(root=ROOT):
     revision_budget_fixed='docs/evidence/vectorcraft-revision-budget-fixed62-20261009.json'
     if (root/revision_budget_fixed).is_file():
         entries.append(bound_report(root,revision_budget_fixed,'fixed-install','Public62/source43 actual installed native budget subset:readonly higher-score best retained within four attempts;13 skills unchanged;complete6.6 remains open','VC-QA-002'))
+    revision_limits='docs/evidence/vectorcraft-revision-limits-fixed62-20261009.json'
+    if (root/revision_limits).is_file():
+        entries.append(bound_report(root,revision_limits,'fixed-install','Public62/source43 three native revisions: small improvement, lower score and round limit; owned signed desktop mutation rejects stale source before effects; complete6.6 remains open','VC-QA-002'))
     # 明确归档变更前执行字节；保留报告原摘要，不能把旧运行重绑定到新实现。
     for entry in entries:
         archived={}
