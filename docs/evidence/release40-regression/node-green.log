@@ -1,0 +1,48 @@
+
+> test
+> node --test tests/*.test.ts
+
+✔ controller binds a supplied standalone snapshot, records intent and verifies actual files (395.11825ms)
+✔ changing a bound brief during execution stops the owned group and retains the unresolved task (489.363292ms)
+✔ preview pixel geometry and unspecified units are refused before effects (8.403375ms)
+✔ artboard-local controls are verified against native coordinates without previews (0.827166ms)
+✔ closure and unit mismatches report real object IDs (0.392333ms)
+✔ point, handle and stroke drift cannot be masked by a matching anchor count (0.249958ms)
+✔ duplicate binding aliases and missing actual IDs never become successful geometry (0.584959ms)
+✔ ambiguous boards and unknown inherited transformations are refused (0.555375ms)
+✔ nonfinite controls, duplicate targets and relaxed tolerances fail contract validation (0.759791ms)
+✔ single writer keys the source resource, not output path; epochs fence old writers (30.735041ms)
+✔ idempotency binds input, authorization and runtime; budget and cancellation persist (7.201959ms)
+✔ single-round review binds fresh source, candidate, target and rubric and rejects duplicates (29.893459ms)
+✔ strict review JSON rejects duplicate keys, overflow, malformed values and accepts business error (0.656958ms)
+✔ revision proposals require actual assessed fields and preserve authorization without claiming independence (12.509125ms)
+✔ child tasks share one durable budget and late cancellation receipts are quarantined (6.54025ms)
+✔ review request rejects a claimed revision that differs from actual native bytes (10.442625ms)
+✔ review binds exchange loss and persists rejection reasons across restart (30.789666ms)
+✔ pending reviews survive restart and any bound source, candidate or rubric replacement invalidates acceptance (37.860709ms)
+✔ review target and authorization schemas reject undeclared target keys and invalid scopes (31.458042ms)
+✔ durable ownership survives registry restart and stops a TERM-ignoring descendant (558.294833ms)
+✔ a forged root identity never authorizes signalling a live group (190.712125ms)
+✔ settling a verified interruption fences the previous epoch and never claims delivery (12.861916ms)
+✔ new or changed original files after inspection keep writer occupation (19.309375ms)
+✔ a review assigned to a durable bounded cycle cannot bypass it through legacy revision (27.781291ms)
+✔ bounded cycles require checked evidence and immutable valid policy (54.756208ms)
+✔ round reservations are idempotent, cannot overlap, and preserve shared budget across restart (54.087625ms)
+✔ stagnation stops the cycle and retains a hash-verifiable best candidate (112.136666ms)
+✔ an improving last round still stops at the hard limit and retains the new best (92.063666ms)
+✔ exhausted shared budget stops durably and cannot be revived by restoring the counter (60.32775ms)
+✔ source edits and duplicate field targets cannot issue a revision (44.047625ms)
+✔ changed goals stop the cycle while its earlier best remains verifiable (48.705917ms)
+✔ runtime drift is rejected before execution intent or another shared attempt (48.145625ms)
+✔ checked requests use actual decode failures, persist evidence, and cannot be visually promoted (268.488ms)
+✔ unsupported decoding stays pending and all delivered files remain bound (231.993625ms)
+✔ checked evidence cannot be injected through the legacy JSON request entry (4.191708ms)
+✔ readonly decoder cancellation consumes its shared attempt and does not replay after restart (832.567875ms)
+ℹ tests 36
+ℹ suites 0
+ℹ pass 36
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1496.2995

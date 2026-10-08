@@ -1,0 +1,26 @@
+✖ preview pixel geometry and unspecified units are refused before effects (236.197042ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 315.044125
+
+✖ failing tests:
+
+test at tests/geometry.test.ts:18:1
+✖ preview pixel geometry and unspecified units are refused before effects (236.197042ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async TestContext.<anonymous> (file://<PLUGIN_ROOT>/tests/geometry.test.ts:20:3)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /invalid_geometry_contract/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
