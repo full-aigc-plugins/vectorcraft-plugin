@@ -1,5 +1,7 @@
 # VectorCraft Agent Plugin
 
+Four-domain RT-001 runtime source/integrity acceptance now covers every current scenario; existing pinned skill bytes remain unchanged. Runtime upgrades and fullV1 remain open. [Acceptance architecture](docs/Craft-Fixed-Runtime-Integrity-Architecture.md).
+
 Create Logo, icon and brand assets as `.vectorcraft` with applicable SVG, PDF and PNG exports.
 
 Current plugin: `0.1.0-dev.35`; skill source: `0.1.0-dev.31`; 13 independent skills.

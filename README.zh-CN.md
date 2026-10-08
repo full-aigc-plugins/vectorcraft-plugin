@@ -1,5 +1,7 @@
 # VectorCraft Agent Plugin
 
+四领域RT-001运行时来源与完整性已完成当前全部场景验收，固定技能字节保持不变；运行时升级与完整首版仍开放。[验收架构](docs/Craft-Fixed-Runtime-Integrity-Architecture.zh_CN.md)。
+
 Logo、图标与品牌图形需求进入，交付 `.vectorcraft` 及适用的 SVG、PDF、PNG。
 
 当前插件：`0.1.0-dev.35`；技能源：`0.1.0-dev.31`；13 个独立技能。
