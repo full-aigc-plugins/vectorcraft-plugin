@@ -2483,6 +2483,32 @@
       }
     },
     {
+      "path": "docs/evidence/vectorcraft-exchange-qualified55-20261009.json",
+      "sha256": "65b6992fa3ccb37b9f0f6c5d7f5afa418d1db0fb0f4285fa7542a57582343eb3",
+      "level": "fixed-install",
+      "status": "PASS",
+      "scope": "Both current VC-DM-005 scenarios; native source independently reopened and edited, automatic freeform SVG fallback, three decodes, seven refusals; macOS arm64 fixed55/source41 only",
+      "requirement": "VC-DM-005",
+      "tasks": [
+        "4.15"
+      ],
+      "historical": false,
+      "dependencies": {
+        "docs/evidence/vc-dm-005/automatic-freeform-driver.py.txt": "2cd1e31f0d84582e12664dd9e77e8e7e4b59ffae8a5b23e350dc15b9c554f43c",
+        "docs/evidence/vc-dm-005/automatic-freeform-fixed55.json": "d3aea87a281f7b4ea324b892d60a458445a5ac0845a6d5980e5d5ca4704859e0",
+        "docs/evidence/vc-dm-005/fixed55-host.json": "b2cf3239db66592d2fa4b43a743b39c77c314478d34532f7a3f3df6ab31a4a4b",
+        "docs/evidence/vc-dm-005/qualified55-scenarios.json": "ddcccea0cd28138c6eec260b8e2fcfbcab2dd01d73a55933b85103c7d2ccb7e6",
+        "openspec/changes/establish-v1-plugin/specs/domain-workflow/spec.md": "2b07f032d8f28b5095839ff94a16ab96fdb4bda40fbb178a6e4fd09c404ba81d",
+        "plugin.json": "8c09f2fc1da8f218e20936dbdb5ddff884e92c985502eb016f32a17b2e20dd84",
+        "scripts/verify_exchange_evidence.py": "5fabc5278e075bdc8f7ee246e80bb0ad0bb29ee4a51dace2bd0ad12b53823f9b",
+        "skills.lock.json": "0035adfa3fc09aae071c37cc03b78e307d9a92f0af947ffa4603a6da2f42cd06",
+        "src/evaluation/delivery_quality.py": "f3bb72202c70a8db138881b2ff89456d66c128103d5ed9a8a2006d876eca75dc",
+        "docs/evidence/vc-dm-005/closure-red.log.txt": "88d4915ae32f3c3d6fe4cac54763b7c559e568785ed5c58510f123f74e181ab1",
+        "docs/evidence/vc-dm-005/closure-green.log.txt": "fd788375b322e44f53e14aa394c5843dc2da589f0a5ba4e15d6eaca9867b0f74",
+        "tests/test_exchange_evidence.py": "839aed1cd32428b4dc37e779eb352f904b54ce3bc92b1eabef203ce0622a3dc7"
+      }
+    },
+    {
       "path": "docs/evidence/vectorcraft-exchange-fixed55-20261009.json",
       "sha256": "0b20b910d82ce2c0f2c000069a165b603d79cdea13ebc39e06afa9d626e10552",
       "level": "fixed-install",

@@ -159,10 +159,10 @@
         "4.15"
       ],
       "owner": "Domain owner",
-      "status": "in-progress",
-      "evidence": "docs/evidence/vectorcraft-exchange-fixed55-20261009.json",
+      "status": "verified",
+      "evidence": "docs/evidence/vectorcraft-exchange-qualified55-20261009.json",
       "candidateEvidence": "docs/evidence/vectorcraft-exchange-candidate55-20261009.json",
-      "scope": "Minimum4.13/4.14 complete;public55/source41 installed-copy three native reopening/nine decode/four explicit disclosure refusals;full4.15 automatic unsupported-effect fallback or refusal and original live-effect project preservation remain open"
+      "scope": "Both current VC-DM-005 scenarios on fixed55/source41 macOS arm64; automatic freeform fallback and original editable project preservation; GUI/model/other platforms/full V1 separate"
     },
     {
       "requirement": "VC-DM-006",

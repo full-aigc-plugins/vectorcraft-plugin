@@ -1,0 +1,31 @@
+{
+  "scenarioContracts": {
+    "VC-DM-005-P": "6c279c3cbac7ea4eab395d1b7dafc59215419fcda6952db1b5fb00e9c95588e6",
+    "VC-DM-005-N": "819613c370425d26bc097e6e516a4a37a480af8a9fcb068db7ac4a724b604be7"
+  },
+  "entries": [
+    {
+      "scenario": "VC-DM-005-P",
+      "report": "docs/evidence/vc-dm-005/automatic-freeform-fixed55.json",
+      "level": "native-fixed-install",
+      "checks": [
+        "independent-native-reopen",
+        "separate-svg-pdf-png-decode",
+        "automatic-freeform-fallback",
+        "source-preserved-and-editable",
+        "bound-operation-and-project-hashes"
+      ]
+    },
+    {
+      "scenario": "VC-DM-005-N",
+      "report": "docs/evidence/vc-dm-005/automatic-freeform-fixed55.json",
+      "level": "native-fixed-install",
+      "checks": [
+        "undisclosed-raster-refused",
+        "lossless-claim-blocked",
+        "bound-loss-report",
+        "wrong-scope-refused"
+      ]
+    }
+  ]
+}

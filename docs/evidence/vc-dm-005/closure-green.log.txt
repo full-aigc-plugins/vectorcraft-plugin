@@ -1,0 +1,11 @@
+test_current_evidence_passes (test_exchange_evidence.ExchangeEvidenceTests.test_current_evidence_passes) ... ok
+test_host_digest_rejected_after_rehash (test_exchange_evidence.ExchangeEvidenceTests.test_host_digest_rejected_after_rehash) ... ok
+test_missing_refusal_rejected_after_rehash (test_exchange_evidence.ExchangeEvidenceTests.test_missing_refusal_rejected_after_rehash) ... ok
+test_missing_scenario_rejected_after_rehash (test_exchange_evidence.ExchangeEvidenceTests.test_missing_scenario_rejected_after_rehash) ... ok
+test_preservation_false_rejected_after_rehash (test_exchange_evidence.ExchangeEvidenceTests.test_preservation_false_rejected_after_rehash) ... ok
+test_unblocked_lossless_claim_rejected_after_rehash (test_exchange_evidence.ExchangeEvidenceTests.test_unblocked_lossless_claim_rejected_after_rehash) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.066s
+
+OK

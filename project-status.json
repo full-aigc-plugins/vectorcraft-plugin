@@ -106,7 +106,8 @@
     "4.11": "docs/evidence/vectorcraft-artboard-mapping-candidate54-20261009.json",
     "4.12": "docs/evidence/vectorcraft-artboards-fixed54-20261009.json",
     "4.13": "docs/evidence/vectorcraft-exchange-candidate55-20261009.json",
-    "4.14": "docs/evidence/vectorcraft-exchange-candidate55-20261009.json"
+    "4.14": "docs/evidence/vectorcraft-exchange-candidate55-20261009.json",
+    "4.15": "docs/evidence/vectorcraft-exchange-qualified55-20261009.json"
   },
   "hostValidationEvidence": "docs/evidence/craft-full-command-fixed-first-use-20261007.json",
   "hostValidationStatus": "fixed-five-plugin58-discovery-and-standalone-desktop-passed",

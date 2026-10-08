@@ -1,0 +1,56 @@
+test_current_evidence_passes (test_exchange_evidence.ExchangeEvidenceTests.test_current_evidence_passes) ... ok
+test_host_digest_rejected_after_rehash (test_exchange_evidence.ExchangeEvidenceTests.test_host_digest_rejected_after_rehash) ... FAIL
+test_missing_refusal_rejected_after_rehash (test_exchange_evidence.ExchangeEvidenceTests.test_missing_refusal_rejected_after_rehash) ... FAIL
+test_missing_scenario_rejected_after_rehash (test_exchange_evidence.ExchangeEvidenceTests.test_missing_scenario_rejected_after_rehash) ... FAIL
+test_preservation_false_rejected_after_rehash (test_exchange_evidence.ExchangeEvidenceTests.test_preservation_false_rejected_after_rehash) ... FAIL
+test_unblocked_lossless_claim_rejected_after_rehash (test_exchange_evidence.ExchangeEvidenceTests.test_unblocked_lossless_claim_rejected_after_rehash) ... FAIL
+
+======================================================================
+FAIL: test_host_digest_rejected_after_rehash (test_exchange_evidence.ExchangeEvidenceTests.test_host_digest_rejected_after_rehash)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "REPO_ROOT/tests/test_exchange_evidence.py", line 42, in test_host_digest_rejected_after_rehash
+    with self.assertRaisesRegex(ValueError,'host_identity'):self.run_verify()
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_missing_refusal_rejected_after_rehash (test_exchange_evidence.ExchangeEvidenceTests.test_missing_refusal_rejected_after_rehash)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "REPO_ROOT/tests/test_exchange_evidence.py", line 36, in test_missing_refusal_rejected_after_rehash
+    with self.assertRaisesRegex(ValueError,'missing_refusal'):self.run_verify()
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_missing_scenario_rejected_after_rehash (test_exchange_evidence.ExchangeEvidenceTests.test_missing_scenario_rejected_after_rehash)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "REPO_ROOT/tests/test_exchange_evidence.py", line 33, in test_missing_scenario_rejected_after_rehash
+    with self.assertRaisesRegex(ValueError,'scenario_coverage'):self.run_verify()
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_preservation_false_rejected_after_rehash (test_exchange_evidence.ExchangeEvidenceTests.test_preservation_false_rejected_after_rehash)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "REPO_ROOT/tests/test_exchange_evidence.py", line 30, in test_preservation_false_rejected_after_rehash
+    with self.assertRaisesRegex(ValueError,'native_preservation'):self.run_verify()
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_unblocked_lossless_claim_rejected_after_rehash (test_exchange_evidence.ExchangeEvidenceTests.test_unblocked_lossless_claim_rejected_after_rehash)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "REPO_ROOT/tests/test_exchange_evidence.py", line 39, in test_unblocked_lossless_claim_rejected_after_rehash
+    with self.assertRaisesRegex(ValueError,'raster_disclosure'):self.run_verify()
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.036s
+
+FAILED (failures=5)
