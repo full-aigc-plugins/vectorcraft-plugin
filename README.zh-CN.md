@@ -1,6 +1,6 @@
 # VectorCraft Agent Plugin
 
-源码候选：公开色板工作流新增依赖守卫，拒绝非消费者误改，失败保留修改前原生检查点与错误依赖边。已同步13技能；固定发行、安装副本和Art领域包验收仍开放。[守卫架构](docs/VectorCraft-Brand-Dependency-Guard-Architecture.zh_CN.md)。
+插件36／技能源32包含依赖守卫：公开色板工作流新增依赖守卫，拒绝非消费者误改，失败保留修改前原生检查点与错误依赖边。已同步13技能；固定发行、安装副本和Art领域包验收仍开放。[守卫架构](docs/VectorCraft-Brand-Dependency-Guard-Architecture.zh_CN.md)。
 
 固定安装外观技能新增“同色但未绑定 token”验收：仅已绑定消费者更新，非消费者原生属性、无关 SVG／PNG／PDF 与原交付保持不变。本轮复用运行时，不关闭新增 V1 任务。[验收架构](docs/VectorCraft-Same-Color-Token-Architecture.zh_CN.md)。
 
@@ -8,7 +8,7 @@
 
 Logo、图标与品牌图形需求进入，交付 `.vectorcraft` 及适用的 SVG、PDF、PNG。
 
-当前插件：`0.1.0-dev.35`；技能源：`0.1.0-dev.31`；13 个独立技能。
+当前插件：`0.1.0-dev.36`；技能源：`0.1.0-dev.32`；13 个独立技能。
 
 已验证首次使用平台：macOS arm64、Python 3.11+。固定运行时安装在用户数据目录，技能文件保留在宿主加载目录。当前为开发版本；完整首版验收及通用 Skills CLI 实际安装仍未完成。
 
@@ -103,9 +103,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.35 |
+| Metadata version | 0.1.0-dev.36 |
 | Stage | implementation-in-progress |
-| Skills source | vectorcraft-skills / v0.1.0-dev.31 |
+| Skills source | vectorcraft-skills / v0.1.0-dev.32 |
 | Execution | 上游 CLI；ArtCraft 使用子适配器 |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |

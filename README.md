@@ -1,6 +1,6 @@
 # VectorCraft Agent Plugin
 
-Source candidate: public swatch workflows now inspect explicit token dependencies, retain pre-edit checkpoints on failure and reject unintended non-consumer edits. Thirteen skills synchronized; fixed release/installed-copy and Art bundle qualification remain open. [Guard architecture](docs/VectorCraft-Brand-Dependency-Guard-Architecture.md).
+Plugin36/source32 includes a dependency guard: public swatch workflows inspect explicit token dependencies, retain pre-edit checkpoints on failure and reject unintended non-consumer edits. Thirteen skills synchronized; fixed release/installed-copy and Art bundle qualification remain open. [Guard architecture](docs/VectorCraft-Brand-Dependency-Guard-Architecture.md).
 
 Fixed installed appearance-skill verification now includes same-RGB objects without a brand-token link. Only linked consumers change; native properties, unrelated SVG/PNG/PDF and original deliveries remain preserved. Warm runtime verification; no additional V1 task closes. [Acceptance architecture](docs/VectorCraft-Same-Color-Token-Architecture.md).
 
@@ -8,7 +8,7 @@ Four-domain RT-001 runtime source/integrity acceptance now covers every current 
 
 Create Logo, icon and brand assets as `.vectorcraft` with applicable SVG, PDF and PNG exports.
 
-Current plugin: `0.1.0-dev.35`; skill source: `0.1.0-dev.31`; 13 independent skills.
+Current plugin: `0.1.0-dev.36`; skill source: `0.1.0-dev.32`; 13 independent skills.
 
 Verified first-use platform: macOS arm64 and Python 3.11+. Pinned runtimes install into the user data directory; skill files stay in their host-loaded directory. These are development releases; complete V1 acceptance and generic Skills CLI installation remain open.
 
@@ -103,9 +103,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.35 |
+| Metadata version | 0.1.0-dev.36 |
 | Stage | implementation-in-progress |
-| Skills source | vectorcraft-skills / v0.1.0-dev.31 |
+| Skills source | vectorcraft-skills / v0.1.0-dev.32 |
 | Execution | Upstream CLI; ArtCraft uses child adapters |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |

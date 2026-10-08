@@ -34,3 +34,13 @@ python3 -I -B "$SKILL_DIR/scripts/workflow.py" "$REVISION_PLAN" \
 ```
 
 原生项目重新打开后仍保留关联关系；默认填充、非全局色板、直接写入 RGB 的对象不应被当作关联对象。缺少色板、错误摘要或既有输出目录应停止，不自动重放未知结果。当前验证覆盖 RGB 全局色板、路径及文字关联、两关联画板的 SVG／PNG 更新、独立图标和旧工程不变。其他颜色模型、tint／gradient／spot、跨编辑器色板保真、跨文件消费者与完整创作接受仍须单独验证。
+
+## 工作流执行时依赖守卫
+
+通过本技能的 `scripts/workflow.py` 执行 `swatch.edit`，或通过该工作流的 `native.command` 调用同一原生命令时，先保存原生修改前检查点，再读取同一会话的修改前后模型。只有显式 `swatch` 引用是消费者，同 RGB 颜色不构成消费关系。非消费者自身属性、对象身份、容器成员顺序和画板范围必须保持。
+
+成功交付在 `manifest.json` 中登记 `brandDependencyReport`，指向已摘要绑定的 `brand-dependencies.json`；每项检查记录消费者 ID、受影响对象 ID、错误依赖边和前后模型摘要。检查点仅用于失败恢复：成功时移除临时检查点、保留摘要并记录 `checkpointRetained: false`；不要把该记录当成可打开的额外交付工程。
+
+发现误改时返回 `brand_dependency_violation`，不发布成功 manifest。读取失败目录的 `failure.json`，按其原始 stage 路径和摘要查验 `brand-dependencies.json` 及检查点；`checkpointRetained: true` 时检查点留在原暂存位置，以避免移动工程破坏绝对素材链接。检查点是色板操作前的中间状态，不自动回写源工程、不自动重放。
+
+这项执行检查只适用于公开工作流的上述色板操作；独立 `commands.py` 完整原生命令入口不会因此新增创作验收承诺。素材替换、其他颜色模型、外部编辑器及像素质量单独核验。源码候选与固定发行／实际安装验收分开，不以当前分支替代不可变版本。

@@ -38,6 +38,13 @@ def asset_module():
     return module
 
 
+def brand_module():
+    spec = importlib.util.spec_from_file_location('craft_brand_variants', Path(__file__).with_name('brand_variants.py'))
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
 def inputs_name(value):
     return isinstance(value, str) and bool(asset_module().NAME.fullmatch(value))
 
@@ -212,6 +219,7 @@ def execute(plan, output, runtime_home=None, source=None):
         project = stage / 'project.vectorcraft'
         assets = inputs_module.collect(input_assets, stage)
         receipts = []
+        brand_checks = []
         recovery_state['operations'] = receipts
         def command(identifier, params=None, save=True):
             recovery_state['lastAttempt'] = {'command': identifier, 'params': params or {}, 'phase': 'submitted'}
@@ -230,6 +238,15 @@ def execute(plan, output, runtime_home=None, source=None):
             command('file.new', plan['document'])
         for operation in plan['operations']:
             params = resolve(operation.get('params', {}), bindings)
+            brand_params = (params.get('params', {}) if operation['command'] == 'native.command'
+                            and params.get('command') == 'swatch.edit' else
+                            params if operation['command'] == 'swatch.edit' else None)
+            if brand_params is not None:
+                brand_before = command('document.json', {})
+                brand_module().snapshot(brand_before)
+                # 修改前检查点在本次暂存目录；失败不会覆写用户源工程。
+                checkpoint = stage / ('brand-checkpoint-' + str(len(brand_checks)) + '.vectorcraft')
+                command('document.save', {'path': str(checkpoint)}, save=False)
             if operation['command'] == 'native.command':
                 value = native_module().execute(session, params, recovery_state, receipts, stage)
             elif operation['command'] == 'asset.place':
@@ -265,6 +282,17 @@ def execute(plan, output, runtime_home=None, source=None):
                 del assets[params['replacement']]
             else:
                 value = command(operation['command'], params)
+            if brand_params is not None:
+                check = brand_module().inspect_update(brand_before, command('document.json', {}), brand_params.get('name'))
+                check['checkpoint'] = checkpoint.name
+                check['checkpointSha256'] = sha(checkpoint)
+                check['checkpointRetained'] = True
+                brand_checks.append(check)
+                (stage / 'brand-dependencies.json').write_text(json.dumps({'schema': 'vectorcraft-brand-dependencies/v1',
+                    'checks': brand_checks}, ensure_ascii=False, indent=2) + '\n')
+                if check['status'] != 'passed':
+                    raise ValueError('brand_dependency_violation: ' + json.dumps({
+                        'affectedObjectIds': check['affectedObjectIds'], 'artboardsChanged': check['artboardsChanged']}))
             if operation.get('as'):
                 bindings[operation['as']] = value
         fonts = command('text.fonts', {}, save=False)
@@ -350,6 +378,13 @@ def execute(plan, output, runtime_home=None, source=None):
                     value = value.replace(str(entry['inputPath']), 'input:' + name)
                 return value.replace(str(stage), '.').replace(str(temporary), '.').replace(str(source) if source else '\x00', 'source')
             return value
+        if brand_checks:
+            # 通过全部检查后只交付最终工程与检查点摘要；失败检查点留在原暂存路径，不能迁移含绝对链接的工程。
+            for check in brand_checks:
+                check['checkpointRetained'] = False
+                (Path(temporary) / check['checkpoint']).unlink()
+            (stage / 'brand-dependencies.json').write_text(json.dumps({'schema': 'vectorcraft-brand-dependencies/v1',
+                'checks': brand_checks}, ensure_ascii=False, indent=2) + '\n')
         saved_plan = {**plan, **({'assets': {name: {'path': entry['path'], 'sha256': entry['sha256']} for name, entry in assets.items()}} if assets else {})}
         (stage / 'native.json').write_text(json.dumps(portable(native), ensure_ascii=False, indent=2) + '\n')
         (stage / 'plan.json').write_text(json.dumps(portable(saved_plan), ensure_ascii=False, indent=2) + '\n')
@@ -358,6 +393,8 @@ def execute(plan, output, runtime_home=None, source=None):
         manifest = {'schema': 'vectorcraft-delivery/v1', 'sourceProjectSha256': source_hash,
                     'runtimeSha256': installed['binarySha256'], 'bindings': bindings, 'outputs': outputs, 'fontDependencies': fonts,
                     'assets': assets,
+                    **({'brandDependencyReport': {'path': 'brand-dependencies.json',
+                         'sha256': sha(stage / 'brand-dependencies.json')}} if brand_checks else {}),
                     **({'collection': {'links': packaged['links'], 'fonts': packaged['fonts'], 'skippedFonts': packaged['skippedFonts']}} if assets else {}),
                     'files': {str(f.relative_to(stage)): sha(f) for f in stage.rglob('*') if f.is_file()},
                     'lossReport': {'path':'exchange-loss.json','sha256':sha(stage/'exchange-loss.json')}, 'acceptance': 'requires-domain-and-visual-review'}
