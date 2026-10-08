@@ -1,6 +1,6 @@
 # VectorCraft optimization implementation and acceptance
 
-This increment implements section9 and its dependencies. Plugin source is dev.43 and continues to pin published skill source dev.37. Full task2.6 remains open until public plugin43 fixed-install validation. Independent skill source is unchanged; historical candidate reports retain their execution identities.
+This increment implements section9 and its dependencies. Plugin source is dev.43 and continues to pin published skill source dev.37. Task2.6 passed public plugin43 fixed-install scenario validation. Independent skill source is unchanged; historical candidate reports retain their execution identities.
 
 ## Implemented modules
 
@@ -65,3 +65,5 @@ Use `node src/cli.ts cancel STATE.sqlite TASK.json` or `node src/cli.ts reconcil
 Current source regression:162 tests,132 passed,30 conditionally skipped; plugin Node regression:15 passed. Native candidate proof covers authorized revision, real saved-checkpoint cancellation, registry restart, original-file/dependency inspection and epoch fencing. Tasks3.1/3.2/3.4/3.5/3.7/3.8 are checked; complete acceptance3.3/3.6/3.9 remains open. Full task table:81 completed,46 open. This is not fixed-install, full sections3/6 or V1 acceptance.
 
 Plugin42 adds readonly pre-migration snapshots, schema3 and explicit mode bindings; the actual previous reader rejects the new schema. See [runtime gates](Runtime-Gate.md) for bounded native evidence and the still-open complete2.6 gate. Skill source remains pinned to dev.37.
+
+Current status (public plugin43/source37): all seven runtime scenarios and task2.6 are complete; see [runtime gates](Runtime-Gate.md). Earlier candidate/open statements describe their execution stages. The other33 tasks, full V1 and creative GUI/model gates remain open.

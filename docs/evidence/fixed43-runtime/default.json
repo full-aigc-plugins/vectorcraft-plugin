@@ -1,0 +1,78 @@
+{
+  "schema": "vectorcraft-runtime-default-evidence/v1",
+  "result": "PASS",
+  "level": "native-candidate",
+  "platform": "darwin-arm64",
+  "cases": [
+    {
+      "case": "empty-runtime-default-first-use",
+      "state": "review_ready",
+      "binarySha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "capabilityFingerprint": "7c0afe0413020b0edfe7d39420640a30e6aa3d4cf7a35fe60003679d030efcc5"
+    },
+    {
+      "case": "same-key-readonly",
+      "state": "PASS"
+    },
+    {
+      "case": "same-ledger-parallel-distinct-targets",
+      "state": "PASS"
+    },
+    {
+      "case": "live-schema-drift-before-task-or-edit",
+      "state": "PASS"
+    },
+    {
+      "case": "invalid-plan-before-install",
+      "state": "PASS"
+    }
+  ],
+  "deliveries": {
+    "first": {
+      "manifestSha256": "921b22a9b7b8d801a100614eb07659656e7ce27f273bcb2e97d280905568f829",
+      "files": {
+        "plan.json": "37b893e2b665c8a646376b1aed6eee224557e75c221ed580b8f0b344a8109361",
+        "project.vectorcraft": "ccea100868c2bb09ca12b50d0887b35da4381267087ccab6df78b01bba8324c7",
+        "exchange-loss.json": "79844a1394568bfc9a1f89eaf4a5b3ae7fd6d4b9210eccd59a65f3271328c932",
+        "native.json": "6ad097274917566bc9ee428825edef64bf5d2fdf7e7d65183886bf72b0f8217b",
+        "operations.json": "304b11e01694978bad995d6ff3656fa024aeb9bd3f8bb2e526b40bcd13cf18fd"
+      }
+    },
+    "second": {
+      "manifestSha256": "921b22a9b7b8d801a100614eb07659656e7ce27f273bcb2e97d280905568f829",
+      "files": {
+        "plan.json": "37b893e2b665c8a646376b1aed6eee224557e75c221ed580b8f0b344a8109361",
+        "project.vectorcraft": "ccea100868c2bb09ca12b50d0887b35da4381267087ccab6df78b01bba8324c7",
+        "exchange-loss.json": "79844a1394568bfc9a1f89eaf4a5b3ae7fd6d4b9210eccd59a65f3271328c932",
+        "native.json": "6ad097274917566bc9ee428825edef64bf5d2fdf7e7d65183886bf72b0f8217b",
+        "operations.json": "304b11e01694978bad995d6ff3656fa024aeb9bd3f8bb2e526b40bcd13cf18fd"
+      }
+    },
+    "third": {
+      "manifestSha256": "921b22a9b7b8d801a100614eb07659656e7ce27f273bcb2e97d280905568f829",
+      "files": {
+        "plan.json": "37b893e2b665c8a646376b1aed6eee224557e75c221ed580b8f0b344a8109361",
+        "project.vectorcraft": "ccea100868c2bb09ca12b50d0887b35da4381267087ccab6df78b01bba8324c7",
+        "exchange-loss.json": "79844a1394568bfc9a1f89eaf4a5b3ae7fd6d4b9210eccd59a65f3271328c932",
+        "native.json": "6ad097274917566bc9ee428825edef64bf5d2fdf7e7d65183886bf72b0f8217b",
+        "operations.json": "304b11e01694978bad995d6ff3656fa024aeb9bd3f8bb2e526b40bcd13cf18fd"
+      }
+    }
+  },
+  "commandCount": 585,
+  "toolCount": 25,
+  "skillSha256": "ed67eeb2fa57c957ecb7075a7da70a3227413dcc85baf589552bdc2efb685db8",
+  "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+  "fingerprints": {
+    "src/runtime/prepare_runtime.ts": "08ecee9238056335ac33710421b4b878cad01b4556ffad641d14c26819b2e6c1",
+    "src/runtime/runtime_probe.py": "ee196f91dde9487bd1537d1c91a8f5957deb795431a54baa333be35bfc90e54c",
+    "src/runtime/runtime_gate.ts": "269966ae978c9afa7b9cdad719afce9ca0b57e54c52f3cb732777f3ddc23a68c",
+    "runtime/vectorcraft-headless-capabilities.json": "37472383852928bdf131f4f69c015fd8ce323847323915bb0cb58260c0936756",
+    "src/harness/controller.ts": "4ae925154e193e139100c938af4f26157c5cc321c6504b69c163330bf3b60b23",
+    "src/harness/ledger.ts": "eaaf703dd51fd63a5d82826ec30ff7e07277aa8a94f3568369b0af142c9e7a9e",
+    "tests/runtime_default.test.ts": "63592e778ff4d4e4d75d5ec9bf6da657629d7bc2cd53f1db1b2d5639f50513a3",
+    "tests/runtime_fixture.ts": "e6f16d546f9f827780bd1b85e8b5e6673d1439ade3a968ff7c54f6382c4b80d4",
+    "scripts/acceptance/runtime_default.ts": "ce238365dad5f30eec4a7c8029566a73c69323152fbefdd9ae6fcff8ee782648"
+  },
+  "scope": "actual cold public fixed install, default headless probe and managed create, readonly resume, parallel tasks and live signature drift refusal; no desktop, different-version upgrade, rollback or complete2.6 acceptance"
+}

@@ -157,6 +157,9 @@ def build(root=ROOT):
     open_reader='docs/evidence/vectorcraft-open-reader-candidate-20261008.json'
     if (root/open_reader).is_file():
         entries.append(bound_report(root,open_reader,'native-candidate','Candidate database guard with open-reader red, WAL preservation and native/race/default cases; full2.6 awaits fixed43','VC-RT-002'))
+    upgrade='docs/evidence/vectorcraft-runtime-upgrade-fixed43-20261008.json'
+    if (root/upgrade).is_file():
+        entries.append(bound_report(root,upgrade,'fixed-install','Public plugin43/source37; all seven RT-002 scenarios including real bridge/version drain and open-reader budget rollback on macOS arm64; complete V1 remains open','VC-RT-002',['2.6']))
     # 明确归档变更前执行字节；保留报告原摘要，不能把旧运行重绑定到新实现。
     for entry in entries:
         archived={}

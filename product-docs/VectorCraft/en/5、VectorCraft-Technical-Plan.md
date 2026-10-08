@@ -98,3 +98,5 @@ Snapshot `0.1.0-dev.2` has scoped installation/discovery and installed-entrypoin
 ## Default runtime capability probing progress
 
 Ordinary Harness execution now validates fixed installation, version/digest and command/tool schemas before editing. Same-version concurrent tasks reuse selection; original keys inspect receipts without replay. Different selections are not implicitly upgraded. See [runtime gate implementation](../../../docs/Runtime-Gate.md). Published plugin41 remains unchanged; full task2.6 different-version upgrades/rollback and desktop acceptance remain open.
+
+Public plugin43/source37 completed all seven current VC-RT-002 scenarios and task2.6: real version/bridge drain, activation races, native upgrade/rollback reopen, cold default and schema3 old-reader budget preservation. See [fixed-install evidence](../../../docs/evidence/vectorcraft-runtime-upgrade-fixed43-20261008.json). This supersedes earlier candidate-stage2.6 open statements;33 other tasks and full V1 remain open.

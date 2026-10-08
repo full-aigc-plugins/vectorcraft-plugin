@@ -92,7 +92,8 @@
     "4.4": "docs/evidence/vectorcraft-boolean-transactions-source-candidate-20261008.json",
     "4.5": "docs/evidence/vectorcraft-boolean-transactions-source-candidate-20261008.json",
     "2.4": "docs/evidence/vectorcraft-runtime-gate-candidate-20261008.json",
-    "2.5": "docs/evidence/vectorcraft-runtime-default-artifacts-candidate-20261008.json"
+    "2.5": "docs/evidence/vectorcraft-runtime-default-artifacts-candidate-20261008.json",
+    "2.6": "docs/evidence/vectorcraft-runtime-upgrade-fixed43-20261008.json"
   },
   "hostValidationEvidence": "docs/evidence/craft-full-command-fixed-first-use-20261007.json",
   "hostValidationStatus": "fixed-five-plugin58-discovery-and-standalone-desktop-passed",

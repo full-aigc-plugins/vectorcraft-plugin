@@ -1,0 +1,220 @@
+"""首次安装的可观察行为；所有测试均使用隔离目录。"""
+import hashlib
+import importlib.util
+import json
+from pathlib import Path
+import stat
+import tempfile
+import unittest
+from unittest.mock import patch
+import zipfile
+
+SOURCE = Path(__file__).resolve().parents[1] / 'skills/vectorcraft-use/scripts/bootstrap.py'
+
+
+class BootstrapTests(unittest.TestCase):
+    def setUp(self):
+        spec = importlib.util.spec_from_file_location('bootstrap', SOURCE)
+        self.module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(self.module)
+        self.temp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        self.root = Path(self.temp.name)
+        self.binary = b'#!/bin/sh\nprintf "filmcraft-cli 0.2.0\\n"\n'
+        self.archive = self.root / 'official.zip'
+        self.make_archive()
+
+    def make_archive(self, extra=None):
+        with zipfile.ZipFile(self.archive, 'w') as z:
+            z.writestr('filmcraft-cli', self.binary)
+            z.writestr('LICENSE-MIT', 'Fixture license')
+            if extra:
+                z.writestr(*extra)
+        self.lock = {'artifact': 'filmcraft-cli', 'resolvedVersion': '0.2.0',
+                     'artifacts': {'darwin-arm64': {
+                         'url': 'https://github.com/storytold/filmcraft/releases/download/v0.2.0/fixture.zip',
+                         'archiveSha256': hashlib.sha256(self.archive.read_bytes()).hexdigest(),
+                         'binarySha256': hashlib.sha256(self.binary).hexdigest()}}}
+
+    def install(self):
+        return self.module.install(self.lock, self.root / 'runtime', self.archive, 'darwin-arm64')
+
+    def test_clean_install_and_reuse_without_network(self):
+        first = self.install()
+        self.archive.unlink()
+        with patch.object(self.module, 'download', side_effect=AssertionError('network on reuse')):
+            second = self.install()
+        self.assertEqual(first['executable'], second['executable'])
+        self.assertTrue(second['reused'])
+        self.assertEqual(Path(first['executable']).read_bytes(), self.binary)
+        self.assertTrue((Path(first['executable']).parent / 'LICENSE-MIT').exists())
+        self.assertEqual(json.loads((Path(first['executable']).parent / 'installation.json').read_text())['version'], '0.2.0')
+
+    def test_corrupt_download_never_runs(self):
+        self.archive.write_bytes(b'corrupt')
+        with patch.object(self.module.subprocess, 'run', side_effect=AssertionError('executed')):
+            with self.assertRaisesRegex(ValueError, 'archive_checksum'):
+                self.install()
+        self.assertFalse((self.root / 'runtime/filmcraft/0.2.0').exists())
+
+    def test_traversal_rejected_before_extract(self):
+        self.make_archive(('../escaped', 'unsafe'))
+        with self.assertRaisesRegex(ValueError, 'unsafe_archive'):
+            self.install()
+        self.assertFalse((self.root / 'runtime/filmcraft/escaped').exists())
+
+    def test_symlink_archive_rejected(self):
+        link = zipfile.ZipInfo('link')
+        link.create_system = 3
+        link.external_attr = (stat.S_IFLNK | 0o777) << 16
+        self.make_archive((link, '/tmp/elsewhere'))
+        with self.assertRaisesRegex(ValueError, 'unsafe_archive'):
+            self.install()
+
+    def test_tampered_installed_binary_is_not_overwritten(self):
+        first = self.install()
+        path = Path(first['executable'])
+        path.write_bytes(b'tampered')
+        with self.assertRaisesRegex(ValueError, 'installed_checksum'):
+            self.install()
+        self.assertEqual(path.read_bytes(), b'tampered')
+
+    def test_pinned_build_metadata_is_accepted(self):
+        self.binary = b'#!/bin/sh\nprintf "filmcraft-cli 0.2.0 (build, date)\\n"\n'
+        self.make_archive()
+        self.lock['artifacts']['darwin-arm64']['versionOutput'] = 'filmcraft-cli 0.2.0 (build, date)'
+        self.assertFalse(self.install()['reused'])
+
+    def test_maintained_vector_runtime_installs_with_distinct_provenance(self):
+        self.binary = b'#!/bin/sh\nprintf "vectorcraft-cli 0.2.0-craft.1\\n"\n'
+        with zipfile.ZipFile(self.archive, 'w') as archive:
+            archive.writestr('vectorcraft-cli', self.binary)
+            archive.writestr('LICENSE-MIT', 'Fixture license')
+        entry={'url':'https://github.com/full-aigc-skills/vectorcraft-skills/releases/download/runtime-v0.2.0-craft.1/fixture.zip','archiveSha256':hashlib.sha256(self.archive.read_bytes()).hexdigest(),'binarySha256':hashlib.sha256(self.binary).hexdigest(),'versionOutput':'vectorcraft-cli 0.2.0-craft.1'}
+        self.lock={'artifact':'vectorcraft-cli','resolvedVersion':'0.2.0-craft.1','artifacts':{'darwin-arm64':entry}}
+        first=self.install(); second=self.install()
+        self.assertFalse(first['reused']); self.assertTrue(second['reused'])
+        receipt=json.loads((Path(first['executable']).parent/'installation.json').read_text())
+        self.assertEqual(receipt['source'],'maintained-github-release')
+        self.assertEqual(receipt['version'],'0.2.0-craft.1')
+
+    def test_download_only_accepts_native_or_owned_runtime_release_paths(self):
+        allowed=['https://github.com/storytold/vectorcraft/releases/download/v0.2.0/a.zip','https://github.com/full-aigc-skills/vectorcraft-skills/releases/download/runtime-v0.2.0-craft.1/a.zip']
+        for url in allowed:
+            with patch.object(self.module.urllib.request,'urlopen',side_effect=RuntimeError('accepted-request')):
+                with self.assertRaisesRegex(RuntimeError,'accepted-request'): self.module.download(url,self.root/'download.zip')
+        for url in ['https://github.com/storytold/unrelated/releases/download/v1/a.zip','https://github.com/full-aigc-skills/vectorcraft-skills-evil/releases/download/v1/a.zip','https://github.com.evil/storytold/vectorcraft/releases/download/v1/a.zip','https://github.com/storytold/vectorcraft/releases/download/v1/a.zip?redirect=evil']:
+            with patch.object(self.module.urllib.request,'urlopen',side_effect=AssertionError('network')):
+                with self.assertRaisesRegex(ValueError,'untrusted_release_url'): self.module.download(url,self.root/'download.zip')
+
+    def test_unknown_platform_fails_without_download(self):
+        with patch.object(self.module, 'download', side_effect=AssertionError('downloaded')):
+            with self.assertRaisesRegex(ValueError, 'unsupported_platform'):
+                self.module.install(self.lock, self.root / 'runtime', platform_key='unknown')
+
+    def hold_install_lock(self):
+        import subprocess
+        import sys
+        path = self.root / 'runtime/filmcraft/.install.lock'
+        path.parent.mkdir(parents=True, exist_ok=True)
+        child = subprocess.Popen([sys.executable, '-c', "import fcntl,sys; f=open(sys.argv[1],'w'); fcntl.flock(f,fcntl.LOCK_EX); print('locked',flush=True); sys.stdin.readline()", str(path)], stdin=subprocess.PIPE, stdout=subprocess.PIPE, text=True)
+        self.assertEqual(child.stdout.readline().strip(), 'locked')
+        self.addCleanup(lambda: child.poll() is None and child.kill())
+        return child
+
+    def test_busy_installer_waits_for_other_process_and_reuses_verified_install(self):
+        import threading
+        self.install()
+        child = self.hold_install_lock()
+        release = threading.Timer(.15, lambda: child.stdin.write('release\n') and child.stdin.flush())
+        release.start()
+        try:
+            result = self.install()
+            self.assertTrue(result['reused'])
+            self.assertEqual(Path(result['executable']).read_bytes(), self.binary)
+        finally:
+            release.join(); child.wait(timeout=5); child.stdin.close(); child.stdout.close()
+
+    def test_busy_installer_timeout_preserves_existing_install(self):
+        initial = self.install()
+        child = self.hold_install_lock()
+        try:
+            with patch.object(self.module, 'LOCK_WAIT_SECONDS', .05, create=True):
+                with self.assertRaisesRegex(TimeoutError, 'runtime_install_busy'):
+                    self.install()
+            self.assertEqual(Path(initial['executable']).read_bytes(), self.binary)
+        finally:
+            child.stdin.write('release\n'); child.stdin.flush(); child.wait(timeout=5); child.stdin.close(); child.stdout.close()
+
+    def test_two_processes_first_install_once_and_share_verified_result(self):
+        import subprocess
+        import sys
+        code = "import importlib.util,json,sys; spec=importlib.util.spec_from_file_location('boot',sys.argv[1]); boot=importlib.util.module_from_spec(spec); spec.loader.exec_module(boot); print(json.dumps(boot.install(json.loads(sys.argv[2]),sys.argv[3],sys.argv[4],'darwin-arm64')))"
+        argv = [sys.executable, '-I', '-B', '-c', code, str(SOURCE), json.dumps(self.lock), str(self.root/'runtime'), str(self.archive)]
+        children = [subprocess.Popen(argv, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True) for _ in range(2)]
+        results = []
+        for child in children:
+            stdout, stderr = child.communicate(timeout=10)
+            self.assertEqual(child.returncode, 0, stderr)
+            results.append(json.loads(stdout))
+        self.assertEqual(sorted(item['reused'] for item in results), [False, True])
+        self.assertEqual(results[0]['executable'], results[1]['executable'])
+        self.assertEqual(Path(results[0]['executable']).read_bytes(), self.binary)
+
+
+
+    def test_ssl_eof_download_retries_and_discards_partial_bytes(self):
+        import ssl
+        from urllib.error import URLError
+        class Response:
+            url='https://objects.githubusercontent.com/release'
+            headers={}
+            def __init__(self,broken):self.broken=broken;self.reads=0
+            def __enter__(self):return self
+            def __exit__(self,*args):return False
+            def read(self,size):
+                self.reads+=1
+                if self.broken and self.reads==2:raise ssl.SSLEOFError('unexpected EOF')
+                return b'partial' if self.broken and self.reads==1 else b'complete' if self.reads==1 else b''
+        url=json.loads(SOURCE.with_name('runtime.lock.json').read_text())['artifacts']['darwin-arm64']['url'];target=self.root/'download.zip'
+        for first in [Response(True),URLError(ssl.SSLEOFError('unexpected EOF'))]:
+            with self.subTest(first=type(first).__name__),patch.object(self.module.urllib.request,'urlopen',side_effect=[first,Response(False)]) as fetch,patch.object(self.module.time,'sleep'):
+                self.module.download(url,target);self.assertEqual(fetch.call_count,2);self.assertEqual(target.read_bytes(),b'complete')
+    def test_native_download_retry_bound_and_nonnetwork_errors(self):
+        import ssl
+        from urllib.error import URLError,HTTPError
+        url=json.loads(SOURCE.with_name('runtime.lock.json').read_text())['artifacts']['darwin-arm64']['url'];target=self.root/'download.zip'
+        with patch.object(self.module.urllib.request,'urlopen',side_effect=URLError(ssl.SSLEOFError('unexpected EOF'))) as fetch,patch.object(self.module.time,'sleep'):
+            with self.assertRaisesRegex(ValueError,'artifact_download_failed'):self.module.download(url,target)
+            self.assertEqual(fetch.call_count,3);self.assertFalse(target.exists())
+        for error in [HTTPError(url,403,'denied',{},None),URLError(ssl.SSLCertVerificationError('certificate')),PermissionError('permission')]:
+            with self.subTest(error=type(error).__name__),patch.object(self.module.urllib.request,'urlopen',side_effect=error) as fetch:
+                with self.assertRaises(type(error)):self.module.download(url,target)
+                self.assertEqual(fetch.call_count,1)
+
+    def test_short_download_retries_but_size_limit_is_final(self):
+        from urllib.error import HTTPError
+        class Response:
+            url = 'https://objects.githubusercontent.com/release'
+            def __init__(self, data, length):
+                self.data = data
+                self.headers = {'Content-Length': str(length)}
+            def __enter__(self): return self
+            def __exit__(self, *args): return False
+            def read(self, size):
+                data, self.data = self.data, b''
+                return data
+        url = json.loads(SOURCE.with_name('runtime.lock.json').read_text())['artifacts']['darwin-arm64']['url']
+        target = self.root / 'download.zip'
+        for first in (Response(b'half', 8), HTTPError(url, 503, 'temporary', {}, None)):
+            with self.subTest(first=type(first).__name__), patch.object(self.module.urllib.request, 'urlopen', side_effect=[first, Response(b'complete', 8)]) as fetch, patch.object(self.module.time, 'sleep'):
+                self.module.download(url, target)
+                self.assertEqual(fetch.call_count, 2)
+                self.assertEqual(target.read_bytes(), b'complete')
+        with patch.object(self.module, 'MAX_BYTES', 3), patch.object(self.module.urllib.request, 'urlopen', return_value=Response(b'oversized', 9)) as fetch:
+            with self.assertRaisesRegex(ValueError, 'archive_too_large'):
+                self.module.download(url, target)
+            self.assertEqual(fetch.call_count, 1)
+
+if __name__ == '__main__':
+    unittest.main()

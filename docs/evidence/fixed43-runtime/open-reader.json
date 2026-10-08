@@ -1,0 +1,24 @@
+{
+  "schema": "vectorcraft-installed-open-reader/v1",
+  "result": "PASS",
+  "pluginVersion": "0.1.0-dev.43",
+  "backupSha256": "99b1f6ececb7ae8f3eb73eba63d6d4ae96bebdb3157db01ee104839450f436c5",
+  "fromSchema": 2,
+  "toSchema": 3,
+  "originalTasks": 1,
+  "refusedNewTasks": 0,
+  "leakedNewBudgets": 0,
+  "preservedAttempts": 1,
+  "preservedBytes": 17,
+  "fingerprints": {
+    "src/harness/ledger.ts": "eaaf703dd51fd63a5d82826ec30ff7e07277aa8a94f3568369b0af142c9e7a9e",
+    "src/strict_json.ts": "69a445339670e53f6a7fcb96770b53b896666dd1e60f114c1751a23981d5b7d0",
+    "docs/evidence/pre-runtime-boundaries-identity/src/harness/ledger.ts": "fd53203575a46100e6456eb3c3a415ffeceb4c879349019ba6cde7e797a82f51",
+    "docs/evidence/pre-runtime-boundaries-identity/src/strict_json.ts": "69a445339670e53f6a7fcb96770b53b896666dd1e60f114c1751a23981d5b7d0",
+    "plugin.json": "b8e5376af2b7ccb3415edf7dd532504c8196f56ac5ceb821e56fda6f031d0ef2"
+  },
+  "driverFingerprints": {
+    "scripts/acceptance/runtime_open_reader.ts": "d79d11da7dffd4ebe6c26d2ba368753f4e3584f7719228682e56522943962747"
+  },
+  "scope": "Explicit schema2 fixture through actual previous reader, kept open with committed WAL during installed plugin43 migration; new budget/task rollback proved. No historical production database or native execution claimed."
+}

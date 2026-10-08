@@ -219,3 +219,5 @@ Controller now validates the pinned skill plan, installs a verified version dire
 Plugin42 adds readonly pre-migration snapshots, schema3 and explicit mode bindings; the actual previous reader rejects the new schema. See [runtime gates](Runtime-Gate.md) for bounded native evidence and the still-open complete2.6 gate. Skill source remains pinned to dev.37.
 
 Plugin43 uses a database insert trigger to enforce mode/digest/state policy on connections opened before upgrade; refused transactions leave no new budget consumption. Candidate evidence now includes registered bridge drain and two-process activation races; see [runtime gates](Runtime-Gate.md).
+
+Current status (public plugin43/source37): all seven runtime scenarios and task2.6 are complete; see [runtime gates](Runtime-Gate.md). Earlier candidate/open statements describe their execution stages. The other33 tasks, full V1 and creative GUI/model gates remain open.

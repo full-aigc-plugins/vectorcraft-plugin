@@ -1,0 +1,123 @@
+{
+  "schema": "vectorcraft-runtime-activation-race/v1",
+  "result": "PASS",
+  "platform": "darwin-arm64",
+  "pluginVersion": "0.1.0-dev.43",
+  "cases": [
+    {
+      "round": 0,
+      "activate": {
+        "action": "activate",
+        "result": "PASS"
+      },
+      "claim": {
+        "action": "claim",
+        "result": "REFUSED",
+        "reason": "Error: runtime_selection_mismatch"
+      },
+      "taskCount": 0
+    },
+    {
+      "round": 1,
+      "activate": {
+        "action": "activate",
+        "result": "REFUSED",
+        "reason": "Error: runtime_tasks_not_drained"
+      },
+      "claim": {
+        "action": "claim",
+        "result": "PASS"
+      },
+      "taskCount": 1
+    },
+    {
+      "round": 2,
+      "activate": {
+        "action": "activate",
+        "result": "PASS"
+      },
+      "claim": {
+        "action": "claim",
+        "result": "REFUSED",
+        "reason": "Error: runtime_selection_mismatch"
+      },
+      "taskCount": 0
+    },
+    {
+      "round": 3,
+      "activate": {
+        "action": "activate",
+        "result": "REFUSED",
+        "reason": "Error: runtime_tasks_not_drained"
+      },
+      "claim": {
+        "action": "claim",
+        "result": "PASS"
+      },
+      "taskCount": 1
+    },
+    {
+      "round": 4,
+      "activate": {
+        "action": "activate",
+        "result": "PASS"
+      },
+      "claim": {
+        "action": "claim",
+        "result": "REFUSED",
+        "reason": "Error: runtime_selection_mismatch"
+      },
+      "taskCount": 0
+    },
+    {
+      "round": 5,
+      "activate": {
+        "action": "activate",
+        "result": "REFUSED",
+        "reason": "Error: runtime_tasks_not_drained"
+      },
+      "claim": {
+        "action": "claim",
+        "result": "PASS"
+      },
+      "taskCount": 1
+    },
+    {
+      "round": 6,
+      "activate": {
+        "action": "activate",
+        "result": "PASS"
+      },
+      "claim": {
+        "action": "claim",
+        "result": "REFUSED",
+        "reason": "Error: runtime_selection_mismatch"
+      },
+      "taskCount": 0
+    },
+    {
+      "round": 7,
+      "activate": {
+        "action": "activate",
+        "result": "REFUSED",
+        "reason": "Error: runtime_tasks_not_drained"
+      },
+      "claim": {
+        "action": "claim",
+        "result": "PASS"
+      },
+      "taskCount": 1
+    }
+  ],
+  "fingerprints": {
+    "src/harness/ledger.ts": "eaaf703dd51fd63a5d82826ec30ff7e07277aa8a94f3568369b0af142c9e7a9e",
+    "src/runtime/runtime_gate.ts": "269966ae978c9afa7b9cdad719afce9ca0b57e54c52f3cb732777f3ddc23a68c",
+    "src/strict_json.ts": "69a445339670e53f6a7fcb96770b53b896666dd1e60f114c1751a23981d5b7d0",
+    "plugin.json": "b8e5376af2b7ccb3415edf7dd532504c8196f56ac5ceb821e56fda6f031d0ef2"
+  },
+  "driverFingerprints": {
+    "scripts/acceptance/runtime_activation_race.ts": "dc7502d97180fbd92c3b690a6d73f2602f257bad182109fd7a2e472df2c6bf81",
+    "scripts/acceptance/runtime_activation_race_child.ts": "c58f0d1ac1db7f4223e417a4aaa06d668923fee7a99adf93fec3fb30d913ad19"
+  },
+  "scope": "Eight two-process races against actual installed SQLite ledger; both winning orders observed, no stale-runtime writer after activation"
+}

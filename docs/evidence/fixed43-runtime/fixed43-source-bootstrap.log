@@ -1,0 +1,20 @@
+test_busy_installer_timeout_preserves_existing_install (source37_bootstrap_tests.BootstrapTests.test_busy_installer_timeout_preserves_existing_install) ... ok
+test_busy_installer_waits_for_other_process_and_reuses_verified_install (source37_bootstrap_tests.BootstrapTests.test_busy_installer_waits_for_other_process_and_reuses_verified_install) ... ok
+test_clean_install_and_reuse_without_network (source37_bootstrap_tests.BootstrapTests.test_clean_install_and_reuse_without_network) ... ok
+test_corrupt_download_never_runs (source37_bootstrap_tests.BootstrapTests.test_corrupt_download_never_runs) ... ok
+test_download_only_accepts_native_or_owned_runtime_release_paths (source37_bootstrap_tests.BootstrapTests.test_download_only_accepts_native_or_owned_runtime_release_paths) ... ok
+test_maintained_vector_runtime_installs_with_distinct_provenance (source37_bootstrap_tests.BootstrapTests.test_maintained_vector_runtime_installs_with_distinct_provenance) ... ok
+test_native_download_retry_bound_and_nonnetwork_errors (source37_bootstrap_tests.BootstrapTests.test_native_download_retry_bound_and_nonnetwork_errors) ... ok
+test_pinned_build_metadata_is_accepted (source37_bootstrap_tests.BootstrapTests.test_pinned_build_metadata_is_accepted) ... ok
+test_short_download_retries_but_size_limit_is_final (source37_bootstrap_tests.BootstrapTests.test_short_download_retries_but_size_limit_is_final) ... ok
+test_ssl_eof_download_retries_and_discards_partial_bytes (source37_bootstrap_tests.BootstrapTests.test_ssl_eof_download_retries_and_discards_partial_bytes) ... ok
+test_symlink_archive_rejected (source37_bootstrap_tests.BootstrapTests.test_symlink_archive_rejected) ... ok
+test_tampered_installed_binary_is_not_overwritten (source37_bootstrap_tests.BootstrapTests.test_tampered_installed_binary_is_not_overwritten) ... ok
+test_traversal_rejected_before_extract (source37_bootstrap_tests.BootstrapTests.test_traversal_rejected_before_extract) ... ok
+test_two_processes_first_install_once_and_share_verified_result (source37_bootstrap_tests.BootstrapTests.test_two_processes_first_install_once_and_share_verified_result) ... ok
+test_unknown_platform_fails_without_download (source37_bootstrap_tests.BootstrapTests.test_unknown_platform_fails_without_download) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 3.742s
+
+OK

@@ -1,0 +1,9 @@
+{
+  "result": "PASS",
+  "testsRun": 15,
+  "skipped": 0,
+  "sourceCommit": "2b75ad104b47fdb8fdad24fd90635ed9512fd4f6",
+  "sourceTestSha256": "1e2191c2678989c067ed98268a8149a464218d0ac9b09d0da7c6409d0794c880",
+  "installedBootstrapSha256": "78d5bdf16bf08e9abc96b4b23e5d071da72b648698b888b85fa1b90f81cf32a9",
+  "all13BootstrapBytesMatch": true
+}
