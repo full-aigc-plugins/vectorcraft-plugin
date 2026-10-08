@@ -1,6 +1,6 @@
 # VectorCraft Agent Plugin
 
-Plugin36/source32 includes a dependency guard: public swatch workflows inspect explicit token dependencies, retain pre-edit checkpoints on failure and reject unintended non-consumer edits. Thirteen skills synchronized; fixed release/installed-copy and Art bundle qualification remain open. [Guard architecture](docs/VectorCraft-Brand-Dependency-Guard-Architecture.md).
+Fixed plugin36/source32 passes13 independent native cold installations,26 real workflow tests and52 injected erroneous-update refusals. All64 installed identities match;51 unchanged skills retain revalidated historical cold evidence. Art bundled upgrades and complete V1 remain open. [Fixed acceptance](docs/VectorCraft-Fixed-Brand-Guard-Architecture.md).
 
 Fixed installed appearance-skill verification now includes same-RGB objects without a brand-token link. Only linked consumers change; native properties, unrelated SVG/PNG/PDF and original deliveries remain preserved. Warm runtime verification; no additional V1 task closes. [Acceptance architecture](docs/VectorCraft-Same-Color-Token-Architecture.md).
 
