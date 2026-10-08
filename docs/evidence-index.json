@@ -78,6 +78,40 @@
       "dependencies": {}
     },
     {
+      "path": "docs/evidence/vectorcraft-fixed38-optimization-20261008.json",
+      "sha256": "f328fc2e324dd0ed873e7d3fc7f6d24e79a584062cc8880e473d776ae7a18fa1",
+      "level": "fixed-install",
+      "status": "PASS",
+      "scope": "actual isolated host installation, 13 cold starts and protocol/brand technical tasks only",
+      "requirement": null,
+      "tasks": [
+        "9.3",
+        "9.6"
+      ],
+      "historical": false,
+      "dependencies": {
+        "plugin.json": "efdcbf7092d8bb17dd6df0a12bd8b6d162309562abecabb69c1addd0e30799f5",
+        "skills.lock.json": "14612035acbed8c93908e1a8bfb50383e6e88811037b90f3ed2825256f0f3e5a",
+        "docs/current-identity.json": "beb0f50b74ff76cea7a86f250148d50707fd598f610eb5d3e7e9baa812742b6b",
+        "scripts/acceptance/fixed_brand_edges.py": "e3b4b53cb732a46b18cfbb1c36032b19aac1d07638be4ca8a46d6f8dd9daf703",
+        "scripts/acceptance/fixed_install.py": "b360544f751efe3c0f64a0f40a75d81a61588185956d17d7b9cca9ca766abd48",
+        "scripts/acceptance/fixed_native.py": "442e1322aff55d942843764086ac92ab2abe581157d2f7d7a10e1867101b83d5",
+        "scripts/acceptance/fixed_plan_edges.py": "25888c90833418b32ae1cce4e0291ab88dd08083834981dca5835ba9d310d1e0",
+        "scripts/acceptance/fixed_protocol_edges.py": "f68075c81100dfbaff3655ee8e330ea153246253166e84dcc6a1e46441b8840f",
+        "docs/evidence/fixed38-optimization/host.json": "fe95ad15a69a98595557f23bd3d6cb746b593ab27e0964a2c27a5279dd083b4f",
+        "docs/evidence/fixed38-optimization/native.json": "a08504dc0a8d2b1bcc3e2c6a82301874f6a560e9b89a0edef549ba29a076c576",
+        "docs/evidence/fixed38-optimization/protocol.json": "26b4a4ae45aa9efe20efd09f0226279f8a125004d47774a0daa44de785174dd8",
+        "docs/evidence/fixed38-optimization/plan.json": "6acd1233fe905649bedbfd574397154d7d8b490ea4a3d5b47fb4210eb95f3049",
+        "docs/evidence/fixed38-optimization/brandEdges.json": "1fa583688e5c692c155300d27d52dbbc0069286ccb39118c080c4e937a6b7ee6",
+        "docs/evidence/fixed38-optimization/brandGuard.json": "fd5e1f8245a754e7353be6deadbef38b10a657bbe9e3f35c687566eedd04f4f2",
+        "docs/evidence/fixed38-optimization/gateway.json": "5dc4cf5d34c63263e2ddf3b3d791ce32cc85189d671a9b4af286e4b13573e85f",
+        "docs/evidence/fixed38-optimization/commands.json": "784a288bacd79e0a197e82663c17bab7333c2deee03ea9fe22e9a36f0d85bbf5",
+        "docs/evidence/fixed38-optimization/preserved.json": "5760b489c68ab4d5f7a36219d95ddd8c20f58583e430863d8bbb3ec5a6ee6c7d",
+        "scripts/acceptance/verify_fixed.py": "d4a5ea7c86ec7bc4939a055d40b8128db010ba7a73b7f7e8e27ee7613f908d15",
+        "tests/test_fixed_acceptance.py": "15e6af665575ce3f1da674d31853c118b6f7083ceea45b9f913e274869dbb6e1"
+      }
+    },
+    {
       "path": "docs/evidence/vectorcraft-optimization-local-before-execution-control-20261008.json",
       "sha256": "2114e28996da9594cb22a70f93b61daf574a531385612bad7832249229ce1157",
       "level": "local-tests",

@@ -1,0 +1,114 @@
+{
+  "schema": "vectorcraft-fixed-optimization/v1",
+  "result": "PASS",
+  "level": "fixed-install",
+  "pluginVersion": "0.1.0-dev.38",
+  "pluginReleaseCommit": "c57f02eab17dd3a989c35e08c4c235ab43c41662",
+  "sourceRef": "v0.1.0-dev.35",
+  "sourceCommit": "2bd9110a70e156315f1712854f034dd1e3eb27cd",
+  "platform": "Darwin-arm64",
+  "hostVersion": "codex-cli 0.153.4",
+  "reports": {
+    "host": {
+      "path": "docs/evidence/fixed38-optimization/host.json",
+      "sha256": "fe95ad15a69a98595557f23bd3d6cb746b593ab27e0964a2c27a5279dd083b4f",
+      "originalSha256": "42eaaad47761aba692006c9c8ee4a97ef7ea88606d5f441275874d7512710d7d",
+      "redaction": "private workspace prefix only; original input/output/skill/runtime digests retained"
+    },
+    "native": {
+      "path": "docs/evidence/fixed38-optimization/native.json",
+      "sha256": "a08504dc0a8d2b1bcc3e2c6a82301874f6a560e9b89a0edef549ba29a076c576",
+      "originalSha256": "3ab3cb9a47961a94b4775d7b99945bd38bf9c9f5ba1e36d3474b8256c27c70c9",
+      "redaction": "private workspace prefix only; original input/output/skill/runtime digests retained"
+    },
+    "protocol": {
+      "path": "docs/evidence/fixed38-optimization/protocol.json",
+      "sha256": "26b4a4ae45aa9efe20efd09f0226279f8a125004d47774a0daa44de785174dd8",
+      "originalSha256": "26b4a4ae45aa9efe20efd09f0226279f8a125004d47774a0daa44de785174dd8",
+      "redaction": "private workspace prefix only; original input/output/skill/runtime digests retained"
+    },
+    "plan": {
+      "path": "docs/evidence/fixed38-optimization/plan.json",
+      "sha256": "6acd1233fe905649bedbfd574397154d7d8b490ea4a3d5b47fb4210eb95f3049",
+      "originalSha256": "6acd1233fe905649bedbfd574397154d7d8b490ea4a3d5b47fb4210eb95f3049",
+      "redaction": "private workspace prefix only; original input/output/skill/runtime digests retained"
+    },
+    "brandEdges": {
+      "path": "docs/evidence/fixed38-optimization/brandEdges.json",
+      "sha256": "1fa583688e5c692c155300d27d52dbbc0069286ccb39118c080c4e937a6b7ee6",
+      "originalSha256": "1fa583688e5c692c155300d27d52dbbc0069286ccb39118c080c4e937a6b7ee6",
+      "redaction": "private workspace prefix only; original input/output/skill/runtime digests retained"
+    },
+    "brandGuard": {
+      "path": "docs/evidence/fixed38-optimization/brandGuard.json",
+      "sha256": "fd5e1f8245a754e7353be6deadbef38b10a657bbe9e3f35c687566eedd04f4f2",
+      "originalSha256": "fd5e1f8245a754e7353be6deadbef38b10a657bbe9e3f35c687566eedd04f4f2",
+      "redaction": "private workspace prefix only; original input/output/skill/runtime digests retained"
+    },
+    "gateway": {
+      "path": "docs/evidence/fixed38-optimization/gateway.json",
+      "sha256": "5dc4cf5d34c63263e2ddf3b3d791ce32cc85189d671a9b4af286e4b13573e85f",
+      "originalSha256": "5dc4cf5d34c63263e2ddf3b3d791ce32cc85189d671a9b4af286e4b13573e85f",
+      "redaction": "private workspace prefix only; original input/output/skill/runtime digests retained"
+    },
+    "commands": {
+      "path": "docs/evidence/fixed38-optimization/commands.json",
+      "sha256": "784a288bacd79e0a197e82663c17bab7333c2deee03ea9fe22e9a36f0d85bbf5",
+      "originalSha256": "784a288bacd79e0a197e82663c17bab7333c2deee03ea9fe22e9a36f0d85bbf5",
+      "redaction": "private workspace prefix only; original input/output/skill/runtime digests retained"
+    },
+    "preserved": {
+      "path": "docs/evidence/fixed38-optimization/preserved.json",
+      "sha256": "5760b489c68ab4d5f7a36219d95ddd8c20f58583e430863d8bbb3ec5a6ee6c7d",
+      "originalSha256": "5760b489c68ab4d5f7a36219d95ddd8c20f58583e430863d8bbb3ec5a6ee6c7d",
+      "redaction": "private workspace prefix only; original input/output/skill/runtime digests retained"
+    }
+  },
+  "fingerprints": {
+    "plugin.json": "efdcbf7092d8bb17dd6df0a12bd8b6d162309562abecabb69c1addd0e30799f5",
+    "skills.lock.json": "14612035acbed8c93908e1a8bfb50383e6e88811037b90f3ed2825256f0f3e5a",
+    "docs/current-identity.json": "beb0f50b74ff76cea7a86f250148d50707fd598f610eb5d3e7e9baa812742b6b",
+    "scripts/acceptance/fixed_brand_edges.py": "e3b4b53cb732a46b18cfbb1c36032b19aac1d07638be4ca8a46d6f8dd9daf703",
+    "scripts/acceptance/fixed_install.py": "b360544f751efe3c0f64a0f40a75d81a61588185956d17d7b9cca9ca766abd48",
+    "scripts/acceptance/fixed_native.py": "442e1322aff55d942843764086ac92ab2abe581157d2f7d7a10e1867101b83d5",
+    "scripts/acceptance/fixed_plan_edges.py": "25888c90833418b32ae1cce4e0291ab88dd08083834981dca5835ba9d310d1e0",
+    "scripts/acceptance/fixed_protocol_edges.py": "f68075c81100dfbaff3655ee8e330ea153246253166e84dcc6a1e46441b8840f",
+    "docs/evidence/fixed38-optimization/host.json": "fe95ad15a69a98595557f23bd3d6cb746b593ab27e0964a2c27a5279dd083b4f",
+    "docs/evidence/fixed38-optimization/native.json": "a08504dc0a8d2b1bcc3e2c6a82301874f6a560e9b89a0edef549ba29a076c576",
+    "docs/evidence/fixed38-optimization/protocol.json": "26b4a4ae45aa9efe20efd09f0226279f8a125004d47774a0daa44de785174dd8",
+    "docs/evidence/fixed38-optimization/plan.json": "6acd1233fe905649bedbfd574397154d7d8b490ea4a3d5b47fb4210eb95f3049",
+    "docs/evidence/fixed38-optimization/brandEdges.json": "1fa583688e5c692c155300d27d52dbbc0069286ccb39118c080c4e937a6b7ee6",
+    "docs/evidence/fixed38-optimization/brandGuard.json": "fd5e1f8245a754e7353be6deadbef38b10a657bbe9e3f35c687566eedd04f4f2",
+    "docs/evidence/fixed38-optimization/gateway.json": "5dc4cf5d34c63263e2ddf3b3d791ce32cc85189d671a9b4af286e4b13573e85f",
+    "docs/evidence/fixed38-optimization/commands.json": "784a288bacd79e0a197e82663c17bab7333c2deee03ea9fe22e9a36f0d85bbf5",
+    "docs/evidence/fixed38-optimization/preserved.json": "5760b489c68ab4d5f7a36219d95ddd8c20f58583e430863d8bbb3ec5a6ee6c7d",
+    "scripts/acceptance/verify_fixed.py": "d4a5ea7c86ec7bc4939a055d40b8128db010ba7a73b7f7e8e27ee7613f908d15",
+    "tests/test_fixed_acceptance.py": "15e6af665575ce3f1da674d31853c118b6f7083ceea45b9f913e274869dbb6e1"
+  },
+  "completedTasks": [
+    "9.3",
+    "9.6"
+  ],
+  "nativeCases": {
+    "standaloneCold": 13,
+    "createRevisePairs": 12,
+    "setupOnly": 1,
+    "workflowSaveFaults": 22,
+    "commandSaveFaults": 9,
+    "preflightFailures": 10,
+    "brandMutationFailures": 8,
+    "brandAdditionalBoundaries": 8,
+    "gatewayRoutesNineExports": 2
+  },
+  "scope": "current fixed install and native technical task9.3/task9.6 evidence only; source36 contract wording remains an unpublished separate candidate",
+  "notComplete": [
+    "9.9 actual model implicit and explicit routing",
+    "9.18 depends on9.9",
+    "9.21 full execution/review contract",
+    "complete V1",
+    "all585 command executions",
+    "Art bundled upgrade",
+    "public marketplace eligibility"
+  ],
+  "verification": "matrix validator includes negative tests for rehashed truncation and skill identity drift; original native subreport fingerprints retained"
+}

@@ -15,7 +15,8 @@ contract_module = importlib.util.module_from_spec(contract_spec)
 contract_spec.loader.exec_module(contract_module)
 errors.extend(contract_module.validate_reference(json.loads((ROOT / "docs/contracts-reference.json").read_text())))
 markdown = sorted(ROOT.rglob('*.md'))
-markdown = [p for p in markdown if '.git' not in p.parts]
+# 隔离宿主会将系统技能写入忽略的本地缓存；它们不属于待发布文档。
+markdown = [p for p in markdown if '.git' not in p.parts and p.relative_to(ROOT).parts[0] != '.local']
 for path in markdown:
     text = path.read_text(encoding='utf-8')
     relative = str(path.relative_to(ROOT))

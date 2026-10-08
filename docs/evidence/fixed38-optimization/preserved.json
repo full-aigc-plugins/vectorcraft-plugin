@@ -1,0 +1,62 @@
+{
+  "schema": "craft-native-failed-stage/v1",
+  "domain": "vectorcraft",
+  "result": "PASS",
+  "cases": [
+    {
+      "fault": "malformed",
+      "result": "PASS",
+      "originalStagePreserved": true,
+      "nativeReopened": true,
+      "noReplay": true,
+      "nativeSaveCount": 1,
+      "partialFiles": 2
+    },
+    {
+      "fault": "scalar",
+      "result": "PASS",
+      "originalStagePreserved": true,
+      "nativeReopened": true,
+      "noReplay": true,
+      "nativeSaveCount": 1,
+      "partialFiles": 2
+    },
+    {
+      "fault": "missing",
+      "result": "PASS",
+      "originalStagePreserved": true,
+      "nativeReopened": true,
+      "noReplay": true,
+      "nativeSaveCount": 1,
+      "partialFiles": 2
+    },
+    {
+      "fault": "ambiguous",
+      "result": "PASS",
+      "originalStagePreserved": true,
+      "nativeReopened": true,
+      "noReplay": true,
+      "nativeSaveCount": 1,
+      "partialFiles": 2
+    },
+    {
+      "fault": "nonfinite",
+      "result": "PASS",
+      "originalStagePreserved": true,
+      "nativeReopened": true,
+      "noReplay": true,
+      "nativeSaveCount": 1,
+      "partialFiles": 2
+    },
+    {
+      "fault": "tool-content",
+      "result": "PASS",
+      "originalStagePreserved": true,
+      "nativeReopened": true,
+      "noReplay": true,
+      "nativeSaveCount": 1,
+      "partialFiles": 2
+    }
+  ],
+  "scope": "candidate source with locked installed native CLI; original retained stage inspected and reopened; proxy capture is not recovery input"
+}

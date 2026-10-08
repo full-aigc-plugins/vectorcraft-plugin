@@ -98,6 +98,13 @@ def build(root=ROOT):
             entries.append(bound_report(root,control,'native-candidate','owned process supervision, readonly original-file recovery, cancellation epoch fence; full task acceptance remains open','VC-TX-003',['3.1','3.2','3.4','3.5','3.7','3.8']))
         else:
             entries.append(record(root,control,'native-candidate','PASS',[],'pre-release execution control at its original fingerprints; fixed release acceptance remains separate','VC-TX-003',['3.1','3.2','3.4','3.5','3.7','3.8'],historical=True))
+    fixed='docs/evidence/vectorcraft-fixed38-optimization-20261008.json'
+    if (root/fixed).is_file():
+        proof=json.loads(safe_file(root,fixed).read_text())
+        if proof['pluginVersion']==plugin['version'] and proof['sourceCommit']==source['sha']:
+            entries.append(bound_report(root,fixed,'fixed-install','actual isolated host installation, 13 cold starts and protocol/brand technical tasks only',tasks=['9.3','9.6']))
+        else:
+            entries.append(record(root,fixed,'fixed-install','PASS',[],'fixed plugin38/source35; retained at original execution identity',tasks=['9.3','9.6'],historical=True))
     previous='docs/evidence/vectorcraft-optimization-local-before-execution-control-20261008.json'
     if (root/previous).is_file():
         entries.append(record(root,previous,'local-tests','PASS',[],'original execution fingerprints retained inside historical report; never rebound to changed source',historical=True))

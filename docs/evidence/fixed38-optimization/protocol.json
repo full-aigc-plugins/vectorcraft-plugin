@@ -1,0 +1,235 @@
+{
+  "schema": "vectorcraft-fixed-strict-protocol/v1",
+  "result": "PASS",
+  "pluginVersion": "0.1.0-dev.38",
+  "sourceCommit": "2bd9110a70e156315f1712854f034dd1e3eb27cd",
+  "installedSkillSha256": "a332ea661bdbea83302e0b07194fff7501671c916e4e3cda3fb6f79b460e2622",
+  "nativeRuntimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+  "driverSha256": "f68075c81100dfbaff3655ee8e330ea153246253166e84dcc6a1e46441b8840f",
+  "originalProxySha256": "e7ae95ae6a5a6eb11bbb90c1808bbe8d102bc06911337b9e0f31e5cb5929677f",
+  "hookSha256": "adad2cbf4d75c06e2288f61858ef5f9c8a7d603f8688c315cc4361bb214a133c",
+  "qaProxySha256": "e838c8475ee308d23f58439408291ff57b9e372c1005ba456ba6d5147a4092ef",
+  "cases": [
+    {
+      "mode": "direct",
+      "fault": "malformed",
+      "result": "PASS",
+      "nativeSaveCount": 1,
+      "originalStageReopened": true,
+      "replayRefused": true,
+      "projectSha256": "d0b36647703f49256b366716942bdc87a7ec2ee3a39aab7a270140b42c180635",
+      "failureSha256": "e7553da5e39c7c721976fadaaeb4d9f4f3c2a5f9db02b30159388852d227a8ea"
+    },
+    {
+      "mode": "direct",
+      "fault": "scalar",
+      "result": "PASS",
+      "nativeSaveCount": 1,
+      "originalStageReopened": true,
+      "replayRefused": true,
+      "projectSha256": "910aa40dc59b9a81ffc96eb7ecc17a36b36d4c8bec8130b47d4a59dc22be3f40",
+      "failureSha256": "c54592a7478d51d3dbcd2f15f305085277fd4b7910d75051db157a13cc24631f"
+    },
+    {
+      "mode": "direct",
+      "fault": "missing",
+      "result": "PASS",
+      "nativeSaveCount": 1,
+      "originalStageReopened": true,
+      "replayRefused": true,
+      "projectSha256": "910aa40dc59b9a81ffc96eb7ecc17a36b36d4c8bec8130b47d4a59dc22be3f40",
+      "failureSha256": "e2da3db29d3cf60b20d6bde7a14ca8244cfb2ecadc3b20e4cc1415222524d766"
+    },
+    {
+      "mode": "direct",
+      "fault": "ambiguous",
+      "result": "PASS",
+      "nativeSaveCount": 1,
+      "originalStageReopened": true,
+      "replayRefused": true,
+      "projectSha256": "910aa40dc59b9a81ffc96eb7ecc17a36b36d4c8bec8130b47d4a59dc22be3f40",
+      "failureSha256": "c7f4c663ed2e8ca49da834c7779426f26627d9c62fcf734337d2c266c7270c33"
+    },
+    {
+      "mode": "direct",
+      "fault": "nonfinite",
+      "result": "PASS",
+      "nativeSaveCount": 1,
+      "originalStageReopened": true,
+      "replayRefused": true,
+      "projectSha256": "bce3385aa9e3d7e46d535e0acb86e7bc16a634ad4b6dc52529ce256161b46589",
+      "failureSha256": "0aef81b9743159157cc2c380d62d1d9e81c771795b652b89406e1919dc79c604"
+    },
+    {
+      "mode": "direct",
+      "fault": "tool-content",
+      "result": "PASS",
+      "nativeSaveCount": 1,
+      "originalStageReopened": true,
+      "replayRefused": true,
+      "projectSha256": "bce3385aa9e3d7e46d535e0acb86e7bc16a634ad4b6dc52529ce256161b46589",
+      "failureSha256": "6b67e9125ecfbb33d61bf1554682de9312f6d523b8ee0c36bf6908bc359b01a4"
+    },
+    {
+      "mode": "direct",
+      "fault": "wrong-id",
+      "result": "PASS",
+      "nativeSaveCount": 1,
+      "originalStageReopened": true,
+      "replayRefused": true,
+      "projectSha256": "bce3385aa9e3d7e46d535e0acb86e7bc16a634ad4b6dc52529ce256161b46589",
+      "failureSha256": "b57e6cc9b79661ba25be95b3f76b10030e24e99ad5121ab0c8f03a1ad9169cc3"
+    },
+    {
+      "mode": "direct",
+      "fault": "duplicate-envelope",
+      "result": "PASS",
+      "nativeSaveCount": 1,
+      "originalStageReopened": true,
+      "replayRefused": true,
+      "projectSha256": "bce3385aa9e3d7e46d535e0acb86e7bc16a634ad4b6dc52529ce256161b46589",
+      "failureSha256": "ebbbf9586c724631283450ef165f6003bb73c6a64047537ca575500376c60727"
+    },
+    {
+      "mode": "direct",
+      "fault": "inner-nonfinite",
+      "result": "PASS",
+      "nativeSaveCount": 1,
+      "originalStageReopened": true,
+      "replayRefused": true,
+      "projectSha256": "8a54a736a7edd4029237ee1541df64b7a152c70077c22ef3270180d6aa481e18",
+      "failureSha256": "047835cd2a559d7d09af5e15fd4cf3a1e8094cb6f95f0d9815a2f5072c32020b"
+    },
+    {
+      "mode": "direct",
+      "fault": "inner-overflow",
+      "result": "PASS",
+      "nativeSaveCount": 1,
+      "originalStageReopened": true,
+      "replayRefused": true,
+      "projectSha256": "8a54a736a7edd4029237ee1541df64b7a152c70077c22ef3270180d6aa481e18",
+      "failureSha256": "6fb222d1cef23416fe7d3d19d24c2318d8bc0ec0340d46251ea8703a040dbd42"
+    },
+    {
+      "mode": "direct",
+      "fault": "inner-duplicate",
+      "result": "PASS",
+      "nativeSaveCount": 1,
+      "originalStageReopened": true,
+      "replayRefused": true,
+      "projectSha256": "8a54a736a7edd4029237ee1541df64b7a152c70077c22ef3270180d6aa481e18",
+      "failureSha256": "b397d60dc631052d43843854a6e869b624f946d0ef67114c8e6b2caca3ee4aea"
+    },
+    {
+      "mode": "native-gateway",
+      "fault": "malformed",
+      "result": "PASS",
+      "nativeSaveCount": 1,
+      "originalStageReopened": true,
+      "replayRefused": true,
+      "projectSha256": "8a54a736a7edd4029237ee1541df64b7a152c70077c22ef3270180d6aa481e18",
+      "failureSha256": "bb160791f30e7a3ea4a9e0bcd73766bfd4cd67354561c60cff0cb1b859bb1370"
+    },
+    {
+      "mode": "native-gateway",
+      "fault": "scalar",
+      "result": "PASS",
+      "nativeSaveCount": 1,
+      "originalStageReopened": true,
+      "replayRefused": true,
+      "projectSha256": "2becf19c69e90820fdb91ee09ec7dd572450d3b47ca8e06c5b89a6532ca58ff8",
+      "failureSha256": "ff4985c7eccbfde25346b76f6f834cd8a91c5392ede1e03e38e9cfb425040081"
+    },
+    {
+      "mode": "native-gateway",
+      "fault": "missing",
+      "result": "PASS",
+      "nativeSaveCount": 1,
+      "originalStageReopened": true,
+      "replayRefused": true,
+      "projectSha256": "2becf19c69e90820fdb91ee09ec7dd572450d3b47ca8e06c5b89a6532ca58ff8",
+      "failureSha256": "19a8b4cff11125e17888c5e06ef4393715444bd27c9da65e120e2a0ea81daae6"
+    },
+    {
+      "mode": "native-gateway",
+      "fault": "ambiguous",
+      "result": "PASS",
+      "nativeSaveCount": 1,
+      "originalStageReopened": true,
+      "replayRefused": true,
+      "projectSha256": "2becf19c69e90820fdb91ee09ec7dd572450d3b47ca8e06c5b89a6532ca58ff8",
+      "failureSha256": "a147307640f6b948b7a3d2bba1c2c39bbe0003754b6f3118fd811c22043f9316"
+    },
+    {
+      "mode": "native-gateway",
+      "fault": "nonfinite",
+      "result": "PASS",
+      "nativeSaveCount": 1,
+      "originalStageReopened": true,
+      "replayRefused": true,
+      "projectSha256": "878e8bf3922599d5e6f6b75711862fbcb865432c14c7a2c879af57cc926b1789",
+      "failureSha256": "00316803378abd0f287a7febf118f8a532693624e7303a183663d9052c201f76"
+    },
+    {
+      "mode": "native-gateway",
+      "fault": "tool-content",
+      "result": "PASS",
+      "nativeSaveCount": 1,
+      "originalStageReopened": true,
+      "replayRefused": true,
+      "projectSha256": "878e8bf3922599d5e6f6b75711862fbcb865432c14c7a2c879af57cc926b1789",
+      "failureSha256": "36842819a129791b1485969ee392845302271d72c5673330b38ac7320a29d6df"
+    },
+    {
+      "mode": "native-gateway",
+      "fault": "wrong-id",
+      "result": "PASS",
+      "nativeSaveCount": 1,
+      "originalStageReopened": true,
+      "replayRefused": true,
+      "projectSha256": "878e8bf3922599d5e6f6b75711862fbcb865432c14c7a2c879af57cc926b1789",
+      "failureSha256": "8e91ad7e10b0ce4409bc31622d43580d59ce1929076be3a799f011e28621a69f"
+    },
+    {
+      "mode": "native-gateway",
+      "fault": "duplicate-envelope",
+      "result": "PASS",
+      "nativeSaveCount": 1,
+      "originalStageReopened": true,
+      "replayRefused": true,
+      "projectSha256": "878e8bf3922599d5e6f6b75711862fbcb865432c14c7a2c879af57cc926b1789",
+      "failureSha256": "ff516e667806fe17dfeccd7c1c52ec4236f86d28c2c5f7f43394d67ce4daf723"
+    },
+    {
+      "mode": "native-gateway",
+      "fault": "inner-nonfinite",
+      "result": "PASS",
+      "nativeSaveCount": 1,
+      "originalStageReopened": true,
+      "replayRefused": true,
+      "projectSha256": "c209d40febe72de8e64ee798bf4aee4a5af1a62db26b73c519ee25f35213c09c",
+      "failureSha256": "846acafb6e154e49e6ad50712fb761fdf89d6d47d390035c4c24c81d20455a76"
+    },
+    {
+      "mode": "native-gateway",
+      "fault": "inner-overflow",
+      "result": "PASS",
+      "nativeSaveCount": 1,
+      "originalStageReopened": true,
+      "replayRefused": true,
+      "projectSha256": "c209d40febe72de8e64ee798bf4aee4a5af1a62db26b73c519ee25f35213c09c",
+      "failureSha256": "1e54dd2386b403415fa571047b3d5106d59edcfae0dfc4055473b348e92f46b0"
+    },
+    {
+      "mode": "native-gateway",
+      "fault": "inner-duplicate",
+      "result": "PASS",
+      "nativeSaveCount": 1,
+      "originalStageReopened": true,
+      "replayRefused": true,
+      "projectSha256": "c209d40febe72de8e64ee798bf4aee4a5af1a62db26b73c519ee25f35213c09c",
+      "failureSha256": "17187652acf277c99f20cb99458f5d6a28a864d8642b59331b56163d7c05ae8b"
+    }
+  ],
+  "scope": "22 actual save faults through direct and native.command workflow; original retained projects reopened and repeated execution refused; not exhaustive commands"
+}

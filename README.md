@@ -308,3 +308,7 @@ Fixed plugin dev.37/source dev.33: all13 actual installed skills independently c
 ### dev.38 development prerelease
 
 This release pins source dev.35. Earlier dev.37/source33 installation and candidate execution reports retain their original fingerprints as historical evidence. Local regression and CI do not establish new host installation, model routing, exhaustive command execution or full V1 acceptance. Marketplace eligibility remains false.
+
+### Fixed dev.38/source35 technical acceptance
+
+Codex 0.153.4 installed and discovered all13 skills in fresh isolated configuration. All13 cold native starts and12 declared create/revise pairs passed (setup is installation-only). Two workflow routes passed22 post-save protocol faults; the command entry passed9 faults, and10 ambiguous-plan cases stopped before setup/output. Brand boundary and nine-export preservation checks passed. Tasks9.3/9.6 close; model routing9.9, dependent9.18 and full V1 remain open. [Bound evidence](docs/evidence/vectorcraft-fixed38-optimization-20261008.json). Source36 is an unpublished contract-clarification candidate.

@@ -1,0 +1,116 @@
+{
+  "schema": "vectorcraft-fixed-host-install/v1",
+  "result": "PASS",
+  "pluginVersion": "0.1.0-dev.38",
+  "pluginCommit": "c57f02eab17dd3a989c35e08c4c235ab43c41662",
+  "skillSourceRef": "v0.1.0-dev.35",
+  "skillSourceCommit": "2bd9110a70e156315f1712854f034dd1e3eb27cd",
+  "hostVersion": "codex-cli 0.153.4",
+  "hostIdentity": {
+    "userAgent": "Codex Desktop/0.153.4 (Mac OS 27.0.1; arm64) dumb (vectorcraft-fixed-acceptance; 1.0)",
+    "codexHome": "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/.local/fixed38 acceptance/codex home",
+    "platformFamily": "unix",
+    "platformOs": "macos"
+  },
+  "platform": "Darwin-arm64",
+  "skills": [
+    {
+      "name": "vectorcraft-use",
+      "path": "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/.local/fixed38 acceptance/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.38/skills/vectorcraft-use",
+      "sha256": "a332ea661bdbea83302e0b07194fff7501671c916e4e3cda3fb6f79b460e2622",
+      "enabled": true,
+      "implicitPolicy": "policy:\n  allow_implicit_invocation: true\n"
+    },
+    {
+      "name": "vectorcraft-cli",
+      "path": "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/.local/fixed38 acceptance/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.38/skills/vectorcraft-cli",
+      "sha256": "19e62e6f3d29aabb2b924d5a1512a307b4349c0dfa28b72d05fd4f9c9baf2a84",
+      "enabled": true,
+      "implicitPolicy": "policy:\n  allow_implicit_invocation: false\n"
+    },
+    {
+      "name": "vectorcraft-cli-setup",
+      "path": "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/.local/fixed38 acceptance/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.38/skills/vectorcraft-cli-setup",
+      "sha256": "835914e9e850e98d711e6047a0d57ea503e989020c9d7ad2a3582c28ffef888d",
+      "enabled": true,
+      "implicitPolicy": "policy:\n  allow_implicit_invocation: false\n"
+    },
+    {
+      "name": "vectorcraft-cli-project",
+      "path": "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/.local/fixed38 acceptance/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.38/skills/vectorcraft-cli-project",
+      "sha256": "ca80fad61959445cab49467429f54cb3808912c1b2bd469d2ce2d353fa509e14",
+      "enabled": true,
+      "implicitPolicy": "policy:\n  allow_implicit_invocation: false\n"
+    },
+    {
+      "name": "vectorcraft-cli-paths",
+      "path": "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/.local/fixed38 acceptance/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.38/skills/vectorcraft-cli-paths",
+      "sha256": "0c5f36a8ecb80a91ea07c29c694b34efc9e0f73c566cc0e2bf2e39f72247597b",
+      "enabled": true,
+      "implicitPolicy": "policy:\n  allow_implicit_invocation: false\n"
+    },
+    {
+      "name": "vectorcraft-cli-shapes",
+      "path": "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/.local/fixed38 acceptance/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.38/skills/vectorcraft-cli-shapes",
+      "sha256": "503bc747b5de04f0c4a0171a987bc387c84974cb501360974a1aa3fc82344c3d",
+      "enabled": true,
+      "implicitPolicy": "policy:\n  allow_implicit_invocation: false\n"
+    },
+    {
+      "name": "vectorcraft-cli-boolean",
+      "path": "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/.local/fixed38 acceptance/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.38/skills/vectorcraft-cli-boolean",
+      "sha256": "a2932215ed88342ec6aef05b5e3f1999c591fdccadaa32ab7136a1b14e4e78d2",
+      "enabled": true,
+      "implicitPolicy": "policy:\n  allow_implicit_invocation: false\n"
+    },
+    {
+      "name": "vectorcraft-cli-text",
+      "path": "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/.local/fixed38 acceptance/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.38/skills/vectorcraft-cli-text",
+      "sha256": "bf8c0f1eac96d1231ff87daf805f80dbedd6a7a741bb95b50c3e09b672da704e",
+      "enabled": true,
+      "implicitPolicy": "policy:\n  allow_implicit_invocation: false\n"
+    },
+    {
+      "name": "vectorcraft-cli-appearance",
+      "path": "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/.local/fixed38 acceptance/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.38/skills/vectorcraft-cli-appearance",
+      "sha256": "5b803d3e019d72cbcc557c05626577e729484e9a9677eafb796a943882573d08",
+      "enabled": true,
+      "implicitPolicy": "policy:\n  allow_implicit_invocation: false\n"
+    },
+    {
+      "name": "vectorcraft-cli-artboards",
+      "path": "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/.local/fixed38 acceptance/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.38/skills/vectorcraft-cli-artboards",
+      "sha256": "58751ad473afdf2c2cadf19a09a95cb1dbe8f9779143880bd5b5a9bf2b9227a2",
+      "enabled": true,
+      "implicitPolicy": "policy:\n  allow_implicit_invocation: false\n"
+    },
+    {
+      "name": "vectorcraft-cli-assets",
+      "path": "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/.local/fixed38 acceptance/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.38/skills/vectorcraft-cli-assets",
+      "sha256": "ba0143c8dad9ee7a8cf880e72889fa75868c7ed3d298a3b2977c650e7356a5c7",
+      "enabled": true,
+      "implicitPolicy": "policy:\n  allow_implicit_invocation: false\n"
+    },
+    {
+      "name": "vectorcraft-cli-export",
+      "path": "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/.local/fixed38 acceptance/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.38/skills/vectorcraft-cli-export",
+      "sha256": "3b7669c61f4dff4cf793f65f46e4df8848e8737f4510ab51dfef05eee530346c",
+      "enabled": true,
+      "implicitPolicy": "policy:\n  allow_implicit_invocation: false\n"
+    },
+    {
+      "name": "vectorcraft-cli-selection",
+      "path": "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/.local/fixed38 acceptance/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.38/skills/vectorcraft-cli-selection",
+      "sha256": "b483f5c6b7cf40b623005a856ece438d1b5f371eadf85242c6d4ae7a9d6e1d22",
+      "enabled": true,
+      "implicitPolicy": "policy:\n  allow_implicit_invocation: false\n"
+    }
+  ],
+  "scope": "isolated actual published-tag plugin installation and host discovery; private acceptance catalog only",
+  "excluded": [
+    "model implicit routing",
+    "GUI",
+    "complete V1",
+    "public marketplace eligibility"
+  ]
+}

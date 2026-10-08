@@ -12,6 +12,19 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class CurrentReadmeIdentityTests(unittest.TestCase):
+    def test_ignored_host_cache_is_not_published_documentation(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root=Path(temporary)/'repo'
+            shutil.copytree(ROOT,root,ignore=shutil.ignore_patterns('.git','.local','node_modules','__pycache__'))
+            cached=root/'.local/isolated-host/skills/system/foreign.md'
+            cached.parent.mkdir(parents=True);cached.write_text('# Foreign\n# Another title\n```\ncache\n```\n')
+            def validate():
+                return subprocess.run([sys.executable,'-B',str(root/'scripts/validate_docs.py')],capture_output=True,text=True,cwd=root)
+            result=validate();self.assertEqual(result.returncode,0,result.stdout+result.stderr)
+            published=root/'docs/foreign.md';published.write_text(cached.read_text())
+            result=validate();self.assertEqual(result.returncode,1,result.stdout+result.stderr)
+            self.assertTrue(any('docs/foreign.md' in error for error in json.loads(result.stdout)['errors']))
+
     def test_local_docs_gate_rejects_stale_and_duplicate_current_identity(self):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary) / 'repo'
@@ -47,4 +60,3 @@ class CurrentReadmeIdentityTests(unittest.TestCase):
             negative = validate()
             self.assertEqual(negative.returncode, 1, negative.stdout + negative.stderr)
             self.assertTrue(any('current README identity' in e for e in json.loads(negative.stdout)['errors']))
-

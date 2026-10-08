@@ -1,0 +1,256 @@
+{
+  "schema": "vectorcraft-fixed-brand-edges/v1",
+  "result": "PASS",
+  "pluginVersion": "0.1.0-dev.38",
+  "sourceCommit": "2bd9110a70e156315f1712854f034dd1e3eb27cd",
+  "installedSkillSha256": "5b803d3e019d72cbcc557c05626577e729484e9a9677eafb796a943882573d08",
+  "qaInstrumentedSkillSha256": "3915778f128070bbdb7536adff2fa66159b0dd399c6819d65a10db4bb6341861",
+  "driverSha256": "e3b4b53cb732a46b18cfbb1c36032b19aac1d07638be4ca8a46d6f8dd9daf703",
+  "cases": [
+    {
+      "mode": "direct",
+      "case": "consumer-closed",
+      "result": "PASS",
+      "failureRetained": true,
+      "checkpointReopened": true,
+      "sourceUnchanged": true,
+      "check": {
+        "schema": "vectorcraft-brand-dependency-check/v1",
+        "status": "failed",
+        "token": "Brand Primary",
+        "paletteChangedUnexpectedly": false,
+        "tokenTargetMismatch": false,
+        "targetMismatchObjectIds": [],
+        "effect": "updated",
+        "consumerIds": [
+          2,
+          4
+        ],
+        "affectedObjectIds": [
+          2
+        ],
+        "unexpectedDependencies": [
+          {
+            "token": "Brand Primary",
+            "objectId": 2,
+            "reason": "consumer_noncolor_changed"
+          }
+        ],
+        "artboardsChanged": false,
+        "beforeSha256": "be2a1fef7a6e6decc9af07e5675a1752d076815a54dfb89a3d73d3cacc0871af",
+        "afterSha256": "d90f7590128f2d8eb6b39ec34da5831ec9b831b8753d61da2a1d58fbddaaa551",
+        "scope": "native explicit swatch color fields; consumer noncolor fields, palette, identities, artboards and requested authoring-model target",
+        "checkpoint": "brand-checkpoint-0.vectorcraft",
+        "checkpointSha256": "79581dd0dbf9a651de06d57abdc0eb7b51ddda5e179e0ac3e8643bb4fba1fca6",
+        "checkpointRetained": true
+      }
+    },
+    {
+      "mode": "direct",
+      "case": "target-not-reached",
+      "result": "PASS",
+      "failureRetained": true,
+      "checkpointReopened": true,
+      "sourceUnchanged": true,
+      "check": {
+        "schema": "vectorcraft-brand-dependency-check/v1",
+        "status": "failed",
+        "token": "Brand Primary",
+        "paletteChangedUnexpectedly": false,
+        "tokenTargetMismatch": true,
+        "targetMismatchObjectIds": [
+          2,
+          4
+        ],
+        "effect": "not_verified",
+        "consumerIds": [
+          2,
+          4
+        ],
+        "affectedObjectIds": [],
+        "unexpectedDependencies": [],
+        "artboardsChanged": false,
+        "beforeSha256": "be2a1fef7a6e6decc9af07e5675a1752d076815a54dfb89a3d73d3cacc0871af",
+        "afterSha256": "94ad5b6b7593356735569caacbd519c755e2fe59c60e2f2e8ce2ed251ea52c05",
+        "scope": "native explicit swatch color fields; consumer noncolor fields, palette, identities, artboards and requested authoring-model target",
+        "checkpoint": "brand-checkpoint-0.vectorcraft",
+        "checkpointSha256": "79581dd0dbf9a651de06d57abdc0eb7b51ddda5e179e0ac3e8643bb4fba1fca6",
+        "checkpointRetained": true
+      }
+    },
+    {
+      "mode": "direct",
+      "case": "verified_noop",
+      "result": "PASS",
+      "check": {
+        "schema": "vectorcraft-brand-dependency-check/v1",
+        "status": "passed",
+        "token": "Brand Primary",
+        "paletteChangedUnexpectedly": false,
+        "tokenTargetMismatch": false,
+        "targetMismatchObjectIds": [],
+        "effect": "verified_noop",
+        "consumerIds": [
+          2,
+          4
+        ],
+        "affectedObjectIds": [],
+        "unexpectedDependencies": [],
+        "artboardsChanged": false,
+        "beforeSha256": "be2a1fef7a6e6decc9af07e5675a1752d076815a54dfb89a3d73d3cacc0871af",
+        "afterSha256": "94ad5b6b7593356735569caacbd519c755e2fe59c60e2f2e8ce2ed251ea52c05",
+        "scope": "native explicit swatch color fields; consumer noncolor fields, palette, identities, artboards and requested authoring-model target",
+        "checkpoint": "brand-checkpoint-0.vectorcraft",
+        "checkpointSha256": "79581dd0dbf9a651de06d57abdc0eb7b51ddda5e179e0ac3e8643bb4fba1fca6",
+        "checkpointRetained": false
+      }
+    },
+    {
+      "mode": "native-gateway",
+      "case": "consumer-closed",
+      "result": "PASS",
+      "failureRetained": true,
+      "checkpointReopened": true,
+      "sourceUnchanged": true,
+      "check": {
+        "schema": "vectorcraft-brand-dependency-check/v1",
+        "status": "failed",
+        "token": "Brand Primary",
+        "paletteChangedUnexpectedly": false,
+        "tokenTargetMismatch": false,
+        "targetMismatchObjectIds": [],
+        "effect": "updated",
+        "consumerIds": [
+          2,
+          4
+        ],
+        "affectedObjectIds": [
+          2
+        ],
+        "unexpectedDependencies": [
+          {
+            "token": "Brand Primary",
+            "objectId": 2,
+            "reason": "consumer_noncolor_changed"
+          }
+        ],
+        "artboardsChanged": false,
+        "beforeSha256": "be2a1fef7a6e6decc9af07e5675a1752d076815a54dfb89a3d73d3cacc0871af",
+        "afterSha256": "d90f7590128f2d8eb6b39ec34da5831ec9b831b8753d61da2a1d58fbddaaa551",
+        "scope": "native explicit swatch color fields; consumer noncolor fields, palette, identities, artboards and requested authoring-model target",
+        "checkpoint": "brand-checkpoint-0.vectorcraft",
+        "checkpointSha256": "79581dd0dbf9a651de06d57abdc0eb7b51ddda5e179e0ac3e8643bb4fba1fca6",
+        "checkpointRetained": true
+      }
+    },
+    {
+      "mode": "native-gateway",
+      "case": "target-not-reached",
+      "result": "PASS",
+      "failureRetained": true,
+      "checkpointReopened": true,
+      "sourceUnchanged": true,
+      "check": {
+        "schema": "vectorcraft-brand-dependency-check/v1",
+        "status": "failed",
+        "token": "Brand Primary",
+        "paletteChangedUnexpectedly": false,
+        "tokenTargetMismatch": true,
+        "targetMismatchObjectIds": [
+          2,
+          4
+        ],
+        "effect": "not_verified",
+        "consumerIds": [
+          2,
+          4
+        ],
+        "affectedObjectIds": [],
+        "unexpectedDependencies": [],
+        "artboardsChanged": false,
+        "beforeSha256": "be2a1fef7a6e6decc9af07e5675a1752d076815a54dfb89a3d73d3cacc0871af",
+        "afterSha256": "94ad5b6b7593356735569caacbd519c755e2fe59c60e2f2e8ce2ed251ea52c05",
+        "scope": "native explicit swatch color fields; consumer noncolor fields, palette, identities, artboards and requested authoring-model target",
+        "checkpoint": "brand-checkpoint-0.vectorcraft",
+        "checkpointSha256": "79581dd0dbf9a651de06d57abdc0eb7b51ddda5e179e0ac3e8643bb4fba1fca6",
+        "checkpointRetained": true
+      }
+    },
+    {
+      "mode": "native-gateway",
+      "case": "verified_noop",
+      "result": "PASS",
+      "check": {
+        "schema": "vectorcraft-brand-dependency-check/v1",
+        "status": "passed",
+        "token": "Brand Primary",
+        "paletteChangedUnexpectedly": false,
+        "tokenTargetMismatch": false,
+        "targetMismatchObjectIds": [],
+        "effect": "verified_noop",
+        "consumerIds": [
+          2,
+          4
+        ],
+        "affectedObjectIds": [],
+        "unexpectedDependencies": [],
+        "artboardsChanged": false,
+        "beforeSha256": "be2a1fef7a6e6decc9af07e5675a1752d076815a54dfb89a3d73d3cacc0871af",
+        "afterSha256": "1ad2f88df12398aa84537b8b0082ec70bc8787fc746f897e30c9992241a24f4a",
+        "scope": "native explicit swatch color fields; consumer noncolor fields, palette, identities, artboards and requested authoring-model target",
+        "checkpoint": "brand-checkpoint-0.vectorcraft",
+        "checkpointSha256": "72898f81c055ad3ff4823ef4f737c65a56ff55e497006a566b52485ee712c849",
+        "checkpointRetained": false
+      }
+    },
+    {
+      "mode": "direct",
+      "case": "no_effect",
+      "result": "PASS",
+      "check": {
+        "schema": "vectorcraft-brand-dependency-check/v1",
+        "status": "failed",
+        "token": "Brand Primary",
+        "paletteChangedUnexpectedly": false,
+        "tokenTargetMismatch": false,
+        "targetMismatchObjectIds": [],
+        "effect": "no_effect",
+        "consumerIds": [],
+        "affectedObjectIds": [],
+        "unexpectedDependencies": [],
+        "artboardsChanged": false,
+        "beforeSha256": "eb14f9df4d55eb66a5ef5ad90c8ba9a47191bde11b017e336ab407c10a23a661",
+        "afterSha256": "a3eeeb2b10ca2150ea67e92327bf4ba488ffec63e021c767bd7530d109dc73d0",
+        "scope": "native explicit swatch color fields; consumer noncolor fields, palette, identities, artboards and requested authoring-model target",
+        "checkpoint": "brand-checkpoint-0.vectorcraft",
+        "checkpointSha256": "567322298b6b66db746f25999807da946e378a61b956c383dff4a911eca3ce8d",
+        "checkpointRetained": true
+      }
+    },
+    {
+      "mode": "native-gateway",
+      "case": "no_effect",
+      "result": "PASS",
+      "check": {
+        "schema": "vectorcraft-brand-dependency-check/v1",
+        "status": "failed",
+        "token": "Brand Primary",
+        "paletteChangedUnexpectedly": false,
+        "tokenTargetMismatch": false,
+        "targetMismatchObjectIds": [],
+        "effect": "no_effect",
+        "consumerIds": [],
+        "affectedObjectIds": [],
+        "unexpectedDependencies": [],
+        "artboardsChanged": false,
+        "beforeSha256": "eb14f9df4d55eb66a5ef5ad90c8ba9a47191bde11b017e336ab407c10a23a661",
+        "afterSha256": "a3eeeb2b10ca2150ea67e92327bf4ba488ffec63e021c767bd7530d109dc73d0",
+        "scope": "native explicit swatch color fields; consumer noncolor fields, palette, identities, artboards and requested authoring-model target",
+        "checkpoint": "brand-checkpoint-0.vectorcraft",
+        "checkpointSha256": "567322298b6b66db746f25999807da946e378a61b956c383dff4a911eca3ce8d",
+        "checkpointRetained": true
+      }
+    }
+  ],
+  "scope": "actual fixed install, two routes, closed path and target-value faults, original checkpoint readonly reopen, no_effect and verified_noop; technical evidence only"
+}

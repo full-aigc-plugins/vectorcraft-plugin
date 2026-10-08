@@ -1,0 +1,89 @@
+{
+  "schema": "vectorcraft-fixed-plan-preflight/v1",
+  "result": "PASS",
+  "pluginVersion": "0.1.0-dev.38",
+  "installedSkillSha256": "a332ea661bdbea83302e0b07194fff7501671c916e4e3cda3fb6f79b460e2622",
+  "driverSha256": "25888c90833418b32ae1cce4e0291ab88dd08083834981dca5835ba9d310d1e0",
+  "cases": [
+    {
+      "entry": "commands.py",
+      "fault": "duplicate-top",
+      "result": "PASS",
+      "error": "duplicate_json_key",
+      "outputAbsent": true,
+      "runtimeAbsent": true
+    },
+    {
+      "entry": "commands.py",
+      "fault": "duplicate-nested",
+      "result": "PASS",
+      "error": "duplicate_json_key",
+      "outputAbsent": true,
+      "runtimeAbsent": true
+    },
+    {
+      "entry": "commands.py",
+      "fault": "nan",
+      "result": "PASS",
+      "error": "nonfinite_json_value",
+      "outputAbsent": true,
+      "runtimeAbsent": true
+    },
+    {
+      "entry": "commands.py",
+      "fault": "infinity",
+      "result": "PASS",
+      "error": "nonfinite_json_value",
+      "outputAbsent": true,
+      "runtimeAbsent": true
+    },
+    {
+      "entry": "commands.py",
+      "fault": "overflow",
+      "result": "PASS",
+      "error": "nonfinite_json_value",
+      "outputAbsent": true,
+      "runtimeAbsent": true
+    },
+    {
+      "entry": "workflow.py",
+      "fault": "duplicate-top",
+      "result": "PASS",
+      "error": "duplicate_json_key",
+      "outputAbsent": true,
+      "runtimeAbsent": true
+    },
+    {
+      "entry": "workflow.py",
+      "fault": "duplicate-nested",
+      "result": "PASS",
+      "error": "duplicate_json_key",
+      "outputAbsent": true,
+      "runtimeAbsent": true
+    },
+    {
+      "entry": "workflow.py",
+      "fault": "nan",
+      "result": "PASS",
+      "error": "nonfinite_json_value",
+      "outputAbsent": true,
+      "runtimeAbsent": true
+    },
+    {
+      "entry": "workflow.py",
+      "fault": "infinity",
+      "result": "PASS",
+      "error": "nonfinite_json_value",
+      "outputAbsent": true,
+      "runtimeAbsent": true
+    },
+    {
+      "entry": "workflow.py",
+      "fault": "overflow",
+      "result": "PASS",
+      "error": "nonfinite_json_value",
+      "outputAbsent": true,
+      "runtimeAbsent": true
+    }
+  ]
+}
