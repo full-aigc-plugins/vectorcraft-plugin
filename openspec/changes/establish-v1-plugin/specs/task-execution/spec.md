@@ -79,6 +79,18 @@
 - **AND** 缺少原控制文件摘要的旧任务继续保留占用并报告 recovery_identity_missing，不从当前文件补写摘要、重放未知编辑或伪造恢复成功
 - **AND** 存在源工程的任务 SHALL 同时核对意图中原先持久化的源依赖快照摘要；缺少该摘要时报告 recovery_identity_missing，文件改动、增删或链接替换时报告 recovery_source_snapshot_mismatch，均在启动检查进程前拒绝且保留占用
 
+#### Scenario: VC-TX-002-RECEIPT 恢复时绑定已完成回执
+
+- **WHEN** 原生保存完成并已登记交付回执，协调进程在任务终态之前中断
+- **THEN** 恢复 SHALL 在原生检查前核对原步骤状态、回执运行时身份、清单摘要及清单内全部文件摘要；回执与原产物不一致时报告 recovery_receipt_mismatch 并继续保留占用
+- **AND** 只读检查完成后结算 SHALL 核对同一持久步骤意图、状态和回执身份；核验后回执改变时报告 recovery_receipt_changed，旧检查证明缺少步骤摘要时报告 recovery_receipt_identity_missing，不重放未知编辑，不自动提升为成功交付
+
+#### Scenario: VC-TX-002-DELIVERY 打包子目录与最终输出身份
+
+- **WHEN** 链接素材收集产生新的交付子目录，或协调进程在该目录重命名前后中断
+- **THEN** 执行侧 SHALL 在重命名前持久记录实际交付目录的device、inode、原位置、目标输出及清单摘要；恢复只按该原身份核验实际子目录或同inode最终输出，并核对清单内全部文件
+- **AND** 目标、原暂存范围、目录身份或清单失配时保留占用，不移动失败工程、不将初始暂存目录inode冒充打包目录、不从当前输出补造原身份
+
 ### Requirement: VC-TX-003 取消与预算边界
 
 任务 SHALL 区分 cancel_requested 与 cancelled；父子调用共享预算和截止时间；只允许一个层级负责同一副作用的重试。

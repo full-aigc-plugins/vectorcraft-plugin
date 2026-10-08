@@ -10,7 +10,9 @@ Four-domain RT-001 runtime source/integrity acceptance now covers every current 
 
 Create Logo, icon and brand assets as `.vectorcraft` with applicable SVG, PDF and PNG exports.
 
-Current plugin: `0.1.0-dev.48`; skill source: `0.1.0-dev.37`; 13 independent skills.
+Current plugin: `0.1.0-dev.49`; skill source: `0.1.0-dev.38`; 13 independent skills.
+
+Candidate plugin49 binds completed step receipts to runtime identity, manifest and every declared file. Changed receipts after inspection refuse settlement; old checks without step digests require a fresh inspection. Source38 persists actual delivery directory identity before rename, covering nested linked-asset packages. Four real plain/linked crashes before/after receipt pass as candidates; fixed installation is verified separately and full3.6 remains open.
 
 Plugin48 adds source-dependency snapshot identity checks before recovery. A coordinator SIGKILL after real native save and nine exports, before ledger receipt, passes readonly original-output recovery without replay. 84 Node and43 Python regressions pass; public fixed48/source37 installation and these native cases pass with all13 skill digests unchanged; full task3.6 remains open. [Fixed evidence](docs/evidence/vectorcraft-source-recovery-fixed48-20261008.json).
 
@@ -123,9 +125,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.48 |
+| Metadata version | 0.1.0-dev.49 |
 | Stage | implementation-in-progress |
-| Skills source | vectorcraft-skills / v0.1.0-dev.37 |
+| Skills source | vectorcraft-skills / v0.1.0-dev.38 |
 | Execution | Upstream CLI; ArtCraft uses child adapters |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |

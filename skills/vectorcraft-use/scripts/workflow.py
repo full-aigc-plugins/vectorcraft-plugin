@@ -438,6 +438,8 @@ def execute(plan, output, runtime_home=None, source=None, control=None):
         (stage / 'manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n')
         if output.exists() or output.is_symlink():
             raise ValueError('output_exists')
+        if control:
+            control.prepare_delivery(stage,output)
         stage.rename(output)
         return manifest
 

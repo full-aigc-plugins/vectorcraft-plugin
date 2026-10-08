@@ -60,6 +60,16 @@ class ExecutionControl:
         self.check();stage=Path(stage).resolve();stat=stage.stat();self.stage=stage
         self.emit('stage_created',path=str(stage),device=stat.st_dev,inode=stat.st_ino)
 
+    def prepare_delivery(self,stage,output):
+        """重命名前持久登记实际交付子目录身份，覆盖链接素材打包产生的新目录。"""
+        self.check();stage=Path(stage).resolve();output=Path(output).absolute()
+        if not self.stage or not stage.is_relative_to(self.stage) or output.parent.resolve()!=self.stage.parent:
+            raise RuntimeError('delivery_outside_stage')
+        manifest=stage/'manifest.json'
+        if manifest.is_symlink() or not manifest.is_file():raise RuntimeError('invalid_delivery_manifest')
+        stat=stage.stat()
+        self.emit('delivery_prepared',path=str(stage),output=str(output),device=stat.st_dev,inode=stat.st_ino,manifestSha256=digest(manifest))
+
     def before_request(self,method,params,request_id,pid):
         self.check();self.emit('submitted',method=method,params=params,requestId=request_id,pid=pid)
 

@@ -10,7 +10,9 @@
 
 Logo、图标与品牌图形需求进入，交付 `.vectorcraft` 及适用的 SVG、PDF、PNG。
 
-当前插件：`0.1.0-dev.48`；技能源：`0.1.0-dev.37`；13 个独立技能。
+当前插件：`0.1.0-dev.49`；技能源：`0.1.0-dev.38`；13 个独立技能。
+
+插件49候选绑定已完成步骤回执、运行时身份、清单及全部文件摘要；核验后替换回执拒绝结算，旧检查缺少步骤摘要需重新检查。源38在重命名前持久记录真实交付目录身份，覆盖链接素材打包子目录；普通／链接工程的回执前后四个真实崩溃候选场景通过。固定安装复验另行记录，完整3.6仍开放。
 
 插件48补充恢复前的源依赖快照摘要校验；真实保存与9项导出完成后、回执写入前的协调器SIGKILL恢复通过，保持原输出且不重放。84项Node、43项Python回归通过。公开固定48／源37的隔离宿主安装及上述原生场景已通过；13技能摘要保持不变，完整任务3.6仍开放。[固定证据](docs/evidence/vectorcraft-source-recovery-fixed48-20261008.json)。
 
@@ -123,9 +125,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.48 |
+| Metadata version | 0.1.0-dev.49 |
 | Stage | implementation-in-progress |
-| Skills source | vectorcraft-skills / v0.1.0-dev.37 |
+| Skills source | vectorcraft-skills / v0.1.0-dev.38 |
 | Execution | 上游 CLI；ArtCraft 使用子适配器 |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |

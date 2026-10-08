@@ -1,0 +1,208 @@
+✖ recovery refuses persisted receipt manifest-missing before native inspection (10.579541ms)
+✖ recovery refuses persisted receipt manifest-changed before native inspection (6.177458ms)
+✖ recovery refuses persisted receipt artifact-changed before native inspection (5.849708ms)
+✖ recovery refuses persisted receipt runtime before native inspection (6.787917ms)
+✖ recovery refuses persisted receipt malformed before native inspection (5.978416ms)
+✖ recovery refuses persisted receipt invalid-state before native inspection (6.655458ms)
+✖ recovery refuses persisted receipt missing-result before native inspection (5.321541ms)
+✔ recovery valid reaches the subsequent runtime identity gate (5.682042ms)
+✔ recovery no-receipt reaches the subsequent runtime identity gate (6.616666ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 2
+ℹ fail 7
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 181.700042
+
+✖ failing tests:
+
+test at tests/recovery_receipt.test.ts:37:2
+✖ recovery refuses persisted receipt manifest-missing before native inspection (10.579541ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /recovery_receipt_mismatch/. Input:
+
+  "Error: ENOENT: no such file or directory, open '<temporary-fixture>'"
+
+      at async TestContext.<anonymous> (file://<plugin-root>/tests/recovery_receipt.test.ts:39:4)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: ENOENT: no such file or directory, open '<temporary-fixture>'
+        at Object.openSync (node:fs:561:18)
+        at readFileSync (node:fs:445:35)
+        at hash (file://<plugin-root>/src/harness/recovery.ts:10:52)
+        at Recovery.inspect (file://<plugin-root>/src/harness/recovery.ts:65:8)
+        at file://<plugin-root>/tests/recovery_receipt.test.ts:39:40
+        at waitForActual (node:assert:632:21)
+        at strict.rejects (node:assert:769:31)
+        at TestContext.<anonymous> (file://<plugin-root>/tests/recovery_receipt.test.ts:39:17)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1325:25),
+    expected: /recovery_receipt_mismatch/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/recovery_receipt.test.ts:37:2
+✖ recovery refuses persisted receipt manifest-changed before native inspection (6.177458ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /recovery_receipt_mismatch/. Input:
+
+  "Error: ENOENT: no such file or directory, open '<temporary-fixture>'"
+
+      at async TestContext.<anonymous> (file://<plugin-root>/tests/recovery_receipt.test.ts:39:4)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: ENOENT: no such file or directory, open '<temporary-fixture>'
+        at Object.openSync (node:fs:561:18)
+        at readFileSync (node:fs:445:35)
+        at hash (file://<plugin-root>/src/harness/recovery.ts:10:52)
+        at Recovery.inspect (file://<plugin-root>/src/harness/recovery.ts:65:8)
+        at file://<plugin-root>/tests/recovery_receipt.test.ts:39:40
+        at waitForActual (node:assert:632:21)
+        at strict.rejects (node:assert:769:31)
+        at TestContext.<anonymous> (file://<plugin-root>/tests/recovery_receipt.test.ts:39:17)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1325:25),
+    expected: /recovery_receipt_mismatch/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/recovery_receipt.test.ts:37:2
+✖ recovery refuses persisted receipt artifact-changed before native inspection (5.849708ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /recovery_receipt_mismatch/. Input:
+
+  "Error: ENOENT: no such file or directory, open '<temporary-fixture>'"
+
+      at async TestContext.<anonymous> (file://<plugin-root>/tests/recovery_receipt.test.ts:39:4)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: ENOENT: no such file or directory, open '<temporary-fixture>'
+        at Object.openSync (node:fs:561:18)
+        at readFileSync (node:fs:445:35)
+        at hash (file://<plugin-root>/src/harness/recovery.ts:10:52)
+        at Recovery.inspect (file://<plugin-root>/src/harness/recovery.ts:65:8)
+        at file://<plugin-root>/tests/recovery_receipt.test.ts:39:40
+        at waitForActual (node:assert:632:21)
+        at strict.rejects (node:assert:769:31)
+        at TestContext.<anonymous> (file://<plugin-root>/tests/recovery_receipt.test.ts:39:17)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1325:25),
+    expected: /recovery_receipt_mismatch/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/recovery_receipt.test.ts:37:2
+✖ recovery refuses persisted receipt runtime before native inspection (6.787917ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /recovery_receipt_mismatch/. Input:
+
+  "Error: ENOENT: no such file or directory, open '<temporary-fixture>'"
+
+      at async TestContext.<anonymous> (file://<plugin-root>/tests/recovery_receipt.test.ts:39:4)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: ENOENT: no such file or directory, open '<temporary-fixture>'
+        at Object.openSync (node:fs:561:18)
+        at readFileSync (node:fs:445:35)
+        at hash (file://<plugin-root>/src/harness/recovery.ts:10:52)
+        at Recovery.inspect (file://<plugin-root>/src/harness/recovery.ts:65:8)
+        at file://<plugin-root>/tests/recovery_receipt.test.ts:39:40
+        at waitForActual (node:assert:632:21)
+        at strict.rejects (node:assert:769:31)
+        at TestContext.<anonymous> (file://<plugin-root>/tests/recovery_receipt.test.ts:39:17)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1325:25),
+    expected: /recovery_receipt_mismatch/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/recovery_receipt.test.ts:37:2
+✖ recovery refuses persisted receipt malformed before native inspection (5.978416ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /recovery_receipt_mismatch/. Input:
+
+  "Error: ENOENT: no such file or directory, open '<temporary-fixture>'"
+
+      at async TestContext.<anonymous> (file://<plugin-root>/tests/recovery_receipt.test.ts:39:4)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: ENOENT: no such file or directory, open '<temporary-fixture>'
+        at Object.openSync (node:fs:561:18)
+        at readFileSync (node:fs:445:35)
+        at hash (file://<plugin-root>/src/harness/recovery.ts:10:52)
+        at Recovery.inspect (file://<plugin-root>/src/harness/recovery.ts:65:8)
+        at file://<plugin-root>/tests/recovery_receipt.test.ts:39:40
+        at waitForActual (node:assert:632:21)
+        at strict.rejects (node:assert:769:31)
+        at TestContext.<anonymous> (file://<plugin-root>/tests/recovery_receipt.test.ts:39:17)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1325:25),
+    expected: /recovery_receipt_mismatch/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/recovery_receipt.test.ts:37:2
+✖ recovery refuses persisted receipt invalid-state before native inspection (6.655458ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /recovery_receipt_mismatch/. Input:
+
+  "Error: ENOENT: no such file or directory, open '<temporary-fixture>'"
+
+      at async TestContext.<anonymous> (file://<plugin-root>/tests/recovery_receipt.test.ts:39:4)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: ENOENT: no such file or directory, open '<temporary-fixture>'
+        at Object.openSync (node:fs:561:18)
+        at readFileSync (node:fs:445:35)
+        at hash (file://<plugin-root>/src/harness/recovery.ts:10:52)
+        at Recovery.inspect (file://<plugin-root>/src/harness/recovery.ts:65:8)
+        at file://<plugin-root>/tests/recovery_receipt.test.ts:39:40
+        at waitForActual (node:assert:632:21)
+        at strict.rejects (node:assert:769:31)
+        at TestContext.<anonymous> (file://<plugin-root>/tests/recovery_receipt.test.ts:39:17)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1325:25),
+    expected: /recovery_receipt_mismatch/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/recovery_receipt.test.ts:37:2
+✖ recovery refuses persisted receipt missing-result before native inspection (5.321541ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /recovery_receipt_mismatch/. Input:
+
+  "Error: ENOENT: no such file or directory, open '<temporary-fixture>'"
+
+      at async TestContext.<anonymous> (file://<plugin-root>/tests/recovery_receipt.test.ts:39:4)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: ENOENT: no such file or directory, open '<temporary-fixture>'
+        at Object.openSync (node:fs:561:18)
+        at readFileSync (node:fs:445:35)
+        at hash (file://<plugin-root>/src/harness/recovery.ts:10:52)
+        at Recovery.inspect (file://<plugin-root>/src/harness/recovery.ts:65:8)
+        at file://<plugin-root>/tests/recovery_receipt.test.ts:39:40
+        at waitForActual (node:assert:632:21)
+        at strict.rejects (node:assert:769:31)
+        at TestContext.<anonymous> (file://<plugin-root>/tests/recovery_receipt.test.ts:39:17)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1325:25),
+    expected: /recovery_receipt_mismatch/,
+    operator: 'rejects',
+    diff: 'simple'
+  }

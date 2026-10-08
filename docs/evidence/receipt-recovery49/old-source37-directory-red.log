@@ -1,0 +1,22 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
++ actual - expected
+
++ 626426359
+- 626426436
+        ^
+
+    at file://<plugin-root>/scripts/acceptance/task_receipt_loss.ts:44:60
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 626426359,
+  expected: 626426436,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.18.0

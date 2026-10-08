@@ -16,6 +16,38 @@ export class Recovery {
   constructor(ledger:Ledger,processes:ProcessRegistry){this.ledger=ledger;this.processes=processes;
     ledger.db.exec('CREATE TABLE IF NOT EXISTS recovery_checks(id TEXT PRIMARY KEY,task TEXT NOT NULL,epoch INTEGER NOT NULL,intent TEXT NOT NULL,result TEXT);');
   }
+  /** 已有完成回执必须绑定原清单及全部文件；检查后不能换用另一个步骤回执。 */
+  receiptIdentity(task:any,stage:string,files:Record<string,{sha256:string}>,expected?:string):string {
+    const step=this.ledger.db.prepare('SELECT intent,state,result FROM steps WHERE task=? AND n=0').get(task.id) as any;
+    if(!step)throw new Error('original_request_missing');
+    const identity=createHash('sha256').update(canonical(step)).digest('hex');
+    if(expected!==undefined&&identity!==expected)throw new Error('recovery_receipt_changed');
+    if(step.result===null){
+      if(step.state!=='submitted')throw new Error('recovery_receipt_mismatch');
+      return identity;
+    }
+    try{
+      if(!['received','quarantined'].includes(step.state))throw new Error('invalid_receipt_state');
+      const receipt=strictJson(step.result),path=join(stage,'manifest.json');
+      if(!receipt||typeof receipt!=='object'||Array.isArray(receipt)||receipt.runtimeIdentity!==task.binding.runtimeIdentity
+          ||!files[path]||receipt.manifestSha256!==files[path].sha256)throw new Error('invalid_receipt_binding');
+      this.deliveryIdentity(task,stage,files,receipt.manifestSha256);
+    }catch{throw new Error('recovery_receipt_mismatch');}
+    return identity;
+  }
+  /** 清单必须绑定同一运行时、源修订和全部真实文件，不以清单存在代替一致性。 */
+  deliveryIdentity(task:any,stage:string,files:Record<string,{sha256:string}>,expected:string){
+    const path=join(stage,'manifest.json');
+    if(!/^[a-f0-9]{64}$/.test(expected)||files[path]?.sha256!==expected)throw new Error('invalid_delivery_digest');
+      const manifest=strictJson(readFileSync(path,'utf8'));
+      if(manifest.schema!=='vectorcraft-delivery/v1'||manifest.runtimeSha256!==task.binding.runtimeIdentity
+          ||manifest.sourceProjectSha256!==task.binding.projectRevision||!manifest.files||typeof manifest.files!=='object'
+          ||Array.isArray(manifest.files)||!manifest.files['project.vectorcraft'])throw new Error('invalid_receipt_manifest');
+      for(const [name,digest] of Object.entries(manifest.files)){
+        if(isAbsolute(name)||name.includes('\\')||name.split('/').some(part=>['','..','.'].includes(part))
+            ||typeof digest!=='string'||!/^[a-f0-9]{64}$/.test(digest)||files[join(stage,name)]?.sha256!==digest)throw new Error('invalid_receipt_artifact');
+      }
+  }
   async inspect(taskId:string,epoch:number):Promise<any>{
     const task=this.ledger.checked(taskId,epoch);
     if(!['cancel_requested','reconciling'].includes(task.state))throw new Error('task_not_recoverable');
@@ -45,10 +77,24 @@ export class Recovery {
     if(events.some(event=>event.task!==taskId||event.epoch!==epoch))throw new Error('recovery_binding_mismatch');
     const original=events.find(event=>event.event==='stage_created');
     if(!original)throw new Error('original_stage_identity_missing');
-    const stage=existsSync(original.path)?original.path:task.output;
+    const preparations=events.filter(event=>event.event==='delivery_prepared');
+    if(preparations.length>1)throw new Error('recovery_delivery_mismatch');
+    const prepared=preparations[0];
+    if(prepared){
+      if(prepared.output!==task.output||typeof prepared.path!=='string'||!inside(original.path,prepared.path)
+          ||!/^[a-f0-9]{64}$/.test(prepared.manifestSha256??''))throw new Error('recovery_delivery_mismatch');
+      if(existsSync(original.path)){
+        const root=lstatSync(original.path);
+        if(root.isSymbolicLink()||!root.isDirectory()||root.ino!==original.inode||root.dev!==original.device)throw new Error('original_stage_identity_mismatch');
+        const parts=relative(original.path,prepared.path).split('/').filter(Boolean);
+        for(let i=1;i<=parts.length;i++)if(lstatSync(join(original.path,...parts.slice(0,i)),{throwIfNoEntry:false})?.isSymbolicLink())throw new Error('recovery_delivery_mismatch');
+      }
+    }
+    const recorded=prepared??original;
+    const stage=existsSync(recorded.path)?recorded.path:task.output;
     if(!inside(dirname(task.output),stage))throw new Error('original_stage_outside_authorization');
     const identity=lstatSync(stage);
-    if(!identity.isDirectory()||identity.isSymbolicLink()||identity.ino!==original.inode||identity.dev!==original.device)throw new Error('original_stage_identity_mismatch');
+    if(!identity.isDirectory()||identity.isSymbolicLink()||identity.ino!==recorded.inode||identity.dev!==recorded.device)throw new Error('original_stage_identity_mismatch');
     const files:Record<string,{sha256:string,bytes:number,inode:number}>={};
     const walk=(path:string)=>{
       for(const name of readdirSync(path).sort()){
@@ -59,6 +105,8 @@ export class Recovery {
       }
     };walk(stage);
     if(Object.keys(files).length>4096||Object.values(files).reduce((sum,f)=>sum+f.bytes,0)>task.binding.authorization.maxBytes)throw new Error('recovery_budget_exceeded');
+    if(prepared){try{this.deliveryIdentity(task,stage,files,prepared.manifestSha256);}catch{throw new Error('recovery_delivery_mismatch');}}
+    const stepIdentity=this.receiptIdentity(task,stage,files);
     const projects=Object.keys(files).filter(file=>file.endsWith('.vectorcraft'));
     if(projects.length>32)throw new Error('recovery_inspection_limit');
     const binary=join(intent.runtimeHome,'vectorcraft/0.2.0-craft.2/vectorcraft-cli');
@@ -88,7 +136,8 @@ export class Recovery {
     const current:Record<string,{sha256:string,bytes:number,inode:number}>={};
     Object.assign(current,files);for(const key of Object.keys(files))delete files[key];walk(stage);
     if(canonical(files)!==canonical(current))throw new Error('original_artifact_changed');
-    const proof={schema:'vectorcraft-original-inspection/v1',checkId,task:taskId,epoch,owner,stage,stageInode:identity.ino,stageDevice:identity.dev,files,reopened,nativeStopped:true,classification:'verified-interrupted-files; not successful delivery'};
+    this.receiptIdentity(task,stage,files,stepIdentity);
+    const proof={stepIdentity,...(prepared?{preparedManifestSha256:prepared.manifestSha256}:{}),schema:'vectorcraft-original-inspection/v1',checkId,task:taskId,epoch,owner,stage,stageInode:identity.ino,stageDevice:identity.dev,files,reopened,nativeStopped:true,classification:'verified-interrupted-files; not successful delivery'};
     this.ledger.db.prepare('UPDATE recovery_checks SET result=? WHERE id=?').run(canonical(proof),checkId);
     return proof;
   }
@@ -99,6 +148,9 @@ export class Recovery {
       const row=this.ledger.db.prepare('SELECT result FROM recovery_checks WHERE id=? AND task=? AND epoch=?').get(checkId,taskId,epoch) as any;
       if(!row?.result)throw new Error('native_inspection_required');
       const proof=strictJson(row.result);
+      if(!/^[a-f0-9]{64}$/.test(proof.stepIdentity??''))throw new Error('recovery_receipt_identity_missing');
+      this.receiptIdentity(task,proof.stage,proof.files,proof.stepIdentity);
+      if(proof.preparedManifestSha256){try{this.deliveryIdentity(task,proof.stage,proof.files,proof.preparedManifestSha256);}catch{throw new Error('recovery_delivery_mismatch');}}
       if(!this.processes.observe(taskId,epoch).stopped||!this.processes.observe(proof.owner,epoch).stopped)throw new Error('native_stop_unconfirmed');
       const stage=lstatSync(proof.stage);
       if(stage.isSymbolicLink()||stage.ino!==proof.stageInode||stage.dev!==proof.stageDevice)throw new Error('original_stage_identity_mismatch');

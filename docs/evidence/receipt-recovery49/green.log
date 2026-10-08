@@ -1,0 +1,36 @@
+✔ settling a verified interruption fences the previous epoch and never claims delivery (6.907625ms)
+✔ new or changed original files after inspection keep writer occupation (8.068625ms)
+✔ receipt changes after inspection and old proofs without step identity retain occupation (8.632333ms)
+✔ recovery refuses skill before any inspection process or proof (7.05825ms)
+✔ recovery refuses plan before any inspection process or proof (4.811208ms)
+✔ recovery refuses control before any inspection process or proof (5.63ms)
+✔ recovery refuses missing-control-hash before any inspection process or proof (4.09475ms)
+✔ recovery refuses symlink-plan before any inspection process or proof (4.1265ms)
+✔ recovery refuses unchanged before any inspection process or proof (3.550417ms)
+✔ recovery refuses source-edited before any inspection process or proof (4.1515ms)
+✔ recovery refuses source-deleted before any inspection process or proof (5.102708ms)
+✔ recovery refuses source-added before any inspection process or proof (4.8225ms)
+✔ recovery refuses source-symlink before any inspection process or proof (5.001833ms)
+✔ recovery refuses source-missing-directory before any inspection process or proof (4.137125ms)
+✔ recovery refuses source-missing-hash before any inspection process or proof (4.281875ms)
+✔ recovery refuses source-unchanged before any inspection process or proof (4.168459ms)
+✔ recovery refuses persisted receipt manifest-missing before native inspection (8.120209ms)
+✔ recovery refuses persisted receipt manifest-changed before native inspection (5.780125ms)
+✔ recovery refuses persisted receipt artifact-changed before native inspection (6.829958ms)
+✔ recovery refuses persisted receipt runtime before native inspection (5.6825ms)
+✔ recovery refuses persisted receipt malformed before native inspection (4.658959ms)
+✔ recovery refuses persisted receipt invalid-state before native inspection (4.191041ms)
+✔ recovery refuses persisted receipt missing-result before native inspection (4.724458ms)
+✔ recovery valid reaches the subsequent runtime identity gate (5.126041ms)
+✔ recovery no-receipt reaches the subsequent runtime identity gate (4.69125ms)
+✔ recovery prepared-valid reaches the subsequent runtime identity gate (5.141833ms)
+✔ recovery refuses prepared-wrong-output without launching native inspection (4.56575ms)
+✔ recovery refuses prepared-bad-digest without launching native inspection (4.636208ms)
+ℹ tests 28
+ℹ suites 0
+ℹ pass 28
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 159.603417

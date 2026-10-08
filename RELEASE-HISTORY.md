@@ -1,5 +1,9 @@
 # Version-bound release records
 
+## dev.49 (2026-10-09)
+
+Bind completed step receipts to the original manifest and all files; refuse settlement if the receipt changes after inspection. Pinned source38 records actual delivery directory identity before rename, including linked package subdirectories. Four real plain/linked crashes before/after receipt pass as candidates. Old pending proofs need fresh step-bound inspection; unverifiable source37 packaged results remain occupied.97 Node regressions pass; fixed49 acceptance is separate and full3.6/V1 remain open.
+
 ## dev.48 (2026-10-08)
 
 Verify source-dependency snapshot identity before recovery; six regression cases fail before the fix and pass afterward. After real native save and nine exports, kill the coordinator at the ledger receipt boundary; restart reopens original outputs readonly without replay or additional budget, then quarantines the actual late receipt.84 Node and43 Python tests pass. Source stays dev.37; complete3.6 andV1 remain open.

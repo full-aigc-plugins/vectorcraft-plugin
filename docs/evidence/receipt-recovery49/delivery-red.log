@@ -1,0 +1,103 @@
+✔ recovery refuses persisted receipt manifest-missing before native inspection (8.3935ms)
+✔ recovery refuses persisted receipt manifest-changed before native inspection (5.802792ms)
+✔ recovery refuses persisted receipt artifact-changed before native inspection (5.3625ms)
+✔ recovery refuses persisted receipt runtime before native inspection (5.901542ms)
+✔ recovery refuses persisted receipt malformed before native inspection (4.453708ms)
+✔ recovery refuses persisted receipt invalid-state before native inspection (5.408375ms)
+✔ recovery refuses persisted receipt missing-result before native inspection (5.09825ms)
+✔ recovery valid reaches the subsequent runtime identity gate (5.59825ms)
+✔ recovery no-receipt reaches the subsequent runtime identity gate (4.165375ms)
+✖ recovery prepared-valid reaches the subsequent runtime identity gate (5.037375ms)
+✖ recovery refuses prepared-wrong-output without launching native inspection (4.281416ms)
+✖ recovery refuses prepared-bad-digest without launching native inspection (4.394ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 9
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 150.340042
+
+✖ failing tests:
+
+test at tests/recovery_receipt.test.ts:52:2
+✖ recovery prepared-valid reaches the subsequent runtime identity gate (5.037375ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /ENOENT/. Input:
+
+  'Error: recovery_receipt_mismatch'
+
+      at async TestContext.<anonymous> (file://<plugin-root>/tests/recovery_receipt.test.ts:54:4)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: recovery_receipt_mismatch
+        at Recovery.receiptIdentity (file://<plugin-root>/src/harness/recovery.ts:42:18)
+        at Recovery.inspect (file://<plugin-root>/src/harness/recovery.ts:88:29)
+        at file://<plugin-root>/tests/recovery_receipt.test.ts:54:40
+        at waitForActual (node:assert:632:21)
+        at strict.rejects (node:assert:769:31)
+        at TestContext.<anonymous> (file://<plugin-root>/tests/recovery_receipt.test.ts:54:17)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1325:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+        at Test.postRun (node:internal/test_runner/test:1465:19),
+    expected: /ENOENT/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/recovery_receipt.test.ts:61:2
+✖ recovery refuses prepared-wrong-output without launching native inspection (4.281416ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /recovery_delivery_mismatch/. Input:
+
+  'Error: recovery_receipt_mismatch'
+
+      at async TestContext.<anonymous> (file://<plugin-root>/tests/recovery_receipt.test.ts:63:4)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: recovery_receipt_mismatch
+        at Recovery.receiptIdentity (file://<plugin-root>/src/harness/recovery.ts:42:18)
+        at Recovery.inspect (file://<plugin-root>/src/harness/recovery.ts:88:29)
+        at file://<plugin-root>/tests/recovery_receipt.test.ts:63:40
+        at waitForActual (node:assert:632:21)
+        at strict.rejects (node:assert:769:31)
+        at TestContext.<anonymous> (file://<plugin-root>/tests/recovery_receipt.test.ts:63:17)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1325:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+        at Test.postRun (node:internal/test_runner/test:1465:19),
+    expected: /recovery_delivery_mismatch/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/recovery_receipt.test.ts:61:2
+✖ recovery refuses prepared-bad-digest without launching native inspection (4.394ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /recovery_delivery_mismatch/. Input:
+
+  'Error: recovery_receipt_mismatch'
+
+      at async TestContext.<anonymous> (file://<plugin-root>/tests/recovery_receipt.test.ts:63:4)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: recovery_receipt_mismatch
+        at Recovery.receiptIdentity (file://<plugin-root>/src/harness/recovery.ts:42:18)
+        at Recovery.inspect (file://<plugin-root>/src/harness/recovery.ts:88:29)
+        at file://<plugin-root>/tests/recovery_receipt.test.ts:63:40
+        at waitForActual (node:assert:632:21)
+        at strict.rejects (node:assert:769:31)
+        at TestContext.<anonymous> (file://<plugin-root>/tests/recovery_receipt.test.ts:63:17)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1325:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+        at Test.postRun (node:internal/test_runner/test:1465:19),
+    expected: /recovery_delivery_mismatch/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
