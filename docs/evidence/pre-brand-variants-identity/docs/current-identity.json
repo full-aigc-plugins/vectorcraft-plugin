@@ -1,0 +1,41 @@
+{
+  "schema": "vectorcraft-current-identity/v1",
+  "pluginVersion": "0.1.0-dev.55",
+  "skillSource": {
+    "repo": "https://github.com/full-aigc-skills/vectorcraft-skills.git",
+    "ref": "v0.1.0-dev.41",
+    "sha": "9649db7fbcee4d275b91748115143c0680e94417"
+  },
+  "skills": {
+    "vectorcraft-use": "d37a17e60c33999477657f9cecf51495dff4e6469b684ba8f2667d04a637037b",
+    "vectorcraft-cli": "3997b9ab00f66bf8acafd0124437b06a7cac51301a3a62bfcec4c5f50bfccb1e",
+    "vectorcraft-cli-setup": "e63f241c2b8006476b8df016268de0f607f4f3058986717512d70860b2b083a8",
+    "vectorcraft-cli-project": "b68834fd0b7b0ad0c0049a5d6e471176c5a810c367c2037ae1764418d300485c",
+    "vectorcraft-cli-paths": "fa4f50936accfb15c8b22bccfc6fff8eb9220d103865a60494ad2f97e673b6c2",
+    "vectorcraft-cli-shapes": "842cc6198401c1930803e995b53e4b2ef0f7977592a72b20f7b93285f7320cce",
+    "vectorcraft-cli-boolean": "65267d29dd59a721ae06773dfdab7db1d6dc9008c6e089dfc4a563b1e03ab0f5",
+    "vectorcraft-cli-text": "4a6ef8c4406feb84ffa14e55e418bd155ed9443977b756e7f204130183f7a35f",
+    "vectorcraft-cli-appearance": "886b3b176f718ef8ea918018ebac0e7645c0d3099bee6e3b4e18f5ecf4be89e4",
+    "vectorcraft-cli-artboards": "473a04be03652fb755041b91a7acf802474fa5fda0e2eefe6da070049fc7bd8f",
+    "vectorcraft-cli-assets": "a1344d7d5da52175b1874ba0bbf94826a54cd24728f1403beff048c4bde0d5c4",
+    "vectorcraft-cli-export": "638c56a5a2e4708d06973882ce19ecd0d0e688381afde4149e6abc201d771fc3",
+    "vectorcraft-cli-selection": "1e184d731f421ffc8239982432db1d17c76a58a28afe97c184a380f98d71cb02"
+  },
+  "runtime": {
+    "version": "0.2.0-craft.2",
+    "platform": "darwin-arm64",
+    "binarySha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+    "archiveSha256": "0e3402b6c810551075183471f07cf05f925e3a91337cc188dd1f5b3ada6108de"
+  },
+  "desktop": {
+    "version": "0.2.0",
+    "binarySha256": "46d7846a765dd0c2a64a72dea17796f49d725203d2c5d91c339432572048f856"
+  },
+  "rootRuntimeRole": "historical-baseline",
+  "commandCount": 585,
+  "commandAcceptance": {
+    "NOT_RUN": 585
+  },
+  "stage": "implementation-in-progress",
+  "scope": "fixed plugin snapshot; source candidate changes require a separately pinned release; no live enabled or creative acceptance claim"
+}

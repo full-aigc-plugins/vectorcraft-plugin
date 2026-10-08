@@ -14,11 +14,18 @@ def local(name):
 
 def main():
     report=json.loads(local(REPORT).read_text())
-    for name,digest in report['fingerprints'].items():
-        if sha(local(name))!=digest:raise ValueError('stale_exchange_evidence')
+    index=json.loads(local('docs/evidence-index.json').read_text())
+    known=next(e['dependencies'] for e in index['entries'] if e['path']==REPORT)
+    def bound(name):
+        digest=report['fingerprints'][name]
+        if sha(local(name))==digest:return local(name)
+        archived=[p for p,saved in known.items() if saved==digest and p.endswith('/'+name)]
+        if len(archived)!=1 or sha(local(archived[0]))!=digest:raise ValueError('stale_exchange_evidence')
+        return local(archived[0])
+    for name in report['fingerprints']:bound(name)
     def read(name):
         if name not in report['fingerprints']:raise ValueError('unbound_exchange_evidence')
-        return json.loads(local(name).read_text())
+        return json.loads(bound(name).read_text())
     if report['result']!='PASS' or report['tasksClosed']!=['4.15']:raise ValueError('incomplete_exchange')
     spec='openspec/changes/establish-v1-plugin/specs/domain-workflow/spec.md'
     block=local(spec).read_text().split('### Requirement: VC-DM-005 ',1)[1].split('### Requirement:',1)[0]

@@ -165,3 +165,76 @@ def inspect_update(before, after, token, expected_color=None):
             'unexpectedDependencies': edges, 'artboardsChanged': artboards_changed,
             'beforeSha256': digest(before), 'afterSha256': digest(after),
             'scope': 'native explicit swatch color fields; consumer noncolor fields, palette, identities, artboards and requested authoring-model target'}
+
+
+def instance_bounds(inspection, ids):
+    """读取实际原生检查结果中的实例联合边界；未知或非有限边界不伪造。"""
+    found = {}
+    def visit(nodes):
+        for node in nodes:
+            found[node['id']] = node.get('bounds')
+            visit(node.get('children', []))
+    visit(inspection['layers'])
+    boxes = [found.get(i) for i in ids]
+    if not boxes or not all(isinstance(box, dict) and all(type(box.get(k)) in (int, float) and math.isfinite(box[k]) for k in ('x','y','width','height')) and box['width'] >= 0 and box['height'] >= 0 for box in boxes):
+        return None
+    x, y = min(box['x'] for box in boxes), min(box['y'] for box in boxes)
+    return {'x':x, 'y':y, 'width':max(box['x']+box['width'] for box in boxes)-x, 'height':max(box['y']+box['height'] for box in boxes)-y}
+
+
+def inspect_asset_update(before, after, asset, mapping, before_inspect, after_inspect):
+    """核验登记素材的真实子树替换映射、实例边界及非消费者保全。"""
+    original, updated = snapshot(before), snapshot(after)
+    if not isinstance(asset, str) or not asset or not isinstance(mapping, dict) or not mapping:
+        raise ValueError('asset_dependency_mapping')
+    def subtree(nodes, root):
+        if root not in nodes:
+            raise ValueError('asset_dependency_mapping')
+        result = {root}
+        for child in nodes[root]['kind'].get('children', []):
+            result |= subtree(nodes, child)
+        return result
+    old_ids, new_ids = set(), set()
+    for old, replacements in mapping.items():
+        if type(old) is not int or not isinstance(replacements, list) or not replacements or any(type(i) is not int for i in replacements) or len(replacements) != len(set(replacements)):
+            raise ValueError('asset_dependency_mapping')
+        consumed = subtree(original, old)
+        if consumed & old_ids:
+            raise ValueError('asset_dependency_mapping')
+        old_ids |= consumed
+        for new in replacements:
+            replaced = subtree(updated, new)
+            if replaced & new_ids:
+                raise ValueError('asset_dependency_mapping')
+            new_ids |= replaced
+    # 新消费者不能吞入原有的无关对象，哪怕对象自身字段没有变化。
+    if new_ids & (original.keys() - old_ids):
+        raise ValueError('asset_dependency_mapping')
+    def mapped(ids):
+        return [new for old in ids for new in mapping.get(old, [old])]
+    unaffected = original.keys() - old_ids
+    affected = set(unaffected - updated.keys()) | (updated.keys() - unaffected - new_ids)
+    for object_id in unaffected & updated.keys():
+        expected = original[object_id]
+        if 'children' in expected['kind']:
+            expected = {**expected, 'kind': {**expected['kind'], 'children': mapped(expected['kind']['children'])}}
+        if expected != updated[object_id]:
+            affected.add(object_id)
+    if mapped([obj['id'] for obj in before['layers']]) != [obj['id'] for obj in after['layers']]:
+        affected |= {obj['id'] for obj in before['layers']} | {obj['id'] for obj in after['layers']}
+    mismatches = []
+    for old, replacements in mapping.items():
+        a = instance_bounds(before_inspect, [old])
+        b = instance_bounds(after_inspect, replacements)
+        if a is None or b is None or any(abs(a[k]-b[k]) > 1e-5 for k in a):
+            mismatches.append(old)
+    artboards_changed = before['artboards'] != after['artboards']
+    edges = [{'asset':asset, 'objectId':i, 'reason':'unbound_object_or_structure_changed'} for i in sorted(affected)]
+    edges += [{'asset':asset, 'objectId':i, 'reason':'instance_bounds_changed'} for i in mismatches]
+    digest = lambda value: hashlib.sha256(json.dumps(value, sort_keys=True, separators=(',', ':'), allow_nan=False).encode()).hexdigest()
+    return {'schema':'vectorcraft-brand-asset-dependency-check/v1', 'status':'failed' if affected or mismatches or artboards_changed else 'passed',
+            'asset':asset, 'consumerIds':sorted(mapping), 'replacementIds':sorted(i for ids in mapping.values() for i in ids),
+            'replacementMapping':{str(i):ids for i,ids in mapping.items()}, 'affectedObjectIds':sorted(affected),
+            'boundsMismatchObjectIds':mismatches, 'unexpectedDependencies':edges, 'artboardsChanged':artboards_changed,
+            'beforeSha256':digest(before), 'afterSha256':digest(after),
+            'scope':'registered native asset consumer subtrees, explicit replacement identities, instance bounds and unrelated object/stacking/artboard preservation'}

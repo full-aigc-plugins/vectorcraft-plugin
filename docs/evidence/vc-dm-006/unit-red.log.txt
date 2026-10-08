@@ -1,0 +1,207 @@
+test_instance_bounds_change_is_not_hidden_by_valid_mapping (test_brand_asset_dependencies.BrandAssetDependenciesTests.test_instance_bounds_change_is_not_hidden_by_valid_mapping) ... ERROR
+test_raster_identity_retained_and_explicit_dependency_recorded (test_brand_asset_dependencies.BrandAssetDependenciesTests.test_raster_identity_retained_and_explicit_dependency_recorded) ... ERROR
+test_replacement_cannot_reparent_an_unrelated_object (test_brand_asset_dependencies.BrandAssetDependenciesTests.test_replacement_cannot_reparent_an_unrelated_object) ... ERROR
+test_unknown_overlapping_and_unbound_targets_refused (test_brand_asset_dependencies.BrandAssetDependenciesTests.test_unknown_overlapping_and_unbound_targets_refused) ... 
+  test_unknown_overlapping_and_unbound_targets_refused (test_brand_asset_dependencies.BrandAssetDependenciesTests.test_unknown_overlapping_and_unbound_targets_refused) (mapping={99: [2]}) ... ERROR
+  test_unknown_overlapping_and_unbound_targets_refused (test_brand_asset_dependencies.BrandAssetDependenciesTests.test_unknown_overlapping_and_unbound_targets_refused) (mapping={2: [3]}) ... ERROR
+  test_unknown_overlapping_and_unbound_targets_refused (test_brand_asset_dependencies.BrandAssetDependenciesTests.test_unknown_overlapping_and_unbound_targets_refused) (mapping={2: []}) ... ERROR
+  test_unknown_overlapping_and_unbound_targets_refused (test_brand_asset_dependencies.BrandAssetDependenciesTests.test_unknown_overlapping_and_unbound_targets_refused) (mapping={2: [2, 2]}) ... ERROR
+  test_unknown_overlapping_and_unbound_targets_refused (test_brand_asset_dependencies.BrandAssetDependenciesTests.test_unknown_overlapping_and_unbound_targets_refused) (mapping={2: [99]}) ... ERROR
+  test_unknown_overlapping_and_unbound_targets_refused (test_brand_asset_dependencies.BrandAssetDependenciesTests.test_unknown_overlapping_and_unbound_targets_refused) (mapping={}) ... ERROR
+test_unrelated_properties_and_new_objects_are_refused (test_brand_asset_dependencies.BrandAssetDependenciesTests.test_unrelated_properties_and_new_objects_are_refused) ... 
+  test_unrelated_properties_and_new_objects_are_refused (test_brand_asset_dependencies.BrandAssetDependenciesTests.test_unrelated_properties_and_new_objects_are_refused) (fault='property') ... ERROR
+  test_unrelated_properties_and_new_objects_are_refused (test_brand_asset_dependencies.BrandAssetDependenciesTests.test_unrelated_properties_and_new_objects_are_refused) (fault='new-object') ... ERROR
+  test_unrelated_properties_and_new_objects_are_refused (test_brand_asset_dependencies.BrandAssetDependenciesTests.test_unrelated_properties_and_new_objects_are_refused) (fault='missing-object') ... ERROR
+  test_unrelated_properties_and_new_objects_are_refused (test_brand_asset_dependencies.BrandAssetDependenciesTests.test_unrelated_properties_and_new_objects_are_refused) (fault='root-order') ... ERROR
+  test_unrelated_properties_and_new_objects_are_refused (test_brand_asset_dependencies.BrandAssetDependenciesTests.test_unrelated_properties_and_new_objects_are_refused) (fault='child-order') ... ERROR
+  test_unrelated_properties_and_new_objects_are_refused (test_brand_asset_dependencies.BrandAssetDependenciesTests.test_unrelated_properties_and_new_objects_are_refused) (fault='artboard') ... ERROR
+test_vector_subtree_identity_can_change_without_touching_control (test_brand_asset_dependencies.BrandAssetDependenciesTests.test_vector_subtree_identity_can_change_without_touching_control) ... ERROR
+
+======================================================================
+ERROR: test_instance_bounds_change_is_not_hidden_by_valid_mapping (test_brand_asset_dependencies.BrandAssetDependenciesTests.test_instance_bounds_change_is_not_hidden_by_valid_mapping)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "SKILL_SOURCE_ROOT/tests/test_brand_asset_dependencies.py", line 38, in test_instance_bounds_change_is_not_hidden_by_valid_mapping
+    row=self.check(before,after,{2:[2]},bounds);self.assertEqual(row['status'],'failed');self.assertEqual(row['boundsMismatchObjectIds'],[2])
+  File "SKILL_SOURCE_ROOT/tests/test_brand_asset_dependencies.py", line 17, in check
+    return self.m.inspect_asset_update(before,after,'Logo',mapping,inspected(mapping),bounds_after or inspected([i for ids in mapping.values() for i in ids]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'asset_dependencies' has no attribute 'inspect_asset_update'. Did you mean: 'inspect_update'?
+
+======================================================================
+ERROR: test_raster_identity_retained_and_explicit_dependency_recorded (test_brand_asset_dependencies.BrandAssetDependenciesTests.test_raster_identity_retained_and_explicit_dependency_recorded)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "SKILL_SOURCE_ROOT/tests/test_brand_asset_dependencies.py", line 20, in test_raster_identity_retained_and_explicit_dependency_recorded
+    row=self.check(before,after,{2:[2]});self.assertEqual(row['status'],'passed');self.assertEqual(row['consumerIds'],[2]);self.assertEqual(row['replacementIds'],[2]);self.assertEqual(row['asset'],'Logo')
+  File "SKILL_SOURCE_ROOT/tests/test_brand_asset_dependencies.py", line 17, in check
+    return self.m.inspect_asset_update(before,after,'Logo',mapping,inspected(mapping),bounds_after or inspected([i for ids in mapping.values() for i in ids]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'asset_dependencies' has no attribute 'inspect_asset_update'. Did you mean: 'inspect_update'?
+
+======================================================================
+ERROR: test_replacement_cannot_reparent_an_unrelated_object (test_brand_asset_dependencies.BrandAssetDependenciesTests.test_replacement_cannot_reparent_an_unrelated_object)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "SKILL_SOURCE_ROOT/tests/test_brand_asset_dependencies.py", line 45, in test_replacement_cannot_reparent_an_unrelated_object
+    with self.assertRaisesRegex(ValueError,'asset_dependency_mapping'):self.check(before,after,{2:[5]})
+                                                                       ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "SKILL_SOURCE_ROOT/tests/test_brand_asset_dependencies.py", line 17, in check
+    return self.m.inspect_asset_update(before,after,'Logo',mapping,inspected(mapping),bounds_after or inspected([i for ids in mapping.values() for i in ids]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'asset_dependencies' has no attribute 'inspect_asset_update'. Did you mean: 'inspect_update'?
+
+======================================================================
+ERROR: test_unknown_overlapping_and_unbound_targets_refused (test_brand_asset_dependencies.BrandAssetDependenciesTests.test_unknown_overlapping_and_unbound_targets_refused) (mapping={99: [2]})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "SKILL_SOURCE_ROOT/tests/test_brand_asset_dependencies.py", line 42, in test_unknown_overlapping_and_unbound_targets_refused
+    self.check(fixture(),fixture(),mapping)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "SKILL_SOURCE_ROOT/tests/test_brand_asset_dependencies.py", line 17, in check
+    return self.m.inspect_asset_update(before,after,'Logo',mapping,inspected(mapping),bounds_after or inspected([i for ids in mapping.values() for i in ids]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'asset_dependencies' has no attribute 'inspect_asset_update'. Did you mean: 'inspect_update'?
+
+======================================================================
+ERROR: test_unknown_overlapping_and_unbound_targets_refused (test_brand_asset_dependencies.BrandAssetDependenciesTests.test_unknown_overlapping_and_unbound_targets_refused) (mapping={2: [3]})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "SKILL_SOURCE_ROOT/tests/test_brand_asset_dependencies.py", line 42, in test_unknown_overlapping_and_unbound_targets_refused
+    self.check(fixture(),fixture(),mapping)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "SKILL_SOURCE_ROOT/tests/test_brand_asset_dependencies.py", line 17, in check
+    return self.m.inspect_asset_update(before,after,'Logo',mapping,inspected(mapping),bounds_after or inspected([i for ids in mapping.values() for i in ids]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'asset_dependencies' has no attribute 'inspect_asset_update'. Did you mean: 'inspect_update'?
+
+======================================================================
+ERROR: test_unknown_overlapping_and_unbound_targets_refused (test_brand_asset_dependencies.BrandAssetDependenciesTests.test_unknown_overlapping_and_unbound_targets_refused) (mapping={2: []})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "SKILL_SOURCE_ROOT/tests/test_brand_asset_dependencies.py", line 42, in test_unknown_overlapping_and_unbound_targets_refused
+    self.check(fixture(),fixture(),mapping)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "SKILL_SOURCE_ROOT/tests/test_brand_asset_dependencies.py", line 17, in check
+    return self.m.inspect_asset_update(before,after,'Logo',mapping,inspected(mapping),bounds_after or inspected([i for ids in mapping.values() for i in ids]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'asset_dependencies' has no attribute 'inspect_asset_update'. Did you mean: 'inspect_update'?
+
+======================================================================
+ERROR: test_unknown_overlapping_and_unbound_targets_refused (test_brand_asset_dependencies.BrandAssetDependenciesTests.test_unknown_overlapping_and_unbound_targets_refused) (mapping={2: [2, 2]})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "SKILL_SOURCE_ROOT/tests/test_brand_asset_dependencies.py", line 42, in test_unknown_overlapping_and_unbound_targets_refused
+    self.check(fixture(),fixture(),mapping)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "SKILL_SOURCE_ROOT/tests/test_brand_asset_dependencies.py", line 17, in check
+    return self.m.inspect_asset_update(before,after,'Logo',mapping,inspected(mapping),bounds_after or inspected([i for ids in mapping.values() for i in ids]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'asset_dependencies' has no attribute 'inspect_asset_update'. Did you mean: 'inspect_update'?
+
+======================================================================
+ERROR: test_unknown_overlapping_and_unbound_targets_refused (test_brand_asset_dependencies.BrandAssetDependenciesTests.test_unknown_overlapping_and_unbound_targets_refused) (mapping={2: [99]})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "SKILL_SOURCE_ROOT/tests/test_brand_asset_dependencies.py", line 42, in test_unknown_overlapping_and_unbound_targets_refused
+    self.check(fixture(),fixture(),mapping)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "SKILL_SOURCE_ROOT/tests/test_brand_asset_dependencies.py", line 17, in check
+    return self.m.inspect_asset_update(before,after,'Logo',mapping,inspected(mapping),bounds_after or inspected([i for ids in mapping.values() for i in ids]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'asset_dependencies' has no attribute 'inspect_asset_update'. Did you mean: 'inspect_update'?
+
+======================================================================
+ERROR: test_unknown_overlapping_and_unbound_targets_refused (test_brand_asset_dependencies.BrandAssetDependenciesTests.test_unknown_overlapping_and_unbound_targets_refused) (mapping={})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "SKILL_SOURCE_ROOT/tests/test_brand_asset_dependencies.py", line 42, in test_unknown_overlapping_and_unbound_targets_refused
+    self.check(fixture(),fixture(),mapping)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "SKILL_SOURCE_ROOT/tests/test_brand_asset_dependencies.py", line 17, in check
+    return self.m.inspect_asset_update(before,after,'Logo',mapping,inspected(mapping),bounds_after or inspected([i for ids in mapping.values() for i in ids]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'asset_dependencies' has no attribute 'inspect_asset_update'. Did you mean: 'inspect_update'?
+
+======================================================================
+ERROR: test_unrelated_properties_and_new_objects_are_refused (test_brand_asset_dependencies.BrandAssetDependenciesTests.test_unrelated_properties_and_new_objects_are_refused) (fault='property')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "SKILL_SOURCE_ROOT/tests/test_brand_asset_dependencies.py", line 35, in test_unrelated_properties_and_new_objects_are_refused
+    row=self.check(before,after,{2:[2]});self.assertEqual(row['status'],'failed');self.assertTrue(row['unexpectedDependencies'] or row['artboardsChanged'])
+  File "SKILL_SOURCE_ROOT/tests/test_brand_asset_dependencies.py", line 17, in check
+    return self.m.inspect_asset_update(before,after,'Logo',mapping,inspected(mapping),bounds_after or inspected([i for ids in mapping.values() for i in ids]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'asset_dependencies' has no attribute 'inspect_asset_update'. Did you mean: 'inspect_update'?
+
+======================================================================
+ERROR: test_unrelated_properties_and_new_objects_are_refused (test_brand_asset_dependencies.BrandAssetDependenciesTests.test_unrelated_properties_and_new_objects_are_refused) (fault='new-object')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "SKILL_SOURCE_ROOT/tests/test_brand_asset_dependencies.py", line 35, in test_unrelated_properties_and_new_objects_are_refused
+    row=self.check(before,after,{2:[2]});self.assertEqual(row['status'],'failed');self.assertTrue(row['unexpectedDependencies'] or row['artboardsChanged'])
+  File "SKILL_SOURCE_ROOT/tests/test_brand_asset_dependencies.py", line 17, in check
+    return self.m.inspect_asset_update(before,after,'Logo',mapping,inspected(mapping),bounds_after or inspected([i for ids in mapping.values() for i in ids]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'asset_dependencies' has no attribute 'inspect_asset_update'. Did you mean: 'inspect_update'?
+
+======================================================================
+ERROR: test_unrelated_properties_and_new_objects_are_refused (test_brand_asset_dependencies.BrandAssetDependenciesTests.test_unrelated_properties_and_new_objects_are_refused) (fault='missing-object')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "SKILL_SOURCE_ROOT/tests/test_brand_asset_dependencies.py", line 35, in test_unrelated_properties_and_new_objects_are_refused
+    row=self.check(before,after,{2:[2]});self.assertEqual(row['status'],'failed');self.assertTrue(row['unexpectedDependencies'] or row['artboardsChanged'])
+  File "SKILL_SOURCE_ROOT/tests/test_brand_asset_dependencies.py", line 17, in check
+    return self.m.inspect_asset_update(before,after,'Logo',mapping,inspected(mapping),bounds_after or inspected([i for ids in mapping.values() for i in ids]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'asset_dependencies' has no attribute 'inspect_asset_update'. Did you mean: 'inspect_update'?
+
+======================================================================
+ERROR: test_unrelated_properties_and_new_objects_are_refused (test_brand_asset_dependencies.BrandAssetDependenciesTests.test_unrelated_properties_and_new_objects_are_refused) (fault='root-order')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "SKILL_SOURCE_ROOT/tests/test_brand_asset_dependencies.py", line 35, in test_unrelated_properties_and_new_objects_are_refused
+    row=self.check(before,after,{2:[2]});self.assertEqual(row['status'],'failed');self.assertTrue(row['unexpectedDependencies'] or row['artboardsChanged'])
+  File "SKILL_SOURCE_ROOT/tests/test_brand_asset_dependencies.py", line 17, in check
+    return self.m.inspect_asset_update(before,after,'Logo',mapping,inspected(mapping),bounds_after or inspected([i for ids in mapping.values() for i in ids]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'asset_dependencies' has no attribute 'inspect_asset_update'. Did you mean: 'inspect_update'?
+
+======================================================================
+ERROR: test_unrelated_properties_and_new_objects_are_refused (test_brand_asset_dependencies.BrandAssetDependenciesTests.test_unrelated_properties_and_new_objects_are_refused) (fault='child-order')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "SKILL_SOURCE_ROOT/tests/test_brand_asset_dependencies.py", line 35, in test_unrelated_properties_and_new_objects_are_refused
+    row=self.check(before,after,{2:[2]});self.assertEqual(row['status'],'failed');self.assertTrue(row['unexpectedDependencies'] or row['artboardsChanged'])
+  File "SKILL_SOURCE_ROOT/tests/test_brand_asset_dependencies.py", line 17, in check
+    return self.m.inspect_asset_update(before,after,'Logo',mapping,inspected(mapping),bounds_after or inspected([i for ids in mapping.values() for i in ids]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'asset_dependencies' has no attribute 'inspect_asset_update'. Did you mean: 'inspect_update'?
+
+======================================================================
+ERROR: test_unrelated_properties_and_new_objects_are_refused (test_brand_asset_dependencies.BrandAssetDependenciesTests.test_unrelated_properties_and_new_objects_are_refused) (fault='artboard')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "SKILL_SOURCE_ROOT/tests/test_brand_asset_dependencies.py", line 35, in test_unrelated_properties_and_new_objects_are_refused
+    row=self.check(before,after,{2:[2]});self.assertEqual(row['status'],'failed');self.assertTrue(row['unexpectedDependencies'] or row['artboardsChanged'])
+  File "SKILL_SOURCE_ROOT/tests/test_brand_asset_dependencies.py", line 17, in check
+    return self.m.inspect_asset_update(before,after,'Logo',mapping,inspected(mapping),bounds_after or inspected([i for ids in mapping.values() for i in ids]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'asset_dependencies' has no attribute 'inspect_asset_update'. Did you mean: 'inspect_update'?
+
+======================================================================
+ERROR: test_vector_subtree_identity_can_change_without_touching_control (test_brand_asset_dependencies.BrandAssetDependenciesTests.test_vector_subtree_identity_can_change_without_touching_control)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "SKILL_SOURCE_ROOT/tests/test_brand_asset_dependencies.py", line 24, in test_vector_subtree_identity_can_change_without_touching_control
+    self.assertEqual(self.check(before,after,{2:[5]})['status'],'passed')
+                     ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "SKILL_SOURCE_ROOT/tests/test_brand_asset_dependencies.py", line 17, in check
+    return self.m.inspect_asset_update(before,after,'Logo',mapping,inspected(mapping),bounds_after or inspected([i for ids in mapping.values() for i in ids]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'asset_dependencies' has no attribute 'inspect_asset_update'. Did you mean: 'inspect_update'?
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.014s
+
+FAILED (errors=16)

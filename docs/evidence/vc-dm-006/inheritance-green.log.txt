@@ -1,0 +1,9 @@
+test_asset_replacement_inherits_and_checks_prior_export_plan (test_brand_export_inheritance.BrandExportInheritanceTests.test_asset_replacement_inherits_and_checks_prior_export_plan) ... ok
+test_both_entries_inherit_verified_exports_before_installation (test_brand_export_inheritance.BrandExportInheritanceTests.test_both_entries_inherit_verified_exports_before_installation) ... ok
+test_both_entries_reject_tampered_prior_plan_before_preflight (test_brand_export_inheritance.BrandExportInheritanceTests.test_both_entries_reject_tampered_prior_plan_before_preflight) ... ok
+test_explicit_empty_exports_are_not_replaced_by_inheritance (test_brand_export_inheritance.BrandExportInheritanceTests.test_explicit_empty_exports_are_not_replaced_by_inheritance) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.125s
+
+OK

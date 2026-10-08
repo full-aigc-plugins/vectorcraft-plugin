@@ -1,0 +1,42 @@
+test_asset_replacement_inherits_and_checks_prior_export_plan (test_brand_export_inheritance.BrandExportInheritanceTests.test_asset_replacement_inherits_and_checks_prior_export_plan) ... 
+  test_asset_replacement_inherits_and_checks_prior_export_plan (test_brand_export_inheritance.BrandExportInheritanceTests.test_asset_replacement_inherits_and_checks_prior_export_plan) (corrupt=False) ... FAIL
+  test_asset_replacement_inherits_and_checks_prior_export_plan (test_brand_export_inheritance.BrandExportInheritanceTests.test_asset_replacement_inherits_and_checks_prior_export_plan) (corrupt=True) ... ERROR
+test_both_entries_inherit_verified_exports_before_installation (test_brand_export_inheritance.BrandExportInheritanceTests.test_both_entries_inherit_verified_exports_before_installation) ... ok
+test_both_entries_reject_tampered_prior_plan_before_preflight (test_brand_export_inheritance.BrandExportInheritanceTests.test_both_entries_reject_tampered_prior_plan_before_preflight) ... ok
+test_explicit_empty_exports_are_not_replaced_by_inheritance (test_brand_export_inheritance.BrandExportInheritanceTests.test_explicit_empty_exports_are_not_replaced_by_inheritance) ... ok
+
+======================================================================
+ERROR: test_asset_replacement_inherits_and_checks_prior_export_plan (test_brand_export_inheritance.BrandExportInheritanceTests.test_asset_replacement_inherits_and_checks_prior_export_plan) (corrupt=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "SKILL_SOURCE_ROOT/tests/test_brand_export_inheritance.py", line 47, in test_asset_replacement_inherits_and_checks_prior_export_plan
+    with self.assertRaisesRegex(ValueError,'brand_source_plan_digest_mismatch'):self.m.execute(plan,root/'out',source=source,runtime_home=root/'runtime')
+                                                                                ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "SKILL_SOURCE_ROOT/skills/vectorcraft-use/scripts/workflow.py", line 175, in execute
+    input_assets = inputs_module.preflight(plan, source, prior)
+  File "/opt/anaconda3/lib/python3.13/unittest/mock.py", line 1169, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.13/unittest/mock.py", line 1173, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.13/unittest/mock.py", line 1234, in _execute_mock_call
+    result = effect(*args, **kwargs)
+  File "SKILL_SOURCE_ROOT/tests/test_brand_export_inheritance.py", line 44, in preflight
+    def preflight(value,*args):seen.append(value);raise Observed()
+                                                  ^^^^^^^^^^^^^^^^
+test_brand_export_inheritance.Observed
+
+======================================================================
+FAIL: test_asset_replacement_inherits_and_checks_prior_export_plan (test_brand_export_inheritance.BrandExportInheritanceTests.test_asset_replacement_inherits_and_checks_prior_export_plan) (corrupt=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "SKILL_SOURCE_ROOT/tests/test_brand_export_inheritance.py", line 50, in test_asset_replacement_inherits_and_checks_prior_export_plan
+    self.assertEqual(seen[0].get('exports'),exports)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != [{'format': 'svg', 'artboard': 0}, {'form[56 chars]: 0}]
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.091s
+
+FAILED (failures=1, errors=1)

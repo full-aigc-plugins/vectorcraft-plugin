@@ -1,0 +1,11 @@
+test_instance_bounds_change_is_not_hidden_by_valid_mapping (test_brand_asset_dependencies.BrandAssetDependenciesTests.test_instance_bounds_change_is_not_hidden_by_valid_mapping) ... ok
+test_raster_identity_retained_and_explicit_dependency_recorded (test_brand_asset_dependencies.BrandAssetDependenciesTests.test_raster_identity_retained_and_explicit_dependency_recorded) ... ok
+test_replacement_cannot_reparent_an_unrelated_object (test_brand_asset_dependencies.BrandAssetDependenciesTests.test_replacement_cannot_reparent_an_unrelated_object) ... ok
+test_unknown_overlapping_and_unbound_targets_refused (test_brand_asset_dependencies.BrandAssetDependenciesTests.test_unknown_overlapping_and_unbound_targets_refused) ... ok
+test_unrelated_properties_and_new_objects_are_refused (test_brand_asset_dependencies.BrandAssetDependenciesTests.test_unrelated_properties_and_new_objects_are_refused) ... ok
+test_vector_subtree_identity_can_change_without_touching_control (test_brand_asset_dependencies.BrandAssetDependenciesTests.test_vector_subtree_identity_can_change_without_touching_control) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.015s
+
+OK

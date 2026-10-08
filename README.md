@@ -10,7 +10,7 @@ Four-domain RT-001 runtime source/integrity acceptance now covers every current 
 
 Create Logo, icon and brand assets as `.vectorcraft` with applicable SVG, PDF and PNG exports.
 
-Current plugin: `0.1.0-dev.55`; skill source: `0.1.0-dev.41`; 13 independent skills.
+Current plugin: `0.1.0-dev.56`; skill source: `0.1.0-dev.42`; 13 independent skills.
 
 Plugin55/source41 adds actual SVG image scope and a digest-bound technical disclosure guard. Minimum tasks4.13/4.14 pass; 4.15 qualifies for its current headless scenarios. [Architecture](docs/VectorCraft-Exchange-Scope.en.md).
 
@@ -137,9 +137,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.55 |
+| Metadata version | 0.1.0-dev.56 |
 | Stage | implementation-in-progress |
-| Skills source | vectorcraft-skills / v0.1.0-dev.41 |
+| Skills source | vectorcraft-skills / v0.1.0-dev.42 |
 | Execution | Upstream CLI; ArtCraft uses child adapters |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |
@@ -391,3 +391,5 @@ Historical subset (qualification follows): Public fixed55/source41 passes isolat
 Historical subset (qualification follows): Supplemental installed55 acceptance verifies automatic freeform SVG raster fallback without expansion (32×22 embedded PNG; local box12,16,60,40), three independent export decodes and seven refusals. Native gradient editing after independent reopen preserves the source and prior exports. Formal task4.15 closure review remains pending; GUI, model and full V1 acceptance are separate. [Evidence](docs/evidence/vectorcraft-exchange-automatic55-20261009.json).
 
 Both current VC-DM-005-P and VC-DM-005-N scenarios qualify on fixed55/source41 macOS arm64. Task4.15 closes:108 complete/19 open. Automatic freeform SVG fallback produces a32×22 embedded PNG with disclosed local box12,16,60,40 and a blocked lossless claim. Independently reopened native gradients remain editable in a new revision while preserving the source and prior delivery. SVG/PDF/PNG decode separately and seven disclosure/format refusals pass. Six evidence tests include five rehashed omission/tampering refusals. GUI, models, other platforms, universal round-trip fidelity and full V1 remain unverified. [Evidence](docs/evidence/vectorcraft-exchange-qualified55-20261009.json).
+
+Plugin56 pins independent source42. Registered raster/SVG consumers follow real native identities; native SVG replacement scaling is corrected to preserve instance bounds. Ten targeted units, source172-pass/30-skip regression, nine native asset exports and three byte-identical unrelated outputs pass; two swatch routes and eight mutation refusals regress successfully. Tasks4.16/4.17 close:110 complete/17 open. Task4.18 awaits public fixed56 installation and all current scenarios. [Evidence](docs/evidence/vectorcraft-brand-variants-candidate56-20261009.json).

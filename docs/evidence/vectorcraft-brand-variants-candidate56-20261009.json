@@ -1,0 +1,47 @@
+{
+  "schema": "vectorcraft-brand-variant-candidate/v1",
+  "result": "PASS",
+  "pluginVersion": "0.1.0-dev.56",
+  "sourceRef": "v0.1.0-dev.42",
+  "sourceCommit": "87dc3cb5eeff8dd0b39ebec6217bd96496d04f8a",
+  "platform": "Darwin-arm64",
+  "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+  "tasksClosed": [
+    "4.16",
+    "4.17"
+  ],
+  "fingerprints": {
+    "plugin.json": "bbd28acf3caedbd4e8f8cc61f960c060b7b59f21c6dcf5f36f3878ae7722461b",
+    "skills.lock.json": "d3cfa17086478e3116618e33c355555be6631879c880d67437ec15ce95523c00",
+    "docs/current-identity.json": "81c75f5820403012dbb2c6fa90a6788fd209e8e1d4f05793ba9c0cb1a6ea9cf2",
+    "scripts/qa/brand_asset_variants.py": "1c9084fc3b43c98e8b28eb414e7e900301e2f4aea7f3b38a2d0420490ad1e876",
+    "docs/evidence/vc-dm-006/inheritance-green.log.txt": "131fc58c566687757b19a01da0e7b69c63f7b5d2106f7d1ff94f3d6902c22e24",
+    "docs/evidence/vc-dm-006/guard-candidate.json": "d554984e0f5e821b18c442b234a7cfec14ce7ad8ce24e38b82dc62ca4d4f7981",
+    "docs/evidence/vc-dm-006/baseline55.json": "524e724096184b4a40effb6484966ba40c292e8266311af2811c870ee94e70f0",
+    "docs/evidence/vc-dm-006/gateway-candidate.json": "f7eaf06080e24d8cfcac14beed7bca8356138e06f609b9b15e611089869e657b",
+    "docs/evidence/vc-dm-006/inheritance-red.log.txt": "84cc167d4d784a042220a85f58527fc5e7a3177fac4023b32de42d8fef69d5b6",
+    "docs/evidence/vc-dm-006/unit-green.log.txt": "7748c9d77fa54b11f97ad9eec3dc0ec493c2b3eadec053bfd7c886e79aaec2cc",
+    "docs/evidence/vc-dm-006/guard-driver.py.txt": "0d206a92e0289759a4381a7fe3aafcb9d835b3f0e381e44824f666b0764e43b0",
+    "docs/evidence/vc-dm-006/asset-candidate.json": "397e507e221d869f259bb7ea26c8b66959e2b0271d3fa69585348509a4eebf38",
+    "docs/evidence/vc-dm-006/unit-red.log.txt": "59dbf5df26e592ca274161f67d0dbd5d679e7904d7f95e7ea9d2b896ec5cc8e2",
+    "docs/evidence/vc-dm-006/asset-driver.py.txt": "1c9084fc3b43c98e8b28eb414e7e900301e2f4aea7f3b38a2d0420490ad1e876",
+    "docs/evidence/vc-dm-006/gateway-driver.py.txt": "6f9bc99fbd54328e1d0859a915b0ca6a2b58cc62c2fee8bd3bfd03827131c172"
+  },
+  "sourceRegression": {
+    "passed": 172,
+    "skipped": 30,
+    "total": 202
+  },
+  "pluginPythonTests": 63,
+  "nativeAssetExports": 9,
+  "unrelatedBytePreservation": 3,
+  "nativeSwatchRoutes": 2,
+  "nativeSwatchFaults": 8,
+  "nativeAssetFaults": 1,
+  "preflightRefusals": 3,
+  "scope": "minimum tested implementation and immutable source42 snapshot; baseline55 real native gap; full fixed56 scenario qualification remains separate",
+  "remaining": [
+    "4.18 actual public fixed56 installation and full current scenario matrix",
+    "GUI/model/other platforms/fullV1"
+  ]
+}

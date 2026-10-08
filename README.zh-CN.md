@@ -137,9 +137,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.55 |
+| Metadata version | 0.1.0-dev.56 |
 | Stage | implementation-in-progress |
-| Skills source | vectorcraft-skills / v0.1.0-dev.41 |
+| Skills source | vectorcraft-skills / v0.1.0-dev.42 |
 | Execution | 上游 CLI；ArtCraft 使用子适配器 |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |
@@ -389,3 +389,5 @@ Codex 0.153.4 在全新隔离配置中安装并发现13技能。13项独立空�
 历史子集记录（正式验收见下）：补充固定55自动自由渐变退化验收：未调用展开命令，SVG实际产生32×22内嵌PNG，局部范围12,16,60,40；三格式独立解码、七类拒绝通过。原生渐变独立重开后可在新修订编辑，源工程和原导出摘要保持。4.15仍待正式规格闭环核验，GUI、模型和完整V1保持独立验收。 [证据](docs/evidence/vectorcraft-exchange-automatic55-20261009.json).
 
 固定55／源41的VC-DM-005-P与VC-DM-005-N两个当前场景完成正式核验，任务4.15标记完成，当前108项完成／19项开放。自动自由渐变直接导出SVG产生32×22内嵌PNG，报告局部范围12,16,60,40及无损声明阻断；原生工程独立重开后可编辑渐变，新修订保留源工程与既有交付。SVG／PDF／PNG分别解码，七类披露与格式异常拒绝通过；六项证据校验测试含五项重新散列后的缺失／篡改拒绝。GUI、模型、其他平台、通用往返保真和完整V1仍未验证。 [Evidence](docs/evidence/vectorcraft-exchange-qualified55-20261009.json).
+
+插件56锁定独立技能源42，登记品牌素材的栅格／SVG消费者只按真实回执替换；原生SVG导入缩放缺口通过实例边界校正修复。十项目标单元测试、源172通过／30跳过回归、原生九份素材输出与三份无关输出字节保全通过；色板两入口及八类误改拒绝回归通过。完成4.16／4.17，当前110项完成／17项开放；4.18待公开固定56实际安装及全部当前场景复验。 [Evidence](docs/evidence/vectorcraft-brand-variants-candidate56-20261009.json).

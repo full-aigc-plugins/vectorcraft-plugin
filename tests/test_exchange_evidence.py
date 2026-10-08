@@ -16,7 +16,9 @@ class ExchangeEvidenceTests(unittest.TestCase):
         self.module=importlib.util.module_from_spec(spec);spec.loader.exec_module(self.module)
         self.temp=tempfile.TemporaryDirectory();self.addCleanup(self.temp.cleanup)
         self.root=Path(self.temp.name);self.report=json.loads((ROOT/REPORT).read_text())
-        for name in set(self.report['fingerprints'])|{REPORT}:
+        index=json.loads((ROOT/'docs/evidence-index.json').read_text())
+        dependencies=next(e['dependencies'] for e in index['entries'] if e['path']==REPORT)
+        for name in set(self.report['fingerprints'])|set(dependencies)|{REPORT,'docs/evidence-index.json'}:
             target=self.root/name;target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/name,target)
         self.module.ROOT=self.root
     def write(self,name,data):

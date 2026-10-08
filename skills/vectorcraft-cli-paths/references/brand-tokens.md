@@ -43,4 +43,15 @@ python3 -I -B "$SKILL_DIR/scripts/workflow.py" "$REVISION_PLAN" \
 
 发现误改时返回 `brand_dependency_violation`，不发布成功 manifest。读取失败目录的 `failure.json`，按其原始 stage 路径和摘要查验 `brand-dependencies.json` 及检查点；`checkpointRetained: true` 时检查点留在原暂存位置，以避免移动工程破坏绝对素材链接。检查点是色板操作前的中间状态，不自动回写源工程、不自动重放。
 
-这项执行检查只适用于公开工作流的上述色板操作；独立 `commands.py` 完整原生命令入口不会因此新增创作验收承诺。素材替换、其他颜色模型、外部编辑器及像素质量单独核验。源码候选与固定发行／实际安装验收分开，不以当前分支替代不可变版本。
+色板检查适用于公开工作流的上述色板操作；独立 `commands.py` 完整原生命令入口不会因此新增创作验收承诺。登记素材替换按下节核验；其他颜色模型、外部编辑器及像素质量单独核验。源码候选与固定发行／实际安装验收分开，不以当前分支替代不可变版本。
+
+
+## 已登记素材的品牌变体替换
+
+`asset.replace` 使用当前源交付 `manifest.json` 中已登记素材的全部实例 ID；`replacement` 用 `--asset replacement=绝对路径` 登记新素材并核验摘要。参见 [替换示例](../examples/brand-asset-revise.json)。在新修订中替换，不能覆盖源工程。
+
+未提供 `exports` 时继承摘要核验后的原变体清单；显式 `exports: []` 只交付原生工程。每次替换前保存检查点，记录原生子树映射、未关联对象属性、层次顺序及画板保全。栅格实例保留 ID；SVG 按真实回执替换子树 ID，并按原生实例边界校正导入尺寸。报告包含 `asset`、`consumerIds`、`replacementIds`、`replacementMapping`、边界失配及错误依赖边。
+
+误改返回 `brand_dependency_violation`，成功清单不会发布；按 `failure.json` 找到原位置检查点和回执。独立原生命令入口的任意 `file.place`／`links.relink` 不自动拥有此登记依赖合同。跨文件消费者、全部素材格式、外部编辑器往返和视觉创作质量仍须分别验收。
+
+Registered `asset.replace` revisions inherit the verified source export list when omitted; explicit empty exports remain native-only. Real consumer subtree mappings, native instance bounds and unrelated object/stacking/artboard preservation are checked before delivery. Raster IDs may remain; SVG subtree IDs follow native replies. Failures retain the checkpoint and receipts without replay. Arbitrary native file commands and cross-file dependencies remain separate.

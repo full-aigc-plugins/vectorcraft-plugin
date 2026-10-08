@@ -88,3 +88,8 @@ Fixed native gateway first use passes:48 independently installed domain skills a
 ## 0.1.0-dev.36
 
 Pins independent source32 with self-contained brand dependency enforcement across13 skills. Native pre-edit checkpoints and failure diagnostics protect rejected revisions. Installed-copy qualification and Art bundle updates remain separate.
+
+
+## 0.1.0-dev.56
+
+Plugin56 pins source42: registered raster/SVG asset dependency checks, native instance bounds correction and verified export inheritance. Candidate token/asset regressions pass. Tasks4.16/4.17 complete; fixed installed4.18 qualification remains separate.

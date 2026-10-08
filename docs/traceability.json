@@ -179,7 +179,9 @@
       ],
       "owner": "Domain owner",
       "status": "in-progress",
-      "evidence": "docs/evidence/craft-vector36-guard-fixed-first-use-20261008.json"
+      "evidence": "docs/evidence/craft-vector36-guard-fixed-first-use-20261008.json",
+      "candidateEvidence": "docs/evidence/vectorcraft-brand-variants-candidate56-20261009.json",
+      "scope": "registered asset and token candidate coverage; current six-scene fixed56 installation qualification pending"
     },
     {
       "requirement": "VC-AR-001",

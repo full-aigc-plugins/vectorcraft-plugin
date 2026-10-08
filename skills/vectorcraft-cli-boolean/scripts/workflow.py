@@ -159,8 +159,8 @@ def execute(plan, output, runtime_home=None, source=None, control=None):
         if 'document' in plan:
             raise ValueError('revision_cannot_recreate_document')
         bindings = prior['bindings']
-        # 全局色板修改默认沿用已核验的变体导出清单。
-        if 'exports' not in plan and any(op['command'] == 'swatch.edit' or
+        # 全局色板和登记素材替换默认沿用已核验的变体导出清单。
+        if 'exports' not in plan and any(op['command'] in ('swatch.edit', 'asset.replace') or
                 (op['command'] == 'native.command' and op['params'].get('command') == 'swatch.edit')
                 for op in plan['operations']):
             source_plan = source / 'plan.json'
@@ -248,9 +248,15 @@ def execute(plan, output, runtime_home=None, source=None, control=None):
             brand_params = (params.get('params', {}) if operation['command'] == 'native.command'
                             and params.get('command') == 'swatch.edit' else
                             params if operation['command'] == 'swatch.edit' else None)
-            if brand_params is not None:
+            brand_asset = operation['command'] == 'asset.replace'
+            if brand_params is not None or brand_asset:
                 brand_before = command('document.json', {})
                 brand_module().snapshot(brand_before)
+                if brand_asset:
+                    brand_inspect_before = command('document.inspect', {})
+                    initial_mapping = {i:[i] for i in assets[params['asset']]['ids']}
+                    brand_module().inspect_asset_update(brand_before, brand_before, params['asset'], initial_mapping,
+                        brand_inspect_before, brand_inspect_before)
                 # 修改前检查点在本次暂存目录；失败不会覆写用户源工程。
                 checkpoint = stage / ('brand-checkpoint-' + str(len(brand_checks)) + '.vectorcraft')
                 command('document.save', {'path': str(checkpoint)}, save=False)
@@ -273,13 +279,24 @@ def execute(plan, output, runtime_home=None, source=None, control=None):
                     if not old['linked']:
                         command('links.embed', {'ids': old['ids']})
                     value = {'ids': old['ids'], 'linked': old['linked'], 'identity': 'retained'}
+                    asset_replacement_mapping = {i:[i] for i in old['ids']}
                 else:
                     replaced = {};warnings = []
                     for old_id in old['ids']:
                         command('select.set', {'ids': [old_id]})
                         placed = command('file.place', {'path': str(stage / new['path']), 'replace': True, 'link': old['linked']})
                         replaced[old_id] = placed['ids'];warnings += placed.get('warnings', [])
+                        # SVG 替换保留原始变换但可能丢失导入子树上的缩放；以原生实例边界校正。
+                        expected_bounds = brand_module().instance_bounds(brand_inspect_before, [old_id])
+                        actual_bounds = brand_module().instance_bounds(command('document.inspect', {}), placed['ids'])
+                        if expected_bounds is None or actual_bounds is None or min(actual_bounds['width'], actual_bounds['height']) <= 0:
+                            raise ValueError('asset_replacement_bounds_unknown')
+                        if any(abs(expected_bounds[k]-actual_bounds[k]) > 1e-5 for k in expected_bounds):
+                            sx, sy = expected_bounds['width']/actual_bounds['width'], expected_bounds['height']/actual_bounds['height']
+                            command('object.transform', {'ids': placed['ids'], 'matrix': [sx, 0, 0, sy,
+                                expected_bounds['x']-sx*actual_bounds['x'], expected_bounds['y']-sy*actual_bounds['y']]})
                     value = {'ids': [i for ids in replaced.values() for i in ids], 'linked': placed['linked'], 'identity': 'replaced', 'warnings': warnings}
+                    asset_replacement_mapping = replaced
                     # 所有已登记实例分别保留位置；既有回执更新新身份。
                     for binding in bindings.values():
                         if isinstance(binding, dict) and isinstance(binding.get('ids'), list):
@@ -296,9 +313,13 @@ def execute(plan, output, runtime_home=None, source=None, control=None):
                                    if managed_command in ('object.ungroup','select.set') else None)
                 control.verify_revision(managed_before,command('document.json',{},save=False),managed_command,managed_params,
                                         result=value,selection=managed_selection,after_selection=after_selection)
-            if brand_params is not None:
-                check = brand_module().inspect_update(brand_before, command('document.json', {}),
-                    brand_params.get('name'), brand_params.get('color', brand_params.get('paint', {}).get('color')))
+            if brand_params is not None or brand_asset:
+                if brand_asset:
+                    check = brand_module().inspect_asset_update(brand_before, command('document.json', {}),
+                        params['asset'], asset_replacement_mapping, brand_inspect_before, command('document.inspect', {}))
+                else:
+                    check = brand_module().inspect_update(brand_before, command('document.json', {}),
+                        brand_params.get('name'), brand_params.get('color', brand_params.get('paint', {}).get('color')))
                 check['checkpoint'] = checkpoint.name
                 check['checkpointSha256'] = sha(checkpoint)
                 check['checkpointRetained'] = True
