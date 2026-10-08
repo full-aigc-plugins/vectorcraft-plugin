@@ -169,6 +169,9 @@ def build(root=ROOT):
     recovery_candidate='docs/evidence/vectorcraft-recovery-binding-candidate45-20261008.json'
     if (root/recovery_candidate).is_file():
         entries.append(bound_report(root,recovery_candidate,'native-candidate','Recovery snapshot refusals and real coordinator crash/restart/native group stop/handoff; full3.3,3.6,3.9 and V1 remain open','VC-TX-002'))
+    recovery_fixed='docs/evidence/vectorcraft-recovery-fixed45-20261008.json'
+    if (root/recovery_fixed).is_file():
+        entries.append(bound_report(root,recovery_fixed,'fixed-install','Public plugin45/source37 installed host and real cancellation/crash recovery subset; 13 unchanged skills,63 Node and43 Python regressions; full3.3,3.6,3.9 remain open','VC-TX-002'))
     # 明确归档变更前执行字节；保留报告原摘要，不能把旧运行重绑定到新实现。
     for entry in entries:
         archived={}
