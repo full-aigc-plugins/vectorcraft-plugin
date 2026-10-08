@@ -47,9 +47,6 @@ export class Ledger {
       state TEXT NOT NULL, attempts INTEGER NOT NULL DEFAULT 0, bytes INTEGER NOT NULL DEFAULT 0, reason TEXT);
       CREATE UNIQUE INDEX IF NOT EXISTS single_writer ON tasks(resource)
         WHERE state IN ('ready','running','reconciling','cancel_requested');
-      CREATE TRIGGER IF NOT EXISTS single_output_owner BEFORE INSERT ON tasks
-      WHEN EXISTS(SELECT 1 FROM tasks WHERE output=NEW.output AND state IN ('ready','running','reconciling','cancel_requested'))
-      BEGIN SELECT RAISE(ABORT,'output_busy'); END;
       CREATE TABLE IF NOT EXISTS steps(task TEXT REFERENCES tasks(id), n INTEGER, intent TEXT NOT NULL,
         state TEXT NOT NULL, result TEXT, PRIMARY KEY(task,n));
       CREATE TABLE IF NOT EXISTS budgets(id TEXT PRIMARY KEY,policy TEXT NOT NULL,attempts INTEGER NOT NULL DEFAULT 0,bytes INTEGER NOT NULL DEFAULT 0);
@@ -109,7 +106,6 @@ export class Ledger {
       }
       if(auth.deadline<=Date.now())throw new Error('budget_exceeded');
       if(this.db.prepare("SELECT id FROM tasks WHERE resource=? AND state IN ('ready','running','reconciling','cancel_requested')").get(owner))throw new Error('resource_busy');
-      if(this.db.prepare("SELECT id FROM tasks WHERE output=? AND state IN ('ready','running','reconciling','cancel_requested')").get(destination))throw new Error('output_busy');
       const id=randomUUID(),budgetId=auth.budgetId??id;
       const policy=canonical({deadline:auth.deadline,maxAttempts:auth.maxAttempts,maxBytes:auth.maxBytes});
       const previousBudget=this.db.prepare('SELECT policy FROM budgets WHERE id=?').get(budgetId) as any;

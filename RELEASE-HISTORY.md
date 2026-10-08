@@ -1,5 +1,10 @@
 # Version-bound release records
 
+## dev.46 (2026-10-08)
+
+Bind complete source delivery inputs and execute from verified readonly source snapshots while retaining occupation of the original project. Reserve canonical outputs transactionally and guard old SQL connections. Real native branch, signed desktop GUI conflict, crash/restart and handoff cases pass; full3.3 awaits fixed-release acceptance. Source remains dev.37; completeV1 remains open. [Contract](docs/VectorCraft-Source-Single-Writer.md).
+
+
 ## dev.45 (2026-10-08)
 
 Persist and verify recovery control digests, retained skill snapshots and original plan identities before native inspection. Add real coordinator-crash/restart/handoff and retained-snapshot tamper acceptance scripts. Source remains dev.37 with13 unchanged skills. Complete3.3,3.6,3.9 and V1 remain open. Older unresolved tasks without an original control digest fail closed and retain occupation. [Recovery details](docs/VectorCraft-Recovery-Snapshot.md).

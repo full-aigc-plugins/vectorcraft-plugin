@@ -10,7 +10,9 @@ Four-domain RT-001 runtime source/integrity acceptance now covers every current 
 
 Create Logo, icon and brand assets as `.vectorcraft` with applicable SVG, PDF and PNG exports.
 
-Current plugin: `0.1.0-dev.45`; skill source: `0.1.0-dev.37`; 13 independent skills.
+Current plugin: `0.1.0-dev.46`; skill source: `0.1.0-dev.37`; 13 independent skills.
+
+Source manifests, inherited plans and dependencies are now version-bound and copied into verified readonly execution snapshots. Both source projects and physical outputs are reserved before editing; old SQL connections follow the output guard. Native branch, GUI-change conflict and crash/handoff candidate cases pass. [Source and writer contract](docs/VectorCraft-Source-Single-Writer.md). Full3.3 still awaits fixed46 verification.
 
 Published plugin45/source37 passed isolated Codex installation,63 Node and43 Python tests, and real cancellation and coordinator-crash recovery from the installed copy. All13 skill digests remain unchanged. [Fixed-install evidence](docs/evidence/vectorcraft-recovery-fixed45-20261008.json). These are bounded recovery cases; no additional V1 task closes.
 
@@ -115,7 +117,7 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.45 |
+| Metadata version | 0.1.0-dev.46 |
 | Stage | implementation-in-progress |
 | Skills source | vectorcraft-skills / v0.1.0-dev.37 |
 | Execution | Upstream CLI; ArtCraft uses child adapters |

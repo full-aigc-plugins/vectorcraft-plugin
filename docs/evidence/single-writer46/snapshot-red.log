@@ -1,0 +1,36 @@
+✔ source manifest cannot change while runtime is probing (10.799583ms)
+✔ source inherited plan cannot change while runtime is probing (7.14975ms)
+✔ source declared asset cannot change while runtime is probing (7.348542ms)
+✔ source previously absent PDF date cannot change while runtime is probing (6.1915ms)
+✔ source manifest and declared dependency digests enter immutable task identity (246.343083ms)
+✔ source manifest cannot introduce path traversal or linked inputs before probing (11.334958ms)
+✔ ordinary dependency filenames cannot bypass guards through object prototype setters (7.982125ms)
+✔ a declared dependency cannot escape its source bundle through a parent directory link (5.236875ms)
+✖ execution uses a hash-verified readonly source snapshot while resource identity stays on the user source (178.13275ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 8
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 568.107458
+
+✖ failing tests:
+
+test at tests/source_dependencies.test.ts:52:1
+✖ execution uses a hash-verified readonly source snapshot while resource identity stays on the user source (178.13275ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+    assert.ok(intent.sourceSnapshot)
+
+      at TestContext.<anonymous> (file://<plugin-root>/tests/source_dependencies.test.ts:56:10)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

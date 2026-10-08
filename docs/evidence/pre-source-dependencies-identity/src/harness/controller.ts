@@ -96,30 +96,6 @@ export class Controller {
       if(projectRevision!==plan.expectedProjectSha256)throw new Error('revision_conflict');
     }
     const inputHashes:Record<string,string>={};
-    const sourceDependencies:Record<string,string|null>=Object.create(null);
-    const sourcePathLinked=(name:string)=>name.split('/').some((_,i,parts)=>lstatSync(join(request.source!,...parts.slice(0,i+1)),{throwIfNoEntry:false})?.isSymbolicLink());
-    if(request.source){
-      const manifestFile=join(request.source,'manifest.json'),stat=lstatSync(manifestFile,{throwIfNoEntry:false});
-      if(!stat?.isFile()||stat.isSymbolicLink())throw new Error('invalid_source_dependency');
-      const manifestBytes=readFileSync(manifestFile),manifest=strictJson(manifestBytes.toString());
-      if(manifest.schema!=='vectorcraft-delivery/v1'||!manifest.files||typeof manifest.files!=='object'||Array.isArray(manifest.files)||Object.keys(manifest.files).length>4096||manifest.files['project.vectorcraft']!==projectRevision)throw new Error('invalid_source_dependency');
-      sourceDependencies['manifest.json']=sha(manifestBytes);inputHashes['source:manifest.json']=sha(manifestBytes);
-      for(const [name,expected] of Object.entries(manifest.files) as [string,any][]){
-        if(isAbsolute(name)||name.includes('\\')||name.split('/').some(p=>['','..','.'].includes(p))||typeof expected!=='string'||!/^[a-f0-9]{64}$/.test(expected))throw new Error('invalid_source_dependency');
-        const file=join(request.source,name),stat=lstatSync(file,{throwIfNoEntry:false});
-        if(!stat?.isFile()||sourcePathLinked(name)||!auth.readRoots.some(root=>inside(root,file)))throw new Error('invalid_source_dependency');
-        if(sha(readFileSync(file))!==expected)throw new Error('source_dependency_digest_mismatch');
-        sourceDependencies[name]=expected;inputHashes['source:file:'+name]=expected;
-      }
-      // 这些可选元数据也会改变继承导出；缺失本身必须被绑定，防止探测后补入。
-      for(const name of ['plan.json','pdf-export-date.json']){
-        if(name in sourceDependencies)continue;
-        const file=join(request.source,name),stat=lstatSync(file,{throwIfNoEntry:false});
-        if(stat&&(!stat.isFile()||stat.isSymbolicLink()))throw new Error('invalid_source_dependency');
-        const expected=stat?sha(readFileSync(file)):null;sourceDependencies[name]=expected;
-        inputHashes['source:optional:'+name]=expected??sha('absent:'+name);
-      }
-    }
     const guards=request.inputFingerprints??{};
     if(!guards||typeof guards!=='object'||Array.isArray(guards)||Object.keys(guards).length>4096)throw new Error('invalid_input_fingerprints');
     const checkInputs=()=>{
@@ -127,11 +103,6 @@ export class Controller {
         const project=join(request.source,'project.vectorcraft');
         if(lstatSync(project).isSymbolicLink())throw new Error('invalid_source_path');
         if(sha(readFileSync(project))!==projectRevision)throw new Error('revision_conflict');
-      }
-      for(const [name,expected] of Object.entries(sourceDependencies)){
-        const file=join(request.source!,name),stat=lstatSync(file,{throwIfNoEntry:false});
-        if(expected===null){if(stat)throw new Error('stale_source_dependencies');}
-        else if(!stat?.isFile()||sourcePathLinked(name)||!auth.readRoots.some(root=>inside(root,file))||sha(readFileSync(file))!==expected)throw new Error('stale_source_dependencies');
       }
       for(const [path,expected] of Object.entries(guards)){
         if(!/^[a-f0-9]{64}$/.test(expected)||!auth.readRoots.some(root=>inside(root,path)))throw new Error('outside_authorized_roots');
@@ -190,20 +161,6 @@ export class Controller {
     const skillSnapshot=join(this.snapshotRoot,task.id+'-skill');
     cpSync(request.skill,skillSnapshot,{recursive:true,errorOnExist:true,force:false});
     if(skillDigest(skillSnapshot)!==request.expectedSkillSha256)throw new Error('skill_snapshot_mismatch');
-    let sourceSnapshot:string|undefined,sourceSnapshotSha256:string|undefined;
-    if(request.source){
-      sourceSnapshot=join(this.snapshotRoot,task.id+'-source');mkdirSync(sourceSnapshot,{mode:0o700});
-      for(const [name,expected] of Object.entries(sourceDependencies)){
-        if(expected===null)continue;
-        const original=join(request.source,name),snapshot=join(sourceSnapshot,name);
-        if(sourcePathLinked(name))throw new Error('invalid_source_dependency');
-        mkdirSync(dirname(snapshot),{recursive:true,mode:0o700});
-        const bytes=readFileSync(original);if(sha(bytes)!==expected)throw new Error('stale_source_dependencies');
-        writeFileSync(snapshot,bytes,{flag:'wx',mode:0o400});
-        const descriptor=openSync(snapshot,'r');try{fsyncSync(descriptor);}finally{closeSync(descriptor);}
-      }
-      checkInputs();sourceSnapshotSha256=skillDigest(sourceSnapshot);
-    }
     const planSnapshot=join(this.snapshotRoot,task.id+'.json');
     writeFileSync(planSnapshot,canonical(plan),{flag:'wx',mode:0o400});
     const eventFile=join(this.snapshotRoot,task.id+'-events.jsonl');
@@ -216,9 +173,9 @@ export class Controller {
       eventFile,eventDevice:eventStat.dev,eventInode:eventStat.ino,
       ...(request.source?{source:{path:join(resourcePath(request.source),'project.vectorcraft'),sha256:projectRevision}}:{})}),{flag:'wx',mode:0o400});
     for(const file of [planSnapshot,controlFile,eventFile]){const fd=openSync(file,'r');try{fsyncSync(fd);}finally{closeSync(fd);}}
-    this.ledger.intent(task.id,task.epoch,0,{skillSha256:request.expectedSkillSha256,planHash:binding.planHash,plan,planSnapshot,skillSnapshot,output:resourcePath(request.output),controlFile,controlSha256:sha(readFileSync(controlFile)),runtimeHome:resourcePath(request.runtimeHome),source:request.source?resourcePath(request.source):null,python:request.python??'python3',...(sourceSnapshot?{sourceSnapshot,sourceSnapshotSha256}:{}),...(geometryContract?{geometryContract}:{})},request.estimatedBytes);
+    this.ledger.intent(task.id,task.epoch,0,{skillSha256:request.expectedSkillSha256,planHash:binding.planHash,plan,planSnapshot,skillSnapshot,output:resourcePath(request.output),controlFile,controlSha256:sha(readFileSync(controlFile)),runtimeHome:resourcePath(request.runtimeHome),source:request.source?resourcePath(request.source):null,python:request.python??'python3',...(geometryContract?{geometryContract}:{})},request.estimatedBytes);
     const args=['-I','-B',join(skillSnapshot,'scripts/workflow.py'),planSnapshot,'--output',request.output,'--runtime-home',request.runtimeHome,'--control',controlFile];
-    if(sourceSnapshot)args.push('--source',sourceSnapshot);
+    if(request.source)args.push('--source',request.source);
     let stdout='',stderr='';
     try {
       await new Promise<void>((accept,reject)=>{

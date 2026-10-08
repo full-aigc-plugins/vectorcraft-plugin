@@ -1,0 +1,31 @@
+✔ source manifest cannot change while runtime is probing (8.504584ms)
+✔ source inherited plan cannot change while runtime is probing (5.281ms)
+✔ source declared asset cannot change while runtime is probing (6.002959ms)
+✔ source previously absent PDF date cannot change while runtime is probing (5.44825ms)
+✔ source manifest and declared dependency digests enter immutable task identity (175.449334ms)
+✔ source manifest cannot introduce path traversal or linked inputs before probing (9.916083ms)
+✖ ordinary dependency filenames cannot bypass guards through object prototype setters (165.118583ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 6
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 456.195875
+
+✖ failing tests:
+
+test at tests/source_dependencies.test.ts:41:1
+✖ ordinary dependency filenames cannot bypass guards through object prototype setters (165.118583ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file://<plugin-root>/tests/source_dependencies.test.ts:44:6)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /stale_source_dependencies/,
+    operator: 'rejects',
+    diff: 'simple'
+  }

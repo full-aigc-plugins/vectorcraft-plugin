@@ -1,0 +1,11 @@
+{
+  "commit": "21336c5aae4ed9d73cea1e8aa10ff24229d495e6",
+  "scope": "Exact plugin45 bytes before complete source dependency binding",
+  "files": {
+    "src/harness/controller.ts": "15776be619ab262e34a0eba7bd8e5668c47e9319752049c3a78036e00e1f90c4",
+    "plugin.json": "1ebe87a9835bfd602c59dc6dae5c959b135e59a1cb90da10daf35cfb5d5f7f77",
+    "openspec/changes/establish-v1-plugin/specs/task-execution/spec.md": "845fedb510d5d0a187d68d28565b8b42dd8c3998290d095652c72d558a289c76",
+    "src/harness/ledger.ts": "eaaf703dd51fd63a5d82826ec30ff7e07277aa8a94f3568369b0af142c9e7a9e",
+    "scripts/acceptance/task_crash.ts": "d0f0bb8ce9a4d08f1d38c7c866f2de4154014e1d61e403de8fc554fbaf3015b9"
+  }
+}

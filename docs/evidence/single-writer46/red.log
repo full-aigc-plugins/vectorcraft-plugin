@@ -1,0 +1,106 @@
+✖ source manifest cannot change while runtime is probing (206.581209ms)
+✖ source inherited plan cannot change while runtime is probing (178.859792ms)
+✖ source declared asset cannot change while runtime is probing (178.201125ms)
+✖ source previously absent PDF date cannot change while runtime is probing (181.207417ms)
+✖ source manifest and declared dependency digests enter immutable task identity (173.228709ms)
+✖ source manifest cannot introduce path traversal or linked inputs before probing (166.154583ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 0
+ℹ fail 6
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1168.677375
+
+✖ failing tests:
+
+test at tests/source_dependencies.test.ts:26:2
+✖ source manifest cannot change while runtime is probing (206.581209ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async TestContext.<anonymous> (file://<plugin-root>/tests/source_dependencies.test.ts:28:7)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /stale_source_dependencies/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/source_dependencies.test.ts:26:2
+✖ source inherited plan cannot change while runtime is probing (178.859792ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file://<plugin-root>/tests/source_dependencies.test.ts:28:7)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /stale_source_dependencies/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/source_dependencies.test.ts:26:2
+✖ source declared asset cannot change while runtime is probing (178.201125ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file://<plugin-root>/tests/source_dependencies.test.ts:28:7)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /stale_source_dependencies/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/source_dependencies.test.ts:26:2
+✖ source previously absent PDF date cannot change while runtime is probing (181.207417ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file://<plugin-root>/tests/source_dependencies.test.ts:28:7)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /stale_source_dependencies/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/source_dependencies.test.ts:31:1
+✖ source manifest and declared dependency digests enter immutable task identity (173.228709ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + undefined
+  - '6d119305a7dce276c79ce9bd3d5b41bd744a1cb75772353ad7ed3a35d8dd0341'
+
+      at TestContext.<anonymous> (file://<plugin-root>/tests/source_dependencies.test.ts:33:56)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: '6d119305a7dce276c79ce9bd3d5b41bd744a1cb75772353ad7ed3a35d8dd0341',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/source_dependencies.test.ts:35:1
+✖ source manifest cannot introduce path traversal or linked inputs before probing (166.154583ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file://<plugin-root>/tests/source_dependencies.test.ts:38:208)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /invalid_source_dependency/,
+    operator: 'rejects',
+    diff: 'simple'
+  }

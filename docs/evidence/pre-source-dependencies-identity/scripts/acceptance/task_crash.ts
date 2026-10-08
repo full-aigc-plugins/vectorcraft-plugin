@@ -1,6 +1,6 @@
 /** 原生父进程崩溃、持久占用、只读恢复与源工程交接；仅操作本用例登记的进程组。 */
 import assert from 'node:assert/strict';
-import {mkdirSync,readFileSync,writeFileSync,existsSync,openSync,closeSync,cpSync} from 'node:fs';
+import {mkdirSync,readFileSync,writeFileSync,existsSync,openSync,closeSync} from 'node:fs';
 import {join,resolve,dirname} from 'node:path';
 import {fileURLToPath,pathToFileURL} from 'node:url';
 import {spawn} from 'node:child_process';
@@ -43,9 +43,6 @@ try{
  assert.equal(controller.ledger.get(task.id).attempts,1);assert.equal(hash(eventFile!),eventHash);
  await assert.rejects(()=>controller.run({...request,output:join(root,'bypass-output')}),/idempotency_conflict/);
  await assert.rejects(()=>controller.run({...request,key:'competing',output:join(root,'competing-output')}),/resource_busy/);
- const otherSource=join(root,'different-source');cpSync(source,otherSource,{recursive:true});
- await assert.rejects(()=>controller.run({...request,key:'different-source-same-output',source:otherSource}),/output_busy/);
- assert.equal((controller.ledger.db.prepare('SELECT COUNT(*) AS n FROM tasks').get() as any).n,1);
  assert.equal((controller.ledger.db.prepare('SELECT COUNT(*) AS n FROM steps').get() as any).n,1);
  controller.ledger.unknown(task.id,task.epoch,'QA verified coordinator SIGKILL; native result unknown');
  const recovery=new Recovery(controller.ledger,controller.processes);
@@ -67,7 +64,7 @@ try{
   skillSha256:skillDigest(skill),runtimeIdentity:before.binding.runtimeIdentity,sourceSha256,sourceUnchanged:hash(project)===sourceSha256,
   parentExit,taskId:task.id,originalEpoch:task.epoch,checkpoint:{sha256:checkpointHash,path:checkpoint.path},stateAfterRestart:before.state,
   registeredNativeMembersAfterParentCrash:nativeBefore.members.map((x:any)=>({pid:x.pid,pgid:x.pgid,start:x.start,status:x.status})),
-  noAutomaticReplay:true,changedOutputRejected:true,secondSourceWriterRejected:true,differentSourceSameOutputRejected:true,competingTaskNotRegistered:true,attemptsAfterRestart:resumed.attempts,
+  noAutomaticReplay:true,changedOutputRejected:true,secondSourceWriterRejected:true,attemptsAfterRestart:resumed.attempts,
   nativeAliveRefusedRecovery:true,confirmedNativeStopped:true,recovery:recovered.proof,settledState:recovered.task.state,settledEpoch:recovered.task.epoch,
   handoff:{taskId:handoff.id,manifestSha256:manifestHash,state:handoff.state},lateNativeReplyQuarantined:true,lateReceiptPayloadSha256:createHash('sha256').update(late.result).digest('hex')};
  writeFileSync(join(root,'proof.json'),JSON.stringify(proof,null,2)+'\n');console.log(JSON.stringify({result:'PASS',taskId:task.id,settledState:recovered.task.state,handoffState:handoff.state}));

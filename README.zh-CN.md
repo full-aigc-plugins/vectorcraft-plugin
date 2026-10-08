@@ -10,7 +10,9 @@
 
 Logo、图标与品牌图形需求进入，交付 `.vectorcraft` 及适用的 SVG、PDF、PNG。
 
-当前插件：`0.1.0-dev.45`；技能源：`0.1.0-dev.37`；13 个独立技能。
+当前插件：`0.1.0-dev.46`；技能源：`0.1.0-dev.37`；13 个独立技能。
+
+源清单、继承计划与依赖现已绑定版本，并复制为逐文件核验的只读执行快照；编辑前同时占用原源工程和物理输出，旧SQL连接亦受输出门禁约束。原生分支、GUI改后冲突、崩溃交接候选通过。[源与单写合同](docs/VectorCraft-Source-Single-Writer.zh_CN.md)。完整3.3仍待固定46验收。
 
 公开插件45／技能源37通过隔离Codex安装、63项Node与43项Python回归，已安装副本的真实取消与协调器崩溃恢复通过；13技能摘要保持不变。[固定安装证据](docs/evidence/vectorcraft-recovery-fixed45-20261008.json)。这些是有限恢复案例，本轮不关闭额外V1任务。
 
@@ -115,7 +117,7 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.45 |
+| Metadata version | 0.1.0-dev.46 |
 | Stage | implementation-in-progress |
 | Skills source | vectorcraft-skills / v0.1.0-dev.37 |
 | Execution | 上游 CLI；ArtCraft 使用子适配器 |
