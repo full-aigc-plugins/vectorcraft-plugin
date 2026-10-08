@@ -1,0 +1,20 @@
+✔ unlaunched ready task can be sealed and late intent cannot reserve budget (5.099375ms)
+✔ GO needs registered process and intent; authorized GO cannot become unlaunched (2.559083ms)
+✔ sealing submitted task retains reservation and prevents late GO (2.46325ms)
+✔ missing new protocol gate is not proof of no native execution (2.225375ms)
+✔ independent SQLite connections serialize sealing against GO authorization (3.455583ms)
+✔ legacy tasks do not acquire a no-GO conclusion retroactively (2.320833ms)
+✔ deadline expiry between intent and GO refuses launch without resetting consumed budget (2.525333ms)
+✔ ready crash seals launch and verifies no source/no output without inventing native inspection (7.977375ms)
+✔ unlaunched recovery refuses new output and retains occupation (4.114208ms)
+✔ unlaunched settlement refuses plan or launch gate changed after inspection (4.990666ms)
+✔ submitted but unlaunched crash still requires recorded execution snapshot identity (4.009083ms)
+✔ cancelling an unlaunched ready task persists state even before snapshot directory creation (19.434042ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 118.368041

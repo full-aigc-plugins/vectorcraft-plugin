@@ -10,7 +10,9 @@
 
 Logo、图标与品牌图形需求进入，交付 `.vectorcraft` 及适用的 SVG、PDF、PNG。
 
-当前插件：`0.1.0-dev.49`；技能源：`0.1.0-dev.38`；13 个独立技能。
+当前插件：`0.1.0-dev.50`；技能源：`0.1.0-dev.38`；13 个独立技能。
+
+候选插件50持久记录registered-go/v1启动门禁，GO授权与恢复封存互斥。六种真实协调器崩溃覆盖ready、快照准备后、意图提交后、进程登记后、GO授权后未发送及无源新建；未授权GO的恢复只读重开原工程并检查链接，核验后源文件改动拒绝结算。已授权GO且无暂存证据时保留占用；完整3.6与固定50复验仍开放。
 
 插件49绑定已完成步骤回执、运行时身份、清单及全部文件摘要；核验后替换回执拒绝结算，旧检查缺少步骤摘要需重新检查。源38在重命名前持久记录真实交付目录身份，覆盖链接素材打包子目录；普通／链接工程的回执前后四个真实崩溃候选场景通过。公开固定49／实际宿主源38已通过四个场景及97项Node、43项Python回归；13技能摘要保持，完整3.6仍开放。[固定证据](docs/evidence/vectorcraft-receipt-recovery-fixed49-20261009.json)。
 
@@ -125,7 +127,7 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.49 |
+| Metadata version | 0.1.0-dev.50 |
 | Stage | implementation-in-progress |
 | Skills source | vectorcraft-skills / v0.1.0-dev.38 |
 | Execution | 上游 CLI；ArtCraft 使用子适配器 |

@@ -199,12 +199,15 @@ def build(root=ROOT):
     receipt_fixed='docs/evidence/vectorcraft-receipt-recovery-fixed49-20261009.json'
     if (root/receipt_fixed).is_file():
         entries.append(bound_report(root,receipt_fixed,'fixed-install','Public installed plugin49/source38: four plain/linked crashes before/after receipt, receipt/artifact and post-inspection binding refusal;97 Node and43 Python tests; full3.6 remains open','VC-TX-002'))
+    launch='docs/evidence/vectorcraft-launch-recovery-candidate50-20261009.json'
+    if (root/launch).is_file():
+        entries.append(bound_report(root,launch,'native-candidate','Six real GO-boundary crashes, source readonly inspection and post-inspection change refusal; four receipt regressions;109 Node and43 Python tests; fixed50 and full3.6 remain open','VC-TX-002'))
     # 明确归档变更前执行字节；保留报告原摘要，不能把旧运行重绑定到新实现。
     for entry in entries:
         archived={}
         for name,digest in entry['dependencies'].items():
             if sha(safe_file(root,name))==digest:continue
-            for prefix in ['docs/evidence/pre-runtime-gate-identity/','docs/evidence/pre-runtime-default-identity/','docs/evidence/pre-runtime-artifacts-identity/','docs/evidence/pre-runtime-boundaries-identity/','docs/evidence/pre-open-reader-identity/','docs/evidence/pre-download-test-cache-identity/','docs/evidence/pre-authorization-identity/','docs/evidence/pre-recovery-binding-identity/','docs/evidence/pre-source-dependencies-identity/','docs/evidence/pre-task3-closure-identity/','docs/evidence/pre-path-identity/','docs/evidence/pre-source-recovery-identity/','docs/evidence/pre-receipt-recovery-identity/']:
+            for prefix in ['docs/evidence/pre-runtime-gate-identity/','docs/evidence/pre-runtime-default-identity/','docs/evidence/pre-runtime-artifacts-identity/','docs/evidence/pre-runtime-boundaries-identity/','docs/evidence/pre-open-reader-identity/','docs/evidence/pre-download-test-cache-identity/','docs/evidence/pre-authorization-identity/','docs/evidence/pre-recovery-binding-identity/','docs/evidence/pre-source-dependencies-identity/','docs/evidence/pre-task3-closure-identity/','docs/evidence/pre-path-identity/','docs/evidence/pre-source-recovery-identity/','docs/evidence/pre-receipt-recovery-identity/','docs/evidence/pre-launch-recovery-identity/']:
                 old=prefix+name
                 if (root/old).is_file() and sha(safe_file(root,old))==digest:
                     archived[name]=old

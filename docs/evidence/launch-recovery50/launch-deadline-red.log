@@ -1,0 +1,35 @@
+✔ unlaunched ready task can be sealed and late intent cannot reserve budget (5.503917ms)
+✔ GO needs registered process and intent; authorized GO cannot become unlaunched (4.293708ms)
+✔ sealing submitted task retains reservation and prevents late GO (3.447125ms)
+✔ missing new protocol gate is not proof of no native execution (3.567625ms)
+✔ independent SQLite connections serialize sealing against GO authorization (4.148209ms)
+✔ legacy tasks do not acquire a no-GO conclusion retroactively (2.687917ms)
+✖ deadline expiry between intent and GO refuses launch without resetting consumed budget (4.46525ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 6
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 113.127541
+
+✖ failing tests:
+
+test at tests/launch_gate.test.ts:37:1
+✖ deadline expiry between intent and GO refuses launch without resetting consumed budget (4.46525ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (file://<plugin-root>/tests/launch_gate.test.ts:39:55)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1325:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+      at Test.postRun (node:internal/test_runner/test:1465:19)
+      at Test.run (node:internal/test_runner/test:1390:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /launch_not_authorized/,
+    operator: 'throws',
+    diff: 'simple'
+  }

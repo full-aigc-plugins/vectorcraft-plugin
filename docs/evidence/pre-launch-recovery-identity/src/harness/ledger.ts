@@ -5,7 +5,7 @@ import { resolve, dirname, basename } from 'node:path';
 import { canonical, strictJson } from '../strict_json.ts';
 
 export type Authorization={objects:number[],fields:string[],deadline:number,maxAttempts:number,maxBytes:number,budgetId?:string};
-export type Binding={launchProtocol?:'registered-go/v1',launchContext?:{skill:string,plan:string,runtimeHome:string,python:string,source:string|null},executionMode?:'headless'|'bridge',skillSha256?:string,planHash:string,inputHashes:Record<string,string>,projectRevision:string|null,runtimeIdentity:string,authorization:Authorization};
+export type Binding={executionMode?:'headless'|'bridge',skillSha256?:string,planHash:string,inputHashes:Record<string,string>,projectRevision:string|null,runtimeIdentity:string,authorization:Authorization};
 const digest=(v:any)=>createHash('sha256').update(canonical(v)).digest('hex');
 
 /** 规范化资源身份；符号链接别名不能取得第二份工程占用。 */
@@ -52,9 +52,6 @@ export class Ledger {
       BEGIN SELECT RAISE(ABORT,'output_busy'); END;
       CREATE TABLE IF NOT EXISTS steps(task TEXT REFERENCES tasks(id), n INTEGER, intent TEXT NOT NULL,
         state TEXT NOT NULL, result TEXT, PRIMARY KEY(task,n));
-      CREATE TABLE IF NOT EXISTS native_launches(task TEXT REFERENCES tasks(id),epoch INTEGER NOT NULL,
-        protocol TEXT NOT NULL,state TEXT NOT NULL CHECK(state IN ('prepared','authorized','sealed')),
-        intent_sha256 TEXT,PRIMARY KEY(task,epoch));
       CREATE TABLE IF NOT EXISTS budgets(id TEXT PRIMARY KEY,policy TEXT NOT NULL,attempts INTEGER NOT NULL DEFAULT 0,bytes INTEGER NOT NULL DEFAULT 0);
       CREATE TABLE IF NOT EXISTS late_receipts(id INTEGER PRIMARY KEY,task TEXT NOT NULL,epoch INTEGER NOT NULL,n INTEGER NOT NULL,result TEXT NOT NULL,received_at INTEGER NOT NULL);
       CREATE TABLE IF NOT EXISTS runtime_selection(id INTEGER PRIMARY KEY CHECK(id=1),active TEXT NOT NULL,previous TEXT);
@@ -92,7 +89,7 @@ export class Ledger {
   }
   claim(key:string,resource:string,output:string,binding:Binding):any {
     const auth=binding.authorization;
-    if((binding.launchProtocol!==undefined&&(binding.launchProtocol!=='registered-go/v1'||!binding.launchContext))||(binding.executionMode!==undefined&&!['headless','bridge'].includes(binding.executionMode))||(binding.skillSha256!==undefined&&!/^[a-f0-9]{64}$/.test(binding.skillSha256))||!key||![binding.planHash,binding.runtimeIdentity,...Object.values(binding.inputHashes)].every(h=>/^[a-f0-9]{64}$/.test(h))
+    if((binding.executionMode!==undefined&&!['headless','bridge'].includes(binding.executionMode))||(binding.skillSha256!==undefined&&!/^[a-f0-9]{64}$/.test(binding.skillSha256))||!key||![binding.planHash,binding.runtimeIdentity,...Object.values(binding.inputHashes)].every(h=>/^[a-f0-9]{64}$/.test(h))
       ||(auth.budgetId!==undefined&&(typeof auth.budgetId!=='string'||!auth.budgetId))
       ||!Array.isArray(auth.objects)||auth.objects.some(x=>!Number.isSafeInteger(x)||x<=0)
       ||!Array.isArray(auth.fields)||auth.fields.some(x=>typeof x!=='string'||!x)
@@ -120,7 +117,6 @@ export class Ledger {
       this.db.prepare('INSERT OR IGNORE INTO budgets(id,policy) VALUES(?,?)').run(budgetId,policy);
       this.db.prepare('INSERT INTO tasks(id,key,resource,output,binding_hash,binding,state) VALUES(?,?,?,?,?,?,?)')
         .run(id,key,owner,destination,fingerprint,canonical(binding),'ready');
-      if(binding.launchProtocol)this.db.prepare("INSERT INTO native_launches(task,epoch,protocol,state) VALUES(?,1,?,'prepared')").run(id,binding.launchProtocol);
       return this.get(id);
     });
   }
@@ -142,36 +138,6 @@ export class Ledger {
       this.db.prepare("INSERT INTO steps(task,n,intent,state) VALUES(?,?,?,'submitted')").run(id,step,canonical(request));
       this.db.prepare("UPDATE tasks SET state='running',attempts=attempts+1,bytes=bytes+? WHERE id=?").run(bytes,id);
       return this.get(id);
-    });
-  }
-  /** 与恢复封存互斥地提交GO授权；提交完成之前不得写启动器stdin。 */
-  authorizeLaunch(id:string,epoch:number){
-    return this.transaction(()=>{
-      const task=this.checked(id,epoch),gate=this.db.prepare('SELECT * FROM native_launches WHERE task=? AND epoch=?').get(id,epoch) as any;
-      if(task.state!=='running'||Date.now()>=task.binding.authorization.deadline||task.binding.launchProtocol!=='registered-go/v1'||gate?.protocol!==task.binding.launchProtocol||gate.state!=='prepared')throw new Error('launch_not_authorized');
-      const step=this.db.prepare('SELECT intent,state,result FROM steps WHERE task=? AND n=0').get(id) as any;
-      if(!step||step.state!=='submitted'||step.result!==null)throw new Error('launch_not_authorized');
-      if(!this.db.prepare('SELECT task FROM native_processes WHERE task=? AND epoch=?').get(id,epoch))throw new Error('native_process_identity_missing');
-      this.db.prepare("UPDATE native_launches SET state='authorized',intent_sha256=? WHERE task=? AND epoch=?").run(digest(step.intent),id,epoch);
-    });
-  }
-  /** 新协议的未授权任务先封存再检查；无门禁或旧协议不能凭缺少事件推断未调用。 */
-  sealUnlaunched(id:string,epoch:number):any {
-    return this.transaction(()=>{
-      const task=this.checked(id,epoch);
-      if(task.binding.launchProtocol===undefined)return null;
-      const gate=this.db.prepare('SELECT * FROM native_launches WHERE task=? AND epoch=?').get(id,epoch) as any;
-      if(task.binding.launchProtocol!=='registered-go/v1'||gate?.protocol!==task.binding.launchProtocol||!['prepared','authorized','sealed'].includes(gate.state))throw new Error('recovery_launch_identity_missing');
-      if(gate.state==='authorized'){
-        const step=this.db.prepare('SELECT intent FROM steps WHERE task=? AND n=0').get(id) as any;
-        if(!step||gate.intent_sha256!==digest(step.intent))throw new Error('recovery_launch_identity_mismatch');
-        return null;
-      }
-      if(gate.intent_sha256!==null)throw new Error('recovery_launch_identity_mismatch');
-      if(!['ready','running','reconciling','cancel_requested'].includes(task.state))throw new Error('task_not_recoverable');
-      this.db.prepare("UPDATE native_launches SET state='sealed' WHERE task=? AND epoch=?").run(id,epoch);
-      this.db.prepare("UPDATE tasks SET state=CASE WHEN state='cancel_requested' THEN state ELSE 'reconciling' END WHERE id=?").run(id);
-      return this.db.prepare('SELECT * FROM native_launches WHERE task=? AND epoch=?').get(id,epoch);
     });
   }
   receipt(id:string,epoch:number,step:number,result:any):any {

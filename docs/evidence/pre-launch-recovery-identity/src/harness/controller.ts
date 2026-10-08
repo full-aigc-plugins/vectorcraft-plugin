@@ -40,7 +40,6 @@ export class Controller {
     return task;
   }
   publishState(id:string,epoch:number,state:string){
-    mkdirSync(this.snapshotRoot,{recursive:true,mode:0o700});
     const path=join(this.snapshotRoot,id+'-state.json'),temporary=path+'.next';
     writeFileSync(temporary,canonical({task:id,epoch,state}),{mode:0o600});
     const fd=openSync(temporary,'r');try{fsyncSync(fd);}finally{closeSync(fd);}
@@ -179,11 +178,9 @@ export class Controller {
       inputHashes['runtime:capabilities']=sha(canonical({commands:active.commands,tools:active.tools,mode:active.mode}));
     }
 
-    const launchBinding=existing?(()=>{const previous=this.ledger.get(existing.id).binding;return previous.launchProtocol?{launchProtocol:previous.launchProtocol,launchContext:previous.launchContext}:{};})():{
-      launchProtocol:'registered-go/v1' as const,launchContext:{skill:request.skill,plan:request.plan,runtimeHome:request.runtimeHome,python:request.python??'python3',source:request.source??null}};
-    const binding={...launchBinding,skillSha256:request.expectedSkillSha256,planHash:sha(canonical(plan)),inputHashes,projectRevision,runtimeIdentity,authorization:auth};
+    const binding={skillSha256:request.expectedSkillSha256,planHash:sha(canonical(plan)),inputHashes,projectRevision,runtimeIdentity,authorization:auth};
     const task=this.ledger.claim(request.key,request.source?join(request.source,'project.vectorcraft'):join(request.output,'project.vectorcraft'),request.output,binding);
-    if(task.state!=='ready'||existing){
+    if(task.state!=='ready'){
       let geometryVerification:any;
       if(task.state==='review_ready'||task.state==='completed'){
         geometryVerification=this.verifyDelivery(request.output,runtimeIdentity,geometryContract).geometryVerification;
@@ -257,7 +254,6 @@ export class Controller {
         child.on('error',error=>{clearInterval(timer);reject(error);});
         child.on('spawn',()=>{
           try{this.processes.register(task.id,task.epoch,child.pid!,task.id);checkInputs();
-            if(binding.launchProtocol)this.ledger.authorizeLaunch(task.id,task.epoch);
             child.stdin.end(canonical({task:task.id,go:true})+'\n');}
           catch(error){observationError=error;child.kill('SIGKILL');child.stdin.destroy();}
         });

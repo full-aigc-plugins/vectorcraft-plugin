@@ -1,0 +1,31 @@
+✔ ready crash seals launch and verifies no source/no output without inventing native inspection (7.594875ms)
+✔ unlaunched recovery refuses new output and retains occupation (3.396916ms)
+✔ unlaunched settlement refuses plan or launch gate changed after inspection (4.090667ms)
+✔ submitted but unlaunched crash still requires recorded execution snapshot identity (3.241334ms)
+✖ cancelling an unlaunched ready task persists state even before snapshot directory creation (6.576167ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 4
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 102.882
+
+✖ failing tests:
+
+test at tests/unlaunched_recovery.test.ts:36:1
+✖ cancelling an unlaunched ready task persists state even before snapshot directory creation (6.576167ms)
+  Error: ENOENT: no such file or directory, open '<temporary-root>/_s/9_xnnkz141920t1yv5zhvd1r0000gn/T/vector-unlaunched-6SFaEU/plan-snapshots/04dc7c26-d0a7-4dfa-8b57-6e91b5740af3-state.json.next'
+      at Object.openSync (node:fs:561:18)
+      at writeFileSync (node:fs:2436:35)
+      at Controller.publishState (file://<plugin-root>/src/harness/controller.ts:44:5)
+      at Controller.requestCancel (file://<plugin-root>/src/harness/controller.ts:35:10)
+      at TestContext.<anonymous> (file://<plugin-root>/tests/unlaunched_recovery.test.ts:37:82)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    errno: -2,
+    code: 'ENOENT',
+    syscall: 'open',
+    path: '<temporary-root>/_s/9_xnnkz141920t1yv5zhvd1r0000gn/T/vector-unlaunched-6SFaEU/plan-snapshots/04dc7c26-d0a7-4dfa-8b57-6e91b5740af3-state.json.next'
+  }

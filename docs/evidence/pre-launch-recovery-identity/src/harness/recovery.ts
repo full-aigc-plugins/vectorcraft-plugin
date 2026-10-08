@@ -5,7 +5,6 @@ import { spawn } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import type { Ledger } from './ledger.ts';
 import { ProcessRegistry } from './process_registry.ts';
-import {LaunchRecovery} from './launch_recovery.ts';
 import {skillDigest} from './skill_digest.ts';
 import { strictJson,canonical } from '../strict_json.ts';
 const hash=(p:string)=>createHash('sha256').update(readFileSync(p)).digest('hex');
@@ -50,7 +49,6 @@ export class Recovery {
       }
   }
   async inspect(taskId:string,epoch:number):Promise<any>{
-    if(this.ledger.sealUnlaunched(taskId,epoch))return new LaunchRecovery(this.ledger,this.processes).inspect(taskId,epoch);
     const task=this.ledger.checked(taskId,epoch);
     if(!['cancel_requested','reconciling'].includes(task.state))throw new Error('task_not_recoverable');
     if(!this.processes.observe(taskId,epoch).stopped)throw new Error('native_stop_unconfirmed');
@@ -150,7 +148,6 @@ export class Recovery {
       const row=this.ledger.db.prepare('SELECT result FROM recovery_checks WHERE id=? AND task=? AND epoch=?').get(checkId,taskId,epoch) as any;
       if(!row?.result)throw new Error('native_inspection_required');
       const proof=strictJson(row.result);
-      if(proof.schema==='vectorcraft-unlaunched-inspection/v1')return new LaunchRecovery(this.ledger,this.processes).settle(taskId,epoch,proof);
       if(!/^[a-f0-9]{64}$/.test(proof.stepIdentity??''))throw new Error('recovery_receipt_identity_missing');
       this.receiptIdentity(task,proof.stage,proof.files,proof.stepIdentity);
       if(proof.preparedManifestSha256){try{this.deliveryIdentity(task,proof.stage,proof.files,proof.preparedManifestSha256);}catch{throw new Error('recovery_delivery_mismatch');}}

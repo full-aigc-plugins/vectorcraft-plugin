@@ -30,3 +30,14 @@ stateDiagram-v2
 插件49／源38补齐完成回执与交付目录身份：检查前将已收到的步骤回执绑定到运行时、原源修订、清单和逐文件摘要；检查后对同一intent／state／result摘要复核，变动时拒绝结算。旧pending检查证明缺少步骤摘要时返回recovery_receipt_identity_missing，需要重新只读检查，不改变已完成任务。源38在最终重命名前fsync登记实际交付目录的device、inode、原位置、目标及清单摘要；带链接素材的打包子目录不再被初始暂存目录inode代替。旧源37缺少该记录的已打包未知任务仍保留占用，不能补造旧身份。普通／真实链接工程的回执前后四种协调器崩溃候选均通过；运行时回执、清单、文件及核验后回执误改拒绝。固定49验收另行记录；原生调用前重启与完整3.6仍开放。
 
 公开固定插件49／实际宿主源38已完成上述四种真实崩溃复验；13技能摘要保持，97项Node、43项Python回归通过，原生调用前重启仍开放。源38已有176项源码测试，其中146通过、30原生／宿主门禁跳过；不能将跳过计为通过。[固定49证据](evidence/vectorcraft-receipt-recovery-fixed49-20261009.json)。
+
+候选插件50新增registered-go/v1：任务登记事务建立prepared门禁；步骤与启动器身份持久登记后，GO授权事务才可转换为authorized，提交后才发送stdin。恢复事务将未授权门禁封存为sealed，迟到步骤与GO均拒绝。新建任务无原工程时明确没有可重开产物；有源工程则原位置只读重开及links.check，结算前复核步骤、原输入、目录／文件身份和检查进程停止。部分准备快照保留，预算不重置，epoch推进，不自动重放。表是schema3的兼容扩展；旧任务不补造门禁。已有ready任务也不自动重复准备。六个候选真实检查点通过，固定50与完整3.6仍开放。
+
+```mermaid
+flowchart LR
+  A[prepared] -->|registered intent and launcher| B[authorized]
+  B -->|commit before stdin| C[GO]
+  A -->|recovery transaction| D[sealed]
+  D --> E[readonly original input check]
+  E --> F[epoch advances; no replay]
+```

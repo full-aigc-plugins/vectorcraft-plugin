@@ -10,7 +10,9 @@ Four-domain RT-001 runtime source/integrity acceptance now covers every current 
 
 Create Logo, icon and brand assets as `.vectorcraft` with applicable SVG, PDF and PNG exports.
 
-Current plugin: `0.1.0-dev.49`; skill source: `0.1.0-dev.38`; 13 independent skills.
+Current plugin: `0.1.0-dev.50`; skill source: `0.1.0-dev.38`; 13 independent skills.
+
+Candidate plugin50 persists registered-go/v1 authorization separately from recovery sealing. Six real coordinator crash cases cover ready, snapshots prepared, intent submitted, process registered, authorized-before-stdin, and creation without a source. Unlaunched recovery reopens the original source and checks links; changed source after inspection refuses settlement. Authorized GO without stage evidence remains unresolved; full3.6 and fixed50 qualification remain open.
 
 Plugin49 binds completed step receipts to runtime identity, manifest and every declared file. Changed receipts after inspection refuse settlement; old checks without step digests require a fresh inspection. Source38 persists actual delivery directory identity before rename, covering nested linked-asset packages. Four real plain/linked crashes before/after receipt pass as candidates; public fixed49 and actual host-loaded source38 pass the four cases,97 Node and43 Python tests with all13 skill digests unchanged; full3.6 remains open. [Fixed evidence](docs/evidence/vectorcraft-receipt-recovery-fixed49-20261009.json).
 
@@ -125,7 +127,7 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.49 |
+| Metadata version | 0.1.0-dev.50 |
 | Stage | implementation-in-progress |
 | Skills source | vectorcraft-skills / v0.1.0-dev.38 |
 | Execution | Upstream CLI; ArtCraft uses child adapters |

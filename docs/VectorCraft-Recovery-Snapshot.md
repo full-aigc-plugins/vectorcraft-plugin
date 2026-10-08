@@ -30,3 +30,14 @@ On 2026-10-09, current external QA scripts exercised the public installed plugin
 Plugin49/source38 bind completed receipts and actual delivery directory identity. Before inspection, a received step receipt must match runtime, source revision, manifest and every declared file; settlement rechecks the same intent/state/result digest. Old pending inspection proofs without a step digest return recovery_receipt_identity_missing and require a fresh readonly inspection; already completed tasks are unchanged. Source38 fsyncs actual delivery directory device, inode, original path, target and manifest digest before final rename, so nested linked-asset packages are not confused with the initial staging inode. Unknown packaged deliveries from source37 without that original record remain occupied; recovery cannot manufacture past identity. Four real plain/linked coordinator crashes before/after receipt pass as candidates, including runtime receipt, manifest, artifact and post-inspection receipt tamper refusals. Fixed49 acceptance is separate; pre-native-call restart and full3.6 remain open.
 
 Public installed plugin49 and actual host-loaded source38 pass all four real crash cases above; all13 skill digests remain unchanged and97 Node plus43 Python tests pass. Pre-native-call restart remains open. Source38 has176 tests:146 pass and30 native/host gates skip; skipped gates are not PASS. [Fixed49 evidence](evidence/vectorcraft-receipt-recovery-fixed49-20261009.json).
+
+Candidate plugin50 adds registered-go/v1: claim transaction creates prepared; after intent and launcher registration, a transaction changes the gate to authorized before stdin GO. Recovery seals an unauthorized gate and fences late intent or GO. Tasks with a source reopen that original source and check links; creation without a source explicitly has no native artifact to reopen. Settlement rechecks durable identity, inputs, files and inspection group stop. Partial snapshots remain, budgets persist, epoch advances and no replay occurs. The extra table is an additive schema3 extension; old tasks never receive retroactive launch evidence. Existing ready tasks do not repeat preparation automatically. Six actual candidate crash cases pass; fixed50 and full3.6 remain open.
+
+```mermaid
+flowchart LR
+  A[prepared] -->|registered intent and launcher| B[authorized]
+  B -->|commit before stdin| C[GO]
+  A -->|recovery transaction| D[sealed]
+  D --> E[readonly original input check]
+  E --> F[epoch advances; no replay]
+```
