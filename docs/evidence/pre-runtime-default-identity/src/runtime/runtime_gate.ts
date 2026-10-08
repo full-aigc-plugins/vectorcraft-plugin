@@ -27,19 +27,12 @@ export class RuntimeGate {
  ledger:Ledger;
  constructor(ledger:Ledger){this.ledger=ledger;ledger.db.exec('CREATE TABLE IF NOT EXISTS runtime_selection(id INTEGER PRIMARY KEY CHECK(id=1),active TEXT NOT NULL,previous TEXT)');}
  current():any {const row=this.ledger.db.prepare('SELECT * FROM runtime_selection WHERE id=1').get() as any;return row?{active:strictJson(row.active),previous:row.previous?strictJson(row.previous):null}:null;}
- initialize(report:any,requirements:Requirements,stateSchemas:number[]):any {return this.activate(report,requirements,stateSchemas,true);}
- activate(report:any,requirements:Requirements,stateSchemas:number[],initialOnly=false):any {
+ activate(report:any,requirements:Requirements,stateSchemas:number[]):any {
   const capabilities=validateCapabilities(report,requirements);
   if(!Array.isArray(stateSchemas)||!stateSchemas.length||stateSchemas.some(x=>!Number.isSafeInteger(x)||x<1))throw new Error('invalid_state_compatibility');
   return this.ledger.transaction(()=>{
    const version=(this.ledger.db.prepare('PRAGMA user_version').get() as any).user_version;
    if(!stateSchemas.includes(version))throw new Error('incompatible_state_schema');
-   const current=this.current();
-   if(initialOnly&&current){
-    if(current.active.mode!==report.mode)throw new Error('runtime_mode_mismatch');
-    if(current.active.binarySha256!==report.binarySha256)throw new Error('runtime_selection_mismatch');
-    return current;
-   }
    if(this.ledger.db.prepare("SELECT id FROM tasks WHERE state IN ('ready','running','reconciling','cancel_requested') LIMIT 1").get())throw new Error('runtime_tasks_not_drained');
    if(this.ledger.db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='native_processes'").get()
     &&this.ledger.db.prepare('SELECT task FROM native_processes WHERE stopped_at IS NULL LIMIT 1').get())throw new Error('runtime_process_stop_unconfirmed');

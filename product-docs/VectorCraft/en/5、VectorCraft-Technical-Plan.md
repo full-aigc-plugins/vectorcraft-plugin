@@ -93,3 +93,8 @@ Snapshot `0.1.0-dev.2` has scoped installation/discovery and installed-entrypoin
 ## CLI skill suite revision
 
 [VectorCraft CLI / setup / task suite](../../../docs/VectorCraft-Skill-Suite-Architecture.md)
+
+
+## Default runtime capability probing progress
+
+Ordinary Harness execution now validates fixed installation, version/digest and command/tool schemas before editing. Same-version concurrent tasks reuse selection; original keys inspect receipts without replay. Different selections are not implicitly upgraded. See [runtime gate implementation](../../../docs/Runtime-Gate.md). Published plugin41 remains unchanged; full task2.6 different-version upgrades/rollback and desktop acceptance remain open.

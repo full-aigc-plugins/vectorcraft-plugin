@@ -1,0 +1,43 @@
+✖ default new task probes before claim and refuses missing capability without output or intent (197.435208ms)
+✖ default probe binds capabilities; completed same key is readonly and does not reprobe (187.309125ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 0
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 469.150625
+
+✖ failing tests:
+
+test at tests/runtime_default.test.ts:18:1
+✖ default new task probes before claim and refuses missing capability without output or intent (197.435208ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file://<PLUGIN_ROOT>/tests/runtime_default.test.ts:21:6)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /capability_missing/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/runtime_default.test.ts:23:1
+✖ default probe binds capabilities; completed same key is readonly and does not reprobe (187.309125ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  0 !== 1
+
+      at TestContext.<anonymous> (file://<PLUGIN_ROOT>/tests/runtime_default.test.ts:25:57)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

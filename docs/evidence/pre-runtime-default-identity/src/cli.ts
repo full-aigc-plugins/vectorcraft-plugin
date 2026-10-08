@@ -9,10 +9,10 @@ import { ReviewStore } from './evaluation/review_store.ts';
 import { TechnicalReview } from './evaluation/technical_review.ts';
 import { RevisionCycle } from './evaluation/revision_cycle.ts';
 
-/** 文件形式的显式请求入口；普通任务沿用固定安装与能力探测，不发起外部评审、不自动生成下一轮。 */
+/** 文件形式的显式请求入口；不安装依赖、不发起外部评审、不自动生成下一轮。 */
 async function main(){
   const [action,database,file]=process.argv.slice(2);
-  if(!action||!database||!file)throw new Error('usage: node src/cli.ts run|cancel|reconcile|runtime-probe|runtime-activate|runtime-status|review-request|review-checked|review-import|revision|revision-cycle-open|revision-cycle-observe|revision-cycle-propose|revision-cycle-run|revision-cycle-best DATABASE REQUEST.json');
+  if(!action||!database||!file)throw new Error('usage: node src/cli.ts run|cancel|reconcile|review-request|review-checked|review-import|revision|revision-cycle-open|revision-cycle-observe|revision-cycle-propose|revision-cycle-run|revision-cycle-best DATABASE REQUEST.json');
   const input=strictJson(readFileSync(file,'utf8'));
   if(['runtime-probe','runtime-activate','runtime-status'].includes(action)){
     const controller=new Controller(database);try{

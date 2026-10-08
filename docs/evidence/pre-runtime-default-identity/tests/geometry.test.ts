@@ -1,4 +1,3 @@
-import {runtimeFixture} from './runtime_fixture.ts';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { mkdtempSync,mkdirSync,writeFileSync,rmSync,existsSync } from 'node:fs';
@@ -11,8 +10,7 @@ function fixture(){
  const root=mkdtempSync(join(tmpdir(),'vector geometry ')),skill=join(root,'skill');mkdirSync(join(skill,'scripts'),{recursive:true});
  writeFileSync(join(skill,'scripts/workflow.py'),`import argparse,pathlib,json,hashlib\np=argparse.ArgumentParser();p.add_argument('plan');p.add_argument('--output');p.add_argument('--runtime-home');p.add_argument('--control');a=p.parse_args();o=pathlib.Path(a.output);o.mkdir();(o/'project.vectorcraft').write_bytes(b'native');m={'schema':'vectorcraft-delivery/v1','runtimeSha256':'${'a'.repeat(64)}','files':{'project.vectorcraft':hashlib.sha256(b'native').hexdigest()}};(o/'manifest.json').write_text(json.dumps(m))\n`);
  writeFileSync(join(skill,'scripts/execution_control.py'),'# synthetic control fixture\n');writeFileSync(join(skill,'scripts/runtime.lock.json'),JSON.stringify({artifacts:{'darwin-arm64':{binarySha256:'a'.repeat(64)}}}));
- runtimeFixture(skill,'a'.repeat(64));
-  const plan=join(root,'plan.json');writeFileSync(plan,'{"operations":[]}');const controller=new Controller(join(root,'state.sqlite'),runtimeFixture(skill,'a'.repeat(64)));
+ const plan=join(root,'plan.json');writeFileSync(plan,'{"operations":[]}');const controller=new Controller(join(root,'state.sqlite'));
  const request={key:'geometry',skill,expectedSkillSha256:skillDigest(skill),plan,output:join(root,'output'),runtimeHome:join(root,'runtime'),estimatedBytes:10000,authorization:{objects:[2],fields:['kind.path'],deadline:Date.now()+10000,maxAttempts:2,maxBytes:100000,readRoots:[root],writeRoots:[root]}};
  return {root,controller,request,close:()=>{controller.close();rmSync(root,{recursive:true,force:true});}};
 }

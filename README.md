@@ -336,3 +336,6 @@ Pins source37 boolean checkpoints and explicit Harness `structure` authorization
 Published dev.41/source37 now passes actual isolated Codex0.153.4 installation:13 skill identities,13 independent public cold starts,12 declared create/revise pairs and8 managed structural cases. Installed bytes remain unchanged. [Fixed evidence](docs/evidence/vectorcraft-fixed41-structural-20261008.json). Complete4.6, model dispatch, GUI and creative acceptance remain open.
 
 A new source candidate adds fixed runtime identity, live command/tool schemas, single-ledger draining and rollback compatibility guards.42 Node tests and9 native cases passed; different-version upgrades and desktop acceptance remain open. Published plugin41 is unchanged. See [entry points and boundaries](docs/Runtime-Gate.md).
+
+
+Default Harness first use now validates plans, installs the fixed runtime and checks live command/tool schemas. Same-version concurrent tasks reuse selection; completed keys inspect original receipts. Source candidate evidence:46 Node tests,5 cold/concurrent/refusal scenarios and8 structural regressions passed. Published plugin41 is unchanged; complete2.6 remains open. See [default runtime gate](docs/Runtime-Gate.md).

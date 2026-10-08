@@ -61,6 +61,13 @@
 - **AND** 保留上次选择的探测记录；不兼容当前账本schema的回退被拒绝，不自动迁移状态或删除旧版本目录
 
 
+#### Scenario: [VC-RT-002-DEFAULT] 默认首用在编辑前探测
+
+- **WHEN** 普通Harness入口收到新的工作流任务
+- **THEN** 沿用固定技能的计划验证与版本安装，核验当前实际命令参数签名和MCP工具schema后才登记任务与编辑意图
+- **AND** 已有选择不被隐式升级；相同版本的并发任务复用选择，探测期间选择变化时拒绝覆盖；相同任务键只核验原回执，不重放探测或编辑
+
+
 ### Requirement: VC-DS-002 Verified Vector desktop export alias
 The standalone full-command gateway SHALL map `file.export` to `document.export` only in VectorCraft bridge mode, because the pinned official desktop advertises the engine operation while the CLI advertises its host alias. The gateway SHALL validate the complete mapped registry, check the actual operation's enabled state in the same session, preserve requested and backend command identities in its receipt, and fail on any unrelated missing command. Headless command identity SHALL remain unchanged.
 

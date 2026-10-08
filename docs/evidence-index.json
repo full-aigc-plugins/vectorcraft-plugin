@@ -120,7 +120,7 @@
       "sha256": "84ad044e41cb7ee06c48bdd59996c82c9878166362c6fd80975df9805dfc8327",
       "level": "native-candidate",
       "status": "PASS",
-      "scope": "historical before runtime-gate integration; persisted decoder checks of existing native export copies; fixture receipts only; native reopening and real creative acceptance remain open",
+      "scope": "historical before runtime integration; persisted decoder checks of existing native export copies; fixture receipts only; native reopening and real creative acceptance remain open",
       "requirement": null,
       "tasks": [
         "6.2"
@@ -144,7 +144,7 @@
       "sha256": "318a7d9dd0867304f2b97b0d74fdd2631b74dc503ba262fbcf241baef7286e17",
       "level": "native-candidate",
       "status": "PASS",
-      "scope": "historical before runtime-gate integration; bounded revision minimum: two actual native color revisions with injected scores; full6.6 and real creative acceptance remain open",
+      "scope": "historical before runtime integration; bounded revision minimum: two actual native color revisions with injected scores; full6.6 and real creative acceptance remain open",
       "requirement": null,
       "tasks": [
         "6.4",
@@ -164,7 +164,7 @@
         "src/harness/process_registry.ts": "c19a3cb5d42cc33620bc5baeff7db71f1c6daa92f046a112951a7f50f7906162",
         "src/harness/process_runner.py": "7332d0757aa01f03d00697f8eb8d93f849517cab34ea8a1355ba6c9513d5aba2",
         "tests/revision_cycle.test.ts": "f9d47867efb96fa52424c03e893c1e64dca95cffeecad6fe065ab59b634ab96f",
-        "tests/controller.test.ts": "db1943dedd63caf3ccd55e88a0002c18c1843669cbc0bed1187c52b1d4139fc5",
+        "docs/evidence/pre-runtime-default-identity/tests/controller.test.ts": "db1943dedd63caf3ccd55e88a0002c18c1843669cbc0bed1187c52b1d4139fc5",
         "scripts/acceptance/revision_cycle.ts": "fb13c44b873841570fe4f3e46665da55e4007064260c2498899a5289dfa69c2a",
         "docs/evidence/revision-cycle/baseline-controller.test.ts": "db1943dedd63caf3ccd55e88a0002c18c1843669cbc0bed1187c52b1d4139fc5",
         "docs/evidence/revision-cycle/baseline-revision_cycle.test.ts": "1f136acaa92382d1eb3f16a8d8a74113d617a1ed4d7c7312cfb1ce657764ae31",
@@ -179,7 +179,7 @@
       "sha256": "5101571f33a3bb9bb99d39ad7dd9230e1f823a5f07bae74930fde678b1a2a3b3",
       "level": "native-candidate",
       "status": "PASS",
-      "scope": "historical before runtime-gate integration; explicit units, offset artboard controls and retained closure failure; full4.3 remains open",
+      "scope": "historical before runtime integration; explicit units, offset artboard controls and retained closure failure; full4.3 remains open",
       "requirement": "VC-DM-001",
       "tasks": [
         "4.1",
@@ -194,7 +194,7 @@
         "src/harness/process_registry.ts": "c19a3cb5d42cc33620bc5baeff7db71f1c6daa92f046a112951a7f50f7906162",
         "src/harness/process_runner.py": "7332d0757aa01f03d00697f8eb8d93f849517cab34ea8a1355ba6c9513d5aba2",
         "src/strict_json.ts": "69a445339670e53f6a7fcb96770b53b896666dd1e60f114c1751a23981d5b7d0",
-        "tests/geometry.test.ts": "02f80267ae9247af6f9f24d32452f180d8739e08972d1380003f358741087625",
+        "docs/evidence/pre-runtime-default-identity/tests/geometry.test.ts": "02f80267ae9247af6f9f24d32452f180d8739e08972d1380003f358741087625",
         "scripts/acceptance/geometry.ts": "0f987e5c701a0d2af47529788b66f7e0d3de8482897edad8351d0a3b11a692c3",
         "docs/evidence/release40-regression/geometry-red.log": "14ce9aef0d7b663d80b6277bacefc93565789129eb5ad9d07a97341e0ef645c9",
         "docs/evidence/release40-regression/baseline-geometry.test.ts": "71403c09ce5c968aa467422198fbabeeb6e97d0b1aecd623cd3e9d28bcdb310c",
@@ -224,7 +224,7 @@
       "sha256": "601028d9bf7b9cbb8ad1511f8853b2cdfaaa4edf0edb8ba43ae7b4f89f829a61",
       "level": "native-candidate",
       "status": "PASS",
-      "scope": "historical before runtime-gate integration; actual supplied pinned source37 in Harness; structure scope checks; not host installation or full4.6",
+      "scope": "historical before runtime integration; actual supplied pinned source37 in Harness; structure scope checks; not host installation or full4.6",
       "requirement": "VC-DM-002",
       "tasks": [],
       "historical": true,
@@ -333,24 +333,58 @@
       "sha256": "2279ef4088739ede88643f5c630af6f7ede10dc7fe74d2d0772313bf34aa4140",
       "level": "native-candidate",
       "status": "PASS",
-      "scope": "live 585-command and25-tool headless probe, drain guard and managed native creation; different-version upgrades, rollback and desktop acceptance remain open",
+      "scope": "historical before runtime integration; live 585-command and25-tool headless probe, drain guard and managed native creation; different-version upgrades, rollback and desktop acceptance remain open",
       "requirement": "VC-RT-002",
       "tasks": [
         "2.4"
       ],
-      "historical": false,
+      "historical": true,
       "dependencies": {
-        "src/runtime/runtime_gate.ts": "2195cc449e0725affaecd9ff8b0cfc1489c5187ab96d675a07d076ba2248b338",
-        "src/runtime/runtime_probe.py": "0d632442e63c4d6113ee6132b33ac3624ead4e4549cb89041311a2cdaf38eb00",
-        "src/cli.ts": "7ea7dd81e40aae4cdb9bbca6f9c10d4a47726ad759d5cd3547ecc8392b4a4c43",
+        "docs/evidence/pre-runtime-default-identity/src/runtime/runtime_gate.ts": "2195cc449e0725affaecd9ff8b0cfc1489c5187ab96d675a07d076ba2248b338",
+        "docs/evidence/pre-runtime-default-identity/src/runtime/runtime_probe.py": "0d632442e63c4d6113ee6132b33ac3624ead4e4549cb89041311a2cdaf38eb00",
+        "docs/evidence/pre-runtime-default-identity/src/cli.ts": "7ea7dd81e40aae4cdb9bbca6f9c10d4a47726ad759d5cd3547ecc8392b4a4c43",
         "src/harness/ledger.ts": "fd53203575a46100e6456eb3c3a415ffeceb4c879349019ba6cde7e797a82f51",
-        "src/harness/controller.ts": "945eb80472cafb95d881b1ac40eee06e12b6e69a327f759e91a4368bf3d115c9",
+        "docs/evidence/pre-runtime-default-identity/src/harness/controller.ts": "945eb80472cafb95d881b1ac40eee06e12b6e69a327f759e91a4368bf3d115c9",
         "scripts/acceptance/runtime_gate.ts": "bd6f3c56ca3ea1b3ec88bb7392fc4a4de5ba555ff9451276be3d22ebcf751f29",
         "tests/runtime_gate.test.ts": "15a880bca55edd06dda861a307894b147f671b7d0060601c15049b1116ba03f4",
         "tests/runtime_selection.test.ts": "5798dc2c9c7da0d606c45de8cdc5ba70de32d9857a61ed1cf67bd168c6492972",
         "docs/evidence/runtime-gate/behavior-red.log": "5b5eca00406501b213eae17420bae9b1506047c24f4a75f621facd0e43cc17b9",
         "docs/evidence/runtime-gate/node-regression.log": "287101845a6aba764fc0762a84b0cf6dcc9debb9e8c6ee0803547f0b59860f09",
         "docs/evidence/pre-runtime-gate-identity/identity.json": "92964dc7f7d2d15e4bced5ad332b4f26ec396ad6ee48ca1171b9b5d6dad503e8"
+      }
+    },
+    {
+      "path": "docs/evidence/vectorcraft-runtime-default-candidate-20261008.json",
+      "sha256": "41a56c7270a41d2b1354b7d33bcb56d342ab969f681d51269959f8759cc6dd42",
+      "level": "native-candidate",
+      "status": "PASS",
+      "scope": "default cold fixed install and headless schemas, parallel creation, readonly resume, pre-edit refusal and8 managed structural cases; complete2.6 remains open",
+      "requirement": "VC-RT-002",
+      "tasks": [
+        "2.5"
+      ],
+      "historical": false,
+      "dependencies": {
+        "src/runtime/prepare_runtime.ts": "08ecee9238056335ac33710421b4b878cad01b4556ffad641d14c26819b2e6c1",
+        "src/runtime/runtime_probe.py": "ee196f91dde9487bd1537d1c91a8f5957deb795431a54baa333be35bfc90e54c",
+        "src/runtime/runtime_gate.ts": "70ad2b606cf486794c354c912da9a650dcbeca9b0dd960a4e8a6d12271f52a70",
+        "runtime/vectorcraft-headless-capabilities.json": "37472383852928bdf131f4f69c015fd8ce323847323915bb0cb58260c0936756",
+        "src/harness/controller.ts": "c61419ec3418f14d4adcc1feca8bb9ed0ff53feae52e1a9cbdc02c7aafe190f0",
+        "src/harness/ledger.ts": "fd53203575a46100e6456eb3c3a415ffeceb4c879349019ba6cde7e797a82f51",
+        "tests/runtime_default.test.ts": "c2e88108c4ae985dfaaf4f5930f6e54cb341dc22f10a5b0f6d1cb019d44fdc48",
+        "tests/runtime_fixture.ts": "e6f16d546f9f827780bd1b85e8b5e6673d1439ade3a968ff7c54f6382c4b80d4",
+        "scripts/acceptance/runtime_default.ts": "8ee64b35571e5c412bce5766d9f90b640668ee629d42d15e4c50e07313a616b0",
+        "skills.lock.json": "37cf4e7a514193ff10b1f051915b931874f05a8f693c87e67d904657f040464e",
+        "scripts/acceptance/managed_boolean.ts": "55fbffdf6d44a8b0b95b9902d7716037980eeaf5c2c437c69a06b740b889be52",
+        "src/harness/process_registry.ts": "c19a3cb5d42cc33620bc5baeff7db71f1c6daa92f046a112951a7f50f7906162",
+        "src/harness/process_runner.py": "7332d0757aa01f03d00697f8eb8d93f849517cab34ea8a1355ba6c9513d5aba2",
+        "src/planning/geometry.ts": "97650dc916111666a73bcfea6ddc797e48b5b9bc2d6b6e54a85f33b1a8766e2d",
+        "src/strict_json.ts": "69a445339670e53f6a7fcb96770b53b896666dd1e60f114c1751a23981d5b7d0",
+        "docs/evidence/runtime-default/red.log": "af36786b928e5409b38a868061a090874c5d20eac86c3a8f8df5ebb30fbb4c5d",
+        "docs/evidence/runtime-default/managed-native.json": "6920ff2f2b3630e2f5a6986756096b71ff9113cdff9ed053db4c5316f637cafa",
+        "docs/evidence/runtime-default/default-native.json": "66dde668158fe200c9a11ad2297338c142e56e6142ca38e84200f31c91f59de1",
+        "docs/evidence/runtime-default/node-regression.log": "316a6fa5b36943ae8958c777847550777017d1ac8119f48e08dd6d46a71e21e5",
+        "docs/evidence/pre-runtime-default-identity/identity.json": "3b4b9c191b8798a29da02b39aea5d39bc63a3037a16a6b97f56d315bf3d9df79"
       }
     }
   ],

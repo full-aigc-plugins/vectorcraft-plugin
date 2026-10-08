@@ -93,3 +93,8 @@
 ## CLI 技能体系增量
 
 [VectorCraft CLI / setup / task suite](../../docs/VectorCraft-Skill-Suite-Architecture.zh_CN.md)
+
+
+## 默认运行能力探测实施进展
+
+普通Harness入口已接入编辑前的固定安装、版本／摘要／命令及工具schema探测，支持同版本并发复用与原任务只读恢复；不隐式切换已选择版本。源码候选通过本地及原生验证，见[运行门禁说明](../../docs/Runtime-Gate.zh-CN.md)。已发布插件41保持不变，不同版本升级／回退和desktop等完整2.6门禁仍开放。

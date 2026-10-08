@@ -3,8 +3,6 @@ import { existsSync, lstatSync, readdirSync, readFileSync, mkdirSync, writeFileS
 import { relative, resolve, join, isAbsolute, dirname } from 'node:path';
 import { spawn } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
-import { prepareRuntime } from '../runtime/prepare_runtime.ts';
-import type { RuntimeProbe } from '../runtime/prepare_runtime.ts';
 import { RuntimeGate,validateCapabilities } from '../runtime/runtime_gate.ts';
 import { ProcessRegistry } from './process_registry.ts';
 import { Recovery } from './recovery.ts';
@@ -38,8 +36,8 @@ type RunRequest={key:string,skill:string,expectedSkillSha256:string,plan:string,
 
 /** 仅协调已固定的独立技能；原生命令语义与失败工程保留由源技能负责。 */
 export class Controller {
-  ledger:Ledger;snapshotRoot:string;processes:ProcessRegistry;probe:RuntimeProbe;
-  constructor(database:string,probe:RuntimeProbe=prepareRuntime){this.probe=probe;this.ledger=new Ledger(database);this.processes=new ProcessRegistry(this.ledger.db);this.snapshotRoot=join(dirname(resolve(database)),'plan-snapshots');}
+  ledger:Ledger;snapshotRoot:string;processes:ProcessRegistry;
+  constructor(database:string){this.ledger=new Ledger(database);this.processes=new ProcessRegistry(this.ledger.db);this.snapshotRoot=join(dirname(resolve(database)),'plan-snapshots');}
   /** 原子公布撤销状态；这里只请求取消，停止和原文件核验之前不释放资源。 */
   requestCancel(id:string,epoch:number):any {
     const registered=this.ledger.db.prepare('SELECT task FROM native_processes WHERE task=? AND epoch=?').get(id,epoch);
@@ -116,32 +114,11 @@ export class Controller {
     }
     if(geometryContract)inputHashes['contract:geometry']=sha(canonical(geometryContract));
     const runtimeIdentity=lock.artifacts['darwin-arm64'].binarySha256;
-    const gate=new RuntimeGate(this.ledger),existing=this.ledger.db.prepare('SELECT id FROM tasks WHERE key=?').get(request.key) as any;
-    if(existing){
-      const previous=this.ledger.get(existing.id);
-      const fingerprint=previous.binding.inputHashes['runtime:capabilities'];
-      if(fingerprint)inputHashes['runtime:capabilities']=fingerprint;
-      else if(previous.state==='ready')throw new Error('legacy_ready_requires_runtime_reconciliation');
-    }else{
-      if(existsSync(request.output))throw new Error('output_exists');
+    const selected=new RuntimeGate(this.ledger).current();
+    if(selected){
       const catalog=strictJson(readFileSync(join(request.skill,'references/command-coverage.json'),'utf8'));
-      if(catalog.runtimeSha256!==runtimeIdentity)throw new Error('capability_catalog_identity_mismatch');
-      const tools=strictJson(readFileSync(fileURLToPath(new URL('../../runtime/vectorcraft-headless-capabilities.json',import.meta.url)),'utf8')).tools;
-      const requirements={mode:'headless',commands:Object.fromEntries(catalog.commands.map((r:any)=>[r.id,r.params])),tools};
-      const selected=gate.current();
-      if(selected){
-        if(selected.active.mode!=='headless')throw new Error('runtime_mode_mismatch');
-        if(selected.active.binarySha256!==runtimeIdentity)throw new Error('runtime_selection_mismatch');
-      }
-      const report=await this.probe({skill:request.skill,runtimeHome:request.runtimeHome,install:true,plan,platform:'darwin-arm64',requirements,python:request.python,deadline:auth.deadline});
-      if(skillDigest(request.skill)!==request.expectedSkillSha256)throw new Error('skill_snapshot_mismatch');
-      checkInputs();
-      if(request.source&&sha(readFileSync(join(request.source,'project.vectorcraft')))!==projectRevision)throw new Error('revision_conflict');
-      if(report.binarySha256!==runtimeIdentity)throw new Error('runtime_identity_mismatch');
-      validateCapabilities(report,requirements);
-      const active=gate.initialize(report,requirements,[2]).active;
-      validateCapabilities(active,requirements);
-      inputHashes['runtime:capabilities']=sha(canonical({commands:active.commands,tools:active.tools,mode:active.mode}));
+      validateCapabilities(selected.active,{mode:'headless',commands:Object.fromEntries(catalog.commands.map((r:any)=>[r.id,r.params])),tools:{}});
+      inputHashes['runtime:capabilities']=sha(canonical({commands:selected.active.commands,tools:selected.active.tools,mode:selected.active.mode}));
     }
 
     const binding={skillSha256:request.expectedSkillSha256,planHash:sha(canonical(plan)),inputHashes,projectRevision,runtimeIdentity,authorization:auth};

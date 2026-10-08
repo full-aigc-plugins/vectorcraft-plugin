@@ -210,3 +210,8 @@ Snapshot `0.1.0-dev.2` has scoped installation/discovery and installed-entrypoin
 ## CLI skill suite revision
 
 [VectorCraft CLI / setup / task suite](VectorCraft-Skill-Suite-Architecture.md)
+
+
+## Default-first-use capability gate implementation
+
+Controller now validates the pinned skill plan, installs a verified version directory and probes live schemas before selecting a runtime and recording editing intent. The fixed skill command signatures and plugin MCP tool schemas constrain execution. Different selections are not implicitly upgraded; same-version concurrent tasks reuse selection with transactional identity/mode checks. Original keys inspect receipts without replay; legacy ready records without capability fingerprints require reconciliation. See [entry points and candidate evidence](Runtime-Gate.md). Task2.6 different-version and desktop/migration acceptance remains open.

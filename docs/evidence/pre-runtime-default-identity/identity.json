@@ -1,0 +1,11 @@
+{
+  "commit": "dd2976790f5cb2e85fe4e9d40937df8621d625d0",
+  "files": {
+    "src/cli.ts": "7ea7dd81e40aae4cdb9bbca6f9c10d4a47726ad759d5cd3547ecc8392b4a4c43",
+    "src/harness/controller.ts": "945eb80472cafb95d881b1ac40eee06e12b6e69a327f759e91a4368bf3d115c9",
+    "src/runtime/runtime_gate.ts": "2195cc449e0725affaecd9ff8b0cfc1489c5187ab96d675a07d076ba2248b338",
+    "src/runtime/runtime_probe.py": "0d632442e63c4d6113ee6132b33ac3624ead4e4549cb89041311a2cdaf38eb00",
+    "tests/controller.test.ts": "db1943dedd63caf3ccd55e88a0002c18c1843669cbc0bed1187c52b1d4139fc5",
+    "tests/geometry.test.ts": "02f80267ae9247af6f9f24d32452f180d8739e08972d1380003f358741087625"
+  }
+}

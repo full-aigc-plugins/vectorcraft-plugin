@@ -210,3 +210,8 @@ stateDiagram-v2
 ## CLI 技能体系增量
 
 [VectorCraft CLI / setup / task suite](VectorCraft-Skill-Suite-Architecture.zh_CN.md)
+
+
+## 默认首用能力门禁实现增量
+
+Controller新任务现已先进行固定技能计划验证、可信版本目录安装与只读schema探测，再初始化同账本选择并登记编辑意图。固定技能命令签名及插件固定MCP工具schema共同约束运行时；已有不同选择不被隐式升级。同版本并发首用允许复用选择，选择竞争由SQLite事务及登记时摘要／模式校验拒绝。原任务读取不重放探测或编辑，旧ready记录无能力指纹时需恢复核验。见[入口与候选证据](Runtime-Gate.zh-CN.md)；2.6不同版本及desktop／迁移仍开放。
