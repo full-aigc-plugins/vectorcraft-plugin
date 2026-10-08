@@ -1,0 +1,28 @@
+{
+  "result": "PASS",
+  "skillDirectory": "<plugin-root>/.local/fixed48 release host/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.48/skills/vectorcraft-use",
+  "projectSha256": "593652e05b353f444b2184a582a6078d7cc41aa63ae81cc8221e17ae7243d0ba",
+  "assetSha256": "5ef821b2802f6c951d1e3f8fdc68fb76e0334c84eef780ac12cca7cca5253611",
+  "assetIds": [
+    8
+  ],
+  "nativeLinks": {
+    "links": [
+      {
+        "ids": [
+          8
+        ],
+        "name": "referenceRaster.png",
+        "path": "<plugin-root>/.local/linked-recovery/fixture-v2/source/Links/referenceRaster.png",
+        "status": "ok"
+      }
+    ],
+    "missing": 0,
+    "modified": 0
+  },
+  "brandPlanSha256": "a2ab205149aca1b3091b7a6d497b3e86ef03bc69a7b1af5c81f9a566f2a63c22",
+  "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+  "fixtureScriptSha256": "cee98fc076c102c2afafcd2637832d53d3d03627d6ebaec486e5e44d8350c284",
+  "sourceReopenedUnchanged": true,
+  "scope": "own synthetic PNG and brand plan created with pinned independent workflow; no creative acceptance"
+}

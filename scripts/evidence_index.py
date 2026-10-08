@@ -190,6 +190,9 @@ def build(root=ROOT):
     source_recovery_fixed='docs/evidence/vectorcraft-source-recovery-fixed48-20261008.json'
     if (root/source_recovery_fixed).is_file():
         entries.append(bound_report(root,source_recovery_fixed,'fixed-install','Public plugin48/source37 actual host installation, source snapshot refusal and post-save receipt loss;84 Node and43 Python tests; complete3.6 remains open','VC-TX-002'))
+    linked_recovery='docs/evidence/vectorcraft-linked-recovery-fixed48-20261009.json'
+    if (root/linked_recovery).is_file():
+        entries.append(bound_report(root,linked_recovery,'fixed-install','External current QA against installed public plugin48/source37: original-stage nonempty linked dependency missing/modified refusal and post-inspection mutation refusal;15 recovery regressions; full3.6 remains open','VC-TX-002'))
     # 明确归档变更前执行字节；保留报告原摘要，不能把旧运行重绑定到新实现。
     for entry in entries:
         archived={}

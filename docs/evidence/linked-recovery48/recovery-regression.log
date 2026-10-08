@@ -1,0 +1,23 @@
+✔ settling a verified interruption fences the previous epoch and never claims delivery (6.41725ms)
+✔ new or changed original files after inspection keep writer occupation (7.843542ms)
+✔ recovery refuses skill before any inspection process or proof (7.426291ms)
+✔ recovery refuses plan before any inspection process or proof (4.555625ms)
+✔ recovery refuses control before any inspection process or proof (4.395959ms)
+✔ recovery refuses missing-control-hash before any inspection process or proof (3.30975ms)
+✔ recovery refuses symlink-plan before any inspection process or proof (3.421375ms)
+✔ recovery refuses unchanged before any inspection process or proof (3.425ms)
+✔ recovery refuses source-edited before any inspection process or proof (3.4885ms)
+✔ recovery refuses source-deleted before any inspection process or proof (3.606458ms)
+✔ recovery refuses source-added before any inspection process or proof (4.477209ms)
+✔ recovery refuses source-symlink before any inspection process or proof (3.6445ms)
+✔ recovery refuses source-missing-directory before any inspection process or proof (3.384916ms)
+✔ recovery refuses source-missing-hash before any inspection process or proof (3.615ms)
+✔ recovery refuses source-unchanged before any inspection process or proof (3.586083ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 134.372083

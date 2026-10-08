@@ -14,6 +14,8 @@ Logo、图标与品牌图形需求进入，交付 `.vectorcraft` 及适用的 SV
 
 插件48补充恢复前的源依赖快照摘要校验；真实保存与9项导出完成后、回执写入前的协调器SIGKILL恢复通过，保持原输出且不重放。84项Node、43项Python回归通过。公开固定48／源37的隔离宿主安装及上述原生场景已通过；13技能摘要保持不变，完整任务3.6仍开放。[固定证据](docs/evidence/vectorcraft-source-recovery-fixed48-20261008.json)。
 
+固定48实现的新增非空链接验收通过：真实链接PNG缺失、修改以及检查后再次修改均拒绝恢复／结算，保持原失败工程位置、inode与源占用；15项恢复回归通过。由当前外部验收脚本调用已安装固定48，完整3.6仍开放。[证据](docs/evidence/vectorcraft-linked-recovery-fixed48-20261009.json)。
+
 插件47进一步在探测后、启动时和监督期间复核已解析物理根目录与请求路径；将原根目录或输出父目录替换为重定向链接时，在任务登记前拒绝。公开插件47及该宿主实际加载的技能源37通过全部七个VC-TX-001场景、77项Node、43项Python与10项真实原生合同案例；任务3.3完成，32项OpenSpec任务仍开放。[固定证据](docs/evidence/vectorcraft-single-writer-fixed47-20261008.json)。
 
 源清单、继承计划与依赖现已绑定版本，并复制为逐文件核验的只读执行快照；编辑前同时占用原源工程和物理输出，旧SQL连接亦受输出门禁约束。原生分支、GUI改后冲突、崩溃交接候选通过。[源与单写合同](docs/VectorCraft-Source-Single-Writer.zh_CN.md)。公开插件46／技能源37在macOS arm64通过已记录原生场景，但授权根目录替换边界仍开放。[子集证据](docs/evidence/vectorcraft-single-writer-fixed46-20261008.json)。该版本未关闭3.3；当前验收以固定47为准。
