@@ -141,7 +141,7 @@
     },
     {
       "path": "docs/evidence/vectorcraft-revision-cycle-candidate-20261008.json",
-      "sha256": "0dc56a3848d9b9d2b463453c2ed24331ead05e14a98e62aa07a53a28abf4a2b2",
+      "sha256": "73696354fa6652ad5c511cd783a25d7f572069dc64e925139bd883d790892ae5",
       "level": "native-candidate",
       "status": "PASS",
       "scope": "bounded revision minimum: two actual native color revisions with injected scores; full6.6 and real creative acceptance remain open",
@@ -167,10 +167,10 @@
         "scripts/acceptance/revision_cycle.ts": "04c9bd72ad09172c7a8f8364bb1bf71c609ec281798de2c3a6e33c51232d53d4",
         "docs/evidence/revision-cycle/baseline-controller.test.ts": "db1943dedd63caf3ccd55e88a0002c18c1843669cbc0bed1187c52b1d4139fc5",
         "docs/evidence/revision-cycle/node-green.log": "69ff8d37ebd7bebdfa267f11f640fb62c689ec9950fbeb98ae89795103260995",
-        "docs/evidence/revision-cycle/baseline-revision_cycle.test.ts": "fcf415864741bdfaa7194fe36c5ecd18337d05460d31cdf45434dcd318e18386",
+        "docs/evidence/revision-cycle/baseline-revision_cycle.test.ts": "1f136acaa92382d1eb3f16a8d8a74113d617a1ed4d7c7312cfb1ce657764ae31",
         "docs/evidence/revision-cycle/python-green.log": "db215d95f5f052d595e0d29c2d4fbe504f510ea22488ff8a203254e785288146",
         "docs/evidence/revision-cycle/native.log": "8485ef213f22608152486bd727b606f44607db0d11090be09220f11aeb5878bd",
-        "docs/evidence/revision-cycle/baseline-red.log": "ae96891806bdf0eaee102cc457166fbe4ccb7ea1d442f70b2a806acd351de1bf"
+        "docs/evidence/revision-cycle/baseline-red.log": "64b5246e46739f4e6bdc40568a027d6bf4a617746f6ea3c2741e27ea6b712d07"
       }
     },
     {

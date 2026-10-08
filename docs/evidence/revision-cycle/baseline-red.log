@@ -1,6 +1,6 @@
-✖ controller binds a supplied standalone snapshot, records intent and verifies actual files (304.797791ms)
-✔ changing a bound brief during execution stops the owned group and retains the unresolved task (10297.060208ms)
-✖ a review assigned to a durable bounded cycle cannot bypass it through legacy revision (8.651917ms)
+✖ controller binds a supplied standalone snapshot, records intent and verifies actual files (1031.573292ms)
+✔ changing a bound brief during execution stops the owned group and retains the unresolved task (10246.980666ms)
+✖ a review assigned to a durable bounded cycle cannot bypass it through legacy revision (244.712458ms)
 ℹ tests 3
 ℹ suites 0
 ℹ pass 1
@@ -8,12 +8,12 @@
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 10688.800042
+ℹ duration_ms 11434.093917
 
 ✖ failing tests:
 
 test at .local/revision-cycle-baseline/tests/controller.test.ts:9:1
-✖ controller binds a supplied standalone snapshot, records intent and verifies actual files (304.797791ms)
+✖ controller binds a supplied standalone snapshot, records intent and verifies actual files (1031.573292ms)
   AssertionError [ERR_ASSERTION]: Missing expected rejection.
       at async TestContext.<anonymous> (file://<plugin-workspace>/.local/revision-cycle-baseline/tests/controller.test.ts:24:5)
       at async Test.run (node:internal/test_runner/test:1332:7)
@@ -27,7 +27,7 @@ test at .local/revision-cycle-baseline/tests/controller.test.ts:9:1
   }
 
 test at .local/revision-cycle-baseline/tests/revision_cycle.test.ts:21:1
-✖ a review assigned to a durable bounded cycle cannot bypass it through legacy revision (8.651917ms)
+✖ a review assigned to a durable bounded cycle cannot bypass it through legacy revision (244.712458ms)
   AssertionError [ERR_ASSERTION]: Missing expected exception.
       at TestContext.<anonymous> (file://<plugin-workspace>/.local/revision-cycle-baseline/tests/revision_cycle.test.ts:25:10)
       at Test.runInAsyncScope (node:async_hooks:227:14)

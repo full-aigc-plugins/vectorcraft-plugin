@@ -25,4 +25,3 @@ test('a review assigned to a durable bounded cycle cannot bypass it through lega
   assert.throws(()=>f.store.revision(f.request.id,[{objectId:2,field:'paint.color',value:'#fff'}]),/revision_cycle_required/);
  }finally{f.close();}
 });
-
