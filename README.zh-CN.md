@@ -10,7 +10,7 @@
 
 Logo、图标与品牌图形需求进入，交付 `.vectorcraft` 及适用的 SVG、PDF、PNG。
 
-当前插件：`0.1.0-dev.39`；技能源：`0.1.0-dev.36`；13 个独立技能。
+当前插件：`0.1.0-dev.40`；技能源：`0.1.0-dev.36`；13 个独立技能。
 
 已验证首次使用平台：macOS arm64、Python 3.11+。固定运行时安装在用户数据目录，技能文件保留在宿主加载目录。当前为开发版本；完整首版验收及通用 Skills CLI 实际安装仍未完成。
 
@@ -105,7 +105,7 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.39 |
+| Metadata version | 0.1.0-dev.40 |
 | Stage | implementation-in-progress |
 | Skills source | vectorcraft-skills / v0.1.0-dev.36 |
 | Execution | 上游 CLI；ArtCraft 使用子适配器 |
@@ -317,4 +317,8 @@ Codex 0.153.4 在全新隔离配置中安装并发现13技能。13项独立空�
 
 ### 受限修订源码候选
 
-持久化轮次、共享预算、停滞、原生执行谱系及最佳候选保存的最小实现已完成，6.4／6.5已勾选。固定dev.39发行不变，本增量尚未发布；两项真实颜色返工使用测试注入评分，完整6.6与真实创作验收仍开放。[合同与操作](docs/VectorCraft-Revision-Cycle.zh-CN.md)。
+持久化轮次、共享预算、停滞、原生执行谱系及最佳候选保存的最小实现已完成，6.4／6.5已勾选。本增量纳入开发版dev.40，固定dev.39发行不变；两项真实颜色返工使用测试注入评分，完整6.6与真实创作验收仍开放。[合同与操作](docs/VectorCraft-Revision-Cycle.zh-CN.md)。
+
+### dev.40 几何与修订开发版
+
+原生几何合同核对单位、画板偏移、控制点、闭合性与描边，并持久化回执；受限修订循环保留最佳候选。完整4.3、6.6、宿主与创作验收继续开放。[几何合同](docs/VectorCraft-Geometry-Contract.zh-CN.md)。

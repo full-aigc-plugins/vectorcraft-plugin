@@ -1,5 +1,10 @@
 # Version-bound release records
 
+## dev.40 (2026-10-08)
+
+VectorCraft development prerelease dev.40 includes explicit native geometry contracts and durable bounded revision cycles. Pinned skill source stays dev.36. Local36 Node and38 Python tests pass, alongside3 native geometry cases and2 native revision regressions with injected scoring. OpenSpec remains89 checked/38 open. Full geometry, revision, host, model, GUI and creative acceptance remain open; marketplace eligibility remains false.
+
+
 These records were moved verbatim from the README preface. They describe their own versions and are not the current installation contract.
 
 Fixed VectorCraft plugin dev.31/source dev.29 passes independent cold installation for every domain skill,7 installed guard tests and1 actual cold native create/reopen/revise/export case. Across the three updated domains:41 distinct empty caches,21 guards and3 native cases pass; all64 installed skill hashes remain unchanged. Art bundle upgrade and full V1 remain separate. [Evidence](docs/evidence/craft-three-domain-output-guards-fixed-first-use-20261007.json).

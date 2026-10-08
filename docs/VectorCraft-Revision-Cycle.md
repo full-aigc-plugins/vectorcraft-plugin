@@ -1,6 +1,6 @@
 # VectorCraft bounded revision candidate
 
-This is an unpublished plugin source candidate; published dev.39 bytes remain unchanged. OpenSpec `VC-QA-002` is the sole behavior authority. Tasks6.4/6.5 cover tests and minimal implementation; complete boundary acceptance6.6 remains open.
+This increment is included in development prerelease dev.40; published dev.39 bytes remain unchanged. OpenSpec `VC-QA-002` is the sole behavior authority. Tasks6.4/6.5 cover tests and minimal implementation; complete boundary acceptance6.6 remains open.
 
 Explicit calls follow `revision-cycle-open` → `revision-cycle-propose` → `revision-cycle-run` → `review-checked` → human or host `review-import` → `revision-cycle-observe`. Invoke each as `node src/cli.ts ACTION DATABASE REQUEST.json`. `revision-cycle-best` reads the retained candidate after verifying its hashes. All calls share one database; no next round starts implicitly.
 

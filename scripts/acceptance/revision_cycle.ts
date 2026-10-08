@@ -13,7 +13,7 @@ const [original,outputRoot,skillPath,runtimePath,python]=process.argv.slice(2);
 if(!original||!outputRoot||!skillPath||!runtimePath||!python)throw new Error('usage: revision_cycle.ts ORIGINAL NEW_ROOT SKILL WARM_RUNTIME PYTHON');
 const root=resolve(outputRoot),skill=resolve(skillPath),runtimeHome=resolve(runtimePath);mkdirSync(root);
 const digest=(value:Buffer|string)=>createHash('sha256').update(value).digest('hex');
-const dependencies=['skills.lock.json','src/cli.ts','src/evaluation/revision_cycle.ts','src/evaluation/review_store.ts','src/evaluation/technical_review.ts','src/evaluation/delivery_quality.py','src/harness/controller.ts','src/harness/ledger.ts','src/harness/process_registry.ts','src/harness/process_runner.py','tests/revision_cycle.test.ts','tests/controller.test.ts','scripts/acceptance/revision_cycle.ts'];
+const dependencies=['src/planning/geometry.ts','skills.lock.json','src/cli.ts','src/evaluation/revision_cycle.ts','src/evaluation/review_store.ts','src/evaluation/technical_review.ts','src/evaluation/delivery_quality.py','src/harness/controller.ts','src/harness/ledger.ts','src/harness/process_registry.ts','src/harness/process_runner.py','tests/revision_cycle.test.ts','tests/controller.test.ts','scripts/acceptance/revision_cycle.ts'];
 const fingerprints=Object.fromEntries(dependencies.map(p=>[p,digest(readFileSync(p))]));
 const startingSkillSha256=skillDigest(skill);
 assert.equal(startingSkillSha256,JSON.parse(readFileSync('skills.lock.json','utf8')).sources[0].sha256['vectorcraft-use'],'acceptance requires exact pinned skill bytes');

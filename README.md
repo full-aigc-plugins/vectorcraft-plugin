@@ -10,7 +10,7 @@ Four-domain RT-001 runtime source/integrity acceptance now covers every current 
 
 Create Logo, icon and brand assets as `.vectorcraft` with applicable SVG, PDF and PNG exports.
 
-Current plugin: `0.1.0-dev.39`; skill source: `0.1.0-dev.36`; 13 independent skills.
+Current plugin: `0.1.0-dev.40`; skill source: `0.1.0-dev.36`; 13 independent skills.
 
 Verified first-use platform: macOS arm64 and Python 3.11+. Pinned runtimes install into the user data directory; skill files stay in their host-loaded directory. These are development releases; complete V1 acceptance and generic Skills CLI installation remain open.
 
@@ -105,7 +105,7 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.39 |
+| Metadata version | 0.1.0-dev.40 |
 | Stage | implementation-in-progress |
 | Skills source | vectorcraft-skills / v0.1.0-dev.36 |
 | Execution | Upstream CLI; ArtCraft uses child adapters |
@@ -319,4 +319,8 @@ Pins source dev.36 with corrected revision object ID rendering. Adds `review-che
 
 ### Bounded revision source candidate
 
-Minimal durable rounds, shared budgets, stagnation, native execution lineage and best-candidate retention are implemented; tasks6.4/6.5 are checked. Published dev.39 remains unchanged and this increment is unpublished. Two actual color revisions use injected scores; complete6.6 and real creative acceptance remain open. [Contract and operations](docs/VectorCraft-Revision-Cycle.md).
+Minimal durable rounds, shared budgets, stagnation, native execution lineage and best-candidate retention are implemented; tasks6.4/6.5 are checked. This increment is included in development prerelease dev.40; published dev.39 remains unchanged. Two actual color revisions use injected scores; complete6.6 and real creative acceptance remain open. [Contract and operations](docs/VectorCraft-Revision-Cycle.md).
+
+### dev.40 geometry and revision prerelease
+
+Native geometry contracts check units, artboard offsets, controls, closure and strokes with persisted receipts. Bounded revision cycles retain the best verified candidate. Full4.3,6.6, host and creative acceptance remain open. [Geometry contract](docs/VectorCraft-Geometry-Contract.md).

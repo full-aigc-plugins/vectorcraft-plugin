@@ -115,6 +115,12 @@ def build(root=ROOT):
     cycle='docs/evidence/vectorcraft-revision-cycle-candidate-20261008.json'
     if (root/cycle).is_file():
         entries.append(bound_report(root,cycle,'native-candidate','bounded revision minimum: two actual native color revisions with injected scores; full6.6 and real creative acceptance remain open',tasks=['6.4','6.5']))
+    geometry='docs/evidence/vectorcraft-geometry-candidate-20261008.json'
+    if (root/geometry).is_file():
+        entries.append(bound_report(root,geometry,'native-candidate','explicit units, offset artboard controls and retained closure failure; full4.3 remains open','VC-DM-001',['4.1','4.2']))
+    old_cycle='docs/evidence/vectorcraft-revision-cycle-before-geometry-20261008.json'
+    if (root/old_cycle).is_file():
+        entries.append(record(root,old_cycle,'native-candidate','PASS',[],'original pre-geometry execution fingerprints preserved; not rebound',historical=True))
     old_checked='docs/evidence/vectorcraft-checked-review-before-cycles-20261008.json'
     if (root/old_checked).is_file():
         entries.append(record(root,old_checked,'native-candidate','PASS',[],'original pre-cycle review coordinator proof; execution fingerprints preserved, not rebound',historical=True))

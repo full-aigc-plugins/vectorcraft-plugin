@@ -8,6 +8,8 @@ import { Recovery } from './recovery.ts';
 import { Ledger, resourcePath } from './ledger.ts';
 import type { Authorization } from './ledger.ts';
 import { strictJson, canonical } from '../strict_json.ts';
+import { validateGeometryContract,verifyGeometry } from '../planning/geometry.ts';
+import type { GeometryContract } from '../planning/geometry.ts';
 
 const sha=(value:string|Buffer)=>createHash('sha256').update(value).digest('hex');
 const inside=(root:string,path:string)=>{const sub=relative(resourcePath(root),resourcePath(path));return !isAbsolute(sub)&&sub!=='..'&&!sub.startsWith('../');};
@@ -29,7 +31,7 @@ export function skillDigest(root:string):string {
 }
 
 type RunRequest={key:string,skill:string,expectedSkillSha256:string,plan:string,output:string,source?:string,
-  runtimeHome:string,python?:string,estimatedBytes:number,inputFingerprints?:Record<string,string>,authorization:Authorization&{readRoots:string[],writeRoots:string[]}};
+  runtimeHome:string,python?:string,estimatedBytes:number,inputFingerprints?:Record<string,string>,geometryContract?:GeometryContract,authorization:Authorization&{readRoots:string[],writeRoots:string[]}};
 
 /** 仅协调已固定的独立技能；原生命令语义与失败工程保留由源技能负责。 */
 export class Controller {
@@ -58,7 +60,7 @@ export class Controller {
     const proof=await recovery.inspect(id,epoch);
     return {proof,task:recovery.settle(id,epoch,proof.checkId)};
   }
-  verifyDelivery(output:string,runtime:string):any {
+  verifyDelivery(output:string,runtime:string,geometryContract?:GeometryContract):any {
     const manifest=strictJson(readFileSync(join(output,'manifest.json'),'utf8'));
     if(manifest.schema!=='vectorcraft-delivery/v1'||manifest.runtimeSha256!==runtime)throw new Error('runtime_identity_mismatch');
     if(!manifest.files||typeof manifest.files!=='object'||!manifest.files['project.vectorcraft'])throw new Error('invalid_delivery_manifest');
@@ -67,9 +69,18 @@ export class Controller {
       const file=join(output,path);
       if(!inside(output,file)||lstatSync(file).isSymbolicLink()||!lstatSync(file).isFile()||sha(readFileSync(file))!==digest)throw new Error('artifact_digest_mismatch');
     }
+    if(geometryContract){
+      if(!manifest.files['native.json'])throw new Error('geometry_native_snapshot_missing');
+      const report=verifyGeometry(strictJson(readFileSync(join(output,'native.json'),'utf8')),manifest.bindings??{},geometryContract);
+      const bound={...report,nativeSha256:manifest.files['native.json'],projectRevision:manifest.files['project.vectorcraft'],runtimeIdentity:runtime,contractSha256:sha(canonical(geometryContract))};
+      if(report.status!=='PASS')throw new Error('geometry_acceptance_failed: '+canonical(bound));
+      manifest.geometryVerification=bound;
+    }
     return manifest;
   }
   async run(request:RunRequest):Promise<any> {
+    const geometryContract=request.geometryContract===undefined?undefined:strictJson(canonical(request.geometryContract));
+    if(geometryContract!==undefined)validateGeometryContract(geometryContract);
     const auth=request.authorization;
     if(!Array.isArray(auth?.readRoots)||!Array.isArray(auth?.writeRoots))throw new Error('authorization_roots_required');
     for(const path of [request.plan,...(request.source?[request.source]:[])])if(!auth.readRoots.some(root=>inside(root,path)))throw new Error('outside_authorized_roots');
@@ -100,16 +111,18 @@ export class Controller {
       if(!auth.readRoots.some(root=>inside(root,asset.path)))throw new Error('outside_authorized_roots');
       const hash=sha(readFileSync(asset.path));if(hash!==asset.sha256)throw new Error('asset_digest_mismatch');inputHashes[name]=hash;
     }
+    if(geometryContract)inputHashes['contract:geometry']=sha(canonical(geometryContract));
     const runtimeIdentity=lock.artifacts['darwin-arm64'].binarySha256;
     const binding={skillSha256:request.expectedSkillSha256,planHash:sha(canonical(plan)),inputHashes,projectRevision,runtimeIdentity,authorization:auth};
     const task=this.ledger.claim(request.key,request.source?join(request.source,'project.vectorcraft'):join(request.output,'project.vectorcraft'),request.output,binding);
     if(task.state!=='ready'){
+      let geometryVerification:any;
       if(task.state==='review_ready'||task.state==='completed'){
-        this.verifyDelivery(request.output,runtimeIdentity);
+        geometryVerification=this.verifyDelivery(request.output,runtimeIdentity,geometryContract).geometryVerification;
         const received=this.ledger.db.prepare('SELECT result FROM steps WHERE task=? AND n=0').get(task.id) as any;
         if(!received?.result||strictJson(received.result).manifestSha256!==sha(readFileSync(join(request.output,'manifest.json'))))throw new Error('receipt_manifest_mismatch');
       }
-      return {...task,resumePolicy:'inspect original files and request; no automatic replay'};
+      return {...task,...(geometryContract&&geometryVerification?{geometryVerification}:{}),resumePolicy:'inspect original files and request; no automatic replay'};
     }
     if(existsSync(request.output))throw new Error('output_exists');
     mkdirSync(this.snapshotRoot,{recursive:true,mode:0o700});
@@ -128,7 +141,7 @@ export class Controller {
       eventFile,eventDevice:eventStat.dev,eventInode:eventStat.ino,
       ...(request.source?{source:{path:join(resourcePath(request.source),'project.vectorcraft'),sha256:projectRevision}}:{})}),{flag:'wx',mode:0o400});
     for(const file of [planSnapshot,controlFile,eventFile]){const fd=openSync(file,'r');try{fsyncSync(fd);}finally{closeSync(fd);}}
-    this.ledger.intent(task.id,task.epoch,0,{skillSha256:request.expectedSkillSha256,planHash:binding.planHash,plan,planSnapshot,skillSnapshot,output:resourcePath(request.output),controlFile,runtimeHome:resourcePath(request.runtimeHome),source:request.source?resourcePath(request.source):null,python:request.python??'python3'},request.estimatedBytes);
+    this.ledger.intent(task.id,task.epoch,0,{skillSha256:request.expectedSkillSha256,planHash:binding.planHash,plan,planSnapshot,skillSnapshot,output:resourcePath(request.output),controlFile,runtimeHome:resourcePath(request.runtimeHome),source:request.source?resourcePath(request.source):null,python:request.python??'python3',...(geometryContract?{geometryContract}:{})},request.estimatedBytes);
     const args=['-I','-B',join(skillSnapshot,'scripts/workflow.py'),planSnapshot,'--output',request.output,'--runtime-home',request.runtimeHome,'--control',controlFile];
     if(request.source)args.push('--source',request.source);
     let stdout='',stderr='';
@@ -180,13 +193,14 @@ export class Controller {
         });
       });
       if(['cancel_requested','cancelled'].includes(this.ledger.get(task.id).state))return {id:task.id,state:'quarantined',output:request.output};
-      const manifest=this.verifyDelivery(request.output,runtimeIdentity);
+      const manifest=this.verifyDelivery(request.output,runtimeIdentity,geometryContract);
       checkInputs();
       const bytes=Object.keys(manifest.files).reduce((total,path)=>total+lstatSync(join(request.output,path)).size,0);
       if(bytes>request.estimatedBytes||bytes>auth.maxBytes)throw new Error('budget_exceeded: output exceeds reservation');
       if(request.source&&sha(readFileSync(join(request.source,'project.vectorcraft')))!==projectRevision)throw new Error('revision_conflict');
-      this.ledger.receipt(task.id,task.epoch,0,{manifestSha256:sha(readFileSync(join(request.output,'manifest.json'))),runtimeIdentity});
-      return this.ledger.verified(task.id,task.epoch,{path:join(request.output,'project.vectorcraft'),sha256:manifest.files['project.vectorcraft']});
+      this.ledger.receipt(task.id,task.epoch,0,{manifestSha256:sha(readFileSync(join(request.output,'manifest.json'))),runtimeIdentity,...(geometryContract?{geometryVerification:manifest.geometryVerification}:{})});
+      const verified=this.ledger.verified(task.id,task.epoch,{path:join(request.output,'project.vectorcraft'),sha256:manifest.files['project.vectorcraft']});
+      return {...verified,...(geometryContract?{geometryVerification:manifest.geometryVerification}:{})};
     }catch(error){this.ledger.unknown(task.id,task.epoch,String(error));throw error;}
   }
   close(){this.ledger.close();}

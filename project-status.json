@@ -86,7 +86,9 @@
     "6.1": "docs/evidence/vectorcraft-technical-quality-candidate-20261008.json",
     "6.2": "docs/evidence/vectorcraft-checked-review-candidate-20261008.json",
     "6.4": "docs/evidence/vectorcraft-revision-cycle-candidate-20261008.json",
-    "6.5": "docs/evidence/vectorcraft-revision-cycle-candidate-20261008.json"
+    "6.5": "docs/evidence/vectorcraft-revision-cycle-candidate-20261008.json",
+    "4.1": "docs/evidence/vectorcraft-geometry-candidate-20261008.json",
+    "4.2": "docs/evidence/vectorcraft-geometry-candidate-20261008.json"
   },
   "hostValidationEvidence": "docs/evidence/craft-full-command-fixed-first-use-20261007.json",
   "hostValidationStatus": "fixed-five-plugin58-discovery-and-standalone-desktop-passed",
@@ -188,11 +190,17 @@
   },
   "revisionCycleCandidate": {
     "status": "minimal-implemented",
-    "published": false,
-    "fixedPublishedPlugin": "0.1.0-dev.39",
+    "published": true,
+    "fixedPublishedPlugin": "0.1.0-dev.40",
     "evidence": "docs/evidence/vectorcraft-revision-cycle-candidate-20261008.json",
     "fullBoundaryAcceptance": "NOT_RUN",
     "realCreativeAssessment": "NOT_RUN",
+    "fullV1": "incomplete"
+  },
+  "geometryContract": {
+    "status": "minimal-implemented",
+    "evidence": "docs/evidence/vectorcraft-geometry-candidate-20261008.json",
+    "fullBoundaryAcceptance": "NOT_RUN",
     "fullV1": "incomplete"
   }
 }

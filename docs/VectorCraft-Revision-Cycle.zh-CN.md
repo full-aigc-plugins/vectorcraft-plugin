@@ -1,6 +1,6 @@
 # VectorCraft 受限修订候选
 
-当前为插件源码候选；已发布 dev.39 的字节保持不变。OpenSpec `VC-QA-002` 是唯一行为事实源，6.4／6.5覆盖测试与最小实现，6.6完整边界验收继续开放。
+本增量纳入开发版 dev.40；已发布 dev.39 的字节保持不变。OpenSpec `VC-QA-002` 是唯一行为事实源，6.4／6.5覆盖测试与最小实现，6.6完整边界验收继续开放。
 
 显式调用顺序为 `revision-cycle-open` → `revision-cycle-propose` → `revision-cycle-run` → `review-checked` → 人工或宿主 `review-import` → `revision-cycle-observe`。每个动作通过 `node src/cli.ts ACTION DATABASE REQUEST.json` 调用；可随时以 `revision-cycle-best` 读取仍可核验的最佳候选。CLI使用同一个数据库，不隐式开始下一轮。
 
