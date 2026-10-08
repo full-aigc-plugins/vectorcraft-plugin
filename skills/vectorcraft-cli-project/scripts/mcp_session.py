@@ -1,21 +1,30 @@
 """单请求串行 stdio MCP 会话；超时不重试有副作用的请求。"""
 import json
+import importlib.util
 from contextlib import suppress
+from pathlib import Path
 import os
 import select
 import subprocess
 import tempfile
 import time
 
+_spec = importlib.util.spec_from_file_location('craft_session_commands', Path(__file__).with_name('commands.py'))
+_commands = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(_commands)
+
 
 class Session:
-    def __init__(self, argv, timeout=120):
+    def __init__(self, argv, timeout=120, control=None):
+        self.control = control
         self.timeout = timeout
         self.buffer = b''
         self.sequence = 0
         self.stderr = tempfile.TemporaryFile()
-        self.process = subprocess.Popen(argv, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=self.stderr)
+        self.process = subprocess.Popen(argv, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=self.stderr, preexec_fn=control.apply_limits if control else None)
         try:
+            if self.control:
+                self.control.emit('session_created', pid=self.process.pid)
             self.request('initialize', {'protocolVersion': '2024-11-05', 'capabilities': {}, 'clientInfo': {'name': 'craft-skill', 'version': '0.1.0'}})
             self.send({'jsonrpc': '2.0', 'method': 'notifications/initialized'})
         except BaseException:
@@ -34,6 +43,8 @@ class Session:
     def request(self, method, params):
         self.sequence += 1
         identifier = self.sequence
+        if self.control:
+            self.control.before_request(method, params, identifier, self.process.pid)
         self.send({'jsonrpc': '2.0', 'id': identifier, 'method': method, 'params': params})
         deadline = time.monotonic() + self.timeout
         while True:
@@ -44,16 +55,22 @@ class Session:
                 if not line.strip():
                     continue
                 try:
-                    response = json.loads(line, parse_constant=lambda _: (_ for _ in ()).throw(ValueError('nonfinite')))
+                    response = _commands.reply_json(line)
                 except (ValueError, UnicodeError):
                     raise RuntimeError('outcome_unknown: invalid_mcp_json; request not retried') from None
                 if not isinstance(response, dict):
                     raise RuntimeError('outcome_unknown: invalid_mcp_response; request not retried')
-                if response.get('id') != identifier:
+                if 'id' not in response and isinstance(response.get('method'), str) and not ({'result', 'error'} & response.keys()):
                     continue
+                if type(response.get('id')) is not int or response['id'] != identifier or response.get('jsonrpc', '2.0') != '2.0':
+                    raise RuntimeError('outcome_unknown: mismatched_mcp_response; request not retried')
                 if ('error' in response) == ('result' in response):
                     raise RuntimeError('outcome_unknown: missing_or_ambiguous_mcp_result; request not retried')
                 if 'error' in response:
+                    error = response['error']
+                    if (not isinstance(error, dict) or type(error.get('code')) is not int
+                            or not isinstance(error.get('message'), str)):
+                        raise RuntimeError('outcome_unknown: invalid_mcp_error; request not retried')
                     raise RuntimeError('mcp_error: ' + json.dumps(response['error']))
                 result = response['result']
                 if method == 'tools/call':
@@ -65,6 +82,8 @@ class Session:
                                    or (entry['type'] == 'text' and not isinstance(entry.get('text'), str))
                                    for entry in result.get('content', []))):
                         raise RuntimeError('outcome_unknown: invalid_tool_reply; request not retried')
+                if self.control:
+                    self.control.after_request(identifier, self.process.pid, result)
                 return result
             remaining = deadline - time.monotonic()
             if remaining <= 0 or not select.select([self.process.stdout], [], [], remaining)[0]:
@@ -78,13 +97,7 @@ class Session:
 
     def command(self, identifier, params):
         result = self.request('tools/call', {'name': 'run_command', 'arguments': {'command': identifier, 'params': params}})
-        if result.get('isError'):
-            raise RuntimeError('command_failed: ' + identifier + ': ' + json.dumps(result.get('content')))
-        content = result.get('content', [])
-        texts = [entry['text'] for entry in content if entry.get('type') == 'text']
-        if len(texts) != 1:
-            raise RuntimeError('unexpected_command_result')
-        return json.loads(texts[0])
+        return _commands.parse_reply(result)
 
     def close(self):
         if self.process.stdin:

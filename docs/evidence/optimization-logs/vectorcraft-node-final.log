@@ -1,0 +1,23 @@
+
+> test
+> node --test tests/*.test.ts
+
+✔ controller binds a supplied standalone snapshot, records intent and verifies actual files (76.108708ms)
+✔ single writer keys the source resource, not output path; epochs fence old writers (7.286834ms)
+✔ idempotency binds input, authorization and runtime; budget and cancellation persist (3.815791ms)
+✔ single-round review binds fresh source, candidate, target and rubric and rejects duplicates (5.886875ms)
+✔ strict review JSON rejects duplicate keys, overflow, malformed values and accepts business error (0.495625ms)
+✔ revision proposals require actual assessed fields and preserve authorization without claiming independence (5.630959ms)
+✔ child tasks share one durable budget and late cancellation receipts are quarantined (3.773375ms)
+✔ review request rejects a claimed revision that differs from actual native bytes (3.291792ms)
+✔ review binds exchange loss and persists rejection reasons across restart (4.402917ms)
+✔ pending reviews survive restart and any bound source, candidate or rubric replacement invalidates acceptance (11.538917ms)
+✔ review target and authorization schemas reject undeclared target keys and invalid scopes (3.391583ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 153.669209

@@ -12,5 +12,7 @@
       "evidenceScope": "headless MCP smoke only"
     }
   },
-  "supportedPluginWorkflows": []
+  "supportedPluginWorkflows": [],
+  "role": "historical-baseline",
+  "executionAuthority": "skills/*/scripts/runtime.lock.json"
 }

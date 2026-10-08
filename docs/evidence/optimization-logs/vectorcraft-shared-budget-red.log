@@ -1,0 +1,58 @@
+
+> test
+> node --test tests/*.test.ts
+
+✔ controller binds a supplied standalone snapshot, records intent and verifies actual files (61.686542ms)
+✔ single writer keys the source resource, not output path; epochs fence old writers (8.545708ms)
+✔ idempotency binds input, authorization and runtime; budget and cancellation persist (4.254417ms)
+✔ single-round review binds fresh source, candidate, target and rubric and rejects duplicates (7.452292ms)
+✔ strict review JSON rejects duplicate keys, overflow, malformed values and accepts business error (0.554542ms)
+✔ revision proposals require actual assessed fields and preserve authorization without claiming independence (7.498625ms)
+✖ child tasks share one durable budget and late cancellation receipts are quarantined (4.472916ms)
+✖ review request rejects a claimed revision that differs from actual native bytes (4.891166ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 6
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 146.503084
+
+✖ failing tests:
+
+test at tests/harness.test.ts:104:1
+✖ child tasks share one durable budget and late cancellation receipts are quarantined (4.472916ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (file://<plugin-repository>/tests/harness.test.ts:111:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1325:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+      at Test.postRun (node:internal/test_runner/test:1465:19)
+      at Test.run (node:internal/test_runner/test:1390:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /budget_exceeded/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/harness.test.ts:119:1
+✖ review request rejects a claimed revision that differs from actual native bytes (4.891166ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (file://<plugin-repository>/tests/harness.test.ts:123:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1325:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+      at Test.postRun (node:internal/test_runner/test:1465:19)
+      at Test.run (node:internal/test_runner/test:1390:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /project_revision_mismatch/,
+    operator: 'throws',
+    diff: 'simple'
+  }

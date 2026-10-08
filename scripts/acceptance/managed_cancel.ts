@@ -1,0 +1,68 @@
+/** 原生 opt-in：在真实检查点已保存后撤销，不注入引擎或模拟写盘。 */
+import assert from 'node:assert/strict';
+import { executionIdentity } from './execution_identity.ts';
+const executionFingerprints=executionIdentity();
+import { readFileSync, writeFileSync, existsSync, statSync, mkdirSync } from 'node:fs';
+import { join, resolve } from 'node:path';
+import { execFileSync } from 'node:child_process';
+import { createHash } from 'node:crypto';
+import { Controller, skillDigest } from '../../src/harness/controller.ts';
+import { strictJson } from '../../src/strict_json.ts';
+const input=strictJson(readFileSync(process.argv[2],'utf8'));
+const root=resolve(input.output),source=resolve(input.source),skill=resolve(input.skill),runtime=resolve(input.runtimeHome);
+mkdirSync(root,{recursive:true});
+const hash=(path:string)=>createHash('sha256').update(readFileSync(path)).digest('hex');
+const original=hash(join(source,'project.vectorcraft'));
+const plan=join(root,'cancel-plan.json');
+writeFileSync(plan,JSON.stringify({expectedProjectSha256:original,operations:Array.from({length:100},()=>({command:'swatch.edit',params:{name:'Brand Primary',color:input.targetColor}}))}));
+const controller=new Controller(join(root,'tasks.sqlite'));
+let interval:ReturnType<typeof setInterval>|undefined,id:string|undefined,checkpoint:any;
+try{
+  interval=setInterval(()=>{
+    if(id)return;
+    const task=controller.ledger.db.prepare("SELECT id,epoch FROM tasks WHERE state='running'").get() as any;
+    if(!task)return;
+    const events=join(controller.snapshotRoot,task.id+'-events.jsonl');if(!existsSync(events))return;
+    const lines=readFileSync(events,'utf8').split('\n').filter(Boolean);
+    const record=lines.map(line=>strictJson(line)).find(r=>r.event==='revision_checkpoint');
+    if(record){checkpoint=record;id=task.id;controller.requestCancel(task.id,task.epoch);}
+  },10);
+  await assert.rejects(()=>controller.run({key:'cancel-after-native-save',skill,expectedSkillSha256:skillDigest(skill),plan,
+    source,output:join(root,'cancelled'),runtimeHome:runtime,python:input.python,estimatedBytes:10000000,
+    authorization:{...input.authorization,deadline:Date.now()+120000,maxAttempts:1,maxBytes:10000000,readRoots:[source,root],writeRoots:[root,runtime]}}),/outcome_unknown/);
+  clearInterval(interval);
+  assert.ok(id&&checkpoint,'real saved checkpoint must precede cancellation');
+  const task=controller.ledger.get(id!);
+  assert.equal(task.state,'cancel_requested');
+  assert.equal(controller.processes.observe(id!,task.epoch).stopped,true);
+  assert.throws(()=>controller.ledger.claim('dependent',join(source,'project.vectorcraft'),join(root,'dependent'),task.binding),/resource_busy/);
+  assert.equal(hash(checkpoint.path),checkpoint.sha256);
+  const inode=statSync(checkpoint.path).ino;
+  const binary=join(runtime,'vectorcraft/0.2.0-craft.2/vectorcraft-cli');
+  assert.equal(hash(binary),task.binding.runtimeIdentity);
+  const python=`import importlib.util,json,sys\ns=importlib.util.spec_from_file_location('session',sys.argv[1]);m=importlib.util.module_from_spec(s);s.loader.exec_module(m)\nwith m.Session([sys.argv[2],'mcp','--headless']) as session:\n session.command('document.open',{'path':sys.argv[3]})\n d=session.command('document.json',{})\n print(json.dumps({'layers':len(d['layers']),'artboards':len(d['artboards'])}))`;
+  const reopened=strictJson(execFileSync(input.python,['-I','-B','-c',python,join(skill,'scripts/mcp_session.py'),binary,checkpoint.path],{encoding:'utf8'}));
+  assert.equal(hash(checkpoint.path),checkpoint.sha256);assert.equal(statSync(checkpoint.path).ino,inode);
+  assert.equal(hash(join(source,'project.vectorcraft')),original);
+  const eventFile=join(controller.snapshotRoot,id!+'-events.jsonl');
+  const events=readFileSync(eventFile,'utf8').split('\n').filter(Boolean).map(line=>strictJson(line));
+  const stateRecord=events.filter(event=>event.event==='submitted');
+  assert.ok(stateRecord.some(event=>event.params?.arguments?.params?.path===checkpoint.path));
+  const proof={result:'PASS',level:'native-candidate',fingerprints:executionFingerprints,scope:'real saved checkpoint cancellation, owned group stop, original inode/hash readonly reopen and writer retained; no recovery completion or fixed-install claim',
+    skillSha256:skillDigest(skill),runtimeSha256:hash(binary),sourceProjectSha256:original,taskId:id,epoch:task.epoch,state:task.state,
+    checkpoint:{path:checkpoint.path,sha256:checkpoint.sha256,inode,readonlyReopened:reopened},eventSha256:hash(eventFile),eventCount:events.length,
+    sourceUnchanged:true,nativeGroupStopped:true,dependentWriterRejected:true};
+  controller.close();
+  const restarted=new Controller(join(root,'tasks.sqlite'));
+  try{
+    const recovered=await restarted.reconcileOriginal(id!,task.epoch);
+    assert.equal(recovered.task.state,'cancelled');assert.equal(recovered.task.epoch,task.epoch+1);
+    assert.throws(()=>restarted.ledger.receipt(id!,task.epoch,0,{late:true}),/stale_epoch/);
+    assert.equal(restarted.ledger.get(id!).state,'cancelled');
+    const late=restarted.ledger.db.prepare('SELECT COUNT(*) AS n FROM late_receipts WHERE task=?').get(id!) as any;
+    assert.equal(late.n,1);
+    const completeProof={...proof,scope:'real checkpoint cancellation, native group stopped, restart readonly recovery of original files/dependencies, cancelled epoch fence and durable late receipt quarantine; no successful delivery or fixed-install claim',
+      recovery:recovered.proof,settledState:recovered.task.state,settledEpoch:recovered.task.epoch,lateReceiptQuarantined:true};
+    writeFileSync(join(root,'proof.json'),JSON.stringify(completeProof,null,2));console.log(JSON.stringify(completeProof,null,2));
+  }finally{restarted.close();}
+}finally{clearInterval(interval);controller.close();}

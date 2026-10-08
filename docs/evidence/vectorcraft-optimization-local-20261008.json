@@ -1,0 +1,308 @@
+{
+  "schema": "vectorcraft-optimization-local/v1",
+  "result": "PASS",
+  "level": "local-tests",
+  "scope": "current local tests and bounded source/native candidate; original wider optimization proof retained as historical report",
+  "completedTasks": [
+    "3.1",
+    "3.2",
+    "3.4",
+    "3.5",
+    "3.7",
+    "3.8"
+  ],
+  "openFullAcceptance": [
+    "3.3",
+    "3.6",
+    "3.9",
+    "6.x",
+    "9.21"
+  ],
+  "nodeTests": {
+    "ran": 15,
+    "passed": 15,
+    "skipped": 0
+  },
+  "pythonRegression": {
+    "ran": 28,
+    "passed": 28,
+    "skipped": 0
+  },
+  "nativeCancellation": {
+    "result": "PASS",
+    "level": "native-candidate",
+    "fingerprints": {
+      "src/cli.ts": "eef02244d70bb0d24157e61152125549c0de386fffb1e650dd8bdc1b4dadbd2e",
+      "src/evaluation/review_store.ts": "1754fc1859ff00ce01ab789c7bf706ae173fb7a4e29ab1d23ab0b4d8b6d6b791",
+      "src/harness/controller.ts": "c1fc21a4549db0f65235a89b6dc53faaaba55250a2deb83a28552fdfb70fa5d3",
+      "src/harness/ledger.ts": "c1aa8d6b7ad7c40d5fc0f1a8d87ddae1df0b29144c904690917e5b79355f660d",
+      "src/harness/process_registry.ts": "c19a3cb5d42cc33620bc5baeff7db71f1c6daa92f046a112951a7f50f7906162",
+      "src/harness/process_runner.py": "7332d0757aa01f03d00697f8eb8d93f849517cab34ea8a1355ba6c9513d5aba2",
+      "src/harness/recovery.ts": "675db847b9e7d8d3f272746a8fcb92fa419f2b07a281f42e8ddff8d556d627a5",
+      "src/strict_json.ts": "69a445339670e53f6a7fcb96770b53b896666dd1e60f114c1751a23981d5b7d0",
+      "scripts/acceptance/execution_identity.ts": "923b35a9ddd6d6f7a2b6f22e2f597012a84bbee51b111c5a005d173af490a422",
+      "scripts/acceptance/managed_cancel.ts": "f087ac62a7db9160935b9663ee045594ebd37541610a99a5ef7065eb20d76fd0",
+      "scripts/acceptance/record_execution_control.py": "9ded1a54b482c84ff477e0c3a1d97aa2dd362e61a5cd749b327adae1f95dc37b",
+      "scripts/acceptance/single_round.ts": "309115ba29a4b5ea69e70099a58d657ff1e29d48284af42a9d3461fefee9c84f",
+      "schemas/vector-review-receipt.schema.json": "d1e94365af9e75ce55de82df50a36eb37a65d0da4b19f66e704b00e9b35641ab",
+      "schemas/vector-review-request.schema.json": "7abda15fe87ef22574690914c00b86d2aa13d3a3f081f97ac691d3d25adad161"
+    },
+    "scope": "real checkpoint cancellation, native group stopped, restart readonly recovery of original files/dependencies, cancelled epoch fence and durable late receipt quarantine; no successful delivery or fixed-install claim",
+    "skillSha256": "a332ea661bdbea83302e0b07194fff7501671c916e4e3cda3fb6f79b460e2622",
+    "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+    "sourceProjectSha256": "9fc91755273aa5e7e56e84bd47e66b4ccf076f7ba28f421634d91b2de430eec5",
+    "taskId": "12439a5a-0f46-4fb1-bb1b-89282b2052e6",
+    "epoch": 1,
+    "state": "cancel_requested",
+    "checkpoint": {
+      "path": "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/.local/execution-control-proof/cancel-verified-fingerprinted-standalone-bound/.vectorcraft-gmnejg7o/managed-checkpoint-2.vectorcraft",
+      "sha256": "a4a78973da11e66decd313b42d75e2bcb2ee5e8a952c549a897e169825cf1b2d",
+      "inode": 618649138,
+      "readonlyReopened": {
+        "layers": 1,
+        "artboards": 3
+      }
+    },
+    "eventSha256": "57a3a35bd99bfabfc4c2d46c16d2190e9ee1a2d6be7a515d6a5d7bbe473aca44",
+    "eventCount": 54,
+    "sourceUnchanged": true,
+    "nativeGroupStopped": true,
+    "dependentWriterRejected": true,
+    "recovery": {
+      "schema": "vectorcraft-original-inspection/v1",
+      "checkId": "35187c4a-e2de-4739-88f1-67862b6cd26f",
+      "task": "12439a5a-0f46-4fb1-bb1b-89282b2052e6",
+      "epoch": 1,
+      "owner": "12439a5a-0f46-4fb1-bb1b-89282b2052e6:inspect:35187c4a-e2de-4739-88f1-67862b6cd26f",
+      "stage": "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/.local/execution-control-proof/cancel-verified-fingerprinted-standalone-bound/.vectorcraft-gmnejg7o",
+      "stageInode": 618649135,
+      "stageDevice": 16777233,
+      "files": {
+        "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/.local/execution-control-proof/cancel-verified-fingerprinted-standalone-bound/.vectorcraft-gmnejg7o/brand-checkpoint-0.vectorcraft": {
+          "sha256": "a4a78973da11e66decd313b42d75e2bcb2ee5e8a952c549a897e169825cf1b2d",
+          "bytes": 33820,
+          "inode": 618649139
+        },
+        "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/.local/execution-control-proof/cancel-verified-fingerprinted-standalone-bound/.vectorcraft-gmnejg7o/brand-checkpoint-1.vectorcraft": {
+          "sha256": "c3d0390f48159c6c4dbf87ad7ff9aae1906470d4b37218cfcf893f28f7464018",
+          "bytes": 33852,
+          "inode": 618649142
+        },
+        "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/.local/execution-control-proof/cancel-verified-fingerprinted-standalone-bound/.vectorcraft-gmnejg7o/brand-checkpoint-2.vectorcraft": {
+          "sha256": "c3d0390f48159c6c4dbf87ad7ff9aae1906470d4b37218cfcf893f28f7464018",
+          "bytes": 33852,
+          "inode": 618649144
+        },
+        "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/.local/execution-control-proof/cancel-verified-fingerprinted-standalone-bound/.vectorcraft-gmnejg7o/brand-dependencies.json": {
+          "sha256": "9ecfb46685b96ce0b87be8e1f76f654fdbfaf537b2f6250742fd62aa24655109",
+          "bytes": 2914,
+          "inode": 618649140
+        },
+        "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/.local/execution-control-proof/cancel-verified-fingerprinted-standalone-bound/.vectorcraft-gmnejg7o/failure.json": {
+          "sha256": "337807ef886de6174737fe904fc3fe603521de4e83fdd8ee0fa22aeeb29ab687",
+          "bytes": 1722,
+          "inode": 618649147
+        },
+        "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/.local/execution-control-proof/cancel-verified-fingerprinted-standalone-bound/.vectorcraft-gmnejg7o/managed-checkpoint-16.vectorcraft": {
+          "sha256": "c3d0390f48159c6c4dbf87ad7ff9aae1906470d4b37218cfcf893f28f7464018",
+          "bytes": 33852,
+          "inode": 618649143
+        },
+        "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/.local/execution-control-proof/cancel-verified-fingerprinted-standalone-bound/.vectorcraft-gmnejg7o/managed-checkpoint-2.vectorcraft": {
+          "sha256": "a4a78973da11e66decd313b42d75e2bcb2ee5e8a952c549a897e169825cf1b2d",
+          "bytes": 33820,
+          "inode": 618649138
+        },
+        "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/.local/execution-control-proof/cancel-verified-fingerprinted-standalone-bound/.vectorcraft-gmnejg7o/managed-checkpoint-9.vectorcraft": {
+          "sha256": "c3d0390f48159c6c4dbf87ad7ff9aae1906470d4b37218cfcf893f28f7464018",
+          "bytes": 33852,
+          "inode": 618649141
+        },
+        "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/.local/execution-control-proof/cancel-verified-fingerprinted-standalone-bound/.vectorcraft-gmnejg7o/recovery-operations.json": {
+          "sha256": "14b01b608fda940c3db0998013e5e258ac9a09fa1c695ecf23a4cdefb3fe339a",
+          "bytes": 458973,
+          "inode": 618649146
+        }
+      },
+      "reopened": [
+        {
+          "path": "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/.local/execution-control-proof/cancel-verified-fingerprinted-standalone-bound/.vectorcraft-gmnejg7o/brand-checkpoint-0.vectorcraft",
+          "layers": 1,
+          "artboards": 3,
+          "dependencies": {
+            "links": [],
+            "missing": 0,
+            "modified": 0
+          }
+        },
+        {
+          "path": "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/.local/execution-control-proof/cancel-verified-fingerprinted-standalone-bound/.vectorcraft-gmnejg7o/brand-checkpoint-1.vectorcraft",
+          "layers": 1,
+          "artboards": 3,
+          "dependencies": {
+            "links": [],
+            "missing": 0,
+            "modified": 0
+          }
+        },
+        {
+          "path": "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/.local/execution-control-proof/cancel-verified-fingerprinted-standalone-bound/.vectorcraft-gmnejg7o/brand-checkpoint-2.vectorcraft",
+          "layers": 1,
+          "artboards": 3,
+          "dependencies": {
+            "links": [],
+            "missing": 0,
+            "modified": 0
+          }
+        },
+        {
+          "path": "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/.local/execution-control-proof/cancel-verified-fingerprinted-standalone-bound/.vectorcraft-gmnejg7o/managed-checkpoint-16.vectorcraft",
+          "layers": 1,
+          "artboards": 3,
+          "dependencies": {
+            "links": [],
+            "missing": 0,
+            "modified": 0
+          }
+        },
+        {
+          "path": "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/.local/execution-control-proof/cancel-verified-fingerprinted-standalone-bound/.vectorcraft-gmnejg7o/managed-checkpoint-2.vectorcraft",
+          "layers": 1,
+          "artboards": 3,
+          "dependencies": {
+            "links": [],
+            "missing": 0,
+            "modified": 0
+          }
+        },
+        {
+          "path": "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/.local/execution-control-proof/cancel-verified-fingerprinted-standalone-bound/.vectorcraft-gmnejg7o/managed-checkpoint-9.vectorcraft",
+          "layers": 1,
+          "artboards": 3,
+          "dependencies": {
+            "links": [],
+            "missing": 0,
+            "modified": 0
+          }
+        }
+      ],
+      "nativeStopped": true,
+      "classification": "verified-interrupted-files; not successful delivery"
+    },
+    "settledState": "cancelled",
+    "settledEpoch": 2,
+    "lateReceiptQuarantined": true
+  },
+  "nativeRevision": {
+    "result": "PASS",
+    "level": "native-candidate",
+    "fingerprints": {
+      "src/cli.ts": "eef02244d70bb0d24157e61152125549c0de386fffb1e650dd8bdc1b4dadbd2e",
+      "src/evaluation/review_store.ts": "1754fc1859ff00ce01ab789c7bf706ae173fb7a4e29ab1d23ab0b4d8b6d6b791",
+      "src/harness/controller.ts": "c1fc21a4549db0f65235a89b6dc53faaaba55250a2deb83a28552fdfb70fa5d3",
+      "src/harness/ledger.ts": "c1aa8d6b7ad7c40d5fc0f1a8d87ddae1df0b29144c904690917e5b79355f660d",
+      "src/harness/process_registry.ts": "c19a3cb5d42cc33620bc5baeff7db71f1c6daa92f046a112951a7f50f7906162",
+      "src/harness/process_runner.py": "7332d0757aa01f03d00697f8eb8d93f849517cab34ea8a1355ba6c9513d5aba2",
+      "src/harness/recovery.ts": "675db847b9e7d8d3f272746a8fcb92fa419f2b07a281f42e8ddff8d556d627a5",
+      "src/strict_json.ts": "69a445339670e53f6a7fcb96770b53b896666dd1e60f114c1751a23981d5b7d0",
+      "scripts/acceptance/execution_identity.ts": "923b35a9ddd6d6f7a2b6f22e2f597012a84bbee51b111c5a005d173af490a422",
+      "scripts/acceptance/managed_cancel.ts": "f087ac62a7db9160935b9663ee045594ebd37541610a99a5ef7065eb20d76fd0",
+      "scripts/acceptance/record_execution_control.py": "9ded1a54b482c84ff477e0c3a1d97aa2dd362e61a5cd749b327adae1f95dc37b",
+      "scripts/acceptance/single_round.ts": "309115ba29a4b5ea69e70099a58d657ff1e29d48284af42a9d3461fefee9c84f",
+      "schemas/vector-review-receipt.schema.json": "d1e94365af9e75ce55de82df50a36eb37a65d0da4b19f66e704b00e9b35641ab",
+      "schemas/vector-review-request.schema.json": "7abda15fe87ef22574690914c00b86d2aa13d3a3f081f97ac691d3d25adad161"
+    },
+    "scope": "single supplied host receipt, durable exchange, explicit brand revision and control preservation; not independent review or automatic loop",
+    "skillSha256": "a332ea661bdbea83302e0b07194fff7501671c916e4e3cda3fb6f79b460e2622",
+    "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+    "sourceProjectSha256": "9fc91755273aa5e7e56e84bd47e66b4ccf076f7ba28f421634d91b2de430eec5",
+    "reviewRequestSha256": "463141c4a4de39f0d4d45af827b6b3905f0fd178495c320ffeb49d1a22a18248",
+    "receiptSha256": "137e6949a91154b45eb702a8b5985ba099610433c86afbe950bdb2c18800b9b8",
+    "proposalSha256": "f4d62ed3e9912a1650c339c0c8784324580815aa972c4769cb167abf13926652",
+    "reviewState": "revision_proposed",
+    "independent": false,
+    "revisionState": "review_ready",
+    "brandDependencyCheck": {
+      "schema": "vectorcraft-brand-dependency-check/v1",
+      "status": "passed",
+      "token": "Brand Primary",
+      "paletteChangedUnexpectedly": false,
+      "tokenTargetMismatch": false,
+      "targetMismatchObjectIds": [],
+      "effect": "updated",
+      "consumerIds": [
+        4,
+        5,
+        7
+      ],
+      "affectedObjectIds": [],
+      "unexpectedDependencies": [],
+      "artboardsChanged": false,
+      "beforeSha256": "d0bd4ee26b195717f087962701aa9331c4c77d8ed626f8bd1d4b0df823512da6",
+      "afterSha256": "03f94e95315cfd703ab555a5a78c51659c0c41b0fa0f54fa4a700d71f406bfed",
+      "scope": "native explicit swatch color fields; consumer noncolor fields, palette, identities, artboards and requested authoring-model target",
+      "checkpoint": "brand-checkpoint-0.vectorcraft",
+      "checkpointSha256": "ecab2f606924c9a4cf11cea2af99144501030611bd2d693f2d191872e1cb4516",
+      "checkpointRetained": false
+    },
+    "sourceUnchanged": true,
+    "unrelatedBoardBytesPreserved": true,
+    "duplicateReceiptRejected": true,
+    "staleTargetRejected": true
+  },
+  "fingerprints": {
+    "src/cli.ts": "eef02244d70bb0d24157e61152125549c0de386fffb1e650dd8bdc1b4dadbd2e",
+    "src/evaluation/review_store.ts": "1754fc1859ff00ce01ab789c7bf706ae173fb7a4e29ab1d23ab0b4d8b6d6b791",
+    "src/harness/controller.ts": "c1fc21a4549db0f65235a89b6dc53faaaba55250a2deb83a28552fdfb70fa5d3",
+    "src/harness/ledger.ts": "c1aa8d6b7ad7c40d5fc0f1a8d87ddae1df0b29144c904690917e5b79355f660d",
+    "src/harness/process_registry.ts": "c19a3cb5d42cc33620bc5baeff7db71f1c6daa92f046a112951a7f50f7906162",
+    "src/harness/recovery.ts": "675db847b9e7d8d3f272746a8fcb92fa419f2b07a281f42e8ddff8d556d627a5",
+    "src/strict_json.ts": "69a445339670e53f6a7fcb96770b53b896666dd1e60f114c1751a23981d5b7d0",
+    "src/harness/process_runner.py": "7332d0757aa01f03d00697f8eb8d93f849517cab34ea8a1355ba6c9513d5aba2",
+    "tests/controller.test.ts": "4ea3a0a83fcacc885fd1df8ce43ab9d73cedbcf74064db03ab69dca3298d547b",
+    "tests/harness.test.ts": "586cc9e5431a11be1f43e5e9cea55fbb976b7b386e077fa5a3988daea99d6cde",
+    "tests/process_registry.test.ts": "48941fc7c65ac71ffb87672504a9e94a56cb5d87f5fe4deeb54843b8221c780a",
+    "tests/recovery.test.ts": "ab728924eeb0d141376beeda279940c678f73ed8e3eb2ce5cfc3f00ffb50d253",
+    "tests/test_contract_reference.py": "9a0a27ce81b79be857bc0553161e6f4a8b1064ce25d6f29caf1751ecac219276",
+    "tests/test_current_readme_identity.py": "365242f7f49ac2ede315f0f2e94d25169881aaf928f083109b644ba4fb05e840",
+    "tests/test_optimization_integrity.py": "a17e60e9f73d901f79192ca8f30bac0a0c3537338a3c54fde07f03ef31c9506d",
+    "tests/test_skill_vendor.py": "9c2e78e0de746a8acb010714a2503d9f91ba07193edbe6362b4d8cd08c527802",
+    "tests/test_skill_vendor_self_contained.py": "3c28f7ebbabd27c751824c41b80c8c8b459dbbc2dffa733fe7070ac9863140e6",
+    "tests/test_source_plan_identity.py": "f5baa55086bb68f035322f70553385c29d9f5e1d1ef046db8bbdecd0d08e2965",
+    "schemas/vector-review-receipt.schema.json": "d1e94365af9e75ce55de82df50a36eb37a65d0da4b19f66e704b00e9b35641ab",
+    "schemas/vector-review-request.schema.json": "7abda15fe87ef22574690914c00b86d2aa13d3a3f081f97ac691d3d25adad161",
+    "package.json": "a2ec9ab9cff7e0e189ae39518a097d7852cebc7df8e8fc53cc2897b9c17831f9",
+    "plugin.json": "6ac3a7f31ee912c25608a65086dccb38dd45955eea6022787feacc7e274f5ad4",
+    "skills.lock.json": "feb49a0da5d09ef70d171dc1817cedc3564fa68668651c5491481fca2585e8fc",
+    "scripts/current_identity.py": "4ccc8cb8a761c6e3c4a64ab7e59f19b47b28263321e26c45f72e265f539c01ea",
+    "scripts/evidence_index.py": "48397f95961d2f84b9a3c1137c1629a6c101d6cfe09b42193bc10bafaf5c192a",
+    "scripts/acceptance/single_round.ts": "309115ba29a4b5ea69e70099a58d657ff1e29d48284af42a9d3461fefee9c84f",
+    "scripts/acceptance/managed_cancel.ts": "f087ac62a7db9160935b9663ee045594ebd37541610a99a5ef7065eb20d76fd0",
+    "scripts/acceptance/execution_identity.ts": "923b35a9ddd6d6f7a2b6f22e2f597012a84bbee51b111c5a005d173af490a422",
+    "scripts/acceptance/record_execution_control.py": "9ded1a54b482c84ff477e0c3a1d97aa2dd362e61a5cd749b327adae1f95dc37b",
+    "docs/vector-review-rubric.json": "47d0bc2a91a19357e2279f66e10af68bf15644dd51be40e0465521c8c4c6ef9b",
+    ".github/workflows/implementation.yml": "a23d9159c699e180d2a2bdc86f34de46b5ac9272741540e160917b660e60f352",
+    "docs/evidence/optimization-logs/execution-control-node.log": "c2c8f1887dbd9a37641d91432c4bad76498464924baa889b6de3f3df5c39d1bf",
+    "docs/evidence/optimization-logs/execution-control-plugin-baseline-red.log": "e7ea26bcf6e02bab34396e99bdcbda8ac7901bf13033ba08fdd47f10b0133109",
+    "docs/evidence/optimization-logs/execution-control-create.log": "db990479a79b563d510b4029e76840f709d584c522408d3b11bf0be7810f0854",
+    "docs/evidence/optimization-logs/execution-control-cancel.log": "15ce419225d84042ae60829a2799db0cec417b624d58e3fbeab23a1ab565a850",
+    "docs/evidence/optimization-logs/execution-control-review.log": "c48908b2ce2ed19bd0fc53a6b46abf09f0f5e398fa4cd74c1bad7e811f78d309",
+    "docs/evidence/optimization-logs/execution-control-plugin-python.log": "eef979b6d75a01562fb150b8fa59c54ebdbfcd3d8021a7ca01ed4d16e033b5a0"
+  },
+  "sourceEvidence": {
+    "path": "docs/evidence/vectorcraft-optimization-source-candidate-20261008.json",
+    "sha256": "7898a5d042884f06632b18bb080a519aa617be04e36dfaa00090879844715d64"
+  },
+  "baselineReplay": "original logs lost to external temporary-directory cleanup; HEAD replay explicitly labelled",
+  "fixedPluginVersion": "0.1.0-dev.37",
+  "fixedSkillSource": "v0.1.0-dev.33",
+  "newSourceCandidate": "0.1.0-dev.34",
+  "fixedInstallation": "NOT_RUN",
+  "actualGitHubCI": "NOT_RUN",
+  "fullV1": "incomplete",
+  "publicationRedaction": {
+    "privateWorkspacePaths": "<workspace>",
+    "artifactHashesPreserved": true,
+    "sourceEvidenceDigest": "digest of sanitized source report; original execution fingerprints retained"
+  }
+}

@@ -10,3 +10,6 @@ __pycache__/
 .openspec-cache/
 .codex/
 .claude/
+
+# 经脱敏、用于可复核验收的固定日志
+!docs/evidence/optimization-logs/*.log

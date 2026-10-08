@@ -1,0 +1,87 @@
+Immutable HEAD baseline replay after implementation; not the original pre-implementation log.
+HEAD=7498a7fb336200f8c81d93eca8f1426ef433bcae
+node:internal/modules/esm/resolve:271
+    throw new ERR_MODULE_NOT_FOUND(
+          ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find module '<plugin-repository>/.local/execution-control-proof/plugin-baseline/src/harness/ledger.ts' imported from <plugin-repository>/.local/execution-control-proof/plugin-baseline/tests/harness.test.ts
+    at finalizeResolution (node:internal/modules/esm/resolve:271:11)
+    at moduleResolve (node:internal/modules/esm/resolve:865:10)
+    at defaultResolve (node:internal/modules/esm/resolve:992:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:701:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:721:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:759:56)
+    at #resolve (node:internal/modules/esm/loader:683:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:603:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33)
+    at ModuleJob.link (node:internal/modules/esm/module_job:253:17) {
+  code: 'ERR_MODULE_NOT_FOUND',
+  url: 'file://<plugin-repository>/.local/execution-control-proof/plugin-baseline/src/harness/ledger.ts'
+}
+
+Node.js v24.18.0
+✖ tests/harness.test.ts (63.528834ms)
+node:internal/modules/esm/resolve:271
+    throw new ERR_MODULE_NOT_FOUND(
+          ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find module '<plugin-repository>/.local/execution-control-proof/plugin-baseline/src/harness/process_registry.ts' imported from <plugin-repository>/.local/execution-control-proof/plugin-baseline/tests/process_registry.test.ts
+    at finalizeResolution (node:internal/modules/esm/resolve:271:11)
+    at moduleResolve (node:internal/modules/esm/resolve:865:10)
+    at defaultResolve (node:internal/modules/esm/resolve:992:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:701:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:721:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:759:56)
+    at #resolve (node:internal/modules/esm/loader:683:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:603:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33)
+    at ModuleJob.link (node:internal/modules/esm/module_job:253:17) {
+  code: 'ERR_MODULE_NOT_FOUND',
+  url: 'file://<plugin-repository>/.local/execution-control-proof/plugin-baseline/src/harness/process_registry.ts'
+}
+
+Node.js v24.18.0
+✖ tests/process_registry.test.ts (61.402ms)
+node:internal/modules/esm/resolve:271
+    throw new ERR_MODULE_NOT_FOUND(
+          ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find module '<plugin-repository>/.local/execution-control-proof/plugin-baseline/src/harness/ledger.ts' imported from <plugin-repository>/.local/execution-control-proof/plugin-baseline/tests/recovery.test.ts
+    at finalizeResolution (node:internal/modules/esm/resolve:271:11)
+    at moduleResolve (node:internal/modules/esm/resolve:865:10)
+    at defaultResolve (node:internal/modules/esm/resolve:992:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:701:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:721:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:759:56)
+    at #resolve (node:internal/modules/esm/loader:683:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:603:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33)
+    at ModuleJob.link (node:internal/modules/esm/module_job:253:17) {
+  code: 'ERR_MODULE_NOT_FOUND',
+  url: 'file://<plugin-repository>/.local/execution-control-proof/plugin-baseline/src/harness/ledger.ts'
+}
+
+Node.js v24.18.0
+✖ tests/recovery.test.ts (61.01675ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 0
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 67.156042
+
+✖ failing tests:
+
+test at tests/harness.test.ts:1:1
+✖ tests/harness.test.ts (63.528834ms)
+  'test failed'
+
+test at tests/process_registry.test.ts:1:1
+✖ tests/process_registry.test.ts (61.402ms)
+  'test failed'
+
+test at tests/recovery.test.ts:1:1
+✖ tests/recovery.test.ts (61.01675ms)
+  'test failed'

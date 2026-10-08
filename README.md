@@ -1,6 +1,6 @@
 # VectorCraft Agent Plugin
 
-Development plugin37/source33 fixes missing inherited brand variants through native.command. Candidate native acceptance passes; fixed installed qualification remains separate. [Architecture](docs/VectorCraft-Brand-Gateway-Export-Architecture.md).
+Fixed plugin37/source33 passed bounded installed brand-export acceptance. A newer source candidate and plugin orchestration modules are under local validation; their fixed-release and host acceptance remain separate. [Architecture](docs/VectorCraft-Brand-Gateway-Export-Architecture.md).
 
 Fixed plugin36/source32 passes13 independent native cold installations,26 real workflow tests and52 injected erroneous-update refusals. All64 installed identities match;51 unchanged skills retain revalidated historical cold evidence. Art bundled upgrades and complete V1 remain open. [Fixed acceptance](docs/VectorCraft-Fixed-Brand-Guard-Architecture.md).
 
@@ -10,7 +10,7 @@ Four-domain RT-001 runtime source/integrity acceptance now covers every current 
 
 Create Logo, icon and brand assets as `.vectorcraft` with applicable SVG, PDF and PNG exports.
 
-Current plugin: `0.1.0-dev.37`; skill source: `0.1.0-dev.33`; 13 independent skills.
+Current plugin: `0.1.0-dev.38`; skill source: `0.1.0-dev.35`; 13 independent skills.
 
 Verified first-use platform: macOS arm64 and Python 3.11+. Pinned runtimes install into the user data directory; skill files stay in their host-loaded directory. These are development releases; complete V1 acceptance and generic Skills CLI installation remain open.
 
@@ -105,9 +105,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.37 |
+| Metadata version | 0.1.0-dev.38 |
 | Stage | implementation-in-progress |
-| Skills source | vectorcraft-skills / v0.1.0-dev.33 |
+| Skills source | vectorcraft-skills / v0.1.0-dev.35 |
 | Execution | Upstream CLI; ArtCraft uses child adapters |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |
@@ -300,3 +300,11 @@ This plugin pins protocol authority to ArtCraft dev.109 and retains its locked s
 Fixed releases Film38/Effect38/Photo37/Vector35/Art109 pass actual isolated Codex installation/discovery of 64 skills, 16 installed protocol file digests, and 64 CLI probes using five fresh domain caches. Each of ten Art skills freshly passes its own empty-public-runtime native Photo mask/adjustment creation, source revision and moved package verification. The remaining 54 skills reuse historical native proof only when the entire skill hash matches. Maintainer defaults now select this matrix; generic Skills CLI installation, model dispatch, GUI and complete V1/protocol acceptance remain open. [Fixed evidence](docs/evidence/craft-archive-prefix-fixed-first-use-20261008.json).
 
 Fixed plugin dev.37/source dev.33: all13 actual installed skills independently cold-install the native CLI. Direct and gateway revisions inherit nine SVG/PNG/PDF variants over three artboards; bound colors change, unrelated and source files stay intact, and explicit-empty/tampered-plan cases pass. The other51 skills reuse historical cold records after unchanged identity verification. Art116 still bundles Vector32; full V1 remains incomplete. [Fixed acceptance evidence](docs/evidence/craft-vector37-gateway-export-fixed-first-use-20261008.json).
+
+## Optimization implementation
+
+[Current fixed identity](docs/current-identity.json) and [layered evidence index](docs/evidence-index.json) distinguish published skills from source candidates. The root runtime lock is a historical baseline; each installed skill owns its execution lock. Plugin-local SQLite coordination and single-round review modules are development implementations. Their local tests do not imply complete cancellation, restart, host/model or V1 acceptance. See [implementation guide](docs/VectorCraft-Optimization-Implementation.md).
+
+### dev.38 development prerelease
+
+This release pins source dev.35. Earlier dev.37/source33 installation and candidate execution reports retain their original fingerprints as historical evidence. Local regression and CI do not establish new host installation, model routing, exhaustive command execution or full V1 acceptance. Marketplace eligibility remains false.

@@ -63,7 +63,9 @@
         "3.14"
       ],
       "owner": "Harness owner",
-      "status": "planned"
+      "status": "in-progress",
+      "candidateEvidence": "docs/evidence/vectorcraft-execution-control-20261008.json",
+      "scope": "failure tests and minimum controlled execution implemented; bounded native cancellation/restart/original-file inspection proven; full acceptance tasks3.3/3.6/3.9 remain open"
     },
     {
       "requirement": "VC-TX-002",
@@ -74,7 +76,9 @@
         "3.6"
       ],
       "owner": "Harness owner",
-      "status": "planned"
+      "status": "in-progress",
+      "candidateEvidence": "docs/evidence/vectorcraft-execution-control-20261008.json",
+      "scope": "failure tests and minimum controlled execution implemented; bounded native cancellation/restart/original-file inspection proven; full acceptance tasks3.3/3.6/3.9 remain open"
     },
     {
       "requirement": "VC-TX-003",
@@ -85,7 +89,9 @@
         "3.9"
       ],
       "owner": "Harness owner",
-      "status": "planned"
+      "status": "in-progress",
+      "candidateEvidence": "docs/evidence/vectorcraft-execution-control-20261008.json",
+      "scope": "failure tests and minimum controlled execution implemented; bounded native cancellation/restart/original-file inspection proven; full acceptance tasks3.3/3.6/3.9 remain open"
     },
     {
       "requirement": "VC-DM-001",
@@ -196,7 +202,9 @@
         "6.3"
       ],
       "owner": "Harness owner",
-      "status": "planned"
+      "status": "in-progress",
+      "candidateEvidence": "docs/evidence/vectorcraft-optimization-local-20261008.json",
+      "scope": "new SQLite/controller/review units and bounded native single round; complete native stop/reconciliation/authorization/plateau acceptance open"
     },
     {
       "requirement": "VC-QA-002",
@@ -207,7 +215,9 @@
         "6.6"
       ],
       "owner": "Harness owner",
-      "status": "planned"
+      "status": "in-progress",
+      "candidateEvidence": "docs/evidence/vectorcraft-optimization-local-20261008.json",
+      "scope": "new SQLite/controller/review units and bounded native single round; complete native stop/reconciliation/authorization/plateau acceptance open"
     },
     {
       "requirement": "VC-RL-001",
@@ -331,6 +341,104 @@
       "owner": "Desktop gateway owner",
       "status": "source-verified",
       "evidence": "docs/evidence/craft-four-desktop-live-bridge-20261007.json"
+    },
+    {
+      "requirement": "VC-TX-005",
+      "capability": "task-execution",
+      "tasks": [
+        "9.1",
+        "9.2",
+        "9.3"
+      ],
+      "owner": "Skills owner",
+      "status": "candidate-verified-pending-fixed-install",
+      "priority": "P0",
+      "evidence": "docs/evidence/vectorcraft-optimization-local-20261008.json",
+      "scope": "section9 implementation and bounded candidate evidence; release/installation/full foundational gates remain separate"
+    },
+    {
+      "requirement": "VC-DM-008",
+      "capability": "domain-workflow",
+      "tasks": [
+        "9.4",
+        "9.5",
+        "9.6"
+      ],
+      "owner": "Domain owner",
+      "status": "candidate-verified-pending-fixed-install",
+      "priority": "P0",
+      "evidence": "docs/evidence/vectorcraft-optimization-local-20261008.json",
+      "scope": "section9 implementation and bounded candidate evidence; release/installation/full foundational gates remain separate"
+    },
+    {
+      "requirement": "VC-SK-004",
+      "capability": "skills-distribution",
+      "tasks": [
+        "9.7",
+        "9.8",
+        "9.9"
+      ],
+      "owner": "Skills owner",
+      "status": "candidate-verified-pending-host-dispatch",
+      "priority": "P1",
+      "evidence": "docs/evidence/vectorcraft-optimization-local-20261008.json",
+      "scope": "section9 implementation and bounded candidate evidence; release/installation/full foundational gates remain separate"
+    },
+    {
+      "requirement": "VC-RL-003",
+      "capability": "release-compatibility",
+      "tasks": [
+        "9.10",
+        "9.11",
+        "9.12"
+      ],
+      "owner": "Release owner",
+      "status": "bounded-identity-verification-passed",
+      "priority": "P1",
+      "evidence": "docs/evidence/vectorcraft-optimization-local-20261008.json",
+      "scope": "section9 implementation and bounded candidate evidence; release/installation/full foundational gates remain separate"
+    },
+    {
+      "requirement": "VC-AR-003",
+      "capability": "artifact-delivery",
+      "tasks": [
+        "9.13",
+        "9.14",
+        "9.15"
+      ],
+      "owner": "Harness owner",
+      "status": "bounded-integrity-verification-passed",
+      "priority": "P1",
+      "evidence": "docs/evidence/vectorcraft-optimization-local-20261008.json",
+      "scope": "section9 implementation and bounded candidate evidence; release/installation/full foundational gates remain separate"
+    },
+    {
+      "requirement": "VC-RL-004",
+      "capability": "release-compatibility",
+      "tasks": [
+        "9.16",
+        "9.17",
+        "9.18"
+      ],
+      "owner": "Release owner",
+      "status": "local-ci-equivalents-passed-pending-release",
+      "priority": "P1",
+      "evidence": "docs/evidence/vectorcraft-optimization-local-20261008.json",
+      "scope": "section9 implementation and bounded candidate evidence; release/installation/full foundational gates remain separate"
+    },
+    {
+      "requirement": "VC-QA-003",
+      "capability": "quality-review",
+      "tasks": [
+        "9.19",
+        "9.20",
+        "9.21"
+      ],
+      "owner": "Harness owner",
+      "status": "single-round-candidate-passed-full-foundations-open",
+      "priority": "P2",
+      "evidence": "docs/evidence/vectorcraft-optimization-local-20261008.json",
+      "scope": "section9 implementation and bounded candidate evidence; release/installation/full foundational gates remain separate"
     }
   ]
 }

@@ -1,0 +1,120 @@
+#!/usr/bin/env python3
+"""分层索引既有证据；只复用依赖未变化的结论，不提升 NOT_RUN 或 SKIP。"""
+import argparse
+import hashlib
+import json
+from pathlib import Path
+
+ROOT=Path(__file__).resolve().parents[1]
+LEVELS={'static','local-tests','native-candidate','fixed-install','host-load','gui','model','command-execution'}
+STATUSES={'PASS','FAIL','SKIP','NOT_RUN'}
+
+
+def safe_file(root, value):
+    """只接受仓内普通相对文件；父目录链接也不允许。"""
+    if not isinstance(value,str) or not value or '\\' in value or Path(value).is_absolute() or any(p in ('', '.', '..') for p in value.split('/')):
+        raise ValueError('invalid_evidence_path')
+    path=root/value
+    if any(p.is_symlink() for p in [path,*path.parents] if p.is_relative_to(root)) or not path.is_file() or not path.resolve().is_relative_to(root.resolve()):
+        raise ValueError('invalid_evidence_path')
+    return path
+
+
+def sha(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def record(root, path, level, status, dependencies, scope, requirement=None, tasks=(), historical=False):
+    """登记报告与输入摘要；证据层级必须由调用方明确声明。"""
+    if level not in LEVELS: raise ValueError('invalid_evidence_level')
+    if status not in STATUSES or not scope: raise ValueError('invalid_evidence_status_or_scope')
+    report=safe_file(root,path)
+    if report.suffix=='.json':
+        data=json.loads(report.read_text())
+        observed=data.get('result',data.get('status','')).upper()
+        observed={'PASSED':'PASS','FAILED':'FAIL','SKIPPED':'SKIP'}.get(observed,observed)
+        if observed and observed!=status: raise ValueError('evidence_status_mismatch')
+    return {'path':path,'sha256':sha(report),'level':level,'status':status,'scope':scope,
+            'requirement':requirement,'tasks':list(tasks),'historical':historical,
+            'dependencies':{p:sha(safe_file(root,p)) for p in dependencies}}
+
+
+def verify(root, entry):
+    """依赖或报告内容失配即过期；不根据文件名判定通过。"""
+    if entry.get('level') not in LEVELS or entry.get('status') not in STATUSES:
+        raise ValueError('invalid_evidence_record')
+    stale=[]
+    for path, expected in {entry['path']:entry['sha256'],**entry['dependencies']}.items():
+        try:
+            if sha(safe_file(root,path))!=expected: stale.append(path)
+        except ValueError:
+            stale.append(path)
+    return {'path':entry['path'],'state':'stale' if stale else 'historical' if entry.get('historical') else 'current',
+            'status':entry['status'],'level':entry['level'],'staleDependencies':stale,'scope':entry['scope']}
+
+
+def bound_report(root,path,level,scope,requirement=None,tasks=()):
+    """读取执行时登记的摘要，不重新采样当前文件来洗白旧结论。"""
+    data=json.loads(safe_file(root,path).read_text())
+    dependencies=data.get('fingerprints',{})
+    if not dependencies:raise ValueError('missing_execution_fingerprints')
+    entry=record(root,path,level,'PASS',[],scope,requirement,tasks)
+    entry['dependencies']=dependencies
+    for name,digest in dependencies.items():
+        safe_file(root,name)
+        if not isinstance(digest,str) or len(digest)!=64:raise ValueError('invalid_execution_fingerprint')
+    return entry
+
+
+def build(root=ROOT):
+    """将当前固定安装与历史报告并列索引，不声称本轮重新执行。"""
+    current='docs/evidence/craft-vector37-gateway-export-fixed-first-use-20261008.json'
+    historical='docs/evidence/craft-full-command-fixed-first-use-20261007.json'
+    observed=json.loads(safe_file(root,current).read_text())['hostLock']['plugins']['vectorcraft']
+    plugin=json.loads(safe_file(root,'plugin.json').read_text())
+    source=json.loads(safe_file(root,'skills.lock.json').read_text())['sources'][0]
+    matching=(observed['version']==plugin['version'] and observed['skillSourceSha']==source['sha']
+              and observed['skillSourceRef']==source['ref'] and observed['skills']==source['sha256']
+              and observed['pluginManifestSha256']==sha(safe_file(root,'plugin.json')))
+    entries=[
+                record(root,current,'fixed-install','PASS',['skills.lock.json','plugin.json'] if matching else [],'published plugin37/source33; 13 standalone cold starts and two brand export routes; retained historical proof, not newly run', 'VC-DM-006',['4.30'],historical=not matching),
+                record(root,historical,'host-load','PASS',[],'historical 58-skill matrix; does not describe later 64-skill inventories or this source candidate', historical=True),
+                record(root,'docs/evidence/craft-fixed64-every-skill-cold-first-use-20261007.json','fixed-install','PASS',[],'64-skill cold matrix at its recorded versions (vectorcraft plugin30); not latest plugin37 or source34 acceptance', historical=True)]
+    local='docs/evidence/vectorcraft-optimization-local-20261008.json'
+    candidate_current=True
+    if (root/local).is_file():
+        candidate=json.loads(safe_file(root,local).read_text())
+        old_version=candidate.get('fixedPluginVersion',candidate.get('pluginFixedVersion'))
+        candidate_current=(old_version==plugin['version'])
+        if candidate_current:
+            entries.append(bound_report(root,local,'local-tests','current plugin Harness and review tests; source candidate code checked in its independent repository','VC-AR-003',['9.13','9.14','9.15']))
+            entries.append(bound_report(root,'docs/evidence/vectorcraft-optimization-single-round-native-20261008.json','native-candidate','supplied receipt and native brand revision; not full sections3/6 acceptance','VC-QA-003'))
+        else:
+            for path,level in [(local,'local-tests'),('docs/evidence/vectorcraft-optimization-single-round-native-20261008.json','native-candidate')]:
+                entries.append(record(root,path,level,'PASS',[],'pre-release candidate at its recorded version; execution fingerprints retained in report; not acceptance of this release',historical=True))
+    control='docs/evidence/vectorcraft-execution-control-20261008.json'
+    if (root/control).is_file():
+        if candidate_current:
+            entries.append(bound_report(root,control,'native-candidate','owned process supervision, readonly original-file recovery, cancellation epoch fence; full task acceptance remains open','VC-TX-003',['3.1','3.2','3.4','3.5','3.7','3.8']))
+        else:
+            entries.append(record(root,control,'native-candidate','PASS',[],'pre-release execution control at its original fingerprints; fixed release acceptance remains separate','VC-TX-003',['3.1','3.2','3.4','3.5','3.7','3.8'],historical=True))
+    previous='docs/evidence/vectorcraft-optimization-local-before-execution-control-20261008.json'
+    if (root/previous).is_file():
+        entries.append(record(root,previous,'local-tests','PASS',[],'original execution fingerprints retained inside historical report; never rebound to changed source',historical=True))
+    return {'schema':'vectorcraft-evidence-index/v1',
+            'identitySha256':sha(safe_file(root,'docs/current-identity.json')),
+            'entries':entries,
+            'commandAcceptance':'Use version-bound command catalog executionAcceptance; directory discovery never promotes NOT_RUN',
+            'excluded':['complete V1','all commands','all GUI','model dispatch','source candidate fixed-install acceptance']}
+
+
+if __name__=='__main__':
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--check',action='store_true');args=parser.parse_args()
+    path=ROOT/'docs/evidence-index.json'
+    data=build()
+    if args.check:
+        if not path.is_file() or json.loads(path.read_text())!=data: raise SystemExit('evidence_index_drift')
+        if any(verify(ROOT,entry)['state']=='stale' for entry in data['entries']): raise SystemExit('stale_evidence')
+    else:
+        path.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
+    print(json.dumps({'result':'PASS','scope':'evidence integrity only; original levels preserved','entries':len(data['entries'])}))

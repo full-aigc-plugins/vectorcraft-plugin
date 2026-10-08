@@ -1,0 +1,48 @@
+{
+  "schema": "vectorcraft-review-receipt/v1",
+  "reviewer": {
+    "kind": "host-model",
+    "identity": "Codex current task",
+    "contextOrigin": "same current conversation; actual PNG inspection; no independent context",
+    "independenceEvidence": null
+  },
+  "verdict": "revise",
+  "issues": [
+    {
+      "objectId": 4,
+      "field": "appearance.items.0.paint.color",
+      "message": "Brand Primary remains #2366e8; fixture target requests #175cce. Preserve geometry and NOVA text.",
+      "evidence": [
+        "source/native.json",
+        "source/artboard-1.png"
+      ]
+    },
+    {
+      "objectId": 5,
+      "field": "kind.runs.0.style.fill.color",
+      "message": "Brand Primary remains #2366e8; fixture target requests #175cce. Preserve geometry and NOVA text.",
+      "evidence": [
+        "source/native.json",
+        "source/artboard-1.png"
+      ]
+    },
+    {
+      "objectId": 7,
+      "field": "appearance.items.0.paint.color",
+      "message": "Brand Primary remains #2366e8; fixture target requests #175cce. Preserve geometry and NOVA text.",
+      "evidence": [
+        "source/native.json",
+        "source/artboard-1.png"
+      ]
+    }
+  ],
+  "scores": {
+    "structure": 4,
+    "text": 4,
+    "brand": 2,
+    "layout": 3,
+    "legibility": 4
+  },
+  "requestId": "a58e66a9-89c2-447d-b4c4-e3eeac47ef7b",
+  "bindingHash": "ec119bb2dd2acadaf82561ad8f42608124c0e09ee1e7e128c791888fbef6e547"
+}

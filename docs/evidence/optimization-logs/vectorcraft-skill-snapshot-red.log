@@ -1,0 +1,36 @@
+
+> test
+> node --test tests/*.test.ts
+
+✖ controller binds a supplied standalone snapshot, records intent and verifies actual files (76.231792ms)
+✔ single writer keys the source resource, not output path; epochs fence old writers (5.945834ms)
+✔ idempotency binds input, authorization and runtime; budget and cancellation persist (4.004375ms)
+✔ single-round review binds fresh source, candidate, target and rubric and rejects duplicates (8.484083ms)
+✔ strict review JSON rejects duplicate keys, overflow, malformed values and accepts business error (0.541125ms)
+✔ revision proposals require actual assessed fields and preserve authorization without claiming independence (6.470542ms)
+✔ child tasks share one durable budget and late cancellation receipts are quarantined (3.705667ms)
+✔ review request rejects a claimed revision that differs from actual native bytes (3.203292ms)
+✔ review binds exchange loss and persists rejection reasons across restart (4.5965ms)
+✔ pending reviews survive restart and any bound source, candidate or rubric replacement invalidates acceptance (14.188292ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 9
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 157.244584
+
+✖ failing tests:
+
+test at tests/controller.test.ts:9:1
+✖ controller binds a supplied standalone snapshot, records intent and verifies actual files (76.231792ms)
+  TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string or an instance of Buffer or URL. Received undefined
+      at lstatSync (node:fs:1705:10)
+      at walk (file://<plugin-repository>/src/harness/controller.ts:16:8)
+      at skillDigest (file://<plugin-repository>/src/harness/controller.ts:23:3)
+      at TestContext.<anonymous> (file://<plugin-repository>/tests/controller.test.ts:29:18)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    code: 'ERR_INVALID_ARG_TYPE'
+  }

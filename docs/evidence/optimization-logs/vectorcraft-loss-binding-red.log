@@ -1,0 +1,41 @@
+
+> test
+> node --test tests/*.test.ts
+
+✔ controller binds a supplied standalone snapshot, records intent and verifies actual files (70.301583ms)
+✔ single writer keys the source resource, not output path; epochs fence old writers (6.468166ms)
+✔ idempotency binds input, authorization and runtime; budget and cancellation persist (3.843042ms)
+✔ single-round review binds fresh source, candidate, target and rubric and rejects duplicates (5.565125ms)
+✔ strict review JSON rejects duplicate keys, overflow, malformed values and accepts business error (0.877ms)
+✔ revision proposals require actual assessed fields and preserve authorization without claiming independence (6.083792ms)
+✔ child tasks share one durable budget and late cancellation receipts are quarantined (3.4935ms)
+✔ review request rejects a claimed revision that differs from actual native bytes (3.228083ms)
+✖ review binds exchange loss and persists rejection reasons across restart (3.96325ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 8
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 154.47775
+
+✖ failing tests:
+
+test at tests/harness.test.ts:128:1
+✖ review binds exchange loss and persists rejection reasons across restart (3.96325ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (file://<plugin-repository>/tests/harness.test.ts:136:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1325:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+      at Test.postRun (node:internal/test_runner/test:1465:19)
+      at Test.run (node:internal/test_runner/test:1390:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /stale_review_binding/,
+    operator: 'throws',
+    diff: 'simple'
+  }

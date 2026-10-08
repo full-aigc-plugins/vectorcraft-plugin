@@ -1,0 +1,100 @@
+{
+  "schema": "vectorcraft-evidence-index/v1",
+  "identitySha256": "beb0f50b74ff76cea7a86f250148d50707fd598f610eb5d3e7e9baa812742b6b",
+  "entries": [
+    {
+      "path": "docs/evidence/craft-vector37-gateway-export-fixed-first-use-20261008.json",
+      "sha256": "8e9698a17bb215385b3c260639a77212772623d78312fbeec4a1ccdc4c01b4c4",
+      "level": "fixed-install",
+      "status": "PASS",
+      "scope": "published plugin37/source33; 13 standalone cold starts and two brand export routes; retained historical proof, not newly run",
+      "requirement": "VC-DM-006",
+      "tasks": [
+        "4.30"
+      ],
+      "historical": true,
+      "dependencies": {}
+    },
+    {
+      "path": "docs/evidence/craft-full-command-fixed-first-use-20261007.json",
+      "sha256": "b1fef7d78e5e1791041e0eceb6cfdb5d926db1b2f2c5f59b783e38dbb32ceef5",
+      "level": "host-load",
+      "status": "PASS",
+      "scope": "historical 58-skill matrix; does not describe later 64-skill inventories or this source candidate",
+      "requirement": null,
+      "tasks": [],
+      "historical": true,
+      "dependencies": {}
+    },
+    {
+      "path": "docs/evidence/craft-fixed64-every-skill-cold-first-use-20261007.json",
+      "sha256": "1facc06b280922c91053d483e8408b620397c7656dd639552c2c9e05f9c71824",
+      "level": "fixed-install",
+      "status": "PASS",
+      "scope": "64-skill cold matrix at its recorded versions (vectorcraft plugin30); not latest plugin37 or source34 acceptance",
+      "requirement": null,
+      "tasks": [],
+      "historical": true,
+      "dependencies": {}
+    },
+    {
+      "path": "docs/evidence/vectorcraft-optimization-local-20261008.json",
+      "sha256": "a48d1b652074669e14614f87f8f1ecdf8880a135084aa864be7c1acbb51df047",
+      "level": "local-tests",
+      "status": "PASS",
+      "scope": "pre-release candidate at its recorded version; execution fingerprints retained in report; not acceptance of this release",
+      "requirement": null,
+      "tasks": [],
+      "historical": true,
+      "dependencies": {}
+    },
+    {
+      "path": "docs/evidence/vectorcraft-optimization-single-round-native-20261008.json",
+      "sha256": "0ceecffaf19f0163df9f857e615b0751334863fe0dd4caeef82b8ca2c85f2ae4",
+      "level": "native-candidate",
+      "status": "PASS",
+      "scope": "pre-release candidate at its recorded version; execution fingerprints retained in report; not acceptance of this release",
+      "requirement": null,
+      "tasks": [],
+      "historical": true,
+      "dependencies": {}
+    },
+    {
+      "path": "docs/evidence/vectorcraft-execution-control-20261008.json",
+      "sha256": "609ef07025c94cb54560291264661550482bef711ed8997846362dae1b70f938",
+      "level": "native-candidate",
+      "status": "PASS",
+      "scope": "pre-release execution control at its original fingerprints; fixed release acceptance remains separate",
+      "requirement": "VC-TX-003",
+      "tasks": [
+        "3.1",
+        "3.2",
+        "3.4",
+        "3.5",
+        "3.7",
+        "3.8"
+      ],
+      "historical": true,
+      "dependencies": {}
+    },
+    {
+      "path": "docs/evidence/vectorcraft-optimization-local-before-execution-control-20261008.json",
+      "sha256": "2114e28996da9594cb22a70f93b61daf574a531385612bad7832249229ce1157",
+      "level": "local-tests",
+      "status": "PASS",
+      "scope": "original execution fingerprints retained inside historical report; never rebound to changed source",
+      "requirement": null,
+      "tasks": [],
+      "historical": true,
+      "dependencies": {}
+    }
+  ],
+  "commandAcceptance": "Use version-bound command catalog executionAcceptance; directory discovery never promotes NOT_RUN",
+  "excluded": [
+    "complete V1",
+    "all commands",
+    "all GUI",
+    "model dispatch",
+    "source candidate fixed-install acceptance"
+  ]
+}

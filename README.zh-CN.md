@@ -10,7 +10,7 @@
 
 Logo、图标与品牌图形需求进入，交付 `.vectorcraft` 及适用的 SVG、PDF、PNG。
 
-当前插件：`0.1.0-dev.37`；技能源：`0.1.0-dev.33`；13 个独立技能。
+当前插件：`0.1.0-dev.38`；技能源：`0.1.0-dev.35`；13 个独立技能。
 
 已验证首次使用平台：macOS arm64、Python 3.11+。固定运行时安装在用户数据目录，技能文件保留在宿主加载目录。当前为开发版本；完整首版验收及通用 Skills CLI 实际安装仍未完成。
 
@@ -105,9 +105,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.37 |
+| Metadata version | 0.1.0-dev.38 |
 | Stage | implementation-in-progress |
-| Skills source | vectorcraft-skills / v0.1.0-dev.33 |
+| Skills source | vectorcraft-skills / v0.1.0-dev.35 |
 | Execution | 上游 CLI；ArtCraft 使用子适配器 |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |
@@ -298,3 +298,11 @@ python3 -I -B skills/vectorcraft-use/scripts/workflow.py --help
 固定发行 Film38／Effect38／Photo37／Vector35／Art109 已通过实际隔离 Codex 安装和发现 64 项技能、16 项安装副本协议文件摘要核对、五个全新领域缓存下的 64 项 CLI 探测。十项 ArtCraft 技能分别从空缓存完成原生 Photo 蒙版调整、源工程返工与迁移打包；另外 54 项技能仅复用整个技能摘要一致的历史原生证据。默认维护验收矩阵已更新；通用 Skills CLI 安装、模型调度、GUI 和完整 V1／协议验收仍开放。[本次固定证据](docs/evidence/craft-archive-prefix-fixed-first-use-20261008.json)。
 
 固定插件 dev.37／技能源 dev.33：13 个实际安装技能副本各自空缓存安装原生 CLI，直接与网关返工均继承并导出三画板九份 SVG／PNG／PDF；关联颜色改变，无关图形及原交付字节保持，显式空列表与篡改拒绝通过。其余51项复核未变身份并沿用历史首用记录。Art116 内置 Vector32 尚未升级；完整 V1 未完成。[固定验收证据](docs/evidence/craft-vector37-gateway-export-fixed-first-use-20261008.json)。
+
+## 优化实施
+
+[当前固定身份](docs/current-identity.json)和[分层证据索引](docs/evidence-index.json)区分已发布技能与源码候选。根运行时锁为历史基线，执行版本由各已安装技能自身锁决定。插件本地SQLite编排和单轮评审模块已进入开发实现；本地测试不等于完整取消、重启、宿主／模型或首版验收。参见[实施指南](docs/VectorCraft-Optimization-Implementation.zh-CN.md)。
+
+### dev.38 开发预发布
+
+本版锁定技能源 dev.35。此前 dev.37／source33 的安装与候选执行报告保留原始摘要，按历史证据索引。本地回归与 CI 不代表新版本宿主安装、模型路由、全命令执行或完整 V1 验收；市场准入仍为 false。

@@ -1,0 +1,23 @@
+✔ controller binds a supplied standalone snapshot, records intent and verifies actual files (233.663958ms)
+✔ single writer keys the source resource, not output path; epochs fence old writers (10.001333ms)
+✔ idempotency binds input, authorization and runtime; budget and cancellation persist (10.845167ms)
+✔ single-round review binds fresh source, candidate, target and rubric and rejects duplicates (20.907292ms)
+✔ strict review JSON rejects duplicate keys, overflow, malformed values and accepts business error (0.602208ms)
+✔ revision proposals require actual assessed fields and preserve authorization without claiming independence (5.805042ms)
+✔ child tasks share one durable budget and late cancellation receipts are quarantined (3.519458ms)
+✔ review request rejects a claimed revision that differs from actual native bytes (3.482709ms)
+✔ review binds exchange loss and persists rejection reasons across restart (4.780834ms)
+✔ pending reviews survive restart and any bound source, candidate or rubric replacement invalidates acceptance (12.308625ms)
+✔ review target and authorization schemas reject undeclared target keys and invalid scopes (3.333541ms)
+✔ durable ownership survives registry restart and stops a TERM-ignoring descendant (368.071917ms)
+✔ a forged root identity never authorizes signalling a live group (150.101083ms)
+✔ settling a verified interruption fences the previous epoch and never claims delivery (11.072542ms)
+✔ new or changed original files after inspection keep writer occupation (27.040666ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 597.09375

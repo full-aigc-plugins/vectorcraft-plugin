@@ -152,8 +152,12 @@ def validate(plan):
                 raise ValueError('invalid_document_size')
 
 
-def execute(plan, output, runtime_home=None, source=None):
+def execute(plan, output, runtime_home=None, source=None, control=None):
     validate(plan)
+    if control:
+        control.check()
+        if plan != control.expected_plan:
+            raise ValueError('plan_snapshot_mismatch')
     output = Path(output).absolute()
     output = output.parent.resolve()/output.name
     if output.exists() or output.is_symlink():
@@ -181,7 +185,7 @@ def execute(plan, output, runtime_home=None, source=None):
             source_plan = source / 'plan.json'
             if source_plan.is_symlink() or not source_plan.is_file() or sha(source_plan) != prior['files'].get('plan.json'):
                 raise ValueError('brand_source_plan_digest_mismatch')
-            previous = json.loads(source_plan.read_text())
+            previous = native_module().commands.reply_json(source_plan.read_text())
             plan = {**plan, 'exports': previous.get('exports', [])}
             validate(plan)
     elif 'document' not in plan:
@@ -195,6 +199,8 @@ def execute(plan, output, runtime_home=None, source=None):
     lock = json.loads(Path(__file__).with_name('runtime.lock.json').read_text())
     installed = bootstrap.install(lock, runtime_home or os.environ.get('CRAFT_RUNTIME_HOME', str(Path.home() / '.local/share/craft-runtimes')))
     cli = installed['executable']
+    if control and installed['binarySha256'] != control.profile['runtimeIdentity']:
+        raise ValueError('runtime_identity_mismatch')
     catalog = json.loads(subprocess.check_output([cli, 'commands'], text=True, timeout=30))
     available = {entry['id'] for entry in catalog}
     required = {entry['params']['command'] if entry['command']=='native.command' else entry['command'] for entry in plan['operations']} - {'asset.place', 'asset.replace'} | {'text.fonts'}
@@ -216,12 +222,15 @@ def execute(plan, output, runtime_home=None, source=None):
     execution_identity = {'planHash': hashlib.sha256(json.dumps(plan, sort_keys=True, separators=(',', ':'), allow_nan=False).encode()).hexdigest(),
                          'inputHashes': {name: asset['sha256'] for name, asset in input_assets.items()},
                          'projectRevision': source_hash, 'runtimeSha256': installed['binarySha256']}
-    with guard_module.claim(output, execution_identity), recovery_module.preserved_stage(output, '.vectorcraft-', recovery_state) as temporary, session_module.Session([cli, 'mcp', '--headless']) as session:
+    with guard_module.claim(output, execution_identity), recovery_module.preserved_stage(output, '.vectorcraft-', recovery_state) as temporary, (session_module.Session([cli, 'mcp', '--headless'], control=control) if control else session_module.Session([cli, 'mcp', '--headless'])) as session:
         stage = Path(temporary)
+        if control:
+            control.attach_stage(stage)
         project = stage / 'project.vectorcraft'
         assets = inputs_module.collect(input_assets, stage)
         receipts = []
         brand_checks = []
+        managed_checkpoints = []
         recovery_state['operations'] = receipts
         def command(identifier, params=None, save=True):
             recovery_state['lastAttempt'] = {'command': identifier, 'params': params or {}, 'phase': 'submitted'}
@@ -240,6 +249,16 @@ def execute(plan, output, runtime_home=None, source=None):
             command('file.new', plan['document'])
         for operation in plan['operations']:
             params = resolve(operation.get('params', {}), bindings)
+            managed_command = params.get('command') if operation['command']=='native.command' else operation['command']
+            managed_params = params.get('params',{}) if operation['command']=='native.command' else params
+            managed_checkpoint = None
+            if control and source_project:
+                managed_before = command('document.json', {}, save=False)
+                control.authorize_operation(managed_command,managed_params,managed_before)
+                managed_checkpoint = stage / ('managed-checkpoint-' + str(len(receipts)) + '.vectorcraft')
+                command('document.save', {'path':str(managed_checkpoint)}, save=False)
+                managed_checkpoints.append(managed_checkpoint)
+                control.emit('revision_checkpoint',path=str(managed_checkpoint),sha256=sha(managed_checkpoint))
             brand_params = (params.get('params', {}) if operation['command'] == 'native.command'
                             and params.get('command') == 'swatch.edit' else
                             params if operation['command'] == 'swatch.edit' else None)
@@ -284,8 +303,11 @@ def execute(plan, output, runtime_home=None, source=None):
                 del assets[params['replacement']]
             else:
                 value = command(operation['command'], params)
+            if managed_checkpoint:
+                control.verify_revision(managed_before,command('document.json',{},save=False),managed_command,managed_params)
             if brand_params is not None:
-                check = brand_module().inspect_update(brand_before, command('document.json', {}), brand_params.get('name'))
+                check = brand_module().inspect_update(brand_before, command('document.json', {}),
+                    brand_params.get('name'), brand_params.get('color', brand_params.get('paint', {}).get('color')))
                 check['checkpoint'] = checkpoint.name
                 check['checkpointSha256'] = sha(checkpoint)
                 check['checkpointRetained'] = True
@@ -330,7 +352,7 @@ def execute(plan, output, runtime_home=None, source=None):
             stage = delivery
             project = stage / 'project.vectorcraft'
             command('document.open', {'path': str(project)}, save=False)
-        reopened = session_module.Session([cli, 'mcp', '--headless'])
+        reopened = session_module.Session([cli, 'mcp', '--headless'], control=control) if control else session_module.Session([cli, 'mcp', '--headless'])
         with reopened:
             reopened.command('document.open', {'path': str(project)})
             native = reopened.command('document.json', {})
@@ -387,6 +409,8 @@ def execute(plan, output, runtime_home=None, source=None):
                 (Path(temporary) / check['checkpoint']).unlink()
             (stage / 'brand-dependencies.json').write_text(json.dumps({'schema': 'vectorcraft-brand-dependencies/v1',
                 'checks': brand_checks}, ensure_ascii=False, indent=2) + '\n')
+        for checkpoint in managed_checkpoints:
+            checkpoint.unlink()
         saved_plan = {**plan, **({'assets': {name: {'path': entry['path'], 'sha256': entry['sha256']} for name, entry in assets.items()}} if assets else {})}
         (stage / 'native.json').write_text(json.dumps(portable(native), ensure_ascii=False, indent=2) + '\n')
         (stage / 'plan.json').write_text(json.dumps(portable(saved_plan), ensure_ascii=False, indent=2) + '\n')
@@ -413,16 +437,26 @@ def main():
     parser.add_argument('--output', required=True, type=Path)
     parser.add_argument('--source', type=Path)
     parser.add_argument('--runtime-home', type=Path)
+    parser.add_argument('--control', type=Path, help='显式本地Harness控制配置；逐调用核对取消、epoch及预算')
     parser.add_argument('--asset', action='append', default=[], metavar='NAME=PATH', help='登记输入素材并计算摘要')
     args = parser.parse_args()
     try:
-        plan = json.loads(args.plan.read_text())
+        plan = native_module().commands.reply_json(args.plan.read_text())
         for assignment in args.asset:
             name, separator, path = assignment.partition('=')
             if not separator or not inputs_name(name) or name in plan.get('assets', {}):
                 raise ValueError('asset_binding_invalid')
             plan.setdefault('assets', {})[name] = {'path': path, 'sha256': sha(path)}
-        result = execute(plan, args.output, args.runtime_home, args.source)
+        control = None
+        if args.control:
+            spec = importlib.util.spec_from_file_location('craft_execution_control', Path(__file__).with_name('execution_control.py'))
+            module = importlib.util.module_from_spec(spec); spec.loader.exec_module(module)
+            control = module.ExecutionControl(args.control)
+            import signal
+            def terminated(signum, frame):
+                raise RuntimeError('cancel_requested: managed process termination')
+            signal.signal(signal.SIGTERM, terminated)
+        result = execute(plan, args.output, args.runtime_home, args.source, control)
         print(json.dumps(result, ensure_ascii=False))
     except (ValueError, RuntimeError, OSError, subprocess.SubprocessError) as error:
         print(json.dumps({'error': str(error)}, ensure_ascii=False))

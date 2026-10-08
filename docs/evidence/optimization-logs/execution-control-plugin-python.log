@@ -1,0 +1,8 @@
+..........................fatal: couldn't find remote ref refs/tags/v1.0.0
+..
+----------------------------------------------------------------------
+Ran 28 tests in 6.078s
+
+OK
+fetched <temporary-path> -> f1764c6fafed7cb487a10f1f3cda61c7d884ae6f
+using local tagged source for sample-skills: <temporary-path> @ f1764c6fafed7cb487a10f1f3cda61c7d884ae6f

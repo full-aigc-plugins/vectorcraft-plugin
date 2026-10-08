@@ -1,0 +1,541 @@
+{
+  "schema": "vectorcraft-optimization-candidate/v1",
+  "result": "PASS",
+  "level": "native-candidate",
+  "sourceCandidateVersion": "0.1.0-dev.34",
+  "uncommittedCandidate": true,
+  "scope": "current source regression, 13 standalone cold runtime installations, 10 native scenes, 6 post-save faults, managed native revision/cancellation; not full V1, fixed release or host dispatch",
+  "defaultRegression": {
+    "ran": 162,
+    "passed": 132,
+    "skipped": 30,
+    "failures": 0,
+    "errors": 0
+  },
+  "nativeSceneRegression": {
+    "ran": 12,
+    "contractTests": 2,
+    "nativeSceneCases": 10,
+    "skipped": 0
+  },
+  "native": {
+    "standaloneCold": {
+      "schema": "vectorcraft-candidate-standalone-cold/v1",
+      "result": "PASS",
+      "sourceCandidateVersion": "0.1.0-dev.34",
+      "level": "native-candidate",
+      "scope": "13 individually copied candidate skills and empty native-runtime directories; public locked downloads and 585-command discovery; not fixed plugin installation, host routing or exhaustive execution",
+      "driverSha256": "1bdf77df914c88172cbae9f9bb35aade08926266248e6115259a88eca4be23f4",
+      "cases": [
+        {
+          "skill": "vectorcraft-use",
+          "skillSha256": "a332ea661bdbea83302e0b07194fff7501671c916e4e3cda3fb6f79b460e2622",
+          "version": "vectorcraft-cli 0.2.0-craft.2",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+          "commandsDiscovered": 585,
+          "freshRuntime": true,
+          "spaceInPath": true,
+          "skillUnchanged": true
+        },
+        {
+          "skill": "vectorcraft-cli",
+          "skillSha256": "19e62e6f3d29aabb2b924d5a1512a307b4349c0dfa28b72d05fd4f9c9baf2a84",
+          "version": "vectorcraft-cli 0.2.0-craft.2",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+          "commandsDiscovered": 585,
+          "freshRuntime": true,
+          "spaceInPath": true,
+          "skillUnchanged": true
+        },
+        {
+          "skill": "vectorcraft-cli-setup",
+          "skillSha256": "835914e9e850e98d711e6047a0d57ea503e989020c9d7ad2a3582c28ffef888d",
+          "version": "vectorcraft-cli 0.2.0-craft.2",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+          "commandsDiscovered": 585,
+          "freshRuntime": true,
+          "spaceInPath": true,
+          "skillUnchanged": true
+        },
+        {
+          "skill": "vectorcraft-cli-project",
+          "skillSha256": "ca80fad61959445cab49467429f54cb3808912c1b2bd469d2ce2d353fa509e14",
+          "version": "vectorcraft-cli 0.2.0-craft.2",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+          "commandsDiscovered": 585,
+          "freshRuntime": true,
+          "spaceInPath": true,
+          "skillUnchanged": true
+        },
+        {
+          "skill": "vectorcraft-cli-paths",
+          "skillSha256": "0c5f36a8ecb80a91ea07c29c694b34efc9e0f73c566cc0e2bf2e39f72247597b",
+          "version": "vectorcraft-cli 0.2.0-craft.2",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+          "commandsDiscovered": 585,
+          "freshRuntime": true,
+          "spaceInPath": true,
+          "skillUnchanged": true
+        },
+        {
+          "skill": "vectorcraft-cli-shapes",
+          "skillSha256": "503bc747b5de04f0c4a0171a987bc387c84974cb501360974a1aa3fc82344c3d",
+          "version": "vectorcraft-cli 0.2.0-craft.2",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+          "commandsDiscovered": 585,
+          "freshRuntime": true,
+          "spaceInPath": true,
+          "skillUnchanged": true
+        },
+        {
+          "skill": "vectorcraft-cli-boolean",
+          "skillSha256": "a2932215ed88342ec6aef05b5e3f1999c591fdccadaa32ab7136a1b14e4e78d2",
+          "version": "vectorcraft-cli 0.2.0-craft.2",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+          "commandsDiscovered": 585,
+          "freshRuntime": true,
+          "spaceInPath": true,
+          "skillUnchanged": true
+        },
+        {
+          "skill": "vectorcraft-cli-text",
+          "skillSha256": "bf8c0f1eac96d1231ff87daf805f80dbedd6a7a741bb95b50c3e09b672da704e",
+          "version": "vectorcraft-cli 0.2.0-craft.2",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+          "commandsDiscovered": 585,
+          "freshRuntime": true,
+          "spaceInPath": true,
+          "skillUnchanged": true
+        },
+        {
+          "skill": "vectorcraft-cli-appearance",
+          "skillSha256": "5b803d3e019d72cbcc557c05626577e729484e9a9677eafb796a943882573d08",
+          "version": "vectorcraft-cli 0.2.0-craft.2",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+          "commandsDiscovered": 585,
+          "freshRuntime": true,
+          "spaceInPath": true,
+          "skillUnchanged": true
+        },
+        {
+          "skill": "vectorcraft-cli-artboards",
+          "skillSha256": "58751ad473afdf2c2cadf19a09a95cb1dbe8f9779143880bd5b5a9bf2b9227a2",
+          "version": "vectorcraft-cli 0.2.0-craft.2",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+          "commandsDiscovered": 585,
+          "freshRuntime": true,
+          "spaceInPath": true,
+          "skillUnchanged": true
+        },
+        {
+          "skill": "vectorcraft-cli-assets",
+          "skillSha256": "ba0143c8dad9ee7a8cf880e72889fa75868c7ed3d298a3b2977c650e7356a5c7",
+          "version": "vectorcraft-cli 0.2.0-craft.2",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+          "commandsDiscovered": 585,
+          "freshRuntime": true,
+          "spaceInPath": true,
+          "skillUnchanged": true
+        },
+        {
+          "skill": "vectorcraft-cli-export",
+          "skillSha256": "3b7669c61f4dff4cf793f65f46e4df8848e8737f4510ab51dfef05eee530346c",
+          "version": "vectorcraft-cli 0.2.0-craft.2",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+          "commandsDiscovered": 585,
+          "freshRuntime": true,
+          "spaceInPath": true,
+          "skillUnchanged": true
+        },
+        {
+          "skill": "vectorcraft-cli-selection",
+          "skillSha256": "b483f5c6b7cf40b623005a856ece438d1b5f371eadf85242c6d4ae7a9d6e1d22",
+          "version": "vectorcraft-cli 0.2.0-craft.2",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+          "commandsDiscovered": 585,
+          "freshRuntime": true,
+          "spaceInPath": true,
+          "skillUnchanged": true
+        }
+      ]
+    },
+    "postSaveFaults": {
+      "schema": "craft-native-failed-stage/v1",
+      "domain": "vectorcraft",
+      "result": "PASS",
+      "cases": [
+        {
+          "fault": "malformed",
+          "result": "PASS",
+          "originalStagePreserved": true,
+          "nativeReopened": true,
+          "noReplay": true,
+          "nativeSaveCount": 1,
+          "partialFiles": 2
+        },
+        {
+          "fault": "scalar",
+          "result": "PASS",
+          "originalStagePreserved": true,
+          "nativeReopened": true,
+          "noReplay": true,
+          "nativeSaveCount": 1,
+          "partialFiles": 2
+        },
+        {
+          "fault": "missing",
+          "result": "PASS",
+          "originalStagePreserved": true,
+          "nativeReopened": true,
+          "noReplay": true,
+          "nativeSaveCount": 1,
+          "partialFiles": 2
+        },
+        {
+          "fault": "ambiguous",
+          "result": "PASS",
+          "originalStagePreserved": true,
+          "nativeReopened": true,
+          "noReplay": true,
+          "nativeSaveCount": 1,
+          "partialFiles": 2
+        },
+        {
+          "fault": "nonfinite",
+          "result": "PASS",
+          "originalStagePreserved": true,
+          "nativeReopened": true,
+          "noReplay": true,
+          "nativeSaveCount": 1,
+          "partialFiles": 2
+        },
+        {
+          "fault": "tool-content",
+          "result": "PASS",
+          "originalStagePreserved": true,
+          "nativeReopened": true,
+          "noReplay": true,
+          "nativeSaveCount": 1,
+          "partialFiles": 2
+        }
+      ],
+      "scope": "candidate source with locked installed native CLI; original retained stage inspected and reopened; proxy capture is not recovery input"
+    },
+    "managedCancellation": {
+      "result": "PASS",
+      "level": "native-candidate",
+      "fingerprints": {
+        "src/cli.ts": "eef02244d70bb0d24157e61152125549c0de386fffb1e650dd8bdc1b4dadbd2e",
+        "src/evaluation/review_store.ts": "1754fc1859ff00ce01ab789c7bf706ae173fb7a4e29ab1d23ab0b4d8b6d6b791",
+        "src/harness/controller.ts": "c1fc21a4549db0f65235a89b6dc53faaaba55250a2deb83a28552fdfb70fa5d3",
+        "src/harness/ledger.ts": "c1aa8d6b7ad7c40d5fc0f1a8d87ddae1df0b29144c904690917e5b79355f660d",
+        "src/harness/process_registry.ts": "c19a3cb5d42cc33620bc5baeff7db71f1c6daa92f046a112951a7f50f7906162",
+        "src/harness/process_runner.py": "7332d0757aa01f03d00697f8eb8d93f849517cab34ea8a1355ba6c9513d5aba2",
+        "src/harness/recovery.ts": "675db847b9e7d8d3f272746a8fcb92fa419f2b07a281f42e8ddff8d556d627a5",
+        "src/strict_json.ts": "69a445339670e53f6a7fcb96770b53b896666dd1e60f114c1751a23981d5b7d0",
+        "scripts/acceptance/execution_identity.ts": "923b35a9ddd6d6f7a2b6f22e2f597012a84bbee51b111c5a005d173af490a422",
+        "scripts/acceptance/managed_cancel.ts": "f087ac62a7db9160935b9663ee045594ebd37541610a99a5ef7065eb20d76fd0",
+        "scripts/acceptance/record_execution_control.py": "9ded1a54b482c84ff477e0c3a1d97aa2dd362e61a5cd749b327adae1f95dc37b",
+        "scripts/acceptance/single_round.ts": "309115ba29a4b5ea69e70099a58d657ff1e29d48284af42a9d3461fefee9c84f",
+        "schemas/vector-review-receipt.schema.json": "d1e94365af9e75ce55de82df50a36eb37a65d0da4b19f66e704b00e9b35641ab",
+        "schemas/vector-review-request.schema.json": "7abda15fe87ef22574690914c00b86d2aa13d3a3f081f97ac691d3d25adad161"
+      },
+      "scope": "real checkpoint cancellation, native group stopped, restart readonly recovery of original files/dependencies, cancelled epoch fence and durable late receipt quarantine; no successful delivery or fixed-install claim",
+      "skillSha256": "a332ea661bdbea83302e0b07194fff7501671c916e4e3cda3fb6f79b460e2622",
+      "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "sourceProjectSha256": "9fc91755273aa5e7e56e84bd47e66b4ccf076f7ba28f421634d91b2de430eec5",
+      "taskId": "12439a5a-0f46-4fb1-bb1b-89282b2052e6",
+      "epoch": 1,
+      "state": "cancel_requested",
+      "checkpoint": {
+        "path": "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/.local/execution-control-proof/cancel-verified-fingerprinted-standalone-bound/.vectorcraft-gmnejg7o/managed-checkpoint-2.vectorcraft",
+        "sha256": "a4a78973da11e66decd313b42d75e2bcb2ee5e8a952c549a897e169825cf1b2d",
+        "inode": 618649138,
+        "readonlyReopened": {
+          "layers": 1,
+          "artboards": 3
+        }
+      },
+      "eventSha256": "57a3a35bd99bfabfc4c2d46c16d2190e9ee1a2d6be7a515d6a5d7bbe473aca44",
+      "eventCount": 54,
+      "sourceUnchanged": true,
+      "nativeGroupStopped": true,
+      "dependentWriterRejected": true,
+      "recovery": {
+        "schema": "vectorcraft-original-inspection/v1",
+        "checkId": "35187c4a-e2de-4739-88f1-67862b6cd26f",
+        "task": "12439a5a-0f46-4fb1-bb1b-89282b2052e6",
+        "epoch": 1,
+        "owner": "12439a5a-0f46-4fb1-bb1b-89282b2052e6:inspect:35187c4a-e2de-4739-88f1-67862b6cd26f",
+        "stage": "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/.local/execution-control-proof/cancel-verified-fingerprinted-standalone-bound/.vectorcraft-gmnejg7o",
+        "stageInode": 618649135,
+        "stageDevice": 16777233,
+        "files": {
+          "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/.local/execution-control-proof/cancel-verified-fingerprinted-standalone-bound/.vectorcraft-gmnejg7o/brand-checkpoint-0.vectorcraft": {
+            "sha256": "a4a78973da11e66decd313b42d75e2bcb2ee5e8a952c549a897e169825cf1b2d",
+            "bytes": 33820,
+            "inode": 618649139
+          },
+          "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/.local/execution-control-proof/cancel-verified-fingerprinted-standalone-bound/.vectorcraft-gmnejg7o/brand-checkpoint-1.vectorcraft": {
+            "sha256": "c3d0390f48159c6c4dbf87ad7ff9aae1906470d4b37218cfcf893f28f7464018",
+            "bytes": 33852,
+            "inode": 618649142
+          },
+          "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/.local/execution-control-proof/cancel-verified-fingerprinted-standalone-bound/.vectorcraft-gmnejg7o/brand-checkpoint-2.vectorcraft": {
+            "sha256": "c3d0390f48159c6c4dbf87ad7ff9aae1906470d4b37218cfcf893f28f7464018",
+            "bytes": 33852,
+            "inode": 618649144
+          },
+          "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/.local/execution-control-proof/cancel-verified-fingerprinted-standalone-bound/.vectorcraft-gmnejg7o/brand-dependencies.json": {
+            "sha256": "9ecfb46685b96ce0b87be8e1f76f654fdbfaf537b2f6250742fd62aa24655109",
+            "bytes": 2914,
+            "inode": 618649140
+          },
+          "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/.local/execution-control-proof/cancel-verified-fingerprinted-standalone-bound/.vectorcraft-gmnejg7o/failure.json": {
+            "sha256": "337807ef886de6174737fe904fc3fe603521de4e83fdd8ee0fa22aeeb29ab687",
+            "bytes": 1722,
+            "inode": 618649147
+          },
+          "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/.local/execution-control-proof/cancel-verified-fingerprinted-standalone-bound/.vectorcraft-gmnejg7o/managed-checkpoint-16.vectorcraft": {
+            "sha256": "c3d0390f48159c6c4dbf87ad7ff9aae1906470d4b37218cfcf893f28f7464018",
+            "bytes": 33852,
+            "inode": 618649143
+          },
+          "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/.local/execution-control-proof/cancel-verified-fingerprinted-standalone-bound/.vectorcraft-gmnejg7o/managed-checkpoint-2.vectorcraft": {
+            "sha256": "a4a78973da11e66decd313b42d75e2bcb2ee5e8a952c549a897e169825cf1b2d",
+            "bytes": 33820,
+            "inode": 618649138
+          },
+          "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/.local/execution-control-proof/cancel-verified-fingerprinted-standalone-bound/.vectorcraft-gmnejg7o/managed-checkpoint-9.vectorcraft": {
+            "sha256": "c3d0390f48159c6c4dbf87ad7ff9aae1906470d4b37218cfcf893f28f7464018",
+            "bytes": 33852,
+            "inode": 618649141
+          },
+          "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/.local/execution-control-proof/cancel-verified-fingerprinted-standalone-bound/.vectorcraft-gmnejg7o/recovery-operations.json": {
+            "sha256": "14b01b608fda940c3db0998013e5e258ac9a09fa1c695ecf23a4cdefb3fe339a",
+            "bytes": 458973,
+            "inode": 618649146
+          }
+        },
+        "reopened": [
+          {
+            "path": "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/.local/execution-control-proof/cancel-verified-fingerprinted-standalone-bound/.vectorcraft-gmnejg7o/brand-checkpoint-0.vectorcraft",
+            "layers": 1,
+            "artboards": 3,
+            "dependencies": {
+              "links": [],
+              "missing": 0,
+              "modified": 0
+            }
+          },
+          {
+            "path": "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/.local/execution-control-proof/cancel-verified-fingerprinted-standalone-bound/.vectorcraft-gmnejg7o/brand-checkpoint-1.vectorcraft",
+            "layers": 1,
+            "artboards": 3,
+            "dependencies": {
+              "links": [],
+              "missing": 0,
+              "modified": 0
+            }
+          },
+          {
+            "path": "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/.local/execution-control-proof/cancel-verified-fingerprinted-standalone-bound/.vectorcraft-gmnejg7o/brand-checkpoint-2.vectorcraft",
+            "layers": 1,
+            "artboards": 3,
+            "dependencies": {
+              "links": [],
+              "missing": 0,
+              "modified": 0
+            }
+          },
+          {
+            "path": "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/.local/execution-control-proof/cancel-verified-fingerprinted-standalone-bound/.vectorcraft-gmnejg7o/managed-checkpoint-16.vectorcraft",
+            "layers": 1,
+            "artboards": 3,
+            "dependencies": {
+              "links": [],
+              "missing": 0,
+              "modified": 0
+            }
+          },
+          {
+            "path": "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/.local/execution-control-proof/cancel-verified-fingerprinted-standalone-bound/.vectorcraft-gmnejg7o/managed-checkpoint-2.vectorcraft",
+            "layers": 1,
+            "artboards": 3,
+            "dependencies": {
+              "links": [],
+              "missing": 0,
+              "modified": 0
+            }
+          },
+          {
+            "path": "<workspace>/full-aigc-plugins-repositories/vectorcraft-plugin/.local/execution-control-proof/cancel-verified-fingerprinted-standalone-bound/.vectorcraft-gmnejg7o/managed-checkpoint-9.vectorcraft",
+            "layers": 1,
+            "artboards": 3,
+            "dependencies": {
+              "links": [],
+              "missing": 0,
+              "modified": 0
+            }
+          }
+        ],
+        "nativeStopped": true,
+        "classification": "verified-interrupted-files; not successful delivery"
+      },
+      "settledState": "cancelled",
+      "settledEpoch": 2,
+      "lateReceiptQuarantined": true
+    },
+    "managedRevision": {
+      "result": "PASS",
+      "level": "native-candidate",
+      "fingerprints": {
+        "src/cli.ts": "eef02244d70bb0d24157e61152125549c0de386fffb1e650dd8bdc1b4dadbd2e",
+        "src/evaluation/review_store.ts": "1754fc1859ff00ce01ab789c7bf706ae173fb7a4e29ab1d23ab0b4d8b6d6b791",
+        "src/harness/controller.ts": "c1fc21a4549db0f65235a89b6dc53faaaba55250a2deb83a28552fdfb70fa5d3",
+        "src/harness/ledger.ts": "c1aa8d6b7ad7c40d5fc0f1a8d87ddae1df0b29144c904690917e5b79355f660d",
+        "src/harness/process_registry.ts": "c19a3cb5d42cc33620bc5baeff7db71f1c6daa92f046a112951a7f50f7906162",
+        "src/harness/process_runner.py": "7332d0757aa01f03d00697f8eb8d93f849517cab34ea8a1355ba6c9513d5aba2",
+        "src/harness/recovery.ts": "675db847b9e7d8d3f272746a8fcb92fa419f2b07a281f42e8ddff8d556d627a5",
+        "src/strict_json.ts": "69a445339670e53f6a7fcb96770b53b896666dd1e60f114c1751a23981d5b7d0",
+        "scripts/acceptance/execution_identity.ts": "923b35a9ddd6d6f7a2b6f22e2f597012a84bbee51b111c5a005d173af490a422",
+        "scripts/acceptance/managed_cancel.ts": "f087ac62a7db9160935b9663ee045594ebd37541610a99a5ef7065eb20d76fd0",
+        "scripts/acceptance/record_execution_control.py": "9ded1a54b482c84ff477e0c3a1d97aa2dd362e61a5cd749b327adae1f95dc37b",
+        "scripts/acceptance/single_round.ts": "309115ba29a4b5ea69e70099a58d657ff1e29d48284af42a9d3461fefee9c84f",
+        "schemas/vector-review-receipt.schema.json": "d1e94365af9e75ce55de82df50a36eb37a65d0da4b19f66e704b00e9b35641ab",
+        "schemas/vector-review-request.schema.json": "7abda15fe87ef22574690914c00b86d2aa13d3a3f081f97ac691d3d25adad161"
+      },
+      "scope": "single supplied host receipt, durable exchange, explicit brand revision and control preservation; not independent review or automatic loop",
+      "skillSha256": "a332ea661bdbea83302e0b07194fff7501671c916e4e3cda3fb6f79b460e2622",
+      "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "sourceProjectSha256": "9fc91755273aa5e7e56e84bd47e66b4ccf076f7ba28f421634d91b2de430eec5",
+      "reviewRequestSha256": "463141c4a4de39f0d4d45af827b6b3905f0fd178495c320ffeb49d1a22a18248",
+      "receiptSha256": "137e6949a91154b45eb702a8b5985ba099610433c86afbe950bdb2c18800b9b8",
+      "proposalSha256": "f4d62ed3e9912a1650c339c0c8784324580815aa972c4769cb167abf13926652",
+      "reviewState": "revision_proposed",
+      "independent": false,
+      "revisionState": "review_ready",
+      "brandDependencyCheck": {
+        "schema": "vectorcraft-brand-dependency-check/v1",
+        "status": "passed",
+        "token": "Brand Primary",
+        "paletteChangedUnexpectedly": false,
+        "tokenTargetMismatch": false,
+        "targetMismatchObjectIds": [],
+        "effect": "updated",
+        "consumerIds": [
+          4,
+          5,
+          7
+        ],
+        "affectedObjectIds": [],
+        "unexpectedDependencies": [],
+        "artboardsChanged": false,
+        "beforeSha256": "d0bd4ee26b195717f087962701aa9331c4c77d8ed626f8bd1d4b0df823512da6",
+        "afterSha256": "03f94e95315cfd703ab555a5a78c51659c0c41b0fa0f54fa4a700d71f406bfed",
+        "scope": "native explicit swatch color fields; consumer noncolor fields, palette, identities, artboards and requested authoring-model target",
+        "checkpoint": "brand-checkpoint-0.vectorcraft",
+        "checkpointSha256": "ecab2f606924c9a4cf11cea2af99144501030611bd2d693f2d191872e1cb4516",
+        "checkpointRetained": false
+      },
+      "sourceUnchanged": true,
+      "unrelatedBoardBytesPreserved": true,
+      "duplicateReceiptRejected": true,
+      "staleTargetRejected": true
+    }
+  },
+  "fingerprints": {
+    "skill-suite.json": "253db8c02ead6367b66572834e2b39b3475e086d1b6fa92e063f09e5c9a7619d",
+    ".claude-plugin/plugin.json": "49d82de832769127391c04f77ba676eb4849cef56c19222cd03f9a2d4f4fa9a4",
+    ".github/workflows/implementation.yml": "cb1a020e38e270876cea453e896147a6421ab2af7229a75a75d1aaa0fde6f857",
+    "scripts/build_command_coverage.py": "971cab368319d1c7666b1dbda871cee7170f4e222d82b68b99c129631db54d65",
+    "scripts/build_scenario_catalog.py": "dca1e84fa6f4d7580e611617dc4001191e041c2b79e185755bd6b4457f2a84d6",
+    "scripts/build_skill_contracts.py": "1c434bb5f6849de66482a0bd3259fbc0298571c1ab009a499e79e51e90c23595",
+    "scripts/sync_skill_suite.py": "3dd2ec37f3465dc536d8d4180a7e5cb3d4651058f44b8ce1bd75c896700efa5d",
+    "scripts/verify_optimization_evidence.py": "bb9a21ac892901dc5c27df02aabb36bc10f36630e690cb87553fbc17afd3e5ab",
+    "scripts/verify_standalone_cold.py": "1bdf77df914c88172cbae9f9bb35aade08926266248e6115259a88eca4be23f4",
+    "tests/fixtures/brand_gateway_case.py": "6f9bc99fbd54328e1d0859a915b0ca6a2b58cc62c2fee8bd3bfd03827131c172",
+    "tests/fixtures/protocol_proxy.py": "e7ae95ae6a5a6eb11bbb90c1808bbe8d102bc06911337b9e0f31e5cb5929677f",
+    "tests/fixtures/workflow_protocol_injection.py": "adad2cbf4d75c06e2288f61858ef5f9c8a7d603f8688c315cc4361bb214a133c",
+    "tests/test_advanced_desktop_first_use.py": "7955e93e94a000be884ee1e31d9d3eae1f20151d5ce45e00a40c1b5c1999948f",
+    "tests/test_appearance_gradient_first_use.py": "7ce383f34bd9764401b7f007fc5ddf107a6f39e0572302a3a517dc1a5ef21b7a",
+    "tests/test_artboard_exports_first_use.py": "02371d9ad818e4a02f942c55776af61fda2bba1b594b27f4cbf527606d5f08ee",
+    "tests/test_asset_first_use.py": "04dc033d68ec9718c86d4e57bdc595f06e7b7b68a033de7701634745e487e078",
+    "tests/test_boolean_geometry_first_use.py": "969440d392e42de10a58d2b250308ddc2ea85640bb0e5e3b015c57cfe99b2e30",
+    "tests/test_bootstrap.py": "1e2191c2678989c067ed98268a8149a464218d0ac9b09d0da7c6409d0794c880",
+    "tests/test_brand_export_inheritance.py": "ace8d3c03e636bb9dbe4186e6ab01b9b5cf2af7e84670d24e5acf1df9f167a13",
+    "tests/test_brand_gateway_exports_native.py": "ef751681b8b38a0f4cba04f80bdcafaeae1b6f289d1c927dc4f4d604b7a0257f",
+    "tests/test_brand_guard_native.py": "6a544299e451de6994f80c65d50aee81e5a1f59cd191c102574f42f88f25b101",
+    "tests/test_brand_tokens_native.py": "384fffc578a38a8c2f94822f5d44faa97049b4970835eb288e19db9729a2460a",
+    "tests/test_brand_variant_guard.py": "cd8d08eaa417763ee405cd94b70f117d996d0e746e366dfde17150e1a4d4fdb6",
+    "tests/test_bridge_export_alias.py": "440710378245bf836af55f1cc63dadb5299d29a76cfaf13730caf0f346f11b94",
+    "tests/test_chinese_text_native.py": "0800f649733b8bf8ddeede8511931c8ec73de41d9ced44ca89306bd24f4a9436",
+    "tests/test_command_plan_json.py": "363b4858141b7bb84e1880868200cc3a8debf48f5c4b800880cc3956a56e125b",
+    "tests/test_commands.py": "767a5fce3c15943bf2f57c12bc88795bc43267926db0f8571914e13c3448cc25",
+    "tests/test_desktop_install.py": "fa6dc6c085f2901db548e2cf96ff6e2effe17d841513616ed63c9469169926b7",
+    "tests/test_desktop_session.py": "f9fa7b78e1bfd8d46088b371d51ee855dbb3ae8736616de11ef37bb873bc4088",
+    "tests/test_entry_parity.py": "4f88a10c3a58af9b0bfbb04e73bd61c328b5e42191af923e5714cdc5008ef4a8",
+    "tests/test_exchange_loss.py": "ed9a22c6fab06b152f28751adab0d351f9d74818a0727c0d0f12ca987c37baae",
+    "tests/test_execution_control.py": "aaed3b62235d7f62139aa19481dc493d07e91e8d8339a90b96b1ec7052a9c6bd",
+    "tests/test_first_use.py": "8bdf24b4c705915707304fee9f7dcab5d19b8f30a170b4f7fe4d24b191caf28f",
+    "tests/test_installed_paths.py": "5b5385c1954f18e8c85823ca691f81995e7cf694575fc896ea0bb46497d1c766",
+    "tests/test_mcp_protocol_faults.py": "dc061c627b96280fe2899375a28f4ce8fbcd91b73d4419f0cd3e311dee3878fe",
+    "tests/test_mcp_session.py": "745e34b0b440ab7e071aa295691c6fce5586d8f18d1c6a0af29c78c4561a46a1",
+    "tests/test_native_command_revision.py": "547b6ce97e8b2453770b3ccd7a007c4b707e942eb77cb644be4ea19de4634300",
+    "tests/test_native_commands.py": "f46cb9b1a06edbdbd641c5aeeede50cfe152a483b4245f98042c39e98f75490b",
+    "tests/test_native_preserved_stage.py": "774768c05c4df20c950f518cab95cabbdd42bd533e267bc1e09838dfde02cb6e",
+    "tests/test_native_protocol_faults.py": "2fa5ea4d65e8c240b0fb85a21fc8bf1ae3ce08aa93107b0fbf746f96c0cf008c",
+    "tests/test_native_workflow.py": "b4006b98958eb5d54e99013078020ff076c11e9ffacadb330b53bdbce3c1e1cb",
+    "tests/test_native_workflow_first_use.py": "a2a351f33b169f85669d1ab800880b4f66e2f721a0e756f9043dc747445b8de3",
+    "tests/test_native_workflow_gateway.py": "19faa199e70ad89616950f855ea7d51eca09b035dd18a7bea7c904960c183081",
+    "tests/test_object_scene_routes.py": "d04aac958cecc7789756d48fcc00736fc6db00d27828b514d3cb5e1f2811a3e1",
+    "tests/test_optimization_evidence.py": "89e04b28fbd8d551576a99f8f9293f7513164c0207cc72779d3d0408dee39c9b",
+    "tests/test_output_execution_guard.py": "d26979d229d8554d6c124b4df42bdccd5cbfdb12bf118e2a7008ead2228ac8b1",
+    "tests/test_pdf_export_date.py": "0c070788ffaee553f72d61f0287f72cee60d449e4321abfb813a7223cadb96d2",
+    "tests/test_preserved_stage.py": "49ead9225a8b5f6a24b1e83f8f6c974e3e83a27438d46636f43a28e6f8341093",
+    "tests/test_same_color_token_first_use.py": "8e28261536b7a5a4afe6934c2e08771bc60790c4668e348f54649cf100d3a0e8",
+    "tests/test_scenario_catalog.py": "0091be72531bc4acd06b21ecd1bdd140831a28e2d68808f48ce60ff52adc6618",
+    "tests/test_setup_diagnostics.py": "1d44f3e1716f3a6d5689adc2a3899394b94471bed0980be388e966f4db44c1a7",
+    "tests/test_skill_contracts.py": "615f2e5bb1fbe51e4437bf25d2188e97a3f9c7c9cc3634f68d542202722901c8",
+    "tests/test_skill_suite.py": "cae8a08e3cebaee96b2f761f6ba7a84651d22a62f60d11c620fd772f3d6d4ab8",
+    "tests/test_specialized_scenario.py": "88180efedeecf30978e408f3cad512086b84e8643b564a98f3cacfb0d7320b8d",
+    "tests/test_task_skill_first_use.py": "717d59b46a8866df63f7b0a86311bc3e0b03a6afb5b7bcc4aa7f987e0f11368a",
+    "tests/test_workflow.py": "e3feb28af0eb46d128738c0b5ee6c9ee74dedce2e7805cdd025fc07732ed76ef",
+    "tests/test_workflow_tool_reply.py": "e7e42e60ee526a1cf5661779cedb39cbd3f8ef6506b09d40502af0788594a315",
+    "docs/evidence/optimization-logs/execution-control-source.log": "3cb7d74e4f9b2c4be0d3b6ce43dc433122e46300f91adff2437e8341a54fbacf",
+    "docs/evidence/optimization-logs/execution-control-source-baseline-red.log": "2f79debfd5d62fabd247d1b88fd9428d481afcc0b119603bae75e539b04124d4",
+    "docs/evidence/optimization-logs/execution-control-cold.log": "97e269655cb108aebf225628a8b1fa52d847a04172149f5d31958110d033e301",
+    "docs/evidence/optimization-logs/execution-control-native-scenes.log": "422bc98be162d9c3db9b153aacd21f28c14c2d9217469736be5239538fad3309",
+    "docs/evidence/optimization-logs/execution-control-preserved.log": "d04e1b76c0abd16fc3c968486277b5ab139131ad6eef24c247c6667248e8b6de"
+  },
+  "skills": {
+    "vectorcraft-cli": "19e62e6f3d29aabb2b924d5a1512a307b4349c0dfa28b72d05fd4f9c9baf2a84",
+    "vectorcraft-cli-appearance": "5b803d3e019d72cbcc557c05626577e729484e9a9677eafb796a943882573d08",
+    "vectorcraft-cli-artboards": "58751ad473afdf2c2cadf19a09a95cb1dbe8f9779143880bd5b5a9bf2b9227a2",
+    "vectorcraft-cli-assets": "ba0143c8dad9ee7a8cf880e72889fa75868c7ed3d298a3b2977c650e7356a5c7",
+    "vectorcraft-cli-boolean": "a2932215ed88342ec6aef05b5e3f1999c591fdccadaa32ab7136a1b14e4e78d2",
+    "vectorcraft-cli-export": "3b7669c61f4dff4cf793f65f46e4df8848e8737f4510ab51dfef05eee530346c",
+    "vectorcraft-cli-paths": "0c5f36a8ecb80a91ea07c29c694b34efc9e0f73c566cc0e2bf2e39f72247597b",
+    "vectorcraft-cli-project": "ca80fad61959445cab49467429f54cb3808912c1b2bd469d2ce2d353fa509e14",
+    "vectorcraft-cli-selection": "b483f5c6b7cf40b623005a856ece438d1b5f371eadf85242c6d4ae7a9d6e1d22",
+    "vectorcraft-cli-setup": "835914e9e850e98d711e6047a0d57ea503e989020c9d7ad2a3582c28ffef888d",
+    "vectorcraft-cli-shapes": "503bc747b5de04f0c4a0171a987bc387c84974cb501360974a1aa3fc82344c3d",
+    "vectorcraft-cli-text": "bf8c0f1eac96d1231ff87daf805f80dbedd6a7a741bb95b50c3e09b672da704e",
+    "vectorcraft-use": "a332ea661bdbea83302e0b07194fff7501671c916e4e3cda3fb6f79b460e2622"
+  },
+  "redLogBoundary": "original temporary logs were externally removed; retained red logs are explicitly labelled immutable HEAD baseline replays",
+  "excluded": [
+    "fixed source/plugin release",
+    "fixed installation",
+    "actual host/model dispatch",
+    "independent reviewer",
+    "all585 native commands",
+    "full GUI",
+    "Art bundle",
+    "full task3/6 and V1 acceptance"
+  ],
+  "publicationRedaction": {
+    "privateWorkspacePaths": "<workspace>",
+    "artifactHashesPreserved": true
+  }
+}

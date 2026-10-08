@@ -1,0 +1,43 @@
+
+> test
+> node --test tests/*.test.ts
+
+✔ controller binds a supplied standalone snapshot, records intent and verifies actual files (58.929833ms)
+✔ single writer keys the source resource, not output path; epochs fence old writers (7.184417ms)
+✔ idempotency binds input, authorization and runtime; budget and cancellation persist (4.009166ms)
+✔ single-round review binds fresh source, candidate, target and rubric and rejects duplicates (7.064083ms)
+✔ strict review JSON rejects duplicate keys, overflow, malformed values and accepts business error (0.736916ms)
+✔ revision proposals require actual assessed fields and preserve authorization without claiming independence (5.665542ms)
+✔ child tasks share one durable budget and late cancellation receipts are quarantined (3.43525ms)
+✔ review request rejects a claimed revision that differs from actual native bytes (3.967625ms)
+✔ review binds exchange loss and persists rejection reasons across restart (5.037667ms)
+✔ pending reviews survive restart and any bound source, candidate or rubric replacement invalidates acceptance (13.373208ms)
+✖ review target and authorization schemas reject undeclared target keys and invalid scopes (5.132625ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 10
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 146.57525
+
+✖ failing tests:
+
+test at tests/harness.test.ts:160:1
+✖ review target and authorization schemas reject undeclared target keys and invalid scopes (5.132625ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (file://<plugin-repository>/tests/harness.test.ts:164:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1325:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+      at Test.postRun (node:internal/test_runner/test:1465:19)
+      at Test.run (node:internal/test_runner/test:1390:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /invalid_review_request/,
+    operator: 'throws',
+    diff: 'simple'
+  }

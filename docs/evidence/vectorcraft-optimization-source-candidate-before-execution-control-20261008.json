@@ -1,0 +1,824 @@
+{
+  "schema": "vectorcraft-optimization-candidate/v1",
+  "result": "PASS",
+  "level": "native-candidate",
+  "sourceCandidateVersion": "0.1.0-dev.34",
+  "gitBasis": "ed4a8b2911306b0c4dfd912cca53777c2951c14b",
+  "uncommittedCandidate": true,
+  "scope": "source implementation and bounded native candidate only; not fixed plugin, GitHub CI, host routing, GUI, independent model or V1 acceptance",
+  "affectedEvidenceVerifierRegression": {
+    "ran": 2,
+    "passed": 2,
+    "log": "docs/evidence/optimization-logs/vectorcraft-source-evidence-green.log"
+  },
+  "defaultRegression": {
+    "ran": 159,
+    "passed": 129,
+    "skipped": 30,
+    "failures": 0,
+    "errors": 0
+  },
+  "separateNativeSceneTests": {
+    "ran": 12,
+    "contractTests": 2,
+    "nativeSceneCases": 10,
+    "skipped": 0
+  },
+  "native": {
+    "brandGateway": {
+      "result": "PASS",
+      "skill": "vectorcraft-cli-appearance",
+      "originSkillName": "vectorcraft-cli-appearance",
+      "scope": "single copied skill, actual native create/reopen/brand edit, inherited9 variants and preserved controls; not exhaustive commands or GUI",
+      "coldNativeRuntime": false,
+      "cases": [
+        {
+          "mode": "native-gateway",
+          "inheritedOutputs": 9,
+          "boundPreviewChanged": true,
+          "unrelatedSVGPNGPDFFilesUnchanged": true,
+          "sourcePreserved": true,
+          "guardPassed": true
+        },
+        {
+          "mode": "direct",
+          "inheritedOutputs": 9,
+          "boundPreviewChanged": true,
+          "unrelatedSVGPNGPDFFilesUnchanged": true,
+          "sourcePreserved": true,
+          "guardPassed": true
+        }
+      ],
+      "explicitEmptyExportsRespected": true,
+      "tamperedPlanRefusedBeforeInstallation": true,
+      "skillFilesUnchanged": true,
+      "skillFiles": {
+        "SKILL.md": "af3ef5937285b2b6cdbe906b2502c1c52ba459cb649d1b1210d2af42317319d4",
+        "references/scenario.md": "c6b6b1345495c25e76ced4fa2d30069c33d3984074f5d01ee2c29f58103b7c99",
+        "references/output-execution.md": "baa3d38af5f8d3b01cb36bcc6b89dee3d8449ec676bc52d6f5c2de9f563ba3ac",
+        "references/command-reference.md": "87f39638580025e3d5042da4bda71e255ce9d729850e840ff7baf14a027c08c0",
+        "references/chinese-text.md": "b2229e5054fe2a71ee069b4aba6fa6d87c3ebbf4afaf3d1a2f85a80256948294",
+        "references/command-usage.md": "bd06e79a5c61670fccf4665618637231b48dba31d9d19bde3d5820510167a789",
+        "references/business-scenes.md": "9d11ef8f28be9249f9f7f32e166f307f0cfa7d5ac27520adbbbe483abf043d74",
+        "references/workflow.md": "5c237b8e6b8f5bc901a905dae15de6289172bb95f2a9f7eb0b8a594d8cab6fec",
+        "references/commands.json": "179e46514c1854aa47f3ee989b03c1c10b0e81496d9cc62440179674dcdc5aed",
+        "references/appearance-gradient.md": "712a5822162e95610515d21ee00af77e0c276445f573440fbb360803e94342b7",
+        "references/brand-tokens.md": "ed9b228ccc0376808a51a4a75cb58e75338832260ba6c148a30eae6531c4e9b8",
+        "references/native-command-snapshot.json": "1e63722f850930947c4cc6e9bdbe24638413e43c2e5127dd385f167d493e10e1",
+        "references/operation-contract.json": "c6c6b4d10e8ff5207678d9a27ccf019da5a701372c6c527e052ffc37296e992c",
+        "references/desktop-install.md": "db2db151b0eff30a3381a03ae377fb23ac09b2b4a919859740bd9343e7f14887",
+        "references/installation-concurrency.md": "69067acebcd47f1924a8d6aa9d8a4ce6f44ad0756d44888a21eb224bcdb1c215",
+        "references/exchange-loss.md": "eee665f62b77274ca8ce0efc4117012ade85978905cdfd40ab488af64297b8ae",
+        "references/object-edit-scene.md": "ac760587eaabc1205b20325e48325463fd90efe343df4183fc7ae7f9d07e6550",
+        "references/first-use-failures.md": "ce2a8d1a8ca6b8a29a084d52d105d510476de88d40b439d6c2ff79212581d61d",
+        "references/native-workflow.md": "42fee416c66a69f6f3802abe1be6f002963cf109e7e22a4d6297b6dcaf62b8e9",
+        "references/object-selection-scene.md": "42593e844568184451bf648c84f4f0fafaee5a1644e39b1641fe49a078e336d9",
+        "references/command-coverage.json": "532d2fc467f4fc4c48856e11fdb97ea465276270c882e837a3214692de831a50",
+        "agents/openai.yaml": "a1499d95abd8447558c535fe5554adcc3c9b988a0a39264a6283d430effe1e94",
+        "examples/object-layout-reopen.json": "7ad1f4a35980a2a90198d8b140ba1b486e604f391322484452d88e110d98da5f",
+        "examples/object-layout-create.json": "81d4eda918c6e4a41f41b58658a79eee1841872c49fff0a57d72beb94016127b",
+        "examples/chinese-text.json": "a5f1310bfba6102606079b62712096ae9e4298dffe860dcbab64448619613762",
+        "examples/commands-advanced.json": "eb456387da8df5ac16399c318ebb493fef1e716a537a777420baaa52b89030b8",
+        "examples/selection-brand-revise.json": "10edd02b725c5b0a337d1eb6931942c1bc5e7127c494a1738fecee528ed4ae21",
+        "examples/brand-assets.json": "d4c342c68791d7fb9ca0a966448947d7f9597af66e00245aec3c4d4c43cc6950",
+        "examples/appearance-gradient-create.json": "ff974dd61eac86d7b5bb604ddc60f9ae97ce5c57cd43e65ac3fefc8f8c498aff",
+        "examples/commands-revision-create.json": "c7668b298747a3dec9266826344778e8c977a36df293436531ea1ea8db4a44bc",
+        "examples/native-workflow.json": "e9a89a79c3bdf0ae8ca41958f2fbbdf523ac77da47ecceda6cc97d982e38b265",
+        "examples/desktop-first-use.json": "41461b895abe438b35cfa2fcedec42d883ceb0a77812cb5e21e071b5473f3b2b",
+        "examples/commands-revision.json": "8e416f9ed55a21862cfc6848ca4e9f97b3fbd2b405b9a56faf89dbc016cbe779",
+        "examples/provided-assets.json": "f5a3e15cc7a44b912fd87fc833c00c2e51893b553d90daa6f3682bd9ff4336cd",
+        "examples/object-layout-revise.json": "6e85a7f2e54a1e3126d30f12e41fe02320f30542bd6d0d1044c79e79fd539731",
+        "examples/brand-token-assets.json": "07f3a8acb45b3dd03ecbe96b75c53571a6b7960eb29b6bb10b777194ba3c1202",
+        "examples/selection-brand-create.json": "3343eab1f42ef16e5334382c01c861d523d15d41ff49b6946e02046e582a2e73",
+        "examples/appearance-gradient-revise.json": "3e464a7576f55684c45eaf4b3b4ce94bc53c52a4e360e2a1609372201686f616",
+        "examples/selection-brand-reopen.json": "7ad1f4a35980a2a90198d8b140ba1b486e604f391322484452d88e110d98da5f",
+        "examples/operation-revise.json": "4ed5a5914075583eae05dfab6ac3fc909b2da20558eb466c683355d35443bd78",
+        "scripts/bootstrap.py": "78d5bdf16bf08e9abc96b4b23e5d071da72b648698b888b85fa1b90f81cf32a9",
+        "scripts/exchange_loss.py": "b1e68eb2e4887dc52b3c2e4d071ea4364c1254b3f96ffb6511ad42f9dfc0dff6",
+        "scripts/asset_inputs.py": "b2868a4239ef50648f201be99bb29ad4ddf0d8bdeb5a626c54b3fc1aac701758",
+        "scripts/brand_variants.py": "d5973ec8f36312ae32cf5b3e07d3f96ea32df0bc8a7b07c17d3328918fbc3a55",
+        "scripts/mcp_session.py": "4120204b796b1abbfbe47b873204bd319df93a9192cd59cfefbe46297bc3d512",
+        "scripts/output_guard.py": "7c13abd891370058e670fbfb3db7992d4a8ed7934682c83bde1aabf47ad6846f",
+        "scripts/runtime.lock.json": "7b6bd7f3fab84b757d4ea20ac91b74d89b417ec061efc6ae320dda97a422cc07",
+        "scripts/cli.py": "f59eb61605f0f4ac7213e6f52b83a47a93bf6201101cffd64d332fbb025313d5",
+        "scripts/desktop_session.py": "b6b07a9a18b77386d481a7f263190b0981a7a763dda4f46ad7417a92d416fbb5",
+        "scripts/native_workflow.py": "290108267b948b6ddda6f0865e20f1bdfadd7558442fb1d617125a1ed25eb116",
+        "scripts/desktop.lock.json": "f38c7cd5b837bc4f3275ef96c17308fc894f6be66c6a00ecf9c53378ad4bb486",
+        "scripts/workflow.py": "01c11ab429ef23d5230953e6dcdeb733e2faa63a886cb722a6ee8ee6b89a876f",
+        "scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+        "scripts/commands.py": "41129f7994ee4bbd5eebd3a61f7cbd12b18617cc558d744ebaa92646ec9263c5",
+        "scripts/desktop.py": "24dddb82f1c51ca8e835c582d9b7228aa9d643dfcada11b570bde9191f002f0f"
+      },
+      "nativeRuntimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b"
+    },
+    "consumerFaults": {
+      "schema": "vectorcraft-brand-guard-native/v1",
+      "status": "passed",
+      "fixedInstalled": false,
+      "runtimeReused": true,
+      "nativeRuntimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "faultInjection": "QA-only extra real native consumer text/geometry/stroke and non-consumer fill after swatch.edit reply",
+      "failures": [
+        {
+          "mode": "direct-nonconsumer",
+          "report": {
+            "schema": "vectorcraft-brand-dependency-check/v1",
+            "status": "failed",
+            "token": "Brand Primary",
+            "paletteChangedUnexpectedly": false,
+            "tokenTargetMismatch": false,
+            "targetMismatchObjectIds": [],
+            "effect": "updated",
+            "consumerIds": [
+              2,
+              4
+            ],
+            "affectedObjectIds": [
+              3
+            ],
+            "unexpectedDependencies": [
+              {
+                "token": "Brand Primary",
+                "objectId": 3,
+                "reason": "unbound_object_changed"
+              }
+            ],
+            "artboardsChanged": false,
+            "beforeSha256": "62a04f5c4b1e017acb030e0ca2a46bd07db457dd4c12248fa59142adf58d6b3d",
+            "afterSha256": "37812dbd72d551025d1f55544992e114e7c849aa8341697ee977be1742e999c9",
+            "scope": "native explicit swatch color fields; consumer noncolor fields, palette, identities, artboards and requested authoring-model target",
+            "checkpoint": "brand-checkpoint-0.vectorcraft",
+            "checkpointSha256": "be06004d7e8d8cdc6388be550277e18f49d01b944de6cfa17d09d5db80dc51ae",
+            "checkpointRetained": true
+          },
+          "retainedFileHashesVerified": true,
+          "checkpointIndependentlyReopened": true,
+          "injectionCount": 1
+        },
+        {
+          "mode": "direct-consumer-geometry",
+          "report": {
+            "schema": "vectorcraft-brand-dependency-check/v1",
+            "status": "failed",
+            "token": "Brand Primary",
+            "paletteChangedUnexpectedly": false,
+            "tokenTargetMismatch": false,
+            "targetMismatchObjectIds": [],
+            "effect": "updated",
+            "consumerIds": [
+              2,
+              4
+            ],
+            "affectedObjectIds": [
+              2
+            ],
+            "unexpectedDependencies": [
+              {
+                "token": "Brand Primary",
+                "objectId": 2,
+                "reason": "consumer_noncolor_changed"
+              }
+            ],
+            "artboardsChanged": false,
+            "beforeSha256": "62a04f5c4b1e017acb030e0ca2a46bd07db457dd4c12248fa59142adf58d6b3d",
+            "afterSha256": "fa06ef4c340bfcfbf94fc098ade352320f64248f78a8c9685e21e991da401c55",
+            "scope": "native explicit swatch color fields; consumer noncolor fields, palette, identities, artboards and requested authoring-model target",
+            "checkpoint": "brand-checkpoint-0.vectorcraft",
+            "checkpointSha256": "be06004d7e8d8cdc6388be550277e18f49d01b944de6cfa17d09d5db80dc51ae",
+            "checkpointRetained": true
+          },
+          "retainedFileHashesVerified": true,
+          "checkpointIndependentlyReopened": true,
+          "injectionCount": 1
+        },
+        {
+          "mode": "direct-consumer-text",
+          "report": {
+            "schema": "vectorcraft-brand-dependency-check/v1",
+            "status": "failed",
+            "token": "Brand Primary",
+            "paletteChangedUnexpectedly": false,
+            "tokenTargetMismatch": false,
+            "targetMismatchObjectIds": [],
+            "effect": "updated",
+            "consumerIds": [
+              2,
+              4
+            ],
+            "affectedObjectIds": [
+              4
+            ],
+            "unexpectedDependencies": [
+              {
+                "token": "Brand Primary",
+                "objectId": 4,
+                "reason": "consumer_noncolor_changed"
+              }
+            ],
+            "artboardsChanged": false,
+            "beforeSha256": "62a04f5c4b1e017acb030e0ca2a46bd07db457dd4c12248fa59142adf58d6b3d",
+            "afterSha256": "8a915235a5a27fcd277d12f537ed1f342f0b2ed650dc719aa9a8ce2193e07c3d",
+            "scope": "native explicit swatch color fields; consumer noncolor fields, palette, identities, artboards and requested authoring-model target",
+            "checkpoint": "brand-checkpoint-0.vectorcraft",
+            "checkpointSha256": "be06004d7e8d8cdc6388be550277e18f49d01b944de6cfa17d09d5db80dc51ae",
+            "checkpointRetained": true
+          },
+          "retainedFileHashesVerified": true,
+          "checkpointIndependentlyReopened": true,
+          "injectionCount": 1
+        },
+        {
+          "mode": "direct-consumer-stroke",
+          "report": {
+            "schema": "vectorcraft-brand-dependency-check/v1",
+            "status": "failed",
+            "token": "Brand Primary",
+            "paletteChangedUnexpectedly": false,
+            "tokenTargetMismatch": false,
+            "targetMismatchObjectIds": [],
+            "effect": "updated",
+            "consumerIds": [
+              2,
+              4
+            ],
+            "affectedObjectIds": [
+              2
+            ],
+            "unexpectedDependencies": [
+              {
+                "token": "Brand Primary",
+                "objectId": 2,
+                "reason": "consumer_noncolor_changed"
+              }
+            ],
+            "artboardsChanged": false,
+            "beforeSha256": "62a04f5c4b1e017acb030e0ca2a46bd07db457dd4c12248fa59142adf58d6b3d",
+            "afterSha256": "d1b01555cb8f1ce9287022f29471b14b2a34e224e0509d0c4fe3a76c81f55baf",
+            "scope": "native explicit swatch color fields; consumer noncolor fields, palette, identities, artboards and requested authoring-model target",
+            "checkpoint": "brand-checkpoint-0.vectorcraft",
+            "checkpointSha256": "be06004d7e8d8cdc6388be550277e18f49d01b944de6cfa17d09d5db80dc51ae",
+            "checkpointRetained": true
+          },
+          "retainedFileHashesVerified": true,
+          "checkpointIndependentlyReopened": true,
+          "injectionCount": 1
+        },
+        {
+          "mode": "native-gateway-nonconsumer",
+          "report": {
+            "schema": "vectorcraft-brand-dependency-check/v1",
+            "status": "failed",
+            "token": "Brand Primary",
+            "paletteChangedUnexpectedly": false,
+            "tokenTargetMismatch": false,
+            "targetMismatchObjectIds": [],
+            "effect": "updated",
+            "consumerIds": [
+              2,
+              4
+            ],
+            "affectedObjectIds": [
+              3
+            ],
+            "unexpectedDependencies": [
+              {
+                "token": "Brand Primary",
+                "objectId": 3,
+                "reason": "unbound_object_changed"
+              }
+            ],
+            "artboardsChanged": false,
+            "beforeSha256": "62a04f5c4b1e017acb030e0ca2a46bd07db457dd4c12248fa59142adf58d6b3d",
+            "afterSha256": "37812dbd72d551025d1f55544992e114e7c849aa8341697ee977be1742e999c9",
+            "scope": "native explicit swatch color fields; consumer noncolor fields, palette, identities, artboards and requested authoring-model target",
+            "checkpoint": "brand-checkpoint-0.vectorcraft",
+            "checkpointSha256": "be06004d7e8d8cdc6388be550277e18f49d01b944de6cfa17d09d5db80dc51ae",
+            "checkpointRetained": true
+          },
+          "retainedFileHashesVerified": true,
+          "checkpointIndependentlyReopened": true,
+          "injectionCount": 1
+        },
+        {
+          "mode": "native-gateway-consumer-geometry",
+          "report": {
+            "schema": "vectorcraft-brand-dependency-check/v1",
+            "status": "failed",
+            "token": "Brand Primary",
+            "paletteChangedUnexpectedly": false,
+            "tokenTargetMismatch": false,
+            "targetMismatchObjectIds": [],
+            "effect": "updated",
+            "consumerIds": [
+              2,
+              4
+            ],
+            "affectedObjectIds": [
+              2
+            ],
+            "unexpectedDependencies": [
+              {
+                "token": "Brand Primary",
+                "objectId": 2,
+                "reason": "consumer_noncolor_changed"
+              }
+            ],
+            "artboardsChanged": false,
+            "beforeSha256": "62a04f5c4b1e017acb030e0ca2a46bd07db457dd4c12248fa59142adf58d6b3d",
+            "afterSha256": "fa06ef4c340bfcfbf94fc098ade352320f64248f78a8c9685e21e991da401c55",
+            "scope": "native explicit swatch color fields; consumer noncolor fields, palette, identities, artboards and requested authoring-model target",
+            "checkpoint": "brand-checkpoint-0.vectorcraft",
+            "checkpointSha256": "be06004d7e8d8cdc6388be550277e18f49d01b944de6cfa17d09d5db80dc51ae",
+            "checkpointRetained": true
+          },
+          "retainedFileHashesVerified": true,
+          "checkpointIndependentlyReopened": true,
+          "injectionCount": 1
+        },
+        {
+          "mode": "native-gateway-consumer-text",
+          "report": {
+            "schema": "vectorcraft-brand-dependency-check/v1",
+            "status": "failed",
+            "token": "Brand Primary",
+            "paletteChangedUnexpectedly": false,
+            "tokenTargetMismatch": false,
+            "targetMismatchObjectIds": [],
+            "effect": "updated",
+            "consumerIds": [
+              2,
+              4
+            ],
+            "affectedObjectIds": [
+              4
+            ],
+            "unexpectedDependencies": [
+              {
+                "token": "Brand Primary",
+                "objectId": 4,
+                "reason": "consumer_noncolor_changed"
+              }
+            ],
+            "artboardsChanged": false,
+            "beforeSha256": "62a04f5c4b1e017acb030e0ca2a46bd07db457dd4c12248fa59142adf58d6b3d",
+            "afterSha256": "8a915235a5a27fcd277d12f537ed1f342f0b2ed650dc719aa9a8ce2193e07c3d",
+            "scope": "native explicit swatch color fields; consumer noncolor fields, palette, identities, artboards and requested authoring-model target",
+            "checkpoint": "brand-checkpoint-0.vectorcraft",
+            "checkpointSha256": "be06004d7e8d8cdc6388be550277e18f49d01b944de6cfa17d09d5db80dc51ae",
+            "checkpointRetained": true
+          },
+          "retainedFileHashesVerified": true,
+          "checkpointIndependentlyReopened": true,
+          "injectionCount": 1
+        },
+        {
+          "mode": "native-gateway-consumer-stroke",
+          "report": {
+            "schema": "vectorcraft-brand-dependency-check/v1",
+            "status": "failed",
+            "token": "Brand Primary",
+            "paletteChangedUnexpectedly": false,
+            "tokenTargetMismatch": false,
+            "targetMismatchObjectIds": [],
+            "effect": "updated",
+            "consumerIds": [
+              2,
+              4
+            ],
+            "affectedObjectIds": [
+              2
+            ],
+            "unexpectedDependencies": [
+              {
+                "token": "Brand Primary",
+                "objectId": 2,
+                "reason": "consumer_noncolor_changed"
+              }
+            ],
+            "artboardsChanged": false,
+            "beforeSha256": "62a04f5c4b1e017acb030e0ca2a46bd07db457dd4c12248fa59142adf58d6b3d",
+            "afterSha256": "bdfad381f9bf70f6913a37cfccd08fd1db3e3b103cc9a9eb6ab19a115491bdab",
+            "scope": "native explicit swatch color fields; consumer noncolor fields, palette, identities, artboards and requested authoring-model target",
+            "checkpoint": "brand-checkpoint-0.vectorcraft",
+            "checkpointSha256": "909b84930a02936fa4577774cf03ff0187e54c71d132952dcd366734b3bd8aa9",
+            "checkpointRetained": true
+          },
+          "retainedFileHashesVerified": true,
+          "checkpointIndependentlyReopened": true,
+          "injectionCount": 1
+        }
+      ],
+      "healthyReport": {
+        "schema": "vectorcraft-brand-dependencies/v1",
+        "checks": [
+          {
+            "schema": "vectorcraft-brand-dependency-check/v1",
+            "status": "passed",
+            "token": "Brand Primary",
+            "paletteChangedUnexpectedly": false,
+            "tokenTargetMismatch": false,
+            "targetMismatchObjectIds": [],
+            "effect": "updated",
+            "consumerIds": [
+              2,
+              4
+            ],
+            "affectedObjectIds": [],
+            "unexpectedDependencies": [],
+            "artboardsChanged": false,
+            "beforeSha256": "62a04f5c4b1e017acb030e0ca2a46bd07db457dd4c12248fa59142adf58d6b3d",
+            "afterSha256": "6fe6bd290fc3db0901a208d51b1ed46fe8ed4f02ace19cf1a7be94890564f06b",
+            "scope": "native explicit swatch color fields; consumer noncolor fields, palette, identities, artboards and requested authoring-model target",
+            "checkpoint": "brand-checkpoint-0.vectorcraft",
+            "checkpointSha256": "909b84930a02936fa4577774cf03ff0187e54c71d132952dcd366734b3bd8aa9",
+            "checkpointRetained": false
+          }
+        ]
+      },
+      "sourceFiles": {
+        "artboard-1.png": "e85253e38927f540ea6c7c657343092ea612e2525a1ea92f62c8c2a40615457f",
+        "artboard-1.svg": "ddec81fc6b623a805040dbabc5eac7c078bad67150c0dc29e0c9b1dc0ecfeae2",
+        "exchange-loss.json": "ef8d1ce0f863be91e4c939d3518d1dc0eeeadb98295dd8305e5de0e0536efdb6",
+        "manifest.json": "1cb81257b386884dab34fa84fbbacebe319f267afb12a2e63adc11b5c66dfc4a",
+        "native.json": "08e4b65ae56dc91f0f24cd56a8f064fa801cd877969bcd75bf74f0e6a9920b3e",
+        "operations.json": "41d14e6b7279feafb37d77805f53c2d3b53a29cf2c10bf506e231abcb6536f0f",
+        "plan.json": "8ce4307165d48dda4503e06140016fc4f2e33ef42ec50195a5ae0bc588d09dee",
+        "project.vectorcraft": "be06004d7e8d8cdc6388be550277e18f49d01b944de6cfa17d09d5db80dc51ae"
+      },
+      "healthyFiles": {
+        "artboard-1.png": "6112b838e9c6535ca667bd7fa83d5b42eaf64d5e4b1c9d16e293d97e3bc2c5a9",
+        "artboard-1.svg": "5908059085888e16b757a16683c607526d4ff66c9f057b585fb1948b12cdfe9a",
+        "brand-dependencies.json": "9b791b0aea5ee9fbab8907e66c249fafbb91717059aa3290b32e3ce1cbfc3c15",
+        "exchange-loss.json": "ff026614760b0f3354790553bd8ae57302feef56e79bbd8644e93f70fbe4c6a4",
+        "manifest.json": "242d2027b4197bb05d4ea05f87326731de9deb8a8e41dd799d04fefe16b6c1ef",
+        "native.json": "46e889cd12431d3f762c5fec34f5d46e5c9319a2359c50d7f264a364ac49da45",
+        "operations.json": "ae5b6819c2e9be84cf426d4c839d8861b0ecd566d5ea9c70e9e43604a2ae042b",
+        "plan.json": "171b121a91e47bd419c4e01e836999e7ebc1f943734fc9e42c5cddcbda408883",
+        "project.vectorcraft": "69ab5bdb2051a0a76eb7e29b5e75dff1912e8b0696e16b6f95e2ff2ccd93ef4a"
+      },
+      "instrumentedSkillFiles": {
+        "SKILL.md": "af3ef5937285b2b6cdbe906b2502c1c52ba459cb649d1b1210d2af42317319d4",
+        "agents/openai.yaml": "a1499d95abd8447558c535fe5554adcc3c9b988a0a39264a6283d430effe1e94",
+        "examples/appearance-gradient-create.json": "ff974dd61eac86d7b5bb604ddc60f9ae97ce5c57cd43e65ac3fefc8f8c498aff",
+        "examples/appearance-gradient-revise.json": "3e464a7576f55684c45eaf4b3b4ce94bc53c52a4e360e2a1609372201686f616",
+        "examples/brand-assets.json": "d4c342c68791d7fb9ca0a966448947d7f9597af66e00245aec3c4d4c43cc6950",
+        "examples/brand-token-assets.json": "07f3a8acb45b3dd03ecbe96b75c53571a6b7960eb29b6bb10b777194ba3c1202",
+        "examples/chinese-text.json": "a5f1310bfba6102606079b62712096ae9e4298dffe860dcbab64448619613762",
+        "examples/commands-advanced.json": "eb456387da8df5ac16399c318ebb493fef1e716a537a777420baaa52b89030b8",
+        "examples/commands-revision-create.json": "c7668b298747a3dec9266826344778e8c977a36df293436531ea1ea8db4a44bc",
+        "examples/commands-revision.json": "8e416f9ed55a21862cfc6848ca4e9f97b3fbd2b405b9a56faf89dbc016cbe779",
+        "examples/desktop-first-use.json": "41461b895abe438b35cfa2fcedec42d883ceb0a77812cb5e21e071b5473f3b2b",
+        "examples/native-workflow.json": "e9a89a79c3bdf0ae8ca41958f2fbbdf523ac77da47ecceda6cc97d982e38b265",
+        "examples/object-layout-create.json": "81d4eda918c6e4a41f41b58658a79eee1841872c49fff0a57d72beb94016127b",
+        "examples/object-layout-reopen.json": "7ad1f4a35980a2a90198d8b140ba1b486e604f391322484452d88e110d98da5f",
+        "examples/object-layout-revise.json": "6e85a7f2e54a1e3126d30f12e41fe02320f30542bd6d0d1044c79e79fd539731",
+        "examples/operation-revise.json": "4ed5a5914075583eae05dfab6ac3fc909b2da20558eb466c683355d35443bd78",
+        "examples/provided-assets.json": "f5a3e15cc7a44b912fd87fc833c00c2e51893b553d90daa6f3682bd9ff4336cd",
+        "examples/selection-brand-create.json": "3343eab1f42ef16e5334382c01c861d523d15d41ff49b6946e02046e582a2e73",
+        "examples/selection-brand-reopen.json": "7ad1f4a35980a2a90198d8b140ba1b486e604f391322484452d88e110d98da5f",
+        "examples/selection-brand-revise.json": "10edd02b725c5b0a337d1eb6931942c1bc5e7127c494a1738fecee528ed4ae21",
+        "references/appearance-gradient.md": "712a5822162e95610515d21ee00af77e0c276445f573440fbb360803e94342b7",
+        "references/brand-tokens.md": "ed9b228ccc0376808a51a4a75cb58e75338832260ba6c148a30eae6531c4e9b8",
+        "references/business-scenes.md": "9d11ef8f28be9249f9f7f32e166f307f0cfa7d5ac27520adbbbe483abf043d74",
+        "references/chinese-text.md": "b2229e5054fe2a71ee069b4aba6fa6d87c3ebbf4afaf3d1a2f85a80256948294",
+        "references/command-coverage.json": "532d2fc467f4fc4c48856e11fdb97ea465276270c882e837a3214692de831a50",
+        "references/command-reference.md": "87f39638580025e3d5042da4bda71e255ce9d729850e840ff7baf14a027c08c0",
+        "references/command-usage.md": "bd06e79a5c61670fccf4665618637231b48dba31d9d19bde3d5820510167a789",
+        "references/commands.json": "179e46514c1854aa47f3ee989b03c1c10b0e81496d9cc62440179674dcdc5aed",
+        "references/desktop-install.md": "db2db151b0eff30a3381a03ae377fb23ac09b2b4a919859740bd9343e7f14887",
+        "references/exchange-loss.md": "eee665f62b77274ca8ce0efc4117012ade85978905cdfd40ab488af64297b8ae",
+        "references/first-use-failures.md": "ce2a8d1a8ca6b8a29a084d52d105d510476de88d40b439d6c2ff79212581d61d",
+        "references/installation-concurrency.md": "69067acebcd47f1924a8d6aa9d8a4ce6f44ad0756d44888a21eb224bcdb1c215",
+        "references/native-command-snapshot.json": "1e63722f850930947c4cc6e9bdbe24638413e43c2e5127dd385f167d493e10e1",
+        "references/native-workflow.md": "42fee416c66a69f6f3802abe1be6f002963cf109e7e22a4d6297b6dcaf62b8e9",
+        "references/object-edit-scene.md": "ac760587eaabc1205b20325e48325463fd90efe343df4183fc7ae7f9d07e6550",
+        "references/object-selection-scene.md": "42593e844568184451bf648c84f4f0fafaee5a1644e39b1641fe49a078e336d9",
+        "references/operation-contract.json": "c6c6b4d10e8ff5207678d9a27ccf019da5a701372c6c527e052ffc37296e992c",
+        "references/output-execution.md": "baa3d38af5f8d3b01cb36bcc6b89dee3d8449ec676bc52d6f5c2de9f563ba3ac",
+        "references/scenario.md": "c6b6b1345495c25e76ced4fa2d30069c33d3984074f5d01ee2c29f58103b7c99",
+        "references/workflow.md": "5c237b8e6b8f5bc901a905dae15de6289172bb95f2a9f7eb0b8a594d8cab6fec",
+        "scripts/asset_inputs.py": "b2868a4239ef50648f201be99bb29ad4ddf0d8bdeb5a626c54b3fc1aac701758",
+        "scripts/bootstrap.py": "78d5bdf16bf08e9abc96b4b23e5d071da72b648698b888b85fa1b90f81cf32a9",
+        "scripts/brand_variants.py": "d5973ec8f36312ae32cf5b3e07d3f96ea32df0bc8a7b07c17d3328918fbc3a55",
+        "scripts/cli.py": "f59eb61605f0f4ac7213e6f52b83a47a93bf6201101cffd64d332fbb025313d5",
+        "scripts/commands.py": "41129f7994ee4bbd5eebd3a61f7cbd12b18617cc558d744ebaa92646ec9263c5",
+        "scripts/desktop.lock.json": "f38c7cd5b837bc4f3275ef96c17308fc894f6be66c6a00ecf9c53378ad4bb486",
+        "scripts/desktop.py": "24dddb82f1c51ca8e835c582d9b7228aa9d643dfcada11b570bde9191f002f0f",
+        "scripts/desktop_session.py": "b6b07a9a18b77386d481a7f263190b0981a7a763dda4f46ad7417a92d416fbb5",
+        "scripts/exchange_loss.py": "b1e68eb2e4887dc52b3c2e4d071ea4364c1254b3f96ffb6511ad42f9dfc0dff6",
+        "scripts/mcp_session.py": "4329f893d6097cd3044909e233696ae7171f6a64a03b28cb0a748e96a77a6907",
+        "scripts/native_workflow.py": "290108267b948b6ddda6f0865e20f1bdfadd7558442fb1d617125a1ed25eb116",
+        "scripts/output_guard.py": "7c13abd891370058e670fbfb3db7992d4a8ed7934682c83bde1aabf47ad6846f",
+        "scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+        "scripts/runtime.lock.json": "7b6bd7f3fab84b757d4ea20ac91b74d89b417ec061efc6ae320dda97a422cc07",
+        "scripts/workflow.py": "01c11ab429ef23d5230953e6dcdeb733e2faa63a886cb722a6ee8ee6b89a876f"
+      },
+      "driverSha256": "6a544299e451de6994f80c65d50aee81e5a1f59cd191c102574f42f88f25b101"
+    },
+    "postSaveFaults": {
+      "schema": "craft-native-failed-stage/v1",
+      "domain": "vectorcraft",
+      "result": "PASS",
+      "cases": [
+        {
+          "fault": "malformed",
+          "result": "PASS",
+          "originalStagePreserved": true,
+          "nativeReopened": true,
+          "noReplay": true,
+          "nativeSaveCount": 1,
+          "partialFiles": 2
+        },
+        {
+          "fault": "scalar",
+          "result": "PASS",
+          "originalStagePreserved": true,
+          "nativeReopened": true,
+          "noReplay": true,
+          "nativeSaveCount": 1,
+          "partialFiles": 2
+        },
+        {
+          "fault": "missing",
+          "result": "PASS",
+          "originalStagePreserved": true,
+          "nativeReopened": true,
+          "noReplay": true,
+          "nativeSaveCount": 1,
+          "partialFiles": 2
+        },
+        {
+          "fault": "ambiguous",
+          "result": "PASS",
+          "originalStagePreserved": true,
+          "nativeReopened": true,
+          "noReplay": true,
+          "nativeSaveCount": 1,
+          "partialFiles": 2
+        },
+        {
+          "fault": "nonfinite",
+          "result": "PASS",
+          "originalStagePreserved": true,
+          "nativeReopened": true,
+          "noReplay": true,
+          "nativeSaveCount": 1,
+          "partialFiles": 2
+        },
+        {
+          "fault": "tool-content",
+          "result": "PASS",
+          "originalStagePreserved": true,
+          "nativeReopened": true,
+          "noReplay": true,
+          "nativeSaveCount": 1,
+          "partialFiles": 2
+        }
+      ],
+      "scope": "candidate source with locked installed native CLI; original retained stage inspected and reopened; proxy capture is not recovery input"
+    },
+    "standaloneCold": {
+      "schema": "vectorcraft-candidate-standalone-cold/v1",
+      "result": "PASS",
+      "sourceCandidateVersion": "0.1.0-dev.34",
+      "level": "native-candidate",
+      "scope": "13 individually copied candidate skills and empty native-runtime directories; public locked downloads and 585-command discovery; not fixed plugin installation, host routing or exhaustive execution",
+      "driverSha256": "1bdf77df914c88172cbae9f9bb35aade08926266248e6115259a88eca4be23f4",
+      "cases": [
+        {
+          "skill": "vectorcraft-use",
+          "skillSha256": "a87499f40a624fa3f477c4a5add3fc9d132a7ea06ea08e72c319e85897bd55eb",
+          "version": "vectorcraft-cli 0.2.0-craft.2",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+          "commandsDiscovered": 585,
+          "freshRuntime": true,
+          "spaceInPath": true,
+          "skillUnchanged": true
+        },
+        {
+          "skill": "vectorcraft-cli",
+          "skillSha256": "ad1d15824d0d1a1f34421d5ec2e3f81a1214739b8041fc587de2c1c354792bce",
+          "version": "vectorcraft-cli 0.2.0-craft.2",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+          "commandsDiscovered": 585,
+          "freshRuntime": true,
+          "spaceInPath": true,
+          "skillUnchanged": true
+        },
+        {
+          "skill": "vectorcraft-cli-setup",
+          "skillSha256": "51127f73f99b4b10f5885a592c14081b1dd733798cf1dbf9c032ba9033ec886e",
+          "version": "vectorcraft-cli 0.2.0-craft.2",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+          "commandsDiscovered": 585,
+          "freshRuntime": true,
+          "spaceInPath": true,
+          "skillUnchanged": true
+        },
+        {
+          "skill": "vectorcraft-cli-project",
+          "skillSha256": "3929434adeaae65a0ccc35fd7acd92b8c625bf2834d151dc4cd8ac90e2cdb39e",
+          "version": "vectorcraft-cli 0.2.0-craft.2",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+          "commandsDiscovered": 585,
+          "freshRuntime": true,
+          "spaceInPath": true,
+          "skillUnchanged": true
+        },
+        {
+          "skill": "vectorcraft-cli-paths",
+          "skillSha256": "bbf885609d3e6c0b40cf119afb45d2124d796a12109b0069ec677dc052588535",
+          "version": "vectorcraft-cli 0.2.0-craft.2",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+          "commandsDiscovered": 585,
+          "freshRuntime": true,
+          "spaceInPath": true,
+          "skillUnchanged": true
+        },
+        {
+          "skill": "vectorcraft-cli-shapes",
+          "skillSha256": "a62422c1f1d30b4a27197e7a9c6ae407639d1b332fe6380ed775731bbfbb3e6b",
+          "version": "vectorcraft-cli 0.2.0-craft.2",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+          "commandsDiscovered": 585,
+          "freshRuntime": true,
+          "spaceInPath": true,
+          "skillUnchanged": true
+        },
+        {
+          "skill": "vectorcraft-cli-boolean",
+          "skillSha256": "fdd3c7c3c72b9d347a78c107a68573e8f701a7dd26300f5ff4ef6c50c07d26eb",
+          "version": "vectorcraft-cli 0.2.0-craft.2",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+          "commandsDiscovered": 585,
+          "freshRuntime": true,
+          "spaceInPath": true,
+          "skillUnchanged": true
+        },
+        {
+          "skill": "vectorcraft-cli-text",
+          "skillSha256": "bc06412393c6b2782bcc31cd387ec49cb9b80f6562d118a6de2028e6265fe90e",
+          "version": "vectorcraft-cli 0.2.0-craft.2",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+          "commandsDiscovered": 585,
+          "freshRuntime": true,
+          "spaceInPath": true,
+          "skillUnchanged": true
+        },
+        {
+          "skill": "vectorcraft-cli-appearance",
+          "skillSha256": "224984dc198e5fe57350bba6852cbb56e790a59fe47640adcef7c1783477d1ac",
+          "version": "vectorcraft-cli 0.2.0-craft.2",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+          "commandsDiscovered": 585,
+          "freshRuntime": true,
+          "spaceInPath": true,
+          "skillUnchanged": true
+        },
+        {
+          "skill": "vectorcraft-cli-artboards",
+          "skillSha256": "7e300a2515df6d5de1e984f0261db56a571a502bc7d048cb2af8211c60740b0e",
+          "version": "vectorcraft-cli 0.2.0-craft.2",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+          "commandsDiscovered": 585,
+          "freshRuntime": true,
+          "spaceInPath": true,
+          "skillUnchanged": true
+        },
+        {
+          "skill": "vectorcraft-cli-assets",
+          "skillSha256": "99ede2b8a18f111f03dd335e6c824b1ab419d638ce8a54b19db41e98ffc2a2a4",
+          "version": "vectorcraft-cli 0.2.0-craft.2",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+          "commandsDiscovered": 585,
+          "freshRuntime": true,
+          "spaceInPath": true,
+          "skillUnchanged": true
+        },
+        {
+          "skill": "vectorcraft-cli-export",
+          "skillSha256": "b0c155aeb30ee52d0d41656037e6dcc409de339392ddf64ef290578c7c5094b8",
+          "version": "vectorcraft-cli 0.2.0-craft.2",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+          "commandsDiscovered": 585,
+          "freshRuntime": true,
+          "spaceInPath": true,
+          "skillUnchanged": true
+        },
+        {
+          "skill": "vectorcraft-cli-selection",
+          "skillSha256": "dafd7ef72ee167508c4df5b8b0bca1c461392f391662d42d7d8584a55176618c",
+          "version": "vectorcraft-cli 0.2.0-craft.2",
+          "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+          "commandsDiscovered": 585,
+          "freshRuntime": true,
+          "spaceInPath": true,
+          "skillUnchanged": true
+        }
+      ]
+    }
+  },
+  "completeCommandNative": {
+    "protocolFaultCases": 9,
+    "targetedRevisionCases": 1,
+    "scope": "explicit source candidate cold native opt-in; temporary outputs checked by assertions and cleaned; no fixed-install or GUI claim"
+  },
+  "fingerprints": {
+    "skill-suite.json": "253db8c02ead6367b66572834e2b39b3475e086d1b6fa92e063f09e5c9a7619d",
+    ".claude-plugin/plugin.json": "49d82de832769127391c04f77ba676eb4849cef56c19222cd03f9a2d4f4fa9a4",
+    ".github/workflows/implementation.yml": "cb1a020e38e270876cea453e896147a6421ab2af7229a75a75d1aaa0fde6f857",
+    "scripts/build_command_coverage.py": "971cab368319d1c7666b1dbda871cee7170f4e222d82b68b99c129631db54d65",
+    "scripts/build_scenario_catalog.py": "dca1e84fa6f4d7580e611617dc4001191e041c2b79e185755bd6b4457f2a84d6",
+    "scripts/build_skill_contracts.py": "1c434bb5f6849de66482a0bd3259fbc0298571c1ab009a499e79e51e90c23595",
+    "scripts/sync_skill_suite.py": "3dd2ec37f3465dc536d8d4180a7e5cb3d4651058f44b8ce1bd75c896700efa5d",
+    "scripts/verify_optimization_evidence.py": "bb9a21ac892901dc5c27df02aabb36bc10f36630e690cb87553fbc17afd3e5ab",
+    "scripts/verify_standalone_cold.py": "1bdf77df914c88172cbae9f9bb35aade08926266248e6115259a88eca4be23f4",
+    "tests/fixtures/brand_gateway_case.py": "6f9bc99fbd54328e1d0859a915b0ca6a2b58cc62c2fee8bd3bfd03827131c172",
+    "tests/fixtures/protocol_proxy.py": "e7ae95ae6a5a6eb11bbb90c1808bbe8d102bc06911337b9e0f31e5cb5929677f",
+    "tests/fixtures/workflow_protocol_injection.py": "adad2cbf4d75c06e2288f61858ef5f9c8a7d603f8688c315cc4361bb214a133c",
+    "tests/test_advanced_desktop_first_use.py": "7955e93e94a000be884ee1e31d9d3eae1f20151d5ce45e00a40c1b5c1999948f",
+    "tests/test_appearance_gradient_first_use.py": "7ce383f34bd9764401b7f007fc5ddf107a6f39e0572302a3a517dc1a5ef21b7a",
+    "tests/test_artboard_exports_first_use.py": "02371d9ad818e4a02f942c55776af61fda2bba1b594b27f4cbf527606d5f08ee",
+    "tests/test_asset_first_use.py": "04dc033d68ec9718c86d4e57bdc595f06e7b7b68a033de7701634745e487e078",
+    "tests/test_boolean_geometry_first_use.py": "969440d392e42de10a58d2b250308ddc2ea85640bb0e5e3b015c57cfe99b2e30",
+    "tests/test_bootstrap.py": "1e2191c2678989c067ed98268a8149a464218d0ac9b09d0da7c6409d0794c880",
+    "tests/test_brand_export_inheritance.py": "ace8d3c03e636bb9dbe4186e6ab01b9b5cf2af7e84670d24e5acf1df9f167a13",
+    "tests/test_brand_gateway_exports_native.py": "ef751681b8b38a0f4cba04f80bdcafaeae1b6f289d1c927dc4f4d604b7a0257f",
+    "tests/test_brand_guard_native.py": "6a544299e451de6994f80c65d50aee81e5a1f59cd191c102574f42f88f25b101",
+    "tests/test_brand_tokens_native.py": "384fffc578a38a8c2f94822f5d44faa97049b4970835eb288e19db9729a2460a",
+    "tests/test_brand_variant_guard.py": "cd8d08eaa417763ee405cd94b70f117d996d0e746e366dfde17150e1a4d4fdb6",
+    "tests/test_bridge_export_alias.py": "440710378245bf836af55f1cc63dadb5299d29a76cfaf13730caf0f346f11b94",
+    "tests/test_chinese_text_native.py": "0800f649733b8bf8ddeede8511931c8ec73de41d9ced44ca89306bd24f4a9436",
+    "tests/test_command_plan_json.py": "363b4858141b7bb84e1880868200cc3a8debf48f5c4b800880cc3956a56e125b",
+    "tests/test_commands.py": "767a5fce3c15943bf2f57c12bc88795bc43267926db0f8571914e13c3448cc25",
+    "tests/test_desktop_install.py": "fa6dc6c085f2901db548e2cf96ff6e2effe17d841513616ed63c9469169926b7",
+    "tests/test_desktop_session.py": "f9fa7b78e1bfd8d46088b371d51ee855dbb3ae8736616de11ef37bb873bc4088",
+    "tests/test_entry_parity.py": "4f88a10c3a58af9b0bfbb04e73bd61c328b5e42191af923e5714cdc5008ef4a8",
+    "tests/test_exchange_loss.py": "ed9a22c6fab06b152f28751adab0d351f9d74818a0727c0d0f12ca987c37baae",
+    "tests/test_first_use.py": "8bdf24b4c705915707304fee9f7dcab5d19b8f30a170b4f7fe4d24b191caf28f",
+    "tests/test_installed_paths.py": "5b5385c1954f18e8c85823ca691f81995e7cf694575fc896ea0bb46497d1c766",
+    "tests/test_mcp_protocol_faults.py": "dc061c627b96280fe2899375a28f4ce8fbcd91b73d4419f0cd3e311dee3878fe",
+    "tests/test_mcp_session.py": "745e34b0b440ab7e071aa295691c6fce5586d8f18d1c6a0af29c78c4561a46a1",
+    "tests/test_native_command_revision.py": "547b6ce97e8b2453770b3ccd7a007c4b707e942eb77cb644be4ea19de4634300",
+    "tests/test_native_commands.py": "f46cb9b1a06edbdbd641c5aeeede50cfe152a483b4245f98042c39e98f75490b",
+    "tests/test_native_preserved_stage.py": "774768c05c4df20c950f518cab95cabbdd42bd533e267bc1e09838dfde02cb6e",
+    "tests/test_native_protocol_faults.py": "2fa5ea4d65e8c240b0fb85a21fc8bf1ae3ce08aa93107b0fbf746f96c0cf008c",
+    "tests/test_native_workflow.py": "b4006b98958eb5d54e99013078020ff076c11e9ffacadb330b53bdbce3c1e1cb",
+    "tests/test_native_workflow_first_use.py": "a2a351f33b169f85669d1ab800880b4f66e2f721a0e756f9043dc747445b8de3",
+    "tests/test_native_workflow_gateway.py": "19faa199e70ad89616950f855ea7d51eca09b035dd18a7bea7c904960c183081",
+    "tests/test_object_scene_routes.py": "d04aac958cecc7789756d48fcc00736fc6db00d27828b514d3cb5e1f2811a3e1",
+    "tests/test_optimization_evidence.py": "89e04b28fbd8d551576a99f8f9293f7513164c0207cc72779d3d0408dee39c9b",
+    "tests/test_output_execution_guard.py": "d26979d229d8554d6c124b4df42bdccd5cbfdb12bf118e2a7008ead2228ac8b1",
+    "tests/test_pdf_export_date.py": "0c070788ffaee553f72d61f0287f72cee60d449e4321abfb813a7223cadb96d2",
+    "tests/test_preserved_stage.py": "49ead9225a8b5f6a24b1e83f8f6c974e3e83a27438d46636f43a28e6f8341093",
+    "tests/test_same_color_token_first_use.py": "8e28261536b7a5a4afe6934c2e08771bc60790c4668e348f54649cf100d3a0e8",
+    "tests/test_scenario_catalog.py": "0091be72531bc4acd06b21ecd1bdd140831a28e2d68808f48ce60ff52adc6618",
+    "tests/test_setup_diagnostics.py": "1d44f3e1716f3a6d5689adc2a3899394b94471bed0980be388e966f4db44c1a7",
+    "tests/test_skill_contracts.py": "615f2e5bb1fbe51e4437bf25d2188e97a3f9c7c9cc3634f68d542202722901c8",
+    "tests/test_skill_suite.py": "cae8a08e3cebaee96b2f761f6ba7a84651d22a62f60d11c620fd772f3d6d4ab8",
+    "tests/test_specialized_scenario.py": "88180efedeecf30978e408f3cad512086b84e8643b564a98f3cacfb0d7320b8d",
+    "tests/test_task_skill_first_use.py": "717d59b46a8866df63f7b0a86311bc3e0b03a6afb5b7bcc4aa7f987e0f11368a",
+    "tests/test_workflow.py": "e3feb28af0eb46d128738c0b5ee6c9ee74dedce2e7805cdd025fc07732ed76ef",
+    "tests/test_workflow_tool_reply.py": "e7e42e60ee526a1cf5661779cedb39cbd3f8ef6506b09d40502af0788594a315",
+    "docs/evidence/optimization-logs/vectorcraft-entry-parity-red.log": "042f7d81f00fab3eeda4ec162a41c0e49eb7d4dc5f3a98cc06c02abd72ca2f1d",
+    "docs/evidence/optimization-logs/vectorcraft-fields-red.log": "526438f32cff5d6fb4f6977e9e2e2f2723099cf6c357e19148cd6d8c7fdc402d",
+    "docs/evidence/optimization-logs/vectorcraft-skill-contract-red.log": "2ee6420fe3381a10baeea2460e8a2ac5233cb47fb1b6201159c608212d8a2a3f",
+    "docs/evidence/optimization-logs/vectorcraft-mcp-envelope-red.log": "425318a71cfd8402a228e5ae81ae7501a18099cb64b59078bf5be2d23754b26d",
+    "docs/evidence/optimization-logs/vectorcraft-mcp-envelope-green.log": "3e541e0c34a65aee97399a25016f3c847ea4c594e2946be6474bdd3f88c43cfd",
+    "docs/evidence/optimization-logs/vectorcraft-source-evidence-red.log": "1aa85066917122498c98a201b61849b73d12b35546f4f41f6371d64f1b0e87fd",
+    "docs/evidence/optimization-logs/vectorcraft-source-evidence-green.log": "5e2af7b1e89371ce5312bd313bfef86833257c60dee5d231019c57989a444441",
+    "docs/evidence/optimization-logs/vectorcraft-source-full-final.log": "34b35bc268ad0bf1c19ef0c7aaafb7298db58aed9613301529a16c5424405e81",
+    "docs/evidence/optimization-logs/vectorcraft-scenes-cold-final.log": "fbf046bf1192cc9527030a92f0519cb5a72f0c1ee21243c907e467197c67b1d0",
+    "docs/evidence/optimization-logs/vectorcraft-candidate-13-cold.log": "97e269655cb108aebf225628a8b1fa52d847a04172149f5d31958110d033e301",
+    "docs/evidence/optimization-logs/vectorcraft-consumer-native-final.log": "a88d2ec8247b44ac23b45a2a75ebe7c40787599e7878b7cc9994a8116b8f4419",
+    "docs/evidence/optimization-logs/vectorcraft-candidate-acceptance-final.log": "a7d03d55d835b5d5757d144a4dd89b29295ed4e6de393dacada126c89e473361",
+    "docs/evidence/optimization-logs/vectorcraft-preserved-final.log": "caa218a57fe8cab8f6b3b9065487d116220f6dbb21b8d2f49195713de7a46b29",
+    "docs/evidence/optimization-logs/vectorcraft-native-command-protocol-final.log": "925b246871e09ff6f9da523bf7442ff741d99b8c43f5bfd37fbb6332dcd7016a",
+    "docs/evidence/optimization-logs/vectorcraft-native-command-revision-final.log": "8f66dd364de495c997bb6d5151ab61d2e8a6a11e9ecb411658b79c50e3faa2e0"
+  },
+  "skills": {
+    "vectorcraft-cli": "ad1d15824d0d1a1f34421d5ec2e3f81a1214739b8041fc587de2c1c354792bce",
+    "vectorcraft-cli-appearance": "224984dc198e5fe57350bba6852cbb56e790a59fe47640adcef7c1783477d1ac",
+    "vectorcraft-cli-artboards": "7e300a2515df6d5de1e984f0261db56a571a502bc7d048cb2af8211c60740b0e",
+    "vectorcraft-cli-assets": "99ede2b8a18f111f03dd335e6c824b1ab419d638ce8a54b19db41e98ffc2a2a4",
+    "vectorcraft-cli-boolean": "fdd3c7c3c72b9d347a78c107a68573e8f701a7dd26300f5ff4ef6c50c07d26eb",
+    "vectorcraft-cli-export": "b0c155aeb30ee52d0d41656037e6dcc409de339392ddf64ef290578c7c5094b8",
+    "vectorcraft-cli-paths": "bbf885609d3e6c0b40cf119afb45d2124d796a12109b0069ec677dc052588535",
+    "vectorcraft-cli-project": "3929434adeaae65a0ccc35fd7acd92b8c625bf2834d151dc4cd8ac90e2cdb39e",
+    "vectorcraft-cli-selection": "dafd7ef72ee167508c4df5b8b0bca1c461392f391662d42d7d8584a55176618c",
+    "vectorcraft-cli-setup": "51127f73f99b4b10f5885a592c14081b1dd733798cf1dbf9c032ba9033ec886e",
+    "vectorcraft-cli-shapes": "a62422c1f1d30b4a27197e7a9c6ae407639d1b332fe6380ed775731bbfbb3e6b",
+    "vectorcraft-cli-text": "bc06412393c6b2782bcc31cd387ec49cb9b80f6562d118a6de2028e6265fe90e",
+    "vectorcraft-use": "a87499f40a624fa3f477c4a5add3fc9d132a7ea06ea08e72c319e85897bd55eb"
+  },
+  "excluded": [
+    "new fixed source/plugin release",
+    "actual new plugin installation",
+    "actual host invocation policy",
+    "all585 command execution",
+    "other platforms",
+    "Art distribution",
+    "full sections3/6 contracts",
+    "full V1"
+  ]
+}

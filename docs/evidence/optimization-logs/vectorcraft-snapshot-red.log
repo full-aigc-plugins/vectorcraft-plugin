@@ -1,0 +1,42 @@
+
+> test
+> node --test tests/*.test.ts
+
+✖ controller binds a supplied standalone snapshot, records intent and verifies actual files (53.590958ms)
+✔ single writer keys the source resource, not output path; epochs fence old writers (6.230209ms)
+✔ idempotency binds input, authorization and runtime; budget and cancellation persist (3.598292ms)
+✔ single-round review binds fresh source, candidate, target and rubric and rejects duplicates (6.453125ms)
+✔ strict review JSON rejects duplicate keys, overflow, malformed values and accepts business error (0.668333ms)
+✔ revision proposals require actual assessed fields and preserve authorization without claiming independence (5.777958ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 5
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 142.7635
+
+✖ failing tests:
+
+test at tests/controller.test.ts:9:1
+✖ controller binds a supplied standalone snapshot, records intent and verifies actual files (53.590958ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+  + undefined
+  - {
+  -   operations: []
+  - }
+  
+      at TestContext.<anonymous> (file://<plugin-repository>/tests/controller.test.ts:27:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: { operations: [] },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

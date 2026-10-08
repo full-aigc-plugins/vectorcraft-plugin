@@ -1,0 +1,11 @@
+file://<plugin-repository>/scripts/acceptance/single_round.ts:38
+  ||!input.changes.some((change    )=>change.objectId===c.objectId&&change.field===c.field&&change.value===input.targetColor)))throw new Error('brand_consumers_outside_authorization');
+                                                                                                                                     ^
+
+Error: brand_consumers_outside_authorization
+    at file://<plugin-repository>/scripts/acceptance/single_round.ts:38:134
+    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)
+    at async node:internal/modules/esm/loader:643:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+
+Node.js v24.18.0

@@ -123,7 +123,10 @@ def reply_json(text):
         return result
     value = json.loads(text, parse_constant=constant, object_pairs_hook=object_pairs)
     # 1e999 等合法数值字面量仍可能溢出；不能等到写回执时才发现。
-    json.dumps(value, allow_nan=False)
+    try:
+        json.dumps(value, allow_nan=False)
+    except ValueError:
+        raise ValueError('nonfinite_json_value') from None
     return value
 
 def parse_reply(reply, output=None, index=0):
@@ -147,7 +150,7 @@ def parse_reply(reply, output=None, index=0):
         except (ValueError, TypeError):
             raise RuntimeError('outcome_unknown: unsafe_json_reply') from None
         else:
-            if isinstance(result, dict) and result.get("error"):
+            if isinstance(result, dict) and set(result) == {'error'}:
                 raise RuntimeError("semantic_error: " + json.dumps(result, ensure_ascii=False))
             return result
     if output is None or not content:
@@ -162,7 +165,7 @@ def parse_reply(reply, output=None, index=0):
                 parsed = item["text"]
             except (ValueError, TypeError):
                 raise RuntimeError('outcome_unknown: unsafe_json_reply') from None
-            if isinstance(parsed, dict) and parsed.get("error"):
+            if isinstance(parsed, dict) and set(parsed) == {'error'}:
                 raise RuntimeError("semantic_error: " + json.dumps(parsed, ensure_ascii=False))
             result["content"].append({"type": "text", "value": parsed})
         elif item.get("type") == "image" and item.get("mimeType") in ("image/png", "image/jpeg", "image/webp"):

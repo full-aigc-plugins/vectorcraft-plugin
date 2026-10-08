@@ -1,0 +1,9 @@
+test_current_identity_is_a_checked_artifact (test_optimization_integrity.OptimizationIntegrityTests.test_current_identity_is_a_checked_artifact) ... ok
+test_current_report_identity_cannot_be_rebound_to_a_new_plugin (test_optimization_integrity.OptimizationIntegrityTests.test_current_report_identity_cannot_be_rebound_to_a_new_plugin) ... ok
+test_evidence_changed_dependencies_are_stale_but_unrelated_changes_reuse (test_optimization_integrity.OptimizationIntegrityTests.test_evidence_changed_dependencies_are_stale_but_unrelated_changes_reuse) ... ok
+test_unknown_evidence_level_and_skip_promotion_are_rejected (test_optimization_integrity.OptimizationIntegrityTests.test_unknown_evidence_level_and_skip_promotion_are_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.064s
+
+OK

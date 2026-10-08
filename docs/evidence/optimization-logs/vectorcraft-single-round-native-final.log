@@ -1,0 +1,41 @@
+{
+  "result": "PASS",
+  "level": "native-candidate",
+  "scope": "single supplied host receipt, durable exchange, explicit brand revision and control preservation; not independent review or automatic loop",
+  "skillSha256": "224984dc198e5fe57350bba6852cbb56e790a59fe47640adcef7c1783477d1ac",
+  "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+  "sourceProjectSha256": "51ee222d87151791dddc303a42d1783a5573c61e6a6bdb685ad82f2f52d1b8ea",
+  "reviewRequestSha256": "96daaf3361d0b70790186c24c46df8a09d2fab76f3f9421405a4d1e2a9efb56c",
+  "receiptSha256": "6a527a6d9cdfa23b80768cee6ce733a31f35739f383576865ef06bb82619be9d",
+  "proposalSha256": "0cd72a5b13182044159aa139ab5dfb0f5f595686143c0c5c9e019c50227f60e3",
+  "reviewState": "revision_proposed",
+  "independent": false,
+  "revisionState": "review_ready",
+  "brandDependencyCheck": {
+    "schema": "vectorcraft-brand-dependency-check/v1",
+    "status": "passed",
+    "token": "Brand Primary",
+    "paletteChangedUnexpectedly": false,
+    "tokenTargetMismatch": false,
+    "targetMismatchObjectIds": [],
+    "effect": "updated",
+    "consumerIds": [
+      4,
+      5,
+      7
+    ],
+    "affectedObjectIds": [],
+    "unexpectedDependencies": [],
+    "artboardsChanged": false,
+    "beforeSha256": "aff0eab9391defa95f7fbe32421f32866d8afc49afebd07421e07897d61adf9b",
+    "afterSha256": "acc755d8662c94aa44855d5828c31048f570e6ef46fda3c886420f8b01330132",
+    "scope": "native explicit swatch color fields; consumer noncolor fields, palette, identities, artboards and requested authoring-model target",
+    "checkpoint": "brand-checkpoint-0.vectorcraft",
+    "checkpointSha256": "12cdd17bb027913c53feab9d8e0f5d16b24dc75c5ddd80b1a8232c6146b1fa31",
+    "checkpointRetained": false
+  },
+  "sourceUnchanged": true,
+  "unrelatedBoardBytesPreserved": true,
+  "duplicateReceiptRejected": true,
+  "staleTargetRejected": true
+}
