@@ -1,0 +1,11 @@
+test_actual_immutable_fixed_evidence_passes (test_brand_text_evidence.BrandTextEvidenceTests.test_actual_immutable_fixed_evidence_passes) ... ok
+test_modified_native_proof_without_binding_is_stale (test_brand_text_evidence.BrandTextEvidenceTests.test_modified_native_proof_without_binding_is_stale) ... ok
+test_rebound_host_still_requires_fixed_commit (test_brand_text_evidence.BrandTextEvidenceTests.test_rebound_host_still_requires_fixed_commit) ... ok
+test_rebound_matrix_still_requires_all_scenarios (test_brand_text_evidence.BrandTextEvidenceTests.test_rebound_matrix_still_requires_all_scenarios) ... ok
+test_rebound_native_failure_cannot_pass_scenario (test_brand_text_evidence.BrandTextEvidenceTests.test_rebound_native_failure_cannot_pass_scenario) ... ok
+test_rebound_source_only_matrix_cannot_replace_native (test_brand_text_evidence.BrandTextEvidenceTests.test_rebound_source_only_matrix_cannot_replace_native) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.511s
+
+OK

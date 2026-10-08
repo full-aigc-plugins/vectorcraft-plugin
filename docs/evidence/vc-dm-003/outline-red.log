@@ -1,0 +1,67 @@
+test_editable_svg_text_remains_an_observation_not_roundtrip_fidelity (test_exchange_loss.ExchangeLossTests.test_editable_svg_text_remains_an_observation_not_roundtrip_fidelity) ... ERROR
+test_invalid_text_mode_or_nonoutput_metadata_is_refused (test_exchange_loss.ExchangeLossTests.test_invalid_text_mode_or_nonoutput_metadata_is_refused) ...
+  test_invalid_text_mode_or_nonoutput_metadata_is_refused (test_exchange_loss.ExchangeLossTests.test_invalid_text_mode_or_nonoutput_metadata_is_refused) (metadata={'graphic.svg': 'outlined'}) ... ERROR
+  test_invalid_text_mode_or_nonoutput_metadata_is_refused (test_exchange_loss.ExchangeLossTests.test_invalid_text_mode_or_nonoutput_metadata_is_refused) (metadata={'other.svg': 'appearance'}) ... ERROR
+  test_invalid_text_mode_or_nonoutput_metadata_is_refused (test_exchange_loss.ExchangeLossTests.test_invalid_text_mode_or_nonoutput_metadata_is_refused) (metadata={'graphic.svg': True}) ... ERROR
+test_missing_native_and_escaping_export_are_rejected (test_exchange_loss.ExchangeLossTests.test_missing_native_and_escaping_export_are_rejected) ... ok
+test_observed_appearance_mode_reports_loss_of_live_text_editing (test_exchange_loss.ExchangeLossTests.test_observed_appearance_mode_reports_loss_of_live_text_editing) ... ERROR
+test_paths_alone_do_not_prove_text_was_outlined (test_exchange_loss.ExchangeLossTests.test_paths_alone_do_not_prove_text_was_outlined) ... ERROR
+test_report_binds_native_and_exports_and_never_claims_unknown_fidelity (test_exchange_loss.ExchangeLossTests.test_report_binds_native_and_exports_and_never_claims_unknown_fidelity) ... ok
+test_svg_font_and_effect_fidelity_remain_explicitly_unknown (test_exchange_loss.ExchangeLossTests.test_svg_font_and_effect_fidelity_remain_explicitly_unknown) ... ok
+
+======================================================================
+ERROR: test_editable_svg_text_remains_an_observation_not_roundtrip_fidelity (test_exchange_loss.ExchangeLossTests.test_editable_svg_text_remains_an_observation_not_roundtrip_fidelity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<skill-source>/tests/test_exchange_loss.py", line 58, in test_editable_svg_text_remains_an_observation_not_roundtrip_fidelity
+    report=m.write_report(root,['graphic.svg'],{}, {'graphic.svg':'editable'})
+TypeError: write_report() takes 3 positional arguments but 4 were given
+
+======================================================================
+ERROR: test_invalid_text_mode_or_nonoutput_metadata_is_refused (test_exchange_loss.ExchangeLossTests.test_invalid_text_mode_or_nonoutput_metadata_is_refused) (metadata={'graphic.svg': 'outlined'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<skill-source>/tests/test_exchange_loss.py", line 66, in test_invalid_text_mode_or_nonoutput_metadata_is_refused
+    with self.subTest(metadata=metadata),self.assertRaisesRegex(ValueError,'loss_text_mode_invalid'):m.write_report(root,['graphic.svg'],{},metadata)
+                                                                                                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: write_report() takes 3 positional arguments but 4 were given
+
+======================================================================
+ERROR: test_invalid_text_mode_or_nonoutput_metadata_is_refused (test_exchange_loss.ExchangeLossTests.test_invalid_text_mode_or_nonoutput_metadata_is_refused) (metadata={'other.svg': 'appearance'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<skill-source>/tests/test_exchange_loss.py", line 66, in test_invalid_text_mode_or_nonoutput_metadata_is_refused
+    with self.subTest(metadata=metadata),self.assertRaisesRegex(ValueError,'loss_text_mode_invalid'):m.write_report(root,['graphic.svg'],{},metadata)
+                                                                                                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: write_report() takes 3 positional arguments but 4 were given
+
+======================================================================
+ERROR: test_invalid_text_mode_or_nonoutput_metadata_is_refused (test_exchange_loss.ExchangeLossTests.test_invalid_text_mode_or_nonoutput_metadata_is_refused) (metadata={'graphic.svg': True})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<skill-source>/tests/test_exchange_loss.py", line 66, in test_invalid_text_mode_or_nonoutput_metadata_is_refused
+    with self.subTest(metadata=metadata),self.assertRaisesRegex(ValueError,'loss_text_mode_invalid'):m.write_report(root,['graphic.svg'],{},metadata)
+                                                                                                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: write_report() takes 3 positional arguments but 4 were given
+
+======================================================================
+ERROR: test_observed_appearance_mode_reports_loss_of_live_text_editing (test_exchange_loss.ExchangeLossTests.test_observed_appearance_mode_reports_loss_of_live_text_editing)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<skill-source>/tests/test_exchange_loss.py", line 43, in test_observed_appearance_mode_reports_loss_of_live_text_editing
+    report=m.write_report(root,['graphic.svg'],{}, {'graphic.svg':'appearance'})
+TypeError: write_report() takes 3 positional arguments but 4 were given
+
+======================================================================
+ERROR: test_paths_alone_do_not_prove_text_was_outlined (test_exchange_loss.ExchangeLossTests.test_paths_alone_do_not_prove_text_was_outlined)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<skill-source>/tests/test_exchange_loss.py", line 53, in test_paths_alone_do_not_prove_text_was_outlined
+    self.assertEqual(next(x['status'] for x in report['outputs'][0]['changes'] if x['code']=='live-text-editability'),'unknown')
+                     ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+StopIteration
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.013s
+
+FAILED (errors=6)

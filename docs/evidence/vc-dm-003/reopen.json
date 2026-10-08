@@ -1,0 +1,238 @@
+{
+  "schema": "vectorcraft-brand-text-reopen/v1",
+  "result": "PASS",
+  "driverSha256": "c04f8fc37305f49f1c1e0a3e626d825e1548b5143926da08c6956a2876e69c37",
+  "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+  "cases": [
+    {
+      "name": "v1",
+      "result": "PASS",
+      "nativeObjectsMatchSavedDelivery": true,
+      "fontDependenciesAvailable": true,
+      "nativeTextPreserved": true,
+      "reopenSessionExited": true,
+      "files": {
+        "artboard-1.png": "64f57c239a6f7cdaffc8dbe32e82909e45d42f32326347b20eb6f402a2b58e6f",
+        "artboard-1.svg": "368f26f69af45b99de756734e679830f7dfa0f23b4e5851454b474830d428c4d",
+        "exchange-loss.json": "5e089e7520dac28a8c84ffe45280701cbbec4e0d91e8e754a2c592a3f65f5066",
+        "manifest.json": "16774323a2b53d54e1cb03b519525b05aa4c074c22d62ee1e8e7351a6d85699d",
+        "native.json": "1e6048744c888794dd42dfe69a91347db052ef9fffeffa7ee11c03e395b66bfc",
+        "operations.json": "7892fab4e08a1ace9cb40facc2ef508bbda032f93259bc5047a330baa3a53b50",
+        "plan.json": "a5f1310bfba6102606079b62712096ae9e4298dffe860dcbab64448619613762",
+        "project.vectorcraft": "2fe9f178bb319cfe018ec810aaeade37b05d791cf289ac06d0d363118b19f302"
+      },
+      "manifest": {
+        "schema": "vectorcraft-delivery/v1",
+        "sourceProjectSha256": null,
+        "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+        "bindings": {
+          "headline": {
+            "id": 2
+          },
+          "footer": {
+            "id": 3
+          }
+        },
+        "outputs": [
+          {
+            "path": "artboard-1.png",
+            "artboardId": 1,
+            "warnings": []
+          },
+          {
+            "path": "artboard-1.svg",
+            "artboardId": 1,
+            "warnings": [],
+            "isolationPolicy": "native-paint-bounds; whole-dependent-containers-and-unknown-bounds-retained"
+          }
+        ],
+        "fontDependencies": [
+          {
+            "family": "Arial",
+            "missing": false,
+            "objects": 1,
+            "runs": 1,
+            "style": "Regular"
+          },
+          {
+            "family": "Songti SC",
+            "missing": false,
+            "objects": 1,
+            "runs": 1,
+            "style": "Regular"
+          }
+        ],
+        "assets": {},
+        "files": {
+          "plan.json": "a5f1310bfba6102606079b62712096ae9e4298dffe860dcbab64448619613762",
+          "project.vectorcraft": "2fe9f178bb319cfe018ec810aaeade37b05d791cf289ac06d0d363118b19f302",
+          "exchange-loss.json": "5e089e7520dac28a8c84ffe45280701cbbec4e0d91e8e754a2c592a3f65f5066",
+          "native.json": "1e6048744c888794dd42dfe69a91347db052ef9fffeffa7ee11c03e395b66bfc",
+          "artboard-1.png": "64f57c239a6f7cdaffc8dbe32e82909e45d42f32326347b20eb6f402a2b58e6f",
+          "artboard-1.svg": "368f26f69af45b99de756734e679830f7dfa0f23b4e5851454b474830d428c4d",
+          "operations.json": "7892fab4e08a1ace9cb40facc2ef508bbda032f93259bc5047a330baa3a53b50"
+        },
+        "lossReport": {
+          "path": "exchange-loss.json",
+          "sha256": "5e089e7520dac28a8c84ffe45280701cbbec4e0d91e8e754a2c592a3f65f5066"
+        },
+        "acceptance": "requires-domain-and-visual-review"
+      }
+    },
+    {
+      "name": "v2",
+      "result": "PASS",
+      "nativeObjectsMatchSavedDelivery": true,
+      "fontDependenciesAvailable": true,
+      "nativeTextPreserved": true,
+      "reopenSessionExited": true,
+      "files": {
+        "artboard-1.png": "c98252933c2a8f18b2f791ac07b8328136f9b1d136a9f8c91f3f6f3f4266140a",
+        "artboard-1.svg": "3a42068bf64d27df7ba4bf1f86847cfa4d11b0530c4e7c521157315c8a23dcd2",
+        "exchange-loss.json": "c43816449e965756ab677b493ca27e943b0b1fee28a5a2ef5d54a4fcc1f012c0",
+        "manifest.json": "1ad66b0ef08d8651cb722d7b3f62611cb6e0a35b0b6f35443369867e42b19560",
+        "native.json": "49bbb12acf8072b496162521437d6f6986a8ffd2e2e0f1a43aaaaa4dad793ac1",
+        "operations.json": "05f377166dc14a75e51d4cd233b020250f6dfb8fb174cdb3a1223359537e9f63",
+        "plan.json": "d8fe5f1a4820e7e84b9ff3cc94c401391f2e16730edf91627b703a3bf45b13d3",
+        "project.vectorcraft": "dcceb5404ff6f165a4d4d0832676d048cdaf7d8d1f4490d821582773ecdda8ee"
+      },
+      "manifest": {
+        "schema": "vectorcraft-delivery/v1",
+        "sourceProjectSha256": "2fe9f178bb319cfe018ec810aaeade37b05d791cf289ac06d0d363118b19f302",
+        "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+        "bindings": {
+          "headline": {
+            "id": 2
+          },
+          "footer": {
+            "id": 3
+          }
+        },
+        "outputs": [
+          {
+            "path": "artboard-1.png",
+            "artboardId": 1,
+            "warnings": []
+          },
+          {
+            "path": "artboard-1.svg",
+            "artboardId": 1,
+            "warnings": [],
+            "isolationPolicy": "native-paint-bounds; whole-dependent-containers-and-unknown-bounds-retained"
+          }
+        ],
+        "fontDependencies": [
+          {
+            "family": "Arial",
+            "missing": false,
+            "objects": 1,
+            "runs": 1,
+            "style": "Regular"
+          },
+          {
+            "family": "Songti SC",
+            "missing": false,
+            "objects": 1,
+            "runs": 1,
+            "style": "Regular"
+          }
+        ],
+        "assets": {},
+        "files": {
+          "plan.json": "d8fe5f1a4820e7e84b9ff3cc94c401391f2e16730edf91627b703a3bf45b13d3",
+          "project.vectorcraft": "dcceb5404ff6f165a4d4d0832676d048cdaf7d8d1f4490d821582773ecdda8ee",
+          "exchange-loss.json": "c43816449e965756ab677b493ca27e943b0b1fee28a5a2ef5d54a4fcc1f012c0",
+          "native.json": "49bbb12acf8072b496162521437d6f6986a8ffd2e2e0f1a43aaaaa4dad793ac1",
+          "artboard-1.png": "c98252933c2a8f18b2f791ac07b8328136f9b1d136a9f8c91f3f6f3f4266140a",
+          "artboard-1.svg": "3a42068bf64d27df7ba4bf1f86847cfa4d11b0530c4e7c521157315c8a23dcd2",
+          "operations.json": "05f377166dc14a75e51d4cd233b020250f6dfb8fb174cdb3a1223359537e9f63"
+        },
+        "lossReport": {
+          "path": "exchange-loss.json",
+          "sha256": "c43816449e965756ab677b493ca27e943b0b1fee28a5a2ef5d54a4fcc1f012c0"
+        },
+        "acceptance": "requires-domain-and-visual-review"
+      }
+    }
+  ],
+  "failures": [
+    {
+      "name": "unknown-target-failure",
+      "result": "PASS",
+      "noSuccessManifest": true,
+      "replayAllowed": false,
+      "failureRecord": {
+        "schema": "craft-failed-stage/v1",
+        "status": "failed",
+        "outcome": "failed",
+        "error": "command_failed: [{\"text\": \"run_command: invalid parameters for `text.setText`: no text objects selected\", \"type\": \"text\"}]",
+        "stage": "../.vectorcraft-xh8hvq57",
+        "files": {
+          "recovery-operations.json": {
+            "sha256": "11f74cf141d3954cec95598ec2b44a30754afab2810b3548519fc3ef0f3342a1",
+            "bytes": 460
+          }
+        },
+        "completedOperations": 1,
+        "lastAttempt": {
+          "command": "text.setText",
+          "params": {
+            "id": 999999999,
+            "text": "其他标题"
+          },
+          "phase": "submitted"
+        },
+        "replayAllowed": false,
+        "acceptance": "not-a-successful-delivery",
+        "recovery": "verify hashes and reopen original project in a new read-only session before any explicit revision"
+      },
+      "retainedStageFilesVerified": true,
+      "files": {
+        "failure.json": "f0c5cf651f2a133ff314f6bb38f8123d9e232fa5b839d53f9bbd77239bf0d69a"
+      },
+      "stageFiles": {
+        "failure.json": "f0c5cf651f2a133ff314f6bb38f8123d9e232fa5b839d53f9bbd77239bf0d69a",
+        "recovery-operations.json": "11f74cf141d3954cec95598ec2b44a30754afab2810b3548519fc3ef0f3342a1"
+      }
+    },
+    {
+      "name": "missing-font-failure",
+      "result": "PASS",
+      "noSuccessManifest": true,
+      "replayAllowed": false,
+      "failureRecord": {
+        "schema": "craft-failed-stage/v1",
+        "status": "failed",
+        "outcome": "failed",
+        "error": "missing_fonts: [{\"family\": \"Craft Missing CJK Family 72625\", \"missing\": true, \"objects\": 1, \"runs\": 1, \"style\": \"Regular\"}]",
+        "stage": "../.vectorcraft-23g0ylr6",
+        "files": {
+          "recovery-operations.json": {
+            "sha256": "66c8cb7312b7dd88f8846482048926ffc49fb7ccedb825e9dc81a6ed78b9d60e",
+            "bytes": 1081
+          }
+        },
+        "completedOperations": 4,
+        "lastAttempt": {
+          "command": "text.fonts",
+          "params": {},
+          "phase": "reply_received"
+        },
+        "replayAllowed": false,
+        "acceptance": "not-a-successful-delivery",
+        "recovery": "verify hashes and reopen original project in a new read-only session before any explicit revision"
+      },
+      "retainedStageFilesVerified": true,
+      "files": {
+        "failure.json": "848b373c6be876102da811f96d0356a1c35bcc008ece2861548b572cfd83dbe4"
+      },
+      "stageFiles": {
+        "failure.json": "848b373c6be876102da811f96d0356a1c35bcc008ece2861548b572cfd83dbe4",
+        "recovery-operations.json": "66c8cb7312b7dd88f8846482048926ffc49fb7ccedb825e9dc81a6ed78b9d60e"
+      }
+    }
+  ],
+  "originalAndRevisedDeliveriesUnchanged": true,
+  "installedSkillUnchanged": true,
+  "scope": "independent native reopen of actual Chinese create/revision deliveries; all saved object properties, artboards, text and native font dependencies; no GUI or OS-font claim"
+}

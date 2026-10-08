@@ -1,0 +1,12 @@
+test_editable_svg_text_remains_an_observation_not_roundtrip_fidelity (test_exchange_loss.ExchangeLossTests.test_editable_svg_text_remains_an_observation_not_roundtrip_fidelity) ... ok
+test_invalid_text_mode_or_nonoutput_metadata_is_refused (test_exchange_loss.ExchangeLossTests.test_invalid_text_mode_or_nonoutput_metadata_is_refused) ... ok
+test_missing_native_and_escaping_export_are_rejected (test_exchange_loss.ExchangeLossTests.test_missing_native_and_escaping_export_are_rejected) ... ok
+test_observed_appearance_mode_reports_loss_of_live_text_editing (test_exchange_loss.ExchangeLossTests.test_observed_appearance_mode_reports_loss_of_live_text_editing) ... ok
+test_paths_alone_do_not_prove_text_was_outlined (test_exchange_loss.ExchangeLossTests.test_paths_alone_do_not_prove_text_was_outlined) ... ok
+test_report_binds_native_and_exports_and_never_claims_unknown_fidelity (test_exchange_loss.ExchangeLossTests.test_report_binds_native_and_exports_and_never_claims_unknown_fidelity) ... ok
+test_svg_font_and_effect_fidelity_remain_explicitly_unknown (test_exchange_loss.ExchangeLossTests.test_svg_font_and_effect_fidelity_remain_explicitly_unknown) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.027s
+
+OK

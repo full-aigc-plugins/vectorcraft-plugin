@@ -217,6 +217,9 @@ def build(root=ROOT):
     boolean_fixed='docs/evidence/vectorcraft-boolean-fixed51-20261009.json'
     if (root/boolean_fixed).is_file():
         entries.append(bound_report(root,boolean_fixed,'fixed-install','All four current VC-DM-002 scenarios against installed public51/source38 macOS arm64;24 native workflow/Harness/SDK cases,17 source unit tests,13 unchanged skills and9 stopped registered groups;explicit failure injection;only4.6 closes','VC-DM-002',['4.6']))
+    brand_text='docs/evidence/vectorcraft-brand-text-fixed53-20261009.json'
+    if (root/brand_text).is_file():
+        entries.append(bound_report(root,brand_text,'fixed-install','All four current VC-DM-003 scenarios on public installed53/source39 macOS arm64; explicit brand faults, same-RGB nonconsumers, Chinese revision/reopen and native SVG modes; only4.7/4.8/4.9 close','VC-DM-003',['4.7','4.8','4.9']))
     # 明确归档变更前执行字节；保留报告原摘要，不能把旧运行重绑定到新实现。
     for entry in entries:
         archived={}

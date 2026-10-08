@@ -1,0 +1,136 @@
+test_asset_digest_and_unused_input_fail_before_installation (test_workflow.WorkflowTests.test_asset_digest_and_unused_input_fail_before_installation) ... ok
+test_brand_revision_rejects_untrusted_export_plan_before_runtime (test_workflow.WorkflowTests.test_brand_revision_rejects_untrusted_export_plan_before_runtime) ... ok
+test_duplicate_alias_rejected (test_workflow.WorkflowTests.test_duplicate_alias_rejected) ... ok
+test_export_range_and_format_rejected (test_workflow.WorkflowTests.test_export_range_and_format_rejected) ... ok
+test_file_side_effect_commands_are_rejected (test_workflow.WorkflowTests.test_file_side_effect_commands_are_rejected) ... ok
+test_registered_asset_operations_and_path_rejection (test_workflow.WorkflowTests.test_registered_asset_operations_and_path_rejection) ... ok
+test_resolve_only_explicit_references (test_workflow.WorkflowTests.test_resolve_only_explicit_references) ... ok
+test_svg_external_dependency_and_inherited_asset_corruption_preflight (test_workflow.WorkflowTests.test_svg_external_dependency_and_inherited_asset_corruption_preflight) ... ok
+test_text_edit_gateway_and_complete_entry_require_explicit_targets (test_workflow.WorkflowTests.test_text_edit_gateway_and_complete_entry_require_explicit_targets) ...
+  test_text_edit_gateway_and_complete_entry_require_explicit_targets (test_workflow.WorkflowTests.test_text_edit_gateway_and_complete_entry_require_explicit_targets) (route='gateway', params={'text': '新标题'}) ... FAIL
+  test_text_edit_gateway_and_complete_entry_require_explicit_targets (test_workflow.WorkflowTests.test_text_edit_gateway_and_complete_entry_require_explicit_targets) (route='complete', params={'text': '新标题'}) ... FAIL
+  test_text_edit_gateway_and_complete_entry_require_explicit_targets (test_workflow.WorkflowTests.test_text_edit_gateway_and_complete_entry_require_explicit_targets) (route='gateway', params={'id': 1, 'ids': [2], 'text': '新标题'}) ... FAIL
+  test_text_edit_gateway_and_complete_entry_require_explicit_targets (test_workflow.WorkflowTests.test_text_edit_gateway_and_complete_entry_require_explicit_targets) (route='complete', params={'id': 1, 'ids': [2], 'text': '新标题'}) ... FAIL
+  test_text_edit_gateway_and_complete_entry_require_explicit_targets (test_workflow.WorkflowTests.test_text_edit_gateway_and_complete_entry_require_explicit_targets) (route='gateway', params={'ids': [], 'text': '新标题'}) ... FAIL
+  test_text_edit_gateway_and_complete_entry_require_explicit_targets (test_workflow.WorkflowTests.test_text_edit_gateway_and_complete_entry_require_explicit_targets) (route='complete', params={'ids': [], 'text': '新标题'}) ... FAIL
+  test_text_edit_gateway_and_complete_entry_require_explicit_targets (test_workflow.WorkflowTests.test_text_edit_gateway_and_complete_entry_require_explicit_targets) (route='gateway', params={'id': True, 'text': '新标题'}) ... FAIL
+  test_text_edit_gateway_and_complete_entry_require_explicit_targets (test_workflow.WorkflowTests.test_text_edit_gateway_and_complete_entry_require_explicit_targets) (route='complete', params={'id': True, 'text': '新标题'}) ... FAIL
+  test_text_edit_gateway_and_complete_entry_require_explicit_targets (test_workflow.WorkflowTests.test_text_edit_gateway_and_complete_entry_require_explicit_targets) (route='gateway', params={'id': 1, 'text': 42}) ... FAIL
+  test_text_edit_gateway_and_complete_entry_require_explicit_targets (test_workflow.WorkflowTests.test_text_edit_gateway_and_complete_entry_require_explicit_targets) (route='complete', params={'id': 1, 'text': 42}) ... FAIL
+  test_text_edit_gateway_and_complete_entry_require_explicit_targets (test_workflow.WorkflowTests.test_text_edit_gateway_and_complete_entry_require_explicit_targets) (route='gateway', params={'id': 1, 'text': '新标题', 'font': 'Other'}) ... FAIL
+  test_text_edit_gateway_and_complete_entry_require_explicit_targets (test_workflow.WorkflowTests.test_text_edit_gateway_and_complete_entry_require_explicit_targets) (route='complete', params={'id': 1, 'text': '新标题', 'font': 'Other'}) ... FAIL
+test_text_edit_requires_explicit_valid_target (test_workflow.WorkflowTests.test_text_edit_requires_explicit_valid_target) ... ok
+test_unknown_reference_is_an_error (test_workflow.WorkflowTests.test_unknown_reference_is_an_error) ... ok
+
+======================================================================
+FAIL: test_text_edit_gateway_and_complete_entry_require_explicit_targets (test_workflow.WorkflowTests.test_text_edit_gateway_and_complete_entry_require_explicit_targets) (route='gateway', params={'text': '新标题'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<skill-source>/tests/test_workflow.py", line 67, in test_text_edit_gateway_and_complete_entry_require_explicit_targets
+    with self.subTest(route='gateway',params=params), self.assertRaisesRegex(ValueError,'invalid_text_edit'):
+                                                      ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_text_edit_gateway_and_complete_entry_require_explicit_targets (test_workflow.WorkflowTests.test_text_edit_gateway_and_complete_entry_require_explicit_targets) (route='complete', params={'text': '新标题'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<skill-source>/tests/test_workflow.py", line 69, in test_text_edit_gateway_and_complete_entry_require_explicit_targets
+    with self.subTest(route='complete',params=params), self.assertRaisesRegex(ValueError,'invalid_text_edit'):
+                                                       ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_text_edit_gateway_and_complete_entry_require_explicit_targets (test_workflow.WorkflowTests.test_text_edit_gateway_and_complete_entry_require_explicit_targets) (route='gateway', params={'id': 1, 'ids': [2], 'text': '新标题'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<skill-source>/tests/test_workflow.py", line 67, in test_text_edit_gateway_and_complete_entry_require_explicit_targets
+    with self.subTest(route='gateway',params=params), self.assertRaisesRegex(ValueError,'invalid_text_edit'):
+                                                      ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_text_edit_gateway_and_complete_entry_require_explicit_targets (test_workflow.WorkflowTests.test_text_edit_gateway_and_complete_entry_require_explicit_targets) (route='complete', params={'id': 1, 'ids': [2], 'text': '新标题'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<skill-source>/tests/test_workflow.py", line 69, in test_text_edit_gateway_and_complete_entry_require_explicit_targets
+    with self.subTest(route='complete',params=params), self.assertRaisesRegex(ValueError,'invalid_text_edit'):
+                                                       ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_text_edit_gateway_and_complete_entry_require_explicit_targets (test_workflow.WorkflowTests.test_text_edit_gateway_and_complete_entry_require_explicit_targets) (route='gateway', params={'ids': [], 'text': '新标题'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<skill-source>/tests/test_workflow.py", line 67, in test_text_edit_gateway_and_complete_entry_require_explicit_targets
+    with self.subTest(route='gateway',params=params), self.assertRaisesRegex(ValueError,'invalid_text_edit'):
+                                                      ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_text_edit_gateway_and_complete_entry_require_explicit_targets (test_workflow.WorkflowTests.test_text_edit_gateway_and_complete_entry_require_explicit_targets) (route='complete', params={'ids': [], 'text': '新标题'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<skill-source>/tests/test_workflow.py", line 69, in test_text_edit_gateway_and_complete_entry_require_explicit_targets
+    with self.subTest(route='complete',params=params), self.assertRaisesRegex(ValueError,'invalid_text_edit'):
+                                                       ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_text_edit_gateway_and_complete_entry_require_explicit_targets (test_workflow.WorkflowTests.test_text_edit_gateway_and_complete_entry_require_explicit_targets) (route='gateway', params={'id': True, 'text': '新标题'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<skill-source>/tests/test_workflow.py", line 67, in test_text_edit_gateway_and_complete_entry_require_explicit_targets
+    with self.subTest(route='gateway',params=params), self.assertRaisesRegex(ValueError,'invalid_text_edit'):
+                                                      ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_text_edit_gateway_and_complete_entry_require_explicit_targets (test_workflow.WorkflowTests.test_text_edit_gateway_and_complete_entry_require_explicit_targets) (route='complete', params={'id': True, 'text': '新标题'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<skill-source>/tests/test_workflow.py", line 69, in test_text_edit_gateway_and_complete_entry_require_explicit_targets
+    with self.subTest(route='complete',params=params), self.assertRaisesRegex(ValueError,'invalid_text_edit'):
+                                                       ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_text_edit_gateway_and_complete_entry_require_explicit_targets (test_workflow.WorkflowTests.test_text_edit_gateway_and_complete_entry_require_explicit_targets) (route='gateway', params={'id': 1, 'text': 42})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<skill-source>/tests/test_workflow.py", line 67, in test_text_edit_gateway_and_complete_entry_require_explicit_targets
+    with self.subTest(route='gateway',params=params), self.assertRaisesRegex(ValueError,'invalid_text_edit'):
+                                                      ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_text_edit_gateway_and_complete_entry_require_explicit_targets (test_workflow.WorkflowTests.test_text_edit_gateway_and_complete_entry_require_explicit_targets) (route='complete', params={'id': 1, 'text': 42})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<skill-source>/tests/test_workflow.py", line 69, in test_text_edit_gateway_and_complete_entry_require_explicit_targets
+    with self.subTest(route='complete',params=params), self.assertRaisesRegex(ValueError,'invalid_text_edit'):
+                                                       ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_text_edit_gateway_and_complete_entry_require_explicit_targets (test_workflow.WorkflowTests.test_text_edit_gateway_and_complete_entry_require_explicit_targets) (route='gateway', params={'id': 1, 'text': '新标题', 'font': 'Other'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<skill-source>/tests/test_workflow.py", line 67, in test_text_edit_gateway_and_complete_entry_require_explicit_targets
+    with self.subTest(route='gateway',params=params), self.assertRaisesRegex(ValueError,'invalid_text_edit'):
+                                                      ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_text_edit_gateway_and_complete_entry_require_explicit_targets (test_workflow.WorkflowTests.test_text_edit_gateway_and_complete_entry_require_explicit_targets) (route='complete', params={'id': 1, 'text': '新标题', 'font': 'Other'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<skill-source>/tests/test_workflow.py", line 69, in test_text_edit_gateway_and_complete_entry_require_explicit_targets
+    with self.subTest(route='complete',params=params), self.assertRaisesRegex(ValueError,'invalid_text_edit'):
+                                                       ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.145s
+
+FAILED (failures=12)

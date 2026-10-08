@@ -1,0 +1,6 @@
+test_public_revision_changes_consumers_only_even_when_rgb_matches (test_same_color_token_first_use.SameColorTokenFirstUseTests.test_public_revision_changes_consumers_only_even_when_rgb_matches) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.604s
+
+OK

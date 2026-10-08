@@ -1,0 +1,6 @@
+test_public_token_guard_rejects_wrong_dependency_and_retains_checkpoint (test_brand_guard_native.BrandGuardNativeTests.test_public_token_guard_rejects_wrong_dependency_and_retains_checkpoint) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 1.592s
+
+OK

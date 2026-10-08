@@ -1,0 +1,16 @@
+{
+  "result": "PASS",
+  "textRunsAndNonColorStylesPreserved": true,
+  "fontDependenciesPreserved": true,
+  "fontDependencies": [
+    {
+      "family": "Source Sans 3",
+      "missing": false,
+      "objects": 1,
+      "runs": 1,
+      "style": "Regular"
+    }
+  ],
+  "sourceManifestSha256": "998bd07df606992b87ace7e4bf7a6848b84929e57a54bd71a69cd5c099abf591",
+  "revisedManifestSha256": "cedd330740f8697c2f9873066ac33958bb2338a76112a586539bb58531d3a101"
+}
