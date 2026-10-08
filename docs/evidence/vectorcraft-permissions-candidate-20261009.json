@@ -1,0 +1,52 @@
+{
+  "schema": "vectorcraft-permissions-candidate/v1",
+  "result": "PASS",
+  "level": "partial-native-candidate",
+  "baselineCommit": "3d6f433524ef6e543258df4249501b691990b14f",
+  "pluginVersion": "0.1.0-dev.63",
+  "sourceRef": "v0.1.0-dev.43",
+  "platform": "darwin-arm64",
+  "publishedCandidate": false,
+  "completedTasks": [],
+  "targetTests": 8,
+  "nodeTests": 132,
+  "pythonTests": 146,
+  "nativeProof": "docs/evidence/vc-rl-002/native-candidate.json",
+  "redLogs": [
+    "docs/evidence/vc-rl-002/environment-red.log.txt",
+    "docs/evidence/vc-rl-002/cli-red.log.txt",
+    "docs/evidence/vc-rl-002/input-red.log.txt"
+  ],
+  "greenLog": "docs/evidence/vc-rl-002/environment-green.log.txt",
+  "scope": "Partial permissions behavior only;actual synthetic-secret subprocess tests and native revision,explicit injected QA review scores;not all VC-RL-002 scenarios or new fixed publication",
+  "pending": [
+    "host secret-reference contract",
+    "complete entry-point input/path audit",
+    "new immutable public distribution and fixed permission acceptance"
+  ],
+  "fingerprints": {
+    "src/harness/native_environment.ts": "fec69bc8d8aa148feb7708af2ac9e10bc140389cc8e27e24468c8fb9bf318dc0",
+    "src/harness/input_policy.ts": "02e153e37675821008226edffed71bab0055205dfa75602e954f51086bcbf3a5",
+    "src/harness/controller.ts": "2ad9f5cf6e324806d468519ad71e3c71de215fb9edf8bcc65b30010d69f1fe8c",
+    "src/harness/recovery.ts": "7a07a0296921d2e6b75f9ce05c506503f95cd3fe7ac7cffd0a49cd42ae8f0a94",
+    "src/harness/launch_recovery.ts": "baae4fc69b2577df52f576b6ff5e593d5b48e6f871574d13910eab96f0b11b89",
+    "src/harness/process_registry.ts": "50fccff148a0aa11b2b84e9c4ddb44b8ff45dca554e0fc3c2e24ce0d754caa15",
+    "src/runtime/prepare_runtime.ts": "5ded468dbc3074d1a770bb438527474d2f2a86a35aaa01dc6ee1b27fa8c05fd5",
+    "src/cli.ts": "e8838911d359dfcdb4c060b1b13fd428513786c1bc87f110810106082f8622f2",
+    "src/evaluation/technical_review.ts": "4ffc30b01b96ca0a4e5051996ed95d420d2d527cdaecb9a4770bda25119c3a49",
+    "src/evaluation/review_store.ts": "44d838936737967a032aedcf59c456770b18c3b2fea462858765307a5da1b8f7",
+    "tests/permissions_environment.test.ts": "4081d40da8ccba27ae5a8d893d0b27ed9a92cd505d7f1f385f8b1315869f403b",
+    "tests/test_release_gate.py": "0375872546a7b7d687cb7c1acd60777b608963014ebe677991c8374da2ddd3db",
+    "scripts/qa/revision_budget.ts": "a5601841c8e76d9ca143060df7a21e27722612c2b4b7892e3215218ca3275e47",
+    "plugin.json": "51014ee0536d8f30da7f2992afa63d8c8ff38f2881f7059690d4068b6fdaef57",
+    "skills.lock.json": "46255b049f5e3d14b45ca9fecbaf037cd55b1e8b8bb447d407cb16c55eb3758c",
+    "docs/evidence/vc-rl-002/environment-green.log.txt": "fb7df83cd6b9f465505daf829462f79344854fc387aaa6f79233bd0de633eee4",
+    "docs/evidence/vc-rl-002/cli-red.log.txt": "a03cee30091736d99cc9ec4e667b765ece95351057db60de0be1619a49b09eb1",
+    "docs/evidence/vc-rl-002/input-red.log.txt": "8d93982e72c18651c6ce446f9369152b2679c0cc233dee2d528239853b92e701",
+    "docs/evidence/vc-rl-002/environment-red.log.txt": "c93dcce5421a820ccde45a36fd4867e494de4d319d710cdf36e9ab30204c50bb",
+    "docs/evidence/vc-rl-002/node-regression.log.txt": "96c7f358539cd20c680493715fc13e66aabaf914ee0d4b4ab87d9996c6845e3b",
+    "docs/evidence/vc-rl-002/python-regression.log.txt": "39d7825499137718464ccdb3d642b2acb1d24be6aaffa243805e897029c1740a",
+    "docs/evidence/vc-rl-002/native-candidate.json": "80df8bc23b86d9d97e8babd3639416c8d739f58dca6f45c721a33998e227f6a6",
+    "docs/evidence/vc-rl-002/candidate-release-refused.json": "967c25c0eebec669050bdc3101a69a17a173d1a70b810f892e25246c65362773"
+  }
+}

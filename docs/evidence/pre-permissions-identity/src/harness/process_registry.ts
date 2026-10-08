@@ -1,4 +1,3 @@
-import {nativeEnvironment} from './native_environment.ts';
 import { execFileSync } from 'node:child_process';
 import { realpathSync } from 'node:fs';
 import { basename } from 'node:path';
@@ -11,7 +10,7 @@ const pause=(ms:number)=>new Promise(r=>setTimeout(r,ms));
 
 /** 操作系统进程身份；读取失败不等于进程已经停止。 */
 function processes():Member[]{
-  const output=execFileSync('/bin/ps',['-axo','pid=,pgid=,stat=,lstart=,command='],{env:nativeEnvironment(),encoding:'utf8',maxBuffer:16*1024*1024});
+  const output=execFileSync('/bin/ps',['-axo','pid=,pgid=,stat=,lstart=,command='],{encoding:'utf8',maxBuffer:16*1024*1024});
   return output.split('\n').filter(line=>line.trim()).map(line=>{
     const match=line.trim().match(/^(\d+)\s+(\d+)\s+(\S+)\s+(\w+\s+\w+\s+\d+\s+\d+:\d+:\d+\s+\d+)\s+(.*)$/);
     if(!match)throw new Error('process_observation_failed');

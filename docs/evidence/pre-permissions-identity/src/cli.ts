@@ -1,6 +1,4 @@
 #!/usr/bin/env node
-import {assertNoLiteralSecrets} from './harness/input_policy.ts';
-import {nativeEnvironment} from './harness/native_environment.ts';
 import { readFileSync,realpathSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
@@ -15,16 +13,14 @@ import { RevisionCycle } from './evaluation/revision_cycle.ts';
 async function main(){
   const [action,database,file]=process.argv.slice(2);
   if(!action||!database||!file)throw new Error('usage: node src/cli.ts run|cancel|reconcile|runtime-probe|runtime-activate|runtime-status|review-request|review-checked|review-import|revision|revision-cycle-open|revision-cycle-observe|revision-cycle-propose|revision-cycle-run|revision-cycle-best DATABASE REQUEST.json');
-  const input=strictJson(readFileSync(file,'utf8'));assertNoLiteralSecrets(input);
+  const input=strictJson(readFileSync(file,'utf8'));
   if(['runtime-probe','runtime-activate','runtime-status'].includes(action)){
     const controller=new Controller(database);try{
       const gate=new RuntimeGate(controller.ledger);
       if(action==='runtime-status')return gate.current();
       if(skillDigest(input.skill)!==input.expectedSkillSha256)throw new Error('skill_snapshot_mismatch');
-      let output:string;
-      try{output=execFileSync(input.python??'python3',['-I','-B',fileURLToPath(new URL('./runtime/runtime_probe.py',import.meta.url))],
-        {env:nativeEnvironment(),stdio:['pipe','pipe','pipe'],input:JSON.stringify(input),encoding:'utf8',timeout:40000,maxBuffer:8*1024*1024});}
-      catch{throw new Error('runtime_probe_failed: child output withheld');}
+      const output=execFileSync(input.python??'python3',['-I','-B',fileURLToPath(new URL('./runtime/runtime_probe.py',import.meta.url))],
+        {input:JSON.stringify(input),encoding:'utf8',timeout:40000,maxBuffer:8*1024*1024});
       if(skillDigest(input.skill)!==input.expectedSkillSha256)throw new Error('skill_snapshot_mismatch');
       const report=strictJson(output);validateCapabilities(report,input.requirements);
       return action==='runtime-probe'?report:gate.activate(report,input.requirements,input.stateSchemas);

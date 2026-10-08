@@ -246,3 +246,5 @@ flowchart LR
  G --> M[Full task and host approval gates]
  M --> P[Marketplace approval remains blocked]
 ```
+
+权限与秘密边界正在实施：本地候选已限制七类子进程入口的环境继承、禁止向错误输出转发原始子进程诊断、拒绝素材附加指令字段及明确命名的字面凭据；失败评审回执也不得将此类凭据写入审计表。8项定向测试和132项Node回归通过，146项Python测试通过；实际原生修订及后续技术检查消耗4次共享预算，相关进程组停止。本候选尚未公开固定分发或完成宿主秘密引用合同，7.4–7.6继续开放，当前仍120/127完成、7项开放。原发布63／源43不变；旧发布证据不得为改动后的工作树放行。该校验不声称识别任意正文中的秘密。 [Evidence](evidence/vectorcraft-permissions-candidate-20261009.json).

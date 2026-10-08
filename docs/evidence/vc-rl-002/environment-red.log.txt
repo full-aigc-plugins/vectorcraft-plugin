@@ -1,0 +1,46 @@
+✖ managed child environment cannot disclose host secrets (242.819625ms)
+✖ managed child diagnostic cannot disclose host secrets (225.930708ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 0
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 559.886
+
+✖ failing tests:
+
+test at tests/permissions_environment.test.ts:10:48
+✖ managed child environment cannot disclose host secrets (242.819625ms)
+  AssertionError [ERR_ASSERTION]: host secret inherited by actual child
+  
+  true !== false
+  
+      at TestContext.<anonymous> (file://PLUGIN_ROOT/tests/permissions_environment.test.ts:32:34)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/permissions_environment.test.ts:10:48
+✖ managed child diagnostic cannot disclose host secrets (225.930708ms)
+  AssertionError [ERR_ASSERTION]: untrusted stderr disclosed through error
+  
+  true !== false
+  
+      at TestContext.<anonymous> (file://PLUGIN_ROOT/tests/permissions_environment.test.ts:34:11)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

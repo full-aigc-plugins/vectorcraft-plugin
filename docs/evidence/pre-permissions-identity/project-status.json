@@ -270,15 +270,5 @@
     "fullBoundaryAcceptance": "NOT_RUN",
     "differentVersionUpgrade": "NOT_RUN",
     "desktopBridge": "NOT_RUN"
-  },
-  "permissionsCandidate": {
-    "status": "partial-native-candidate",
-    "evidence": "docs/evidence/vectorcraft-permissions-candidate-20261009.json",
-    "completedTasks": [],
-    "pending": [
-      "host-secret-reference-contract",
-      "public-fixed-install-permission-qualification",
-      "all-VC-RL-002-scenarios"
-    ]
   }
 }

@@ -1,5 +1,3 @@
-import {assertNoLiteralSecrets} from '../harness/input_policy.ts';
-import {nativeEnvironment} from '../harness/native_environment.ts';
 import { spawn } from 'node:child_process';
 import { createHash,randomUUID } from 'node:crypto';
 import { readFileSync,writeFileSync,mkdirSync,lstatSync,realpathSync } from 'node:fs';
@@ -19,7 +17,6 @@ export class TechnicalReview {
   store:ReviewStore;
   constructor(store:ReviewStore){this.store=store;}
   async request(input:any,options:{python?:string}={}):Promise<any>{
-    assertNoLiteralSecrets(input);
     if(input?.technicalEvidence!==undefined||input?.technicalEvidenceOrigin!==undefined)throw new Error('technical_evidence_requires_check');
     const source=resolve(dirname(input.native)),manifest=join(source,'manifest.json');
     if(resolve(input.native)!==join(source,'project.vectorcraft'))throw new Error('invalid_native_path');
@@ -68,7 +65,7 @@ export class TechnicalReview {
         const marker=randomUUID();
         // nonce 留在 exec 后的命令行，供持久进程组身份核对；不向解码器增加公开参数。
         const code=`import runpy,sys\nsys.argv=${JSON.stringify([helper,snapshot,'--runtime-sha256',input.runtimeIdentity,'--project-sha256',input.projectRevision])}\nrunpy.run_path(${JSON.stringify(helper)},run_name='__main__')\n# ${marker}`;
-        const child=spawn(options.python??'python3',['-I','-B',launcher,marker,'-c',code],{env:nativeEnvironment(),detached:true,stdio:['pipe','pipe','pipe']});
+        const child=spawn(options.python??'python3',['-I','-B',launcher,marker,'-c',code],{detached:true,stdio:['pipe','pipe','pipe']});
         let text='',errorText='',ended=false,exitCode:number|null=null,spawnError:Error|undefined,overflow=false;
         child.on('error',e=>{spawnError=e;ended=true;});child.on('close',code=>{exitCode=code;ended=true;});
         child.stdout.on('data',b=>{if(text.length+b.length>1024*1024)overflow=true;else text+=b.toString();});

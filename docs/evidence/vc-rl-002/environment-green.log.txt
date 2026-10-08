@@ -1,0 +1,16 @@
+✔ managed child environment cannot disclose host secrets (172.561333ms)
+✔ managed child diagnostic cannot disclose host secrets (164.334416ms)
+✔ native environment uses a positive system allowlist and excludes loader, proxy and product secrets (0.5425ms)
+✔ probe withholds raw child diagnostic content (617.981917ms)
+✔ cli withholds raw child diagnostic content (693.355542ms)
+✔ asset-command is refused before probing or persisting a task (4.606458ms)
+✔ literal-secret is refused before probing or persisting a task (4.300209ms)
+✔ rejected review receipt cannot persist a named literal credential in its audit event (1.918625ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1739.060834

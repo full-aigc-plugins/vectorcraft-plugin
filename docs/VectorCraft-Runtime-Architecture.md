@@ -246,3 +246,5 @@ flowchart LR
  G --> M[Full task and host approval gates]
  M --> P[Marketplace approval remains blocked]
 ```
+
+Permissions and secrets remain in progress. A local candidate filters inherited environments at seven subprocess entry points,withholds raw child diagnostics,rejects extra asset instruction fields and explicitly named literal credential fields,and refuses to persist those credentials in rejected-review audit events. Eight targeted tests and132 Node regressions pass;146 Python tests pass. An actual native revision and subsequent technical check consume four shared attempts,and owned groups stop. This candidate has no new public fixed distribution or completed host secret-reference contract;tasks7.4–7.6 remain open,120/127 complete and7 open. Published63/source43 stay unchanged;old release evidence cannot authorize the modified worktree. The named-field check does not claim arbitrary secret detection in document text. [Evidence](evidence/vectorcraft-permissions-candidate-20261009.json).

@@ -1,4 +1,3 @@
-import {nativeEnvironment} from './native_environment.ts';
 import { createHash,randomUUID } from 'node:crypto';
 import { readFileSync, lstatSync, readdirSync, existsSync } from 'node:fs';
 import { join,dirname,relative,isAbsolute } from 'node:path';
@@ -119,7 +118,7 @@ export class Recovery {
     const python=`import importlib.util,json,sys\ns=importlib.util.spec_from_file_location('session',sys.argv[1]);m=importlib.util.module_from_spec(s);s.loader.exec_module(m)\nresult=[]\nfor path in json.loads(sys.argv[3]):\n with m.Session([sys.argv[2],'mcp','--headless']) as session:\n  session.command('document.open',{'path':path})\n  doc=session.command('document.json',{})\n  if not isinstance(doc.get('layers'),list) or not isinstance(doc.get('artboards'),list):raise ValueError('invalid_native_document')\n  links=session.command('links.check',{})\n  if links.get('missing') or links.get('modified'):raise ValueError('original_dependency_unverified')\n  result.append({'path':path,'layers':len(doc['layers']),'artboards':len(doc['artboards']),'dependencies':links})\nprint(json.dumps(result))`;
     let output='',errorOutput='';
     await new Promise<void>((accept,reject)=>{
-      const child=spawn(intent.python,['-I','-B',fileURLToPath(new URL('./process_runner.py',import.meta.url)),owner,'-I','-B','-c',python,join(intent.skillSnapshot,'scripts/mcp_session.py'),binary,canonical(projects)],{env:nativeEnvironment(),detached:true,stdio:['pipe','pipe','pipe']});
+      const child=spawn(intent.python,['-I','-B',fileURLToPath(new URL('./process_runner.py',import.meta.url)),owner,'-I','-B','-c',python,join(intent.skillSnapshot,'scripts/mcp_session.py'),binary,canonical(projects)],{detached:true,stdio:['pipe','pipe','pipe']});
       let failure:unknown,stopping:Promise<any>|undefined;
       const stop=(error:unknown)=>{failure??=error;stopping??=this.processes.stop(owner,epoch,100).catch(e=>{failure=e;});};
       const timer=setTimeout(()=>stop(new Error('recovery_timeout')),30000);
@@ -130,7 +129,7 @@ export class Recovery {
       child.on('error',error=>{clearTimeout(timer);reject(error);});
       child.on('exit',()=>{try{if(!this.processes.observe(owner,epoch).stopped)stop(new Error('recovery_descendant_alive'));}catch(error){failure=error;}});
       child.on('close',async code=>{clearTimeout(timer);await stopping;
-        try{if(!this.processes.observe(owner,epoch).stopped)throw new Error('native_stop_unconfirmed');if(code!==0||failure)throw failure??new Error('recovery_failed: child output withheld');accept();}catch(error){reject(error);}
+        try{if(!this.processes.observe(owner,epoch).stopped)throw new Error('native_stop_unconfirmed');if(code!==0||failure)throw failure??new Error(errorOutput);accept();}catch(error){reject(error);}
       });
     });
     const reopened=strictJson(output);

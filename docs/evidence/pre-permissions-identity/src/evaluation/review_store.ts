@@ -1,4 +1,3 @@
-import {assertNoLiteralSecrets} from '../harness/input_policy.ts';
 import { DatabaseSync } from 'node:sqlite';
 import { createHash, randomUUID } from 'node:crypto';
 import { readFileSync, realpathSync } from 'node:fs';
@@ -44,7 +43,6 @@ export class ReviewStore {
     return request;
   }
   validateInput(input:any):void {
-    assertNoLiteralSecrets(input);
     if(!input||typeof input.projectRevision!=='string'||!input.projectRevision||!/^[a-f0-9]{64}$/.test(input.runtimeIdentity??'')
       ||!['PASS','FAIL','NOT_RUN'].includes(input.technicalStatus)||!Array.isArray(input.candidates)||!input.candidates.length
       ||!Array.isArray(input.targets)||!input.targets.some((t:any)=>t.role==='target')
@@ -82,8 +80,6 @@ export class ReviewStore {
     return {...row,input,fingerprints};
   }
   importReceipt(value:string|any):any {
-    // 凭据拒绝发生在失败审计序列化之前，禁止把原文写入 review_events。
-    assertNoLiteralSecrets(typeof value==='string'?strictJson(value):value);
     try{return this.receiveReceipt(value);}catch(error){
       const raw=typeof value==='string'?value:JSON.stringify(value);
       const id=typeof value==='object'&&typeof value?.requestId==='string'?value.requestId:null;
@@ -92,7 +88,7 @@ export class ReviewStore {
     }
   }
   receiveReceipt(value:string|any):any {
-    const receipt=typeof value==='string'?strictJson(value):strictJson(canonical(value));assertNoLiteralSecrets(receipt);
+    const receipt=typeof value==='string'?strictJson(value):strictJson(canonical(value));
     if(!keys(receipt,['schema','requestId','bindingHash','reviewer','verdict','issues','scores'])
       ||receipt.schema!=='vectorcraft-review-receipt/v1'||!['accept','revise','reject'].includes(receipt.verdict)
       ||!keys(receipt.reviewer,['kind','identity','contextOrigin','independenceEvidence'])
@@ -125,7 +121,6 @@ export class ReviewStore {
   }
   /** 仅校验建议；持久轮数与执行准入由 RevisionCycle 协调。 */
   validateRevision(id:string,changes:{objectId:number,field:string,value:any}[]):any {
-    assertNoLiteralSecrets(changes);
     const row=this.current(id),auth=row.input.authorization;
     if(auth.deadline<=Date.now())throw new Error('budget_exceeded');
     if(row.state!=='revision_proposed')throw new Error('revision_not_proposed');

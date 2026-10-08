@@ -1,5 +1,3 @@
-import {assertNoLiteralSecrets,validateAssetRecords} from './input_policy.ts';
-import {nativeEnvironment} from './native_environment.ts';
 import { createHash } from 'node:crypto';
 import { existsSync, lstatSync, readFileSync, mkdirSync, writeFileSync, cpSync, statSync, openSync, closeSync, fsyncSync, renameSync } from 'node:fs';
 import { relative, resolve, join, isAbsolute, dirname } from 'node:path';
@@ -74,7 +72,6 @@ export class Controller {
     return manifest;
   }
   async run(request:RunRequest):Promise<any> {
-    assertNoLiteralSecrets(request);
     const geometryContract=request.geometryContract===undefined?undefined:strictJson(canonical(request.geometryContract));
     if(geometryContract!==undefined)validateGeometryContract(geometryContract);
     const suppliedAuthorization=request.authorization;
@@ -92,7 +89,6 @@ export class Controller {
     if(skillDigest(request.skill)!==request.expectedSkillSha256)throw new Error('skill_snapshot_mismatch');
     if(!existsSync(join(request.skill,'scripts/execution_control.py')))throw new Error('managed_execution_control_required');
     const plan=strictJson(readFileSync(request.plan,'utf8'));
-    assertNoLiteralSecrets(plan);validateAssetRecords(plan);
     if(plan.schema)throw new Error('workflow_plan_required; complete-command plans use the independent commands entry');
     const lock=strictJson(readFileSync(join(request.skill,'scripts/runtime.lock.json'),'utf8'));
     let projectRevision:string|null=null;
@@ -153,7 +149,6 @@ export class Controller {
     for(const [path,expected] of Object.entries(guards))inputHashes['guard:'+path]=expected;
     for(const [name,asset] of Object.entries(plan.assets??{}) as [string,any][]){
       if(!auth.readRoots.some(root=>inside(root,asset.path)))throw new Error('outside_authorized_roots');
-      if(!isAbsolute(asset.path)||lstatSync(asset.path).isSymbolicLink()||!lstatSync(asset.path).isFile())throw new Error('invalid_asset_path');
       const hash=sha(readFileSync(asset.path));if(hash!==asset.sha256)throw new Error('asset_digest_mismatch');inputHashes[name]=hash;
     }
     if(geometryContract)inputHashes['contract:geometry']=sha(canonical(geometryContract));
@@ -238,7 +233,7 @@ export class Controller {
     try {
       await new Promise<void>((accept,reject)=>{
         const launcher=fileURLToPath(new URL('./process_runner.py',import.meta.url));
-        const child=spawn(request.python??'python3',['-I','-B',launcher,task.id,...args],{env:nativeEnvironment(),detached:true,stdio:['pipe','pipe','pipe']});
+        const child=spawn(request.python??'python3',['-I','-B',launcher,task.id,...args],{detached:true,stdio:['pipe','pipe','pipe']});
         let interrupted=false,stopping:Promise<any>|undefined,observationError:unknown;
         const interrupt=()=>{
           if(interrupted)return;interrupted=true;
@@ -280,7 +275,7 @@ export class Controller {
           try{if(!this.processes.observe(task.id,task.epoch).stopped)throw new Error('native_stop_unconfirmed');}
           catch(error){observationError=error;}
           if(code===0&&!interrupted&&!observationError)accept();
-          else reject(new Error('outcome_unknown: original native workflow needs reconciliation; '+String(observationError??'')+'; child output withheld'));
+          else reject(new Error('outcome_unknown: original native workflow needs reconciliation; '+String(observationError??'')+stderr.slice(0,2048)+stdout.slice(0,2048)));
         });
       });
       if(['cancel_requested','cancelled'].includes(this.ledger.get(task.id).state))return {id:task.id,state:'quarantined',output:request.output};

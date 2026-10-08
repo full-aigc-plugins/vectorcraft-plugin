@@ -1,0 +1,64 @@
+{
+  "schema": "vectorcraft-release-readiness/v1",
+  "pluginVersion": "0.1.0-dev.63",
+  "sourceRef": "v0.1.0-dev.43",
+  "layers": {
+    "structure": {
+      "status": "PASS",
+      "evidence": [
+        "plugin.json",
+        "docs/current-identity.json"
+      ],
+      "pluginVersion": "0.1.0-dev.63"
+    },
+    "skills": {
+      "status": "PASS",
+      "evidence": [
+        "skills.lock.json"
+      ],
+      "sourceRef": "v0.1.0-dev.43",
+      "sourceCommit": "36b79c603111fbf6c95f36d2f4c9ed43c9e7f155",
+      "skills": 13
+    },
+    "runtime": {
+      "status": "FAIL",
+      "reason": "release_evidence_changed"
+    },
+    "host": {
+      "status": "PASS",
+      "evidence": [
+        "docs/evidence/vc-qa-002/host-fixed63.json"
+      ],
+      "hostVersion": "codex-cli 0.153.4",
+      "platform": "Darwin-arm64",
+      "scope": "isolated actual published-tag plugin installation and host discovery; private acceptance catalog only",
+      "excluded": [
+        "model implicit routing",
+        "GUI",
+        "complete V1",
+        "public marketplace eligibility"
+      ]
+    },
+    "task": {
+      "status": "FAIL",
+      "reason": "release_evidence_changed"
+    },
+    "native": {
+      "status": "FAIL",
+      "reason": "release_evidence_changed"
+    }
+  },
+  "publishable": {
+    "development": false,
+    "marketplace": false
+  },
+  "marketplaceBlockers": [
+    "six_layer_evidence_incomplete",
+    "implementation_tasks_open",
+    "implementation_not_complete",
+    "marketplace_approval_missing",
+    "full_task_evidence_coverage_missing",
+    "host_scope_exclusions_open"
+  ],
+  "scope": "readonly release evidence gate;development scope does not assert complete V1 or modify host/marketplace approval"
+}

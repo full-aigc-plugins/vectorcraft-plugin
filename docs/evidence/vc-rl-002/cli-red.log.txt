@@ -1,0 +1,37 @@
+✔ managed child environment cannot disclose host secrets (179.167375ms)
+✔ managed child diagnostic cannot disclose host secrets (181.433042ms)
+✔ native environment uses a positive system allowlist and excludes loader, proxy and product secrets (0.521709ms)
+✔ probe withholds raw child diagnostic content (617.291083ms)
+✖ cli withholds raw child diagnostic content (696.950958ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 4
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1755.038667
+
+✖ failing tests:
+
+test at tests/permissions_environment.test.ts:52:36
+✖ cli withholds raw child diagnostic content (696.950958ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  true !== false
+  
+      at TestContext.<anonymous> (file://PLUGIN_ROOT/tests/permissions_environment.test.ts:71:90)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1325:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+      at Test.postRun (node:internal/test_runner/test:1465:19)
+      at Test.run (node:internal/test_runner/test:1390:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

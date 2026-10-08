@@ -1,0 +1,106 @@
+✔ managed child environment cannot disclose host secrets (208.488625ms)
+✔ managed child diagnostic cannot disclose host secrets (205.990458ms)
+✔ native environment uses a positive system allowlist and excludes loader, proxy and product secrets (0.537791ms)
+✔ probe withholds raw child diagnostic content (645.932459ms)
+✔ cli withholds raw child diagnostic content (707.847167ms)
+✖ asset-command is refused before probing or persisting a task (8.755084ms)
+✖ literal-secret is refused before probing or persisting a task (4.993209ms)
+✖ rejected review receipt cannot persist a named literal credential in its audit event (1.996041ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 5
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1867.648292
+
+✖ failing tests:
+
+test at tests/permissions_environment.test.ts:79:59
+✖ asset-command is refused before probing or persisting a task (8.755084ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /invalid_asset_record/. Input:
+  
+  'Error: probe_should_not_run'
+  
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async TestContext.<anonymous> (file://PLUGIN_ROOT/tests/permissions_environment.test.ts:90:3)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: probe_should_not_run
+        at Controller.probe (file://PLUGIN_ROOT/tests/permissions_environment.test.ts:88:85)
+        at Controller.run (file://PLUGIN_ROOT/src/harness/controller.ts:174:31)
+        at file://PLUGIN_ROOT/tests/permissions_environment.test.ts:90:39
+        at waitForActual (node:assert:632:21)
+        at strict.rejects (node:assert:769:31)
+        at TestContext.<anonymous> (file://PLUGIN_ROOT/tests/permissions_environment.test.ts:90:16)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1325:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+        at Test.postRun (node:internal/test_runner/test:1465:19),
+    expected: /invalid_asset_record/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/permissions_environment.test.ts:79:59
+✖ literal-secret is refused before probing or persisting a task (4.993209ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /literal_secret_forbidden/. Input:
+  
+  'Error: probe_should_not_run'
+  
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async TestContext.<anonymous> (file://PLUGIN_ROOT/tests/permissions_environment.test.ts:90:3)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: probe_should_not_run
+        at Controller.probe (file://PLUGIN_ROOT/tests/permissions_environment.test.ts:88:85)
+        at Controller.run (file://PLUGIN_ROOT/src/harness/controller.ts:174:31)
+        at file://PLUGIN_ROOT/tests/permissions_environment.test.ts:90:39
+        at waitForActual (node:assert:632:21)
+        at strict.rejects (node:assert:769:31)
+        at TestContext.<anonymous> (file://PLUGIN_ROOT/tests/permissions_environment.test.ts:90:16)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1325:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+        at Test.postRun (node:internal/test_runner/test:1465:19),
+    expected: /literal_secret_forbidden/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/permissions_environment.test.ts:96:1
+✖ rejected review receipt cannot persist a named literal credential in its audit event (1.996041ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /literal_secret_forbidden/. Input:
+  
+  'Error: invalid_review_receipt'
+  
+      at TestContext.<anonymous> (file://PLUGIN_ROOT/tests/permissions_environment.test.ts:99:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1325:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+      at Test.postRun (node:internal/test_runner/test:1465:19)
+      at Test.run (node:internal/test_runner/test:1390:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: invalid_review_receipt
+        at ReviewStore.receiveReceipt (file://PLUGIN_ROOT/src/evaluation/review_store.ts:98:150)
+        at ReviewStore.importReceipt (file://PLUGIN_ROOT/src/evaluation/review_store.ts:83:21)
+        at file://PLUGIN_ROOT/tests/permissions_environment.test.ts:99:27
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file://PLUGIN_ROOT/tests/permissions_environment.test.ts:99:10)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1325:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+        at Test.postRun (node:internal/test_runner/test:1465:19),
+    expected: /literal_secret_forbidden/,
+    operator: 'throws',
+    diff: 'simple'
+  }
