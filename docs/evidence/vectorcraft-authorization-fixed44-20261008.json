@@ -1,0 +1,33 @@
+{
+  "schema": "vectorcraft-authorization-fixed-install/v1",
+  "result": "PASS",
+  "pluginVersion": "0.1.0-dev.44",
+  "pluginCommit": "e9aff58a25628c59fcefd2815b862fdbbc60be85",
+  "sourceCommit": "2b75ad104b47fdb8fdad24fd90635ed9512fd4f6",
+  "hostVersion": "codex-cli 0.153.4",
+  "platform": "Darwin-arm64",
+  "enabledSkills": 13,
+  "postRegressionSkillDigestsUnchanged": true,
+  "tests": {
+    "nodePassed": 57,
+    "pythonPassed": 43,
+    "skipped": 0
+  },
+  "scope": "actual published plugin44 isolated installation, host discovery and coordinator/unit regressions only; synthetic authorization workflow; no new native or GUI acceptance",
+  "fingerprints": {
+    "plugin.json": "2cccf1f5a230673d04430c9fbed728592c6b631e6168e9d1f50ccdebc12e741f",
+    "skills.lock.json": "37cf4e7a514193ff10b1f051915b931874f05a8f693c87e67d904657f040464e",
+    "src/harness/controller.ts": "4c3b6a0a5af7e8ea2ece7586a8a80cd882d9c5f45b08b9205daad57f0c1af7bd",
+    "tests/authorization_binding.test.ts": "bfad2a1ba70572b535285e6cd64b73b26518f1b856e9e13ebaddcc9a11a3eae2",
+    "docs/evidence/authorization44/fixed-python.log": "fd1af81ecb95cd8dde9c8f28b12e84be86d6ac4eacb8ee881e752ebe80f204a2",
+    "docs/evidence/authorization44/host.json": "095d5d7e8af6335658629381b715714ae09ad3d24b471ca4091fd7bc2a4683de",
+    "docs/evidence/authorization44/fixed-node.log": "c7a06740ac222982765329c7b375cfe57d198422b84524359daec9fb7c1e8b9f"
+  },
+  "excluded": [
+    "model routing",
+    "GUI",
+    "complete task3.3",
+    "complete V1",
+    "marketplace eligibility"
+  ]
+}

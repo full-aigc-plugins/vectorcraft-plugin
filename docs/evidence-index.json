@@ -576,6 +576,25 @@
         "docs/evidence/authorization44/node-final.log": "bf4dff7aa42540cb1b1087bb639951d30b50b4e137156084ee8511e491b1770a",
         "docs/evidence/authorization44/python-final.log": "976a36747bd351475664ccecb20bb538d17b074caa68cbfdde2a8def980fff13"
       }
+    },
+    {
+      "path": "docs/evidence/vectorcraft-authorization-fixed44-20261008.json",
+      "sha256": "386bf2fab80dc632797aab3f4282ee957d66b732f5e5131567d68dc2ecb29bbd",
+      "level": "fixed-install",
+      "status": "PASS",
+      "scope": "Public plugin44/source37 installed in isolated Codex host; 13 unchanged enabled skills,57 Node and43 Python regressions; full3.3 remains open",
+      "requirement": "VC-TX-001",
+      "tasks": [],
+      "historical": false,
+      "dependencies": {
+        "plugin.json": "2cccf1f5a230673d04430c9fbed728592c6b631e6168e9d1f50ccdebc12e741f",
+        "skills.lock.json": "37cf4e7a514193ff10b1f051915b931874f05a8f693c87e67d904657f040464e",
+        "src/harness/controller.ts": "4c3b6a0a5af7e8ea2ece7586a8a80cd882d9c5f45b08b9205daad57f0c1af7bd",
+        "tests/authorization_binding.test.ts": "bfad2a1ba70572b535285e6cd64b73b26518f1b856e9e13ebaddcc9a11a3eae2",
+        "docs/evidence/authorization44/fixed-python.log": "fd1af81ecb95cd8dde9c8f28b12e84be86d6ac4eacb8ee881e752ebe80f204a2",
+        "docs/evidence/authorization44/host.json": "095d5d7e8af6335658629381b715714ae09ad3d24b471ca4091fd7bc2a4683de",
+        "docs/evidence/authorization44/fixed-node.log": "c7a06740ac222982765329c7b375cfe57d198422b84524359daec9fb7c1e8b9f"
+      }
     }
   ],
   "commandAcceptance": "Use version-bound command catalog executionAcceptance; directory discovery never promotes NOT_RUN",

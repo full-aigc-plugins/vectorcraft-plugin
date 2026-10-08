@@ -163,6 +163,9 @@ def build(root=ROOT):
     authorization='docs/evidence/vectorcraft-authorization-snapshot-local44-20261008.json'
     if (root/authorization).is_file():
         entries.append(bound_report(root,authorization,'local-tests','Three synthetic coordinator authorization regressions; 57 Node and43 Python tests; full3.3 and V1 remain open','VC-TX-001'))
+    authorization_fixed='docs/evidence/vectorcraft-authorization-fixed44-20261008.json'
+    if (root/authorization_fixed).is_file():
+        entries.append(bound_report(root,authorization_fixed,'fixed-install','Public plugin44/source37 installed in isolated Codex host; 13 unchanged enabled skills,57 Node and43 Python regressions; full3.3 remains open','VC-TX-001'))
     # 明确归档变更前执行字节；保留报告原摘要，不能把旧运行重绑定到新实现。
     for entry in entries:
         archived={}

@@ -14,6 +14,8 @@ Current plugin: `0.1.0-dev.44`; skill source: `0.1.0-dev.37`; 13 independent ski
 
 Authorization now freezes caller scope, input fingerprints and physical paths before asynchronous probing, and requires write permission for the staging parent. Three coordinator regression cases cover these boundaries; complete task3.3 and V1 acceptance remain open.
 
+Public plugin44/source37 also passed isolated Codex installation and discovery of13 skills, with57 Node and43 Python regressions run from the installed copy; all skill digests remain unchanged. [Fixed-install evidence](docs/evidence/vectorcraft-authorization-fixed44-20261008.json). No additional V1 task closes.
+
 Runtime capability and isolated upgrades (task2.6) passed all current scenarios in public installed plugin43/source37: cold default, real version/bridge drain, two-process races, migration snapshots and legacy-reader budget rollback. [Fixed-install evidence](docs/evidence/vectorcraft-runtime-upgrade-fixed43-20261008.json). Scope is declared macOS arm64;33 other OpenSpec tasks remain open.
 
 Verified first-use platform: macOS arm64 and Python 3.11+. Pinned runtimes install into the user data directory; skill files stay in their host-loaded directory. These are development releases; complete V1 acceptance and generic Skills CLI installation remain open.
