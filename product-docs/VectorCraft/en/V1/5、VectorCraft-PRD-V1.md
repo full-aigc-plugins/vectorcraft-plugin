@@ -65,3 +65,6 @@ Every P0 requirement needs positive and negative evidence; unexecuted cases are 
 **Created**: 2026-10-05
 **Updated**: 2026-10-05
 **Document status**: Ready for review; implementation status is governed by OpenSpec tasks and evidence.
+
+
+VC-AR-001 qualification: all current three scenarios passed on public58/source43, Codex0.153.4 macOS arm64. Native move/reopen, parent revision, registered dependencies and tamper refusals are verified; external editor fidelity, creative and other platforms are separate. [Evidence](../../../../docs/evidence/vectorcraft-lineage-fixed58-20261009.json).

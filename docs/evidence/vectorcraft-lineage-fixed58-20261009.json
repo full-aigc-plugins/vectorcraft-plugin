@@ -1,0 +1,50 @@
+{
+  "schema": "vectorcraft-lineage-qualification/v1",
+  "result": "PASS",
+  "pluginVersion": "0.1.0-dev.58",
+  "pluginCommit": "4715c9debdd3cc6e1d396055885fc4c55a118598",
+  "sourceRef": "v0.1.0-dev.43",
+  "sourceCommit": "36b79c603111fbf6c95f36d2f4c9ed43c9e7f155",
+  "platform": "Darwin-arm64",
+  "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+  "tasksClosed": [
+    "5.3"
+  ],
+  "host": "docs/evidence/vc-ar-001/host-fixed58.json",
+  "integrity": "docs/evidence/vc-ar-001/integrity-fixed58.json",
+  "native": "docs/evidence/vc-ar-001/native-fixed58.json",
+  "publicQuality": "docs/evidence/vc-ar-001/public-quality-fixed58.json",
+  "scenarioMatrix": "docs/evidence/vc-ar-001/scenarios-fixed58.json",
+  "nativeDriver": "docs/evidence/vc-ar-001/native-driver.py.txt",
+  "publicDriver": "scripts/qa/artifact_lineage.py",
+  "fingerprints": {
+    "docs/evidence/vc-ar-001/host-fixed58.json": "61c8a128cd7c038330a56aada29234ba89eef189c1fe55093eb647cd2e265f3d",
+    "docs/evidence/vc-ar-001/integrity-fixed58.json": "a20b30c15c84783ce1974b7eeb0e38cd1fc1e52510df983d3a44ca69b65b5d9d",
+    "docs/evidence/vc-ar-001/native-fixed58.json": "f16cac0a01f41f5821fa0047d594fcb838f4c4adb34172460a665df5c7e9c90c",
+    "docs/evidence/vc-ar-001/public-quality-fixed58.json": "76d42cca6907ff705277434d49985a213cff6aa047ce3b72c2910384b594fa1c",
+    "docs/evidence/vc-ar-001/scenarios-fixed58.json": "82535e7d18ef75b3e4ed50420663898e7011f5546df711e4b65474a1ea2301d3",
+    "docs/evidence/vc-ar-001/native-driver.py.txt": "df96c3960169ab415bd1fab0da710e65dca7b0d882f05cbe54af6510d2918968",
+    "scripts/qa/artifact_lineage.py": "ff6377025049fe2360687ad892f268d5558691ec71ca5b18082d247a08719fd3",
+    "openspec/changes/establish-v1-plugin/specs/artifact-delivery/spec.md": "75b2055eb583871e9198b5c361565605dbe10bc0195692bf1bc978f956df105f",
+    "plugin.json": "bb351bf56da5f57b3f36fa8b5d616fcfa0dbe86d6b2706cfb3b3e64e7378af8f",
+    "skills.lock.json": "46255b049f5e3d14b45ca9fecbaf037cd55b1e8b8bb447d407cb16c55eb3758c",
+    "src/evaluation/delivery_quality.py": "ef3408bc54e8490a75d9594d7d26b4b2dac7c31d0ab944464d95521f617349d8",
+    "scripts/verify_lineage_evidence.py": "6b8069cf54da19726483a1a37bfd9424ff6eaf661d04ce86952d6ac5e84afc73",
+    "tests/test_lineage_evidence.py": "13e6a9596d0da96a0fce282c3b1ad8b4db3dc38d5dbb5349fe8bc0213b3b25b5",
+    "docs/evidence/vc-ar-001/closure-red.log.txt": "1fe8e917f7a30ddb12bcd00f5c01b4fadcc9f8343c7ba835c52f1acac3108893",
+    "docs/evidence/vc-ar-001/closure-green.log.txt": "8b7fb78aef80224ccec7a185fab288c1bc60a99d717cc9e0ff77c75ab115fda5",
+    "docs/evidence/vc-ar-001/plugin-closure58-regression.log.txt": "3cb4a5549466b5af8053690b9df0410e4b9a782af62bc323687791fd876979ce"
+  },
+  "unverified": [
+    "creative quality",
+    "other platforms",
+    "all formats",
+    "external editor fidelity",
+    "full V1"
+  ],
+  "evidenceVerifierTests": {
+    "passed": 7,
+    "rehashedNegativeCases": 6
+  },
+  "pluginLocalPythonTests": 81
+}

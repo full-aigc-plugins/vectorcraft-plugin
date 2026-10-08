@@ -22,6 +22,7 @@ jobs:
       - run: python3 -I -B scripts/verify_artboard_evidence.py
       - run: python3 -I -B scripts/verify_exchange_evidence.py
       - run: python3 -I -B scripts/verify_brand_variant_evidence.py
+      - run: python3 -I -B scripts/verify_lineage_evidence.py
       - uses: actions/setup-node@v4
         with:
           node-version: '24.18.0'

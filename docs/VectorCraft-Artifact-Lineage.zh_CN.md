@@ -21,3 +21,6 @@ flowchart LR
 
 
 插件58修正公开校验的导入方式，保持安装技能字节不变。57真实CI缓存写入失败记录保留；只读回归在57失败、58通过。本地74项Python通过，固定58验收仍待完成。 [Evidence](evidence/vectorcraft-lineage-candidate58-20261009.json).
+
+
+公开58／源43实际安装于Codex0.153.4 macOS arm64，已通过当前VC-AR-001三个场景：原生创建、整包移动重开、父版本绑定修订及公开七案例校验。13项安装摘要保持不变。5.3关闭，总体114/127完成，13项开放；创作与其他平台验收独立。 [Evidence](evidence/vectorcraft-lineage-fixed58-20261009.json).

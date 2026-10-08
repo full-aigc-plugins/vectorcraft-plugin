@@ -1,0 +1,12 @@
+test_actual_fixed_proof_passes (test_lineage_evidence.LineageEvidenceTests.test_actual_fixed_proof_passes) ... ok
+test_deleted_asset_dependency_rejected (test_lineage_evidence.LineageEvidenceTests.test_deleted_asset_dependency_rejected) ... ok
+test_forged_host_digest_rejected (test_lineage_evidence.LineageEvidenceTests.test_forged_host_digest_rejected) ... ok
+test_missing_refusal_rejected (test_lineage_evidence.LineageEvidenceTests.test_missing_refusal_rejected) ... ok
+test_missing_scene_rejected (test_lineage_evidence.LineageEvidenceTests.test_missing_scene_rejected) ... ok
+test_rebound_execution_task_rejected (test_lineage_evidence.LineageEvidenceTests.test_rebound_execution_task_rejected) ... ok
+test_unreopened_move_rejected (test_lineage_evidence.LineageEvidenceTests.test_unreopened_move_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.060s
+
+OK

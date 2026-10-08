@@ -1,0 +1,24 @@
+{
+  "scenarioContracts": {
+    "VC-AR-001-P": "e43c0fc7cce03fab1f68700695cf23746afe8f2a6aa426969208150ee7413b32",
+    "VC-AR-001-N": "7a12c636fedef7a45ddf98c5ee6018ae25a9645b0ed6edbc411a7dd97e2272e3",
+    "VC-AR-001-RELOCATE": "379bd662778e987e55a0590e7aacb6553da5a5ffb4eafcd3758741c3c735d8f3"
+  },
+  "entries": [
+    {
+      "scenario": "VC-AR-001-P",
+      "level": "native-fixed-install",
+      "result": "PASS"
+    },
+    {
+      "scenario": "VC-AR-001-N",
+      "level": "native-fixed-install",
+      "result": "PASS"
+    },
+    {
+      "scenario": "VC-AR-001-RELOCATE",
+      "level": "native-fixed-install",
+      "result": "PASS"
+    }
+  ]
+}

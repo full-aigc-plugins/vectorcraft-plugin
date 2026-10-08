@@ -1,0 +1,266 @@
+{
+  "schema": "vectorcraft-lineage-public-quality/v1",
+  "result": "PASS",
+  "driverSha256": "ff6377025049fe2360687ad892f268d5558691ec71ca5b18082d247a08719fd3",
+  "qualitySha256": "ef3408bc54e8490a75d9594d7d26b4b2dac7c31d0ab944464d95521f617349d8",
+  "nativeProofSha256": "f16cac0a01f41f5821fa0047d594fcb838f4c4adb34172460a665df5c7e9c90c",
+  "cases": [
+    {
+      "case": "moved package with spaces",
+      "result": "PASS",
+      "quality": {
+        "schema": "vectorcraft-technical-review/v1",
+        "artifactIntegrityStatus": "PASS",
+        "engineeringStatus": "NOT_RUN",
+        "technicalStatus": "PASS",
+        "creativeStatus": "NOT_RUN",
+        "acceptanceStatus": "pending",
+        "nativeReopenStatus": "NOT_RUN",
+        "files": {
+          "plan.json": "b4d7f27af3460f027a8701675fdf49a3c41dd367283b74c3bdd0d26512134ba2",
+          "project.vectorcraft": "0581d8dd98599941ae642620e4a72b0f3a063046535cc412e810f1c88a6f68e7",
+          "exchange-loss.json": "cb090cfa71854a0333f2c4888c1ef102727daca061870c52cd463574e9ad592c",
+          "pdf-export-date.json": "280bef2ac65574f7222607f1f69ec83a7013ddb709d6881774ac83b4d6ae2c53",
+          "native.json": "82ec2fd24fc3f4b1d1d6c85b4b9ba5ee28399ffb9a487f15b8c732f22d4610b8",
+          "artboard-1.pdf": "35124ec118d7b1478b4976597ceac69873b038e16c700ad0eba6a961f76c50ef",
+          "artboard-1.png": "b02de374cb30a67c5eb90dc94efdef88e4bd2ef429d9958115b269f49a31ee38",
+          "artboard-1.svg": "d089d257d7cc2d438076133f316102bb680b4e61d9b5a5a7d57b0710747f5bda",
+          "operations.json": "bcc0f4c2ce28cc153cc8a98d7ec57405aecd2866bda6b4a4477d6d1729a642e8",
+          "Assets/logo.svg": "fa91a3071d1a5f9851b7f6ca646fe90f43f1cf0d1c0700eb69a9ca5ac144837e",
+          "lineage.json": "06a2955d559699e8706fdefd5f18d57b286f86e84e458e18e94b8029f66cad43"
+        },
+        "outputs": [
+          {
+            "path": "artboard-1.svg",
+            "sha256": "d089d257d7cc2d438076133f316102bb680b4e61d9b5a5a7d57b0710747f5bda",
+            "status": "PASS",
+            "decoder": "PyMuPDF",
+            "pages": 1,
+            "scope": "bounded raster decode; creative quality not assessed"
+          },
+          {
+            "path": "artboard-1.pdf",
+            "sha256": "35124ec118d7b1478b4976597ceac69873b038e16c700ad0eba6a961f76c50ef",
+            "status": "PASS",
+            "decoder": "PyMuPDF",
+            "pages": 1,
+            "scope": "bounded raster decode; creative quality not assessed"
+          },
+          {
+            "path": "artboard-1.png",
+            "sha256": "b02de374cb30a67c5eb90dc94efdef88e4bd2ef429d9958115b269f49a31ee38",
+            "status": "PASS",
+            "decoder": "Pillow",
+            "size": [
+              96,
+              80
+            ]
+          }
+        ],
+        "lineageStatus": "PASS",
+        "scope": "artifact integrity and export decode only; native reopening and creative review remain separate",
+        "artifactLogicalId": "vectorcraft:1650c19b-5e58-4596-a357-ee537139b793",
+        "artifactVersion": "f4e1e8dee92392baeed284a7baa44625fa0ca6dfa32214207d7669991cd52f92",
+        "sourceTask": {
+          "id": "execution-544b55dd-b996-4158-9287-dfdaca7ca216",
+          "scope": "workflow-execution",
+          "planSha256": "b4d7f27af3460f027a8701675fdf49a3c41dd367283b74c3bdd0d26512134ba2"
+        },
+        "projectRevision": "0581d8dd98599941ae642620e4a72b0f3a063046535cc412e810f1c88a6f68e7",
+        "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+        "manifestSha256": "74456c3550a72d0ac94c8538a94a4fd12607afb8882dad993e96d59ad87019a7"
+      }
+    },
+    {
+      "case": "revised",
+      "result": "PASS",
+      "quality": {
+        "schema": "vectorcraft-technical-review/v1",
+        "artifactIntegrityStatus": "PASS",
+        "engineeringStatus": "NOT_RUN",
+        "technicalStatus": "PASS",
+        "creativeStatus": "NOT_RUN",
+        "acceptanceStatus": "pending",
+        "nativeReopenStatus": "NOT_RUN",
+        "files": {
+          "plan.json": "f02c06d53158d807bfa2b6a634725a93a6f0a477fe6538525adcc1cbb1917a11",
+          "project.vectorcraft": "346bd5e1f917e99eb2a8bfb9896e3efc4e6cbe979474a4e085f410171bc28a7d",
+          "exchange-loss.json": "5b23329a8b2c8689b367aa70958cfac3d05d5374261c10764ab1daa716eeb2d6",
+          "native.json": "1bef57698e706a3d6169068d76e57b30113b5ddb4734082ffc5c7b32bcd94b40",
+          "artboard-1.png": "77184670d74c06cf67a66b5d168d98d31829b5d4cc42db6b7b361ad0da6570ef",
+          "operations.json": "004e6c6f52c3990e0e3cc2a731bc8a42e721774a70c7f0da9fd79e2cc0058c01",
+          "Assets/logo.svg": "fa91a3071d1a5f9851b7f6ca646fe90f43f1cf0d1c0700eb69a9ca5ac144837e",
+          "lineage.json": "f4e83db7025a489922b776562982e99dd6b92c79bf09c56b262d6c5f030e1496"
+        },
+        "outputs": [
+          {
+            "path": "artboard-1.png",
+            "sha256": "77184670d74c06cf67a66b5d168d98d31829b5d4cc42db6b7b361ad0da6570ef",
+            "status": "PASS",
+            "decoder": "Pillow",
+            "size": [
+              96,
+              80
+            ]
+          }
+        ],
+        "lineageStatus": "PASS",
+        "scope": "artifact integrity and export decode only; native reopening and creative review remain separate",
+        "artifactLogicalId": "vectorcraft:1650c19b-5e58-4596-a357-ee537139b793",
+        "artifactVersion": "ef904174a41a30e11c55c26f690fe6141d4471d37e157e083218f68e5326e631",
+        "sourceTask": {
+          "id": "execution-be7dcfb6-ee7e-43f0-9b76-473ec732c7cd",
+          "scope": "workflow-execution",
+          "planSha256": "f02c06d53158d807bfa2b6a634725a93a6f0a477fe6538525adcc1cbb1917a11"
+        },
+        "projectRevision": "346bd5e1f917e99eb2a8bfb9896e3efc4e6cbe979474a4e085f410171bc28a7d",
+        "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+        "manifestSha256": "bbe1843fc1aa58c70eedac0ba9da29d2684cff078227c339fa0ae981cd39a78b"
+      }
+    },
+    {
+      "case": "same-name-replacement",
+      "result": "PASS",
+      "quality": {
+        "schema": "vectorcraft-technical-review/v1",
+        "artifactIntegrityStatus": "FAIL",
+        "engineeringStatus": "NOT_RUN",
+        "technicalStatus": "FAIL",
+        "creativeStatus": "NOT_RUN",
+        "acceptanceStatus": "blocked",
+        "nativeReopenStatus": "NOT_RUN",
+        "files": {
+          "plan.json": "b4d7f27af3460f027a8701675fdf49a3c41dd367283b74c3bdd0d26512134ba2",
+          "project.vectorcraft": "0581d8dd98599941ae642620e4a72b0f3a063046535cc412e810f1c88a6f68e7",
+          "exchange-loss.json": "cb090cfa71854a0333f2c4888c1ef102727daca061870c52cd463574e9ad592c",
+          "pdf-export-date.json": "280bef2ac65574f7222607f1f69ec83a7013ddb709d6881774ac83b4d6ae2c53",
+          "native.json": "82ec2fd24fc3f4b1d1d6c85b4b9ba5ee28399ffb9a487f15b8c732f22d4610b8",
+          "artboard-1.pdf": "35124ec118d7b1478b4976597ceac69873b038e16c700ad0eba6a961f76c50ef"
+        },
+        "outputs": [],
+        "lineageStatus": "NOT_RUN",
+        "scope": "artifact integrity and export decode only; native reopening and creative review remain separate",
+        "error": "artifact_identity_mismatch: artboard-1.png"
+      }
+    },
+    {
+      "case": "asset-deletion",
+      "result": "PASS",
+      "quality": {
+        "schema": "vectorcraft-technical-review/v1",
+        "artifactIntegrityStatus": "FAIL",
+        "engineeringStatus": "NOT_RUN",
+        "technicalStatus": "FAIL",
+        "creativeStatus": "NOT_RUN",
+        "acceptanceStatus": "blocked",
+        "nativeReopenStatus": "NOT_RUN",
+        "files": {
+          "plan.json": "b4d7f27af3460f027a8701675fdf49a3c41dd367283b74c3bdd0d26512134ba2",
+          "project.vectorcraft": "0581d8dd98599941ae642620e4a72b0f3a063046535cc412e810f1c88a6f68e7",
+          "exchange-loss.json": "cb090cfa71854a0333f2c4888c1ef102727daca061870c52cd463574e9ad592c",
+          "pdf-export-date.json": "280bef2ac65574f7222607f1f69ec83a7013ddb709d6881774ac83b4d6ae2c53",
+          "native.json": "82ec2fd24fc3f4b1d1d6c85b4b9ba5ee28399ffb9a487f15b8c732f22d4610b8",
+          "artboard-1.pdf": "35124ec118d7b1478b4976597ceac69873b038e16c700ad0eba6a961f76c50ef",
+          "artboard-1.png": "b02de374cb30a67c5eb90dc94efdef88e4bd2ef429d9958115b269f49a31ee38",
+          "artboard-1.svg": "d089d257d7cc2d438076133f316102bb680b4e61d9b5a5a7d57b0710747f5bda",
+          "operations.json": "bcc0f4c2ce28cc153cc8a98d7ec57405aecd2866bda6b4a4477d6d1729a642e8"
+        },
+        "outputs": [],
+        "lineageStatus": "NOT_RUN",
+        "scope": "artifact integrity and export decode only; native reopening and creative review remain separate",
+        "error": "invalid_artifact_path"
+      }
+    },
+    {
+      "case": "lineage-task-rebind",
+      "result": "PASS",
+      "quality": {
+        "schema": "vectorcraft-technical-review/v1",
+        "artifactIntegrityStatus": "FAIL",
+        "engineeringStatus": "NOT_RUN",
+        "technicalStatus": "FAIL",
+        "creativeStatus": "NOT_RUN",
+        "acceptanceStatus": "blocked",
+        "nativeReopenStatus": "NOT_RUN",
+        "files": {
+          "plan.json": "b4d7f27af3460f027a8701675fdf49a3c41dd367283b74c3bdd0d26512134ba2",
+          "project.vectorcraft": "0581d8dd98599941ae642620e4a72b0f3a063046535cc412e810f1c88a6f68e7",
+          "exchange-loss.json": "cb090cfa71854a0333f2c4888c1ef102727daca061870c52cd463574e9ad592c",
+          "pdf-export-date.json": "280bef2ac65574f7222607f1f69ec83a7013ddb709d6881774ac83b4d6ae2c53",
+          "native.json": "82ec2fd24fc3f4b1d1d6c85b4b9ba5ee28399ffb9a487f15b8c732f22d4610b8",
+          "artboard-1.pdf": "35124ec118d7b1478b4976597ceac69873b038e16c700ad0eba6a961f76c50ef",
+          "artboard-1.png": "b02de374cb30a67c5eb90dc94efdef88e4bd2ef429d9958115b269f49a31ee38",
+          "artboard-1.svg": "d089d257d7cc2d438076133f316102bb680b4e61d9b5a5a7d57b0710747f5bda",
+          "operations.json": "bcc0f4c2ce28cc153cc8a98d7ec57405aecd2866bda6b4a4477d6d1729a642e8",
+          "Assets/logo.svg": "fa91a3071d1a5f9851b7f6ca646fe90f43f1cf0d1c0700eb69a9ca5ac144837e",
+          "lineage.json": "7e1b3f9d92a1936a6d98c1a76f3ad9f2d6bbba058f7403ebf394e75e3a4803b0"
+        },
+        "outputs": [],
+        "lineageStatus": "NOT_RUN",
+        "scope": "artifact integrity and export decode only; native reopening and creative review remain separate",
+        "error": "lineage_task_mismatch"
+      }
+    },
+    {
+      "case": "lineage-native-rebind",
+      "result": "PASS",
+      "quality": {
+        "schema": "vectorcraft-technical-review/v1",
+        "artifactIntegrityStatus": "FAIL",
+        "engineeringStatus": "NOT_RUN",
+        "technicalStatus": "FAIL",
+        "creativeStatus": "NOT_RUN",
+        "acceptanceStatus": "blocked",
+        "nativeReopenStatus": "NOT_RUN",
+        "files": {
+          "plan.json": "b4d7f27af3460f027a8701675fdf49a3c41dd367283b74c3bdd0d26512134ba2",
+          "project.vectorcraft": "0581d8dd98599941ae642620e4a72b0f3a063046535cc412e810f1c88a6f68e7",
+          "exchange-loss.json": "cb090cfa71854a0333f2c4888c1ef102727daca061870c52cd463574e9ad592c",
+          "pdf-export-date.json": "280bef2ac65574f7222607f1f69ec83a7013ddb709d6881774ac83b4d6ae2c53",
+          "native.json": "82ec2fd24fc3f4b1d1d6c85b4b9ba5ee28399ffb9a487f15b8c732f22d4610b8",
+          "artboard-1.pdf": "35124ec118d7b1478b4976597ceac69873b038e16c700ad0eba6a961f76c50ef",
+          "artboard-1.png": "b02de374cb30a67c5eb90dc94efdef88e4bd2ef429d9958115b269f49a31ee38",
+          "artboard-1.svg": "d089d257d7cc2d438076133f316102bb680b4e61d9b5a5a7d57b0710747f5bda",
+          "operations.json": "bcc0f4c2ce28cc153cc8a98d7ec57405aecd2866bda6b4a4477d6d1729a642e8",
+          "Assets/logo.svg": "fa91a3071d1a5f9851b7f6ca646fe90f43f1cf0d1c0700eb69a9ca5ac144837e",
+          "lineage.json": "6f70aa0b0d7068c1a6eabe1618b20e93bb5094d3efe906b62e2472bcb3f9f40d"
+        },
+        "outputs": [],
+        "lineageStatus": "NOT_RUN",
+        "scope": "artifact integrity and export decode only; native reopening and creative review remain separate",
+        "error": "lineage_native_mismatch"
+      }
+    },
+    {
+      "case": "parent-version-rebind",
+      "result": "PASS",
+      "quality": {
+        "schema": "vectorcraft-technical-review/v1",
+        "artifactIntegrityStatus": "FAIL",
+        "engineeringStatus": "NOT_RUN",
+        "technicalStatus": "FAIL",
+        "creativeStatus": "NOT_RUN",
+        "acceptanceStatus": "blocked",
+        "nativeReopenStatus": "NOT_RUN",
+        "files": {
+          "plan.json": "b4d7f27af3460f027a8701675fdf49a3c41dd367283b74c3bdd0d26512134ba2",
+          "project.vectorcraft": "0581d8dd98599941ae642620e4a72b0f3a063046535cc412e810f1c88a6f68e7",
+          "exchange-loss.json": "cb090cfa71854a0333f2c4888c1ef102727daca061870c52cd463574e9ad592c",
+          "pdf-export-date.json": "280bef2ac65574f7222607f1f69ec83a7013ddb709d6881774ac83b4d6ae2c53",
+          "native.json": "82ec2fd24fc3f4b1d1d6c85b4b9ba5ee28399ffb9a487f15b8c732f22d4610b8",
+          "artboard-1.pdf": "35124ec118d7b1478b4976597ceac69873b038e16c700ad0eba6a961f76c50ef",
+          "artboard-1.png": "b02de374cb30a67c5eb90dc94efdef88e4bd2ef429d9958115b269f49a31ee38",
+          "artboard-1.svg": "d089d257d7cc2d438076133f316102bb680b4e61d9b5a5a7d57b0710747f5bda",
+          "operations.json": "bcc0f4c2ce28cc153cc8a98d7ec57405aecd2866bda6b4a4477d6d1729a642e8",
+          "Assets/logo.svg": "fa91a3071d1a5f9851b7f6ca646fe90f43f1cf0d1c0700eb69a9ca5ac144837e",
+          "lineage.json": "88a5863b4d72f64f9b750a9b416012f45dd15cf112fb4542520badf23eb0580a"
+        },
+        "outputs": [],
+        "lineageStatus": "NOT_RUN",
+        "scope": "artifact integrity and export decode only; native reopening and creative review remain separate",
+        "error": "lineage_parent_mismatch"
+      }
+    }
+  ],
+  "scope": "actual native package public identity and decode; creative, engineering reopening and acceptance remain separate"
+}

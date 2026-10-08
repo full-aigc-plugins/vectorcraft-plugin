@@ -229,6 +229,9 @@ def build(root=ROOT):
     artboards='docs/evidence/vectorcraft-artboards-fixed54-20261009.json'
     if (root/artboards).is_file():
         entries.append(bound_report(root,artboards,'fixed-install','All four current VC-DM-004 scenarios on installed54/source40 macOS arm64;31 native boundary cases, standalone export cold first use, stable-ID mapping and pinned renderer unknown-bounds semantics;only4.12 closes','VC-DM-004',['4.12']))
+    lineage_fixed='docs/evidence/vectorcraft-lineage-fixed58-20261009.json'
+    if (root/lineage_fixed).is_file():
+        entries.append(bound_report(root,lineage_fixed,'fixed-install','All three current VC-AR-001 scenarios on actual public58/source43 Codex0.153.4 macOS arm64; native create/move/reopen/revise and public7 cases;13 skill digests unchanged;only5.3 closes','VC-AR-001',['5.3']))
     lineage58='docs/evidence/vectorcraft-lineage-candidate58-20261009.json'
     if (root/lineage58).is_file():
         entries.append(bound_report(root,lineage58,'native-candidate','Source43/public58 read-only artifact lineage guard; real57 CI cache-write failure reproduced and fixed;74 Python regressions;fixed5.3 remains open','VC-AR-001',['5.1','5.2']))

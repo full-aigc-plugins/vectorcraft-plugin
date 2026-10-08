@@ -1,0 +1,66 @@
+test_actual_fixed_proof_passes (test_lineage_evidence.LineageEvidenceTests.test_actual_fixed_proof_passes) ... ok
+test_deleted_asset_dependency_rejected (test_lineage_evidence.LineageEvidenceTests.test_deleted_asset_dependency_rejected) ... FAIL
+test_forged_host_digest_rejected (test_lineage_evidence.LineageEvidenceTests.test_forged_host_digest_rejected) ... FAIL
+test_missing_refusal_rejected (test_lineage_evidence.LineageEvidenceTests.test_missing_refusal_rejected) ... FAIL
+test_missing_scene_rejected (test_lineage_evidence.LineageEvidenceTests.test_missing_scene_rejected) ... FAIL
+test_rebound_execution_task_rejected (test_lineage_evidence.LineageEvidenceTests.test_rebound_execution_task_rejected) ... FAIL
+test_unreopened_move_rejected (test_lineage_evidence.LineageEvidenceTests.test_unreopened_move_rejected) ... FAIL
+
+======================================================================
+FAIL: test_deleted_asset_dependency_rejected (test_lineage_evidence.LineageEvidenceTests.test_deleted_asset_dependency_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_REPO/tests/test_lineage_evidence.py", line 28, in test_deleted_asset_dependency_rejected
+    with self.assertRaisesRegex(ValueError,'lineage'):self.verify()
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_forged_host_digest_rejected (test_lineage_evidence.LineageEvidenceTests.test_forged_host_digest_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_REPO/tests/test_lineage_evidence.py", line 22, in test_forged_host_digest_rejected
+    with self.assertRaisesRegex(ValueError,'installed'):self.verify()
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_missing_refusal_rejected (test_lineage_evidence.LineageEvidenceTests.test_missing_refusal_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_REPO/tests/test_lineage_evidence.py", line 31, in test_missing_refusal_rejected
+    with self.assertRaisesRegex(ValueError,'refusal'):self.verify()
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_missing_scene_rejected (test_lineage_evidence.LineageEvidenceTests.test_missing_scene_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_REPO/tests/test_lineage_evidence.py", line 19, in test_missing_scene_rejected
+    with self.assertRaisesRegex(ValueError,'scenario'):self.verify()
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_rebound_execution_task_rejected (test_lineage_evidence.LineageEvidenceTests.test_rebound_execution_task_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_REPO/tests/test_lineage_evidence.py", line 25, in test_rebound_execution_task_rejected
+    with self.assertRaisesRegex(ValueError,'lineage'):self.verify()
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_unreopened_move_rejected (test_lineage_evidence.LineageEvidenceTests.test_unreopened_move_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_REPO/tests/test_lineage_evidence.py", line 34, in test_unreopened_move_rejected
+    with self.assertRaisesRegex(ValueError,'native'):self.verify()
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.037s
+
+FAILED (failures=6)

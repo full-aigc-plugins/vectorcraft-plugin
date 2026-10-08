@@ -2432,6 +2432,36 @@
       }
     },
     {
+      "path": "docs/evidence/vectorcraft-lineage-fixed58-20261009.json",
+      "sha256": "8133c2bf66a4bd9d497ab1312c42979cb13a4c3ce805cbe91091ee43ed27307f",
+      "level": "fixed-install",
+      "status": "PASS",
+      "scope": "All three current VC-AR-001 scenarios on actual public58/source43 Codex0.153.4 macOS arm64; native create/move/reopen/revise and public7 cases;13 skill digests unchanged;only5.3 closes",
+      "requirement": "VC-AR-001",
+      "tasks": [
+        "5.3"
+      ],
+      "historical": false,
+      "dependencies": {
+        "docs/evidence/vc-ar-001/host-fixed58.json": "61c8a128cd7c038330a56aada29234ba89eef189c1fe55093eb647cd2e265f3d",
+        "docs/evidence/vc-ar-001/integrity-fixed58.json": "a20b30c15c84783ce1974b7eeb0e38cd1fc1e52510df983d3a44ca69b65b5d9d",
+        "docs/evidence/vc-ar-001/native-fixed58.json": "f16cac0a01f41f5821fa0047d594fcb838f4c4adb34172460a665df5c7e9c90c",
+        "docs/evidence/vc-ar-001/public-quality-fixed58.json": "76d42cca6907ff705277434d49985a213cff6aa047ce3b72c2910384b594fa1c",
+        "docs/evidence/vc-ar-001/scenarios-fixed58.json": "82535e7d18ef75b3e4ed50420663898e7011f5546df711e4b65474a1ea2301d3",
+        "docs/evidence/vc-ar-001/native-driver.py.txt": "df96c3960169ab415bd1fab0da710e65dca7b0d882f05cbe54af6510d2918968",
+        "scripts/qa/artifact_lineage.py": "ff6377025049fe2360687ad892f268d5558691ec71ca5b18082d247a08719fd3",
+        "openspec/changes/establish-v1-plugin/specs/artifact-delivery/spec.md": "75b2055eb583871e9198b5c361565605dbe10bc0195692bf1bc978f956df105f",
+        "plugin.json": "bb351bf56da5f57b3f36fa8b5d616fcfa0dbe86d6b2706cfb3b3e64e7378af8f",
+        "skills.lock.json": "46255b049f5e3d14b45ca9fecbaf037cd55b1e8b8bb447d407cb16c55eb3758c",
+        "src/evaluation/delivery_quality.py": "ef3408bc54e8490a75d9594d7d26b4b2dac7c31d0ab944464d95521f617349d8",
+        "scripts/verify_lineage_evidence.py": "6b8069cf54da19726483a1a37bfd9424ff6eaf661d04ce86952d6ac5e84afc73",
+        "tests/test_lineage_evidence.py": "13e6a9596d0da96a0fce282c3b1ad8b4db3dc38d5dbb5349fe8bc0213b3b25b5",
+        "docs/evidence/vc-ar-001/closure-red.log.txt": "1fe8e917f7a30ddb12bcd00f5c01b4fadcc9f8343c7ba835c52f1acac3108893",
+        "docs/evidence/vc-ar-001/closure-green.log.txt": "8b7fb78aef80224ccec7a185fab288c1bc60a99d717cc9e0ff77c75ab115fda5",
+        "docs/evidence/vc-ar-001/plugin-closure58-regression.log.txt": "3cb4a5549466b5af8053690b9df0410e4b9a782af62bc323687791fd876979ce"
+      }
+    },
+    {
       "path": "docs/evidence/vectorcraft-lineage-candidate58-20261009.json",
       "sha256": "bb26c47ca9aaecf43f270f4dee535cb59588a7ed5f610abc5c90b8fadc1bd93b",
       "level": "native-candidate",

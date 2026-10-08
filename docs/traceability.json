@@ -192,9 +192,9 @@
         "5.3"
       ],
       "owner": "Harness owner",
-      "status": "implemented",
-      "evidence": "docs/evidence/vectorcraft-lineage-candidate58-20261009.json",
-      "scope": "source43 and public58 candidate; fixed installation qualification5.3 remains open"
+      "status": "verified",
+      "evidence": "docs/evidence/vectorcraft-lineage-fixed58-20261009.json",
+      "scope": "all three current scenarios; actual fixed58/source43 Codex0.153.4 macOS arm64; creative and other platforms separate"
     },
     {
       "requirement": "VC-AR-002",
