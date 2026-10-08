@@ -1,0 +1,28 @@
+{
+  "schema": "vectorcraft-exchange-automatic-fallback-subset/v1",
+  "result": "PASS",
+  "pluginVersion": "0.1.0-dev.55",
+  "pluginCommit": "b1757a70abe64e33cb50a2e07bedf2b8c4dbaed1",
+  "sourceRef": "v0.1.0-dev.41",
+  "sourceCommit": "9649db7fbcee4d275b91748115143c0680e94417",
+  "platform": "Darwin-arm64",
+  "tasksClosed": [],
+  "native": "docs/evidence/vc-dm-005/automatic-freeform-fixed55.json",
+  "driver": "docs/evidence/vc-dm-005/automatic-freeform-driver.py.txt",
+  "fingerprints": {
+    "docs/evidence/vc-dm-005/automatic-freeform-fixed55.json": "d3aea87a281f7b4ea324b892d60a458445a5ac0845a6d5980e5d5ca4704859e0",
+    "docs/evidence/vc-dm-005/automatic-freeform-driver.py.txt": "2cd1e31f0d84582e12664dd9e77e8e7e4b59ffae8a5b23e350dc15b9c554f43c",
+    "plugin.json": "8c09f2fc1da8f218e20936dbdb5ddff884e92c985502eb016f32a17b2e20dd84",
+    "skills.lock.json": "0035adfa3fc09aae071c37cc03b78e307d9a92f0af947ffa4603a6da2f42cd06",
+    "src/evaluation/delivery_quality.py": "f3bb72202c70a8db138881b2ff89456d66c128103d5ed9a8a2006d876eca75dc",
+    "docs/evidence/vc-dm-005/fixed55-host.json": "b2cf3239db66592d2fa4b43a743b39c77c314478d34532f7a3f3df6ab31a4a4b"
+  },
+  "decodedExports": 3,
+  "refusalCases": 7,
+  "automaticRasterizationWithoutExpand": true,
+  "sourceAndPreviousExportsPreserved": true,
+  "nativeGradientEditableAfterIndependentReopen": true,
+  "scope": "Supplemental installed55 automatic freeform SVG fallback and source preservation evidence. Full OpenSpec task4.15 closure review remains pending; no GUI/model/V1 acceptance.",
+  "skillsUnchanged": 13,
+  "host": "docs/evidence/vc-dm-005/fixed55-host.json"
+}

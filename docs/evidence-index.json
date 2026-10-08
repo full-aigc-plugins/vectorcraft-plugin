@@ -2465,6 +2465,24 @@
       }
     },
     {
+      "path": "docs/evidence/vectorcraft-exchange-automatic55-20261009.json",
+      "sha256": "d3f1361b7cd7161f0df72bb1802560c4cdddc89d03b0d097a30ce7d43412dab3",
+      "level": "fixed-install",
+      "status": "PASS",
+      "scope": "Installed55 automatic freeform SVG fallback, independent native edit preservation, three export decodes and seven refusals; supplementary scope,4.15 formal closure pending",
+      "requirement": "VC-DM-005",
+      "tasks": [],
+      "historical": false,
+      "dependencies": {
+        "docs/evidence/vc-dm-005/automatic-freeform-fixed55.json": "d3aea87a281f7b4ea324b892d60a458445a5ac0845a6d5980e5d5ca4704859e0",
+        "docs/evidence/vc-dm-005/automatic-freeform-driver.py.txt": "2cd1e31f0d84582e12664dd9e77e8e7e4b59ffae8a5b23e350dc15b9c554f43c",
+        "plugin.json": "8c09f2fc1da8f218e20936dbdb5ddff884e92c985502eb016f32a17b2e20dd84",
+        "skills.lock.json": "0035adfa3fc09aae071c37cc03b78e307d9a92f0af947ffa4603a6da2f42cd06",
+        "src/evaluation/delivery_quality.py": "f3bb72202c70a8db138881b2ff89456d66c128103d5ed9a8a2006d876eca75dc",
+        "docs/evidence/vc-dm-005/fixed55-host.json": "b2cf3239db66592d2fa4b43a743b39c77c314478d34532f7a3f3df6ab31a4a4b"
+      }
+    },
+    {
       "path": "docs/evidence/vectorcraft-exchange-fixed55-20261009.json",
       "sha256": "0b20b910d82ce2c0f2c000069a165b603d79cdea13ebc39e06afa9d626e10552",
       "level": "fixed-install",

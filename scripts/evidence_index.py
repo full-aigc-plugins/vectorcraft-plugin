@@ -232,6 +232,9 @@ def build(root=ROOT):
     exchange='docs/evidence/vectorcraft-exchange-candidate55-20261009.json'
     if (root/exchange).is_file():
         entries.append(bound_report(root,exchange,'native-candidate','Source41 raster scope and plugin55 technical disclosure guard; fixed54 gap, three native reopen/nine decode/four explicit disclosure refusals;minimum4.13/4.14 only,4.15 remains open','VC-DM-005',['4.13','4.14']))
+    automatic='docs/evidence/vectorcraft-exchange-automatic55-20261009.json'
+    if (root/automatic).is_file():
+        entries.append(bound_report(root,automatic,'fixed-install','Installed55 automatic freeform SVG fallback, independent native edit preservation, three export decodes and seven refusals; supplementary scope,4.15 formal closure pending','VC-DM-005'))
     exchange_fixed='docs/evidence/vectorcraft-exchange-fixed55-20261009.json'
     if (root/exchange_fixed).is_file():
         entries.append(bound_report(root,exchange_fixed,'fixed-install','Actual public55/source41 installation/discovery and installed-copy three native reopen/nine decode/four disclosure refusals;13 skills unchanged;explicit expansion only,complete4.15 remains open','VC-DM-005'))
