@@ -10,7 +10,7 @@
 
 Logo、图标与品牌图形需求进入，交付 `.vectorcraft` 及适用的 SVG、PDF、PNG。
 
-当前插件：`0.1.0-dev.55`；技能源：`0.1.0-dev.41`；13 个独立技能。
+当前插件：`0.1.0-dev.64`；技能源：`0.1.0-dev.44`；13 个独立技能。候选64尚未发布，公开63仍保留源43。
 
 插件55／源41增加SVG实际图像范围及摘要绑定的技术披露门禁；最小任务4.13／4.14通过，4.15当前无界面场景验收通过。[架构](docs/VectorCraft-Exchange-Scope.zh_CN.md)。
 
@@ -137,11 +137,11 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.63 |
+| Metadata version | 0.1.0-dev.64 |
 | Stage | implementation-in-progress |
-| Skills source | vectorcraft-skills / v0.1.0-dev.43 |
+| Skills source | vectorcraft-skills / v0.1.0-dev.44 |
 | Execution | 上游 CLI；ArtCraft 使用子适配器 |
-| Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
+| Host compatibility | Public63 bounded Codex install/discovery verified; candidate64 fixed-host qualification pending |
 | License | Apache-2.0 (original repository content) |
 
 
@@ -428,3 +428,5 @@ Codex 0.153.4 在全新隔离配置中安装并发现13技能。13项独立空�
 VC-RL-001两场景完成：发布者只读门禁分别核验插件结构、独立技能源、运行时、宿主加载、真实任务和原生交付。12项门禁测试先因缺少目标行为失败，最小实现后通过；另4项证据校验通过。实际隔离包中文档与OpenSpec均通过时，仅文档证明仍被门禁拒绝；原有有界记录保持原范围。复用未变化的公开63／源43实际安装、6次原生修订与独占桌面证据，并重新校验当前摘要，本轮没有新增原生或模型运行。7.1–7.3完成，120/127完成、7项开放；marketplaceEligible仍false，supportedPluginHosts仍空。权限与秘密、全命令、模型路由、完整分发和真实创作仍待独立验收。 [Evidence](docs/evidence/vectorcraft-release-gate-20261009.json).
 
 权限与秘密边界正在实施：本地候选已限制七类子进程入口的环境继承、禁止向错误输出转发原始子进程诊断、拒绝素材附加指令字段及明确命名的字面凭据；失败评审回执也不得将此类凭据写入审计表。8项定向测试和132项Node回归通过，146项Python测试通过；实际原生修订及后续技术检查消耗4次共享预算，相关进程组停止。本候选尚未公开固定分发或完成宿主秘密引用合同，7.4–7.6继续开放，当前仍120/127完成、7项开放。原发布63／源43不变；旧发布证据不得为改动后的工作树放行。该校验不声称识别任意正文中的秘密。 [Evidence](docs/evidence/vectorcraft-permissions-candidate-20261009.json).
+
+候选64已锁定公开技能源44（e5f8e1bb8528），旧63／源43保持不可变。源44的183项回归通过、30项跳过、6项目标测试及13项真实独立冷安装通过；候选插件132项Node与146项Python回归通过，实际原生修订和后续技术检查消耗4次共享预算并停止相关进程组。源44主分支和标签CI通过；插件64仍未公开固定分发，宿主秘密引用、完整权限入口审计与VC-RL-002全部场景尚待完成，7.4–7.6继续开放，总体120/127完成、7项开放。 [Evidence](docs/evidence/vectorcraft-permissions-integration-candidate64-20261009.json).

@@ -54,6 +54,7 @@ def references(value, aliases):
             references(child, aliases)
 
 def validate(plan, input_names=()):
+    load("input_security").assert_no_literal_secrets(plan)
     if (not isinstance(plan, dict) or set(plan) != {"schema", "operations"}
             or plan["schema"] != "craft-command-plan/v1"
             or not isinstance(plan["operations"], list)
@@ -140,7 +141,7 @@ def parse_reply(reply, output=None, index=0):
                    for item in reply['content'])):
         raise RuntimeError('outcome_unknown: invalid_tool_reply')
     if reply.get("isError"):
-        raise RuntimeError("command_failed: " + json.dumps(reply.get("content"), ensure_ascii=False))
+        raise RuntimeError("command_failed: native diagnostic withheld")
     content = reply.get("content", [])
     texts = [item["text"] for item in content if item.get("type") == "text"]
     if len(content) == 1 and len(texts) == 1:
@@ -153,7 +154,8 @@ def parse_reply(reply, output=None, index=0):
             raise RuntimeError('outcome_unknown: unsafe_json_reply') from None
         else:
             if isinstance(result, dict) and set(result) == {'error'}:
-                raise RuntimeError("semantic_error: " + json.dumps(result, ensure_ascii=False))
+                raise RuntimeError("semantic_error: native diagnostic withheld")
+            load("input_security").assert_no_literal_secrets(result)
             return result
     if output is None or not content:
         raise RuntimeError("outcome_unknown: unexpected_reply")

@@ -125,6 +125,8 @@
 
 4.25 固定 SVG 混合验收已完成：Art 插件 dev.63／技能源 dev.43／runtime dev.62、Vector 插件 dev.11／技能源 dev.10；五插件 58 技能发现、两项安装后 PNG／JPEG／SVG 原生混合验收、三项四领域回归、Art 十项冷启动和全部安装摘要保全通过。证据 docs/evidence/codex-release63-svg-first-use-20261006.json。只关闭登记素材交接增量，完整领域、类型化 SVG、动态透明序列和创作门禁仍开放。
 
+  源44已公开发布并通过13项真实独立冷安装，候选插件64锁定源44并通过原生修订及132项Node／146项Python回归。宿主秘密引用、完整入口审计和固定64权限验收仍待完成；7.4–7.6保持开放。新证据：`docs/evidence/vectorcraft-permissions-integration-candidate64-20261009.json`。
+
 ## 8. 完整命令覆盖
 
 - [x] 8.1 [VC-CM-001] 建立全目录覆盖、后续非法命令、引用、嵌入错误及超时不重放的失败测试；记录目标缺失失败。

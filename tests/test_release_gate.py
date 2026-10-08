@@ -15,8 +15,13 @@ class ReleaseGateTests(unittest.TestCase):
     choices=[ROOT/dep for entry in json.loads((ROOT/'docs/evidence-index.json').read_text())['entries'] for dep,digest in entry['dependencies'].items() if digest==expected and dep.endswith('/'+name)]
     source=next((candidate for candidate in choices if candidate.is_file() and hashlib.sha256(candidate.read_bytes()).hexdigest()==expected),source)
    shutil.copyfile(source,p)
-  shutil.copytree(ROOT/'skills',self.root/'skills',dirs_exist_ok=True)
   spec=importlib.util.spec_from_file_location('release_gate',ROOT/'scripts/release_gate.py');self.m=importlib.util.module_from_spec(spec);spec.loader.exec_module(self.m)
+  # 正向单元夹具使用被验收发布的完整技能源字节，不将新44载荷写入旧43身份。
+  source=json.loads((self.root/'skills.lock.json').read_text())['sources'][0]
+  for name,digest in source['sha256'].items():
+   candidates=[ROOT/'skills'/name,ROOT/'docs/evidence/pre-permissions-identity/skills'/name]
+   original=next(path for path in candidates if path.is_dir() and self.m.tree_digest(path)==digest)
+   shutil.copytree(original,self.root/'skills'/name,dirs_exist_ok=True)
  def write(self,name,value):
   p=self.root/name;p.write_text(json.dumps(value));self.bundle['fingerprints'][name]=hashlib.sha256(p.read_bytes()).hexdigest();(self.root/'docs/release-evidence.json').write_text(json.dumps(self.bundle))
  def assess(self):

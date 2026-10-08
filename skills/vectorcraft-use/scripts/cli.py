@@ -8,6 +8,14 @@ from pathlib import Path
 import subprocess
 import sys
 sys.dont_write_bytecode=True
+import importlib.util
+
+def _native_environment():
+    # 计划和安装锁的原有错误诊断先执行；进入原生进程前安全资源必须存在。
+    import runpy
+    security=runpy.run_path(str(Path(__file__).with_name('input_security.py')))
+    return security['native_environment']()
+
 ALLOWED={'--version', 'perf', 'help', 'info', 'mcp', 'convert', 'commands', 'run', 'bench'}
 def setup_failure(runtime_home):
  """安装器缺失时也保留当前技能自身的恢复位置，不读取兄弟技能。"""
@@ -26,7 +34,7 @@ def main():
   module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
   installed=module.install(json.loads(path.with_name('runtime.lock.json').read_text()),args.runtime_home,args.archive)
   installation_completed=True
-  result=subprocess.run([installed['executable'],*argv],timeout=600)
+  result=subprocess.run([installed['executable'],*argv],timeout=600,env=_native_environment())
   return result.returncode
  except (ValueError,OSError,subprocess.SubprocessError) as error:
   reply={'error':str(error),'result':'unknown' if isinstance(error,subprocess.TimeoutExpired) else 'failed'}

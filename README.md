@@ -10,7 +10,7 @@ Four-domain RT-001 runtime source/integrity acceptance now covers every current 
 
 Create Logo, icon and brand assets as `.vectorcraft` with applicable SVG, PDF and PNG exports.
 
-Current plugin: `0.1.0-dev.63`; skill source: `0.1.0-dev.43`; 13 independent skills.
+Current plugin: `0.1.0-dev.64`; skill source: `0.1.0-dev.44`; 13 independent skills. Candidate64 is not yet published;public63 retains source43.
 
 Plugin55/source41 adds actual SVG image scope and a digest-bound technical disclosure guard. Minimum tasks4.13/4.14 pass; 4.15 qualifies for its current headless scenarios. [Architecture](docs/VectorCraft-Exchange-Scope.en.md).
 
@@ -137,11 +137,11 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.63 |
+| Metadata version | 0.1.0-dev.64 |
 | Stage | implementation-in-progress |
-| Skills source | vectorcraft-skills / v0.1.0-dev.43 |
+| Skills source | vectorcraft-skills / v0.1.0-dev.44 |
 | Execution | Upstream CLI; ArtCraft uses child adapters |
-| Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
+| Host compatibility | Public63 bounded Codex install/discovery verified; candidate64 fixed-host qualification pending |
 | License | Apache-2.0 (original repository content) |
 
 
@@ -430,3 +430,5 @@ Actual public63/source43 installed on Codex0.153.4 macOS arm64 passes all four c
 Both VC-RL-001 scenarios pass. A readonly release-owner gate checks plugin structure,independent skill source,runtime,host load,real task and native delivery separately. Twelve target tests first fail for the missing behavior and then pass;four semantic evidence tests also pass. In an actual isolated package,documentation and OpenSpec pass while documentation-only attestations still fail the release gate,retaining prior bounded records. Unchanged public63/source43 installation,six native revisions and owned-desktop evidence are reused with current digest checks;this turn adds no native or model run. Tasks7.1–7.3 complete,120/127 complete and7 open;marketplaceEligible stays false and supportedPluginHosts stays empty. Permissions/secrets,all commands,model routing,full distribution and actual creative review remain separate. [Evidence](docs/evidence/vectorcraft-release-gate-20261009.json).
 
 Permissions and secrets remain in progress. A local candidate filters inherited environments at seven subprocess entry points,withholds raw child diagnostics,rejects extra asset instruction fields and explicitly named literal credential fields,and refuses to persist those credentials in rejected-review audit events. Eight targeted tests and132 Node regressions pass;146 Python tests pass. An actual native revision and subsequent technical check consume four shared attempts,and owned groups stop. This candidate has no new public fixed distribution or completed host secret-reference contract;tasks7.4–7.6 remain open,120/127 complete and7 open. Published63/source43 stay unchanged;old release evidence cannot authorize the modified worktree. The named-field check does not claim arbitrary secret detection in document text. [Evidence](docs/evidence/vectorcraft-permissions-candidate-20261009.json).
+
+Candidate64 pins public source44(e5f8e1bb8528),preserving immutable63/source43. Source44 passes183 regressions with30 skips,six target tests and13 real independent cold installs. Candidate plugin132 Node and146 Python regressions pass;actual native revision and subsequent technical checking consume four shared attempts and stop owned groups. Source44 main/tag CI pass. Plugin64 has no public fixed qualification yet;host secret references,complete permission entry-point audit and all VC-RL-002 scenarios remain pending. Tasks7.4–7.6 remain open,120/127 complete and7 open. [Evidence](docs/evidence/vectorcraft-permissions-integration-candidate64-20261009.json).

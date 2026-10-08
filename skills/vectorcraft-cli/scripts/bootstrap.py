@@ -19,6 +19,14 @@ import urllib.request
 import urllib.parse
 import zipfile
 
+import importlib.util
+
+def _native_environment():
+    # 计划和安装锁的原有错误诊断先执行；进入原生进程前安全资源必须存在。
+    import runpy
+    security=runpy.run_path(str(Path(__file__).with_name('input_security.py')))
+    return security['native_environment']()
+
 MAX_BYTES = 1024 * 1024 * 1024
 LOCK_WAIT_SECONDS = 120
 
@@ -175,7 +183,7 @@ def install(lock, runtime_home, archive=None, platform_key=None):
                 if target.exists():
                     target = payload / f'{index}-{path.name}'
                 shutil.copyfile(path, target)
-            result = subprocess.run([str(binary), '--version'], capture_output=True, text=True, timeout=20, check=True)
+            result = subprocess.run([str(binary), '--version'], capture_output=True, text=True, timeout=20, check=True, env=_native_environment())
             if result.stdout.strip() != expected.get('versionOutput', f'{artifact} {version}'):
                 raise ValueError('runtime_version_mismatch')
             receipt = dict(expected, name=artifact.removesuffix('-cli'), version=version,

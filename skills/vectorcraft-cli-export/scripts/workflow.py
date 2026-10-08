@@ -101,6 +101,7 @@ def native_module():
 
 
 def validate(plan):
+    native_module().commands.load("input_security").assert_no_literal_secrets(plan)
     if not isinstance(plan, dict) or not isinstance(plan.get('operations'), list):
         raise ValueError('operations_required')
     aliases = set()
@@ -186,7 +187,7 @@ def execute(plan, output, runtime_home=None, source=None, control=None):
     cli = installed['executable']
     if control and installed['binarySha256'] != control.profile['runtimeIdentity']:
         raise ValueError('runtime_identity_mismatch')
-    catalog = json.loads(subprocess.check_output([cli, 'commands'], text=True, timeout=30))
+    catalog = json.loads(subprocess.check_output([cli, 'commands'], text=True, timeout=30, env=native_module().commands.load('input_security').native_environment()))
     available = {entry['id'] for entry in catalog}
     required = {entry['params']['command'] if entry['command']=='native.command' else entry['command'] for entry in plan['operations']} - {'asset.place', 'asset.replace'} | {'text.fonts'}
     if input_assets:

@@ -2,6 +2,14 @@
 import argparse,fcntl,hashlib,json,os,platform,plistlib,re,shutil,subprocess,tempfile,time
 from pathlib import Path
 
+import importlib.util
+
+def _native_environment():
+    # 计划和安装锁的原有错误诊断先执行；进入原生进程前安全资源必须存在。
+    import runpy
+    security=runpy.run_path(str(Path(__file__).with_name('input_security.py')))
+    return security['native_environment']()
+
 def sha(path):
  with Path(path).open('rb') as stream:return hashlib.file_digest(stream,'sha256').hexdigest()
 
@@ -37,8 +45,8 @@ def inspect(directory,lock):
   if path.is_symlink() or not path.is_file():raise ValueError('invalid_desktop_payload')
  info=plistlib.loads((app/'Contents/Info.plist').read_bytes());binary=app/'Contents/MacOS'/lock['executable']
  if info.get('CFBundleShortVersionString')!=lock['version'] or info.get('CFBundleIdentifier')!=lock['bundleIdentifier'] or info.get('CFBundleExecutable')!=lock['executable'] or sha(binary)!=lock['binarySha256']:raise ValueError('desktop_identity_mismatch')
- if 'arm64' not in subprocess.check_output(['/usr/bin/lipo','-archs',str(binary)],text=True).split():raise ValueError('desktop_architecture_mismatch')
- subprocess.run(['/usr/bin/codesign','--verify','--deep','--strict',str(app)],check=True,capture_output=True,timeout=60)
+ if 'arm64' not in subprocess.check_output(['/usr/bin/lipo','-archs',str(binary)],text=True,env=_native_environment()).split():raise ValueError('desktop_architecture_mismatch')
+ subprocess.run(['/usr/bin/codesign','--verify','--deep','--strict',str(app)],check=True,capture_output=True,env=_native_environment(),timeout=60)
  return {'app':str(app),'executable':str(binary),'version':lock['version'],'binarySha256':lock['binarySha256'],'files':tree(app)}
 
 def download_archive(url,target,max_bytes):
@@ -46,7 +54,7 @@ def download_archive(url,target,max_bytes):
  argv=['/usr/bin/curl','--fail','--location','--proto','=https','--retry','3','--connect-timeout','15','--retry-max-time','90','--max-time','180','--max-filesize',str(max_bytes+1),'--output',str(target),url]
  for attempt in range(3):
   try:
-   subprocess.run(argv,check=True,capture_output=True,timeout=240);return
+   subprocess.run(argv,check=True,capture_output=True,env=_native_environment(),timeout=240);return
   except subprocess.CalledProcessError as error:
    if error.returncode!=35 or attempt==2:raise
    Path(target).unlink(missing_ok=True);time.sleep(2**attempt)
@@ -75,12 +83,12 @@ def install(lock,runtime_home,archive=None,platform_key=None):
    if source.is_symlink() or not source.is_file() or source.stat().st_size!=lock['bytes'] or sha(source)!=lock['archiveSha256']:raise ValueError('archive_identity_mismatch')
    mount=stage/'mount';mount.mkdir();payload=stage/'payload';payload.mkdir();attached=False
    try:
-    subprocess.run(['/usr/bin/hdiutil','attach','-readonly','-nobrowse','-mountpoint',str(mount),str(source.resolve())],check=True,capture_output=True,timeout=60);attached=True;apps=list(mount.glob('*.app'))
+    subprocess.run(['/usr/bin/hdiutil','attach','-readonly','-nobrowse','-mountpoint',str(mount),str(source.resolve())],check=True,capture_output=True,env=_native_environment(),timeout=60);attached=True;apps=list(mount.glob('*.app'))
     if len(apps)!=1 or apps[0].name!=lock['app'] or apps[0].is_symlink():raise ValueError('desktop_bundle_inventory_mismatch')
     shutil.copytree(apps[0],payload/lock['app'],symlinks=True);actual=inspect(payload,lock)
     (payload/'receipt.json').write_text(json.dumps({'schema':'craft-desktop-install/v1','lock':lock,'files':actual['files']},indent=2)+'\n')
    finally:
-    if attached:subprocess.run(['/usr/bin/hdiutil','detach',str(mount)],check=True,capture_output=True,timeout=60)
+    if attached:subprocess.run(['/usr/bin/hdiutil','detach',str(mount)],check=True,capture_output=True,env=_native_environment(),timeout=60)
    os.replace(payload,destination)
   actual=inspect(destination,lock)
   return {k:v for k,v in actual.items() if k!='files'}|{'reused':False,'scope':'signed app installation only; launch/GUI acceptance separate'}

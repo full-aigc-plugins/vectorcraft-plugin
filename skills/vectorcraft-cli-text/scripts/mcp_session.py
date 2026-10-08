@@ -21,7 +21,7 @@ class Session:
         self.buffer = b''
         self.sequence = 0
         self.stderr = tempfile.TemporaryFile()
-        self.process = subprocess.Popen(argv, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=self.stderr, preexec_fn=control.apply_limits if control else None)
+        self.process = subprocess.Popen(argv, env=_commands.load('input_security').native_environment(), stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=self.stderr, preexec_fn=control.apply_limits if control else None)
         try:
             if self.control:
                 self.control.emit('session_created', pid=self.process.pid)
@@ -71,7 +71,7 @@ class Session:
                     if (not isinstance(error, dict) or type(error.get('code')) is not int
                             or not isinstance(error.get('message'), str)):
                         raise RuntimeError('outcome_unknown: invalid_mcp_error; request not retried')
-                    raise RuntimeError('mcp_error: ' + json.dumps(response['error']))
+                    raise RuntimeError('mcp_error: native diagnostic withheld')
                 result = response['result']
                 if method == 'tools/call':
                     if (not isinstance(result, dict)

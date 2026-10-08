@@ -1,0 +1,53 @@
+{
+  "schema": "vectorcraft-permissions-source-candidate/v1",
+  "result": "PASS",
+  "level": "native-candidate",
+  "sourceCandidateVersion": "0.1.0-dev.44",
+  "baselineSourceRef": "v0.1.0-dev.43",
+  "platform": "darwin-arm64",
+  "pythonVersion": "3.13.5",
+  "targetTests": 6,
+  "sourceTests": {
+    "total": 213,
+    "passed": 183,
+    "skipped": 30
+  },
+  "standaloneColdCases": 13,
+  "native": "docs/evidence/permissions-source/native-candidate44.json",
+  "completedPluginTasks": [],
+  "scope": "Independent source environment,protocol-diagnostic and named-credential boundary;13 real standalone cold installs plus actual native revision/export/reopen;not host/model routing or full permission sandbox",
+  "pending": [
+    "host secret-reference contract",
+    "complete permission entry-point audit",
+    "new fixed plugin distribution and actual permission scenarios"
+  ],
+  "fingerprints": {
+    ".claude-plugin/plugin.json": "723024d480d94bfad0d664f83d99471d9dcc4f17f911203a70759a8fe7f3f812",
+    "skill-suite.json": "9c20f17ab5737c0df4a2d84db888e0c861e7c4781be92518596b394ec21b5194",
+    "tests/test_input_security.py": "8c9df9c58a27b0d08d53abf5971bf0aed6666610dbcc89cbe0f72ae02d17b44e",
+    "scripts/acceptance_input_security.py": "dfea95cb09b96cdeebb28338320666e7c2d017e643e76a8cef78eca784f1cfc6",
+    "scripts/verify_standalone_cold.py": "1bdf77df914c88172cbae9f9bb35aade08926266248e6115259a88eca4be23f4",
+    "scripts/verify_optimization_evidence.py": "ff7788442564d2f7fb9d4ff461834db09d50490bd395be2636bb80bf99245493",
+    "docs/evidence/permissions-source/red.log.txt": "f271c3641289a43ecd40b8e6dabe8104007e3ab05d392a0ffe490022a4e057cb",
+    "docs/evidence/permissions-source/green.log.txt": "960242250bd375b96632fccd80fb702a5d5fea2de53f75c3efbef73bc8ce0db1",
+    "docs/evidence/permissions-source/cold44.json": "07ca4efa1b196708ef10828915998b10248d1d019bf030d97b235c9a5ab59088",
+    "docs/evidence/permissions-source/source-regression.log.txt": "6f39d43a851719bf04caa3c4ea9d08122f36dc80e4d4efa44bc8404dee8adbd3",
+    "docs/evidence/permissions-source/native-candidate44.json": "9592ca8af22e321b4bd5aba169a4f1fde35704dd8c7e9bea8bdc6dcaa598a1e0",
+    "docs/evidence/permissions-source/cold44.log.txt": "97e269655cb108aebf225628a8b1fa52d847a04172149f5d31958110d033e301"
+  },
+  "skills": {
+    "vectorcraft-cli": "e9f541df22a4c7e1627e93d12a5c02b06386363b9765d9e96527cef443cb7f14",
+    "vectorcraft-cli-appearance": "372476c4e93c3d7d29528be2903ae5cc8f51a17aacc4e5ecd946f5c247871dfa",
+    "vectorcraft-cli-artboards": "71e0bb8c6d09272d432883fea41e3c0caf2a9b24c854d6e27435c8217dbce600",
+    "vectorcraft-cli-assets": "32302d0473be6e12b73ad299708ef7023d11ca98c1b46435f13b0ec1f309fb9a",
+    "vectorcraft-cli-boolean": "fb3eae928635402f0ecd4180927e0a1fd43fc8354d9da16bbb2a737e74c946a7",
+    "vectorcraft-cli-export": "491afa975112546723f29f737933b3c5cdcc9b7d57fec67157e2773117196a7f",
+    "vectorcraft-cli-paths": "81037f0abc05ce3ea0b667433b5e5b19a5a30136151522e3106371f8112a31ca",
+    "vectorcraft-cli-project": "382fd8b16598563255ee33586bb8f29b1d621c0a1c9d8c4180e15846eeff0e4e",
+    "vectorcraft-cli-selection": "d5b0f5317fa1d1209a067f053b760b0d4a6e9ee644fb5ad261d3ab0ee8b35356",
+    "vectorcraft-cli-setup": "63a33360c0949cab29585dfb3af4925b8a430e8d4bd501f53c1a5766bcd74680",
+    "vectorcraft-cli-shapes": "faa8dd2d1a074bcb03d8836d5c456bca1cd83a5bfa37f1b5e2e628819885ea93",
+    "vectorcraft-cli-text": "60e0a95cffa2c6e683924877e4bb2807ba65c846f9a98093699cb1f6f4322d31",
+    "vectorcraft-use": "81fb7391f9bc7d881a3ea532627f8015a8a9276cd29791113d47dedca9ba3506"
+  }
+}

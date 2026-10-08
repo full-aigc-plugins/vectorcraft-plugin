@@ -6,14 +6,14 @@ def load(name):
  spec=importlib.util.spec_from_file_location('craft_desktop_'+name,Path(__file__).with_name(name+'.py'));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);return module
 
 def owned_listener(process,port):
- result=subprocess.run(['/usr/sbin/lsof','-nP','-a','-p',str(process.pid),'-iTCP:'+str(port),'-sTCP:LISTEN','-Fn'],capture_output=True,text=True,timeout=3)
+ result=subprocess.run(['/usr/sbin/lsof','-nP','-a','-p',str(process.pid),'-iTCP:'+str(port),'-sTCP:LISTEN','-Fn'],capture_output=True,text=True,timeout=3,env=load('input_security').native_environment())
  return result.returncode==0 and ('n127.0.0.1:'+str(port)) in result.stdout.splitlines()
 
 class OwnedSession:
  def __init__(self,argv,desktop,domain,output,port,token_file=None):
   self.argv=argv;self.desktop=desktop;self.domain=domain;self.output=Path(output);self.port=port;self.token_file=token_file;self.process=None;self.session=None;self.log=None;self.stopped=False;self.listener_verified=False
  def __enter__(self):
-  args=[self.desktop['executable'],'--control',str(self.port)];env=dict(os.environ);data=self.output/'.desktop-data';data.mkdir(mode=0o700)
+  args=[self.desktop['executable'],'--control',str(self.port)];env=load('input_security').native_environment();data=self.output/'.desktop-data';data.mkdir(mode=0o700)
   if self.domain=='filmcraft':args+=['--empty','--no-recover','--data-dir',str(data)]
   elif self.domain=='effectcraft':args+=['--empty'];env['EFFECTCRAFT_CONFIG_DIR']=str(data)
   elif self.domain=='photocraft':

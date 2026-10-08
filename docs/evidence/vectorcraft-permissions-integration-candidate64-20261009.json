@@ -1,0 +1,61 @@
+{
+  "schema": "vectorcraft-permissions-integration-candidate/v1",
+  "result": "PASS",
+  "level": "native-candidate",
+  "pluginVersion": "0.1.0-dev.64",
+  "sourceRef": "v0.1.0-dev.44",
+  "sourceCommit": "e5f8e1bb8528847fa8814abf9dde252719c8a3a5",
+  "publishedPlugin": false,
+  "completedTasks": [],
+  "sourceCI": [
+    {
+      "run": 37847833330,
+      "result": "success"
+    },
+    {
+      "run": 37847833395,
+      "result": "success"
+    }
+  ],
+  "sourceTargetTests": 6,
+  "sourceRegression": {
+    "total": 213,
+    "passed": 183,
+    "skipped": 30
+  },
+  "standaloneColdCases": 13,
+  "pluginNodeTests": 132,
+  "pluginPythonTests": 146,
+  "nativeBudgetAttempts": 4,
+  "scope": "Current unpublished64/source44 integration:real source cold installs and plugin native revision/check;source44 published and CI green;no fixed64 host or full permissions/secret-reference acceptance",
+  "pending": [
+    "host secret-reference contract",
+    "complete permission entry-point audit",
+    "fixed public plugin64 host qualification and VC-RL-002 full scenarios"
+  ],
+  "fingerprints": {
+    "plugin.json": "60e59b0f5f44bf657e0554e25a20c5e99e774af7c2ad9f1602590cd5bff6f712",
+    "skills.lock.json": "389151462aed6dd0ae5366c94fbaf4ce6240078e219babdd9c5d78a66afd1f85",
+    "docs/current-identity.json": "28807386c1f940b822f635017fbeb792be99e2c397dc9b8abb30a7b963ed8000",
+    "docs/skills-source-plan.json": "262bdce05c0babb6ee9c21867ce7600f850f8e12c02968f3067437cfc3aa1e1d",
+    "src/harness/native_environment.ts": "fec69bc8d8aa148feb7708af2ac9e10bc140389cc8e27e24468c8fb9bf318dc0",
+    "src/harness/input_policy.ts": "02e153e37675821008226edffed71bab0055205dfa75602e954f51086bcbf3a5",
+    "src/harness/controller.ts": "2ad9f5cf6e324806d468519ad71e3c71de215fb9edf8bcc65b30010d69f1fe8c",
+    "src/runtime/prepare_runtime.ts": "5ded468dbc3074d1a770bb438527474d2f2a86a35aaa01dc6ee1b27fa8c05fd5",
+    "src/evaluation/review_store.ts": "44d838936737967a032aedcf59c456770b18c3b2fea462858765307a5da1b8f7",
+    "src/evaluation/technical_review.ts": "4ffc30b01b96ca0a4e5051996ed95d420d2d527cdaecb9a4770bda25119c3a49",
+    "src/harness/recovery.ts": "7a07a0296921d2e6b75f9ce05c506503f95cd3fe7ac7cffd0a49cd42ae8f0a94",
+    "src/harness/launch_recovery.ts": "baae4fc69b2577df52f576b6ff5e593d5b48e6f871574d13910eab96f0b11b89",
+    "src/harness/process_registry.ts": "50fccff148a0aa11b2b84e9c4ddb44b8ff45dca554e0fc3c2e24ce0d754caa15",
+    "src/cli.ts": "e8838911d359dfcdb4c060b1b13fd428513786c1bc87f110810106082f8622f2",
+    "tests/permissions_environment.test.ts": "4081d40da8ccba27ae5a8d893d0b27ed9a92cd505d7f1f385f8b1315869f403b",
+    "tests/test_release_gate.py": "99f540030f005d1adc9ff23c39ee1fe05178254fbddee4d7622f8ce8def9d7d3",
+    "scripts/qa/revision_budget.ts": "a5601841c8e76d9ca143060df7a21e27722612c2b4b7892e3215218ca3275e47",
+    "docs/evidence/vc-rl-002/source44-candidate.json": "6bf26f4c3cc2670ae566354157b74b12caaa5a225be58eb6f811a10e481a7093",
+    "docs/evidence/vc-rl-002/source44-cold.json": "07ca4efa1b196708ef10828915998b10248d1d019bf030d97b235c9a5ab59088",
+    "docs/evidence/vc-rl-002/source44-native.json": "9592ca8af22e321b4bd5aba169a4f1fde35704dd8c7e9bea8bdc6dcaa598a1e0",
+    "docs/evidence/vc-rl-002/plugin64-native-candidate.json": "20db0cd5b36b63ae8f44d8d553341a8697357670f2ecc6872cde10b5ee412476",
+    "docs/evidence/vc-rl-002/plugin64-node.log.txt": "75240009b57b2624fdf5715efb7415b65f07293294acf69bc6b599ec1e2c3c33",
+    "docs/evidence/vc-rl-002/plugin64-python.log.txt": "70ad55c603dd2dc23ebf918a4d5f317bb04a894d6e1fdd2377040899541104f8"
+  }
+}
