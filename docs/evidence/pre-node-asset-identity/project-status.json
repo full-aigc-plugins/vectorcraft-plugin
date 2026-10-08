@@ -273,10 +273,10 @@
   },
   "permissionsCandidate": {
     "status": "partial-native-candidate",
-    "evidence": "docs/evidence/vectorcraft-permissions-parent-assets-candidate64-20261009.json",
+    "evidence": "docs/evidence/vectorcraft-permissions-assets-integration-candidate64-20261009.json",
     "completedTasks": [],
     "pending": [
-      "remaining parent/source read-write boundary audit",
+      "Node parent asset preflight race audit",
       "host secret-reference contract",
       "fixed public plugin64 qualification and all VC-RL-002 scenarios",
       "real host/model routing and creative conclusions"

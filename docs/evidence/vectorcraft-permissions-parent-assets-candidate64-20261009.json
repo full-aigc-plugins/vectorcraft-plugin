@@ -1,0 +1,49 @@
+{
+  "schema": "vectorcraft-permissions-parent-assets-candidate/v1",
+  "result": "PASS",
+  "level": "native-candidate",
+  "pluginVersion": "0.1.0-dev.64",
+  "sourceRef": "v0.1.0-dev.46",
+  "sourceCommit": "91092712e427542e9c8383e346f0ad94f0e3f029",
+  "publishedPlugin": false,
+  "completedTasks": [],
+  "platform": "darwin-arm64",
+  "targetTests": 1,
+  "nodeTests": 133,
+  "pythonTests": 146,
+  "native": {
+    "managedCreation": true,
+    "inheritedRevision": true,
+    "exports": 6,
+    "prelaunchRefusals": 2,
+    "registeredGroups": 2,
+    "allGroupsStopped": true
+  },
+  "scope": "Actual parent asset ancestor replacement reproduced unauthorized Node read; fixed skill reader refuses before bytes. Current managed native asset creation/inherited revision passes; unit regression and immutable historical semantic evidence preserved. Source46 skills unchanged; prior source46 native/cold results retain their own identity and scope. Not full VC-RL-002 or fixed64 qualification.",
+  "pending": [
+    "remaining parent/source read-write boundary audit",
+    "host secret-reference contract",
+    "fixed public plugin64 qualification and all VC-RL-002 scenarios",
+    "real host/model routing and creative conclusions"
+  ],
+  "fingerprints": {
+    "docs/current-identity.json": "e559e00b4d74b41b716e3697b7477a4760790222a8d5e7ec4d1525ca55167ecc",
+    "docs/evidence/vc-rl-002/parent-assets-green.log.txt": "7bf915c7af6d7cd2de3b2e2e442a159fd1b7b7c8f744cd04a4da4199e0f69965",
+    "docs/evidence/vc-rl-002/parent-assets-native.json": "49812107e2c990bf1664bb5c9ca87fd0ab9c7320afbab64db48aa1945b6de158",
+    "docs/evidence/vc-rl-002/parent-assets-native.log.txt": "4ba181a41a917e4f9637e992b8a76653b9bc4039c9ab7276b6e5912be28ea373",
+    "docs/evidence/vc-rl-002/parent-assets-node.log.txt": "ad1c6b5cf6b17102f7bc5ee02845c32333377aec05bf074850b49a55ccad1b4f",
+    "docs/evidence/vc-rl-002/parent-assets-python.log.txt": "5bb6d0c99b710aa8a3cafb04f28f4a65a4066c94225e046f85621eda0b2e20fc",
+    "docs/evidence/vc-rl-002/parent-assets-red.log.txt": "269d288a20fe4ac308f759ea189b17daaa209d15c4b2e8a6b0d5c9a3a0b2f8c8",
+    "plugin.json": "60e59b0f5f44bf657e0554e25a20c5e99e774af7c2ad9f1602590cd5bff6f712",
+    "project-status.json": "0e185b02366ee4f552f6908bb8fb21ce2208131e486e11411b1ffad58392f27e",
+    "scripts/evidence_index.py": "b6cbaf8147b6132459b1c12dba0295f02a47aa8e2bd771d695239ad2c4c915c4",
+    "scripts/qa/asset_permissions.ts": "57489d9ab9d4203bcfe8f549d3a110e8c62d4c256c9956bdc134e51f26dbabcf",
+    "skills.lock.json": "44bd17666c6ef2a79641245a239a4f29a1f4a79162bba0de8b8329347f0a8fd1",
+    "skills/vectorcraft-use/scripts/asset_reader.py": "d067708d2355c0aa4415027ae2cff53c5559611c90854447fd7595b6535939f3",
+    "src/harness/asset_digest.py": "bd7fdb17db386913d3870af9d3417d87ce6a955e5c462d60796e298a820e1af2",
+    "src/harness/asset_digest.ts": "f1ad1d239eb56da52d29098b69b96b62677293c3542d95a3a999e00e2c69789d",
+    "src/harness/controller.ts": "4b45ce7fc3a547a9b17e8549fbe7f74cdb92ff59f7bc86326310d0dc58329a55",
+    "src/harness/native_environment.ts": "fec69bc8d8aa148feb7708af2ac9e10bc140389cc8e27e24468c8fb9bf318dc0",
+    "tests/asset_read_race.test.ts": "095ce850b941f9718b10eaf85994b70ac3ba0a1501f83393017651bccedd19f6"
+  }
+}

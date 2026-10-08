@@ -1,4 +1,3 @@
-import {assetDigest} from './asset_digest.ts';
 import {assertNoLiteralSecrets,validateAssetRecords} from './input_policy.ts';
 import {nativeEnvironment} from './native_environment.ts';
 import { createHash } from 'node:crypto';
@@ -155,7 +154,7 @@ export class Controller {
     for(const [name,asset] of Object.entries(plan.assets??{}) as [string,any][]){
       if(!auth.readRoots.some(root=>inside(root,asset.path)))throw new Error('outside_authorized_roots');
       if(!isAbsolute(asset.path)||lstatSync(asset.path).isSymbolicLink()||!lstatSync(asset.path).isFile())throw new Error('invalid_asset_path');
-      const hash=assetDigest(asset.path,auth.readRoots,request.skill,request.python??'python3');if(hash!==asset.sha256)throw new Error('asset_digest_mismatch');inputHashes[name]=hash;
+      const hash=sha(readFileSync(asset.path));if(hash!==asset.sha256)throw new Error('asset_digest_mismatch');inputHashes[name]=hash;
     }
     if(geometryContract)inputHashes['contract:geometry']=sha(canonical(geometryContract));
     const runtimeIdentity=lock.artifacts['darwin-arm64'].binarySha256;

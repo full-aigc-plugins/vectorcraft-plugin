@@ -434,3 +434,5 @@ VC-RL-001两场景完成：发布者只读门禁分别核验插件结构、独�
 候选插件64现锁定公开源45（a4b1e624818f）。源45的28项权限测试、193项回归（48跳过）、13项真实独立冷安装及原生修订／三导出／独立重开通过，包含真实GUI保存重开和绕过Python预检后的内核拒绝。当前插件132项Node／146项Python回归及原生修订检查通过，4次共享预算内停止所有拥有的进程组。旧源44快照与执行记录按原始字节归档。Python素材预检授权、实际宿主秘密引用与固定插件64权限验收仍开放；120/127完成、7项开放，候选64未发布，V1及市场资格未获得。 [Evidence](docs/evidence/vectorcraft-permissions-filesystem-integration-candidate64-20261009.json).
 
 候选64现锁定公开源46（91092712e427）。本次补充可信Python素材根与文件描述符安全复制，14项授权测试、28项原生权限测试、13项独立冷启动，以及实际受管创建／继承返工的6个导出、2类启动前拒绝和拥有进程组停止证明。源45证据保持历史归属。Node父进程预检审计、宿主秘密引用及固定64验收仍开放；120/127完成、7项开放，不授予V1及市场资格。[证据](docs/evidence/vectorcraft-permissions-assets-integration-candidate64-20261009.json)。
+
+Node父进程素材读取竞态已复现并修复：过滤环境的Python摘要入口复用固定技能描述符读取器，并沿用冻结根。133项Node／146项Python及实际受管原生创建／继承返工的6个导出通过；完整秘密与固定安装验收仍开放。 [Evidence](docs/evidence/vectorcraft-permissions-parent-assets-candidate64-20261009.json).

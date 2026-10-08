@@ -1,0 +1,263 @@
+{
+  "schema": "vectorcraft-managed-asset-permissions/v1",
+  "result": "PASS",
+  "pluginVersion": "0.1.0-dev.64",
+  "sourceRef": "v0.1.0-dev.46",
+  "sourceCommit": "91092712e427542e9c8383e346f0ad94f0e3f029",
+  "skillSha256": "130fad49c28526e11952d484b949ab620d86344a7d9bc8464599af8e73b3e170",
+  "driverSha256": "57489d9ab9d4203bcfe8f549d3a110e8c62d4c256c9956bdc134e51f26dbabcf",
+  "platform": "darwin-arm64",
+  "creation": {
+    "schema": "vectorcraft-delivery/v1",
+    "sourceProjectSha256": null,
+    "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+    "bindings": {},
+    "outputs": [
+      {
+        "format": "svg",
+        "artboardIndex": 0,
+        "artboardId": 1,
+        "artboardName": "Artboard 1",
+        "artboardRect": {
+          "x0": 0,
+          "x1": 96,
+          "y0": 0,
+          "y1": 80
+        },
+        "path": "artboard-1.svg",
+        "warnings": [],
+        "isolationPolicy": "native-paint-bounds; whole-dependent-containers-and-unknown-bounds-retained"
+      },
+      {
+        "format": "pdf",
+        "artboardIndex": 0,
+        "artboardId": 1,
+        "artboardName": "Artboard 1",
+        "artboardRect": {
+          "x0": 0,
+          "x1": 96,
+          "y0": 0,
+          "y1": 80
+        },
+        "path": "artboard-1.pdf",
+        "warnings": [],
+        "pdfCreated": 1791499678,
+        "pdfDateBinding": "native-document-created"
+      },
+      {
+        "format": "png",
+        "artboardIndex": 0,
+        "artboardId": 1,
+        "artboardName": "Artboard 1",
+        "artboardRect": {
+          "x0": 0,
+          "x1": 96,
+          "y0": 0,
+          "y1": 80
+        },
+        "path": "artboard-1.png",
+        "warnings": []
+      }
+    ],
+    "fontDependencies": [],
+    "assets": {
+      "logo": {
+        "sha256": "fa91a3071d1a5f9851b7f6ca646fe90f43f1cf0d1c0700eb69a9ca5ac144837e",
+        "format": "svg",
+        "path": "Assets/logo.svg",
+        "ids": [
+          3
+        ],
+        "linked": false,
+        "warnings": []
+      }
+    },
+    "artboards": [
+      {
+        "id": 1,
+        "index": 0,
+        "name": "Artboard 1",
+        "rect": {
+          "x0": 0,
+          "x1": 96,
+          "y0": 0,
+          "y1": 80
+        },
+        "width": 96,
+        "height": 80
+      }
+    ],
+    "artboardOrder": [
+      1
+    ],
+    "previewOrder": [
+      "artboard-1.png"
+    ],
+    "collection": {
+      "links": 0,
+      "fonts": 0,
+      "skippedFonts": []
+    },
+    "files": {
+      "plan.json": "63ff272e9916e7fb436439cbe82794d2f8ae23c11f8c7663610aeb28fbda8dc4",
+      "project.vectorcraft": "68d6cae2d234cb3e39bf9fec4c70db02f0a983fcf626ed8fd867778a54df6a6e",
+      "exchange-loss.json": "30dbf9a4762d00df595bfe2f608dc55fb788b2d10faeeb3e1528cae5821d34c9",
+      "pdf-export-date.json": "cbbe21e6bbe27eb0cef68b9f59f6f0ff9a7da8353f21ce698ac391ebcc8d340a",
+      "native.json": "9846b0541b9962e0872cbfdaf59cf509a619fb7ebf9e19bcf146bdb6bc53525b",
+      "artboard-1.pdf": "d4cc3e86c0e1eec8ca28263f5d8515efe3d21184b756a70edb7b9629fb0ed6ee",
+      "artboard-1.png": "dc79f4945aea34aedff6c3e2b0bb15f7a708d74f395b663777c18d86cf70e988",
+      "artboard-1.svg": "5bddbe5cffcf7c7148309e4b7273d642d2ed8f83c3703b5ced7879352cdd79dd",
+      "operations.json": "c845488e073a0a573c7ad13898e963f8274ec86e23039faeff909ceccc88642b",
+      "Assets/logo.svg": "fa91a3071d1a5f9851b7f6ca646fe90f43f1cf0d1c0700eb69a9ca5ac144837e",
+      "lineage.json": "26a75774f7e7aecfa2227af9e624d8d01596ec19949b5ae597278053209172a1"
+    },
+    "lossReport": {
+      "path": "exchange-loss.json",
+      "sha256": "30dbf9a4762d00df595bfe2f608dc55fb788b2d10faeeb3e1528cae5821d34c9"
+    },
+    "acceptance": "requires-domain-and-visual-review",
+    "executionId": "execution-c7c97ac1-7764-4130-8d06-29026dbd38a4",
+    "lineage": {
+      "path": "lineage.json",
+      "sha256": "26a75774f7e7aecfa2227af9e624d8d01596ec19949b5ae597278053209172a1",
+      "logicalId": "vectorcraft:a1bddc6f-82be-4606-a806-b8d870e49703",
+      "version": "c69e693fb425629622217e83e39c65f7a67f4199bb70d89549762130af18fdc1",
+      "parent": {
+        "projectSha256": null,
+        "status": "creation"
+      }
+    }
+  },
+  "revision": {
+    "schema": "vectorcraft-delivery/v1",
+    "sourceProjectSha256": "68d6cae2d234cb3e39bf9fec4c70db02f0a983fcf626ed8fd867778a54df6a6e",
+    "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+    "bindings": {},
+    "outputs": [
+      {
+        "format": "svg",
+        "artboardIndex": 0,
+        "artboardId": 1,
+        "artboardName": "Artboard 1",
+        "artboardRect": {
+          "x0": 0,
+          "x1": 96,
+          "y0": 0,
+          "y1": 80
+        },
+        "path": "artboard-1.svg",
+        "warnings": [],
+        "isolationPolicy": "native-paint-bounds; whole-dependent-containers-and-unknown-bounds-retained"
+      },
+      {
+        "format": "pdf",
+        "artboardIndex": 0,
+        "artboardId": 1,
+        "artboardName": "Artboard 1",
+        "artboardRect": {
+          "x0": 0,
+          "x1": 96,
+          "y0": 0,
+          "y1": 80
+        },
+        "path": "artboard-1.pdf",
+        "warnings": [],
+        "pdfCreated": 1791499678,
+        "pdfDateBinding": "native-document-created"
+      },
+      {
+        "format": "png",
+        "artboardIndex": 0,
+        "artboardId": 1,
+        "artboardName": "Artboard 1",
+        "artboardRect": {
+          "x0": 0,
+          "x1": 96,
+          "y0": 0,
+          "y1": 80
+        },
+        "path": "artboard-1.png",
+        "warnings": []
+      }
+    ],
+    "fontDependencies": [],
+    "assets": {
+      "logo": {
+        "sha256": "fa91a3071d1a5f9851b7f6ca646fe90f43f1cf0d1c0700eb69a9ca5ac144837e",
+        "format": "svg",
+        "ids": [
+          3
+        ],
+        "linked": false,
+        "warnings": [],
+        "path": "Assets/logo.svg"
+      }
+    },
+    "artboards": [
+      {
+        "id": 1,
+        "index": 0,
+        "name": "Artboard 1",
+        "rect": {
+          "x0": 0,
+          "x1": 96,
+          "y0": 0,
+          "y1": 80
+        },
+        "width": 96,
+        "height": 80
+      }
+    ],
+    "artboardOrder": [
+      1
+    ],
+    "previewOrder": [
+      "artboard-1.png"
+    ],
+    "collection": {
+      "links": 0,
+      "fonts": 0,
+      "skippedFonts": []
+    },
+    "files": {
+      "plan.json": "a28d26515bda890c4c8f26d51fd028ea3577a8f166cf61a6b333864b4e5d5cec",
+      "project.vectorcraft": "68d6cae2d234cb3e39bf9fec4c70db02f0a983fcf626ed8fd867778a54df6a6e",
+      "exchange-loss.json": "30dbf9a4762d00df595bfe2f608dc55fb788b2d10faeeb3e1528cae5821d34c9",
+      "pdf-export-date.json": "cbbe21e6bbe27eb0cef68b9f59f6f0ff9a7da8353f21ce698ac391ebcc8d340a",
+      "native.json": "9846b0541b9962e0872cbfdaf59cf509a619fb7ebf9e19bcf146bdb6bc53525b",
+      "artboard-1.pdf": "d4cc3e86c0e1eec8ca28263f5d8515efe3d21184b756a70edb7b9629fb0ed6ee",
+      "artboard-1.png": "dc79f4945aea34aedff6c3e2b0bb15f7a708d74f395b663777c18d86cf70e988",
+      "artboard-1.svg": "5bddbe5cffcf7c7148309e4b7273d642d2ed8f83c3703b5ced7879352cdd79dd",
+      "operations.json": "034fa95496940db2290857b1a779c6142f27174db446a40868f36dcb9ccfd661",
+      "Assets/logo.svg": "fa91a3071d1a5f9851b7f6ca646fe90f43f1cf0d1c0700eb69a9ca5ac144837e",
+      "lineage.json": "c26a235f107261763b489232dcaf4556e10f318b3bfaeb02d9d79510e6d6441c"
+    },
+    "lossReport": {
+      "path": "exchange-loss.json",
+      "sha256": "30dbf9a4762d00df595bfe2f608dc55fb788b2d10faeeb3e1528cae5821d34c9"
+    },
+    "acceptance": "requires-domain-and-visual-review",
+    "executionId": "execution-aba79eb9-6477-4cb8-8378-e15e003dcc86",
+    "lineage": {
+      "path": "lineage.json",
+      "sha256": "c26a235f107261763b489232dcaf4556e10f318b3bfaeb02d9d79510e6d6441c",
+      "logicalId": "vectorcraft:a1bddc6f-82be-4606-a806-b8d870e49703",
+      "version": "54af47e407cb3651f487847fd9cc0c26d83bbc0cddc43a2cece3f50bae2dca56",
+      "parent": {
+        "logicalId": "vectorcraft:a1bddc6f-82be-4606-a806-b8d870e49703",
+        "version": "c69e693fb425629622217e83e39c65f7a67f4199bb70d89549762130af18fdc1",
+        "projectSha256": "68d6cae2d234cb3e39bf9fec4c70db02f0a983fcf626ed8fd867778a54df6a6e",
+        "status": "versioned"
+      }
+    }
+  },
+  "sourceUnchanged": true,
+  "skillUnchanged": true,
+  "refusals": [
+    "untrusted-command",
+    "outside-root"
+  ],
+  "registeredGroups": 2,
+  "allGroupsStopped": true,
+  "scope": "Actual current candidate Controller native creation and inherited asset revision with six exports; two prelaunch refusals; no host-secret, fixed distribution or creative acceptance"
+}

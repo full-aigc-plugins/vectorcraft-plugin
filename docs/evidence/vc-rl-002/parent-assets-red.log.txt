@@ -1,0 +1,28 @@
+✖ Controller refuses a replaced asset ancestor before reading outside bytes (24.868667ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 115.024875
+
+✖ failing tests:
+
+test at tests/asset_read_race.test.ts:11:1
+✖ Controller refuses a replaced asset ancestor before reading outside bytes (24.868667ms)
+  AssertionError [ERR_ASSERTION]: Node parent attempted to read outside bytes
+  
+  true !== false
+  
+      at TestContext.<anonymous> (file://PLUGIN_REPOSITORY/tests/asset_read_race.test.ts:33:10)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

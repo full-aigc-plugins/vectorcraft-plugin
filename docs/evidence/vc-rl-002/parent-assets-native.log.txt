@@ -1,0 +1,1 @@
+{"result":"PASS","registeredGroups":2,"refusals":2}
