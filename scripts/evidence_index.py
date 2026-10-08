@@ -160,12 +160,15 @@ def build(root=ROOT):
     upgrade='docs/evidence/vectorcraft-runtime-upgrade-fixed43-20261008.json'
     if (root/upgrade).is_file():
         entries.append(bound_report(root,upgrade,'fixed-install','Public plugin43/source37; all seven RT-002 scenarios including real bridge/version drain and open-reader budget rollback on macOS arm64; complete V1 remains open','VC-RT-002',['2.6']))
+    authorization='docs/evidence/vectorcraft-authorization-snapshot-local44-20261008.json'
+    if (root/authorization).is_file():
+        entries.append(bound_report(root,authorization,'local-tests','Three synthetic coordinator authorization regressions; 57 Node and43 Python tests; full3.3 and V1 remain open','VC-TX-001'))
     # 明确归档变更前执行字节；保留报告原摘要，不能把旧运行重绑定到新实现。
     for entry in entries:
         archived={}
         for name,digest in entry['dependencies'].items():
             if sha(safe_file(root,name))==digest:continue
-            for prefix in ['docs/evidence/pre-runtime-gate-identity/','docs/evidence/pre-runtime-default-identity/','docs/evidence/pre-runtime-artifacts-identity/','docs/evidence/pre-runtime-boundaries-identity/','docs/evidence/pre-open-reader-identity/','docs/evidence/pre-download-test-cache-identity/']:
+            for prefix in ['docs/evidence/pre-runtime-gate-identity/','docs/evidence/pre-runtime-default-identity/','docs/evidence/pre-runtime-artifacts-identity/','docs/evidence/pre-runtime-boundaries-identity/','docs/evidence/pre-open-reader-identity/','docs/evidence/pre-download-test-cache-identity/','docs/evidence/pre-authorization-identity/']:
                 old=prefix+name
                 if (root/old).is_file() and sha(safe_file(root,old))==digest:
                     archived[name]=old
@@ -173,7 +176,7 @@ def build(root=ROOT):
         if archived:
             entry['dependencies']={archived.get(name,name):digest for name,digest in entry['dependencies'].items()}
             entry['historical']=True
-            entry['scope']='historical before runtime integration; '+entry['scope']
+            entry['scope']='historical at original execution identity; '+entry['scope']
     return {'schema':'vectorcraft-evidence-index/v1',
             'identitySha256':sha(safe_file(root,'docs/current-identity.json')),
             'entries':entries,

@@ -84,18 +84,10 @@ export class Controller {
   async run(request:RunRequest):Promise<any> {
     const geometryContract=request.geometryContract===undefined?undefined:strictJson(canonical(request.geometryContract));
     if(geometryContract!==undefined)validateGeometryContract(geometryContract);
-    const suppliedAuthorization=request.authorization;
-    if(!Array.isArray(suppliedAuthorization?.readRoots)||!Array.isArray(suppliedAuthorization?.writeRoots))throw new Error('authorization_roots_required');
-    // 调用方对象和目录别名在异步探测期间不能重写授权或重定向交付。
-    const auth={...strictJson(canonical(suppliedAuthorization)),
-      readRoots:suppliedAuthorization.readRoots.map(resourcePath),writeRoots:suppliedAuthorization.writeRoots.map(resourcePath)};
-    request={...request,authorization:auth,skill:resourcePath(request.skill),plan:resourcePath(request.plan),
-      output:resourcePath(request.output),runtimeHome:resourcePath(request.runtimeHome),
-      ...(request.source?{source:resourcePath(request.source)}:{}),
-      ...(request.inputFingerprints?{inputFingerprints:strictJson(canonical(request.inputFingerprints))}:{})};
+    const auth=request.authorization;
+    if(!Array.isArray(auth?.readRoots)||!Array.isArray(auth?.writeRoots))throw new Error('authorization_roots_required');
     for(const path of [request.plan,...(request.source?[request.source]:[])])if(!auth.readRoots.some(root=>inside(root,path)))throw new Error('outside_authorized_roots');
     for(const path of [request.output,request.runtimeHome])if(!auth.writeRoots.some(root=>inside(root,path)))throw new Error('outside_authorized_roots');
-    if(!auth.writeRoots.some((root:string)=>inside(root,dirname(request.output))))throw new Error('staging_parent_not_authorized');
     if(skillDigest(request.skill)!==request.expectedSkillSha256)throw new Error('skill_snapshot_mismatch');
     if(!existsSync(join(request.skill,'scripts/execution_control.py')))throw new Error('managed_execution_control_required');
     const plan=strictJson(readFileSync(request.plan,'utf8'));
@@ -104,7 +96,6 @@ export class Controller {
     let projectRevision:string|null=null;
     if(request.source){
       if(!auth.readRoots.some(root=>inside(root,join(request.source!,'project.vectorcraft'))))throw new Error('outside_authorized_roots');
-      if(lstatSync(join(request.source,'project.vectorcraft')).isSymbolicLink())throw new Error('invalid_source_path');
       projectRevision=sha(readFileSync(join(request.source,'project.vectorcraft')));
       if(projectRevision!==plan.expectedProjectSha256)throw new Error('revision_conflict');
     }
@@ -112,11 +103,6 @@ export class Controller {
     const guards=request.inputFingerprints??{};
     if(!guards||typeof guards!=='object'||Array.isArray(guards)||Object.keys(guards).length>4096)throw new Error('invalid_input_fingerprints');
     const checkInputs=()=>{
-      if(request.source){
-        const project=join(request.source,'project.vectorcraft');
-        if(lstatSync(project).isSymbolicLink())throw new Error('invalid_source_path');
-        if(sha(readFileSync(project))!==projectRevision)throw new Error('revision_conflict');
-      }
       for(const [path,expected] of Object.entries(guards)){
         if(!/^[a-f0-9]{64}$/.test(expected)||!auth.readRoots.some(root=>inside(root,path)))throw new Error('outside_authorized_roots');
         if(sha(readFileSync(path))!==expected)throw new Error('stale_execution_inputs');

@@ -1,5 +1,10 @@
 # Version-bound release records
 
+## dev.44 (2026-10-08)
+
+Freeze authorization, input fingerprints and physical paths before asynchronous probing; require staging-parent authorization and recheck source digests during supervision. Source remains pinned to dev.37 with13 unchanged skills. 57 Node and43 Python tests pass; three new coordinator regressions use a synthetic workflow and do not establish native or GUI acceptance. Complete3.3 and V1 remain open. [Authorization boundaries](docs/VectorCraft-Authorization-Snapshot.md).
+
+
 ## dev.41 (2026-10-08)
 
 Source37 is pinned by plugin41. Explicit structure authorization, complete participant subtree checks and actual selection/result verification enable managed boolean/group revisions. New supplied-snapshot proofs cover8 structural,3 geometry and2 bounded color revision cases. Local36 Node and38 Python tests pass. Full4.6, host/model/GUI and creative acceptance remain open.

@@ -1,0 +1,11 @@
+✔ final output permission alone does not authorize sibling staging; refusal precedes probe (9.478416ms)
+✔ authorized physical roots and request paths stay fixed when a root alias changes during probe (265.216834ms)
+✔ caller mutation cannot replace the input fingerprint or broaden authorization after probe starts (8.265583ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 379.448042

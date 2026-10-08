@@ -10,7 +10,9 @@
 
 Logo、图标与品牌图形需求进入，交付 `.vectorcraft` 及适用的 SVG、PDF、PNG。
 
-当前插件：`0.1.0-dev.43`；技能源：`0.1.0-dev.37`；13 个独立技能。
+当前插件：`0.1.0-dev.44`；技能源：`0.1.0-dev.37`；13 个独立技能。
+
+授权入口现于异步探测前固定调用方范围、输入摘要及物理路径，并要求暂存父目录具有写入授权。三个协调器回归案例覆盖这些边界；完整任务3.3及V1验收仍开放。
 
 运行时能力与隔离升级（任务2.6）已通过公开插件43／技能源37的完整逐场景验收：默认冷启动、真实版本及bridge排空、双进程竞争、迁移快照与旧连接预算回滚均已验证。[固定安装证据](docs/evidence/vectorcraft-runtime-upgrade-fixed43-20261008.json)。仅覆盖声明支持的macOS arm64；其余33项OpenSpec任务继续开放。
 
@@ -107,7 +109,7 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.43 |
+| Metadata version | 0.1.0-dev.44 |
 | Stage | implementation-in-progress |
 | Skills source | vectorcraft-skills / v0.1.0-dev.37 |
 | Execution | 上游 CLI；ArtCraft 使用子适配器 |

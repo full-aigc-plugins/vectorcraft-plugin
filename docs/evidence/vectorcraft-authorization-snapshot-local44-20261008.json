@@ -1,0 +1,42 @@
+{
+  "schema": "vectorcraft-authorization-snapshot-local/v1",
+  "result": "PASS",
+  "pluginVersion": "0.1.0-dev.44",
+  "skillSourceRef": "v0.1.0-dev.37",
+  "scope": "coordinator authorization snapshot and staging parent regressions only; workflow is synthetic; not native, GUI or task3.3 acceptance",
+  "tests": {
+    "node": {
+      "passed": 57,
+      "failed": 0,
+      "skipped": 0
+    },
+    "python": {
+      "passed": 43,
+      "failed": 0,
+      "skipped": 0
+    },
+    "authorizationRegression": {
+      "redFailed": 3,
+      "greenPassed": 3
+    }
+  },
+  "fingerprints": {
+    "src/harness/controller.ts": "4c3b6a0a5af7e8ea2ece7586a8a80cd882d9c5f45b08b9205daad57f0c1af7bd",
+    "tests/authorization_binding.test.ts": "bfad2a1ba70572b535285e6cd64b73b26518f1b856e9e13ebaddcc9a11a3eae2",
+    "plugin.json": "2cccf1f5a230673d04430c9fbed728592c6b631e6168e9d1f50ccdebc12e741f",
+    "skills.lock.json": "37cf4e7a514193ff10b1f051915b931874f05a8f693c87e67d904657f040464e",
+    "openspec/changes/establish-v1-plugin/specs/task-execution/spec.md": "b56c89553c14aa072d8b10e5d86ebaadb81c7a5559854947e2d01e5c90236bfc",
+    "docs/evidence/authorization44/authorization-green.log": "2cd7845fd6dd67978e0eb0d1700e723ac8613979ed3cebc094a44db0fd5e5653",
+    "docs/evidence/authorization44/authorization-red.log": "56098ccded4e9c80d515dc07d6024065442b2da1292b76587572b2bd9582c134",
+    "docs/evidence/authorization44/node-final.log": "bf4dff7aa42540cb1b1087bb639951d30b50b4e137156084ee8511e491b1770a",
+    "docs/evidence/authorization44/python-final.log": "976a36747bd351475664ccecb20bb538d17b074caa68cbfdde2a8def980fff13"
+  },
+  "openTasks": 33,
+  "excluded": [
+    "complete3.3",
+    "native single writer",
+    "GUI concurrency",
+    "complete V1",
+    "marketplace eligibility"
+  ]
+}

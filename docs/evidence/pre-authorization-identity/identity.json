@@ -1,0 +1,8 @@
+{
+  "commit": "fd96433f88db5663a98f6f3ae256f5ad6c14ddb7",
+  "scope": "Exact plugin43 controller before freezing physical authorization, request and dependency inputs",
+  "files": {
+    "src/harness/controller.ts": "4ae925154e193e139100c938af4f26157c5cc321c6504b69c163330bf3b60b23",
+    "plugin.json": "b8e5376af2b7ccb3415edf7dd532504c8196f56ac5ceb821e56fda6f031d0ef2"
+  }
+}

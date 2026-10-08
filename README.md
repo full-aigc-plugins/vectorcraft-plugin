@@ -10,7 +10,9 @@ Four-domain RT-001 runtime source/integrity acceptance now covers every current 
 
 Create Logo, icon and brand assets as `.vectorcraft` with applicable SVG, PDF and PNG exports.
 
-Current plugin: `0.1.0-dev.43`; skill source: `0.1.0-dev.37`; 13 independent skills.
+Current plugin: `0.1.0-dev.44`; skill source: `0.1.0-dev.37`; 13 independent skills.
+
+Authorization now freezes caller scope, input fingerprints and physical paths before asynchronous probing, and requires write permission for the staging parent. Three coordinator regression cases cover these boundaries; complete task3.3 and V1 acceptance remain open.
 
 Runtime capability and isolated upgrades (task2.6) passed all current scenarios in public installed plugin43/source37: cold default, real version/bridge drain, two-process races, migration snapshots and legacy-reader budget rollback. [Fixed-install evidence](docs/evidence/vectorcraft-runtime-upgrade-fixed43-20261008.json). Scope is declared macOS arm64;33 other OpenSpec tasks remain open.
 
@@ -107,7 +109,7 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.43 |
+| Metadata version | 0.1.0-dev.44 |
 | Stage | implementation-in-progress |
 | Skills source | vectorcraft-skills / v0.1.0-dev.37 |
 | Execution | Upstream CLI; ArtCraft uses child adapters |

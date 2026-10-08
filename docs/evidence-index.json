@@ -1,6 +1,6 @@
 {
   "schema": "vectorcraft-evidence-index/v1",
-  "identitySha256": "5310ecc70b5f607acf7d2e3d3e7625592cb4307af78e16f9eb5230c2944f1db6",
+  "identitySha256": "709b680753a20f446e88c3e2979b3dd881e62adaf4cc67ac9a2171dc8512774f",
   "entries": [
     {
       "path": "docs/evidence/craft-vector37-gateway-export-fixed-first-use-20261008.json",
@@ -120,7 +120,7 @@
       "sha256": "84ad044e41cb7ee06c48bdd59996c82c9878166362c6fd80975df9805dfc8327",
       "level": "native-candidate",
       "status": "PASS",
-      "scope": "historical before runtime integration; persisted decoder checks of existing native export copies; fixture receipts only; native reopening and real creative acceptance remain open",
+      "scope": "historical at original execution identity; persisted decoder checks of existing native export copies; fixture receipts only; native reopening and real creative acceptance remain open",
       "requirement": null,
       "tasks": [
         "6.2"
@@ -144,7 +144,7 @@
       "sha256": "318a7d9dd0867304f2b97b0d74fdd2631b74dc503ba262fbcf241baef7286e17",
       "level": "native-candidate",
       "status": "PASS",
-      "scope": "historical before runtime integration; bounded revision minimum: two actual native color revisions with injected scores; full6.6 and real creative acceptance remain open",
+      "scope": "historical at original execution identity; bounded revision minimum: two actual native color revisions with injected scores; full6.6 and real creative acceptance remain open",
       "requirement": null,
       "tasks": [
         "6.4",
@@ -179,7 +179,7 @@
       "sha256": "5101571f33a3bb9bb99d39ad7dd9230e1f823a5f07bae74930fde678b1a2a3b3",
       "level": "native-candidate",
       "status": "PASS",
-      "scope": "historical before runtime integration; explicit units, offset artboard controls and retained closure failure; full4.3 remains open",
+      "scope": "historical at original execution identity; explicit units, offset artboard controls and retained closure failure; full4.3 remains open",
       "requirement": "VC-DM-001",
       "tasks": [
         "4.1",
@@ -224,7 +224,7 @@
       "sha256": "601028d9bf7b9cbb8ad1511f8853b2cdfaaa4edf0edb8ba43ae7b4f89f829a61",
       "level": "native-candidate",
       "status": "PASS",
-      "scope": "historical before runtime integration; actual supplied pinned source37 in Harness; structure scope checks; not host installation or full4.6",
+      "scope": "historical at original execution identity; actual supplied pinned source37 in Harness; structure scope checks; not host installation or full4.6",
       "requirement": "VC-DM-002",
       "tasks": [],
       "historical": true,
@@ -324,7 +324,7 @@
       "sha256": "2279ef4088739ede88643f5c630af6f7ede10dc7fe74d2d0772313bf34aa4140",
       "level": "native-candidate",
       "status": "PASS",
-      "scope": "historical before runtime integration; live 585-command and25-tool headless probe, drain guard and managed native creation; different-version upgrades, rollback and desktop acceptance remain open",
+      "scope": "historical at original execution identity; live 585-command and25-tool headless probe, drain guard and managed native creation; different-version upgrades, rollback and desktop acceptance remain open",
       "requirement": "VC-RT-002",
       "tasks": [
         "2.4"
@@ -349,7 +349,7 @@
       "sha256": "41a56c7270a41d2b1354b7d33bcb56d342ab969f681d51269959f8759cc6dd42",
       "level": "native-candidate",
       "status": "PASS",
-      "scope": "historical before runtime integration; default cold fixed install and headless schemas, parallel creation, readonly resume, pre-edit refusal and8 managed structural cases; complete2.6 remains open",
+      "scope": "historical at original execution identity; default cold fixed install and headless schemas, parallel creation, readonly resume, pre-edit refusal and8 managed structural cases; complete2.6 remains open",
       "requirement": "VC-RT-002",
       "tasks": [
         "2.5"
@@ -383,7 +383,7 @@
       "sha256": "417c9a9300cd263d9687f723bb47fe02e9d1ec133c23d0bf1e7ad4614d132d09",
       "level": "native-candidate",
       "status": "PASS",
-      "scope": "historical before runtime integration; fresh default headless cold/concurrent/refusal cases with all three delivery manifest and file digests; unchanged managed structural regression reused by exact fingerprints; full2.6 remains open",
+      "scope": "historical at original execution identity; fresh default headless cold/concurrent/refusal cases with all three delivery manifest and file digests; unchanged managed structural regression reused by exact fingerprints; full2.6 remains open",
       "requirement": "VC-RT-002",
       "tasks": [
         "2.5"
@@ -418,12 +418,12 @@
       "sha256": "000dff357200de86a0d8a1832692cfddd1c6330ea37e6f0bb16e427d42d87736",
       "level": "native-candidate",
       "status": "PASS",
-      "scope": "historical before runtime integration; Two real CLI versions,11 native cases, schema3 backup and old-reader refusal; complete2.6 remains open",
+      "scope": "historical at original execution identity; Two real CLI versions,11 native cases, schema3 backup and old-reader refusal; complete2.6 remains open",
       "requirement": "VC-RT-002",
       "tasks": [],
       "historical": true,
       "dependencies": {
-        "src/harness/controller.ts": "4ae925154e193e139100c938af4f26157c5cc321c6504b69c163330bf3b60b23",
+        "docs/evidence/pre-authorization-identity/src/harness/controller.ts": "4ae925154e193e139100c938af4f26157c5cc321c6504b69c163330bf3b60b23",
         "docs/evidence/pre-open-reader-identity/src/harness/ledger.ts": "451ad750c34d3e662cdeb4bcf5ad2607133361c8d54b919cc8cdf7ed799f21a2",
         "src/harness/process_registry.ts": "c19a3cb5d42cc33620bc5baeff7db71f1c6daa92f046a112951a7f50f7906162",
         "src/runtime/runtime_gate.ts": "269966ae978c9afa7b9cdad719afce9ca0b57e54c52f3cb732777f3ddc23a68c",
@@ -457,13 +457,13 @@
       "sha256": "5c132f719d182a3f8ddeb8787b13e925ba3b14c3bd35517c2a52b5ad121f467e",
       "level": "native-candidate",
       "status": "PASS",
-      "scope": "historical before runtime integration; Candidate database guard with open-reader red, WAL preservation and native/race/default cases; full2.6 awaits fixed43",
+      "scope": "historical at original execution identity; Candidate database guard with open-reader red, WAL preservation and native/race/default cases; full2.6 awaits fixed43",
       "requirement": "VC-RT-002",
       "tasks": [],
       "historical": true,
       "dependencies": {
         "src/harness/ledger.ts": "eaaf703dd51fd63a5d82826ec30ff7e07277aa8a94f3568369b0af142c9e7a9e",
-        "src/harness/controller.ts": "4ae925154e193e139100c938af4f26157c5cc321c6504b69c163330bf3b60b23",
+        "docs/evidence/pre-authorization-identity/src/harness/controller.ts": "4ae925154e193e139100c938af4f26157c5cc321c6504b69c163330bf3b60b23",
         "src/harness/process_registry.ts": "c19a3cb5d42cc33620bc5baeff7db71f1c6daa92f046a112951a7f50f7906162",
         "src/runtime/runtime_gate.ts": "269966ae978c9afa7b9cdad719afce9ca0b57e54c52f3cb732777f3ddc23a68c",
         "src/strict_json.ts": "69a445339670e53f6a7fcb96770b53b896666dd1e60f114c1751a23981d5b7d0",
@@ -491,17 +491,17 @@
       "sha256": "dad0625628acf70ff1195fddd786b4732c20f5978feadce51b4ebad9ead175c5",
       "level": "fixed-install",
       "status": "PASS",
-      "scope": "Public plugin43/source37; all seven RT-002 scenarios including real bridge/version drain and open-reader budget rollback on macOS arm64; complete V1 remains open",
+      "scope": "historical at original execution identity; Public plugin43/source37; all seven RT-002 scenarios including real bridge/version drain and open-reader budget rollback on macOS arm64; complete V1 remains open",
       "requirement": "VC-RT-002",
       "tasks": [
         "2.6"
       ],
-      "historical": false,
+      "historical": true,
       "dependencies": {
-        "plugin.json": "b8e5376af2b7ccb3415edf7dd532504c8196f56ac5ceb821e56fda6f031d0ef2",
+        "docs/evidence/pre-authorization-identity/plugin.json": "b8e5376af2b7ccb3415edf7dd532504c8196f56ac5ceb821e56fda6f031d0ef2",
         "skills.lock.json": "37cf4e7a514193ff10b1f051915b931874f05a8f693c87e67d904657f040464e",
         "src/harness/ledger.ts": "eaaf703dd51fd63a5d82826ec30ff7e07277aa8a94f3568369b0af142c9e7a9e",
-        "src/harness/controller.ts": "4ae925154e193e139100c938af4f26157c5cc321c6504b69c163330bf3b60b23",
+        "docs/evidence/pre-authorization-identity/src/harness/controller.ts": "4ae925154e193e139100c938af4f26157c5cc321c6504b69c163330bf3b60b23",
         "src/harness/process_registry.ts": "c19a3cb5d42cc33620bc5baeff7db71f1c6daa92f046a112951a7f50f7906162",
         "src/harness/process_runner.py": "7332d0757aa01f03d00697f8eb8d93f849517cab34ea8a1355ba6c9513d5aba2",
         "src/runtime/runtime_gate.ts": "269966ae978c9afa7b9cdad719afce9ca0b57e54c52f3cb732777f3ddc23a68c",
@@ -554,6 +554,27 @@
         "docs/evidence/fixed43-runtime/bootstrap.json": "48bd69d1a21f9ce827584dfbc8110cd9c3db03a91882e9900588497c614bacf3",
         "docs/evidence/fixed43-runtime/open-reader.json": "2fb34c07e43361801259d7ad70b15c7036fc52bd6b25695b674773995ec6e5e3",
         "scripts/acceptance/runtime_open_reader.ts": "d79d11da7dffd4ebe6c26d2ba368753f4e3584f7719228682e56522943962747"
+      }
+    },
+    {
+      "path": "docs/evidence/vectorcraft-authorization-snapshot-local44-20261008.json",
+      "sha256": "fd4a721a610dd42bd76dfcd06bf9f9676cd4dfdda8c9a798a359a59c9340ac57",
+      "level": "local-tests",
+      "status": "PASS",
+      "scope": "Three synthetic coordinator authorization regressions; 57 Node and43 Python tests; full3.3 and V1 remain open",
+      "requirement": "VC-TX-001",
+      "tasks": [],
+      "historical": false,
+      "dependencies": {
+        "src/harness/controller.ts": "4c3b6a0a5af7e8ea2ece7586a8a80cd882d9c5f45b08b9205daad57f0c1af7bd",
+        "tests/authorization_binding.test.ts": "bfad2a1ba70572b535285e6cd64b73b26518f1b856e9e13ebaddcc9a11a3eae2",
+        "plugin.json": "2cccf1f5a230673d04430c9fbed728592c6b631e6168e9d1f50ccdebc12e741f",
+        "skills.lock.json": "37cf4e7a514193ff10b1f051915b931874f05a8f693c87e67d904657f040464e",
+        "openspec/changes/establish-v1-plugin/specs/task-execution/spec.md": "b56c89553c14aa072d8b10e5d86ebaadb81c7a5559854947e2d01e5c90236bfc",
+        "docs/evidence/authorization44/authorization-green.log": "2cd7845fd6dd67978e0eb0d1700e723ac8613979ed3cebc094a44db0fd5e5653",
+        "docs/evidence/authorization44/authorization-red.log": "56098ccded4e9c80d515dc07d6024065442b2da1292b76587572b2bd9582c134",
+        "docs/evidence/authorization44/node-final.log": "bf4dff7aa42540cb1b1087bb639951d30b50b4e137156084ee8511e491b1770a",
+        "docs/evidence/authorization44/python-final.log": "976a36747bd351475664ccecb20bb538d17b074caa68cbfdde2a8def980fff13"
       }
     }
   ],
