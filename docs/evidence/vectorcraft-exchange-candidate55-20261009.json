@@ -1,0 +1,39 @@
+{
+  "schema": "vectorcraft-exchange-candidate/v1",
+  "result": "PASS",
+  "pluginVersion": "0.1.0-dev.55",
+  "sourceRef": "v0.1.0-dev.41",
+  "sourceCommit": "9649db7fbcee4d275b91748115143c0680e94417",
+  "tasksClosed": [
+    "4.13",
+    "4.14"
+  ],
+  "scope": "five source red/green cases and two quality behavioral red failures; actual fixed54 missing scope reproduced; candidate55 three native reopened cases/nine independent decodes/four original-preserving explicit disclosure refusals; no fixed55 or complete4.15 claim",
+  "regressions": {
+    "sourceTotal": 195,
+    "sourcePassed": 165,
+    "sourceSkipped": 30,
+    "pluginPythonPassed": 57,
+    "pluginNodePassed": 115
+  },
+  "fingerprints": {
+    "docs/evidence/vc-dm-005/source41.json": "0abdb37f2828761d3ed2a8b8058cbd11312827a2666afb2f8ddfe600bfc29850",
+    "docs/evidence/vc-dm-005/candidate55.json": "43b2bf2cdabc3eeaa854869201a4eeb212d7c10ba8c14b5de647fd4f12bb9521",
+    "docs/evidence/vc-dm-005/quality-red-driver.py.txt": "a543f0fb714d004ae11be42fb073af8805cc82fd47675e1756832c81f90d0246",
+    "docs/evidence/vc-dm-005/quality-green.log.txt": "2b13e07986485deb96ecae34ca5376452166c41d29e5f86335b5b78d2c6d2c03",
+    "docs/evidence/vc-dm-005/scope-red.log.txt": "8e78edc20b7bf5ecfb6a9a713e0a1c78b44bb0036bd960dff32ef05ef4c19b79",
+    "docs/evidence/vc-dm-005/baseline54.json": "7d0e77360ca4f5cd6ccc5b1921803784eb397ab5b5ef1d11117e507668aa5b80",
+    "docs/evidence/vc-dm-005/plugin-green.log.txt": "d6b58968b8bca7d6f353c70754bfe026e1ee398c354fea94b76a48f20eb15638",
+    "docs/evidence/vc-dm-005/scope-driver.py.txt": "d4a3e8d596209c6b8dfc2e1a1be5459612e3506513efc2bbbe516a1374e35639",
+    "docs/evidence/vc-dm-005/qa-driver.py.txt": "3f2e25009080470f6ee61fba32c3091c0c79d8b07fec29b5f618cc2d9d44d97f",
+    "docs/evidence/vc-dm-005/quality-red.log.txt": "f596f336d734a383dca3339ae77616d462f0ef4e8b4b50020a46bad4d2283512",
+    "plugin.json": "8c09f2fc1da8f218e20936dbdb5ddff884e92c985502eb016f32a17b2e20dd84",
+    "skills.lock.json": "0035adfa3fc09aae071c37cc03b78e307d9a92f0af947ffa4603a6da2f42cd06",
+    "docs/current-identity.json": "43742de0dcd2b2fd39ea182525d2640f80918e966224231b3c39d3c2785d81cf",
+    "src/evaluation/delivery_quality.py": "f3bb72202c70a8db138881b2ff89456d66c128103d5ed9a8a2006d876eca75dc",
+    "scripts/qa/exchange_formats.py": "3f2e25009080470f6ee61fba32c3091c0c79d8b07fec29b5f618cc2d9d44d97f",
+    "tests/test_delivery_quality.py": "a543f0fb714d004ae11be42fb073af8805cc82fd47675e1756832c81f90d0246",
+    "skills/vectorcraft-use/scripts/exchange_loss.py": "7fdee028008a20bd88bb1e27334f326a7fcc774a079b1621a1c0d06bebfd8f29",
+    "docs/evidence/vc-dm-005/node-green.log.txt": "bec663ce826704b9bbc4e150c3928d5d8f9be43ee18d644341f822c4d2d5af0c"
+  }
+}

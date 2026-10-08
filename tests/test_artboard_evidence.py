@@ -17,7 +17,9 @@ class ArtboardEvidenceTests(unittest.TestCase):
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name).resolve()
         self.report = json.loads((ROOT/REPORT).read_text())
-        names = set(self.report['fingerprints']) | {REPORT,'openspec/changes/establish-v1-plugin/specs/domain-workflow/spec.md'}
+        index=json.loads((ROOT/'docs/evidence-index.json').read_text())
+        dependencies=next(e['dependencies'] for e in index['entries'] if e['path']==REPORT)
+        names = set(self.report['fingerprints']) | set(dependencies) | {REPORT,'docs/evidence-index.json','openspec/changes/establish-v1-plugin/specs/domain-workflow/spec.md'}
         for name in names:
             target = self.root/name
             target.parent.mkdir(parents=True,exist_ok=True)

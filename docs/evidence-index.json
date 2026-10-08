@@ -1,6 +1,6 @@
 {
   "schema": "vectorcraft-evidence-index/v1",
-  "identitySha256": "a8be56ca3ae6f2558d34dd7475bb40ba54157bef3c497b2dd17689e7fed70f25",
+  "identitySha256": "43742de0dcd2b2fd39ea182525d2640f80918e966224231b3c39d3c2785d81cf",
   "entries": [
     {
       "path": "docs/evidence/craft-vector37-gateway-export-fixed-first-use-20261008.json",
@@ -96,15 +96,15 @@
       "sha256": "d0cb3ba2b171974855e5a3120e490f39f6ea43178a0393f016da3869211d313e",
       "level": "native-candidate",
       "status": "PASS",
-      "scope": "standalone technical decoder and negative tests at their recorded identity; coordinator evidence is separate and complete native engineering acceptance remains open",
+      "scope": "historical at original execution identity; standalone technical decoder and negative tests at their recorded identity; coordinator evidence is separate and complete native engineering acceptance remains open",
       "requirement": null,
       "tasks": [
         "6.1"
       ],
-      "historical": false,
+      "historical": true,
       "dependencies": {
-        "src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
-        "tests/test_delivery_quality.py": "bd424eae9e6ee0d00cb331aea7c4310fef8caae642f117ccea8fbde475d86f4b",
+        "docs/evidence/pre-exchange-identity/src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
+        "docs/evidence/pre-exchange-identity/tests/test_delivery_quality.py": "bd424eae9e6ee0d00cb331aea7c4310fef8caae642f117ccea8fbde475d86f4b",
         "docs/evidence/delivery-quality/direct-corrupt.json": "c1bdd14d64829df0c33fea102451a7319af8d0fe5cb182877b50974a05bd7ae0",
         "docs/evidence/delivery-quality/direct-healthy.json": "283a29f7fd54bf5f1f48664521e9cbd1e487c57c53d6d525ddcbc1c82d319292",
         "docs/evidence/delivery-quality/green.log": "479c892b7f3dc8871cd5382190e1206ec01d9cb180f88c8316778884046e9e01",
@@ -129,7 +129,7 @@
       "dependencies": {
         "src/evaluation/technical_review.ts": "59eb77085bde9573e049701748ed7b508c507386a3f7686ebcc75384666e43a3",
         "src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
-        "src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
+        "docs/evidence/pre-exchange-identity/src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
         "docs/evidence/pre-runtime-gate-identity/src/harness/ledger.ts": "c1aa8d6b7ad7c40d5fc0f1a8d87ddae1df0b29144c904690917e5b79355f660d",
         "src/harness/process_registry.ts": "c19a3cb5d42cc33620bc5baeff7db71f1c6daa92f046a112951a7f50f7906162",
         "src/harness/process_runner.py": "7332d0757aa01f03d00697f8eb8d93f849517cab34ea8a1355ba6c9513d5aba2",
@@ -158,7 +158,7 @@
         "src/evaluation/revision_cycle.ts": "019a80ddf7ca9fa80737934ad65efb3cf5e66c17b180e25d32091123ac25185f",
         "src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
         "src/evaluation/technical_review.ts": "59eb77085bde9573e049701748ed7b508c507386a3f7686ebcc75384666e43a3",
-        "src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
+        "docs/evidence/pre-exchange-identity/src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
         "docs/evidence/pre-runtime-gate-identity/src/harness/controller.ts": "64def8f9d81aabacf8382ac55b05cc2fbfa81134939216d44d5a3bc89dad248f",
         "docs/evidence/pre-runtime-gate-identity/src/harness/ledger.ts": "c1aa8d6b7ad7c40d5fc0f1a8d87ddae1df0b29144c904690917e5b79355f660d",
         "src/harness/process_registry.ts": "c19a3cb5d42cc33620bc5baeff7db71f1c6daa92f046a112951a7f50f7906162",
@@ -528,7 +528,7 @@
         "tests/technical_review.test.ts": "de8753e4f561412b01a6629eff69cf73a86ba212398249bcbad7b491cff96f76",
         "tests/test_contract_reference.py": "9a0a27ce81b79be857bc0553161e6f4a8b1064ce25d6f29caf1751ecac219276",
         "tests/test_current_readme_identity.py": "5ab29c4c0145088fc8b3b4232bf627836016706f8fee6a228ffc36a775bf5ce9",
-        "tests/test_delivery_quality.py": "bd424eae9e6ee0d00cb331aea7c4310fef8caae642f117ccea8fbde475d86f4b",
+        "docs/evidence/pre-exchange-identity/tests/test_delivery_quality.py": "bd424eae9e6ee0d00cb331aea7c4310fef8caae642f117ccea8fbde475d86f4b",
         "tests/test_fixed_acceptance.py": "ac3314f5e34e572e90b6031ee8b15d58b93012fd1ea2ce51040be0e5f81b29a7",
         "tests/test_optimization_integrity.py": "a9748f28b2de8755b51fe009fcf131bfdc5f6bbdff830b09b294587501159233",
         "tests/test_runtime_download_boundaries.py": "42b1a572db2c077ef06524c168e853777c1031fd681aff1b5f370d70473020a2",
@@ -607,7 +607,7 @@
       "historical": true,
       "dependencies": {
         "src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
-        "src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
+        "docs/evidence/pre-exchange-identity/src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
         "src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
         "src/evaluation/revision_cycle.ts": "019a80ddf7ca9fa80737934ad65efb3cf5e66c17b180e25d32091123ac25185f",
         "src/evaluation/technical_review.ts": "59eb77085bde9573e049701748ed7b508c507386a3f7686ebcc75384666e43a3",
@@ -673,7 +673,7 @@
       "historical": true,
       "dependencies": {
         "src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
-        "src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
+        "docs/evidence/pre-exchange-identity/src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
         "src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
         "src/evaluation/revision_cycle.ts": "019a80ddf7ca9fa80737934ad65efb3cf5e66c17b180e25d32091123ac25185f",
         "src/evaluation/technical_review.ts": "59eb77085bde9573e049701748ed7b508c507386a3f7686ebcc75384666e43a3",
@@ -737,7 +737,7 @@
       "historical": true,
       "dependencies": {
         "src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
-        "src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
+        "docs/evidence/pre-exchange-identity/src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
         "src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
         "src/evaluation/revision_cycle.ts": "019a80ddf7ca9fa80737934ad65efb3cf5e66c17b180e25d32091123ac25185f",
         "src/evaluation/technical_review.ts": "59eb77085bde9573e049701748ed7b508c507386a3f7686ebcc75384666e43a3",
@@ -811,7 +811,7 @@
       "historical": true,
       "dependencies": {
         "src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
-        "src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
+        "docs/evidence/pre-exchange-identity/src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
         "src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
         "src/evaluation/revision_cycle.ts": "019a80ddf7ca9fa80737934ad65efb3cf5e66c17b180e25d32091123ac25185f",
         "src/evaluation/technical_review.ts": "59eb77085bde9573e049701748ed7b508c507386a3f7686ebcc75384666e43a3",
@@ -879,7 +879,7 @@
       "historical": true,
       "dependencies": {
         "src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
-        "src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
+        "docs/evidence/pre-exchange-identity/src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
         "src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
         "src/evaluation/revision_cycle.ts": "019a80ddf7ca9fa80737934ad65efb3cf5e66c17b180e25d32091123ac25185f",
         "src/evaluation/technical_review.ts": "59eb77085bde9573e049701748ed7b508c507386a3f7686ebcc75384666e43a3",
@@ -949,7 +949,7 @@
       "historical": true,
       "dependencies": {
         "src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
-        "src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
+        "docs/evidence/pre-exchange-identity/src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
         "src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
         "src/evaluation/revision_cycle.ts": "019a80ddf7ca9fa80737934ad65efb3cf5e66c17b180e25d32091123ac25185f",
         "src/evaluation/technical_review.ts": "59eb77085bde9573e049701748ed7b508c507386a3f7686ebcc75384666e43a3",
@@ -1017,7 +1017,7 @@
       "historical": true,
       "dependencies": {
         "src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
-        "src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
+        "docs/evidence/pre-exchange-identity/src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
         "src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
         "src/evaluation/revision_cycle.ts": "019a80ddf7ca9fa80737934ad65efb3cf5e66c17b180e25d32091123ac25185f",
         "src/evaluation/technical_review.ts": "59eb77085bde9573e049701748ed7b508c507386a3f7686ebcc75384666e43a3",
@@ -1084,7 +1084,7 @@
       "historical": true,
       "dependencies": {
         "src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
-        "src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
+        "docs/evidence/pre-exchange-identity/src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
         "src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
         "src/evaluation/revision_cycle.ts": "019a80ddf7ca9fa80737934ad65efb3cf5e66c17b180e25d32091123ac25185f",
         "src/evaluation/technical_review.ts": "59eb77085bde9573e049701748ed7b508c507386a3f7686ebcc75384666e43a3",
@@ -1152,7 +1152,7 @@
       "historical": true,
       "dependencies": {
         "src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
-        "src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
+        "docs/evidence/pre-exchange-identity/src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
         "src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
         "src/evaluation/revision_cycle.ts": "019a80ddf7ca9fa80737934ad65efb3cf5e66c17b180e25d32091123ac25185f",
         "src/evaluation/technical_review.ts": "59eb77085bde9573e049701748ed7b508c507386a3f7686ebcc75384666e43a3",
@@ -1222,7 +1222,7 @@
       "historical": true,
       "dependencies": {
         "src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
-        "src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
+        "docs/evidence/pre-exchange-identity/src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
         "src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
         "src/evaluation/revision_cycle.ts": "019a80ddf7ca9fa80737934ad65efb3cf5e66c17b180e25d32091123ac25185f",
         "src/evaluation/technical_review.ts": "59eb77085bde9573e049701748ed7b508c507386a3f7686ebcc75384666e43a3",
@@ -1297,7 +1297,7 @@
       "historical": true,
       "dependencies": {
         "src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
-        "src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
+        "docs/evidence/pre-exchange-identity/src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
         "src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
         "src/evaluation/revision_cycle.ts": "019a80ddf7ca9fa80737934ad65efb3cf5e66c17b180e25d32091123ac25185f",
         "src/evaluation/technical_review.ts": "59eb77085bde9573e049701748ed7b508c507386a3f7686ebcc75384666e43a3",
@@ -1369,7 +1369,7 @@
       "historical": true,
       "dependencies": {
         "src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
-        "src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
+        "docs/evidence/pre-exchange-identity/src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
         "src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
         "src/evaluation/revision_cycle.ts": "019a80ddf7ca9fa80737934ad65efb3cf5e66c17b180e25d32091123ac25185f",
         "src/evaluation/technical_review.ts": "59eb77085bde9573e049701748ed7b508c507386a3f7686ebcc75384666e43a3",
@@ -1459,7 +1459,7 @@
       "historical": true,
       "dependencies": {
         "src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
-        "src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
+        "docs/evidence/pre-exchange-identity/src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
         "src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
         "src/evaluation/revision_cycle.ts": "019a80ddf7ca9fa80737934ad65efb3cf5e66c17b180e25d32091123ac25185f",
         "src/evaluation/technical_review.ts": "59eb77085bde9573e049701748ed7b508c507386a3f7686ebcc75384666e43a3",
@@ -1547,7 +1547,7 @@
       "historical": true,
       "dependencies": {
         "src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
-        "src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
+        "docs/evidence/pre-exchange-identity/src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
         "src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
         "src/evaluation/revision_cycle.ts": "019a80ddf7ca9fa80737934ad65efb3cf5e66c17b180e25d32091123ac25185f",
         "src/evaluation/technical_review.ts": "59eb77085bde9573e049701748ed7b508c507386a3f7686ebcc75384666e43a3",
@@ -1634,7 +1634,7 @@
       "historical": true,
       "dependencies": {
         "src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
-        "src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
+        "docs/evidence/pre-exchange-identity/src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
         "src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
         "src/evaluation/revision_cycle.ts": "019a80ddf7ca9fa80737934ad65efb3cf5e66c17b180e25d32091123ac25185f",
         "src/evaluation/technical_review.ts": "59eb77085bde9573e049701748ed7b508c507386a3f7686ebcc75384666e43a3",
@@ -1722,7 +1722,7 @@
       "historical": true,
       "dependencies": {
         "src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
-        "src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
+        "docs/evidence/pre-exchange-identity/src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
         "src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
         "src/evaluation/revision_cycle.ts": "019a80ddf7ca9fa80737934ad65efb3cf5e66c17b180e25d32091123ac25185f",
         "src/evaluation/technical_review.ts": "59eb77085bde9573e049701748ed7b508c507386a3f7686ebcc75384666e43a3",
@@ -1977,7 +1977,7 @@
         "skills/vectorcraft-cli-appearance/scripts/desktop.lock.json": "f38c7cd5b837bc4f3275ef96c17308fc894f6be66c6a00ecf9c53378ad4bb486",
         "skills/vectorcraft-cli-appearance/scripts/desktop.py": "24dddb82f1c51ca8e835c582d9b7228aa9d643dfcada11b570bde9191f002f0f",
         "skills/vectorcraft-cli-appearance/scripts/desktop_session.py": "b6b07a9a18b77386d481a7f263190b0981a7a763dda4f46ad7417a92d416fbb5",
-        "skills/vectorcraft-cli-appearance/scripts/exchange_loss.py": "16ffb14bf7fb32fc873ab0206ade1e1f462a00a5494fb07682a6e91417b5cd47",
+        "docs/evidence/pre-exchange-identity/skills/vectorcraft-cli-appearance/scripts/exchange_loss.py": "16ffb14bf7fb32fc873ab0206ade1e1f462a00a5494fb07682a6e91417b5cd47",
         "skills/vectorcraft-cli-appearance/scripts/execution_control.py": "0acaa8fa01aae3689bb8c460efdd9bb19578d33e1572e24dc8dea00ef38ec008",
         "skills/vectorcraft-cli-appearance/scripts/mcp_session.py": "15395ead853349a24feab6ce364e5bc9795add12e1dbe62e8ed5718ffdd1ccd2",
         "skills/vectorcraft-cli-appearance/scripts/native_workflow.py": "770f981bc3340cf71c695752423aaf9e9123ae59f07ac5a9318cc9b8e8537d11",
@@ -2035,7 +2035,7 @@
         "skills/vectorcraft-cli-text/scripts/desktop.lock.json": "f38c7cd5b837bc4f3275ef96c17308fc894f6be66c6a00ecf9c53378ad4bb486",
         "skills/vectorcraft-cli-text/scripts/desktop.py": "24dddb82f1c51ca8e835c582d9b7228aa9d643dfcada11b570bde9191f002f0f",
         "skills/vectorcraft-cli-text/scripts/desktop_session.py": "b6b07a9a18b77386d481a7f263190b0981a7a763dda4f46ad7417a92d416fbb5",
-        "skills/vectorcraft-cli-text/scripts/exchange_loss.py": "16ffb14bf7fb32fc873ab0206ade1e1f462a00a5494fb07682a6e91417b5cd47",
+        "docs/evidence/pre-exchange-identity/skills/vectorcraft-cli-text/scripts/exchange_loss.py": "16ffb14bf7fb32fc873ab0206ade1e1f462a00a5494fb07682a6e91417b5cd47",
         "skills/vectorcraft-cli-text/scripts/execution_control.py": "0acaa8fa01aae3689bb8c460efdd9bb19578d33e1572e24dc8dea00ef38ec008",
         "skills/vectorcraft-cli-text/scripts/mcp_session.py": "15395ead853349a24feab6ce364e5bc9795add12e1dbe62e8ed5718ffdd1ccd2",
         "skills/vectorcraft-cli-text/scripts/native_workflow.py": "770f981bc3340cf71c695752423aaf9e9123ae59f07ac5a9318cc9b8e8537d11",
@@ -2092,7 +2092,7 @@
         "skills/vectorcraft-use/scripts/desktop.lock.json": "f38c7cd5b837bc4f3275ef96c17308fc894f6be66c6a00ecf9c53378ad4bb486",
         "skills/vectorcraft-use/scripts/desktop.py": "24dddb82f1c51ca8e835c582d9b7228aa9d643dfcada11b570bde9191f002f0f",
         "skills/vectorcraft-use/scripts/desktop_session.py": "b6b07a9a18b77386d481a7f263190b0981a7a763dda4f46ad7417a92d416fbb5",
-        "skills/vectorcraft-use/scripts/exchange_loss.py": "16ffb14bf7fb32fc873ab0206ade1e1f462a00a5494fb07682a6e91417b5cd47",
+        "docs/evidence/pre-exchange-identity/skills/vectorcraft-use/scripts/exchange_loss.py": "16ffb14bf7fb32fc873ab0206ade1e1f462a00a5494fb07682a6e91417b5cd47",
         "skills/vectorcraft-use/scripts/execution_control.py": "0acaa8fa01aae3689bb8c460efdd9bb19578d33e1572e24dc8dea00ef38ec008",
         "skills/vectorcraft-use/scripts/mcp_session.py": "15395ead853349a24feab6ce364e5bc9795add12e1dbe62e8ed5718ffdd1ccd2",
         "skills/vectorcraft-use/scripts/native_workflow.py": "770f981bc3340cf71c695752423aaf9e9123ae59f07ac5a9318cc9b8e8537d11",
@@ -2113,13 +2113,13 @@
       "sha256": "5686854a77e178c813c13540026729956c6f54f000df9d824249fa7ac57d7248",
       "level": "native-candidate",
       "status": "PASS",
-      "scope": "Source40 stable artboard-ID mapping and native receipt binding, three successful mappings/four refusals;9 mapping tests,49 Python and115 Node regressions;minimum4.10/4.11 only, complete4.12 remains open",
+      "scope": "historical at original execution identity; Source40 stable artboard-ID mapping and native receipt binding, three successful mappings/four refusals;9 mapping tests,49 Python and115 Node regressions;minimum4.10/4.11 only, complete4.12 remains open",
       "requirement": "VC-DM-004",
       "tasks": [
         "4.10",
         "4.11"
       ],
-      "historical": false,
+      "historical": true,
       "dependencies": {
         "docs/evidence/vc-dm-004-mapping/baseline-host53.json": "15d49f0f6fdc687c21292eca3b411b3e097780566af0045126369c1476b5a646",
         "docs/evidence/vc-dm-004-mapping/baseline-qa-driver.py.txt": "6f85e152aca9fe1b609ffd2c4b6555e6f755027187e895f8e1dae4b24bb76584",
@@ -2133,7 +2133,7 @@
         "docs/evidence/vc-dm-004-mapping/source-candidate40.json": "ef054763d72b6db914bf277cb5d971bd869bd7147135ad9cf63560ac235cd80a",
         "docs/evidence/vc-dm-004-mapping/source-final.log": "59141543abb8be873cfb9b27686e9286602e80ee8b290b8ce9457b35258af64a",
         "openspec/changes/establish-v1-plugin/specs/domain-workflow/spec.md": "2b07f032d8f28b5095839ff94a16ab96fdb4bda40fbb178a6e4fd09c404ba81d",
-        "plugin.json": "7d6b6b8fe845577d650d8ab95248eee44a52496d6a39b7cce3c7478dcd22926d",
+        "docs/evidence/pre-exchange-identity/plugin.json": "7d6b6b8fe845577d650d8ab95248eee44a52496d6a39b7cce3c7478dcd22926d",
         "scripts/qa/artboard_mapping.py": "e59c207291296f4880fad94a5c0e0dce87061cd8f978b7d7463dbbb5153615d5",
         "skills/vectorcraft-use/SKILL.md": "5911290dba9e5797c25ec0d10a0cf442096b313681043dede24c7c37c97c9943",
         "skills/vectorcraft-use/agents/openai.yaml": "8619a54e8c098122a7f3881394f84ca89b684366e848233a29ad18b6ec363935",
@@ -2173,7 +2173,7 @@
         "skills/vectorcraft-use/references/object-selection-scene.md": "42593e844568184451bf648c84f4f0fafaee5a1644e39b1641fe49a078e336d9",
         "skills/vectorcraft-use/references/operation-contract.json": "a68a5b834e075059708c9cf555a9bd9acf9074236e9e367861378073ccbf459a",
         "skills/vectorcraft-use/references/output-execution.md": "baa3d38af5f8d3b01cb36bcc6b89dee3d8449ec676bc52d6f5c2de9f563ba3ac",
-        "skills/vectorcraft-use/references/workflow.md": "8bc6e22c806cdc9097e91485918c17e3626648b54435ac052dba4b1d936ea6cd",
+        "docs/evidence/pre-exchange-identity/skills/vectorcraft-use/references/workflow.md": "8bc6e22c806cdc9097e91485918c17e3626648b54435ac052dba4b1d936ea6cd",
         "skills/vectorcraft-use/scripts/artboard_mapping.py": "3b0f83f6a9515f8d8d82c6c96973255b62a7b3a7de3cdde56d678746f1e57638",
         "skills/vectorcraft-use/scripts/asset_inputs.py": "b2868a4239ef50648f201be99bb29ad4ddf0d8bdeb5a626c54b3fc1aac701758",
         "skills/vectorcraft-use/scripts/boolean_transactions.py": "22d311dfda26cadcd3fc6bb51596ab8b2cd9245cabf5f28dfe3d0d74e8ff9120",
@@ -2184,7 +2184,7 @@
         "skills/vectorcraft-use/scripts/desktop.lock.json": "f38c7cd5b837bc4f3275ef96c17308fc894f6be66c6a00ecf9c53378ad4bb486",
         "skills/vectorcraft-use/scripts/desktop.py": "24dddb82f1c51ca8e835c582d9b7228aa9d643dfcada11b570bde9191f002f0f",
         "skills/vectorcraft-use/scripts/desktop_session.py": "b6b07a9a18b77386d481a7f263190b0981a7a763dda4f46ad7417a92d416fbb5",
-        "skills/vectorcraft-use/scripts/exchange_loss.py": "16ffb14bf7fb32fc873ab0206ade1e1f462a00a5494fb07682a6e91417b5cd47",
+        "docs/evidence/pre-exchange-identity/skills/vectorcraft-use/scripts/exchange_loss.py": "16ffb14bf7fb32fc873ab0206ade1e1f462a00a5494fb07682a6e91417b5cd47",
         "skills/vectorcraft-use/scripts/execution_control.py": "0acaa8fa01aae3689bb8c460efdd9bb19578d33e1572e24dc8dea00ef38ec008",
         "skills/vectorcraft-use/scripts/mcp_session.py": "15395ead853349a24feab6ce364e5bc9795add12e1dbe62e8ed5718ffdd1ccd2",
         "skills/vectorcraft-use/scripts/native_workflow.py": "770f981bc3340cf71c695752423aaf9e9123ae59f07ac5a9318cc9b8e8537d11",
@@ -2193,7 +2193,7 @@
         "skills/vectorcraft-use/scripts/runtime.lock.json": "7b6bd7f3fab84b757d4ea20ac91b74d89b417ec061efc6ae320dda97a422cc07",
         "skills/vectorcraft-use/scripts/text_contract.py": "ff4af45ae39f4016befd94a9dd20899118da1bd85556c22313450b9851305838",
         "skills/vectorcraft-use/scripts/workflow.py": "6a6cc338b6a052b6427856acae8a287024270b62ea8c7d964899b076493ae5dc",
-        "skills.lock.json": "e9f810da44580fdf9f807032d9fa07a323eccb25172fb39041f97906d256392a",
+        "docs/evidence/pre-exchange-identity/skills.lock.json": "e9f810da44580fdf9f807032d9fa07a323eccb25172fb39041f97906d256392a",
         "tests/test_brand_text_evidence.py": "4d70ec789fa8c833d1eaceab46feec55f05d2d9c682e54c6a6e90e4f7a088f84"
       }
     },
@@ -2202,14 +2202,14 @@
       "sha256": "254a72f95204732660cc762cf0f6f7edec0e508ac63e533ada0cbfa1822acc38",
       "level": "fixed-install",
       "status": "PASS",
-      "scope": "Actual public54/source40 isolated host installation, three successful native mappings/four refusals/14 decoded outputs;13 skills unchanged;complete4.12 remains open",
+      "scope": "historical at original execution identity; Actual public54/source40 isolated host installation, three successful native mappings/four refusals/14 decoded outputs;13 skills unchanged;complete4.12 remains open",
       "requirement": "VC-DM-004",
       "tasks": [],
-      "historical": false,
+      "historical": true,
       "dependencies": {
         "docs/evidence/vc-dm-004-mapping/fixed54-host.json": "af439368bf47a031041cb8e5ecfcf543e575e1a6e28ac586fc57813784644b4b",
         "docs/evidence/vc-dm-004-mapping/fixed54-native.json": "f5b35d84c9ff7de055fd1c3f075a10a5a25ab877416dc3b61fa68d3d436ef385",
-        "plugin.json": "7d6b6b8fe845577d650d8ab95248eee44a52496d6a39b7cce3c7478dcd22926d",
+        "docs/evidence/pre-exchange-identity/plugin.json": "7d6b6b8fe845577d650d8ab95248eee44a52496d6a39b7cce3c7478dcd22926d",
         "scripts/qa/artboard_mapping.py": "e59c207291296f4880fad94a5c0e0dce87061cd8f978b7d7463dbbb5153615d5",
         "skills/vectorcraft-cli-artboards/SKILL.md": "02d65c8ab0a608ef2cec93e631ee6e72758fd57205de0ead28d7fe3ee68c0838",
         "skills/vectorcraft-cli-artboards/agents/openai.yaml": "a1499d95abd8447558c535fe5554adcc3c9b988a0a39264a6283d430effe1e94",
@@ -2250,7 +2250,7 @@
         "skills/vectorcraft-cli-artboards/references/operation-contract.json": "59f48d11d74470aa97770c823cd22be73888213fe6fca00a44f7145783af9900",
         "skills/vectorcraft-cli-artboards/references/output-execution.md": "baa3d38af5f8d3b01cb36bcc6b89dee3d8449ec676bc52d6f5c2de9f563ba3ac",
         "skills/vectorcraft-cli-artboards/references/scenario.md": "f82c027f6223425a4b93186e45347d7b640708da1026f22ca8e99a9b8f270ab8",
-        "skills/vectorcraft-cli-artboards/references/workflow.md": "8bc6e22c806cdc9097e91485918c17e3626648b54435ac052dba4b1d936ea6cd",
+        "docs/evidence/pre-exchange-identity/skills/vectorcraft-cli-artboards/references/workflow.md": "8bc6e22c806cdc9097e91485918c17e3626648b54435ac052dba4b1d936ea6cd",
         "skills/vectorcraft-cli-artboards/scripts/artboard_mapping.py": "3b0f83f6a9515f8d8d82c6c96973255b62a7b3a7de3cdde56d678746f1e57638",
         "skills/vectorcraft-cli-artboards/scripts/asset_inputs.py": "b2868a4239ef50648f201be99bb29ad4ddf0d8bdeb5a626c54b3fc1aac701758",
         "skills/vectorcraft-cli-artboards/scripts/boolean_transactions.py": "22d311dfda26cadcd3fc6bb51596ab8b2cd9245cabf5f28dfe3d0d74e8ff9120",
@@ -2261,7 +2261,7 @@
         "skills/vectorcraft-cli-artboards/scripts/desktop.lock.json": "f38c7cd5b837bc4f3275ef96c17308fc894f6be66c6a00ecf9c53378ad4bb486",
         "skills/vectorcraft-cli-artboards/scripts/desktop.py": "24dddb82f1c51ca8e835c582d9b7228aa9d643dfcada11b570bde9191f002f0f",
         "skills/vectorcraft-cli-artboards/scripts/desktop_session.py": "b6b07a9a18b77386d481a7f263190b0981a7a763dda4f46ad7417a92d416fbb5",
-        "skills/vectorcraft-cli-artboards/scripts/exchange_loss.py": "16ffb14bf7fb32fc873ab0206ade1e1f462a00a5494fb07682a6e91417b5cd47",
+        "docs/evidence/pre-exchange-identity/skills/vectorcraft-cli-artboards/scripts/exchange_loss.py": "16ffb14bf7fb32fc873ab0206ade1e1f462a00a5494fb07682a6e91417b5cd47",
         "skills/vectorcraft-cli-artboards/scripts/execution_control.py": "0acaa8fa01aae3689bb8c460efdd9bb19578d33e1572e24dc8dea00ef38ec008",
         "skills/vectorcraft-cli-artboards/scripts/mcp_session.py": "15395ead853349a24feab6ce364e5bc9795add12e1dbe62e8ed5718ffdd1ccd2",
         "skills/vectorcraft-cli-artboards/scripts/native_workflow.py": "770f981bc3340cf71c695752423aaf9e9123ae59f07ac5a9318cc9b8e8537d11",
@@ -2270,7 +2270,7 @@
         "skills/vectorcraft-cli-artboards/scripts/runtime.lock.json": "7b6bd7f3fab84b757d4ea20ac91b74d89b417ec061efc6ae320dda97a422cc07",
         "skills/vectorcraft-cli-artboards/scripts/text_contract.py": "ff4af45ae39f4016befd94a9dd20899118da1bd85556c22313450b9851305838",
         "skills/vectorcraft-cli-artboards/scripts/workflow.py": "6a6cc338b6a052b6427856acae8a287024270b62ea8c7d964899b076493ae5dc",
-        "skills.lock.json": "e9f810da44580fdf9f807032d9fa07a323eccb25172fb39041f97906d256392a"
+        "docs/evidence/pre-exchange-identity/skills.lock.json": "e9f810da44580fdf9f807032d9fa07a323eccb25172fb39041f97906d256392a"
       }
     },
     {
@@ -2278,16 +2278,16 @@
       "sha256": "6acdeb85e814dcc6e8d71b42f2ad151c340f16dbafd7190cdc35fa8dc80df23c",
       "level": "fixed-install",
       "status": "PASS",
-      "scope": "All four current VC-DM-004 scenarios on installed54/source40 macOS arm64;31 native boundary cases, standalone export cold first use, stable-ID mapping and pinned renderer unknown-bounds semantics;only4.12 closes",
+      "scope": "historical at original execution identity; All four current VC-DM-004 scenarios on installed54/source40 macOS arm64;31 native boundary cases, standalone export cold first use, stable-ID mapping and pinned renderer unknown-bounds semantics;only4.12 closes",
       "requirement": "VC-DM-004",
       "tasks": [
         "4.12"
       ],
-      "historical": false,
+      "historical": true,
       "dependencies": {
         "docs/evidence/vc-dm-004-mapping/fixed54-host.json": "af439368bf47a031041cb8e5ecfcf543e575e1a6e28ac586fc57813784644b4b",
         "docs/evidence/vc-dm-004-mapping/fixed54-native.json": "f5b35d84c9ff7de055fd1c3f075a10a5a25ab877416dc3b61fa68d3d436ef385",
-        "plugin.json": "7d6b6b8fe845577d650d8ab95248eee44a52496d6a39b7cce3c7478dcd22926d",
+        "docs/evidence/pre-exchange-identity/plugin.json": "7d6b6b8fe845577d650d8ab95248eee44a52496d6a39b7cce3c7478dcd22926d",
         "scripts/qa/artboard_mapping.py": "e59c207291296f4880fad94a5c0e0dce87061cd8f978b7d7463dbbb5153615d5",
         "skills/vectorcraft-cli-artboards/SKILL.md": "02d65c8ab0a608ef2cec93e631ee6e72758fd57205de0ead28d7fe3ee68c0838",
         "skills/vectorcraft-cli-artboards/agents/openai.yaml": "a1499d95abd8447558c535fe5554adcc3c9b988a0a39264a6283d430effe1e94",
@@ -2328,7 +2328,7 @@
         "skills/vectorcraft-cli-artboards/references/operation-contract.json": "59f48d11d74470aa97770c823cd22be73888213fe6fca00a44f7145783af9900",
         "skills/vectorcraft-cli-artboards/references/output-execution.md": "baa3d38af5f8d3b01cb36bcc6b89dee3d8449ec676bc52d6f5c2de9f563ba3ac",
         "skills/vectorcraft-cli-artboards/references/scenario.md": "f82c027f6223425a4b93186e45347d7b640708da1026f22ca8e99a9b8f270ab8",
-        "skills/vectorcraft-cli-artboards/references/workflow.md": "8bc6e22c806cdc9097e91485918c17e3626648b54435ac052dba4b1d936ea6cd",
+        "docs/evidence/pre-exchange-identity/skills/vectorcraft-cli-artboards/references/workflow.md": "8bc6e22c806cdc9097e91485918c17e3626648b54435ac052dba4b1d936ea6cd",
         "skills/vectorcraft-cli-artboards/scripts/artboard_mapping.py": "3b0f83f6a9515f8d8d82c6c96973255b62a7b3a7de3cdde56d678746f1e57638",
         "skills/vectorcraft-cli-artboards/scripts/asset_inputs.py": "b2868a4239ef50648f201be99bb29ad4ddf0d8bdeb5a626c54b3fc1aac701758",
         "skills/vectorcraft-cli-artboards/scripts/boolean_transactions.py": "22d311dfda26cadcd3fc6bb51596ab8b2cd9245cabf5f28dfe3d0d74e8ff9120",
@@ -2339,7 +2339,7 @@
         "skills/vectorcraft-cli-artboards/scripts/desktop.lock.json": "f38c7cd5b837bc4f3275ef96c17308fc894f6be66c6a00ecf9c53378ad4bb486",
         "skills/vectorcraft-cli-artboards/scripts/desktop.py": "24dddb82f1c51ca8e835c582d9b7228aa9d643dfcada11b570bde9191f002f0f",
         "skills/vectorcraft-cli-artboards/scripts/desktop_session.py": "b6b07a9a18b77386d481a7f263190b0981a7a763dda4f46ad7417a92d416fbb5",
-        "skills/vectorcraft-cli-artboards/scripts/exchange_loss.py": "16ffb14bf7fb32fc873ab0206ade1e1f462a00a5494fb07682a6e91417b5cd47",
+        "docs/evidence/pre-exchange-identity/skills/vectorcraft-cli-artboards/scripts/exchange_loss.py": "16ffb14bf7fb32fc873ab0206ade1e1f462a00a5494fb07682a6e91417b5cd47",
         "skills/vectorcraft-cli-artboards/scripts/execution_control.py": "0acaa8fa01aae3689bb8c460efdd9bb19578d33e1572e24dc8dea00ef38ec008",
         "skills/vectorcraft-cli-artboards/scripts/mcp_session.py": "15395ead853349a24feab6ce364e5bc9795add12e1dbe62e8ed5718ffdd1ccd2",
         "skills/vectorcraft-cli-artboards/scripts/native_workflow.py": "770f981bc3340cf71c695752423aaf9e9123ae59f07ac5a9318cc9b8e8537d11",
@@ -2348,7 +2348,7 @@
         "skills/vectorcraft-cli-artboards/scripts/runtime.lock.json": "7b6bd7f3fab84b757d4ea20ac91b74d89b417ec061efc6ae320dda97a422cc07",
         "skills/vectorcraft-cli-artboards/scripts/text_contract.py": "ff4af45ae39f4016befd94a9dd20899118da1bd85556c22313450b9851305838",
         "skills/vectorcraft-cli-artboards/scripts/workflow.py": "6a6cc338b6a052b6427856acae8a287024270b62ea8c7d964899b076493ae5dc",
-        "skills.lock.json": "e9f810da44580fdf9f807032d9fa07a323eccb25172fb39041f97906d256392a",
+        "docs/evidence/pre-exchange-identity/skills.lock.json": "e9f810da44580fdf9f807032d9fa07a323eccb25172fb39041f97906d256392a",
         "docs/evidence/vc-dm-004/invalid-pdf-date-5-state.json": "5ae9c6d5b29ceafb8189fe90ed6783d33516d4ae211da8e72fde7ff5bc269892",
         "docs/evidence/vc-dm-004/first-use-driver.py.txt": "c7bacf62230673cb689dd5f82c5043bf8d120e47f3088b7d6eb3a9a780ddd68e",
         "docs/evidence/vc-dm-004/logs-provenance.json": "ebfd1a7ddfd3b3dc529f38571ba3ffcc7777932fd20dcc940105db6bf061c0fb",
@@ -2423,12 +2423,45 @@
         "docs/evidence/vc-dm-004/pinned-renderer-bounds.rs.txt": "19f588c9d5cc41d9c18a07a0c3d166cb0f62eb7b271d105e782f23c762d10645",
         "docs/evidence/vc-dm-004/indivisible-cross-board-group.json": "348e75769db7e11bbf1a613215e7e1596c28708bac335059e79b3c54bb3ebc79",
         "scripts/qa/artboard_isolation.py": "90aaf0dd901945571fd9e20c5aa9d3c256f95357e1ada3c4a901e392e4d7730b",
-        "scripts/verify_artboard_evidence.py": "ff19c5a0f6e45a23bf7b57a2b9409b4f250d2851350237740a0b729e64befef7",
+        "docs/evidence/pre-exchange-identity/scripts/verify_artboard_evidence.py": "ff19c5a0f6e45a23bf7b57a2b9409b4f250d2851350237740a0b729e64befef7",
         "docs/evidence/vc-dm-004/pdf-null-default.json": "de8345f98cf7836e169cd878c656091535b08ea675666a10f38c61e5912b877b",
         "docs/evidence/vc-dm-004/pdf-null-default-state.json": "5ae9c6d5b29ceafb8189fe90ed6783d33516d4ae211da8e72fde7ff5bc269892",
-        "tests/test_artboard_evidence.py": "7c51be67e93962d7b15dbfe4229fe39965e0e174b10c4131321da1f15eaa571c",
+        "docs/evidence/pre-exchange-identity/tests/test_artboard_evidence.py": "7c51be67e93962d7b15dbfe4229fe39965e0e174b10c4131321da1f15eaa571c",
         "docs/evidence/vc-dm-004/plugin-final.log.txt": "75bcf13e960ecd6ad98df631829f164ed058e52d82bf6b1401550da3ee25f325",
         "docs/evidence/vc-dm-004/first-use-red-driver.py.txt": "02371d9ad818e4a02f942c55776af61fda2bba1b594b27f4cbf527606d5f08ee"
+      }
+    },
+    {
+      "path": "docs/evidence/vectorcraft-exchange-candidate55-20261009.json",
+      "sha256": "d10cd68a115616e060c81f1e389f569453273f760edaa45af802708e8f89694b",
+      "level": "native-candidate",
+      "status": "PASS",
+      "scope": "Source41 raster scope and plugin55 technical disclosure guard; fixed54 gap, three native reopen/nine decode/four explicit disclosure refusals;minimum4.13/4.14 only,4.15 remains open",
+      "requirement": "VC-DM-005",
+      "tasks": [
+        "4.13",
+        "4.14"
+      ],
+      "historical": false,
+      "dependencies": {
+        "docs/evidence/vc-dm-005/source41.json": "0abdb37f2828761d3ed2a8b8058cbd11312827a2666afb2f8ddfe600bfc29850",
+        "docs/evidence/vc-dm-005/candidate55.json": "43b2bf2cdabc3eeaa854869201a4eeb212d7c10ba8c14b5de647fd4f12bb9521",
+        "docs/evidence/vc-dm-005/quality-red-driver.py.txt": "a543f0fb714d004ae11be42fb073af8805cc82fd47675e1756832c81f90d0246",
+        "docs/evidence/vc-dm-005/quality-green.log.txt": "2b13e07986485deb96ecae34ca5376452166c41d29e5f86335b5b78d2c6d2c03",
+        "docs/evidence/vc-dm-005/scope-red.log.txt": "8e78edc20b7bf5ecfb6a9a713e0a1c78b44bb0036bd960dff32ef05ef4c19b79",
+        "docs/evidence/vc-dm-005/baseline54.json": "7d0e77360ca4f5cd6ccc5b1921803784eb397ab5b5ef1d11117e507668aa5b80",
+        "docs/evidence/vc-dm-005/plugin-green.log.txt": "d6b58968b8bca7d6f353c70754bfe026e1ee398c354fea94b76a48f20eb15638",
+        "docs/evidence/vc-dm-005/scope-driver.py.txt": "d4a3e8d596209c6b8dfc2e1a1be5459612e3506513efc2bbbe516a1374e35639",
+        "docs/evidence/vc-dm-005/qa-driver.py.txt": "3f2e25009080470f6ee61fba32c3091c0c79d8b07fec29b5f618cc2d9d44d97f",
+        "docs/evidence/vc-dm-005/quality-red.log.txt": "f596f336d734a383dca3339ae77616d462f0ef4e8b4b50020a46bad4d2283512",
+        "plugin.json": "8c09f2fc1da8f218e20936dbdb5ddff884e92c985502eb016f32a17b2e20dd84",
+        "skills.lock.json": "0035adfa3fc09aae071c37cc03b78e307d9a92f0af947ffa4603a6da2f42cd06",
+        "docs/current-identity.json": "43742de0dcd2b2fd39ea182525d2640f80918e966224231b3c39d3c2785d81cf",
+        "src/evaluation/delivery_quality.py": "f3bb72202c70a8db138881b2ff89456d66c128103d5ed9a8a2006d876eca75dc",
+        "scripts/qa/exchange_formats.py": "3f2e25009080470f6ee61fba32c3091c0c79d8b07fec29b5f618cc2d9d44d97f",
+        "tests/test_delivery_quality.py": "a543f0fb714d004ae11be42fb073af8805cc82fd47675e1756832c81f90d0246",
+        "skills/vectorcraft-use/scripts/exchange_loss.py": "7fdee028008a20bd88bb1e27334f326a7fcc774a079b1621a1c0d06bebfd8f29",
+        "docs/evidence/vc-dm-005/node-green.log.txt": "bec663ce826704b9bbc4e150c3928d5d8f9be43ee18d644341f822c4d2d5af0c"
       }
     }
   ],

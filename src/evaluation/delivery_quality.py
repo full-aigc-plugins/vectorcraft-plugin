@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 """只读产物身份与真实解码检查；工程重开、创作判断和接受状态分别记录。"""
 import argparse
+import base64
+import binascii
 import hashlib
+import importlib.util
 import io
 import json
 import math
@@ -12,6 +15,45 @@ import xml.etree.ElementTree as ET
 
 MAX_FILE=64*1024*1024
 MAX_TOTAL=256*1024*1024
+
+def embedded_svg_image(value):
+    """仅放行有界PNG／JPEG内嵌数据；验证像素后才交给SVG渲染器。"""
+    match=re.fullmatch(r'data:image/(png|jpeg);base64,([A-Za-z0-9+/=]+)',value,re.I)
+    if not match or len(match[2])>24*1024*1024:raise ValueError('svg_external_resource')
+    try:data=base64.b64decode(match[2],validate=True)
+    except (binascii.Error,ValueError):raise ValueError('svg_invalid_embedded_image') from None
+    try:from PIL import Image
+    except (ImportError,OSError):raise ImportError('Pillow') from None
+    with warnings.catch_warnings():
+        warnings.simplefilter('error',Image.DecompressionBombWarning)
+        with Image.open(io.BytesIO(data)) as image:
+            if image.format!=('PNG' if match[1].lower()=='png' else 'JPEG') or image.width*image.height>64*1024*1024:raise ValueError('svg_invalid_embedded_image')
+            image.verify()
+        with Image.open(io.BytesIO(data)) as image:image.load()
+
+def check_raster_disclosure(directory,manifest,path,file):
+    """当前SVG中的图像必须与独立损失回执绑定，不能由解码PASS覆盖。"""
+    xml=ET.fromstring(path.read_bytes())
+    if not any(n.tag.rsplit('}',1)[-1] in ('image','feImage') for n in xml.iter()):return
+    binding=manifest.get('lossReport')
+    if not isinstance(binding,dict) or binding.get('path')!='exchange-loss.json':raise ValueError('raster_disclosure_missing')
+    if manifest['files'].get(binding['path'])!=binding.get('sha256'):raise ValueError('raster_disclosure_unbound_report')
+    loss_path=file(binding['path'])
+    if hashlib.sha256(loss_path.read_bytes()).hexdigest()!=binding.get('sha256'):raise ValueError('raster_disclosure_digest_mismatch')
+    loss=strict_json(loss_path.read_text())
+    if not isinstance(loss,dict) or not isinstance(loss.get('outputs'),list) or any(not isinstance(row,dict) for row in loss['outputs']):raise ValueError('raster_disclosure_invalid_report')
+    if not isinstance(loss.get('native'),dict) or not isinstance(loss.get('inspection'),dict):raise ValueError('raster_disclosure_invalid_report')
+    matches=[row for row in loss['outputs'] if row.get('location')==path.relative_to(directory).as_posix()]
+    if (len(matches)!=1 or loss['native'].get('location')!='project.vectorcraft' or loss['native'].get('sha256')!=manifest['files']['project.vectorcraft']
+            or loss['inspection'].get('location')!='native.json' or 'native.json' not in manifest['files']
+            or loss['inspection'].get('sha256')!=manifest['files']['native.json']):raise ValueError('raster_disclosure_identity_mismatch')
+    row=matches[0]
+    spec=importlib.util.spec_from_file_location('quality_exchange',Path(__file__).resolve().parents[2]/'skills/vectorcraft-use/scripts/exchange_loss.py')
+    module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+    if (row.get('format')!='svg' or row.get('nativeSubstitute') is not False or not isinstance(row.get('observations'),dict)
+            or row.get('sha256')!=hashlib.sha256(path.read_bytes()).hexdigest() or row['observations'].get('rasterizationScope')!=module.svg_image_scope(xml)):raise ValueError('raster_disclosure_scope_mismatch')
+    changes=row.get('changes')
+    if not isinstance(changes,list) or any(not isinstance(c,dict) for c in changes) or not any(change.get('code')=='lossless-vector-claim' and change.get('status')=='blocked' for change in changes):raise ValueError('raster_disclosure_claim_not_blocked')
 
 
 def strict_json(text):
@@ -53,7 +95,9 @@ def decode_output(path):
             for node in tree.iter():
                 if node.tag.rsplit('}',1)[-1] in ('script','foreignObject'):raise ValueError('svg_active_content')
                 for key,value in node.attrib.items():
-                    if key.rsplit('}',1)[-1]=='href' and not value.startswith('#'):raise ValueError('svg_external_resource')
+                    if key.rsplit('}',1)[-1]=='href' and not value.startswith('#'):
+                        if node.tag.rsplit('}',1)[-1] not in ('image','feImage'):raise ValueError('svg_external_resource')
+                        embedded_svg_image(value)
                 for value in [*node.attrib.values(),node.text or '']:
                     if '@import' in value.lower() or any(not target.strip(' \"\'').startswith('#') for target in re.findall(r'url\((.*?)\)',value,re.I)):
                         raise ValueError('svg_external_resource')
@@ -101,6 +145,7 @@ def check_delivery(directory,expected_runtime,expected_project,decoder=decode_ou
         report.update(artifactIntegrityStatus='PASS',projectRevision=expected_project,runtimeIdentity=expected_runtime,
             manifestSha256=hashlib.sha256(manifest_path.read_bytes()).hexdigest())
         for row in outputs:
+            if row['path'].endswith('.svg'):check_raster_disclosure(directory,manifest,file(row['path']),file)
             result=decoder(file(row['path']))
             if not isinstance(result,dict) or result.get('status') not in ('PASS','FAIL','NOT_RUN'):raise ValueError('invalid_decoder_result')
             report['outputs'].append({'path':row['path'],'sha256':declared[row['path']],**result})

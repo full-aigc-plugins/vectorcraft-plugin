@@ -101,3 +101,9 @@ Both direct swatch.edit and its native.command equivalent inherit the verified s
 全部输出映射在第一份导出前校验；未知ID、冲突索引和解析后重复输出均拒绝，不发布成功清单。已开始原生操作时保留原位置失败暂存，原交付不改。交付`artboards`记录原生ID、名称、矩形、尺寸和当前索引，`artboardOrder`为原生ID顺序，`outputs`保持请求顺序并附实际索引／ID，`previewOrder`仅列PNG输出的相同请求顺序。文件名`artboard-N`仍以当前零基索引加一命名，不能当成跨版本稳定身份。
 
 Stable IDs identify native artboards; indices describe their current zero-based order. Export by `artboardId` to follow reordering; supplying both ID and index requires agreement. Legacy revision indices bind to actual pre-operation source IDs and refuse identity shifts. The complete mapping is checked before any export. Manifest artboards and output records expose names, dimensions and actual indices; PNG previewOrder follows requested output order. File-name numbers are not stable IDs.
+
+## SVG 栅格范围与交换声明 / SVG image scope
+
+exchange-loss.json按实际image／feImage元素记录局部x／y／width／height、元素及祖先变换、引用摘要和内嵌载荷摘要。内嵌栅格、内嵌SVG与未知引用分别披露，不联网解析外部资源。局部框不等于完整绘制范围；原生素材与效果展开的来源关系保持未知，滤镜存在不证明栅格化。vectorOnly仅表示未发现图像或foreignObject元素；losslessVectorClaimAllowed始终为false，不能据此宣称语义无损往返。可编辑原生工程单独保留。
+
+Actual image/feImage elements expose local geometry, element/ancestor transforms and reference/payload digests. Embedded raster, embedded SVG and unresolved references remain distinct. No external fetch, complete paint-bounds or effect-origin claim. vectorOnly describes observed element structure; losslessVectorClaimAllowed stays false because semantic round-trip fidelity is unverified. Retain the editable native project.

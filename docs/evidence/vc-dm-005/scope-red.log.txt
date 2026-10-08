@@ -1,0 +1,50 @@
+EEEEE
+======================================================================
+ERROR: test_embedded_raster_geometry_and_ancestor_transforms_disclosed (__main__.SvgRasterScopeTests.test_embedded_raster_geometry_and_ancestor_transforms_disclosed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "SOURCE_REPOSITORY/tests/test_svg_raster_scope.py", line 22, in test_embedded_raster_geometry_and_ancestor_transforms_disclosed
+    value=module().svg_image_scope(xml)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'scope_loss' has no attribute 'svg_image_scope'
+
+======================================================================
+ERROR: test_embedded_svg_is_not_misclassified_as_raster (__main__.SvgRasterScopeTests.test_embedded_svg_is_not_misclassified_as_raster)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "SOURCE_REPOSITORY/tests/test_svg_raster_scope.py", line 34, in test_embedded_svg_is_not_misclassified_as_raster
+    value=module().svg_image_scope(ET.fromstring('<svg><image href="data:image/svg+xml;base64,'+data+'"/></svg>'))
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'scope_loss' has no attribute 'svg_image_scope'
+
+======================================================================
+ERROR: test_filter_without_image_does_not_establish_rasterization (__main__.SvgRasterScopeTests.test_filter_without_image_does_not_establish_rasterization)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "SOURCE_REPOSITORY/tests/test_svg_raster_scope.py", line 37, in test_filter_without_image_does_not_establish_rasterization
+    value=module().svg_image_scope(ET.fromstring('<svg><defs><filter><feGaussianBlur/></filter></defs><path/></svg>'))
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'scope_loss' has no attribute 'svg_image_scope'
+
+======================================================================
+ERROR: test_invalid_base64_rejected (__main__.SvgRasterScopeTests.test_invalid_base64_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "SOURCE_REPOSITORY/tests/test_svg_raster_scope.py", line 41, in test_invalid_base64_rejected
+    module().svg_image_scope(ET.fromstring('<svg><image href="data:image/png;base64,%%%"/></svg>'))
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'scope_loss' has no attribute 'svg_image_scope'
+
+======================================================================
+ERROR: test_linked_unknown_resource_not_fetched_or_claimed_raster (__main__.SvgRasterScopeTests.test_linked_unknown_resource_not_fetched_or_claimed_raster)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "SOURCE_REPOSITORY/tests/test_svg_raster_scope.py", line 29, in test_linked_unknown_resource_not_fetched_or_claimed_raster
+    uri='https://invalid.example/secret.png';value=module().svg_image_scope(ET.fromstring('<svg><image href="'+uri+'"/></svg>'))
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'scope_loss' has no attribute 'svg_image_scope'
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.007s
+
+FAILED (errors=5)

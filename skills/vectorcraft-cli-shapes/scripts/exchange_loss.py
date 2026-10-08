@@ -1,11 +1,53 @@
 """从实际导出与重开记录生成交换损失报告；不把格式能力推断当成保真验证。"""
 import hashlib
+import base64
+import binascii
 import json
 from pathlib import Path
+import re
 import xml.etree.ElementTree as ET
 
 PLUGIN = 'vectorcraft'
 NATIVE = 'project.vectorcraft'
+
+def embedded_image(value):
+ """只解析有界内嵌数据，不联网；媒体类型和签名分别保留。"""
+ match=re.fullmatch(r'data:([^;,]+);base64,(.*)',value,re.I|re.S)
+ if not match:return None
+ if len(match[2])>24*1024*1024:raise ValueError('loss_svg_image_data_too_large')
+ try:data=base64.b64decode(match[2],validate=True)
+ except (binascii.Error,ValueError):raise ValueError('loss_svg_image_data_invalid') from None
+ return match[1].lower(),data
+
+def svg_image_scope(xml):
+ """记录SVG图像元素局部范围；不推断可见绘制边界、栅格来源或往返保真。"""
+ elements=[];foreign=False
+ def visit(node,path,ancestors,transforms):
+  nonlocal foreign
+  tag=node.tag.rsplit('}',1)[-1]
+  if tag=='foreignObject':foreign=True
+  if tag in ('image','feImage'):
+   href=node.get('href',node.get('{http://www.w3.org/1999/xlink}href',''))
+   embedded=embedded_image(href);kind='unresolved-reference'
+   row={'elementPath':path,'tag':tag,'id':node.get('id'),'geometry':{k:node.get(k) for k in ('x','y','width','height') if k in node.attrib},
+        'transform':node.get('transform'),'ancestorTransforms':transforms,'ancestorElements':ancestors,
+        'referenceSha256':hashlib.sha256(href.encode()).hexdigest()}
+   if embedded:
+    mime,data=embedded;row.update(mediaType=mime,payloadSha256=hashlib.sha256(data).hexdigest(),payloadBytes=len(data))
+    signatures={'image/png':data.startswith(b'\x89PNG\r\n\x1a\n'),'image/jpeg':data.startswith(b'\xff\xd8\xff'),
+                'image/gif':data.startswith((b'GIF87a',b'GIF89a')),'image/webp':data.startswith(b'RIFF') and data[8:12]==b'WEBP'}
+    if mime in signatures:
+     if not signatures[mime]:raise ValueError('loss_svg_image_signature_mismatch')
+     kind='embedded-raster'
+    elif mime=='image/svg+xml':kind='embedded-vector-reference'
+    else:kind='embedded-unknown'
+   row['classification']=kind;elements.append(row)
+  chain=transforms+([node.get('transform')] if node.get('transform') else [])
+  for i,child in enumerate(node):visit(child,path+'/'+str(i),ancestors+[tag],chain)
+ visit(xml,'0',[],[])
+ return {'elements':elements,'vectorOnly':not elements and not foreign,'losslessVectorClaimAllowed':False,
+         'coordinateSpace':'element-local geometry plus ancestor transforms','completePaintBounds':False,
+         'rasterOrigin':'unknown; image elements may be source assets or expanded effects','foreignObjectPresent':foreign}
 
 def sha(path):
  with Path(path).open('rb') as stream:return hashlib.file_digest(stream,'sha256').hexdigest()
@@ -57,6 +99,9 @@ def write_report(root,outputs,warnings,text_modes=None):
    xml=ET.fromstring(path.read_bytes())
    if xml.tag.split('}')[-1]!='svg':raise ValueError('loss_svg_invalid')
    tags=[element.tag.split('}')[-1] for element in xml.iter()];observations['svg']={name:tags.count(name) for name in ('path','text','image','filter','mask','clipPath')}
+   observations['rasterizationScope']=svg_image_scope(xml)
+   change('raster-content','observed' if observations['rasterizationScope']['elements'] else 'unknown','Actual image/feImage elements and their local geometry are listed; references, effect attribution, visible clipping and complete paint bounds are not inferred.')
+   change('lossless-vector-claim','blocked','Derivative structure and unknown effect/font fidelity do not establish a lossless vector round-trip; retain the native project.')
    mode=text_modes.get(location);observations['svgTextExportMode']=mode;observations['nativeTextObjectIds']=text_ids
    observations['textScope']='Native text IDs are document dependencies, not a visibility or per-outline object mapping.'
    if mode=='appearance' and text_ids:

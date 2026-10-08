@@ -1,0 +1,17 @@
+test_corrupt_image_with_matching_manifest_hash_cannot_pass (test_delivery_quality.DeliveryQualityTests.test_corrupt_image_with_matching_manifest_hash_cannot_pass) ... ok
+test_declared_file_or_runtime_drift_blocks_before_decode (test_delivery_quality.DeliveryQualityTests.test_declared_file_or_runtime_drift_blocks_before_decode) ... ok
+test_embedded_png_svg_can_be_decoded_without_external_fetch (test_delivery_quality.DeliveryQualityTests.test_embedded_png_svg_can_be_decoded_without_external_fetch) ... <frozen importlib._bootstrap>:488: DeprecationWarning: builtin type SwigPyPacked has no __module__ attribute
+<frozen importlib._bootstrap>:488: DeprecationWarning: builtin type SwigPyObject has no __module__ attribute
+<frozen importlib._bootstrap>:488: DeprecationWarning: builtin type swigvarlink has no __module__ attribute
+ok
+test_manifest_integrity_does_not_claim_native_reopening (test_delivery_quality.DeliveryQualityTests.test_manifest_integrity_does_not_claim_native_reopening) ... ok
+test_missing_decoder_is_not_a_technical_pass (test_delivery_quality.DeliveryQualityTests.test_missing_decoder_is_not_a_technical_pass) ... ok
+test_remote_or_vector_data_svg_remains_blocked (test_delivery_quality.DeliveryQualityTests.test_remote_or_vector_data_svg_remains_blocked) ... ok
+test_undisclosed_svg_image_blocks_even_passing_decoder (test_delivery_quality.DeliveryQualityTests.test_undisclosed_svg_image_blocks_even_passing_decoder) ... ok
+test_unknown_status_cannot_be_accepted (test_delivery_quality.DeliveryQualityTests.test_unknown_status_cannot_be_accepted) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.147s
+
+OK
+<sys>:0: DeprecationWarning: builtin type swigvarlink has no __module__ attribute

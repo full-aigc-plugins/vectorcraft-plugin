@@ -1,0 +1,40 @@
+{
+  "schema": "vectorcraft-exchange-source-candidate/v1",
+  "result": "PASS",
+  "sourceVersion": "0.1.0-dev.41",
+  "scope": "SVG raster scope disclosure and lossless-claim block; five red/green source tests; three actual native save/reopen cases and nine independent SVG/PDF/PNG decodes; not fixed new plugin or full VC-DM-005 acceptance",
+  "tests": {
+    "sourceTotal": 195,
+    "sourcePassed": 165,
+    "sourceSkipped": 30,
+    "scopeTests": 5
+  },
+  "fingerprints": {
+    ".claude-plugin/plugin.json": "f7dd300adbaff54346e55132c14cf6fc80787a2d9cd90185dc4edbca206d8254",
+    "skill-suite.json": "f0ba9110c96eee7c9bb20cdee64f20692ea7dd040b02764d0d94ea7f4a2bb4e4",
+    "scripts/verify_optimization_evidence.py": "f37f8c7d317df4ae59fa05094e6bd391c8a7d3c4bbe0983b93156f9928013218",
+    "tests/test_svg_raster_scope.py": "d4a3e8d596209c6b8dfc2e1a1be5459612e3506513efc2bbbe516a1374e35639",
+    "skills/vectorcraft-use/scripts/exchange_loss.py": "7fdee028008a20bd88bb1e27334f326a7fcc774a079b1621a1c0d06bebfd8f29",
+    "skills/vectorcraft-use/references/workflow.md": "b56eae84aded6e13a75e4c709fd14570d6bf5c472a682d5ba2ec4eb9345280b3",
+    "docs/evidence/exchange41/scope-green.log.txt": "9f169aa04896ef0203477ff61d8d57406ec0dab00b71ec15cf38cdae22509147",
+    "docs/evidence/exchange41/scope-red.log.txt": "8e78edc20b7bf5ecfb6a9a713e0a1c78b44bb0036bd960dff32ef05ef4c19b79",
+    "docs/evidence/exchange41/source-regression.log.txt": "6624237e70384334d402f4643ea463f177e53941fff77e7b6fe25a863726d305",
+    "docs/evidence/exchange41/qa-driver.py.txt": "82e6cbdd98c3bf17871b1f26c5ab4cbf3937601ce14d440d742dd6d5b43fd171",
+    "docs/evidence/exchange41/native-candidate.json": "3aed7eccc4f8a06d122b2b6a7bcc88367a052feb73c58fd2121ae9906e2af0f7"
+  },
+  "skills": {
+    "vectorcraft-cli": "3997b9ab00f66bf8acafd0124437b06a7cac51301a3a62bfcec4c5f50bfccb1e",
+    "vectorcraft-cli-appearance": "886b3b176f718ef8ea918018ebac0e7645c0d3099bee6e3b4e18f5ecf4be89e4",
+    "vectorcraft-cli-artboards": "473a04be03652fb755041b91a7acf802474fa5fda0e2eefe6da070049fc7bd8f",
+    "vectorcraft-cli-assets": "a1344d7d5da52175b1874ba0bbf94826a54cd24728f1403beff048c4bde0d5c4",
+    "vectorcraft-cli-boolean": "65267d29dd59a721ae06773dfdab7db1d6dc9008c6e089dfc4a563b1e03ab0f5",
+    "vectorcraft-cli-export": "638c56a5a2e4708d06973882ce19ecd0d0e688381afde4149e6abc201d771fc3",
+    "vectorcraft-cli-paths": "fa4f50936accfb15c8b22bccfc6fff8eb9220d103865a60494ad2f97e673b6c2",
+    "vectorcraft-cli-project": "b68834fd0b7b0ad0c0049a5d6e471176c5a810c367c2037ae1764418d300485c",
+    "vectorcraft-cli-selection": "1e184d731f421ffc8239982432db1d17c76a58a28afe97c184a380f98d71cb02",
+    "vectorcraft-cli-setup": "e63f241c2b8006476b8df016268de0f607f4f3058986717512d70860b2b083a8",
+    "vectorcraft-cli-shapes": "842cc6198401c1930803e995b53e4b2ef0f7977592a72b20f7b93285f7320cce",
+    "vectorcraft-cli-text": "4a6ef8c4406feb84ffa14e55e418bd155ed9443977b756e7f204130183f7a35f",
+    "vectorcraft-use": "d37a17e60c33999477657f9cecf51495dff4e6469b684ba8f2667d04a637037b"
+  }
+}

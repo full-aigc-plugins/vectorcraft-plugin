@@ -4,8 +4,8 @@
     {
       "package": "vectorcraft-skills",
       "repo": "https://github.com/full-aigc-skills/vectorcraft-skills.git",
-      "ref": "v0.1.0-dev.40",
-      "sha": "40e978f037a59e2d97046e713b44f04f7bcb324c",
+      "ref": "v0.1.0-dev.41",
+      "sha": "9649db7fbcee4d275b91748115143c0680e94417",
       "skills": [
         "vectorcraft-use",
         "vectorcraft-cli",
@@ -23,19 +23,19 @@
       ],
       "dest": "skills/",
       "sha256": {
-        "vectorcraft-use": "3caa7812f8fd62fdc6b891b1f77e401af90135f94b93df5bc1f84f398f5a0d80",
-        "vectorcraft-cli": "ef847da83289190d7c352c45a3173a73b6c1eabd4a1753b5808c9d0bc17b7a2b",
-        "vectorcraft-cli-setup": "b8f1b393f913bf004425b61d26de96a51b8d76649a973b3f52627c8ed0f2ccfc",
-        "vectorcraft-cli-project": "9fd277a4ed4a60d51cf3c7cc2e7aa43fcafaa887ad54b20b51da1e4dc3116a59",
-        "vectorcraft-cli-paths": "277963e4c00b8fbf7f6377adaeb4be88d055a41bd854cd840cbdf875e40072d9",
-        "vectorcraft-cli-shapes": "4cd9a5893b7763d474ad2c48c34952512f65eb07cfcdf67eea9d7309c99e8dbd",
-        "vectorcraft-cli-boolean": "b422fde47ba13e0e53f99922bb63ebbee84dd20c81213b5d8cafc04cac9b84f9",
-        "vectorcraft-cli-text": "856ea7dcab6d753519ed35cb9a13efa23b7fe39d67e2b796ee5cb9e826cf76cd",
-        "vectorcraft-cli-appearance": "72e1ee11ad3b1ce0dbfd2810fc311c7f7a882292da2701b5f0e44925fffdbff4",
-        "vectorcraft-cli-artboards": "58fbd32217b6219dda974dfbb9e592a276e48edee98772f8ebddf77e2a3d212e",
-        "vectorcraft-cli-assets": "1f42341d7af1ce8f7a1b38f0bf345956651ce99cecf9cc9d56f201169e195f48",
-        "vectorcraft-cli-export": "8d0fcd11f1d4ae71c1db4f09afb765f0ed77ba0adb68a9dc8248ac0f8f3e3c79",
-        "vectorcraft-cli-selection": "231370215b50f88dc22b4e7eaa4e2d2f60403322a21374154230b783fcc65155"
+        "vectorcraft-use": "d37a17e60c33999477657f9cecf51495dff4e6469b684ba8f2667d04a637037b",
+        "vectorcraft-cli": "3997b9ab00f66bf8acafd0124437b06a7cac51301a3a62bfcec4c5f50bfccb1e",
+        "vectorcraft-cli-setup": "e63f241c2b8006476b8df016268de0f607f4f3058986717512d70860b2b083a8",
+        "vectorcraft-cli-project": "b68834fd0b7b0ad0c0049a5d6e471176c5a810c367c2037ae1764418d300485c",
+        "vectorcraft-cli-paths": "fa4f50936accfb15c8b22bccfc6fff8eb9220d103865a60494ad2f97e673b6c2",
+        "vectorcraft-cli-shapes": "842cc6198401c1930803e995b53e4b2ef0f7977592a72b20f7b93285f7320cce",
+        "vectorcraft-cli-boolean": "65267d29dd59a721ae06773dfdab7db1d6dc9008c6e089dfc4a563b1e03ab0f5",
+        "vectorcraft-cli-text": "4a6ef8c4406feb84ffa14e55e418bd155ed9443977b756e7f204130183f7a35f",
+        "vectorcraft-cli-appearance": "886b3b176f718ef8ea918018ebac0e7645c0d3099bee6e3b4e18f5ecf4be89e4",
+        "vectorcraft-cli-artboards": "473a04be03652fb755041b91a7acf802474fa5fda0e2eefe6da070049fc7bd8f",
+        "vectorcraft-cli-assets": "a1344d7d5da52175b1874ba0bbf94826a54cd24728f1403beff048c4bde0d5c4",
+        "vectorcraft-cli-export": "638c56a5a2e4708d06973882ce19ecd0d0e688381afde4149e6abc201d771fc3",
+        "vectorcraft-cli-selection": "1e184d731f421ffc8239982432db1d17c76a58a28afe97c184a380f98d71cb02"
       }
     }
   ]

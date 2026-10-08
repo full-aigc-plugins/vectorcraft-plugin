@@ -10,9 +10,9 @@ Four-domain RT-001 runtime source/integrity acceptance now covers every current 
 
 Create Logo, icon and brand assets as `.vectorcraft` with applicable SVG, PDF and PNG exports.
 
-Current plugin: `0.1.0-dev.54`; skill source: `0.1.0-dev.40`; 13 independent skills.
+Current plugin: `0.1.0-dev.55`; skill source: `0.1.0-dev.41`; 13 independent skills.
 
-Plugin54/source40 adds stable artboard-ID exports and creation alias bindings, refusing legacy revision index shifts and conflicting mappings. Candidate checks passed; complete4.12 remains open. [Architecture](docs/VectorCraft-Artboard-Mapping.en.md).
+Plugin55/source41 adds actual SVG image scope and a digest-bound technical disclosure guard. Minimum tasks4.13/4.14 pass; full4.15 remains open. [Architecture](docs/VectorCraft-Exchange-Scope.en.md).
 
 Development plugin53 pins source39: SVG records the actual text export mode and explicit editing loss for outlined text while retaining native text and font dependencies. All three public text editing routes require explicit object IDs. Source regression:151 passed,30 skipped; native candidate checks are recorded separately. Fixed52 acceptance and full V1 remain open. [Text delivery architecture](docs/VectorCraft-Text-Outline.en.md).
 
@@ -137,9 +137,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.54 |
+| Metadata version | 0.1.0-dev.55 |
 | Stage | implementation-in-progress |
-| Skills source | vectorcraft-skills / v0.1.0-dev.40 |
+| Skills source | vectorcraft-skills / v0.1.0-dev.41 |
 | Execution | Upstream CLI; ArtCraft uses child adapters |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |
@@ -383,3 +383,5 @@ The test/minimum implementation gates4.10/4.11 are complete,105 tasks complete/2
 Public fixed54/source40 passes actual Codex0.153.4 isolated installation/discovery of13 skills, three successful installed-copy mappings/four refusals and14 decoded outputs;13 skill digests unchanged. Pinned runtime reused. This mapping subset does not close full4.12. [Fixed subset evidence](docs/evidence/vectorcraft-artboard-mapping-fixed54-20261009.json).
 
 All four current VC-DM-004 scenarios qualify at fixed54/source40 on macOS arm64; task4.12 complete,105 tasks complete/22 open.31 native boundary cases, standalone export cold first use, same-source cross-second PDF identity and unrelated SVG/PNG/PDF identity after a brand edit passed;13 installed skill digests unchanged. Unknown paint bounds exercised using an empty native sublayer with pinned source evidence for None semantics; cross-artboard groups recorded as whole dependencies. Source regressions160 passed/30 skipped out of190; GUI,model,other platforms and full V1 remain open. [Full scenario evidence](docs/evidence/vectorcraft-artboards-fixed54-20261009.json).
+
+Plugin55/source41 adds SVG image scope disclosure and technical guards. Three native vector/live-filter/expanded-raster reopening cases,nine decoded outputs and four disclosure refusals pass;4.13/4.14 complete,107 tasks complete/20 open;4.15 fixed installation remains open. [Exchange scope](docs/VectorCraft-Exchange-Scope.en.md).

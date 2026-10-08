@@ -1,0 +1,1381 @@
+{
+  "schema": "vectorcraft-exchange-native/v1",
+  "result": "PASS",
+  "level": "native-candidate",
+  "cases": [
+    {
+      "name": "vector",
+      "result": "PASS",
+      "plan": {
+        "document": {
+          "name": "vector",
+          "width": 80,
+          "height": 64,
+          "units": "Pixels"
+        },
+        "operations": [
+          {
+            "command": "shape.rectangle",
+            "params": {
+              "x": 20,
+              "y": 20,
+              "width": 30,
+              "height": 20
+            }
+          },
+          {
+            "command": "paint.setFill",
+            "params": {
+              "color": "#2366e8"
+            }
+          },
+          {
+            "command": "paint.setStroke",
+            "params": {
+              "none": true
+            }
+          }
+        ],
+        "exports": [
+          {
+            "format": "svg",
+            "artboard": 0
+          },
+          {
+            "format": "pdf",
+            "artboard": 0
+          },
+          {
+            "format": "png",
+            "artboard": 0
+          }
+        ]
+      },
+      "nativeReopenEqual": true,
+      "sourcePreserved": true,
+      "nativeJsonSha256": "c6401a350f4af0aca734d5f0218178e1ff9ca6e35a4a30ab8dbf6bc68b68ecbe",
+      "projectSha256": "da80d54c3f5e6e486633b9f19c6c5d4a573f3f8cd3482ddbf65b378fb61536d4",
+      "manifest": {
+        "schema": "vectorcraft-delivery/v1",
+        "sourceProjectSha256": null,
+        "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+        "bindings": {},
+        "outputs": [
+          {
+            "format": "svg",
+            "artboardIndex": 0,
+            "artboardId": 1,
+            "artboardName": "Artboard 1",
+            "artboardRect": {
+              "x0": 0.0,
+              "x1": 80.0,
+              "y0": 0.0,
+              "y1": 64.0
+            },
+            "path": "artboard-1.svg",
+            "warnings": [],
+            "isolationPolicy": "native-paint-bounds; whole-dependent-containers-and-unknown-bounds-retained"
+          },
+          {
+            "format": "pdf",
+            "artboardIndex": 0,
+            "artboardId": 1,
+            "artboardName": "Artboard 1",
+            "artboardRect": {
+              "x0": 0.0,
+              "x1": 80.0,
+              "y0": 0.0,
+              "y1": 64.0
+            },
+            "path": "artboard-1.pdf",
+            "warnings": [],
+            "pdfCreated": 1791484711,
+            "pdfDateBinding": "native-document-created"
+          },
+          {
+            "format": "png",
+            "artboardIndex": 0,
+            "artboardId": 1,
+            "artboardName": "Artboard 1",
+            "artboardRect": {
+              "x0": 0.0,
+              "x1": 80.0,
+              "y0": 0.0,
+              "y1": 64.0
+            },
+            "path": "artboard-1.png",
+            "warnings": []
+          }
+        ],
+        "fontDependencies": [],
+        "assets": {},
+        "artboards": [
+          {
+            "id": 1,
+            "index": 0,
+            "name": "Artboard 1",
+            "rect": {
+              "x0": 0.0,
+              "x1": 80.0,
+              "y0": 0.0,
+              "y1": 64.0
+            },
+            "width": 80.0,
+            "height": 64.0
+          }
+        ],
+        "artboardOrder": [
+          1
+        ],
+        "previewOrder": [
+          "artboard-1.png"
+        ],
+        "files": {
+          "plan.json": "4cab96571cafb63c3ddacd2d495651913c617e6e3f1308f04deebcb8ee6d4b83",
+          "project.vectorcraft": "da80d54c3f5e6e486633b9f19c6c5d4a573f3f8cd3482ddbf65b378fb61536d4",
+          "exchange-loss.json": "93082fb3887a74c35747df51386cc78fa5f70899c3ebc8a644bb1b5e23b9c5ac",
+          "pdf-export-date.json": "55bc8c4d00005ac8b80631e5e1ff188b4f2076e6d5cf3debf80665c3e34cea2d",
+          "native.json": "c6401a350f4af0aca734d5f0218178e1ff9ca6e35a4a30ab8dbf6bc68b68ecbe",
+          "artboard-1.pdf": "824117f54c39b69546931f5ada82633f955a7e8d87d54051cf635ba18879e9e8",
+          "artboard-1.png": "871e8c22626b6641fbff182b03770766a0139815eb01f353797b87b7ce407805",
+          "artboard-1.svg": "1a449f60dca182107f99ee698638660ff016e8ba653bb64219259569afd75353",
+          "operations.json": "318d4f1672ae42a6423f98c1420f3cd8c9f5a0833022c458322f695ea89cd815"
+        },
+        "lossReport": {
+          "path": "exchange-loss.json",
+          "sha256": "93082fb3887a74c35747df51386cc78fa5f70899c3ebc8a644bb1b5e23b9c5ac"
+        },
+        "acceptance": "requires-domain-and-visual-review"
+      },
+      "lossReport": {
+        "schema": "craft-exchange-loss/v1",
+        "pluginId": "vectorcraft",
+        "native": {
+          "location": "project.vectorcraft",
+          "sha256": "da80d54c3f5e6e486633b9f19c6c5d4a573f3f8cd3482ddbf65b378fb61536d4"
+        },
+        "inspection": {
+          "location": "native.json",
+          "sha256": "c6401a350f4af0aca734d5f0218178e1ff9ca6e35a4a30ab8dbf6bc68b68ecbe"
+        },
+        "outputs": [
+          {
+            "location": "artboard-1.svg",
+            "sha256": "1a449f60dca182107f99ee698638660ff016e8ba653bb64219259569afd75353",
+            "format": "svg",
+            "role": "derivative",
+            "nativeSubstitute": false,
+            "changes": [
+              {
+                "code": "native-editing-model",
+                "status": "lost",
+                "reason": "Derivative formats do not retain the complete application-native project model; the native project is delivered separately."
+              },
+              {
+                "code": "raster-content",
+                "status": "unknown",
+                "reason": "Actual image/feImage elements and their local geometry are listed; references, effect attribution, visible clipping and complete paint bounds are not inferred."
+              },
+              {
+                "code": "lossless-vector-claim",
+                "status": "blocked",
+                "reason": "Derivative structure and unknown effect/font fidelity do not establish a lossless vector round-trip; retain the native project."
+              },
+              {
+                "code": "live-text-editability",
+                "status": "unknown",
+                "reason": "No live SVG text elements observed. Paths alone do not prove text outlining; export mode, visibility or per-object provenance is not established."
+              },
+              {
+                "code": "vector-structure",
+                "status": "observed",
+                "reason": "XML element counts record actual vector/text/raster structure, not semantic round-trip equivalence."
+              },
+              {
+                "code": "font-portability",
+                "status": "unknown",
+                "reason": "Font embedding, substitution and text layout across consumers are not verified."
+              },
+              {
+                "code": "effect-fidelity",
+                "status": "unknown",
+                "reason": "Native effects, masks and grouping are not proven equivalent in SVG consumers."
+              }
+            ],
+            "observations": {
+              "svg": {
+                "path": 1,
+                "text": 0,
+                "image": 0,
+                "filter": 0,
+                "mask": 0,
+                "clipPath": 0
+              },
+              "rasterizationScope": {
+                "elements": [],
+                "vectorOnly": true,
+                "losslessVectorClaimAllowed": false,
+                "coordinateSpace": "element-local geometry plus ancestor transforms",
+                "completePaintBounds": false,
+                "rasterOrigin": "unknown; image elements may be source assets or expanded effects",
+                "foreignObjectPresent": false
+              },
+              "svgTextExportMode": "editable",
+              "nativeTextObjectIds": [],
+              "textScope": "Native text IDs are document dependencies, not a visibility or per-outline object mapping."
+            },
+            "warnings": []
+          },
+          {
+            "location": "artboard-1.pdf",
+            "sha256": "824117f54c39b69546931f5ada82633f955a7e8d87d54051cf635ba18879e9e8",
+            "format": "pdf",
+            "role": "derivative",
+            "nativeSubstitute": false,
+            "changes": [
+              {
+                "code": "native-editing-model",
+                "status": "lost",
+                "reason": "Derivative formats do not retain the complete application-native project model; the native project is delivered separately."
+              },
+              {
+                "code": "font-portability",
+                "status": "unknown",
+                "reason": "PDF font embedding and substitution are not verified."
+              },
+              {
+                "code": "effect-fidelity",
+                "status": "unknown",
+                "reason": "Native effect/mask appearance in PDF consumers is not verified."
+              },
+              {
+                "code": "vector-structure",
+                "status": "unknown",
+                "reason": "PDF output does not prove editable vector-path round-trip."
+              }
+            ],
+            "observations": {},
+            "warnings": []
+          },
+          {
+            "location": "artboard-1.png",
+            "sha256": "871e8c22626b6641fbff182b03770766a0139815eb01f353797b87b7ce407805",
+            "format": "png",
+            "role": "derivative",
+            "nativeSubstitute": false,
+            "changes": [
+              {
+                "code": "native-editing-model",
+                "status": "lost",
+                "reason": "Derivative formats do not retain the complete application-native project model; the native project is delivered separately."
+              },
+              {
+                "code": "editable-layers-paths-text",
+                "status": "lost",
+                "reason": "Layer, path and live text editing are rendered into pixels; edit the retained native project."
+              },
+              {
+                "code": "effect-keyframe-parameters",
+                "status": "lost",
+                "reason": "Rendered pixels do not carry editable native effects, masks or keyframes."
+              },
+              {
+                "code": "font-appearance",
+                "status": "unknown",
+                "reason": "Rendered appearance has not been compared with an approved visual reference."
+              },
+              {
+                "code": "alpha-channel",
+                "status": "observed",
+                "reason": "PNG IHDR records channel representation; indexed transparency and visual alpha fidelity are not inferred."
+              }
+            ],
+            "observations": {
+              "pngColorType": 6
+            },
+            "warnings": []
+          }
+        ],
+        "acceptance": "technical-observations-only"
+      },
+      "decoded": [
+        {
+          "format": "svg",
+          "size": [
+            80,
+            64
+          ],
+          "decoder": "PyMuPDF",
+          "result": "PASS"
+        },
+        {
+          "format": "pdf",
+          "size": [
+            80,
+            64
+          ],
+          "decoder": "PyMuPDF",
+          "result": "PASS"
+        },
+        {
+          "format": "png",
+          "size": [
+            80,
+            64
+          ],
+          "decoder": "Pillow",
+          "result": "PASS"
+        }
+      ],
+      "quality": {
+        "schema": "vectorcraft-technical-review/v1",
+        "artifactIntegrityStatus": "PASS",
+        "engineeringStatus": "NOT_RUN",
+        "technicalStatus": "PASS",
+        "creativeStatus": "NOT_RUN",
+        "acceptanceStatus": "pending",
+        "nativeReopenStatus": "NOT_RUN",
+        "files": {
+          "plan.json": "4cab96571cafb63c3ddacd2d495651913c617e6e3f1308f04deebcb8ee6d4b83",
+          "project.vectorcraft": "da80d54c3f5e6e486633b9f19c6c5d4a573f3f8cd3482ddbf65b378fb61536d4",
+          "exchange-loss.json": "93082fb3887a74c35747df51386cc78fa5f70899c3ebc8a644bb1b5e23b9c5ac",
+          "pdf-export-date.json": "55bc8c4d00005ac8b80631e5e1ff188b4f2076e6d5cf3debf80665c3e34cea2d",
+          "native.json": "c6401a350f4af0aca734d5f0218178e1ff9ca6e35a4a30ab8dbf6bc68b68ecbe",
+          "artboard-1.pdf": "824117f54c39b69546931f5ada82633f955a7e8d87d54051cf635ba18879e9e8",
+          "artboard-1.png": "871e8c22626b6641fbff182b03770766a0139815eb01f353797b87b7ce407805",
+          "artboard-1.svg": "1a449f60dca182107f99ee698638660ff016e8ba653bb64219259569afd75353",
+          "operations.json": "318d4f1672ae42a6423f98c1420f3cd8c9f5a0833022c458322f695ea89cd815"
+        },
+        "outputs": [
+          {
+            "path": "artboard-1.svg",
+            "sha256": "1a449f60dca182107f99ee698638660ff016e8ba653bb64219259569afd75353",
+            "status": "PASS",
+            "decoder": "PyMuPDF",
+            "pages": 1,
+            "scope": "bounded raster decode; creative quality not assessed"
+          },
+          {
+            "path": "artboard-1.pdf",
+            "sha256": "824117f54c39b69546931f5ada82633f955a7e8d87d54051cf635ba18879e9e8",
+            "status": "PASS",
+            "decoder": "PyMuPDF",
+            "pages": 1,
+            "scope": "bounded raster decode; creative quality not assessed"
+          },
+          {
+            "path": "artboard-1.png",
+            "sha256": "871e8c22626b6641fbff182b03770766a0139815eb01f353797b87b7ce407805",
+            "status": "PASS",
+            "decoder": "Pillow",
+            "size": [
+              80,
+              64
+            ]
+          }
+        ],
+        "scope": "artifact integrity and export decode only; native reopening and creative review remain separate",
+        "projectRevision": "da80d54c3f5e6e486633b9f19c6c5d4a573f3f8cd3482ddbf65b378fb61536d4",
+        "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+        "manifestSha256": "d06e56e0c82b19d484af6803d04f8cbbe69abd8ca67347259945a3c9763e8e41"
+      }
+    },
+    {
+      "name": "live-filter",
+      "result": "PASS",
+      "plan": {
+        "document": {
+          "name": "live-filter",
+          "width": 80,
+          "height": 64,
+          "units": "Pixels"
+        },
+        "operations": [
+          {
+            "command": "shape.rectangle",
+            "params": {
+              "x": 20,
+              "y": 20,
+              "width": 30,
+              "height": 20
+            }
+          },
+          {
+            "command": "paint.setFill",
+            "params": {
+              "color": "#2366e8"
+            }
+          },
+          {
+            "command": "paint.setStroke",
+            "params": {
+              "none": true
+            }
+          },
+          {
+            "command": "native.command",
+            "params": {
+              "command": "effect.apply",
+              "params": {
+                "effect": "blur.gaussian",
+                "params": {
+                  "radius": 3
+                }
+              }
+            }
+          }
+        ],
+        "exports": [
+          {
+            "format": "svg",
+            "artboard": 0
+          },
+          {
+            "format": "pdf",
+            "artboard": 0
+          },
+          {
+            "format": "png",
+            "artboard": 0
+          }
+        ]
+      },
+      "nativeReopenEqual": true,
+      "sourcePreserved": true,
+      "nativeJsonSha256": "c4ecc1dc84ca5192098c9c9107e7c045196e4bebce947927d5ae9139f3bd6990",
+      "projectSha256": "ce82dcc5bde4c5f818f4aec158d803b597c773a414aafeed7c6ee0ff9ec9afd3",
+      "manifest": {
+        "schema": "vectorcraft-delivery/v1",
+        "sourceProjectSha256": null,
+        "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+        "bindings": {},
+        "outputs": [
+          {
+            "format": "svg",
+            "artboardIndex": 0,
+            "artboardId": 1,
+            "artboardName": "Artboard 1",
+            "artboardRect": {
+              "x0": 0.0,
+              "x1": 80.0,
+              "y0": 0.0,
+              "y1": 64.0
+            },
+            "path": "artboard-1.svg",
+            "warnings": [],
+            "isolationPolicy": "native-paint-bounds; whole-dependent-containers-and-unknown-bounds-retained"
+          },
+          {
+            "format": "pdf",
+            "artboardIndex": 0,
+            "artboardId": 1,
+            "artboardName": "Artboard 1",
+            "artboardRect": {
+              "x0": 0.0,
+              "x1": 80.0,
+              "y0": 0.0,
+              "y1": 64.0
+            },
+            "path": "artboard-1.pdf",
+            "warnings": [],
+            "pdfCreated": 1791484711,
+            "pdfDateBinding": "native-document-created"
+          },
+          {
+            "format": "png",
+            "artboardIndex": 0,
+            "artboardId": 1,
+            "artboardName": "Artboard 1",
+            "artboardRect": {
+              "x0": 0.0,
+              "x1": 80.0,
+              "y0": 0.0,
+              "y1": 64.0
+            },
+            "path": "artboard-1.png",
+            "warnings": []
+          }
+        ],
+        "fontDependencies": [],
+        "assets": {},
+        "artboards": [
+          {
+            "id": 1,
+            "index": 0,
+            "name": "Artboard 1",
+            "rect": {
+              "x0": 0.0,
+              "x1": 80.0,
+              "y0": 0.0,
+              "y1": 64.0
+            },
+            "width": 80.0,
+            "height": 64.0
+          }
+        ],
+        "artboardOrder": [
+          1
+        ],
+        "previewOrder": [
+          "artboard-1.png"
+        ],
+        "files": {
+          "plan.json": "fe3d2218c27ed3e5d76431ce63425407bbb1a4539c890081da310bdde6dff183",
+          "project.vectorcraft": "ce82dcc5bde4c5f818f4aec158d803b597c773a414aafeed7c6ee0ff9ec9afd3",
+          "exchange-loss.json": "bbee3cf6983f85366e1030ec37656894d9940dfa378fcc3d6ac1451c82142c2d",
+          "pdf-export-date.json": "55bc8c4d00005ac8b80631e5e1ff188b4f2076e6d5cf3debf80665c3e34cea2d",
+          "native.json": "c4ecc1dc84ca5192098c9c9107e7c045196e4bebce947927d5ae9139f3bd6990",
+          "artboard-1.pdf": "85750814778c6bcba4c6dd37722450104e243475e02052eba65cdc94d0f40982",
+          "artboard-1.png": "e115d142aef2307e4251e74f2962dcea1612fd6e954362d7f28462595e675e7b",
+          "artboard-1.svg": "dd7e3990d44b0a3516c2271094766ae3eeb144cd7d2e1947bbcc179a51821f5f",
+          "operations.json": "094891e3562ff074a1e32f33431e0c64c552176b3cd41a2050da84dbd41529bf"
+        },
+        "lossReport": {
+          "path": "exchange-loss.json",
+          "sha256": "bbee3cf6983f85366e1030ec37656894d9940dfa378fcc3d6ac1451c82142c2d"
+        },
+        "acceptance": "requires-domain-and-visual-review"
+      },
+      "lossReport": {
+        "schema": "craft-exchange-loss/v1",
+        "pluginId": "vectorcraft",
+        "native": {
+          "location": "project.vectorcraft",
+          "sha256": "ce82dcc5bde4c5f818f4aec158d803b597c773a414aafeed7c6ee0ff9ec9afd3"
+        },
+        "inspection": {
+          "location": "native.json",
+          "sha256": "c4ecc1dc84ca5192098c9c9107e7c045196e4bebce947927d5ae9139f3bd6990"
+        },
+        "outputs": [
+          {
+            "location": "artboard-1.svg",
+            "sha256": "dd7e3990d44b0a3516c2271094766ae3eeb144cd7d2e1947bbcc179a51821f5f",
+            "format": "svg",
+            "role": "derivative",
+            "nativeSubstitute": false,
+            "changes": [
+              {
+                "code": "native-editing-model",
+                "status": "lost",
+                "reason": "Derivative formats do not retain the complete application-native project model; the native project is delivered separately."
+              },
+              {
+                "code": "raster-content",
+                "status": "unknown",
+                "reason": "Actual image/feImage elements and their local geometry are listed; references, effect attribution, visible clipping and complete paint bounds are not inferred."
+              },
+              {
+                "code": "lossless-vector-claim",
+                "status": "blocked",
+                "reason": "Derivative structure and unknown effect/font fidelity do not establish a lossless vector round-trip; retain the native project."
+              },
+              {
+                "code": "live-text-editability",
+                "status": "unknown",
+                "reason": "No live SVG text elements observed. Paths alone do not prove text outlining; export mode, visibility or per-object provenance is not established."
+              },
+              {
+                "code": "vector-structure",
+                "status": "observed",
+                "reason": "XML element counts record actual vector/text/raster structure, not semantic round-trip equivalence."
+              },
+              {
+                "code": "font-portability",
+                "status": "unknown",
+                "reason": "Font embedding, substitution and text layout across consumers are not verified."
+              },
+              {
+                "code": "effect-fidelity",
+                "status": "unknown",
+                "reason": "Native effects, masks and grouping are not proven equivalent in SVG consumers."
+              }
+            ],
+            "observations": {
+              "svg": {
+                "path": 1,
+                "text": 0,
+                "image": 0,
+                "filter": 1,
+                "mask": 0,
+                "clipPath": 0
+              },
+              "rasterizationScope": {
+                "elements": [],
+                "vectorOnly": true,
+                "losslessVectorClaimAllowed": false,
+                "coordinateSpace": "element-local geometry plus ancestor transforms",
+                "completePaintBounds": false,
+                "rasterOrigin": "unknown; image elements may be source assets or expanded effects",
+                "foreignObjectPresent": false
+              },
+              "svgTextExportMode": "editable",
+              "nativeTextObjectIds": [],
+              "textScope": "Native text IDs are document dependencies, not a visibility or per-outline object mapping."
+            },
+            "warnings": []
+          },
+          {
+            "location": "artboard-1.pdf",
+            "sha256": "85750814778c6bcba4c6dd37722450104e243475e02052eba65cdc94d0f40982",
+            "format": "pdf",
+            "role": "derivative",
+            "nativeSubstitute": false,
+            "changes": [
+              {
+                "code": "native-editing-model",
+                "status": "lost",
+                "reason": "Derivative formats do not retain the complete application-native project model; the native project is delivered separately."
+              },
+              {
+                "code": "font-portability",
+                "status": "unknown",
+                "reason": "PDF font embedding and substitution are not verified."
+              },
+              {
+                "code": "effect-fidelity",
+                "status": "unknown",
+                "reason": "Native effect/mask appearance in PDF consumers is not verified."
+              },
+              {
+                "code": "vector-structure",
+                "status": "unknown",
+                "reason": "PDF output does not prove editable vector-path round-trip."
+              }
+            ],
+            "observations": {},
+            "warnings": []
+          },
+          {
+            "location": "artboard-1.png",
+            "sha256": "e115d142aef2307e4251e74f2962dcea1612fd6e954362d7f28462595e675e7b",
+            "format": "png",
+            "role": "derivative",
+            "nativeSubstitute": false,
+            "changes": [
+              {
+                "code": "native-editing-model",
+                "status": "lost",
+                "reason": "Derivative formats do not retain the complete application-native project model; the native project is delivered separately."
+              },
+              {
+                "code": "editable-layers-paths-text",
+                "status": "lost",
+                "reason": "Layer, path and live text editing are rendered into pixels; edit the retained native project."
+              },
+              {
+                "code": "effect-keyframe-parameters",
+                "status": "lost",
+                "reason": "Rendered pixels do not carry editable native effects, masks or keyframes."
+              },
+              {
+                "code": "font-appearance",
+                "status": "unknown",
+                "reason": "Rendered appearance has not been compared with an approved visual reference."
+              },
+              {
+                "code": "alpha-channel",
+                "status": "observed",
+                "reason": "PNG IHDR records channel representation; indexed transparency and visual alpha fidelity are not inferred."
+              }
+            ],
+            "observations": {
+              "pngColorType": 6
+            },
+            "warnings": []
+          }
+        ],
+        "acceptance": "technical-observations-only"
+      },
+      "decoded": [
+        {
+          "format": "svg",
+          "size": [
+            80,
+            64
+          ],
+          "decoder": "PyMuPDF",
+          "result": "PASS"
+        },
+        {
+          "format": "pdf",
+          "size": [
+            80,
+            64
+          ],
+          "decoder": "PyMuPDF",
+          "result": "PASS"
+        },
+        {
+          "format": "png",
+          "size": [
+            80,
+            64
+          ],
+          "decoder": "Pillow",
+          "result": "PASS"
+        }
+      ],
+      "quality": {
+        "schema": "vectorcraft-technical-review/v1",
+        "artifactIntegrityStatus": "PASS",
+        "engineeringStatus": "NOT_RUN",
+        "technicalStatus": "PASS",
+        "creativeStatus": "NOT_RUN",
+        "acceptanceStatus": "pending",
+        "nativeReopenStatus": "NOT_RUN",
+        "files": {
+          "plan.json": "fe3d2218c27ed3e5d76431ce63425407bbb1a4539c890081da310bdde6dff183",
+          "project.vectorcraft": "ce82dcc5bde4c5f818f4aec158d803b597c773a414aafeed7c6ee0ff9ec9afd3",
+          "exchange-loss.json": "bbee3cf6983f85366e1030ec37656894d9940dfa378fcc3d6ac1451c82142c2d",
+          "pdf-export-date.json": "55bc8c4d00005ac8b80631e5e1ff188b4f2076e6d5cf3debf80665c3e34cea2d",
+          "native.json": "c4ecc1dc84ca5192098c9c9107e7c045196e4bebce947927d5ae9139f3bd6990",
+          "artboard-1.pdf": "85750814778c6bcba4c6dd37722450104e243475e02052eba65cdc94d0f40982",
+          "artboard-1.png": "e115d142aef2307e4251e74f2962dcea1612fd6e954362d7f28462595e675e7b",
+          "artboard-1.svg": "dd7e3990d44b0a3516c2271094766ae3eeb144cd7d2e1947bbcc179a51821f5f",
+          "operations.json": "094891e3562ff074a1e32f33431e0c64c552176b3cd41a2050da84dbd41529bf"
+        },
+        "outputs": [
+          {
+            "path": "artboard-1.svg",
+            "sha256": "dd7e3990d44b0a3516c2271094766ae3eeb144cd7d2e1947bbcc179a51821f5f",
+            "status": "PASS",
+            "decoder": "PyMuPDF",
+            "pages": 1,
+            "scope": "bounded raster decode; creative quality not assessed"
+          },
+          {
+            "path": "artboard-1.pdf",
+            "sha256": "85750814778c6bcba4c6dd37722450104e243475e02052eba65cdc94d0f40982",
+            "status": "PASS",
+            "decoder": "PyMuPDF",
+            "pages": 1,
+            "scope": "bounded raster decode; creative quality not assessed"
+          },
+          {
+            "path": "artboard-1.png",
+            "sha256": "e115d142aef2307e4251e74f2962dcea1612fd6e954362d7f28462595e675e7b",
+            "status": "PASS",
+            "decoder": "Pillow",
+            "size": [
+              80,
+              64
+            ]
+          }
+        ],
+        "scope": "artifact integrity and export decode only; native reopening and creative review remain separate",
+        "projectRevision": "ce82dcc5bde4c5f818f4aec158d803b597c773a414aafeed7c6ee0ff9ec9afd3",
+        "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+        "manifestSha256": "5b64a3cd8bb0d9565cfc7bc33ff9b7c2a2701c5cbd283331daef6f180f4febea"
+      }
+    },
+    {
+      "name": "expanded-raster",
+      "result": "PASS",
+      "plan": {
+        "document": {
+          "name": "expanded-raster",
+          "width": 80,
+          "height": 64,
+          "units": "Pixels"
+        },
+        "operations": [
+          {
+            "command": "shape.rectangle",
+            "params": {
+              "x": 20,
+              "y": 20,
+              "width": 30,
+              "height": 20
+            }
+          },
+          {
+            "command": "paint.setFill",
+            "params": {
+              "color": "#2366e8"
+            }
+          },
+          {
+            "command": "paint.setStroke",
+            "params": {
+              "none": true
+            }
+          },
+          {
+            "command": "native.command",
+            "params": {
+              "command": "effect.apply",
+              "params": {
+                "effect": "blur.gaussian",
+                "params": {
+                  "radius": 3
+                }
+              }
+            }
+          },
+          {
+            "command": "native.command",
+            "params": {
+              "command": "effect.expandAppearance",
+              "params": {}
+            }
+          }
+        ],
+        "exports": [
+          {
+            "format": "svg",
+            "artboard": 0
+          },
+          {
+            "format": "pdf",
+            "artboard": 0
+          },
+          {
+            "format": "png",
+            "artboard": 0
+          }
+        ]
+      },
+      "nativeReopenEqual": true,
+      "sourcePreserved": true,
+      "nativeJsonSha256": "35ec7c225f92ff7437fc0c2521b30c10c314f64b1be4d058e9b5e2646a24b8f4",
+      "projectSha256": "f1c1e3f509022ac5b68e2667c7e78e1e82f7d1610d5c1dead3af28ad0bc67c4d",
+      "manifest": {
+        "schema": "vectorcraft-delivery/v1",
+        "sourceProjectSha256": null,
+        "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+        "bindings": {},
+        "outputs": [
+          {
+            "format": "svg",
+            "artboardIndex": 0,
+            "artboardId": 1,
+            "artboardName": "Artboard 1",
+            "artboardRect": {
+              "x0": 0.0,
+              "x1": 80.0,
+              "y0": 0.0,
+              "y1": 64.0
+            },
+            "path": "artboard-1.svg",
+            "warnings": [],
+            "isolationPolicy": "native-paint-bounds; whole-dependent-containers-and-unknown-bounds-retained"
+          },
+          {
+            "format": "pdf",
+            "artboardIndex": 0,
+            "artboardId": 1,
+            "artboardName": "Artboard 1",
+            "artboardRect": {
+              "x0": 0.0,
+              "x1": 80.0,
+              "y0": 0.0,
+              "y1": 64.0
+            },
+            "path": "artboard-1.pdf",
+            "warnings": [],
+            "pdfCreated": 1791484711,
+            "pdfDateBinding": "native-document-created"
+          },
+          {
+            "format": "png",
+            "artboardIndex": 0,
+            "artboardId": 1,
+            "artboardName": "Artboard 1",
+            "artboardRect": {
+              "x0": 0.0,
+              "x1": 80.0,
+              "y0": 0.0,
+              "y1": 64.0
+            },
+            "path": "artboard-1.png",
+            "warnings": []
+          }
+        ],
+        "fontDependencies": [],
+        "assets": {},
+        "artboards": [
+          {
+            "id": 1,
+            "index": 0,
+            "name": "Artboard 1",
+            "rect": {
+              "x0": 0.0,
+              "x1": 80.0,
+              "y0": 0.0,
+              "y1": 64.0
+            },
+            "width": 80.0,
+            "height": 64.0
+          }
+        ],
+        "artboardOrder": [
+          1
+        ],
+        "previewOrder": [
+          "artboard-1.png"
+        ],
+        "files": {
+          "plan.json": "e40b1185fd2259b18e31b6cb9c42087a8c7772f61f33b08146fd69cac347afa2",
+          "project.vectorcraft": "f1c1e3f509022ac5b68e2667c7e78e1e82f7d1610d5c1dead3af28ad0bc67c4d",
+          "exchange-loss.json": "aad39902a403faa36678ccdab13b187de2ce9ca403ba8ef60b1f38aec2d7f734",
+          "pdf-export-date.json": "55bc8c4d00005ac8b80631e5e1ff188b4f2076e6d5cf3debf80665c3e34cea2d",
+          "native.json": "35ec7c225f92ff7437fc0c2521b30c10c314f64b1be4d058e9b5e2646a24b8f4",
+          "artboard-1.pdf": "bbb8d769f46bc29ebf68a6dbb7593ef97019ae4f689af0b460d3aae788062c77",
+          "artboard-1.png": "37d9271f8a5a2da50651dc498d5df1dc05b970e5391c99f673f63a02360f4cb9",
+          "artboard-1.svg": "018894d2edb96bde6983a9b4fae0d183f22b7ff7b05e6474a174d1d197d382bf",
+          "operations.json": "3c8c3d9fbff2fe6b4d966d84a1d8ccd49ee7056af3c7294cb518d17a916b152d"
+        },
+        "lossReport": {
+          "path": "exchange-loss.json",
+          "sha256": "aad39902a403faa36678ccdab13b187de2ce9ca403ba8ef60b1f38aec2d7f734"
+        },
+        "acceptance": "requires-domain-and-visual-review"
+      },
+      "lossReport": {
+        "schema": "craft-exchange-loss/v1",
+        "pluginId": "vectorcraft",
+        "native": {
+          "location": "project.vectorcraft",
+          "sha256": "f1c1e3f509022ac5b68e2667c7e78e1e82f7d1610d5c1dead3af28ad0bc67c4d"
+        },
+        "inspection": {
+          "location": "native.json",
+          "sha256": "35ec7c225f92ff7437fc0c2521b30c10c314f64b1be4d058e9b5e2646a24b8f4"
+        },
+        "outputs": [
+          {
+            "location": "artboard-1.svg",
+            "sha256": "018894d2edb96bde6983a9b4fae0d183f22b7ff7b05e6474a174d1d197d382bf",
+            "format": "svg",
+            "role": "derivative",
+            "nativeSubstitute": false,
+            "changes": [
+              {
+                "code": "native-editing-model",
+                "status": "lost",
+                "reason": "Derivative formats do not retain the complete application-native project model; the native project is delivered separately."
+              },
+              {
+                "code": "raster-content",
+                "status": "observed",
+                "reason": "Actual image/feImage elements and their local geometry are listed; references, effect attribution, visible clipping and complete paint bounds are not inferred."
+              },
+              {
+                "code": "lossless-vector-claim",
+                "status": "blocked",
+                "reason": "Derivative structure and unknown effect/font fidelity do not establish a lossless vector round-trip; retain the native project."
+              },
+              {
+                "code": "live-text-editability",
+                "status": "unknown",
+                "reason": "No live SVG text elements observed. Paths alone do not prove text outlining; export mode, visibility or per-object provenance is not established."
+              },
+              {
+                "code": "vector-structure",
+                "status": "observed",
+                "reason": "XML element counts record actual vector/text/raster structure, not semantic round-trip equivalence."
+              },
+              {
+                "code": "font-portability",
+                "status": "unknown",
+                "reason": "Font embedding, substitution and text layout across consumers are not verified."
+              },
+              {
+                "code": "effect-fidelity",
+                "status": "unknown",
+                "reason": "Native effects, masks and grouping are not proven equivalent in SVG consumers."
+              }
+            ],
+            "observations": {
+              "svg": {
+                "path": 0,
+                "text": 0,
+                "image": 1,
+                "filter": 0,
+                "mask": 0,
+                "clipPath": 0
+              },
+              "rasterizationScope": {
+                "elements": [
+                  {
+                    "elementPath": "0/1/0",
+                    "tag": "image",
+                    "id": null,
+                    "geometry": {
+                      "width": "43",
+                      "height": "33"
+                    },
+                    "transform": "matrix(1 0 0 1 13.5 13.5)",
+                    "ancestorTransforms": [],
+                    "ancestorElements": [
+                      "svg",
+                      "g"
+                    ],
+                    "referenceSha256": "8c9a86a14c5facde2bd01582c67d011b2c156aeaf73af616b3e79a6709340d23",
+                    "mediaType": "image/png",
+                    "payloadSha256": "89bf4003361e41e41012c459f9c1a083b7cce173afd463cf55a353f9de327f07",
+                    "payloadBytes": 924,
+                    "classification": "embedded-raster"
+                  }
+                ],
+                "vectorOnly": false,
+                "losslessVectorClaimAllowed": false,
+                "coordinateSpace": "element-local geometry plus ancestor transforms",
+                "completePaintBounds": false,
+                "rasterOrigin": "unknown; image elements may be source assets or expanded effects",
+                "foreignObjectPresent": false
+              },
+              "svgTextExportMode": "editable",
+              "nativeTextObjectIds": [],
+              "textScope": "Native text IDs are document dependencies, not a visibility or per-outline object mapping."
+            },
+            "warnings": []
+          },
+          {
+            "location": "artboard-1.pdf",
+            "sha256": "bbb8d769f46bc29ebf68a6dbb7593ef97019ae4f689af0b460d3aae788062c77",
+            "format": "pdf",
+            "role": "derivative",
+            "nativeSubstitute": false,
+            "changes": [
+              {
+                "code": "native-editing-model",
+                "status": "lost",
+                "reason": "Derivative formats do not retain the complete application-native project model; the native project is delivered separately."
+              },
+              {
+                "code": "font-portability",
+                "status": "unknown",
+                "reason": "PDF font embedding and substitution are not verified."
+              },
+              {
+                "code": "effect-fidelity",
+                "status": "unknown",
+                "reason": "Native effect/mask appearance in PDF consumers is not verified."
+              },
+              {
+                "code": "vector-structure",
+                "status": "unknown",
+                "reason": "PDF output does not prove editable vector-path round-trip."
+              }
+            ],
+            "observations": {},
+            "warnings": []
+          },
+          {
+            "location": "artboard-1.png",
+            "sha256": "37d9271f8a5a2da50651dc498d5df1dc05b970e5391c99f673f63a02360f4cb9",
+            "format": "png",
+            "role": "derivative",
+            "nativeSubstitute": false,
+            "changes": [
+              {
+                "code": "native-editing-model",
+                "status": "lost",
+                "reason": "Derivative formats do not retain the complete application-native project model; the native project is delivered separately."
+              },
+              {
+                "code": "editable-layers-paths-text",
+                "status": "lost",
+                "reason": "Layer, path and live text editing are rendered into pixels; edit the retained native project."
+              },
+              {
+                "code": "effect-keyframe-parameters",
+                "status": "lost",
+                "reason": "Rendered pixels do not carry editable native effects, masks or keyframes."
+              },
+              {
+                "code": "font-appearance",
+                "status": "unknown",
+                "reason": "Rendered appearance has not been compared with an approved visual reference."
+              },
+              {
+                "code": "alpha-channel",
+                "status": "observed",
+                "reason": "PNG IHDR records channel representation; indexed transparency and visual alpha fidelity are not inferred."
+              }
+            ],
+            "observations": {
+              "pngColorType": 6
+            },
+            "warnings": []
+          }
+        ],
+        "acceptance": "technical-observations-only"
+      },
+      "decoded": [
+        {
+          "format": "svg",
+          "size": [
+            80,
+            64
+          ],
+          "decoder": "PyMuPDF",
+          "result": "PASS"
+        },
+        {
+          "format": "pdf",
+          "size": [
+            80,
+            64
+          ],
+          "decoder": "PyMuPDF",
+          "result": "PASS"
+        },
+        {
+          "format": "png",
+          "size": [
+            80,
+            64
+          ],
+          "decoder": "Pillow",
+          "result": "PASS"
+        }
+      ],
+      "quality": {
+        "schema": "vectorcraft-technical-review/v1",
+        "artifactIntegrityStatus": "PASS",
+        "engineeringStatus": "NOT_RUN",
+        "technicalStatus": "PASS",
+        "creativeStatus": "NOT_RUN",
+        "acceptanceStatus": "pending",
+        "nativeReopenStatus": "NOT_RUN",
+        "files": {
+          "plan.json": "e40b1185fd2259b18e31b6cb9c42087a8c7772f61f33b08146fd69cac347afa2",
+          "project.vectorcraft": "f1c1e3f509022ac5b68e2667c7e78e1e82f7d1610d5c1dead3af28ad0bc67c4d",
+          "exchange-loss.json": "aad39902a403faa36678ccdab13b187de2ce9ca403ba8ef60b1f38aec2d7f734",
+          "pdf-export-date.json": "55bc8c4d00005ac8b80631e5e1ff188b4f2076e6d5cf3debf80665c3e34cea2d",
+          "native.json": "35ec7c225f92ff7437fc0c2521b30c10c314f64b1be4d058e9b5e2646a24b8f4",
+          "artboard-1.pdf": "bbb8d769f46bc29ebf68a6dbb7593ef97019ae4f689af0b460d3aae788062c77",
+          "artboard-1.png": "37d9271f8a5a2da50651dc498d5df1dc05b970e5391c99f673f63a02360f4cb9",
+          "artboard-1.svg": "018894d2edb96bde6983a9b4fae0d183f22b7ff7b05e6474a174d1d197d382bf",
+          "operations.json": "3c8c3d9fbff2fe6b4d966d84a1d8ccd49ee7056af3c7294cb518d17a916b152d"
+        },
+        "outputs": [
+          {
+            "path": "artboard-1.svg",
+            "sha256": "018894d2edb96bde6983a9b4fae0d183f22b7ff7b05e6474a174d1d197d382bf",
+            "status": "PASS",
+            "decoder": "PyMuPDF",
+            "pages": 1,
+            "scope": "bounded raster decode; creative quality not assessed"
+          },
+          {
+            "path": "artboard-1.pdf",
+            "sha256": "bbb8d769f46bc29ebf68a6dbb7593ef97019ae4f689af0b460d3aae788062c77",
+            "status": "PASS",
+            "decoder": "PyMuPDF",
+            "pages": 1,
+            "scope": "bounded raster decode; creative quality not assessed"
+          },
+          {
+            "path": "artboard-1.png",
+            "sha256": "37d9271f8a5a2da50651dc498d5df1dc05b970e5391c99f673f63a02360f4cb9",
+            "status": "PASS",
+            "decoder": "Pillow",
+            "size": [
+              80,
+              64
+            ]
+          }
+        ],
+        "scope": "artifact integrity and export decode only; native reopening and creative review remain separate",
+        "projectRevision": "f1c1e3f509022ac5b68e2667c7e78e1e82f7d1610d5c1dead3af28ad0bc67c4d",
+        "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+        "manifestSha256": "ed4eb0592d5709b1601301917337dec07303d842dff4392b0560de314af6d8c3"
+      }
+    }
+  ],
+  "skillPreserved": true,
+  "skillFiles": {
+    "SKILL.md": "5c47c947f2308b88e2528cf2a3651fd9707fc941ddd656531690568c306b316a",
+    "agents/openai.yaml": "a1499d95abd8447558c535fe5554adcc3c9b988a0a39264a6283d430effe1e94",
+    "examples/appearance-gradient-create.json": "ff974dd61eac86d7b5bb604ddc60f9ae97ce5c57cd43e65ac3fefc8f8c498aff",
+    "examples/appearance-gradient-revise.json": "3e464a7576f55684c45eaf4b3b4ce94bc53c52a4e360e2a1609372201686f616",
+    "examples/brand-assets.json": "d4c342c68791d7fb9ca0a966448947d7f9597af66e00245aec3c4d4c43cc6950",
+    "examples/brand-token-assets.json": "07f3a8acb45b3dd03ecbe96b75c53571a6b7960eb29b6bb10b777194ba3c1202",
+    "examples/chinese-text.json": "a5f1310bfba6102606079b62712096ae9e4298dffe860dcbab64448619613762",
+    "examples/commands-advanced.json": "eb456387da8df5ac16399c318ebb493fef1e716a537a777420baaa52b89030b8",
+    "examples/commands-revision-create.json": "c7668b298747a3dec9266826344778e8c977a36df293436531ea1ea8db4a44bc",
+    "examples/commands-revision.json": "8e416f9ed55a21862cfc6848ca4e9f97b3fbd2b405b9a56faf89dbc016cbe779",
+    "examples/desktop-first-use.json": "41461b895abe438b35cfa2fcedec42d883ceb0a77812cb5e21e071b5473f3b2b",
+    "examples/native-workflow.json": "e9a89a79c3bdf0ae8ca41958f2fbbdf523ac77da47ecceda6cc97d982e38b265",
+    "examples/object-layout-create.json": "81d4eda918c6e4a41f41b58658a79eee1841872c49fff0a57d72beb94016127b",
+    "examples/object-layout-reopen.json": "7ad1f4a35980a2a90198d8b140ba1b486e604f391322484452d88e110d98da5f",
+    "examples/object-layout-revise.json": "6e85a7f2e54a1e3126d30f12e41fe02320f30542bd6d0d1044c79e79fd539731",
+    "examples/operation-revise.json": "4ed5a5914075583eae05dfab6ac3fc909b2da20558eb466c683355d35443bd78",
+    "examples/provided-assets.json": "f5a3e15cc7a44b912fd87fc833c00c2e51893b553d90daa6f3682bd9ff4336cd",
+    "examples/selection-brand-create.json": "3343eab1f42ef16e5334382c01c861d523d15d41ff49b6946e02046e582a2e73",
+    "examples/selection-brand-reopen.json": "7ad1f4a35980a2a90198d8b140ba1b486e604f391322484452d88e110d98da5f",
+    "examples/selection-brand-revise.json": "10edd02b725c5b0a337d1eb6931942c1bc5e7127c494a1738fecee528ed4ae21",
+    "references/appearance-gradient.md": "712a5822162e95610515d21ee00af77e0c276445f573440fbb360803e94342b7",
+    "references/brand-tokens.md": "ed9b228ccc0376808a51a4a75cb58e75338832260ba6c148a30eae6531c4e9b8",
+    "references/business-scenes.md": "9d11ef8f28be9249f9f7f32e166f307f0cfa7d5ac27520adbbbe483abf043d74",
+    "references/chinese-text.md": "b2229e5054fe2a71ee069b4aba6fa6d87c3ebbf4afaf3d1a2f85a80256948294",
+    "references/command-coverage.json": "532d2fc467f4fc4c48856e11fdb97ea465276270c882e837a3214692de831a50",
+    "references/command-reference.md": "87f39638580025e3d5042da4bda71e255ce9d729850e840ff7baf14a027c08c0",
+    "references/command-usage.md": "49d6405db258efeb7c2a9726c7a858dce855db5ddd2e14afbcde8025a88b5440",
+    "references/commands.json": "e90909f491a2eb5f9a2bcb7d8fcf82e416c7dab99d150af30d58571ce64377c2",
+    "references/desktop-install.md": "db2db151b0eff30a3381a03ae377fb23ac09b2b4a919859740bd9343e7f14887",
+    "references/exchange-loss.md": "eee665f62b77274ca8ce0efc4117012ade85978905cdfd40ab488af64297b8ae",
+    "references/first-use-failures.md": "ce2a8d1a8ca6b8a29a084d52d105d510476de88d40b439d6c2ff79212581d61d",
+    "references/installation-concurrency.md": "69067acebcd47f1924a8d6aa9d8a4ce6f44ad0756d44888a21eb224bcdb1c215",
+    "references/native-command-snapshot.json": "1e63722f850930947c4cc6e9bdbe24638413e43c2e5127dd385f167d493e10e1",
+    "references/native-workflow.md": "42fee416c66a69f6f3802abe1be6f002963cf109e7e22a4d6297b6dcaf62b8e9",
+    "references/object-edit-scene.md": "ac760587eaabc1205b20325e48325463fd90efe343df4183fc7ae7f9d07e6550",
+    "references/object-selection-scene.md": "42593e844568184451bf648c84f4f0fafaee5a1644e39b1641fe49a078e336d9",
+    "references/operation-contract.json": "0a78a01e457e63f7184b0d8c0718eaaf0019835a188c127d6948b8aada2fe060",
+    "references/output-execution.md": "baa3d38af5f8d3b01cb36bcc6b89dee3d8449ec676bc52d6f5c2de9f563ba3ac",
+    "references/scenario.md": "1c276b2078c8ef97e5cc0717cc54c1bb6d058eec6c261e580250cea6654c760f",
+    "references/workflow.md": "b56eae84aded6e13a75e4c709fd14570d6bf5c472a682d5ba2ec4eb9345280b3",
+    "scripts/artboard_mapping.py": "3b0f83f6a9515f8d8d82c6c96973255b62a7b3a7de3cdde56d678746f1e57638",
+    "scripts/asset_inputs.py": "b2868a4239ef50648f201be99bb29ad4ddf0d8bdeb5a626c54b3fc1aac701758",
+    "scripts/boolean_transactions.py": "22d311dfda26cadcd3fc6bb51596ab8b2cd9245cabf5f28dfe3d0d74e8ff9120",
+    "scripts/bootstrap.py": "78d5bdf16bf08e9abc96b4b23e5d071da72b648698b888b85fa1b90f81cf32a9",
+    "scripts/brand_variants.py": "d5973ec8f36312ae32cf5b3e07d3f96ea32df0bc8a7b07c17d3328918fbc3a55",
+    "scripts/cli.py": "f59eb61605f0f4ac7213e6f52b83a47a93bf6201101cffd64d332fbb025313d5",
+    "scripts/commands.py": "265f052228e12f0c21e1ea98e967c0552c15fa001e2d65441357b1bec05cfaea",
+    "scripts/desktop.lock.json": "f38c7cd5b837bc4f3275ef96c17308fc894f6be66c6a00ecf9c53378ad4bb486",
+    "scripts/desktop.py": "24dddb82f1c51ca8e835c582d9b7228aa9d643dfcada11b570bde9191f002f0f",
+    "scripts/desktop_session.py": "b6b07a9a18b77386d481a7f263190b0981a7a763dda4f46ad7417a92d416fbb5",
+    "scripts/exchange_loss.py": "7fdee028008a20bd88bb1e27334f326a7fcc774a079b1621a1c0d06bebfd8f29",
+    "scripts/execution_control.py": "0acaa8fa01aae3689bb8c460efdd9bb19578d33e1572e24dc8dea00ef38ec008",
+    "scripts/mcp_session.py": "15395ead853349a24feab6ce364e5bc9795add12e1dbe62e8ed5718ffdd1ccd2",
+    "scripts/native_workflow.py": "770f981bc3340cf71c695752423aaf9e9123ae59f07ac5a9318cc9b8e8537d11",
+    "scripts/output_guard.py": "7c13abd891370058e670fbfb3db7992d4a8ed7934682c83bde1aabf47ad6846f",
+    "scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "scripts/runtime.lock.json": "7b6bd7f3fab84b757d4ea20ac91b74d89b417ec061efc6ae320dda97a422cc07",
+    "scripts/text_contract.py": "ff4af45ae39f4016befd94a9dd20899118da1bd85556c22313450b9851305838",
+    "scripts/workflow.py": "6a6cc338b6a052b6427856acae8a287024270b62ea8c7d964899b076493ae5dc"
+  },
+  "driverSha256": "3f2e25009080470f6ee61fba32c3091c0c79d8b07fec29b5f618cc2d9d44d97f",
+  "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+  "refusals": [
+    {
+      "fault": "missing-disclosure",
+      "explicitQaMutation": true,
+      "result": "PASS",
+      "quality": {
+        "schema": "vectorcraft-technical-review/v1",
+        "artifactIntegrityStatus": "PASS",
+        "engineeringStatus": "NOT_RUN",
+        "technicalStatus": "FAIL",
+        "creativeStatus": "NOT_RUN",
+        "acceptanceStatus": "blocked",
+        "nativeReopenStatus": "NOT_RUN",
+        "files": {
+          "plan.json": "e40b1185fd2259b18e31b6cb9c42087a8c7772f61f33b08146fd69cac347afa2",
+          "project.vectorcraft": "f1c1e3f509022ac5b68e2667c7e78e1e82f7d1610d5c1dead3af28ad0bc67c4d",
+          "exchange-loss.json": "aad39902a403faa36678ccdab13b187de2ce9ca403ba8ef60b1f38aec2d7f734",
+          "pdf-export-date.json": "55bc8c4d00005ac8b80631e5e1ff188b4f2076e6d5cf3debf80665c3e34cea2d",
+          "native.json": "35ec7c225f92ff7437fc0c2521b30c10c314f64b1be4d058e9b5e2646a24b8f4",
+          "artboard-1.pdf": "bbb8d769f46bc29ebf68a6dbb7593ef97019ae4f689af0b460d3aae788062c77",
+          "artboard-1.png": "37d9271f8a5a2da50651dc498d5df1dc05b970e5391c99f673f63a02360f4cb9",
+          "artboard-1.svg": "018894d2edb96bde6983a9b4fae0d183f22b7ff7b05e6474a174d1d197d382bf",
+          "operations.json": "3c8c3d9fbff2fe6b4d966d84a1d8ccd49ee7056af3c7294cb518d17a916b152d"
+        },
+        "outputs": [],
+        "scope": "artifact integrity and export decode only; native reopening and creative review remain separate",
+        "projectRevision": "f1c1e3f509022ac5b68e2667c7e78e1e82f7d1610d5c1dead3af28ad0bc67c4d",
+        "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+        "manifestSha256": "89194e346460ee69b05f8027855e107dfecae2476e730334ad21d88574c9bda6",
+        "error": "raster_disclosure_missing"
+      }
+    },
+    {
+      "fault": "wrong-scope",
+      "explicitQaMutation": true,
+      "result": "PASS",
+      "quality": {
+        "schema": "vectorcraft-technical-review/v1",
+        "artifactIntegrityStatus": "PASS",
+        "engineeringStatus": "NOT_RUN",
+        "technicalStatus": "FAIL",
+        "creativeStatus": "NOT_RUN",
+        "acceptanceStatus": "blocked",
+        "nativeReopenStatus": "NOT_RUN",
+        "files": {
+          "plan.json": "e40b1185fd2259b18e31b6cb9c42087a8c7772f61f33b08146fd69cac347afa2",
+          "project.vectorcraft": "f1c1e3f509022ac5b68e2667c7e78e1e82f7d1610d5c1dead3af28ad0bc67c4d",
+          "exchange-loss.json": "fc4bcf35baed22b99e61985c15263870382ff119cffcbb8b80519c9f3c1e5a55",
+          "pdf-export-date.json": "55bc8c4d00005ac8b80631e5e1ff188b4f2076e6d5cf3debf80665c3e34cea2d",
+          "native.json": "35ec7c225f92ff7437fc0c2521b30c10c314f64b1be4d058e9b5e2646a24b8f4",
+          "artboard-1.pdf": "bbb8d769f46bc29ebf68a6dbb7593ef97019ae4f689af0b460d3aae788062c77",
+          "artboard-1.png": "37d9271f8a5a2da50651dc498d5df1dc05b970e5391c99f673f63a02360f4cb9",
+          "artboard-1.svg": "018894d2edb96bde6983a9b4fae0d183f22b7ff7b05e6474a174d1d197d382bf",
+          "operations.json": "3c8c3d9fbff2fe6b4d966d84a1d8ccd49ee7056af3c7294cb518d17a916b152d"
+        },
+        "outputs": [],
+        "scope": "artifact integrity and export decode only; native reopening and creative review remain separate",
+        "projectRevision": "f1c1e3f509022ac5b68e2667c7e78e1e82f7d1610d5c1dead3af28ad0bc67c4d",
+        "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+        "manifestSha256": "321b8fa147ff30659ac1b9392de1ec121da48421bf1c49c71c0df93f36612fa8",
+        "error": "raster_disclosure_scope_mismatch"
+      }
+    },
+    {
+      "fault": "unblocked-claim",
+      "explicitQaMutation": true,
+      "result": "PASS",
+      "quality": {
+        "schema": "vectorcraft-technical-review/v1",
+        "artifactIntegrityStatus": "PASS",
+        "engineeringStatus": "NOT_RUN",
+        "technicalStatus": "FAIL",
+        "creativeStatus": "NOT_RUN",
+        "acceptanceStatus": "blocked",
+        "nativeReopenStatus": "NOT_RUN",
+        "files": {
+          "plan.json": "e40b1185fd2259b18e31b6cb9c42087a8c7772f61f33b08146fd69cac347afa2",
+          "project.vectorcraft": "f1c1e3f509022ac5b68e2667c7e78e1e82f7d1610d5c1dead3af28ad0bc67c4d",
+          "exchange-loss.json": "0b17a6b061e213842bc3f4d017d79681ad38765da50e3d067bf3d4a985ad983a",
+          "pdf-export-date.json": "55bc8c4d00005ac8b80631e5e1ff188b4f2076e6d5cf3debf80665c3e34cea2d",
+          "native.json": "35ec7c225f92ff7437fc0c2521b30c10c314f64b1be4d058e9b5e2646a24b8f4",
+          "artboard-1.pdf": "bbb8d769f46bc29ebf68a6dbb7593ef97019ae4f689af0b460d3aae788062c77",
+          "artboard-1.png": "37d9271f8a5a2da50651dc498d5df1dc05b970e5391c99f673f63a02360f4cb9",
+          "artboard-1.svg": "018894d2edb96bde6983a9b4fae0d183f22b7ff7b05e6474a174d1d197d382bf",
+          "operations.json": "3c8c3d9fbff2fe6b4d966d84a1d8ccd49ee7056af3c7294cb518d17a916b152d"
+        },
+        "outputs": [],
+        "scope": "artifact integrity and export decode only; native reopening and creative review remain separate",
+        "projectRevision": "f1c1e3f509022ac5b68e2667c7e78e1e82f7d1610d5c1dead3af28ad0bc67c4d",
+        "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+        "manifestSha256": "2e22c1c424010b7a985c50bd2aa641b856fb68a9477cf2c56381a6512c8266d9",
+        "error": "raster_disclosure_claim_not_blocked"
+      }
+    },
+    {
+      "fault": "changed-svg",
+      "explicitQaMutation": true,
+      "result": "PASS",
+      "quality": {
+        "schema": "vectorcraft-technical-review/v1",
+        "artifactIntegrityStatus": "PASS",
+        "engineeringStatus": "NOT_RUN",
+        "technicalStatus": "FAIL",
+        "creativeStatus": "NOT_RUN",
+        "acceptanceStatus": "blocked",
+        "nativeReopenStatus": "NOT_RUN",
+        "files": {
+          "plan.json": "e40b1185fd2259b18e31b6cb9c42087a8c7772f61f33b08146fd69cac347afa2",
+          "project.vectorcraft": "f1c1e3f509022ac5b68e2667c7e78e1e82f7d1610d5c1dead3af28ad0bc67c4d",
+          "exchange-loss.json": "aad39902a403faa36678ccdab13b187de2ce9ca403ba8ef60b1f38aec2d7f734",
+          "pdf-export-date.json": "55bc8c4d00005ac8b80631e5e1ff188b4f2076e6d5cf3debf80665c3e34cea2d",
+          "native.json": "35ec7c225f92ff7437fc0c2521b30c10c314f64b1be4d058e9b5e2646a24b8f4",
+          "artboard-1.pdf": "bbb8d769f46bc29ebf68a6dbb7593ef97019ae4f689af0b460d3aae788062c77",
+          "artboard-1.png": "37d9271f8a5a2da50651dc498d5df1dc05b970e5391c99f673f63a02360f4cb9",
+          "artboard-1.svg": "0d6717ea8522f149f6811e29393c19d144711357be3ef654a61ec60562e552fe",
+          "operations.json": "3c8c3d9fbff2fe6b4d966d84a1d8ccd49ee7056af3c7294cb518d17a916b152d"
+        },
+        "outputs": [],
+        "scope": "artifact integrity and export decode only; native reopening and creative review remain separate",
+        "projectRevision": "f1c1e3f509022ac5b68e2667c7e78e1e82f7d1610d5c1dead3af28ad0bc67c4d",
+        "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+        "manifestSha256": "37af866e18c181c6a966c04e1d8aa63959a1a6f73177b264ec38291996d75103",
+        "error": "raster_disclosure_scope_mismatch"
+      }
+    }
+  ],
+  "scope": "three native source/export cases, nine independently decoded outputs, editable project separately reopened; no GUI/creative/other-platform acceptance"
+}

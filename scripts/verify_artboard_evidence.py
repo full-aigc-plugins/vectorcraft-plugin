@@ -17,12 +17,19 @@ def local(name):
         raise ValueError('invalid_evidence_path')
     return path
 def main():
-    report = json.loads(local('docs/evidence/vectorcraft-artboards-fixed54-20261009.json').read_text())
+    report_path='docs/evidence/vectorcraft-artboards-fixed54-20261009.json'
+    report = json.loads(local(report_path).read_text())
     if report['result'] != 'PASS' or report['tasksClosed'] != ['4.12']:
         raise ValueError('incomplete_artboard_acceptance')
-    for name, digest in report['fingerprints'].items():
-        if sha(local(name)) != digest:
-            raise ValueError('stale_artboard_evidence: '+name)
+    index=json.loads(local('docs/evidence-index.json').read_text())
+    known=next(e['dependencies'] for e in index['entries'] if e['path']==report_path)
+    def bound(name):
+        digest=report['fingerprints'][name]
+        if sha(local(name))==digest:return local(name)
+        archived=[p for p,saved in known.items() if saved==digest and p.endswith('/'+name)]
+        if len(archived)!=1 or sha(local(archived[0]))!=digest:raise ValueError('stale_artboard_evidence: '+name)
+        return local(archived[0])
+    for name in report['fingerprints']:bound(name)
     matrix = json.loads(local(report['scenarioMatrix']).read_text())
     current = contracts()
     if matrix['scenarioContracts'] != current or {r['scenario'] for r in matrix['entries']} != set(current):
@@ -49,7 +56,7 @@ def main():
             checks += 1
     host = json.loads(local(report['host']).read_text())
     integrity = json.loads(local(report['installedIntegrity']).read_text())
-    lock = json.loads(local('skills.lock.json').read_text())['sources'][0]
+    lock = json.loads(bound('skills.lock.json').read_text())['sources'][0]
     if (host['pluginCommit'] != report['pluginCommit'] or host['skillSourceCommit'] != report['sourceCommit']
             or integrity['digests'] != lock['sha256'] or integrity['skillsUnchanged'] != 13):
         raise ValueError('installed_identity_mismatch')
@@ -61,7 +68,7 @@ def main():
     required |= {'invalid-isolation-'+str(i) for i in range(10)} | {'invalid-pdf-date-'+str(i) for i in range(6)}
     if {r['name'] for r in native['cases']} != required or len(native['cases']) != 31:
         raise ValueError('missing_native_case')
-    if native['runtimeSha256'] != report['runtimeSha256'] or native['driverSha256'] != sha(local('scripts/qa/artboard_isolation.py')):
+    if native['runtimeSha256'] != report['runtimeSha256'] or native['driverSha256'] != sha(bound('scripts/qa/artboard_isolation.py')):
         raise ValueError('native_execution_identity_mismatch')
     for row in native['cases']:
         if row['result'] != 'PASS' or row['sourceSelectionHistoryPreserved'] is not True:
