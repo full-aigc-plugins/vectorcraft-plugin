@@ -56,13 +56,6 @@ export class Ledger {
         protocol TEXT NOT NULL,state TEXT NOT NULL CHECK(state IN ('prepared','authorized','sealed')),
         intent_sha256 TEXT,PRIMARY KEY(task,epoch));
       CREATE TABLE IF NOT EXISTS budgets(id TEXT PRIMARY KEY,policy TEXT NOT NULL,attempts INTEGER NOT NULL DEFAULT 0,bytes INTEGER NOT NULL DEFAULT 0);
-      CREATE TABLE IF NOT EXISTS budget_cancellations(id TEXT PRIMARY KEY REFERENCES budgets(id),task TEXT NOT NULL,epoch INTEGER NOT NULL,requested_at INTEGER NOT NULL);
-      CREATE TRIGGER IF NOT EXISTS cancelled_budget_admission BEFORE INSERT ON tasks
-      WHEN EXISTS(SELECT 1 FROM budget_cancellations WHERE id=COALESCE(json_extract(NEW.binding,'$.authorization.budgetId'),NEW.id))
-      BEGIN SELECT RAISE(ABORT,'budget_cancel_requested'); END;
-      CREATE TRIGGER IF NOT EXISTS cancelled_budget_step BEFORE INSERT ON steps
-      WHEN EXISTS(SELECT 1 FROM tasks,budget_cancellations WHERE tasks.id=NEW.task AND budget_cancellations.id=COALESCE(json_extract(tasks.binding,'$.authorization.budgetId'),tasks.id))
-      BEGIN SELECT RAISE(ABORT,'budget_cancel_requested'); END;
       CREATE TABLE IF NOT EXISTS late_receipts(id INTEGER PRIMARY KEY,task TEXT NOT NULL,epoch INTEGER NOT NULL,n INTEGER NOT NULL,result TEXT NOT NULL,received_at INTEGER NOT NULL);
       CREATE TABLE IF NOT EXISTS runtime_selection(id INTEGER PRIMARY KEY CHECK(id=1),active TEXT NOT NULL,previous TEXT);
       -- 旧阅读器可能已经打开连接；数据库触发器使它同样遵守新选择与schema约束。
@@ -122,10 +115,8 @@ export class Ledger {
       if(this.db.prepare("SELECT id FROM tasks WHERE output=? AND state IN ('ready','running','reconciling','cancel_requested')").get(destination))throw new Error('output_busy');
       const id=randomUUID(),budgetId=auth.budgetId??id;
       const policy=canonical({deadline:auth.deadline,maxAttempts:auth.maxAttempts,maxBytes:auth.maxBytes});
-      const previousBudget=this.db.prepare('SELECT policy,attempts,bytes FROM budgets WHERE id=?').get(budgetId) as any;
-      if(this.db.prepare('SELECT id FROM budget_cancellations WHERE id=?').get(budgetId))throw new Error('budget_cancel_requested');
+      const previousBudget=this.db.prepare('SELECT policy FROM budgets WHERE id=?').get(budgetId) as any;
       if(previousBudget&&previousBudget.policy!==policy)throw new Error('shared_budget_conflict');
-      if(previousBudget&&(previousBudget.attempts>=auth.maxAttempts||previousBudget.bytes>=auth.maxBytes))throw new Error('budget_exceeded');
       this.db.prepare('INSERT OR IGNORE INTO budgets(id,policy) VALUES(?,?)').run(budgetId,policy);
       this.db.prepare('INSERT INTO tasks(id,key,resource,output,binding_hash,binding,state) VALUES(?,?,?,?,?,?,?)')
         .run(id,key,owner,destination,fingerprint,canonical(binding),'ready');
@@ -221,10 +212,7 @@ export class Ledger {
       const task=this.checked(id,epoch);
       if(!['ready','running','reconciling','cancel_requested'].includes(task.state))throw new Error('task_not_cancellable');
       if(confirmed)throw new Error('native_observation_required: cancellation cannot release a writer using a boolean');
-      const auth=task.binding.authorization,budgetId=auth.budgetId??task.id;
-      this.db.prepare('INSERT OR IGNORE INTO budgets(id,policy,attempts,bytes) VALUES(?,?,?,?)').run(budgetId,canonical({deadline:auth.deadline,maxAttempts:auth.maxAttempts,maxBytes:auth.maxBytes}),task.attempts,task.bytes);
-      this.db.prepare('INSERT OR IGNORE INTO budget_cancellations(id,task,epoch,requested_at) VALUES(?,?,?,?)').run(budgetId,id,epoch,Date.now());
-      this.db.prepare("UPDATE tasks SET state='cancel_requested' WHERE COALESCE(json_extract(binding,'$.authorization.budgetId'),id)=? AND state IN ('ready','running','reconciling','cancel_requested')").run(budgetId);
+      this.db.prepare("UPDATE tasks SET state='cancel_requested' WHERE id=?").run(id);
       return this.get(id);
     });
   }

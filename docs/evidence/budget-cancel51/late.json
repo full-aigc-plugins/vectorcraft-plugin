@@ -1,0 +1,197 @@
+{
+  "result": "PASS",
+  "fingerprints": {
+    "src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
+    "src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
+    "src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
+    "src/evaluation/revision_cycle.ts": "019a80ddf7ca9fa80737934ad65efb3cf5e66c17b180e25d32091123ac25185f",
+    "src/evaluation/technical_review.ts": "59eb77085bde9573e049701748ed7b508c507386a3f7686ebcc75384666e43a3",
+    "src/harness/controller.ts": "1dfbd182d7228eb20c21dd8f70a85c24c75a4b22fcf9a1f11d5b19f8eea7a8f5",
+    "src/harness/launch_recovery.ts": "cba5f831fe71b8c88c68c437d1ddf9b818cb869e1d07b927f4f837ac0be74dbd",
+    "src/harness/ledger.ts": "d2a336ad4f52e2fc1f839514fd4d3ed351b323f5cfa230152f796d55b336db6c",
+    "src/harness/process_registry.ts": "c19a3cb5d42cc33620bc5baeff7db71f1c6daa92f046a112951a7f50f7906162",
+    "src/harness/process_runner.py": "7332d0757aa01f03d00697f8eb8d93f849517cab34ea8a1355ba6c9513d5aba2",
+    "src/harness/recovery.ts": "bc51fa6249d722c148a0bcbf5946685ffcab2424e67b8a874c56730a79e4fdfa",
+    "src/harness/skill_digest.ts": "e4cd8dbbcacd338fc39ef6f114ad991a8c6c7274987d92ff62ce1b9bd8ab9d9e",
+    "src/planning/geometry.ts": "97650dc916111666a73bcfea6ddc797e48b5b9bc2d6b6e54a85f33b1a8766e2d",
+    "src/runtime/prepare_runtime.ts": "08ecee9238056335ac33710421b4b878cad01b4556ffad641d14c26819b2e6c1",
+    "src/runtime/runtime_gate.ts": "269966ae978c9afa7b9cdad719afce9ca0b57e54c52f3cb732777f3ddc23a68c",
+    "src/runtime/runtime_probe.py": "ee196f91dde9487bd1537d1c91a8f5957deb795431a54baa333be35bfc90e54c",
+    "src/strict_json.ts": "69a445339670e53f6a7fcb96770b53b896666dd1e60f114c1751a23981d5b7d0",
+    "scripts/acceptance/checked_review.ts": "bc619deda373358f3eff056323f495cc3288f40037cd98860a2a89b5edbce5fb",
+    "scripts/acceptance/execution_identity.ts": "923b35a9ddd6d6f7a2b6f22e2f597012a84bbee51b111c5a005d173af490a422",
+    "scripts/acceptance/fixed_brand_edges.py": "e3b4b53cb732a46b18cfbb1c36032b19aac1d07638be4ca8a46d6f8dd9daf703",
+    "scripts/acceptance/fixed_install.py": "b360544f751efe3c0f64a0f40a75d81a61588185956d17d7b9cca9ca766abd48",
+    "scripts/acceptance/fixed_native.py": "913e0656e13a8985335197684460ad40aecbe5440d96587252a92e096d96b09e",
+    "scripts/acceptance/fixed_plan_edges.py": "25888c90833418b32ae1cce4e0291ab88dd08083834981dca5835ba9d310d1e0",
+    "scripts/acceptance/fixed_protocol_edges.py": "f68075c81100dfbaff3655ee8e330ea153246253166e84dcc6a1e46441b8840f",
+    "scripts/acceptance/geometry.ts": "0f987e5c701a0d2af47529788b66f7e0d3de8482897edad8351d0a3b11a692c3",
+    "scripts/acceptance/late_cancel.ts": "ba0f28d2d8ebb4518e50d5999ceefe93811b06ce3b3880ab2213ec5560f88669",
+    "scripts/acceptance/late_cancel_child.ts": "8d4b22f899cc706769a581ba27552ee1499f78e72d5f6700729a75c851d5c0da",
+    "scripts/acceptance/linked_recovery.ts": "cfebebdb49ee5d1e6f53eb73b8bc6c0af2cde53a5dd2973e844ea73b05bae60b",
+    "scripts/acceptance/linked_source.py": "cee98fc076c102c2afafcd2637832d53d3d03627d6ebaec486e5e44d8350c284",
+    "scripts/acceptance/managed_boolean.ts": "55fbffdf6d44a8b0b95b9902d7716037980eeaf5c2c437c69a06b740b889be52",
+    "scripts/acceptance/managed_cancel.ts": "bd63c54b247e78e90ea7237ce8c91c98dfd0f93d4be7d520d42eb071ddb1c76a",
+    "scripts/acceptance/record_execution_control.py": "9ded1a54b482c84ff477e0c3a1d97aa2dd362e61a5cd749b327adae1f95dc37b",
+    "scripts/acceptance/revision_cycle.ts": "fb13c44b873841570fe4f3e46665da55e4007064260c2498899a5289dfa69c2a",
+    "scripts/acceptance/runtime_activation_race.ts": "dc7502d97180fbd92c3b690a6d73f2602f257bad182109fd7a2e472df2c6bf81",
+    "scripts/acceptance/runtime_activation_race_child.ts": "c58f0d1ac1db7f4223e417a4aaa06d668923fee7a99adf93fec3fb30d913ad19",
+    "scripts/acceptance/runtime_boundaries.ts": "9ea05b771ab9df8db34f1971f8610bde52b642c23a1741c48879cae8b9797652",
+    "scripts/acceptance/runtime_boundary_probe.py": "f4f795e97c61d48a73f3b0ad3ed4f4b0215cfc01095b84bcdb0f44568eab2ad5",
+    "scripts/acceptance/runtime_bridge_child.py": "3bd45a343e4113cfe495e7ca608e544e414d4b6f7ee7918cddc8924a918bb357",
+    "scripts/acceptance/runtime_bridge_drain.ts": "9c66c9a8f19835bb54f52de77517699e70fc1c72bab6c5bcaa964662af2f39bb",
+    "scripts/acceptance/runtime_default.ts": "ce238365dad5f30eec4a7c8029566a73c69323152fbefdd9ae6fcff8ee782648",
+    "scripts/acceptance/runtime_gate.ts": "cf94973f6475b5af35011dd60d0ed26a402acc306de9bf1609dd703284c2f7f5",
+    "scripts/acceptance/runtime_native_child.py": "1ddf23c94d43bad1a943d6aeb7582ce1c72fe6d97bca6a36dd679f990e5c46d7",
+    "scripts/acceptance/runtime_open_reader.ts": "d79d11da7dffd4ebe6c26d2ba368753f4e3584f7719228682e56522943962747",
+    "scripts/acceptance/shared_cancel.ts": "a0035caf9c7de00c8914add97df0ed0ade830f8a983e71ea057cb2e677a6feac",
+    "scripts/acceptance/shared_quota.ts": "7a4967f4d9927d82560bf98410943e582d16256f7f4471729e8191b8a51c8397",
+    "scripts/acceptance/single_round.ts": "309115ba29a4b5ea69e70099a58d657ff1e29d48284af42a9d3461fefee9c84f",
+    "scripts/acceptance/task_contract.ts": "a65bed865f7ec61bbe6e93f70fce383c0c10722a5c1b244ffd93fbcd84ceb8a1",
+    "scripts/acceptance/task_crash.ts": "44b1db20e97c778a67907b355a98289bc1b94d4cc030918a6e82fe5a7d68fc21",
+    "scripts/acceptance/task_crash_child.ts": "5152beab700d2ca9ff7033718c88d323bc17cf1b3cf1c26db51abcd7f636a9ce",
+    "scripts/acceptance/task_gui_edit.py": "d26eda2ae8b1d69167171d2067dbcc27e6617be23b49e84707e3133fff94bc68",
+    "scripts/acceptance/task_launch.ts": "6c7dc3bb3914d27d3043d2a7bcff1f030c98db0c73ae4c263cd629473ffaee33",
+    "scripts/acceptance/task_launch_child.ts": "0e1080002aaf70b0ccab0dc55b978fcac8ae7c27ffbae464769a18070ab4a9be",
+    "scripts/acceptance/task_receipt_loss.ts": "c5a924bc214e8c080b3f8207129c12b7fe40b44b75c1f0b3b40e593825895a20",
+    "scripts/acceptance/task_receipt_loss_child.ts": "701350be6312c9aa9eda1ff8299c2367852bea561e9add39b03f8a045b042f17",
+    "scripts/acceptance/verify_fixed.py": "d4a5ea7c86ec7bc4939a055d40b8128db010ba7a73b7f7e8e27ee7613f908d15",
+    "schemas/vector-review-receipt.schema.json": "d1e94365af9e75ce55de82df50a36eb37a65d0da4b19f66e704b00e9b35641ab",
+    "schemas/vector-review-request.schema.json": "15951f56b14316c1b6d06b58194c178fbd13c20c85e1ce1e6e492c204ec3f4cd",
+    "schemas/vector-revision-policy.schema.json": "a68d6f6a5d639864edd34a24bd626f8668c49a6f7d8121febcc71353d4251073"
+  },
+  "scope": "actual native saved/reopened/exported delivery then cancellation before durable receipt; same-epoch completed receipt quarantined, original output readonly verified before cancelled, old-epoch actual receipt quarantined again",
+  "skillSha256": "e7d84d441d0628269801918ced6f2f47abc31e461095dd805cc7634436757875",
+  "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+  "parentExit": {
+    "code": null,
+    "signal": "SIGKILL"
+  },
+  "taskId": "c27f6a2d-c9b5-4af8-9a92-9c7c7c85767b",
+  "originalEpoch": 1,
+  "exportCount": 9,
+  "sameEpochActualReceiptQuarantined": true,
+  "lateOldEpochActualReceiptQuarantined": true,
+  "sourceUnchanged": true,
+  "outputUnchanged": true,
+  "outputInodePreserved": true,
+  "noAutomaticReplay": true,
+  "attemptsPreserved": true,
+  "bytesPreserved": true,
+  "allRegisteredGroupsStopped": true,
+  "recovery": {
+    "stepIdentity": "575b3dbf1bf3b49601f8bd99957be8d6dddefb524c33681b0fd418f9a55d5da4",
+    "preparedManifestSha256": "29e38011a0eee46ce74468a225c1f429a11efb7f238ae4395f5533c4e5695500",
+    "schema": "vectorcraft-original-inspection/v1",
+    "checkId": "6d2dccf4-30d8-4d5f-ac64-aabcfa722e9c",
+    "task": "c27f6a2d-c9b5-4af8-9a92-9c7c7c85767b",
+    "epoch": 1,
+    "owner": "c27f6a2d-c9b5-4af8-9a92-9c7c7c85767b:inspect:6d2dccf4-30d8-4d5f-ac64-aabcfa722e9c",
+    "stage": "<plugin-root>/.local/budget-cancel/late/original-output",
+    "stageInode": 627815307,
+    "stageDevice": 16777233,
+    "files": {
+      "<plugin-root>/.local/budget-cancel/late/original-output/artboard-1.pdf": {
+        "sha256": "3aae8dce3a387f322e965ea82f1bb389e22b1ec41bb5d700d9e69bd7315451c9",
+        "bytes": 3129,
+        "inode": 627815318
+      },
+      "<plugin-root>/.local/budget-cancel/late/original-output/artboard-1.png": {
+        "sha256": "03d1026659680fc9f836b252e26a0fd3e5928593c4e609e1d880fdfa6879d1b9",
+        "bytes": 4351,
+        "inode": 627815317
+      },
+      "<plugin-root>/.local/budget-cancel/late/original-output/artboard-1.svg": {
+        "sha256": "c7a774c7266600ba7fecab611add76b9d0f53459d015e7daba7f1edd14b184f2",
+        "bytes": 779,
+        "inode": 627815316
+      },
+      "<plugin-root>/.local/budget-cancel/late/original-output/artboard-2.pdf": {
+        "sha256": "ad11a916cf05e8174d65a51cab8e0381d4524b28d011fce179a11af243b9ee3d",
+        "bytes": 2049,
+        "inode": 627815321
+      },
+      "<plugin-root>/.local/budget-cancel/late/original-output/artboard-2.png": {
+        "sha256": "57c437e51d594bf9e66eed2962f281bac414ee0abd4ad03cd77ea85130613bb4",
+        "bytes": 1336,
+        "inode": 627815320
+      },
+      "<plugin-root>/.local/budget-cancel/late/original-output/artboard-2.svg": {
+        "sha256": "5029c5a828113727055290d06af118a36aa0d01d2ee5a36526c65da7b7427de8",
+        "bytes": 315,
+        "inode": 627815319
+      },
+      "<plugin-root>/.local/budget-cancel/late/original-output/artboard-3.pdf": {
+        "sha256": "c8c2b4c8634ab4a96fcfee597ea90351b831cc1f937235060366a82572a90470",
+        "bytes": 2048,
+        "inode": 627815324
+      },
+      "<plugin-root>/.local/budget-cancel/late/original-output/artboard-3.png": {
+        "sha256": "47aa3271e90e07b66e80dc0852246d30dd50cdbe43edb43dfeb5aec9bc7befb4",
+        "bytes": 702,
+        "inode": 627815322
+      },
+      "<plugin-root>/.local/budget-cancel/late/original-output/artboard-3.svg": {
+        "sha256": "5962cfb3ea69378457613a83afa3e7012c2b358707f5aba006ddc95798ee0a63",
+        "bytes": 323,
+        "inode": 627815323
+      },
+      "<plugin-root>/.local/budget-cancel/late/original-output/brand-dependencies.json": {
+        "sha256": "b915a7c4243623c0ecc32e571dffdba3a13339f1bdb902e51ee6612ccd2332fe",
+        "bytes": 1015,
+        "inode": 627815312
+      },
+      "<plugin-root>/.local/budget-cancel/late/original-output/exchange-loss.json": {
+        "sha256": "a59924aa244b29a8fc2e1854eba76390db7766f1058607408bc41b94dfd04d92",
+        "bytes": 11924,
+        "inode": 627815328
+      },
+      "<plugin-root>/.local/budget-cancel/late/original-output/manifest.json": {
+        "sha256": "29e38011a0eee46ce74468a225c1f429a11efb7f238ae4395f5533c4e5695500",
+        "bytes": 4376,
+        "inode": 627815329
+      },
+      "<plugin-root>/.local/budget-cancel/late/original-output/native.json": {
+        "sha256": "fc71e7adfa1b6d253e380590f69f87064d70db5047cfbf9841c36708bc88edd4",
+        "bytes": 32218,
+        "inode": 627815325
+      },
+      "<plugin-root>/.local/budget-cancel/late/original-output/operations.json": {
+        "sha256": "78bf3e1a3e63e1849bd3bfac688dac5a166556b9a315495e0158f3512e9734b5",
+        "bytes": 156140,
+        "inode": 627815327
+      },
+      "<plugin-root>/.local/budget-cancel/late/original-output/pdf-export-date.json": {
+        "sha256": "9c8c778fb31a7afd94f2f212106bb19256e28ca8981e46586fc61c8198c51fa5",
+        "bytes": 107,
+        "inode": 627815315
+      },
+      "<plugin-root>/.local/budget-cancel/late/original-output/plan.json": {
+        "sha256": "96db0b149a018a3b278edef43a2cf6f9040cc9f3effe4a88a659854f54ef4f64",
+        "bytes": 774,
+        "inode": 627815326
+      },
+      "<plugin-root>/.local/budget-cancel/late/original-output/project.vectorcraft": {
+        "sha256": "289a4da20845c308f9cbfc269c4e65cf6c825af659209443eb3b6547f38e5d11",
+        "bytes": 33852,
+        "inode": 627815313
+      }
+    },
+    "reopened": [
+      {
+        "path": "<plugin-root>/.local/budget-cancel/late/original-output/project.vectorcraft",
+        "layers": 1,
+        "artboards": 3,
+        "dependencies": {
+          "links": [],
+          "missing": 0,
+          "modified": 0
+        }
+      }
+    ],
+    "nativeStopped": true,
+    "classification": "verified-interrupted-files; not successful delivery"
+  },
+  "settledState": "cancelled",
+  "settledEpoch": 2
+}

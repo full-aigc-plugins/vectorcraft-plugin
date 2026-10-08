@@ -1,0 +1,71 @@
+✖ shared cancellation reaches running and ready children, fences future admission and retains budget across restart (5.533ms)
+✔ private cancellation leaves independent and already reviewed tasks untouched (2.889667ms)
+✖ database guards reject stale readers admitting cancelled-budget tasks or native steps (2.785417ms)
+✖ spent shared output budget rejects a new dependent task before admission (2.394ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 1
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 91.299833
+
+✖ failing tests:
+
+test at tests/shared_cancellation.test.ts:10:1
+✖ shared cancellation reaches running and ready children, fences future admission and retains budget across restart (5.533ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'running'
+  - 'cancel_requested'
+
+      at TestContext.<anonymous> (file://<plugin-root>/tests/shared_cancellation.test.ts:12:83)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1325:25)
+      at Test.start (node:internal/test_runner/test:1191:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'running',
+    expected: 'cancel_requested',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/shared_cancellation.test.ts:26:1
+✖ database guards reject stale readers admitting cancelled-budget tasks or native steps (2.785417ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (file://<plugin-root>/tests/shared_cancellation.test.ts:29:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1325:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+      at Test.postRun (node:internal/test_runner/test:1465:19)
+      at Test.run (node:internal/test_runner/test:1390:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /budget_cancel_requested/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/shared_cancellation.test.ts:34:1
+✖ spent shared output budget rejects a new dependent task before admission (2.394ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (file://<plugin-root>/tests/shared_cancellation.test.ts:35:74)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1325:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+      at Test.postRun (node:internal/test_runner/test:1465:19)
+      at Test.run (node:internal/test_runner/test:1390:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /budget_exceeded/,
+    operator: 'throws',
+    diff: 'simple'
+  }

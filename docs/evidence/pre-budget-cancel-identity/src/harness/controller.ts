@@ -29,17 +29,15 @@ export class Controller {
   constructor(database:string,probe:RuntimeProbe=prepareRuntime){this.probe=probe;this.ledger=new Ledger(database);this.processes=new ProcessRegistry(this.ledger.db);this.snapshotRoot=join(dirname(resolve(database)),'plan-snapshots');}
   /** 原子公布撤销状态；这里只请求取消，停止和原文件核验之前不释放资源。 */
   requestCancel(id:string,epoch:number):any {
-    const task=this.ledger.cancel(id,epoch,false),budgetId=task.binding.authorization.budgetId??task.id;
-    const members=this.ledger.db.prepare("SELECT id,epoch FROM tasks WHERE COALESCE(json_extract(binding,'$.authorization.budgetId'),id)=? AND state='cancel_requested'").all(budgetId) as any[];
-    // 先持久封存整个工作流，再逐个公布控制状态和停止已登记的组；一个失败不跳过其他组。
-    for(const member of members){
-      const failures:string[]=[];
-      try{this.publishState(member.id,member.epoch,'cancel_requested');}catch(error){failures.push('cancel_state_publish_failed: '+String(error));}
-      const registered=this.ledger.db.prepare('SELECT task FROM native_processes WHERE task=? AND epoch=?').get(member.id,member.epoch);
-      if(registered){try{this.processes.signal(member.id,member.epoch,'SIGTERM');}catch(error){failures.push('native_stop_unconfirmed: '+String(error));}}
-      if(failures.length)this.ledger.unknown(member.id,member.epoch,failures.join('; '));
+    const registered=this.ledger.db.prepare('SELECT task FROM native_processes WHERE task=? AND epoch=?').get(id,epoch);
+    if(registered)this.processes.observe(id,epoch);
+    const task=this.ledger.cancel(id,epoch,false);
+    this.publishState(id,epoch,'cancel_requested');
+    if(registered){
+      try{this.processes.signal(id,epoch,'SIGTERM');}
+      catch(error){return this.ledger.unknown(id,epoch,'native_stop_unconfirmed: '+String(error));}
     }
-    return this.ledger.get(id);
+    return task;
   }
   publishState(id:string,epoch:number,state:string){
     mkdirSync(this.snapshotRoot,{recursive:true,mode:0o700});
@@ -184,8 +182,7 @@ export class Controller {
     const launchBinding=existing?(()=>{const previous=this.ledger.get(existing.id).binding;return previous.launchProtocol?{launchProtocol:previous.launchProtocol,launchContext:previous.launchContext}:{};})():{
       launchProtocol:'registered-go/v1' as const,launchContext:{skill:request.skill,plan:request.plan,runtimeHome:request.runtimeHome,python:request.python??'python3',source:request.source??null}};
     const binding={...launchBinding,skillSha256:request.expectedSkillSha256,planHash:sha(canonical(plan)),inputHashes,projectRevision,runtimeIdentity,authorization:auth};
-    let task=this.ledger.claim(request.key,request.source?join(request.source,'project.vectorcraft'):join(request.output,'project.vectorcraft'),request.output,binding);
-    if(existing&&task.binding.authorization.deadline<=Date.now()&&['ready','running','reconciling','cancel_requested'].includes(task.state))task=this.requestCancel(task.id,task.epoch);
+    const task=this.ledger.claim(request.key,request.source?join(request.source,'project.vectorcraft'):join(request.output,'project.vectorcraft'),request.output,binding);
     if(task.state!=='ready'||existing){
       let geometryVerification:any;
       if(task.state==='review_ready'||task.state==='completed'){

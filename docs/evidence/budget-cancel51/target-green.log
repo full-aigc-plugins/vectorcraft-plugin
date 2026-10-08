@@ -1,0 +1,14 @@
+✔ expired ready resume requests cancellation instead of preparing or launching again (21.153458ms)
+✔ shared cancellation reaches running and ready children, fences future admission and retains budget across restart (6.42175ms)
+✔ private cancellation leaves independent and already reviewed tasks untouched (3.007708ms)
+✔ database guards reject stale readers admitting cancelled-budget tasks or native steps (3.017875ms)
+✔ spent shared output budget rejects a new dependent task before admission (2.358125ms)
+✔ one failed stop observation still persists cancellation and attempts the other group (24.342166ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 110.268
