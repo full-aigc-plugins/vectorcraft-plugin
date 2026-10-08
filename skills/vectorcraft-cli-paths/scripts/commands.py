@@ -76,6 +76,8 @@ def validate(plan, input_names=()):
             raise ValueError("invalid_json_parameters: " + str(index)) from None
         if key == "tool" and step[key] == ROUTES[DOMAIN][1]:
             raise ValueError("use_command_operation_for_native_registry")
+        if DOMAIN=="vectorcraft" and key=="command" and step[key]=="text.setText":
+            load("text_contract").validate_text_edit(step["params"])
         references(step["params"], aliases)
         alias = step.get("as")
         if alias is not None:

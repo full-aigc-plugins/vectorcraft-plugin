@@ -10,7 +10,9 @@
 
 Logo、图标与品牌图形需求进入，交付 `.vectorcraft` 及适用的 SVG、PDF、PNG。
 
-当前插件：`0.1.0-dev.51`；技能源：`0.1.0-dev.38`；13 个独立技能。
+当前插件：`0.1.0-dev.52`；技能源：`0.1.0-dev.39`；13 个独立技能。
+
+开发插件52锁定技能源39：SVG记录实际文字导出模式，轮廓导出明确报告文字编辑性损失，并保留原生文字及字体依赖；三个公开文字修改入口统一要求显式对象ID。源回归151项通过、30项跳过，原生候选验证单独记录；固定52验收与完整V1任务仍开放。[文字交付架构](docs/VectorCraft-Text-Outline.zh_CN.md)。
 
 公开固定51／源38已完成VC-DM-002全部四个当前场景，任务4.6完成：14组原生工作流、8组受控授权、2组原生SDK选择／子树拒绝，17项目标源测试通过；13技能摘要未变，9个Harness登记组停止。已知／未知失败在真实原生操作成功后显式注入，不是引擎缺陷报告；GUI、全Pathfinder上下文与创作拓扑判断保持独立。 [固定验收 / Fixed acceptance](docs/evidence/vectorcraft-boolean-fixed51-20261009.json).
 
@@ -133,9 +135,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.51 |
+| Metadata version | 0.1.0-dev.52 |
 | Stage | implementation-in-progress |
-| Skills source | vectorcraft-skills / v0.1.0-dev.38 |
+| Skills source | vectorcraft-skills / v0.1.0-dev.39 |
 | Execution | 上游 CLI；ArtCraft 使用子适配器 |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |

@@ -87,3 +87,9 @@ Both direct swatch.edit and its native.command equivalent inherit the verified s
 ### Harness 结构修改授权
 
 受控源修订的分组／解组／布尔操作要求授权 `fields:["structure"]`。`select.set` 仅能选择已授权ID，且实际选择必须一致；结构操作使用同会话实时选择，整个参与子树的ID均须在objects中。`kind`或路径字段授权不能替代structure。结果ID、未选子树、祖先／堆叠和文档属性仍由统一守卫核验。未知、撤销、截止时间和版本冲突的原有停止语义不变。该能力纳入技能源开发版37，旧dev.36标签不变。
+
+## SVG文字模式与可编辑性
+
+`native.command` 调用 `document.setup`，参数 `{"exportText":"appearance"}` 可选择SVG轮廓文字；`editable`保留可导出的文字元素。工作流从实际导出会话只读查询模式，并在绑定摘要的 `exchange-loss.json` 中记录 `live-text-editability`。appearance模式输出的文字丢失文字编辑语义，保留独立原生工程；未知模式不得由path数量或预览推断已轮廓化。报告的原生文字ID是文档依赖，不说明哪些文字进入单画板输出。
+
+普通、`native.command`及完整命令入口的`text.setText`统一要求显式`id`或`ids`及字符串`text`，不沿用隐式选择。原生整段替换采用首个样式；多段富文本样式不能宣称全部保留。字体可移植性与跨编辑器版式保真继续标为未知。

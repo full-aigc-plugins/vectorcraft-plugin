@@ -1,6 +1,6 @@
 {
   "schema": "vectorcraft-evidence-index/v1",
-  "identitySha256": "b54595cabb083079a8f5d8cb677e04a286aba919aa0d2eaf9c6fb2a802bcfb14",
+  "identitySha256": "232a40ae6e86351a4acfe1e5541ac14a4491a78412669b0ea53f18dfd9045cd1",
   "entries": [
     {
       "path": "docs/evidence/craft-vector37-gateway-export-fixed-first-use-20261008.json",
@@ -513,7 +513,7 @@
         "skills/vectorcraft-use/scripts/runtime.lock.json": "7b6bd7f3fab84b757d4ea20ac91b74d89b417ec061efc6ae320dda97a422cc07",
         "skills/vectorcraft-use/scripts/desktop.lock.json": "f38c7cd5b837bc4f3275ef96c17308fc894f6be66c6a00ecf9c53378ad4bb486",
         "skills/vectorcraft-use/scripts/desktop_session.py": "b6b07a9a18b77386d481a7f263190b0981a7a763dda4f46ad7417a92d416fbb5",
-        "skills/vectorcraft-use/scripts/commands.py": "42b72f9da9ca9cf429c1ccd50b52cf1f6ed7cbe7411a70b2561317feef7f6017",
+        "docs/evidence/pre-brand-text-identity/skills/vectorcraft-use/scripts/commands.py": "42b72f9da9ca9cf429c1ccd50b52cf1f6ed7cbe7411a70b2561317feef7f6017",
         "tests/controller.test.ts": "f53cb6780e861660223fb20cfc416b54c0d64691c4eb76e989e194126197a507",
         "tests/geometry.test.ts": "c999edb7e17e97b04f3fc2d1165cd49205da3ec2286207d1d4a4ee5535186fa6",
         "tests/harness.test.ts": "586cc9e5431a11be1f43e5e9cea55fbb976b7b386e077fa5a3988daea99d6cde",
@@ -1283,7 +1283,7 @@
         "docs/evidence/receipt-recovery49/python.log": "0c13d114a8e44b75d67b2cfb6420221f98cf0336e56a48bdc780269d20e40266",
         "docs/evidence/receipt-recovery49/delivery-red.log": "15cb5a9148ed332d5839c3d52b238c2d91d63e64ae7c6b9e104c5f293cb31d3c",
         "docs/evidence/pre-launch-recovery-identity/plugin.json": "7497b40d5d97b1ff53f32c36f2f9f4d4090241bc4f1399993f0635a63341d6a6",
-        "skills.lock.json": "14952869286b68ee7080b75bcc5619de7f78e73b820c54d727d154b0745e7ca5"
+        "docs/evidence/pre-brand-text-identity/skills.lock.json": "14952869286b68ee7080b75bcc5619de7f78e73b820c54d727d154b0745e7ca5"
       }
     },
     {
@@ -1355,7 +1355,7 @@
         "docs/evidence/receipt-recovery49/fixed-linked-before.json": "bc695e410d2c2632b459e4810fb6ec2ce67a53b7bff603a8a3cd6ee8a521152f",
         "docs/evidence/receipt-recovery49/fixed-linked-after.json": "439ce8245e3594c787647c7dcadb82d0bbb50d17d20d1e23da5766b73f8bc755",
         "docs/evidence/pre-launch-recovery-identity/plugin.json": "7497b40d5d97b1ff53f32c36f2f9f4d4090241bc4f1399993f0635a63341d6a6",
-        "skills.lock.json": "14952869286b68ee7080b75bcc5619de7f78e73b820c54d727d154b0745e7ca5"
+        "docs/evidence/pre-brand-text-identity/skills.lock.json": "14952869286b68ee7080b75bcc5619de7f78e73b820c54d727d154b0745e7ca5"
       }
     },
     {
@@ -1440,7 +1440,7 @@
         "docs/evidence/launch-recovery50/launch-node.log": "bd46384c097fd8a77548f6c83c4b7c4917f994553a1f65b7e38eacedd055eff2",
         "docs/evidence/launch-recovery50/launch-python.log": "7dd2f6096f43717b0b4a2f1739904e5b411705f83cc62474408bac53be4d9ff5",
         "docs/evidence/pre-budget-cancel-identity/plugin.json": "1beda0d3e49bf7b96c4916a0d39d965e1f4ebb79874279f72aa61122fcce90f4",
-        "skills.lock.json": "14952869286b68ee7080b75bcc5619de7f78e73b820c54d727d154b0745e7ca5",
+        "docs/evidence/pre-brand-text-identity/skills.lock.json": "14952869286b68ee7080b75bcc5619de7f78e73b820c54d727d154b0745e7ca5",
         "tests/launch_gate.test.ts": "00f5d80748f3933b40a9e4ce7688ea7bb9d969822db8a6923a3f93a215a66cdc",
         "tests/unlaunched_recovery.test.ts": "b010aaaed21c9578cf8b053f9979990a8208d02e4814c1d01b7996d9613ff7c6",
         "docs/evidence/pre-task3-6-closure-identity/openspec/changes/establish-v1-plugin/specs/task-execution/spec.md": "21ab6242e9a4d34a9e17ed4cbfd59eb23d8f92d14c94c3a618ef2e9fa71bddf8"
@@ -1531,7 +1531,7 @@
         "docs/evidence/vc-tx-002/fixed50-python.log": "cdcfe1dc217890697cef2f501414dacdbb5707c692d6e38d2de4dfeb1d34eb17",
         "docs/evidence/vc-tx-002/scenario-matrix-fixed50.json": "e1d489b54c05289895729a667e032df7530e304b4dbe3dac01517791443b29a2",
         "docs/evidence/pre-budget-cancel-identity/plugin.json": "1beda0d3e49bf7b96c4916a0d39d965e1f4ebb79874279f72aa61122fcce90f4",
-        "skills.lock.json": "14952869286b68ee7080b75bcc5619de7f78e73b820c54d727d154b0745e7ca5",
+        "docs/evidence/pre-brand-text-identity/skills.lock.json": "14952869286b68ee7080b75bcc5619de7f78e73b820c54d727d154b0745e7ca5",
         "docs/evidence/pre-budget-cancel-identity/scripts/verify_task_recovery_evidence.py": "e358737ea0b27a24c2a58ec944e58fc9b9074d4848189e4b0778ea821a64f5b6",
         "docs/evidence/pre-task3-6-closure-identity/openspec/changes/establish-v1-plugin/specs/task-execution/spec.md": "21ab6242e9a4d34a9e17ed4cbfd59eb23d8f92d14c94c3a618ef2e9fa71bddf8"
       }
@@ -1614,8 +1614,8 @@
         "docs/evidence/budget-cancel51/target-green.log": "36f37127534b93032919b594010cd22d49910ec253da4f6a75db7acda86a322e",
         "docs/evidence/budget-cancel51/node.log": "7cdf85e3e2f9778f5269f4743900b78c33a594f2d009d0e3c32fbefe612d9440",
         "docs/evidence/budget-cancel51/python51.log": "16a733c130b02a1e6c7f9dd13fb1f576697e200d0686ca25f44d7ff61fe7387f",
-        "plugin.json": "196e82d28b763dd3ad69a5bbd662cb5255b6b671d3d895e81ae477a41ca5cb0d",
-        "skills.lock.json": "14952869286b68ee7080b75bcc5619de7f78e73b820c54d727d154b0745e7ca5",
+        "docs/evidence/pre-brand-text-identity/plugin.json": "196e82d28b763dd3ad69a5bbd662cb5255b6b671d3d895e81ae477a41ca5cb0d",
+        "docs/evidence/pre-brand-text-identity/skills.lock.json": "14952869286b68ee7080b75bcc5619de7f78e73b820c54d727d154b0745e7ca5",
         "tests/shared_cancellation.test.ts": "d27ef99c7400b751930f37abd02de6568c230e121bf344040cd60b5e27779871",
         "tests/deadline_resume.test.ts": "06cc2044fd0c13ed1924639b00a2f3d48b3e63a27db3adc3cfd9978444ffca11",
         "docs/evidence/pre-budget-cancel-closure-identity/openspec/changes/establish-v1-plugin/specs/task-execution/spec.md": "baa90dd25d4a1295524127cba27db415d9670091e21f64276b9cf7018da3a255"
@@ -1626,12 +1626,12 @@
       "sha256": "370e873efaa3beb5af2ccdff8de4479debd20be067496ccdb413fbdf09b419fe",
       "level": "fixed-install",
       "status": "PASS",
-      "scope": "All five current VC-TX-003 scenarios on public installed51/source38 macOS arm64;five native cases,115 Node and43 Python tests,13 unchanged skills and13 stopped groups;only3.9 closes",
+      "scope": "historical at original execution identity; All five current VC-TX-003 scenarios on public installed51/source38 macOS arm64;five native cases,115 Node and43 Python tests,13 unchanged skills and13 stopped groups;only3.9 closes",
       "requirement": "VC-TX-003",
       "tasks": [
         "3.9"
       ],
-      "historical": false,
+      "historical": true,
       "dependencies": {
         "src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
         "src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
@@ -1701,8 +1701,8 @@
         "docs/evidence/vc-tx-003/groups.json": "a6c2fc9a17aba789fef1398933a41400b41e72b2cc8676aa89a2bb0f7177f6d2",
         "docs/evidence/vc-tx-003/attempt.json": "e882420c5051bf5818ede7ae477ed24680626142625b93a7945cf2ed9fd6a5d9",
         "docs/evidence/vc-tx-003/python.log": "0533a559b192b845c893945b12d28e90555ede6e9533026baff63c0ee9207218",
-        "plugin.json": "196e82d28b763dd3ad69a5bbd662cb5255b6b671d3d895e81ae477a41ca5cb0d",
-        "skills.lock.json": "14952869286b68ee7080b75bcc5619de7f78e73b820c54d727d154b0745e7ca5",
+        "docs/evidence/pre-brand-text-identity/plugin.json": "196e82d28b763dd3ad69a5bbd662cb5255b6b671d3d895e81ae477a41ca5cb0d",
+        "docs/evidence/pre-brand-text-identity/skills.lock.json": "14952869286b68ee7080b75bcc5619de7f78e73b820c54d727d154b0745e7ca5",
         "tests/shared_cancellation.test.ts": "d27ef99c7400b751930f37abd02de6568c230e121bf344040cd60b5e27779871",
         "tests/deadline_resume.test.ts": "06cc2044fd0c13ed1924639b00a2f3d48b3e63a27db3adc3cfd9978444ffca11",
         "openspec/changes/establish-v1-plugin/specs/task-execution/spec.md": "adc11c24d9db2b2ccee4b527409234b112781a44cdb2211e643acc83f4d8bdd2",
@@ -1714,12 +1714,12 @@
       "sha256": "01495131b579077ff703c6d06f0f3a84454bc0f8b5927f5dd97746a79ba0ddd9",
       "level": "fixed-install",
       "status": "PASS",
-      "scope": "All two current VC-DM-001 scenarios against installed public51/source38 macOS arm64;external QA driver,six native cases,18 exports,seven geometry tests,13 unchanged skills and6 stopped groups;only4.3 closes",
+      "scope": "historical at original execution identity; All two current VC-DM-001 scenarios against installed public51/source38 macOS arm64;external QA driver,six native cases,18 exports,seven geometry tests,13 unchanged skills and6 stopped groups;only4.3 closes",
       "requirement": "VC-DM-001",
       "tasks": [
         "4.3"
       ],
-      "historical": false,
+      "historical": true,
       "dependencies": {
         "src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
         "src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
@@ -1784,12 +1784,12 @@
         "docs/evidence/vc-dm-001/native.json": "0a9d122e0e0e23eefa9562d91479bbb1b8ce99748d6d37c6abf8daf6bc5bd3f7",
         "docs/evidence/vc-dm-001/unit.log": "fba5643f46a95885b6cac9dbefbb063c735d71efe0744fd8283a8ea152eb27c2",
         "docs/evidence/vc-dm-001/groups.json": "5d781c52933c42b4d36943b64a9f770a0966a4b2154c84ace3eeebd2f0acdb41",
-        "plugin.json": "196e82d28b763dd3ad69a5bbd662cb5255b6b671d3d895e81ae477a41ca5cb0d",
-        "skills.lock.json": "14952869286b68ee7080b75bcc5619de7f78e73b820c54d727d154b0745e7ca5",
+        "docs/evidence/pre-brand-text-identity/plugin.json": "196e82d28b763dd3ad69a5bbd662cb5255b6b671d3d895e81ae477a41ca5cb0d",
+        "docs/evidence/pre-brand-text-identity/skills.lock.json": "14952869286b68ee7080b75bcc5619de7f78e73b820c54d727d154b0745e7ca5",
         "tests/geometry.test.ts": "c999edb7e17e97b04f3fc2d1165cd49205da3ec2286207d1d4a4ee5535186fa6",
         "scripts/qa/geometry_fixed.ts": "1fef026dcacd1b3072bf5468a681a5198fd9a534c6204bdd16b15cc1ca5bae96",
         "scripts/verify_geometry_evidence.py": "55fec120589a7ca41bd3ee0d2d3bc80278f66b9e74b7b3d8064dd33e4ccf3890",
-        "openspec/changes/establish-v1-plugin/specs/domain-workflow/spec.md": "1b526344cfeb85e315ed348e6b9172b86d78b5319f50b4a60e324d5ec6db1602"
+        "docs/evidence/pre-brand-text-identity/openspec/changes/establish-v1-plugin/specs/domain-workflow/spec.md": "1b526344cfeb85e315ed348e6b9172b86d78b5319f50b4a60e324d5ec6db1602"
       }
     },
     {
@@ -1797,23 +1797,23 @@
       "sha256": "fb1578d4323a362193456c37478b2147251cc6ce4104b61bde05ec80a1370f2a",
       "level": "fixed-install",
       "status": "PASS",
-      "scope": "All four current VC-DM-002 scenarios against installed public51/source38 macOS arm64;24 native workflow/Harness/SDK cases,17 source unit tests,13 unchanged skills and9 stopped registered groups;explicit failure injection;only4.6 closes",
+      "scope": "historical at original execution identity; All four current VC-DM-002 scenarios against installed public51/source38 macOS arm64;24 native workflow/Harness/SDK cases,17 source unit tests,13 unchanged skills and9 stopped registered groups;explicit failure injection;only4.6 closes",
       "requirement": "VC-DM-002",
       "tasks": [
         "4.6"
       ],
-      "historical": false,
+      "historical": true,
       "dependencies": {
         "scripts/qa/boolean_fixed.py": "151e5adf8dfab498eafc1b748e455d111c2530c38051778333233bfd44d5c7db",
         "skills/vectorcraft-use/scripts/boolean_transactions.py": "22d311dfda26cadcd3fc6bb51596ab8b2cd9245cabf5f28dfe3d0d74e8ff9120",
-        "skills/vectorcraft-use/scripts/workflow.py": "412cd5ef739d138f9fa43babe630be612b6b336918680a79e1555d5ddd6ea0c0",
-        "skills/vectorcraft-use/scripts/native_workflow.py": "395f83ad24ecce458e70305e79a0aec2daf749017a616ae7323706cdfd066139",
-        "skills/vectorcraft-use/scripts/commands.py": "42b72f9da9ca9cf429c1ccd50b52cf1f6ed7cbe7411a70b2561317feef7f6017",
+        "docs/evidence/pre-brand-text-identity/skills/vectorcraft-use/scripts/workflow.py": "412cd5ef739d138f9fa43babe630be612b6b336918680a79e1555d5ddd6ea0c0",
+        "docs/evidence/pre-brand-text-identity/skills/vectorcraft-use/scripts/native_workflow.py": "395f83ad24ecce458e70305e79a0aec2daf749017a616ae7323706cdfd066139",
+        "docs/evidence/pre-brand-text-identity/skills/vectorcraft-use/scripts/commands.py": "42b72f9da9ca9cf429c1ccd50b52cf1f6ed7cbe7411a70b2561317feef7f6017",
         "skills/vectorcraft-use/scripts/mcp_session.py": "15395ead853349a24feab6ce364e5bc9795add12e1dbe62e8ed5718ffdd1ccd2",
         "skills/vectorcraft-use/scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
         "skills/vectorcraft-use/scripts/execution_control.py": "0acaa8fa01aae3689bb8c460efdd9bb19578d33e1572e24dc8dea00ef38ec008",
-        "skills.lock.json": "14952869286b68ee7080b75bcc5619de7f78e73b820c54d727d154b0745e7ca5",
-        "plugin.json": "196e82d28b763dd3ad69a5bbd662cb5255b6b671d3d895e81ae477a41ca5cb0d",
+        "docs/evidence/pre-brand-text-identity/skills.lock.json": "14952869286b68ee7080b75bcc5619de7f78e73b820c54d727d154b0745e7ca5",
+        "docs/evidence/pre-brand-text-identity/plugin.json": "196e82d28b763dd3ad69a5bbd662cb5255b6b671d3d895e81ae477a41ca5cb0d",
         "scripts/acceptance/managed_boolean.ts": "55fbffdf6d44a8b0b95b9902d7716037980eeaf5c2c437c69a06b740b889be52",
         "src/harness/controller.ts": "1dfbd182d7228eb20c21dd8f70a85c24c75a4b22fcf9a1f11d5b19f8eea7a8f5",
         "src/harness/ledger.ts": "d2a336ad4f52e2fc1f839514fd4d3ed351b323f5cfa230152f796d55b336db6c",
@@ -1860,7 +1860,7 @@
         "skills/vectorcraft-use/references/object-selection-scene.md": "42593e844568184451bf648c84f4f0fafaee5a1644e39b1641fe49a078e336d9",
         "skills/vectorcraft-use/references/operation-contract.json": "a68a5b834e075059708c9cf555a9bd9acf9074236e9e367861378073ccbf459a",
         "skills/vectorcraft-use/references/output-execution.md": "baa3d38af5f8d3b01cb36bcc6b89dee3d8449ec676bc52d6f5c2de9f563ba3ac",
-        "skills/vectorcraft-use/references/workflow.md": "3b5655fd20ce503b83c487d04e8453f5c3c9dd06d129094c8c41d9dc5a5972e0",
+        "docs/evidence/pre-brand-text-identity/skills/vectorcraft-use/references/workflow.md": "3b5655fd20ce503b83c487d04e8453f5c3c9dd06d129094c8c41d9dc5a5972e0",
         "skills/vectorcraft-use/scripts/asset_inputs.py": "b2868a4239ef50648f201be99bb29ad4ddf0d8bdeb5a626c54b3fc1aac701758",
         "skills/vectorcraft-use/scripts/bootstrap.py": "78d5bdf16bf08e9abc96b4b23e5d071da72b648698b888b85fa1b90f81cf32a9",
         "skills/vectorcraft-use/scripts/brand_variants.py": "d5973ec8f36312ae32cf5b3e07d3f96ea32df0bc8a7b07c17d3328918fbc3a55",
@@ -1868,7 +1868,7 @@
         "skills/vectorcraft-use/scripts/desktop.lock.json": "f38c7cd5b837bc4f3275ef96c17308fc894f6be66c6a00ecf9c53378ad4bb486",
         "skills/vectorcraft-use/scripts/desktop.py": "24dddb82f1c51ca8e835c582d9b7228aa9d643dfcada11b570bde9191f002f0f",
         "skills/vectorcraft-use/scripts/desktop_session.py": "b6b07a9a18b77386d481a7f263190b0981a7a763dda4f46ad7417a92d416fbb5",
-        "skills/vectorcraft-use/scripts/exchange_loss.py": "b1e68eb2e4887dc52b3c2e4d071ea4364c1254b3f96ffb6511ad42f9dfc0dff6",
+        "docs/evidence/pre-brand-text-identity/skills/vectorcraft-use/scripts/exchange_loss.py": "b1e68eb2e4887dc52b3c2e4d071ea4364c1254b3f96ffb6511ad42f9dfc0dff6",
         "skills/vectorcraft-use/scripts/output_guard.py": "7c13abd891370058e670fbfb3db7992d4a8ed7934682c83bde1aabf47ad6846f",
         "skills/vectorcraft-use/scripts/runtime.lock.json": "7b6bd7f3fab84b757d4ea20ac91b74d89b417ec061efc6ae320dda97a422cc07",
         "docs/evidence/vc-dm-002/fault-known.json": "3a91b5696fe0337a710b929eed57a21336cbd3d0b998ce3e177ee8b625962c87",
@@ -1885,7 +1885,7 @@
         "docs/evidence/vc-dm-002/source-unit-bytes/test_boolean_transactions.py.txt": "712f616ff158153f5d196092de2ae96e64fe645e214e8d013ad3ee0b66d73bd8",
         "docs/evidence/vc-dm-002/source-unit-bytes/test_execution_control.py.txt": "8422ad3dea3f552a5d3936f53344568351f9324aa98ca0d82a6828932bfab47c",
         "scripts/verify_boolean_evidence.py": "6149b08e9af6526a6cbba4ba5ea39e9627b90f24f6e40d9efc165f1a750cab2c",
-        "openspec/changes/establish-v1-plugin/specs/domain-workflow/spec.md": "1b526344cfeb85e315ed348e6b9172b86d78b5319f50b4a60e324d5ec6db1602"
+        "docs/evidence/pre-brand-text-identity/openspec/changes/establish-v1-plugin/specs/domain-workflow/spec.md": "1b526344cfeb85e315ed348e6b9172b86d78b5319f50b4a60e324d5ec6db1602"
       }
     }
   ],

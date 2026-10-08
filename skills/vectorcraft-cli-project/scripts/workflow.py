@@ -14,10 +14,10 @@ import subprocess
 import tempfile
 import time
 
-def exchange_report(root,outputs,warnings):
+def exchange_report(root,outputs,warnings,text_modes=None):
     spec=importlib.util.spec_from_file_location('craft_exchange_loss',Path(__file__).with_name('exchange_loss.py'))
     module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
-    module.write_report(root,outputs,warnings)
+    module.write_report(root,outputs,warnings,text_modes)
 
 ALLOWED = {'native.command', 
     'asset.place', 'asset.replace',
@@ -120,19 +120,7 @@ def validate(plan):
         if operation['command'] in ('asset.place', 'asset.replace'):
             asset_module().validate_operation(operation['command'], operation.get('params', {}))
         if operation['command'] == 'text.setText':
-            params = operation.get('params', {})
-            valid_ref = lambda value: isinstance(value, dict) and set(value) == {'$ref'} and isinstance(value['$ref'], str) and bool(value['$ref'])
-            valid_id = lambda value: (type(value) is int and value > 0) or valid_ref(value)
-            # 禁止沿用隐式选择，整段替换只保留原生首段样式。
-            if set(params) - {'id', 'ids', 'text'} or not isinstance(params.get('text'), str) or ('id' in params) == ('ids' in params):
-                raise ValueError('invalid_text_edit: explicit id or ids and string text required')
-            if 'id' in params:
-                valid = valid_id(params['id'])
-            else:
-                ids = params['ids']
-                valid = valid_ref(ids) or (isinstance(ids, list) and bool(ids) and all(valid_id(value) for value in ids))
-            if not valid:
-                raise ValueError('invalid_text_edit: invalid target')
+            native_module().commands.load('text_contract').validate_text_edit(operation.get('params',{}))
     seen = set()
     for output in plan.get('exports', []):
         fmt, artboard = output.get('format'), output.get('artboard', 0)
@@ -370,6 +358,7 @@ def execute(plan, output, runtime_home=None, source=None, control=None):
                     raise ValueError('asset_link_invalid')
         # 由独立会话重新打开工程取得模型；导出前检查真实画板范围。
         outputs = []
+        svg_text_modes = {}
         pdf_date = pdf_export_date(native, source, prior if source else None) if any(item['format'] == 'pdf' for item in plan.get('exports', [])) else None
         if pdf_date:
             (stage / 'pdf-export-date.json').write_text(json.dumps(pdf_date, indent=2) + '\n')
@@ -380,6 +369,10 @@ def execute(plan, output, runtime_home=None, source=None, control=None):
             destination = stage / f'artboard-{index + 1}.{item["format"]}'
             params = {'path': str(destination), 'format': item['format'], 'artboard': index, 'artboards': [index]}
             if item['format'] == 'svg':
+                # 从实际导出会话读取文字模式，不以预览或path数量推断轮廓化。
+                setup = command('document.setup', {}, save=False)
+                mode = setup.get('exportText') if isinstance(setup,dict) else None
+                svg_text_modes[destination.name] = mode if mode in ('editable','appearance') else None
                 params['artboardContentOnly'] = True
             if item['format'] == 'pdf':
                 params['created'] = pdf_date['created']
@@ -426,7 +419,7 @@ def execute(plan, output, runtime_home=None, source=None, control=None):
         (stage / 'native.json').write_text(json.dumps(portable(native), ensure_ascii=False, indent=2) + '\n')
         (stage / 'plan.json').write_text(json.dumps(portable(saved_plan), ensure_ascii=False, indent=2) + '\n')
         (stage / 'operations.json').write_text(json.dumps(portable(receipts), ensure_ascii=False, indent=2) + '\n')
-        exchange_report(stage,[item['path'] for item in outputs],{item['path']:item['warnings'] for item in outputs})
+        exchange_report(stage,[item['path'] for item in outputs],{item['path']:item['warnings'] for item in outputs},svg_text_modes)
         manifest = {'schema': 'vectorcraft-delivery/v1', 'sourceProjectSha256': source_hash,
                     'runtimeSha256': installed['binarySha256'], 'bindings': bindings, 'outputs': outputs, 'fontDependencies': fonts,
                     'assets': assets,

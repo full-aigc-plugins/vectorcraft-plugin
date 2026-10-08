@@ -10,7 +10,9 @@ Four-domain RT-001 runtime source/integrity acceptance now covers every current 
 
 Create Logo, icon and brand assets as `.vectorcraft` with applicable SVG, PDF and PNG exports.
 
-Current plugin: `0.1.0-dev.51`; skill source: `0.1.0-dev.38`; 13 independent skills.
+Current plugin: `0.1.0-dev.52`; skill source: `0.1.0-dev.39`; 13 independent skills.
+
+Development plugin52 pins source39: SVG records the actual text export mode and explicit editing loss for outlined text while retaining native text and font dependencies. All three public text editing routes require explicit object IDs. Source regression:151 passed,30 skipped; native candidate checks are recorded separately. Fixed52 acceptance and full V1 remain open. [Text delivery architecture](docs/VectorCraft-Text-Outline.en.md).
 
 All four current VC-DM-002 scenarios passed against public installed51/source38; task4.6 is complete.14 native workflow cases,8 managed authorization cases,2 native SDK selection/subtree refusals and17 source tests passed;13 skills remain unchanged and9 Harness registered groups stopped. Known/unknown faults were explicitly injected after actual native success; this is not an engine defect report. GUI,all Pathfinder contexts and creative topology judgments remain separate. [固定验收 / Fixed acceptance](docs/evidence/vectorcraft-boolean-fixed51-20261009.json).
 
@@ -133,9 +135,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.51 |
+| Metadata version | 0.1.0-dev.52 |
 | Stage | implementation-in-progress |
-| Skills source | vectorcraft-skills / v0.1.0-dev.38 |
+| Skills source | vectorcraft-skills / v0.1.0-dev.39 |
 | Execution | Upstream CLI; ArtCraft uses child adapters |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |

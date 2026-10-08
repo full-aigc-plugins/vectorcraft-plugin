@@ -17,6 +17,8 @@ def validate(params):
         raise ValueError('native_catalog_identity_mismatch')
     if not isinstance(params['command'], str) or params['command'] not in {row['id'] for row in catalog['commands']}:
         raise ValueError('unknown_native_command')
+    if params['command']=='text.setText':
+        commands.load('text_contract').validate_text_edit(params['params'])
     try:
         json.dumps(params['params'], allow_nan=False)
     except (ValueError, TypeError):

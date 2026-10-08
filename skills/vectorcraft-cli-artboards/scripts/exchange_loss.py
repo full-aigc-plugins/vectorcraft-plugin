@@ -16,10 +16,21 @@ def safe_file(root,location):
  if path.is_symlink() or not path.is_file() or not path.resolve().is_relative_to(root.resolve()):raise ValueError('loss_file_missing_or_escaping')
  return path
 
-def write_report(root,outputs,warnings):
+def write_report(root,outputs,warnings,text_modes=None):
  root=Path(root)
+ text_modes={} if text_modes is None else text_modes
+ if not isinstance(text_modes,dict) or any(k not in outputs or not isinstance(k,str) or not k.endswith('.svg') or v not in ('appearance','editable',None) or type(v) not in (str,type(None)) for k,v in text_modes.items()):raise ValueError('loss_text_mode_invalid')
  native=safe_file(root,NATIVE);inspection=safe_file(root,'native.json')
  model=json.loads(inspection.read_text())
+ def native_text_ids(value):
+  result=[]
+  if isinstance(value,dict):
+   if type(value.get('id')) is int and value['id']>0 and isinstance(value.get('kind'),dict) and value['kind'].get('type')=='text':result.append(value['id'])
+   for child in value.values():result.extend(native_text_ids(child))
+  elif isinstance(value,list):
+   for child in value:result.extend(native_text_ids(child))
+  return sorted(set(result))
+ text_ids=native_text_ids(model.get('layers',[]))
  report={'schema':'craft-exchange-loss/v1','pluginId':PLUGIN,'native':{'location':NATIVE,'sha256':sha(native)},'inspection':{'location':'native.json','sha256':sha(inspection)},'outputs':[],'acceptance':'technical-observations-only'}
  if len(outputs)!=len(set(outputs)):raise ValueError('loss_duplicate_output')
  for location in outputs:
@@ -46,6 +57,14 @@ def write_report(root,outputs,warnings):
    xml=ET.fromstring(path.read_bytes())
    if xml.tag.split('}')[-1]!='svg':raise ValueError('loss_svg_invalid')
    tags=[element.tag.split('}')[-1] for element in xml.iter()];observations['svg']={name:tags.count(name) for name in ('path','text','image','filter','mask','clipPath')}
+   mode=text_modes.get(location);observations['svgTextExportMode']=mode;observations['nativeTextObjectIds']=text_ids
+   observations['textScope']='Native text IDs are document dependencies, not a visibility or per-outline object mapping.'
+   if mode=='appearance' and text_ids:
+    change('live-text-editability','lost','Observed appearance export mode converts any emitted native live text to outlines; edit the separately retained native project. Native IDs do not prove which objects intersect this artboard.')
+   elif observations['svg']['text']:
+    change('live-text-editability','observed','SVG contains live text elements; per-object editing equivalence, omitted or partially outlined text and font portability remain unverified.')
+   else:
+    change('live-text-editability','unknown','No live SVG text elements observed. Paths alone do not prove text outlining; export mode, visibility or per-object provenance is not established.')
    change('vector-structure','observed','XML element counts record actual vector/text/raster structure, not semantic round-trip equivalence.')
    change('font-portability','unknown','Font embedding, substitution and text layout across consumers are not verified.')
    change('effect-fidelity','unknown','Native effects, masks and grouping are not proven equivalent in SVG consumers.')
