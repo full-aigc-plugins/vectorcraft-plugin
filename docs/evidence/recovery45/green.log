@@ -1,0 +1,14 @@
+✔ recovery refuses skill before any inspection process or proof (6.469625ms)
+✔ recovery refuses plan before any inspection process or proof (4.683625ms)
+✔ recovery refuses control before any inspection process or proof (18.387292ms)
+✔ recovery refuses missing-control-hash before any inspection process or proof (10.732709ms)
+✔ recovery refuses symlink-plan before any inspection process or proof (10.767541ms)
+✔ recovery refuses unchanged before any inspection process or proof (12.12425ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 149.752208

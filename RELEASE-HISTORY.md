@@ -1,5 +1,10 @@
 # Version-bound release records
 
+## dev.45 (2026-10-08)
+
+Persist and verify recovery control digests, retained skill snapshots and original plan identities before native inspection. Add real coordinator-crash/restart/handoff and retained-snapshot tamper acceptance scripts. Source remains dev.37 with13 unchanged skills. Complete3.3,3.6,3.9 and V1 remain open. Older unresolved tasks without an original control digest fail closed and retain occupation. [Recovery details](docs/VectorCraft-Recovery-Snapshot.md).
+
+
 ## dev.44 (2026-10-08)
 
 Freeze authorization, input fingerprints and physical paths before asynchronous probing; require staging-parent authorization and recheck source digests during supervision. Source remains pinned to dev.37 with13 unchanged skills. 57 Node and43 Python tests pass; three new coordinator regressions use a synthetic workflow and do not establish native or GUI acceptance. Complete3.3 and V1 remain open. [Authorization boundaries](docs/VectorCraft-Authorization-Snapshot.md).

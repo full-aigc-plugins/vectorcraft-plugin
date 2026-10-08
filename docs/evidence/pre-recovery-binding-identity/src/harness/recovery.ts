@@ -5,7 +5,6 @@ import { spawn } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import type { Ledger } from './ledger.ts';
 import { ProcessRegistry } from './process_registry.ts';
-import {skillDigest} from './skill_digest.ts';
 import { strictJson,canonical } from '../strict_json.ts';
 const hash=(p:string)=>createHash('sha256').update(readFileSync(p)).digest('hex');
 const inside=(root:string,p:string)=>{const r=relative(root,p);return !isAbsolute(r)&&r!=='..'&&!r.startsWith('../');};
@@ -22,15 +21,7 @@ export class Recovery {
     if(!this.processes.observe(taskId,epoch).stopped)throw new Error('native_stop_unconfirmed');
     const step=this.ledger.db.prepare('SELECT intent FROM steps WHERE task=? AND n=0').get(taskId) as any;
     if(!step)throw new Error('original_request_missing');
-    const intent=strictJson(step.intent);
-    // 未记录控制文件摘要的旧任务保持占用，不能执行未经绑定的恢复脚本。
-    if(!/^[a-f0-9]{64}$/.test(intent.controlSha256??'')||!task.binding.skillSha256)throw new Error('recovery_identity_missing');
-    if(intent.skillSha256!==task.binding.skillSha256||skillDigest(intent.skillSnapshot)!==task.binding.skillSha256)throw new Error('skill_snapshot_mismatch');
-    for(const file of [intent.planSnapshot,intent.controlFile])if(lstatSync(file).isSymbolicLink())throw new Error('recovery_snapshot_symlink');
-    const plan=strictJson(readFileSync(intent.planSnapshot,'utf8'));
-    if(hash(intent.planSnapshot)!==task.binding.planHash||intent.planHash!==task.binding.planHash||canonical(plan)!==canonical(intent.plan))throw new Error('recovery_plan_mismatch');
-    if(hash(intent.controlFile)!==intent.controlSha256)throw new Error('recovery_control_mismatch');
-    const profile=strictJson(readFileSync(intent.controlFile,'utf8'));
+    const intent=strictJson(step.intent),profile=strictJson(readFileSync(intent.controlFile,'utf8'));
     if(profile.task!==taskId||profile.epoch!==epoch||profile.planHash!==task.binding.planHash)throw new Error('recovery_binding_mismatch');
     const eventStat=lstatSync(profile.eventFile);
     if(eventStat.isSymbolicLink()||eventStat.ino!==profile.eventInode||eventStat.dev!==profile.eventDevice)throw new Error('execution_event_identity_mismatch');

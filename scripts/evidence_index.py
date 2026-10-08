@@ -166,12 +166,15 @@ def build(root=ROOT):
     authorization_fixed='docs/evidence/vectorcraft-authorization-fixed44-20261008.json'
     if (root/authorization_fixed).is_file():
         entries.append(bound_report(root,authorization_fixed,'fixed-install','Public plugin44/source37 installed in isolated Codex host; 13 unchanged enabled skills,57 Node and43 Python regressions; full3.3 remains open','VC-TX-001'))
+    recovery_candidate='docs/evidence/vectorcraft-recovery-binding-candidate45-20261008.json'
+    if (root/recovery_candidate).is_file():
+        entries.append(bound_report(root,recovery_candidate,'native-candidate','Recovery snapshot refusals and real coordinator crash/restart/native group stop/handoff; full3.3,3.6,3.9 and V1 remain open','VC-TX-002'))
     # 明确归档变更前执行字节；保留报告原摘要，不能把旧运行重绑定到新实现。
     for entry in entries:
         archived={}
         for name,digest in entry['dependencies'].items():
             if sha(safe_file(root,name))==digest:continue
-            for prefix in ['docs/evidence/pre-runtime-gate-identity/','docs/evidence/pre-runtime-default-identity/','docs/evidence/pre-runtime-artifacts-identity/','docs/evidence/pre-runtime-boundaries-identity/','docs/evidence/pre-open-reader-identity/','docs/evidence/pre-download-test-cache-identity/','docs/evidence/pre-authorization-identity/']:
+            for prefix in ['docs/evidence/pre-runtime-gate-identity/','docs/evidence/pre-runtime-default-identity/','docs/evidence/pre-runtime-artifacts-identity/','docs/evidence/pre-runtime-boundaries-identity/','docs/evidence/pre-open-reader-identity/','docs/evidence/pre-download-test-cache-identity/','docs/evidence/pre-authorization-identity/','docs/evidence/pre-recovery-binding-identity/']:
                 old=prefix+name
                 if (root/old).is_file() and sha(safe_file(root,old))==digest:
                     archived[name]=old

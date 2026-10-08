@@ -2,7 +2,7 @@
 import assert from 'node:assert/strict';
 import { executionIdentity } from './execution_identity.ts';
 const executionFingerprints=executionIdentity();
-import { readFileSync, writeFileSync, existsSync, statSync, mkdirSync,chmodSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync, statSync, mkdirSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
@@ -27,10 +27,9 @@ try{
     const record=lines.map(line=>strictJson(line)).find(r=>r.event==='revision_checkpoint');
     if(record){checkpoint=record;id=task.id;controller.requestCancel(task.id,task.epoch);}
   },10);
-  const request={key:'cancel-after-native-save',skill,expectedSkillSha256:skillDigest(skill),plan,
+  await assert.rejects(()=>controller.run({key:'cancel-after-native-save',skill,expectedSkillSha256:skillDigest(skill),plan,
     source,output:join(root,'cancelled'),runtimeHome:runtime,python:input.python,estimatedBytes:10000000,
-    authorization:{...input.authorization,deadline:Date.now()+120000,maxAttempts:1,maxBytes:10000000,readRoots:[source,root],writeRoots:[root,runtime]}};
-  await assert.rejects(()=>controller.run(request),/outcome_unknown/);
+    authorization:{...input.authorization,deadline:Date.now()+120000,maxAttempts:1,maxBytes:10000000,readRoots:[source,root],writeRoots:[root,runtime]}}),/outcome_unknown/);
   clearInterval(interval);
   assert.ok(id&&checkpoint,'real saved checkpoint must precede cancellation');
   const task=controller.ledger.get(id!);
@@ -56,32 +55,6 @@ try{
   controller.close();
   const restarted=new Controller(join(root,'tasks.sqlite'));
   try{
-    const snapshotRefusals:any[]=[];
-    if(input.verifyRecoverySnapshots){
-      const eventBefore=hash(eventFile),attemptsBefore=restarted.ledger.get(id!).attempts;
-      const resumed=await restarted.run(request);
-      assert.equal(resumed.state,'cancel_requested');assert.match(resumed.resumePolicy,/no automatic replay/);
-      assert.equal(restarted.ledger.get(id!).attempts,attemptsBefore);assert.equal(hash(eventFile),eventBefore);
-      await assert.rejects(()=>restarted.run({...request,output:join(root,'changed-output')}),/idempotency_conflict/);
-      await assert.rejects(()=>restarted.run({...request,key:'competing-after-restart',output:join(root,'competing-output')}),/resource_busy/);
-      const intent=strictJson((restarted.ledger.db.prepare('SELECT intent FROM steps WHERE task=? AND n=0').get(id!) as any).intent);
-      for(const [file,error,content] of [
-        [join(intent.skillSnapshot,'scripts/mcp_session.py'),'skill_snapshot_mismatch',readFileSync(join(intent.skillSnapshot,'scripts/mcp_session.py'),'utf8')+'\n# replaced retained session\n'],
-        [intent.planSnapshot,'recovery_plan_mismatch',JSON.stringify({...intent.plan,recoveryTamper:true})],
-        [intent.controlFile,'recovery_control_mismatch',JSON.stringify({...strictJson(readFileSync(intent.controlFile,'utf8')),recoveryTamper:true})]
-      ]){
-        const originalBytes=readFileSync(file),mode=statSync(file).mode&0o777;
-        const processes=(restarted.ledger.db.prepare('SELECT COUNT(*) AS n FROM native_processes').get() as any).n;
-        try{
-          chmodSync(file,0o600);writeFileSync(file,content);
-          await assert.rejects(()=>restarted.reconcileOriginal(id!,task.epoch),new RegExp(error));
-          assert.equal(restarted.ledger.get(id!).state,'cancel_requested');
-          assert.equal((restarted.ledger.db.prepare('SELECT COUNT(*) AS n FROM native_processes').get() as any).n,processes);
-          assert.equal(hash(checkpoint.path),checkpoint.sha256);assert.equal(hash(eventFile),eventBefore);
-          snapshotRefusals.push({snapshot: file===intent.controlFile?'control':file===intent.planSnapshot?'plan':'skill',error,inspectionProcessStarted:false,checkpointUnchanged:true});
-        }finally{writeFileSync(file,originalBytes);chmodSync(file,mode);}
-      }
-    }
     const recovered=await restarted.reconcileOriginal(id!,task.epoch);
     assert.equal(recovered.task.state,'cancelled');assert.equal(recovered.task.epoch,task.epoch+1);
     assert.throws(()=>restarted.ledger.receipt(id!,task.epoch,0,{late:true}),/stale_epoch/);
@@ -89,7 +62,7 @@ try{
     const late=restarted.ledger.db.prepare('SELECT COUNT(*) AS n FROM late_receipts WHERE task=?').get(id!) as any;
     assert.equal(late.n,1);
     const completeProof={...proof,scope:'real checkpoint cancellation, native group stopped, restart readonly recovery of original files/dependencies, cancelled epoch fence and durable late receipt quarantine; no successful delivery or fixed-install claim',
-      snapshotRefusals,...(input.verifyRecoverySnapshots?{readonlyRestartNoReplay:true,changedOutputRejected:true,competingSourceRejected:true}:{}),recovery:recovered.proof,settledState:recovered.task.state,settledEpoch:recovered.task.epoch,lateReceiptQuarantined:true};
+      recovery:recovered.proof,settledState:recovered.task.state,settledEpoch:recovered.task.epoch,lateReceiptQuarantined:true};
     writeFileSync(join(root,'proof.json'),JSON.stringify(completeProof,null,2));console.log(JSON.stringify(completeProof,null,2));
   }finally{restarted.close();}
 }finally{clearInterval(interval);controller.close();}

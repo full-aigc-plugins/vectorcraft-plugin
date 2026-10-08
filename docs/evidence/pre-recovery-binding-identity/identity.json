@@ -1,0 +1,11 @@
+{
+  "commit": "97d03a1c949cb23983b366d663bed66bcf6dfc34",
+  "scope": "Exact plugin44 code before recovery snapshot identity checks",
+  "files": {
+    "src/harness/controller.ts": "4c3b6a0a5af7e8ea2ece7586a8a80cd882d9c5f45b08b9205daad57f0c1af7bd",
+    "src/harness/recovery.ts": "675db847b9e7d8d3f272746a8fcb92fa419f2b07a281f42e8ddff8d556d627a5",
+    "scripts/acceptance/managed_cancel.ts": "f087ac62a7db9160935b9663ee045594ebd37541610a99a5ef7065eb20d76fd0",
+    "plugin.json": "2cccf1f5a230673d04430c9fbed728592c6b631e6168e9d1f50ccdebc12e741f",
+    "openspec/changes/establish-v1-plugin/specs/task-execution/spec.md": "b56c89553c14aa072d8b10e5d86ebaadb81c7a5559854947e2d01e5c90236bfc"
+  }
+}

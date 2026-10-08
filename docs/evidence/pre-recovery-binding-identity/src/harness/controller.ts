@@ -1,5 +1,5 @@
 import { createHash } from 'node:crypto';
-import { existsSync, lstatSync, readFileSync, mkdirSync, writeFileSync, cpSync, statSync, openSync, closeSync, fsyncSync, renameSync } from 'node:fs';
+import { existsSync, lstatSync, readdirSync, readFileSync, mkdirSync, writeFileSync, cpSync, statSync, openSync, closeSync, fsyncSync, renameSync } from 'node:fs';
 import { relative, resolve, join, isAbsolute, dirname } from 'node:path';
 import { spawn } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
@@ -17,8 +17,21 @@ import type { GeometryContract } from '../planning/geometry.ts';
 const sha=(value:string|Buffer)=>createHash('sha256').update(value).digest('hex');
 const inside=(root:string,path:string)=>{const sub=relative(resourcePath(root),resourcePath(path));return !isAbsolute(sub)&&sub!=='..'&&!sub.startsWith('../');};
 
-import {skillDigest} from './skill_digest.ts';
-export {skillDigest} from './skill_digest.ts';
+/** 与固定快照工具一致的整技能摘要，不读取目录链接或额外文件类型。 */
+export function skillDigest(root:string):string {
+  const files:string[]=[];
+  const walk=(path:string)=>{
+    if(lstatSync(path).isSymbolicLink())throw new Error('skill_snapshot_symlink');
+    for(const name of readdirSync(path).sort()){
+      const entry=join(path,name),stat=lstatSync(entry);
+      if(stat.isSymbolicLink())throw new Error('skill_snapshot_symlink');
+      if(stat.isDirectory())walk(entry);else if(stat.isFile())files.push(entry);else throw new Error('skill_snapshot_entry');
+    }
+  };
+  walk(root);const hash=createHash('sha256');
+  for(const file of files.sort((a,b)=>relative(root,a)<relative(root,b)?-1:1))hash.update(relative(root,file)+'\0'+sha(readFileSync(file))+'\n');
+  return hash.digest('hex');
+}
 
 type RunRequest={key:string,skill:string,expectedSkillSha256:string,plan:string,output:string,source?:string,
   runtimeHome:string,python?:string,estimatedBytes:number,inputFingerprints?:Record<string,string>,geometryContract?:GeometryContract,authorization:Authorization&{readRoots:string[],writeRoots:string[]}};
@@ -173,7 +186,7 @@ export class Controller {
       eventFile,eventDevice:eventStat.dev,eventInode:eventStat.ino,
       ...(request.source?{source:{path:join(resourcePath(request.source),'project.vectorcraft'),sha256:projectRevision}}:{})}),{flag:'wx',mode:0o400});
     for(const file of [planSnapshot,controlFile,eventFile]){const fd=openSync(file,'r');try{fsyncSync(fd);}finally{closeSync(fd);}}
-    this.ledger.intent(task.id,task.epoch,0,{skillSha256:request.expectedSkillSha256,planHash:binding.planHash,plan,planSnapshot,skillSnapshot,output:resourcePath(request.output),controlFile,controlSha256:sha(readFileSync(controlFile)),runtimeHome:resourcePath(request.runtimeHome),source:request.source?resourcePath(request.source):null,python:request.python??'python3',...(geometryContract?{geometryContract}:{})},request.estimatedBytes);
+    this.ledger.intent(task.id,task.epoch,0,{skillSha256:request.expectedSkillSha256,planHash:binding.planHash,plan,planSnapshot,skillSnapshot,output:resourcePath(request.output),controlFile,runtimeHome:resourcePath(request.runtimeHome),source:request.source?resourcePath(request.source):null,python:request.python??'python3',...(geometryContract?{geometryContract}:{})},request.estimatedBytes);
     const args=['-I','-B',join(skillSnapshot,'scripts/workflow.py'),planSnapshot,'--output',request.output,'--runtime-home',request.runtimeHome,'--control',controlFile];
     if(request.source)args.push('--source',request.source);
     let stdout='',stderr='';

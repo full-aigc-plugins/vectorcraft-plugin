@@ -10,7 +10,9 @@ Four-domain RT-001 runtime source/integrity acceptance now covers every current 
 
 Create Logo, icon and brand assets as `.vectorcraft` with applicable SVG, PDF and PNG exports.
 
-Current plugin: `0.1.0-dev.44`; skill source: `0.1.0-dev.37`; 13 independent skills.
+Current plugin: `0.1.0-dev.45`; skill source: `0.1.0-dev.37`; 13 independent skills.
+
+Recovery now verifies retained skill, plan and control identities before launching native inspection; old unresolved tasks without an original control digest remain occupied. Real cancellation and coordinator-crash cases pass without replay. [Recovery contract](docs/VectorCraft-Recovery-Snapshot.md). Complete3.3,3.6,3.9 and V1 remain open.
 
 Authorization now freezes caller scope, input fingerprints and physical paths before asynchronous probing, and requires write permission for the staging parent. Three coordinator regression cases cover these boundaries; complete task3.3 and V1 acceptance remain open.
 
@@ -111,7 +113,7 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.44 |
+| Metadata version | 0.1.0-dev.45 |
 | Stage | implementation-in-progress |
 | Skills source | vectorcraft-skills / v0.1.0-dev.37 |
 | Execution | Upstream CLI; ArtCraft uses child adapters |
