@@ -12,7 +12,7 @@ Create Logo, icon and brand assets as `.vectorcraft` with applicable SVG, PDF an
 
 Current plugin: `0.1.0-dev.49`; skill source: `0.1.0-dev.38`; 13 independent skills.
 
-Candidate plugin49 binds completed step receipts to runtime identity, manifest and every declared file. Changed receipts after inspection refuse settlement; old checks without step digests require a fresh inspection. Source38 persists actual delivery directory identity before rename, covering nested linked-asset packages. Four real plain/linked crashes before/after receipt pass as candidates; fixed installation is verified separately and full3.6 remains open.
+Plugin49 binds completed step receipts to runtime identity, manifest and every declared file. Changed receipts after inspection refuse settlement; old checks without step digests require a fresh inspection. Source38 persists actual delivery directory identity before rename, covering nested linked-asset packages. Four real plain/linked crashes before/after receipt pass as candidates; public fixed49 and actual host-loaded source38 pass the four cases,97 Node and43 Python tests with all13 skill digests unchanged; full3.6 remains open. [Fixed evidence](docs/evidence/vectorcraft-receipt-recovery-fixed49-20261009.json).
 
 Plugin48 adds source-dependency snapshot identity checks before recovery. A coordinator SIGKILL after real native save and nine exports, before ledger receipt, passes readonly original-output recovery without replay. 84 Node and43 Python regressions pass; public fixed48/source37 installation and these native cases pass with all13 skill digests unchanged; full task3.6 remains open. [Fixed evidence](docs/evidence/vectorcraft-source-recovery-fixed48-20261008.json).
 

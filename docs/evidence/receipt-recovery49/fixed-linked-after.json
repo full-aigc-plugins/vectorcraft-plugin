@@ -1,0 +1,239 @@
+{
+  "result": "PASS",
+  "fingerprints": {
+    "src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
+    "src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
+    "src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
+    "src/evaluation/revision_cycle.ts": "019a80ddf7ca9fa80737934ad65efb3cf5e66c17b180e25d32091123ac25185f",
+    "src/evaluation/technical_review.ts": "59eb77085bde9573e049701748ed7b508c507386a3f7686ebcc75384666e43a3",
+    "src/harness/controller.ts": "740f5fc328e50297dfe49fa2ab1bc5c36ee2ca676189d3ffea5f4aef5f93adac",
+    "src/harness/ledger.ts": "5ca28bbb68a093f1c66ba6ca064a8d2dad16413929b823e259b3a86bbcd8073c",
+    "src/harness/process_registry.ts": "c19a3cb5d42cc33620bc5baeff7db71f1c6daa92f046a112951a7f50f7906162",
+    "src/harness/process_runner.py": "7332d0757aa01f03d00697f8eb8d93f849517cab34ea8a1355ba6c9513d5aba2",
+    "src/harness/recovery.ts": "b17953bf78c4979aca73af346578742109b75cc6d57b4cff4bc5b97ad2eace81",
+    "src/harness/skill_digest.ts": "e4cd8dbbcacd338fc39ef6f114ad991a8c6c7274987d92ff62ce1b9bd8ab9d9e",
+    "src/planning/geometry.ts": "97650dc916111666a73bcfea6ddc797e48b5b9bc2d6b6e54a85f33b1a8766e2d",
+    "src/runtime/prepare_runtime.ts": "08ecee9238056335ac33710421b4b878cad01b4556ffad641d14c26819b2e6c1",
+    "src/runtime/runtime_gate.ts": "269966ae978c9afa7b9cdad719afce9ca0b57e54c52f3cb732777f3ddc23a68c",
+    "src/runtime/runtime_probe.py": "ee196f91dde9487bd1537d1c91a8f5957deb795431a54baa333be35bfc90e54c",
+    "src/strict_json.ts": "69a445339670e53f6a7fcb96770b53b896666dd1e60f114c1751a23981d5b7d0",
+    "scripts/acceptance/checked_review.ts": "bc619deda373358f3eff056323f495cc3288f40037cd98860a2a89b5edbce5fb",
+    "scripts/acceptance/execution_identity.ts": "923b35a9ddd6d6f7a2b6f22e2f597012a84bbee51b111c5a005d173af490a422",
+    "scripts/acceptance/fixed_brand_edges.py": "e3b4b53cb732a46b18cfbb1c36032b19aac1d07638be4ca8a46d6f8dd9daf703",
+    "scripts/acceptance/fixed_install.py": "b360544f751efe3c0f64a0f40a75d81a61588185956d17d7b9cca9ca766abd48",
+    "scripts/acceptance/fixed_native.py": "913e0656e13a8985335197684460ad40aecbe5440d96587252a92e096d96b09e",
+    "scripts/acceptance/fixed_plan_edges.py": "25888c90833418b32ae1cce4e0291ab88dd08083834981dca5835ba9d310d1e0",
+    "scripts/acceptance/fixed_protocol_edges.py": "f68075c81100dfbaff3655ee8e330ea153246253166e84dcc6a1e46441b8840f",
+    "scripts/acceptance/geometry.ts": "0f987e5c701a0d2af47529788b66f7e0d3de8482897edad8351d0a3b11a692c3",
+    "scripts/acceptance/linked_recovery.ts": "cfebebdb49ee5d1e6f53eb73b8bc6c0af2cde53a5dd2973e844ea73b05bae60b",
+    "scripts/acceptance/linked_source.py": "cee98fc076c102c2afafcd2637832d53d3d03627d6ebaec486e5e44d8350c284",
+    "scripts/acceptance/managed_boolean.ts": "55fbffdf6d44a8b0b95b9902d7716037980eeaf5c2c437c69a06b740b889be52",
+    "scripts/acceptance/managed_cancel.ts": "bd63c54b247e78e90ea7237ce8c91c98dfd0f93d4be7d520d42eb071ddb1c76a",
+    "scripts/acceptance/record_execution_control.py": "9ded1a54b482c84ff477e0c3a1d97aa2dd362e61a5cd749b327adae1f95dc37b",
+    "scripts/acceptance/revision_cycle.ts": "fb13c44b873841570fe4f3e46665da55e4007064260c2498899a5289dfa69c2a",
+    "scripts/acceptance/runtime_activation_race.ts": "dc7502d97180fbd92c3b690a6d73f2602f257bad182109fd7a2e472df2c6bf81",
+    "scripts/acceptance/runtime_activation_race_child.ts": "c58f0d1ac1db7f4223e417a4aaa06d668923fee7a99adf93fec3fb30d913ad19",
+    "scripts/acceptance/runtime_boundaries.ts": "9ea05b771ab9df8db34f1971f8610bde52b642c23a1741c48879cae8b9797652",
+    "scripts/acceptance/runtime_boundary_probe.py": "f4f795e97c61d48a73f3b0ad3ed4f4b0215cfc01095b84bcdb0f44568eab2ad5",
+    "scripts/acceptance/runtime_bridge_child.py": "3bd45a343e4113cfe495e7ca608e544e414d4b6f7ee7918cddc8924a918bb357",
+    "scripts/acceptance/runtime_bridge_drain.ts": "9c66c9a8f19835bb54f52de77517699e70fc1c72bab6c5bcaa964662af2f39bb",
+    "scripts/acceptance/runtime_default.ts": "ce238365dad5f30eec4a7c8029566a73c69323152fbefdd9ae6fcff8ee782648",
+    "scripts/acceptance/runtime_gate.ts": "cf94973f6475b5af35011dd60d0ed26a402acc306de9bf1609dd703284c2f7f5",
+    "scripts/acceptance/runtime_native_child.py": "1ddf23c94d43bad1a943d6aeb7582ce1c72fe6d97bca6a36dd679f990e5c46d7",
+    "scripts/acceptance/runtime_open_reader.ts": "d79d11da7dffd4ebe6c26d2ba368753f4e3584f7719228682e56522943962747",
+    "scripts/acceptance/single_round.ts": "309115ba29a4b5ea69e70099a58d657ff1e29d48284af42a9d3461fefee9c84f",
+    "scripts/acceptance/task_contract.ts": "a65bed865f7ec61bbe6e93f70fce383c0c10722a5c1b244ffd93fbcd84ceb8a1",
+    "scripts/acceptance/task_crash.ts": "44b1db20e97c778a67907b355a98289bc1b94d4cc030918a6e82fe5a7d68fc21",
+    "scripts/acceptance/task_crash_child.ts": "5152beab700d2ca9ff7033718c88d323bc17cf1b3cf1c26db51abcd7f636a9ce",
+    "scripts/acceptance/task_gui_edit.py": "d26eda2ae8b1d69167171d2067dbcc27e6617be23b49e84707e3133fff94bc68",
+    "scripts/acceptance/task_receipt_loss.ts": "c5a924bc214e8c080b3f8207129c12b7fe40b44b75c1f0b3b40e593825895a20",
+    "scripts/acceptance/task_receipt_loss_child.ts": "701350be6312c9aa9eda1ff8299c2367852bea561e9add39b03f8a045b042f17",
+    "scripts/acceptance/verify_fixed.py": "d4a5ea7c86ec7bc4939a055d40b8128db010ba7a73b7f7e8e27ee7613f908d15",
+    "schemas/vector-review-receipt.schema.json": "d1e94365af9e75ce55de82df50a36eb37a65d0da4b19f66e704b00e9b35641ab",
+    "schemas/vector-review-request.schema.json": "15951f56b14316c1b6d06b58194c178fbd13c20c85e1ce1e6e492c204ec3f4cd",
+    "schemas/vector-revision-policy.schema.json": "a68d6f6a5d639864edd34a24bd626f8668c49a6f7d8121febcc71353d4251073"
+  },
+  "scope": "real persisted native delivery receipt then coordinator SIGKILL before terminal state; receipt/manifest/artifact and post-inspection receipt tampering refused; no replay or automatic success; full VC-TX-002 remains open",
+  "skillSha256": "e7d84d441d0628269801918ced6f2f47abc31e461095dd805cc7634436757875",
+  "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+  "sourceProjectSha256": "593652e05b353f444b2184a582a6078d7cc41aa63ae81cc8221e17ae7243d0ba",
+  "parentExit": {
+    "code": null,
+    "signal": "SIGKILL"
+  },
+  "taskId": "2ec3bf8a-b1ce-4cd7-816e-93a2b7c5361c",
+  "originalEpoch": 1,
+  "crashPoint": "after-ledger-receipt",
+  "receiptMissingOnRestart": false,
+  "receiptPersistedOnRestart": true,
+  "receiptRefusals": [
+    {
+      "kind": "receipt-runtime",
+      "error": "recovery_receipt_mismatch",
+      "inspectionStarted": false,
+      "occupationRetained": true
+    },
+    {
+      "kind": "manifest",
+      "error": "recovery_delivery_mismatch",
+      "inspectionStarted": false,
+      "occupationRetained": true
+    },
+    {
+      "kind": "artifact",
+      "error": "recovery_delivery_mismatch",
+      "inspectionStarted": false,
+      "occupationRetained": true
+    }
+  ],
+  "postInspectionReceiptChangeRefused": true,
+  "originalState": "running",
+  "sourceUnchanged": true,
+  "outputUnchanged": true,
+  "outputInodePreserved": true,
+  "noAutomaticReplay": true,
+  "attemptsAfterRestart": 1,
+  "bytesAfterRestart": 10000000,
+  "changedOutputRejected": true,
+  "competingSourceRejected": true,
+  "duplicateTaskNotRegistered": true,
+  "nativeGroupStopped": true,
+  "manifestSha256": "398c6665e57db2b26b1ef4bcb24aea3a87626e596df7cece6a52b5ce9f81280f",
+  "projectSha256": "94924f6a3e1f0beb7b3c874553fc7b75f0fdcc86e50b606e0450e237192ed8c3",
+  "exportCount": 9,
+  "recovery": {
+    "stepIdentity": "fa4103dfcee55e3f5545cefe523016a11ec6d0e29436783ede8f5d2d8c8905c1",
+    "preparedManifestSha256": "398c6665e57db2b26b1ef4bcb24aea3a87626e596df7cece6a52b5ce9f81280f",
+    "schema": "vectorcraft-original-inspection/v1",
+    "checkId": "56335943-b90a-4a7f-a4af-9ddea180f4a7",
+    "task": "2ec3bf8a-b1ce-4cd7-816e-93a2b7c5361c",
+    "epoch": 1,
+    "owner": "2ec3bf8a-b1ce-4cd7-816e-93a2b7c5361c:inspect:56335943-b90a-4a7f-a4af-9ddea180f4a7",
+    "stage": "<plugin-root>/.local/receipt-recovery/fixed49-linked-after/original-output",
+    "stageInode": 626796130,
+    "stageDevice": 16777233,
+    "files": {
+      "<plugin-root>/.local/receipt-recovery/fixed49-linked-after/original-output/Fonts/SourceSans3-Regular.ttf": {
+        "sha256": "4644c81b86ec9caaa76b634889968ed3c4f4f52f054855933acc7c2b21e53b0f",
+        "bytes": 431196,
+        "inode": 626796135
+      },
+      "<plugin-root>/.local/receipt-recovery/fixed49-linked-after/original-output/Links/referenceRaster.png": {
+        "sha256": "5ef821b2802f6c951d1e3f8fdc68fb76e0334c84eef780ac12cca7cca5253611",
+        "bytes": 75,
+        "inode": 626796133
+      },
+      "<plugin-root>/.local/receipt-recovery/fixed49-linked-after/original-output/artboard-1.pdf": {
+        "sha256": "208a23f3c09bd90bdb5093cce0b685f2201fec9e0ac10ae6677c45c0756fd1d7",
+        "bytes": 3385,
+        "inode": 626796140
+      },
+      "<plugin-root>/.local/receipt-recovery/fixed49-linked-after/original-output/artboard-1.png": {
+        "sha256": "f7ee693814b06f7754191a13da1e21a0ff4143a7b8f3c61cbd190fb78a3bd441",
+        "bytes": 4407,
+        "inode": 626796139
+      },
+      "<plugin-root>/.local/receipt-recovery/fixed49-linked-after/original-output/artboard-1.svg": {
+        "sha256": "2113806d2aaff66c98d1fee973db830a4f5d7c7ca86d07a1a5f8a7e2a7b6d75e",
+        "bytes": 1033,
+        "inode": 626796138
+      },
+      "<plugin-root>/.local/receipt-recovery/fixed49-linked-after/original-output/artboard-2.pdf": {
+        "sha256": "ce5c84373332d61df9c706ee3e6d117fbdf85216ab0f3f896eb9d5695af6a78b",
+        "bytes": 2049,
+        "inode": 626796143
+      },
+      "<plugin-root>/.local/receipt-recovery/fixed49-linked-after/original-output/artboard-2.png": {
+        "sha256": "ad90d637c9f106fc9ecbd13ed7da557d6d5619bfab4c13c6b129f18b1941a9fa",
+        "bytes": 1336,
+        "inode": 626796142
+      },
+      "<plugin-root>/.local/receipt-recovery/fixed49-linked-after/original-output/artboard-2.svg": {
+        "sha256": "5029c5a828113727055290d06af118a36aa0d01d2ee5a36526c65da7b7427de8",
+        "bytes": 315,
+        "inode": 626796141
+      },
+      "<plugin-root>/.local/receipt-recovery/fixed49-linked-after/original-output/artboard-3.pdf": {
+        "sha256": "e3fcd8e96f1851b8aa3ee77c1241762a616ff6530fcdd412eebb3e1eb8a4c042",
+        "bytes": 2048,
+        "inode": 626796146
+      },
+      "<plugin-root>/.local/receipt-recovery/fixed49-linked-after/original-output/artboard-3.png": {
+        "sha256": "3ed075edd098344ca1ed3a729b206d87bf9387961893a8dc9f47399b7da28223",
+        "bytes": 702,
+        "inode": 626796144
+      },
+      "<plugin-root>/.local/receipt-recovery/fixed49-linked-after/original-output/artboard-3.svg": {
+        "sha256": "5962cfb3ea69378457613a83afa3e7012c2b358707f5aba006ddc95798ee0a63",
+        "bytes": 323,
+        "inode": 626796145
+      },
+      "<plugin-root>/.local/receipt-recovery/fixed49-linked-after/original-output/brand-dependencies.json": {
+        "sha256": "778e31b5f163ecbcd31d0abb2425df9e1543dd5d2fc1f5baff5ba5706c770dbe",
+        "bytes": 1015,
+        "inode": 626796147
+      },
+      "<plugin-root>/.local/receipt-recovery/fixed49-linked-after/original-output/exchange-loss.json": {
+        "sha256": "0b29e4bcac4223e33a16002a76dbe9edbbef9635ae8d46bf4271d6862aedb110",
+        "bytes": 11924,
+        "inode": 626796151
+      },
+      "<plugin-root>/.local/receipt-recovery/fixed49-linked-after/original-output/manifest.json": {
+        "sha256": "398c6665e57db2b26b1ef4bcb24aea3a87626e596df7cece6a52b5ce9f81280f",
+        "bytes": 5130,
+        "inode": 626796152
+      },
+      "<plugin-root>/.local/receipt-recovery/fixed49-linked-after/original-output/native.json": {
+        "sha256": "4fabe1282b19e0ea72b0a0c587b348c513a7f058e5e25039ea3cf47082ff2d3d",
+        "bytes": 32968,
+        "inode": 626796148
+      },
+      "<plugin-root>/.local/receipt-recovery/fixed49-linked-after/original-output/operations.json": {
+        "sha256": "ffdb9ea76981959e718d29717404751865f374df1cd01eaba97500b615ff2f1d",
+        "bytes": 160747,
+        "inode": 626796150
+      },
+      "<plugin-root>/.local/receipt-recovery/fixed49-linked-after/original-output/pdf-export-date.json": {
+        "sha256": "43e45251de48892fdf1d9b16a4400e262cec1e13b4c8df8f55ef9417a3addb12",
+        "bytes": 107,
+        "inode": 626796137
+      },
+      "<plugin-root>/.local/receipt-recovery/fixed49-linked-after/original-output/plan.json": {
+        "sha256": "179cafa3737caa269fe1663ad98965efa28a846b219ecd47450b906e0d70461e",
+        "bytes": 950,
+        "inode": 626796149
+      },
+      "<plugin-root>/.local/receipt-recovery/fixed49-linked-after/original-output/project.vectorcraft": {
+        "sha256": "94924f6a3e1f0beb7b3c874553fc7b75f0fdcc86e50b606e0450e237192ed8c3",
+        "bytes": 34896,
+        "inode": 626796131
+      }
+    },
+    "reopened": [
+      {
+        "path": "<plugin-root>/.local/receipt-recovery/fixed49-linked-after/original-output/project.vectorcraft",
+        "layers": 1,
+        "artboards": 3,
+        "dependencies": {
+          "links": [
+            {
+              "ids": [
+                8
+              ],
+              "name": "referenceRaster.png",
+              "path": "<plugin-root>/.local/receipt-recovery/fixed49-linked-after/original-output/Links/referenceRaster.png",
+              "status": "ok"
+            }
+          ],
+          "missing": 0,
+          "modified": 0
+        }
+      }
+    ],
+    "nativeStopped": true,
+    "classification": "verified-interrupted-files; not successful delivery"
+  },
+  "settledState": "interrupted_verified",
+  "settledEpoch": 2,
+  "actualLateReceiptQuarantined": true
+}
