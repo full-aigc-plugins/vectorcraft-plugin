@@ -218,9 +218,9 @@
         "6.3"
       ],
       "owner": "Harness owner",
-      "status": "in-progress",
-      "candidateEvidence": "docs/evidence/vectorcraft-optimization-local-20261008.json",
-      "scope": "new SQLite/controller/review units and bounded native single round; complete native stop/reconciliation/authorization/plateau acceptance open"
+      "status": "verified",
+      "scope": "all three current VC-QA-001 scenarios; public61/source43 actual Codex0.153.4 macOS arm64;19 native boundary cases; maximal scores explicitly synthetic QA; actual creative judgment/GUI/other platforms separate",
+      "evidence": "docs/evidence/vectorcraft-quality-fixed61-20261009.json"
     },
     {
       "requirement": "VC-QA-002",

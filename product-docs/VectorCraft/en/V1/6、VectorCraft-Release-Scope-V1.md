@@ -60,3 +60,5 @@ Add capability rows, risks and acceptance fixtures before specifying more effect
 **Created**: 2026-10-05
 **Updated**: 2026-10-05
 **Document status**: Ready for review; implementation status is governed by OpenSpec tasks and evidence.
+
+Actual public61/source43 installed on Codex0.153.4 macOS arm64 qualifies all three current VC-QA-001 scenarios and19 native boundaries. Three real decodes pass; maximal-score QA receipts cannot override corrupt PNG/PDF/SVG; real missing decoders stay NOT_RUN. File/checker drift, shared budget before snapshots, timeout stop and coordinator SIGKILL/restart without replay pass.13 skill digests remain unchanged.12 evidence tests reject11 rehashed omissions/tamper cases. Task6.3 closes;116/127 complete,11 open. Actual creative judgment,GUI,other platforms,6.6 and full V1 remain separate. [Evidence](../../../../docs/evidence/vectorcraft-quality-fixed61-20261009.json).

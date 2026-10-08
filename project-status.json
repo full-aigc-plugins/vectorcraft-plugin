@@ -114,7 +114,8 @@
     "5.1": "docs/evidence/vectorcraft-lineage-candidate58-20261009.json",
     "5.2": "docs/evidence/vectorcraft-lineage-candidate58-20261009.json",
     "5.3": "docs/evidence/vectorcraft-lineage-fixed58-20261009.json",
-    "5.6": "docs/evidence/vectorcraft-native-exchange-fixed59-20261009.json"
+    "5.6": "docs/evidence/vectorcraft-native-exchange-fixed59-20261009.json",
+    "6.3": "docs/evidence/vectorcraft-quality-fixed61-20261009.json"
   },
   "hostValidationEvidence": "docs/evidence/craft-full-command-fixed-first-use-20261007.json",
   "hostValidationStatus": "fixed-five-plugin58-discovery-and-standalone-desktop-passed",

@@ -1,0 +1,58 @@
+{
+  "scenarioContracts": {
+    "VC-QA-001-P 合同条件满足": "1c0697d768d755a798213e5e87100146d1a3294e979cafd4ceee9afb0b459883",
+    "VC-QA-001-N 边界条件": "f430c3ee681c2ee194aec0936b690683dd4d27e23c974a9ce985cd94e7304e47",
+    "VC-QA-001-CHECK 持久化只读技术检查": "f0568f220fe713bc4d4f25d3f7ff43a1a2c71acfc4c9c31380d66a4c7edbc85f"
+  },
+  "entries": [
+    {
+      "scenario": "VC-QA-001-P 合同条件满足",
+      "result": "PASS",
+      "level": "native-fixed-install",
+      "evidence": "docs/evidence/vc-qa-001/quality-fixed61.json",
+      "cases": [
+        "healthy-persistent-decode",
+        "real-decoder-unavailable",
+        "legacy-unverified-origin"
+      ]
+    },
+    {
+      "scenario": "VC-QA-001-N 边界条件",
+      "result": "PASS",
+      "level": "native-fixed-install",
+      "evidence": "docs/evidence/vc-qa-001/quality-fixed61.json",
+      "cases": [
+        "undecodable-png-maximal-qa-score",
+        "undecodable-pdf-maximal-qa-score",
+        "undecodable-svg-maximal-qa-score"
+      ]
+    },
+    {
+      "scenario": "VC-QA-001-CHECK 持久化只读技术检查",
+      "result": "PASS",
+      "level": "native-fixed-install",
+      "evidence": "docs/evidence/vc-qa-001/quality-fixed61.json",
+      "cases": [
+        "healthy-persistent-decode",
+        "undecodable-png-maximal-qa-score",
+        "undecodable-pdf-maximal-qa-score",
+        "undecodable-svg-maximal-qa-score",
+        "real-decoder-unavailable",
+        "json-evidence-injection",
+        "legacy-unverified-origin",
+        "stale-native",
+        "stale-candidate",
+        "stale-manifest",
+        "stale-auxiliary",
+        "stale-target",
+        "stale-rubric",
+        "stale-checker-src/evaluation/delivery_quality.py",
+        "stale-checker-src/harness/process_runner.py",
+        "stale-checker-skills/vectorcraft-use/scripts/exchange_loss.py",
+        "timeout-owned-group-and-restart",
+        "coordinator-sigkill-unknown-no-replay",
+        "shared-budget-before-snapshot"
+      ]
+    }
+  ]
+}

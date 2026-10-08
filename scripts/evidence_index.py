@@ -268,6 +268,9 @@ def build(root=ROOT):
     roots='docs/evidence/vectorcraft-quality-roots-candidate61-20261009.json'
     if (root/roots).is_file():
         entries.append(bound_report(root,roots,'native-candidate','Persisted checked read roots restored at public receipt CLI;19 candidate native boundary cases;fixed61 qualification remains open','VC-QA-001'))
+    quality_fixed='docs/evidence/vectorcraft-quality-fixed61-20261009.json'
+    if (root/quality_fixed).is_file():
+        entries.append(bound_report(root,quality_fixed,'fixed-install','All three current VC-QA-001 scenarios; actual public61/source43 Codex macOS arm64;19 native boundaries and unchanged13 skill identities;creative judgment not executed','VC-QA-001',['6.3']))
     # 明确归档变更前执行字节；保留报告原摘要，不能把旧运行重绑定到新实现。
     for entry in entries:
         archived={}

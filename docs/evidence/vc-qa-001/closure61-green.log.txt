@@ -1,0 +1,17 @@
+test_actual_fixed_evidence_passes (test_quality_evidence.QualityEvidenceTests.test_actual_fixed_evidence_passes) ... ok
+test_budget_must_precede_decoder (test_quality_evidence.QualityEvidenceTests.test_budget_must_precede_decoder) ... ok
+test_crashed_owned_group_stop_required (test_quality_evidence.QualityEvidenceTests.test_crashed_owned_group_stop_required) ... ok
+test_decoder_cannot_claim_engineering_pass (test_quality_evidence.QualityEvidenceTests.test_decoder_cannot_claim_engineering_pass) ... ok
+test_forged_installed_skill_refused (test_quality_evidence.QualityEvidenceTests.test_forged_installed_skill_refused) ... ok
+test_high_score_cannot_replace_blocked_acceptance (test_quality_evidence.QualityEvidenceTests.test_high_score_cannot_replace_blocked_acceptance) ... ok
+test_missing_checker_dependency_refused (test_quality_evidence.QualityEvidenceTests.test_missing_checker_dependency_refused) ... ok
+test_missing_corruption_boundary_refused (test_quality_evidence.QualityEvidenceTests.test_missing_corruption_boundary_refused) ... ok
+test_missing_decode_refused (test_quality_evidence.QualityEvidenceTests.test_missing_decode_refused) ... ok
+test_missing_scenario_refused (test_quality_evidence.QualityEvidenceTests.test_missing_scenario_refused) ... ok
+test_not_run_cannot_be_pass (test_quality_evidence.QualityEvidenceTests.test_not_run_cannot_be_pass) ... ok
+test_stale_candidate_refusal_required (test_quality_evidence.QualityEvidenceTests.test_stale_candidate_refusal_required) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.211s
+
+OK

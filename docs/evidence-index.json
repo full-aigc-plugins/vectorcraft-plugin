@@ -2799,6 +2799,44 @@
         "docs/current-identity.json": "09b14f8ef696cbdb3a49e99cb93c7780cb97cfecb39282f1b056c2fdabe9f60a",
         "openspec/changes/establish-v1-plugin/specs/quality-review/spec.md": "60b8491854042fc69fe12898fefb57a85731ea7c23f264190b7fdf764fb32c54"
       }
+    },
+    {
+      "path": "docs/evidence/vectorcraft-quality-fixed61-20261009.json",
+      "sha256": "47ed3b100e2f8cefe48fdb38e137ebe452165b83209bf7aaff2d156f388a4f16",
+      "level": "fixed-install",
+      "status": "PASS",
+      "scope": "All three current VC-QA-001 scenarios; actual public61/source43 Codex macOS arm64;19 native boundaries and unchanged13 skill identities;creative judgment not executed",
+      "requirement": "VC-QA-001",
+      "tasks": [
+        "6.3"
+      ],
+      "historical": false,
+      "dependencies": {
+        "docs/evidence/vc-qa-001/host-fixed61.json": "f91e7b6601eb7e8d4fc8521a9371cd92f6e86e3ef7187702d5fcc7d5475da856",
+        "docs/evidence/vc-qa-001/integrity-fixed61.json": "8122d733ee94bebc4a67aa6ea5655448afd54491e2a31b304bd1b8d31b9c6e89",
+        "docs/evidence/vc-qa-001/native-fixed61.json": "034a862e9057f2cefac128d946874327d29472721c910532dda2d6428d6b0085",
+        "docs/evidence/vc-qa-001/quality-fixed61.json": "9271e767b4ba029011c73dc0c8db56362507a10da90d0109094138946dda3fe5",
+        "docs/evidence/vc-qa-001/scenarios-fixed61.json": "005c849bc93020d21f806bf9120f994a38e0aac6f52c4b1f03033dd04a850574",
+        "plugin.json": "f7197ba7c45b09715584739ba69a66903240c7a2090223add55b307e9f94b3eb",
+        "skills.lock.json": "46255b049f5e3d14b45ca9fecbaf037cd55b1e8b8bb447d407cb16c55eb3758c",
+        "docs/current-identity.json": "09b14f8ef696cbdb3a49e99cb93c7780cb97cfecb39282f1b056c2fdabe9f60a",
+        "src/cli.ts": "0e1ef0fb88c3afd8beb8ea837a64b0634c3c2990804a3fb3ea52440f94cbf859",
+        "src/evaluation/delivery_quality.py": "60b81d1097d2a2ef84d5e8010ee698295e1184db1b3667f3e40fa03feb899070",
+        "src/evaluation/technical_review.ts": "503b8f9d8b3f62965eaf5237361bda2a0c7a406ab1768dc77be2ea182fe64f8d",
+        "src/evaluation/review_store.ts": "615b436f7d60450f8913d7fb2224ebddc68f8679699b4a7ae40ba7499081ead4",
+        "src/evaluation/checker_bundle.ts": "c2b57712374d5b2dcb7f5c6fc5c9d2f39a93353a4d74df54dd8e286e3fc90526",
+        "src/harness/process_runner.py": "7332d0757aa01f03d00697f8eb8d93f849517cab34ea8a1355ba6c9513d5aba2",
+        "skills/vectorcraft-use/scripts/exchange_loss.py": "a4ba82ec8000a095dcf62813352621bdc42cfd7a81949baa6b0e896d1a2048e3",
+        "scripts/qa/exchange_delivery.py": "6b66ccae7d9051b5c4548202d1bd4856a0597d50ec9be73be4caef13724211b4",
+        "scripts/qa/quality_review_fixed.ts": "70b3556f7e2e8bb11349b721f8fa873c6a627e7b8a1585a7c4716b858f7b2dc8",
+        "scripts/acceptance/fixed_install.py": "b360544f751efe3c0f64a0f40a75d81a61588185956d17d7b9cca9ca766abd48",
+        "scripts/verify_quality_evidence.py": "864cd261a911247ca64af3c0ab08d0c7ea3517bc8e9afe0d61dfb324ae25a530",
+        "tests/test_quality_evidence.py": "f1bf5bf70fdc380c39c186cb696b39c8d9580969c377aa7b584e629090421a99",
+        "tests/review_cli_roots.test.ts": "f186fdd0566a33f8095dc93893f72cf6f7fa428b7b385dfe7d8b91bf198d5152",
+        "openspec/changes/establish-v1-plugin/specs/quality-review/spec.md": "60b8491854042fc69fe12898fefb57a85731ea7c23f264190b7fdf764fb32c54",
+        "docs/evidence/vc-qa-001/closure61-green.log.txt": "9061ccebad0feb1937d665a5d9d64656a28904efce8fd02c29497f37990f64cd",
+        "docs/evidence/vc-qa-001/closure61-python104.log.txt": "2eef70ba573a1c13a64b5bca69b213be8e6ff732c4423e1c075a7baf4da8b63a"
+      }
     }
   ],
   "commandAcceptance": "Use version-bound command catalog executionAcceptance; directory discovery never promotes NOT_RUN",
