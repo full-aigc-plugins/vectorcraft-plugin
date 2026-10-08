@@ -115,6 +115,12 @@ export class ReviewStore {
     }catch(error){this.db.exec('ROLLBACK');throw error;}
   }
   revision(id:string,changes:{objectId:number,field:string,value:any}[]):any {
+    if(this.db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='revision_members'").get()
+      &&this.db.prepare('SELECT review FROM revision_members WHERE review=?').get(id))throw new Error('revision_cycle_required');
+    return this.validateRevision(id,changes);
+  }
+  /** 仅校验建议；持久轮数与执行准入由 RevisionCycle 协调。 */
+  validateRevision(id:string,changes:{objectId:number,field:string,value:any}[]):any {
     const row=this.current(id),auth=row.input.authorization;
     if(auth.deadline<=Date.now())throw new Error('budget_exceeded');
     if(row.state!=='revision_proposed')throw new Error('revision_not_proposed');

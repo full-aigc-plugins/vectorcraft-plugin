@@ -107,11 +107,17 @@ def build(root=ROOT):
             entries.append(record(root,fixed,'fixed-install','PASS',[],'fixed plugin38/source35; retained at original execution identity',tasks=['9.3','9.6'],historical=True))
     quality='docs/evidence/vectorcraft-technical-quality-candidate-20261008.json'
     if (root/quality).is_file():
-        entries.append(bound_report(root,quality,'native-candidate','standalone technical decoder and negative tests; coordinator and native engineering acceptance open',tasks=['6.1']))
+        entries.append(bound_report(root,quality,'native-candidate','standalone technical decoder and negative tests at their recorded identity; coordinator evidence is separate and complete native engineering acceptance remains open',tasks=['6.1']))
     previous='docs/evidence/vectorcraft-optimization-local-before-execution-control-20261008.json'
     checked='docs/evidence/vectorcraft-checked-review-candidate-20261008.json'
     if (root/checked).is_file():
         entries.append(bound_report(root,checked,'native-candidate','persisted decoder checks of existing native export copies; fixture receipts only; native reopening and real creative acceptance remain open',tasks=['6.2']))
+    cycle='docs/evidence/vectorcraft-revision-cycle-candidate-20261008.json'
+    if (root/cycle).is_file():
+        entries.append(bound_report(root,cycle,'native-candidate','bounded revision minimum: two actual native color revisions with injected scores; full6.6 and real creative acceptance remain open',tasks=['6.4','6.5']))
+    old_checked='docs/evidence/vectorcraft-checked-review-before-cycles-20261008.json'
+    if (root/old_checked).is_file():
+        entries.append(record(root,old_checked,'native-candidate','PASS',[],'original pre-cycle review coordinator proof; execution fingerprints preserved, not rebound',historical=True))
     if (root/previous).is_file():
         entries.append(record(root,previous,'local-tests','PASS',[],'original execution fingerprints retained inside historical report; never rebound to changed source',historical=True))
     return {'schema':'vectorcraft-evidence-index/v1',

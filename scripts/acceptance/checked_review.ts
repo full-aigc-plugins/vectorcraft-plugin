@@ -10,6 +10,8 @@ const [sourceRoot,outputRoot,python]=process.argv.slice(2);
 if(!sourceRoot||!outputRoot||!python)throw new Error('usage: checked_review.ts NATIVE_GATEWAY_ROOT NEW_OUTPUT_ROOT PYTHON');
 const root=resolve(outputRoot);mkdirSync(root);const cases:any[]=[];
 const hash=(v:Buffer|string)=>createHash('sha256').update(v).digest('hex');
+const dependencies=['src/evaluation/technical_review.ts','src/evaluation/review_store.ts','src/evaluation/delivery_quality.py','src/harness/ledger.ts','src/harness/process_registry.ts','src/harness/process_runner.py','src/strict_json.ts','src/cli.ts','tests/technical_review.test.ts','scripts/acceptance/checked_review.ts'];
+const fingerprints=Object.fromEntries(dependencies.map(p=>[p,hash(readFileSync(p))]));
 for(const mode of ['direct','native-gateway'])for(const corrupt of [false,true]){
   const name=mode+(corrupt?'-corrupt':'-healthy'),work=join(root,name),delivery=join(work,'delivery');mkdirSync(work);
   cpSync(join(resolve(sourceRoot),mode),delivery,{recursive:true});
@@ -33,8 +35,8 @@ for(const mode of ['direct','native-gateway'])for(const corrupt of [false,true])
       report:request.input.technicalEvidence,state:result.state,acceptanceStatus:result.acceptanceStatus,creativeVerdict:'fixture only; not assessed',restartVerified:true,attempts:1});
   }finally{store.close();}
 }
-const dependencies=['src/evaluation/technical_review.ts','src/evaluation/review_store.ts','src/evaluation/delivery_quality.py','src/harness/ledger.ts','src/harness/process_registry.ts','src/harness/process_runner.py','src/strict_json.ts','src/cli.ts','tests/technical_review.test.ts','scripts/acceptance/checked_review.ts'];
+assert.deepEqual(Object.fromEntries(dependencies.map(p=>[p,hash(readFileSync(p))])),fingerprints,'candidate source changed during execution');
 const proof={schema:'vectorcraft-checked-review-candidate/v1',result:'PASS',level:'native-candidate',platform:process.platform+'-'+process.arch,cases,
-  fingerprints:Object.fromEntries(dependencies.map(p=>[p,hash(readFileSync(p))])),
+  fingerprints,
   scope:'Current coordinator checks copies of previously generated fixed38/source35 native exports; four persisted checks and fixture receipts; no new native generation, native reopening, real creative judgment, model routing, or full V1 acceptance'};
 writeFileSync(join(root,'proof.json'),JSON.stringify(proof,null,2)+'\n');console.log(JSON.stringify({result:proof.result,cases:cases.length,exports:36,scope:proof.scope}));

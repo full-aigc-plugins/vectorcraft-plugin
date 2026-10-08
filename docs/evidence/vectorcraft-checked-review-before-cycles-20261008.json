@@ -10,7 +10,7 @@
       "report": {
         "acceptanceStatus": "pending",
         "artifactIntegrityStatus": "PASS",
-        "checkId": "4f5b6859-6cef-4bc1-9b4a-dd611acdcb3c",
+        "checkId": "0e691e17-1198-45fb-888a-6e195dcd2e0a",
         "checkerSha256": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
         "creativeStatus": "NOT_RUN",
         "engineeringStatus": "NOT_RUN",
@@ -133,7 +133,7 @@
       "report": {
         "acceptanceStatus": "blocked",
         "artifactIntegrityStatus": "PASS",
-        "checkId": "935aa438-ee14-420d-8f8b-60b361b6e9df",
+        "checkId": "be3bc774-e1a7-485f-9497-c518b1f34f97",
         "checkerSha256": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
         "creativeStatus": "NOT_RUN",
         "engineeringStatus": "NOT_RUN",
@@ -252,7 +252,7 @@
       "report": {
         "acceptanceStatus": "pending",
         "artifactIntegrityStatus": "PASS",
-        "checkId": "9df4cdcc-b5b4-4817-b84a-d697e2579d44",
+        "checkId": "e841cfca-56a5-40fd-9ee7-b20b49b5475d",
         "checkerSha256": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
         "creativeStatus": "NOT_RUN",
         "engineeringStatus": "NOT_RUN",
@@ -375,7 +375,7 @@
       "report": {
         "acceptanceStatus": "blocked",
         "artifactIntegrityStatus": "PASS",
-        "checkId": "65225fcf-63b7-4ece-a2b0-410d15bab848",
+        "checkId": "283cf7b3-5ff9-424c-9d73-c2d81ab95613",
         "checkerSha256": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
         "creativeStatus": "NOT_RUN",
         "engineeringStatus": "NOT_RUN",
@@ -491,15 +491,15 @@
   ],
   "fingerprints": {
     "src/evaluation/technical_review.ts": "59eb77085bde9573e049701748ed7b508c507386a3f7686ebcc75384666e43a3",
-    "src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
+    "src/evaluation/review_store.ts": "85d09a6a5bd7b42a1ca15954cb6bc55a67fa72a9b8439ff83bda2fb3a96ddb16",
     "src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
     "src/harness/ledger.ts": "c1aa8d6b7ad7c40d5fc0f1a8d87ddae1df0b29144c904690917e5b79355f660d",
     "src/harness/process_registry.ts": "c19a3cb5d42cc33620bc5baeff7db71f1c6daa92f046a112951a7f50f7906162",
     "src/harness/process_runner.py": "7332d0757aa01f03d00697f8eb8d93f849517cab34ea8a1355ba6c9513d5aba2",
     "src/strict_json.ts": "69a445339670e53f6a7fcb96770b53b896666dd1e60f114c1751a23981d5b7d0",
-    "src/cli.ts": "ee1ee1ba45ca4c2e50313b7ac09f20fdd7529e207d4cca0c466c8fca5b74f82a",
+    "src/cli.ts": "5027d0507edafd3f692d2f5cc8709bc289e94aeac21c59fe8f57d2b897d81324",
     "tests/technical_review.test.ts": "de8753e4f561412b01a6629eff69cf73a86ba212398249bcbad7b491cff96f76",
-    "scripts/acceptance/checked_review.ts": "bc619deda373358f3eff056323f495cc3288f40037cd98860a2a89b5edbce5fb"
+    "scripts/acceptance/checked_review.ts": "b32ff58cacf886c63dc6cff4bd1b50bafd67af3bf64500ca1acb80ff18da7d86"
   },
   "scope": "Current coordinator checks copies of previously generated fixed38/source35 native exports; four persisted checks and fixture receipts; no new native generation, native reopening, real creative judgment, model routing, or full V1 acceptance"
 }

@@ -29,7 +29,7 @@ export function skillDigest(root:string):string {
 }
 
 type RunRequest={key:string,skill:string,expectedSkillSha256:string,plan:string,output:string,source?:string,
-  runtimeHome:string,python?:string,estimatedBytes:number,authorization:Authorization&{readRoots:string[],writeRoots:string[]}};
+  runtimeHome:string,python?:string,estimatedBytes:number,inputFingerprints?:Record<string,string>,authorization:Authorization&{readRoots:string[],writeRoots:string[]}};
 
 /** 仅协调已固定的独立技能；原生命令语义与失败工程保留由源技能负责。 */
 export class Controller {
@@ -86,6 +86,16 @@ export class Controller {
       if(projectRevision!==plan.expectedProjectSha256)throw new Error('revision_conflict');
     }
     const inputHashes:Record<string,string>={};
+    const guards=request.inputFingerprints??{};
+    if(!guards||typeof guards!=='object'||Array.isArray(guards)||Object.keys(guards).length>4096)throw new Error('invalid_input_fingerprints');
+    const checkInputs=()=>{
+      for(const [path,expected] of Object.entries(guards)){
+        if(!/^[a-f0-9]{64}$/.test(expected)||!auth.readRoots.some(root=>inside(root,path)))throw new Error('outside_authorized_roots');
+        if(sha(readFileSync(path))!==expected)throw new Error('stale_execution_inputs');
+      }
+    };
+    checkInputs();
+    for(const [path,expected] of Object.entries(guards))inputHashes['guard:'+path]=expected;
     for(const [name,asset] of Object.entries(plan.assets??{}) as [string,any][]){
       if(!auth.readRoots.some(root=>inside(root,asset.path)))throw new Error('outside_authorized_roots');
       const hash=sha(readFileSync(asset.path));if(hash!==asset.sha256)throw new Error('asset_digest_mismatch');inputHashes[name]=hash;
@@ -136,6 +146,7 @@ export class Controller {
         };
         const timer=setInterval(()=>{
           try{
+            checkInputs();
             const state=this.ledger.get(task.id).state;
             this.processes.observe(task.id,task.epoch);
             if(Date.now()>=auth.deadline||state==='cancel_requested'||state==='cancelled')interrupt();
@@ -150,7 +161,7 @@ export class Controller {
         child.stdout.on('data',data=>capture('out',data));child.stderr.on('data',data=>capture('err',data));
         child.on('error',error=>{clearInterval(timer);reject(error);});
         child.on('spawn',()=>{
-          try{this.processes.register(task.id,task.epoch,child.pid!,task.id);
+          try{this.processes.register(task.id,task.epoch,child.pid!,task.id);checkInputs();
             child.stdin.end(canonical({task:task.id,go:true})+'\n');}
           catch(error){observationError=error;child.kill('SIGKILL');child.stdin.destroy();}
         });
@@ -170,6 +181,7 @@ export class Controller {
       });
       if(['cancel_requested','cancelled'].includes(this.ledger.get(task.id).state))return {id:task.id,state:'quarantined',output:request.output};
       const manifest=this.verifyDelivery(request.output,runtimeIdentity);
+      checkInputs();
       const bytes=Object.keys(manifest.files).reduce((total,path)=>total+lstatSync(join(request.output,path)).size,0);
       if(bytes>request.estimatedBytes||bytes>auth.maxBytes)throw new Error('budget_exceeded: output exceeds reservation');
       if(request.source&&sha(readFileSync(join(request.source,'project.vectorcraft')))!==projectRevision)throw new Error('revision_conflict');

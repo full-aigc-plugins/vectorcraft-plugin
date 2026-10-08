@@ -4,11 +4,12 @@ import { strictJson } from './strict_json.ts';
 import { Controller } from './harness/controller.ts';
 import { ReviewStore } from './evaluation/review_store.ts';
 import { TechnicalReview } from './evaluation/technical_review.ts';
+import { RevisionCycle } from './evaluation/revision_cycle.ts';
 
 /** 文件形式的显式请求入口；不安装依赖、不发起外部评审、不自动生成下一轮。 */
 async function main(){
   const [action,database,file]=process.argv.slice(2);
-  if(!action||!database||!file)throw new Error('usage: node src/cli.ts run|cancel|reconcile|review-request|review-checked|review-import|revision DATABASE REQUEST.json');
+  if(!action||!database||!file)throw new Error('usage: node src/cli.ts run|cancel|reconcile|review-request|review-checked|review-import|revision|revision-cycle-open|revision-cycle-observe|revision-cycle-propose|revision-cycle-run|revision-cycle-best DATABASE REQUEST.json');
   const input=strictJson(readFileSync(file,'utf8'));
   if(['run','cancel','reconcile'].includes(action)){
     const controller=new Controller(database);try{
@@ -19,6 +20,16 @@ async function main(){
   }
   const store=new ReviewStore(database,input.readRoots);
   try{
+    if(action.startsWith('revision-cycle-')){
+      const cycle=new RevisionCycle(store);try{
+        if(action==='revision-cycle-open')return cycle.open(input);
+        if(action==='revision-cycle-observe')return cycle.observe(input.cycleId,input.requestId,input.proposalId);
+        if(action==='revision-cycle-propose')return cycle.propose(input.cycleId,input.requestId,input.changes,input.key);
+        if(action==='revision-cycle-run')return await cycle.execute(input.cycleId,input.proposalId,input.run);
+        if(action==='revision-cycle-best')return cycle.best(input.cycleId);
+        throw new Error('unknown_action');
+      }finally{cycle.close();}
+    }
     if(action==='review-request')return store.request(input);
     if(action==='review-checked')return await new TechnicalReview(store).request(input);
     if(action==='review-import')return store.importReceipt(input);

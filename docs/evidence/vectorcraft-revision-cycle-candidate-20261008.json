@@ -1,0 +1,87 @@
+{
+  "schema": "vectorcraft-revision-cycle-candidate/v1",
+  "result": "PASS",
+  "level": "native-candidate",
+  "platform": "darwin-arm64",
+  "skillSha256": "27d28fc73148dbab5569d4be68e7aedcc1379a45c375e5b12caeedf962e87ec3",
+  "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+  "cases": [
+    {
+      "reason": "stagnation",
+      "sourceProjectRevision": "c3fab1c8567336dd3f335f0e43eeb42620b50d8ba2531f5dad12c979801e3884",
+      "outputProjectRevision": "dc8a5dc7ab7b99697737e8505ffa0794750c672ef9c1cf43a0bc62afbf3d4f4b",
+      "bestProjectRevision": "c3fab1c8567336dd3f335f0e43eeb42620b50d8ba2531f5dad12c979801e3884",
+      "bestScore": 2,
+      "nativeExecution": "awaiting_review",
+      "sourcePreserved": true,
+      "technicalStatus": "PASS",
+      "decodedExports": 9,
+      "sharedAttempts": 4,
+      "restartVerified": true,
+      "legacyBypassRefused": true,
+      "cliBestVerified": true,
+      "engineeringStatus": "NOT_RUN",
+      "creativeAssessment": "fixture only; NOT_RUN",
+      "acceptanceStatus": "pending"
+    },
+    {
+      "reason": "round_limit",
+      "sourceProjectRevision": "c3fab1c8567336dd3f335f0e43eeb42620b50d8ba2531f5dad12c979801e3884",
+      "outputProjectRevision": "caece7ac0686f9ea1fbe532fd62902ad9859b772f1b135afa7d0ecf3ee6f270a",
+      "bestProjectRevision": "caece7ac0686f9ea1fbe532fd62902ad9859b772f1b135afa7d0ecf3ee6f270a",
+      "bestScore": 3,
+      "nativeExecution": "awaiting_review",
+      "sourcePreserved": true,
+      "technicalStatus": "PASS",
+      "decodedExports": 9,
+      "sharedAttempts": 5,
+      "restartVerified": true,
+      "legacyBypassRefused": true,
+      "cliBestVerified": true,
+      "engineeringStatus": "NOT_RUN",
+      "creativeAssessment": "fixture only; NOT_RUN",
+      "acceptanceStatus": "pending"
+    }
+  ],
+  "fingerprints": {
+    "skills.lock.json": "a7f279a89c98826f61a6b5004af8b8a717c1d0b3bbc161e4b677e3e771bd5b49",
+    "src/cli.ts": "ee1ee1ba45ca4c2e50313b7ac09f20fdd7529e207d4cca0c466c8fca5b74f82a",
+    "src/evaluation/revision_cycle.ts": "019a80ddf7ca9fa80737934ad65efb3cf5e66c17b180e25d32091123ac25185f",
+    "src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
+    "src/evaluation/technical_review.ts": "59eb77085bde9573e049701748ed7b508c507386a3f7686ebcc75384666e43a3",
+    "src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
+    "src/harness/controller.ts": "5fba06afff29c87ef529a009df515608b273f79d626c9af3caee206d54946c9f",
+    "src/harness/ledger.ts": "c1aa8d6b7ad7c40d5fc0f1a8d87ddae1df0b29144c904690917e5b79355f660d",
+    "src/harness/process_registry.ts": "c19a3cb5d42cc33620bc5baeff7db71f1c6daa92f046a112951a7f50f7906162",
+    "src/harness/process_runner.py": "7332d0757aa01f03d00697f8eb8d93f849517cab34ea8a1355ba6c9513d5aba2",
+    "tests/revision_cycle.test.ts": "f9d47867efb96fa52424c03e893c1e64dca95cffeecad6fe065ab59b634ab96f",
+    "tests/controller.test.ts": "db1943dedd63caf3ccd55e88a0002c18c1843669cbc0bed1187c52b1d4139fc5",
+    "scripts/acceptance/revision_cycle.ts": "04c9bd72ad09172c7a8f8364bb1bf71c609ec281798de2c3a6e33c51232d53d4",
+    "docs/evidence/revision-cycle/baseline-controller.test.ts": "db1943dedd63caf3ccd55e88a0002c18c1843669cbc0bed1187c52b1d4139fc5",
+    "docs/evidence/revision-cycle/node-green.log": "69ff8d37ebd7bebdfa267f11f640fb62c689ec9950fbeb98ae89795103260995",
+    "docs/evidence/revision-cycle/baseline-revision_cycle.test.ts": "fcf415864741bdfaa7194fe36c5ecd18337d05460d31cdf45434dcd318e18386",
+    "docs/evidence/revision-cycle/python-green.log": "db215d95f5f052d595e0d29c2d4fbe504f510ea22488ff8a203254e785288146",
+    "docs/evidence/revision-cycle/native.log": "8485ef213f22608152486bd727b606f44607db0d11090be09220f11aeb5878bd",
+    "docs/evidence/revision-cycle/baseline-red.log": "ae96891806bdf0eaee102cc457166fbe4ccb7ea1d442f70b2a806acd351de1bf"
+  },
+  "scope": "two actual managed native color revisions and current decoder checks; source preserved; fixture scoring; full6.6, real creative acceptance, other revision families and model routing remain open",
+  "completedTasks": [
+    "6.4",
+    "6.5"
+  ],
+  "published": false,
+  "regression": {
+    "nodeTests": 29,
+    "nodePassed": 29,
+    "pythonTests": 38,
+    "pythonPassed": 38,
+    "pythonRuntime": "3.13.5",
+    "baselineCommit": "a8dcece90eb8e503b048356187251867437a372c",
+    "baselineReplay": {
+      "tests": 3,
+      "expectedBehaviorFailures": 2,
+      "passed": 1
+    },
+    "scope": "baseline replay exposes cycle bypass and stale-input admission; synthetic state fixtures do not prove native acceptance"
+  }
+}

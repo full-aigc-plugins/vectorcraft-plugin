@@ -316,3 +316,7 @@ Codex 0.153.4 installed and discovered all13 skills in fresh isolated configurat
 ### dev.39 development prerelease
 
 Pins source dev.36 with corrected revision object ID rendering. Adds `review-checked` with persisted actual decoding evidence, shared budgets and restart-safe file bindings. Technical failures block acceptance; unexecuted checks stay pending. Minimal task6.2 implementation is complete; native engineering acceptance6.3, model routing9.9 and full V1 remain open. Fixed dev.38 installation evidence is historical; new host installation acceptance has not been rerun for this version.
+
+### Bounded revision source candidate
+
+Minimal durable rounds, shared budgets, stagnation, native execution lineage and best-candidate retention are implemented; tasks6.4/6.5 are checked. Published dev.39 remains unchanged and this increment is unpublished. Two actual color revisions use injected scores; complete6.6 and real creative acceptance remain open. [Contract and operations](docs/VectorCraft-Revision-Cycle.md).
