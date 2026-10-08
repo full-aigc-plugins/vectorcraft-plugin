@@ -1,0 +1,15 @@
+{
+  "schema": "vectorcraft-artboard-mapping-baseline/v1",
+  "result": "FAIL",
+  "expectedGapConfirmed": true,
+  "ignoredExplicitId": {
+    "requested": 2,
+    "actual": 1
+  },
+  "silentIndexShift": {
+    "expected": 1,
+    "actual": 2
+  },
+  "originalAndSkillPreserved": true,
+  "driverSha256": "6f85e152aca9fe1b609ffd2c4b6555e6f755027187e895f8e1dae4b24bb76584"
+}

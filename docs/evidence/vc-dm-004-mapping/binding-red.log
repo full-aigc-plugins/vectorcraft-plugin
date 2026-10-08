@@ -1,0 +1,23 @@
+test_duplicate_resolved_output_rejected (test_artboard_mapping.ArtboardMappingTests.test_duplicate_resolved_output_rejected) ... ok
+test_explicit_ref_resolves_runtime_binding (test_artboard_mapping.ArtboardMappingTests.test_explicit_ref_resolves_runtime_binding) ... ok
+test_index_id_conflict_and_unknown_id_rejected (test_artboard_mapping.ArtboardMappingTests.test_index_id_conflict_and_unknown_id_rejected) ... ok
+test_invalid_native_identity_and_geometry_fail_closed (test_artboard_mapping.ArtboardMappingTests.test_invalid_native_identity_and_geometry_fail_closed) ... ok
+test_invalid_selector_shape_rejected_before_runtime (test_artboard_mapping.ArtboardMappingTests.test_invalid_selector_shape_rejected_before_runtime) ... ok
+test_legacy_create_mapping_preserves_zero_based_index (test_artboard_mapping.ArtboardMappingTests.test_legacy_create_mapping_preserves_zero_based_index) ... ok
+test_legacy_revision_rejects_changed_index_and_identifies_original (test_artboard_mapping.ArtboardMappingTests.test_legacy_revision_rejects_changed_index_and_identifies_original) ... ok
+test_new_board_binding_resolves_actual_native_id_from_index_reply (test_artboard_mapping.ArtboardMappingTests.test_new_board_binding_resolves_actual_native_id_from_index_reply) ... ERROR
+test_stable_id_follows_reordered_board (test_artboard_mapping.ArtboardMappingTests.test_stable_id_follows_reordered_board) ... ok
+
+======================================================================
+ERROR: test_new_board_binding_resolves_actual_native_id_from_index_reply (test_artboard_mapping.ArtboardMappingTests.test_new_board_binding_resolves_actual_native_id_from_index_reply)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE_ROOT>/tests/test_artboard_mapping.py", line 35, in test_new_board_binding_resolves_actual_native_id_from_index_reply
+    self.assertEqual(self.m.bind_created({'index':1},self.native),{'index':1,'id':22})
+                     ^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'mapping' has no attribute 'bind_created'
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.012s
+
+FAILED (errors=1)

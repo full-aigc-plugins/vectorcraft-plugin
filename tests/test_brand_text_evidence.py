@@ -15,7 +15,9 @@ class BrandTextEvidenceTests(unittest.TestCase):
  def setUp(self):
   self.temp=tempfile.TemporaryDirectory();self.addCleanup(self.temp.cleanup);self.root=Path(self.temp.name).resolve()
   self.report=json.loads((ROOT/REPORT).read_text())
-  for name in [REPORT,'docs/evidence-index.json',*self.report['fingerprints']]:
+  index=json.loads((ROOT/'docs/evidence-index.json').read_text())
+  dependencies=next(e['dependencies'] for e in index['entries'] if e['path']==REPORT)
+  for name in [REPORT,'docs/evidence-index.json',*self.report['fingerprints'],*dependencies]:
    dst=self.root/name;dst.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/name,dst)
   spec=importlib.util.spec_from_file_location('brand_evidence',ROOT/'scripts/verify_brand_text_evidence.py');self.module=importlib.util.module_from_spec(spec);spec.loader.exec_module(self.module);self.module.ROOT=self.root
  def save(self,name,data,rebind=False):

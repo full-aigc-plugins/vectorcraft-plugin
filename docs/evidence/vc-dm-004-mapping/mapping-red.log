@@ -1,0 +1,133 @@
+test_duplicate_resolved_output_rejected (test_artboard_mapping.ArtboardMappingTests.test_duplicate_resolved_output_rejected) ... ERROR
+test_explicit_ref_resolves_runtime_binding (test_artboard_mapping.ArtboardMappingTests.test_explicit_ref_resolves_runtime_binding) ... ERROR
+test_index_id_conflict_and_unknown_id_rejected (test_artboard_mapping.ArtboardMappingTests.test_index_id_conflict_and_unknown_id_rejected) ... ERROR
+test_invalid_native_identity_and_geometry_fail_closed (test_artboard_mapping.ArtboardMappingTests.test_invalid_native_identity_and_geometry_fail_closed) ... ERROR
+test_invalid_selector_shape_rejected_before_runtime (test_artboard_mapping.ArtboardMappingTests.test_invalid_selector_shape_rejected_before_runtime) ... ERROR
+test_legacy_create_mapping_preserves_zero_based_index (test_artboard_mapping.ArtboardMappingTests.test_legacy_create_mapping_preserves_zero_based_index) ... ERROR
+test_legacy_revision_rejects_changed_index_and_identifies_original (test_artboard_mapping.ArtboardMappingTests.test_legacy_revision_rejects_changed_index_and_identifies_original) ... ERROR
+test_stable_id_follows_reordered_board (test_artboard_mapping.ArtboardMappingTests.test_stable_id_follows_reordered_board) ... ERROR
+
+======================================================================
+ERROR: test_duplicate_resolved_output_rejected (test_artboard_mapping.ArtboardMappingTests.test_duplicate_resolved_output_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE_ROOT>/tests/test_artboard_mapping.py", line 10, in setUp
+    self.m=module();self.a={'id':11,'name':'Logo','rect':{'x0':0,'y0':0,'x1':128,'y1':96}};self.b={'id':22,'name':'Icon','rect':{'x0':200,'y0':20,'x1':280,'y1':84}};self.native={'artboards':[self.a,self.b]};self.shifted={'artboards':[self.b,self.a]}
+           ~~~~~~^^
+  File "<SOURCE_ROOT>/tests/test_artboard_mapping.py", line 7, in module
+    spec=importlib.util.spec_from_file_location('mapping',ROOT/'skills/vectorcraft-use/scripts/artboard_mapping.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);return m
+                                                                                                                                                             ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "<frozen importlib._bootstrap_external>", line 1022, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1159, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1217, in get_data
+FileNotFoundError: [Errno 2] No such file or directory: '<SOURCE_ROOT>/skills/vectorcraft-use/scripts/artboard_mapping.py'
+
+======================================================================
+ERROR: test_explicit_ref_resolves_runtime_binding (test_artboard_mapping.ArtboardMappingTests.test_explicit_ref_resolves_runtime_binding)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE_ROOT>/tests/test_artboard_mapping.py", line 10, in setUp
+    self.m=module();self.a={'id':11,'name':'Logo','rect':{'x0':0,'y0':0,'x1':128,'y1':96}};self.b={'id':22,'name':'Icon','rect':{'x0':200,'y0':20,'x1':280,'y1':84}};self.native={'artboards':[self.a,self.b]};self.shifted={'artboards':[self.b,self.a]}
+           ~~~~~~^^
+  File "<SOURCE_ROOT>/tests/test_artboard_mapping.py", line 7, in module
+    spec=importlib.util.spec_from_file_location('mapping',ROOT/'skills/vectorcraft-use/scripts/artboard_mapping.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);return m
+                                                                                                                                                             ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "<frozen importlib._bootstrap_external>", line 1022, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1159, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1217, in get_data
+FileNotFoundError: [Errno 2] No such file or directory: '<SOURCE_ROOT>/skills/vectorcraft-use/scripts/artboard_mapping.py'
+
+======================================================================
+ERROR: test_index_id_conflict_and_unknown_id_rejected (test_artboard_mapping.ArtboardMappingTests.test_index_id_conflict_and_unknown_id_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE_ROOT>/tests/test_artboard_mapping.py", line 10, in setUp
+    self.m=module();self.a={'id':11,'name':'Logo','rect':{'x0':0,'y0':0,'x1':128,'y1':96}};self.b={'id':22,'name':'Icon','rect':{'x0':200,'y0':20,'x1':280,'y1':84}};self.native={'artboards':[self.a,self.b]};self.shifted={'artboards':[self.b,self.a]}
+           ~~~~~~^^
+  File "<SOURCE_ROOT>/tests/test_artboard_mapping.py", line 7, in module
+    spec=importlib.util.spec_from_file_location('mapping',ROOT/'skills/vectorcraft-use/scripts/artboard_mapping.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);return m
+                                                                                                                                                             ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "<frozen importlib._bootstrap_external>", line 1022, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1159, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1217, in get_data
+FileNotFoundError: [Errno 2] No such file or directory: '<SOURCE_ROOT>/skills/vectorcraft-use/scripts/artboard_mapping.py'
+
+======================================================================
+ERROR: test_invalid_native_identity_and_geometry_fail_closed (test_artboard_mapping.ArtboardMappingTests.test_invalid_native_identity_and_geometry_fail_closed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE_ROOT>/tests/test_artboard_mapping.py", line 10, in setUp
+    self.m=module();self.a={'id':11,'name':'Logo','rect':{'x0':0,'y0':0,'x1':128,'y1':96}};self.b={'id':22,'name':'Icon','rect':{'x0':200,'y0':20,'x1':280,'y1':84}};self.native={'artboards':[self.a,self.b]};self.shifted={'artboards':[self.b,self.a]}
+           ~~~~~~^^
+  File "<SOURCE_ROOT>/tests/test_artboard_mapping.py", line 7, in module
+    spec=importlib.util.spec_from_file_location('mapping',ROOT/'skills/vectorcraft-use/scripts/artboard_mapping.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);return m
+                                                                                                                                                             ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "<frozen importlib._bootstrap_external>", line 1022, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1159, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1217, in get_data
+FileNotFoundError: [Errno 2] No such file or directory: '<SOURCE_ROOT>/skills/vectorcraft-use/scripts/artboard_mapping.py'
+
+======================================================================
+ERROR: test_invalid_selector_shape_rejected_before_runtime (test_artboard_mapping.ArtboardMappingTests.test_invalid_selector_shape_rejected_before_runtime)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE_ROOT>/tests/test_artboard_mapping.py", line 10, in setUp
+    self.m=module();self.a={'id':11,'name':'Logo','rect':{'x0':0,'y0':0,'x1':128,'y1':96}};self.b={'id':22,'name':'Icon','rect':{'x0':200,'y0':20,'x1':280,'y1':84}};self.native={'artboards':[self.a,self.b]};self.shifted={'artboards':[self.b,self.a]}
+           ~~~~~~^^
+  File "<SOURCE_ROOT>/tests/test_artboard_mapping.py", line 7, in module
+    spec=importlib.util.spec_from_file_location('mapping',ROOT/'skills/vectorcraft-use/scripts/artboard_mapping.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);return m
+                                                                                                                                                             ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "<frozen importlib._bootstrap_external>", line 1022, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1159, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1217, in get_data
+FileNotFoundError: [Errno 2] No such file or directory: '<SOURCE_ROOT>/skills/vectorcraft-use/scripts/artboard_mapping.py'
+
+======================================================================
+ERROR: test_legacy_create_mapping_preserves_zero_based_index (test_artboard_mapping.ArtboardMappingTests.test_legacy_create_mapping_preserves_zero_based_index)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE_ROOT>/tests/test_artboard_mapping.py", line 10, in setUp
+    self.m=module();self.a={'id':11,'name':'Logo','rect':{'x0':0,'y0':0,'x1':128,'y1':96}};self.b={'id':22,'name':'Icon','rect':{'x0':200,'y0':20,'x1':280,'y1':84}};self.native={'artboards':[self.a,self.b]};self.shifted={'artboards':[self.b,self.a]}
+           ~~~~~~^^
+  File "<SOURCE_ROOT>/tests/test_artboard_mapping.py", line 7, in module
+    spec=importlib.util.spec_from_file_location('mapping',ROOT/'skills/vectorcraft-use/scripts/artboard_mapping.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);return m
+                                                                                                                                                             ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "<frozen importlib._bootstrap_external>", line 1022, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1159, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1217, in get_data
+FileNotFoundError: [Errno 2] No such file or directory: '<SOURCE_ROOT>/skills/vectorcraft-use/scripts/artboard_mapping.py'
+
+======================================================================
+ERROR: test_legacy_revision_rejects_changed_index_and_identifies_original (test_artboard_mapping.ArtboardMappingTests.test_legacy_revision_rejects_changed_index_and_identifies_original)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE_ROOT>/tests/test_artboard_mapping.py", line 10, in setUp
+    self.m=module();self.a={'id':11,'name':'Logo','rect':{'x0':0,'y0':0,'x1':128,'y1':96}};self.b={'id':22,'name':'Icon','rect':{'x0':200,'y0':20,'x1':280,'y1':84}};self.native={'artboards':[self.a,self.b]};self.shifted={'artboards':[self.b,self.a]}
+           ~~~~~~^^
+  File "<SOURCE_ROOT>/tests/test_artboard_mapping.py", line 7, in module
+    spec=importlib.util.spec_from_file_location('mapping',ROOT/'skills/vectorcraft-use/scripts/artboard_mapping.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);return m
+                                                                                                                                                             ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "<frozen importlib._bootstrap_external>", line 1022, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1159, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1217, in get_data
+FileNotFoundError: [Errno 2] No such file or directory: '<SOURCE_ROOT>/skills/vectorcraft-use/scripts/artboard_mapping.py'
+
+======================================================================
+ERROR: test_stable_id_follows_reordered_board (test_artboard_mapping.ArtboardMappingTests.test_stable_id_follows_reordered_board)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE_ROOT>/tests/test_artboard_mapping.py", line 10, in setUp
+    self.m=module();self.a={'id':11,'name':'Logo','rect':{'x0':0,'y0':0,'x1':128,'y1':96}};self.b={'id':22,'name':'Icon','rect':{'x0':200,'y0':20,'x1':280,'y1':84}};self.native={'artboards':[self.a,self.b]};self.shifted={'artboards':[self.b,self.a]}
+           ~~~~~~^^
+  File "<SOURCE_ROOT>/tests/test_artboard_mapping.py", line 7, in module
+    spec=importlib.util.spec_from_file_location('mapping',ROOT/'skills/vectorcraft-use/scripts/artboard_mapping.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);return m
+                                                                                                                                                             ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "<frozen importlib._bootstrap_external>", line 1022, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1159, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1217, in get_data
+FileNotFoundError: [Errno 2] No such file or directory: '<SOURCE_ROOT>/skills/vectorcraft-use/scripts/artboard_mapping.py'
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.002s
+
+FAILED (errors=8)

@@ -20,7 +20,7 @@ python3 "$SKILL_DIR/scripts/workflow.py" \
 | operations | 按顺序执行 `{command, params, as?}`；只允许脚本 ALLOWED 集中的原生编辑命令 |
 | as | 把实际命令结果绑定为稳定业务名称，例如 logo；不猜上游对象 ID |
 | `$ref` | `{"$ref":"logo.ids.0"}` 解析布尔结果的第一个 ID；普通文字不做替换 |
-| exports | `{format: "svg"/"png"/"pdf", artboard: 0}`；画板索引从 0 开始 |
+| exports | `{format: "svg"/"png"/"pdf", artboard: 0}`；零基索引，或用 `artboardId` 指定稳定ID（含显式 `$ref`） |
 | expectedProjectSha256 | 修改既有交付时必须匹配源工程和 manifest 中的摘要 |
 
 支持的命令范围见脚本 `ALLOWED`：基础形状、路径、文字创建、填充与描边、选择、组合、变换、四种布尔操作、添加与调整画板。其他命令通过原生 CLI/MCP 单独执行并验证，不能假定此助手已支持。
@@ -93,3 +93,11 @@ Both direct swatch.edit and its native.command equivalent inherit the verified s
 `native.command` 调用 `document.setup`，参数 `{"exportText":"appearance"}` 可选择SVG轮廓文字；`editable`保留可导出的文字元素。工作流从实际导出会话只读查询模式，并在绑定摘要的 `exchange-loss.json` 中记录 `live-text-editability`。appearance模式输出的文字丢失文字编辑语义，保留独立原生工程；未知模式不得由path数量或预览推断已轮廓化。报告的原生文字ID是文档依赖，不说明哪些文字进入单画板输出。
 
 普通、`native.command`及完整命令入口的`text.setText`统一要求显式`id`或`ids`及字符串`text`，不沿用隐式选择。原生整段替换采用首个样式；多段富文本样式不能宣称全部保留。字体可移植性与跨编辑器版式保真继续标为未知。
+
+## 画板稳定身份与输出顺序
+
+`exports`支持`{"format":"png","artboardId":42}`，ID来自当前原生画板或`artboard.new`绑定回执（原生只返回索引时，助手立即查询同会话真实画板ID后补充绑定，不把索引当ID），也可写`{"$ref":"variant.id"}`；不要猜测ID。仅给稳定ID时按当前原生顺序解析；同时给`artboard`零基索引时两者必须一致。首次创建可沿用旧索引计划。返工旧索引先从实际打开的源工程绑定原ID，操作后该索引改变身份则拒绝成功交付并报告原ID、实际ID和原ID的新索引；要跟随重排，应显式改用稳定ID。新增且原源工程无对应索引的画板可按当前索引导出，建议使用创建回执ID。
+
+全部输出映射在第一份导出前校验；未知ID、冲突索引和解析后重复输出均拒绝，不发布成功清单。已开始原生操作时保留原位置失败暂存，原交付不改。交付`artboards`记录原生ID、名称、矩形、尺寸和当前索引，`artboardOrder`为原生ID顺序，`outputs`保持请求顺序并附实际索引／ID，`previewOrder`仅列PNG输出的相同请求顺序。文件名`artboard-N`仍以当前零基索引加一命名，不能当成跨版本稳定身份。
+
+Stable IDs identify native artboards; indices describe their current zero-based order. Export by `artboardId` to follow reordering; supplying both ID and index requires agreement. Legacy revision indices bind to actual pre-operation source IDs and refuse identity shifts. The complete mapping is checked before any export. Manifest artboards and output records expose names, dimensions and actual indices; PNG previewOrder follows requested output order. File-name numbers are not stable IDs.

@@ -10,7 +10,9 @@ Four-domain RT-001 runtime source/integrity acceptance now covers every current 
 
 Create Logo, icon and brand assets as `.vectorcraft` with applicable SVG, PDF and PNG exports.
 
-Current plugin: `0.1.0-dev.53`; skill source: `0.1.0-dev.39`; 13 independent skills.
+Current plugin: `0.1.0-dev.54`; skill source: `0.1.0-dev.40`; 13 independent skills.
+
+Plugin54/source40 adds stable artboard-ID exports and creation alias bindings, refusing legacy revision index shifts and conflicting mappings. Candidate checks passed; complete4.12 remains open. [Architecture](docs/VectorCraft-Artboard-Mapping.en.md).
 
 Development plugin53 pins source39: SVG records the actual text export mode and explicit editing loss for outlined text while retaining native text and font dependencies. All three public text editing routes require explicit object IDs. Source regression:151 passed,30 skipped; native candidate checks are recorded separately. Fixed52 acceptance and full V1 remain open. [Text delivery architecture](docs/VectorCraft-Text-Outline.en.md).
 
@@ -135,9 +137,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.53 |
+| Metadata version | 0.1.0-dev.54 |
 | Stage | implementation-in-progress |
-| Skills source | vectorcraft-skills / v0.1.0-dev.39 |
+| Skills source | vectorcraft-skills / v0.1.0-dev.40 |
 | Execution | Upstream CLI; ArtCraft uses child adapters |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |
@@ -375,3 +377,5 @@ Public installed51/source38 passed all five VC-TX-003 scenarios and closes OpenS
 Development53 archives original historical test bytes, resolving52 CI evidence dependency drift. Public installed52 passed actual host discovery of13 skills, two native text exports and18 route refusals; [limited qualification](docs/evidence/vectorcraft-text-smoke-fixed52-20261009.json). Tasks4.7–4.9 are qualified against fixed53; full V1 remains open.
 
 Public fixed53/source39 qualifies all four VC-DM-003 scenarios; tasks4.7–4.9 complete,102 tasks complete/25 open. Eight injected brand faults, healthy/same-RGB isolation, Chinese revision and independent reopen, original-stage text refusals, two SVG text modes,18 route refusals and30 source tests passed;13 skill digests unchanged. Faults are explicit QA injection, native font-library status does not establish OS-font inventory, GUI or cross-editor fidelity. [Scenario evidence](docs/evidence/vectorcraft-brand-text-fixed53-20261009.json).
+
+The test/minimum implementation gates4.10/4.11 are complete,104 tasks complete/23 open; full qualification4.12 remains open. [Mapping candidate evidence](docs/evidence/vectorcraft-artboard-mapping-candidate54-20261009.json).

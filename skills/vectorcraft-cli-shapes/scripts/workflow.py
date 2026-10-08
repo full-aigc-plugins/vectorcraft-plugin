@@ -121,14 +121,7 @@ def validate(plan):
             asset_module().validate_operation(operation['command'], operation.get('params', {}))
         if operation['command'] == 'text.setText':
             native_module().commands.load('text_contract').validate_text_edit(operation.get('params',{}))
-    seen = set()
-    for output in plan.get('exports', []):
-        fmt, artboard = output.get('format'), output.get('artboard', 0)
-        if fmt not in ('svg', 'png', 'pdf') or type(artboard) is not int or artboard < 0:
-            raise ValueError('invalid_export')
-        if (fmt, artboard) in seen:
-            raise ValueError('duplicate_export')
-        seen.add((fmt, artboard))
+    native_module().commands.load('artboard_mapping').validate_exports(plan.get('exports', []))
     if 'document' in plan:
         document = plan['document']
         if set(document) - {'name', 'width', 'height', 'units'}:
@@ -226,8 +219,10 @@ def execute(plan, output, runtime_home=None, source=None, control=None):
             recovery_state['lastAttempt']['phase'] = 'reply_received'
             receipts.append({'command': identifier, 'params': params or {}, 'result': value})
             return value
+        source_native = None
         if source_project:
             command('document.open', {'path': str(source_project)}, save=False)
+            source_native = command('document.json', {}, save=False)
             for entry in assets.values():
                 if entry.get('linked'):
                     result = command('links.relink', {'ids': entry['ids'], 'path': str(stage / entry['path'])})
@@ -314,6 +309,8 @@ def execute(plan, output, runtime_home=None, source=None, control=None):
                     raise ValueError('brand_dependency_violation: ' + json.dumps({
                         'affectedObjectIds': check['affectedObjectIds'], 'artboardsChanged': check['artboardsChanged']}))
             if operation.get('as'):
+                if managed_command == 'artboard.new':
+                    value = native_module().commands.load('artboard_mapping').bind_created(value, command('document.json', {}, save=False))
                 bindings[operation['as']] = value
         fonts = command('text.fonts', {}, save=False)
         if not isinstance(fonts, list) or any(not isinstance(font, dict) or type(font.get('missing')) is not bool for font in fonts):
@@ -357,15 +354,16 @@ def execute(plan, output, runtime_home=None, source=None, control=None):
                 if checked['missing'] or checked['modified']:
                     raise ValueError('asset_link_invalid')
         # 由独立会话重新打开工程取得模型；导出前检查真实画板范围。
+        mapping = native_module().commands.load('artboard_mapping')
+        mapped_exports = mapping.resolve_exports(plan.get('exports', []), native, bindings, source_native)
+        artboards = mapping.snapshot(native)
         outputs = []
         svg_text_modes = {}
         pdf_date = pdf_export_date(native, source, prior if source else None) if any(item['format'] == 'pdf' for item in plan.get('exports', [])) else None
         if pdf_date:
             (stage / 'pdf-export-date.json').write_text(json.dumps(pdf_date, indent=2) + '\n')
-        for item in plan.get('exports', []):
-            index = item.get('artboard', 0)
-            if index >= len(native['artboards']):
-                raise ValueError('artboard_out_of_range')
+        for item in mapped_exports:
+            index = item['artboardIndex']
             destination = stage / f'artboard-{index + 1}.{item["format"]}'
             params = {'path': str(destination), 'format': item['format'], 'artboard': index, 'artboards': [index]}
             if item['format'] == 'svg':
@@ -379,7 +377,7 @@ def execute(plan, output, runtime_home=None, source=None, control=None):
             value = command('document.export', params, save=False)
             if not destination.is_file() or destination.stat().st_size == 0:
                 raise ValueError('export_missing')
-            outputs.append({'path': destination.name, 'artboardId': native['artboards'][index]['id'], 'warnings': value.get('warnings', []),
+            outputs.append({**item, 'path': destination.name, 'warnings': value.get('warnings', []),
                             **({'isolationPolicy': 'native-paint-bounds; whole-dependent-containers-and-unknown-bounds-retained'} if item['format'] == 'svg' else {}),
                             **({'pdfCreated': pdf_date['created'], 'pdfDateBinding': pdf_date['binding']} if item['format'] == 'pdf' else {})})
         if source_project and sha(source_project) != source_hash:
@@ -422,7 +420,9 @@ def execute(plan, output, runtime_home=None, source=None, control=None):
         exchange_report(stage,[item['path'] for item in outputs],{item['path']:item['warnings'] for item in outputs},svg_text_modes)
         manifest = {'schema': 'vectorcraft-delivery/v1', 'sourceProjectSha256': source_hash,
                     'runtimeSha256': installed['binarySha256'], 'bindings': bindings, 'outputs': outputs, 'fontDependencies': fonts,
-                    'assets': assets,
+                    'assets': assets, 'artboards': artboards,
+                    'artboardOrder': [board['id'] for board in artboards],
+                    'previewOrder': [item['path'] for item in outputs if item['format'] == 'png'],
                     **({'brandDependencyReport': {'path': 'brand-dependencies.json',
                          'sha256': sha(stage / 'brand-dependencies.json')}} if brand_checks else {}),
                     **({'collection': {'links': packaged['links'], 'fonts': packaged['fonts'], 'skippedFonts': packaged['skippedFonts']}} if assets else {}),

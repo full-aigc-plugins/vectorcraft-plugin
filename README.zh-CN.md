@@ -10,7 +10,9 @@
 
 Logo、图标与品牌图形需求进入，交付 `.vectorcraft` 及适用的 SVG、PDF、PNG。
 
-当前插件：`0.1.0-dev.53`；技能源：`0.1.0-dev.39`；13 个独立技能。
+当前插件：`0.1.0-dev.54`；技能源：`0.1.0-dev.40`；13 个独立技能。
+
+插件54／源40新增稳定画板ID导出与创建别名绑定，拒绝旧索引返工偏移和冲突映射；源候选验证通过，完整4.12仍开放。 [Architecture](docs/VectorCraft-Artboard-Mapping.zh_CN.md).
 
 开发插件53锁定技能源39：SVG记录实际文字导出模式，轮廓导出明确报告文字编辑性损失，并保留原生文字及字体依赖；三个公开文字修改入口统一要求显式对象ID。源回归151项通过、30项跳过，原生候选验证单独记录；固定52验收与完整V1任务仍开放。[文字交付架构](docs/VectorCraft-Text-Outline.zh_CN.md)。
 
@@ -135,9 +137,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.53 |
+| Metadata version | 0.1.0-dev.54 |
 | Stage | implementation-in-progress |
-| Skills source | vectorcraft-skills / v0.1.0-dev.39 |
+| Skills source | vectorcraft-skills / v0.1.0-dev.40 |
 | Execution | 上游 CLI；ArtCraft 使用子适配器 |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |
@@ -373,3 +375,5 @@ Codex 0.153.4 在全新隔离配置中安装并发现13技能。13项独立空�
 开发53补齐历史测试字节归档，修正52 CI的历史证据依赖失配。公开固定52已通过实际宿主13技能发现、两种原生文字导出及18项入口拒绝；[有限验收记录](docs/evidence/vectorcraft-text-smoke-fixed52-20261009.json)。4.7–4.9已按固定53逐场景证据完成，完整V1仍开放。
 
 公开固定53／源39完成VC-DM-003全部四场景，任务4.7–4.9完成，当前102项完成／25项开放。8组品牌误改注入、正常品牌／同色隔离、中文返工及独立重开、原位置文字拒绝、两种SVG文字模式、18项入口拒绝和30项目标源测试通过；13技能摘要保持不变。故障为QA显式注入，字体状态仅来自原生库，不声称GUI、全富文本或跨编辑器保真。[逐场景证据](docs/evidence/vectorcraft-brand-text-fixed53-20261009.json)。
+
+任务4.10／4.11的测试与最小实现门禁已完成，当前104项完成／23项开放；4.12完整验收保持开放。[映射候选证据](docs/evidence/vectorcraft-artboard-mapping-candidate54-20261009.json)。
