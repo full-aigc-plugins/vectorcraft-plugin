@@ -1,10 +1,7 @@
 import { DatabaseSync } from 'node:sqlite';
 import { createHash, randomUUID } from 'node:crypto';
-import { existsSync, realpathSync, rmSync } from 'node:fs';
+import { existsSync, realpathSync, readFileSync, lstatSync, mkdirSync, openSync,closeSync,fsyncSync,chmodSync } from 'node:fs';
 import { resolve, dirname, basename } from 'node:path';
-import {tmpdir} from 'node:os';
-import {authorizedDirectory} from './authorized_tree.ts';
-import {authorizedCopy,authorizedDigest} from './authorized_file.ts';
 import { canonical, strictJson } from '../strict_json.ts';
 
 export type Authorization={objects:number[],fields:string[],deadline:number,maxAttempts:number,maxBytes:number,budgetId?:string};
@@ -28,29 +25,19 @@ export class Ledger {
       // VACUUM INTO包含已提交WAL数据；先保留只读一致快照，备份失败不得继续迁移。
       const directory=resolve(dirname(resourcePath(path)),'state-schema-backups');
       const backup=resolve(directory,basename(path)+'.before-schema3-'+randomUUID()+'.sqlite');
-      let staging:string|undefined;
       try{
-        authorizedDirectory(directory,dirname(directory));
-        // SQLite不能使用本机目录fd路径。只向宿主随机私有暂存写入，再安全发布备份。
-        const temporaryRoot=realpathSync(tmpdir());
-        const candidate=resolve(temporaryRoot,'vectorcraft-state-backup-'+randomUUID());
-        authorizedDirectory(candidate,temporaryRoot,true);staging=candidate;
-        const staged=resolve(staging,'snapshot.sqlite');
-        this.db.prepare('VACUUM INTO ?').run(staged);
-        const expected=authorizedDigest(staged,[staging]);
-        const snapshot=new DatabaseSync(staged,{readOnly:true});let snapshotVersion:number;
+        mkdirSync(directory,{recursive:true,mode:0o700});
+        if(lstatSync(directory).isSymbolicLink())throw new Error('state_backup_directory_symlink');
+        const fd=openSync(backup,'wx',0o600);closeSync(fd);
+        this.db.prepare('VACUUM INTO ?').run(backup);
+        const saved=openSync(backup,'r');try{fsyncSync(saved);}finally{closeSync(saved);}
+        chmodSync(backup,0o400);
+        const snapshot=new DatabaseSync(backup,{readOnly:true});let snapshotVersion:number;
         try{snapshotVersion=(snapshot.prepare('PRAGMA user_version').get() as any).user_version;}finally{snapshot.close();}
-        if(snapshotVersion!==version.user_version)throw new Error('incompatible_backup_schema');
-        authorizedCopy(staged,[staging],backup,directory,expected);
-        if(authorizedDigest(backup,[directory])!==expected)throw new Error('state_backup_digest_mismatch');
-        this.schemaBackup={path:backup,fromSchema:snapshotVersion,toSchema:3,sha256:expected};
+        if(![1,2,3].includes(snapshotVersion))throw new Error('incompatible_backup_schema');
+        const parent=openSync(directory,'r');try{fsyncSync(parent);}finally{closeSync(parent);}
+        this.schemaBackup={path:backup,fromSchema:snapshotVersion,toSchema:3,sha256:createHash('sha256').update(readFileSync(backup)).digest('hex')};
       }catch(error){this.db.close();this.closed=true;throw new Error('state_backup_failed; schema not migrated: '+String(error));}
-      finally{
-        if(staging){try{rmSync(staging,{recursive:true,force:true});}catch(error){
-          if(!this.closed){this.db.close();this.closed=true;}
-          throw new Error('state_backup_failed; staging cleanup failed; schema not migrated: '+String(error));
-        }}
-      }
     }
     try{
       this.db.exec('BEGIN IMMEDIATE');
@@ -253,7 +240,7 @@ export class Ledger {
       const task=this.checked(id,epoch);
       if(task.state!=='running')throw new Error('task_not_running');
       if(this.db.prepare("SELECT n FROM steps WHERE task=? AND state!='received'").get(id))throw new Error('unresolved_native_step');
-      if(authorizedDigest(artifact.path,[task.output])!==artifact.sha256)throw new Error('artifact_revision_conflict');
+      if(createHash('sha256').update(readFileSync(artifact.path)).digest('hex')!==artifact.sha256)throw new Error('artifact_revision_conflict');
       this.db.prepare("UPDATE tasks SET state='review_ready' WHERE id=?").run(id);return this.get(id);
     });
   }

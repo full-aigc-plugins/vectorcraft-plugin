@@ -374,18 +374,5 @@
       "actual host secret references",
       "current immutable fixed plugin installation qualification"
     ]
-  },
-  "permissionsBackupWriteIncrement": {
-    "implementationVersion": "0.1.0-dev.64",
-    "sourceRef": "v0.1.0-dev.46",
-    "evidence": "docs/evidence/vectorcraft-permissions-backup-write-candidate64-20261009.json",
-    "result": "PASS",
-    "tasksClosed": [],
-    "remaining": [
-      "primary database and SQLite scratch path audit",
-      "native launch boundary audit",
-      "actual host secret references",
-      "current immutable fixed plugin installation qualification"
-    ]
   }
 }

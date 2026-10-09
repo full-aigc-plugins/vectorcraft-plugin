@@ -1,0 +1,53 @@
+{
+  "schema": "vectorcraft-permissions-backup-write-candidate/v1",
+  "result": "PASS",
+  "pluginVersion": "0.1.0-dev.64",
+  "sourceRef": "v0.1.0-dev.46",
+  "baseCommit": "3e7b22d9cf03ed494dfbd2db6c9feb31fe76b13a",
+  "platform": "darwin-arm64",
+  "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+  "tasksClosed": [],
+  "marketplaceEligible": false,
+  "fixedPluginAcceptance": "NOT_RUN",
+  "redTests": 3,
+  "newBoundaryTests": 5,
+  "targetTests": 11,
+  "nodeTests": 176,
+  "migrationScope": "real Node SQLite v1/v2 fixtures,committed WAL retained,budgets/runtime rows retained;backup directory swap,staging collision and cleanup failures do not migrate;not a native GUI migration acceptance",
+  "nativeRevision": {
+    "result": "PASS",
+    "sharedAttempts": 4,
+    "sourcePreserved": true,
+    "controlTextPreserved": true,
+    "allGroupsStopped": true,
+    "scope": "actual native revision and checked next candidate through current Ledger verification;fresh schema3,not legacy native migration;scores explicitly injected QA"
+  },
+  "remaining": [
+    "primary database and SQLite scratch path audit",
+    "native launch boundary audit",
+    "actual host secret references",
+    "current immutable fixed plugin installation qualification"
+  ],
+  "fingerprints": {
+    "src/harness/ledger.ts": "1fb9bf43306144c9bd720ca8af6c3736f526053e4cc0e7374bbfe20a1000366d",
+    "src/harness/authorized_tree.ts": "f0b2603abf592f45411f0a99de9d6f2d86aff53f9d556a1bb87ebe4540fe6ad8",
+    "src/harness/authorized_tree.py": "b8b6dcd2c85f987bfac8a71ce0c598f155100844781b37b1eba809771327e6f0",
+    "src/harness/authorized_file.ts": "42a8c74b646c4598a7652493a63ba772bf28eb791c816a6d345ad6b3daa0cd33",
+    "src/harness/asset_digest.py": "8ddd6bc9e07f7b111da43b4c7d5564ef623be438924ddbaa215b749b701f3465",
+    "skills.lock.json": "44bd17666c6ef2a79641245a239a4f29a1f4a79162bba0de8b8329347f0a8fd1",
+    "plugin.json": "60e59b0f5f44bf657e0554e25a20c5e99e774af7c2ad9f1602590cd5bff6f712",
+    "scripts/qa/revision_budget.ts": "a5601841c8e76d9ca143060df7a21e27722612c2b4b7892e3215218ca3275e47",
+    "tests/backup_write_permissions.test.ts": "d536ee0605a17f8c324b0a6947b909cf1d950ac4e9db3a9c23dcb68ef13cac6c",
+    "tests/ledger_read_permissions.test.ts": "63b9e1ba650539df5baefe0379ea9a7f56423810569b368a6aedca5cf147556e",
+    "tests/state_migration.test.ts": "d99ebba9cf4224da61145c58bc293964cfe205651bf30decd7a5060ad7f91c3a",
+    "tests/runtime_state_preservation.test.ts": "746e6cc0f5db35310377f0cc3a04bd20899e2f33e2d564b0a765f5dfa8058df3",
+    "docs/evidence/vc-rl-002/backup-write-red.log.txt": "96cdc9de8a6f51ac567ccd9a7137148b354e913a822815485d44d2f546a6ce4c",
+    "docs/evidence/vc-rl-002/ledger-read-red.log.txt": "72fc378e23127e7f543a86d051cf4352657f01aede754c64da556d7536d896e6",
+    "docs/evidence/vc-rl-002/backup-write-target.log.txt": "99e0436d3f50491abf5100ad233e370a52bb4dc28f28cd8b604e01f559e2d0af",
+    "docs/evidence/vc-rl-002/backup-write-node176.log.txt": "b44fad22168abbd072095c05d41cfeeb465e26ce4a35ce319811ba9b6456b37c",
+    "docs/evidence/vc-rl-002/backup-write-native.json": "22d27e5b4c127bc1d5e963ebeb9a556b1ebf68ff71d8c19bf27cafe45cd151c9",
+    "docs/evidence/vc-rl-002/backup-write-native.log.txt": "c0001f21291126dc73fd527bd6d09f61a9c7974ae6aeff64704c1c747617170e",
+    "docs/evidence/vc-rl-002/backup-write-python156.log.txt": "1abb73ad9a3e0b9c19cf5604ba0c13a11de685b8e67aff35f391d7bcf1ac4462"
+  },
+  "pythonTests": 156
+}

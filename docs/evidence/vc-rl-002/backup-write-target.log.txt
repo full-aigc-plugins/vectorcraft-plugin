@@ -1,0 +1,19 @@
+✔ migration refuses a backup directory swapped after reservation without writing outside or migrating (129.948208ms)
+✔ failed exclusive staging creation never deletes an existing directory (58.989625ms)
+✔ staging cleanup failure stops migration and retains the valid published backup (149.484167ms)
+✔ ledger verification refuses outside-artifact before reading external bytes (38.679791ms)
+✔ ledger verification refuses replaced-output before reading external bytes (35.9555ms)
+✔ migration preserves original WAL selection, consumed shared budget and task rows in both snapshot and schema3 (162.396583ms)
+✔ database guard rejects mode, binary and schema bypass through direct legacy SQL (2.140166ms)
+✔ legacy v1 migration retains an immutable consistent backup and consumed task budget (160.3435ms)
+✔ backup directory links are refused before modifying the legacy schema (32.750125ms)
+✔ mode-aware state uses a new schema so a schema2-only reader cannot be selected (3.193083ms)
+✔ schema2 upgrades keep selection and budgets; the actual previous reader rejects schema3 (153.254167ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 437.927542
