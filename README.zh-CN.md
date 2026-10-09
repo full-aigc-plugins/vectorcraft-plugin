@@ -1,5 +1,7 @@
 # VectorCraft Agent Plugin
 
+**插件边界**：Agent Plugins 1.0 发行目录由根 `plugin.json`、13 项锁定 `skills/` 和 `LICENSE` 组成。开发仓的 `src/` Harness、测试、证据与发布脚本不自动成为宿主可发现的插件组件；当前没有 `mcp.json` 或命令／钩子扩展。可恢复执行在 OpenSpec 中单独验收，现有有界证据不等于完整 V1。[架构与验收边界](docs/VectorCraft-Runtime-Architecture.zh_CN.md)。
+
 开发 plugin37／source33 修复完整网关品牌返工遗漏变体。原生候选通过，固定安装验收另行执行。[架构](docs/VectorCraft-Brand-Gateway-Export-Architecture.zh_CN.md)。
 
 固定插件36／技能源32通过13项独立原生冷安装、26项真实工作流测试和52个误改拒绝案例。64安装身份保持；51项未变技能复用已复核的历史冷启动证据。Art内置升级与完整V1仍开放。[固定验收](docs/VectorCraft-Fixed-Brand-Guard-Architecture.zh_CN.md)。

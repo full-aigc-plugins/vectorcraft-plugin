@@ -3,14 +3,18 @@
 > **Purpose**: Complete target design for processes, data, protocols, recovery and acceptance.
 >
 > **Version**: 1.0.0
-> **Updated**: 2026-10-05
-> **Status**: Target design, not implemented. Observations and acceptance evidence are identified separately.
+> **Updated**: 2026-10-09
+> **Status**: Target design with bounded implementation; current source and fixed acceptance scope are tracked by OpenSpec tasks and version-bound evidence.
 
 Related documents: [Brand boundary](../product-docs/VectorCraft/en/1%E3%80%81VectorCraft-Naming-and-Brand.md) · [Technical plan](../product-docs/VectorCraft/en/5%E3%80%81VectorCraft-Technical-Plan.md) · [Detailed architecture](VectorCraft-Runtime-Architecture.md) · [OpenSpec](../openspec/changes/establish-v1-plugin/proposal.md) · [Evidence](evidence/runtime-baseline.json)
 
 ## 1. Positioning and evidence boundary
 
-VectorCraft provides editable vector brand assets and multi-artboard design. This repository currently contains documentation, specifications, metadata and sanitized runtime evidence; application source, business skills and full host integration are not implemented. Runtime components below describe the target design.
+VectorCraft provides editable vector brand assets and multi-artboard design. This repository now contains a `src/` Harness, 13 locked skill snapshots and bounded runtime evidence; complete host routing, all-command and permission/secret acceptance remain open. The following architecture describes the target system. Existing modules or narrow tests do not establish complete delivery.
+
+### Agent Plugin distribution directory and development repository
+
+Agent Plugins 1.0 clients discover portable components at root `plugin.json`, `skills/` and optional `mcp.json`. The current distribution directory extracts only `plugin.json`, the 13 locked skills and `LICENSE`; `src/`, `scripts/`, `tests/`, `docs/` and `openspec/` remain in the development repository and are not loaded merely because those files exist. Commands and hooks require a specific client's extension contract and are not cross-client capabilities. If the Harness later becomes a plugin-callable service, an actual MCP or client-extension entry point must be implemented and tested; a static package check cannot substitute for runtime acceptance.
 
 ## 2. Drivers and non-goals
 

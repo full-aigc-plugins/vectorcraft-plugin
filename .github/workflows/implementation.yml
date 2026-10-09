@@ -14,6 +14,11 @@ jobs:
           python-version: '3.13'
       - run: python3 -m unittest discover -s tests -v
       - run: python3 scripts/vendor/skill_vendor.py check
+      - name: Verify portable Agent Plugin payload
+        run: |
+          mkdir -p "$RUNNER_TEMP/vectorcraft-agent-plugin"
+          git archive HEAD plugin.json skills LICENSE | tar -x -C "$RUNNER_TEMP/vectorcraft-agent-plugin"
+          python3 -I -B scripts/verify_portable_package.py "$RUNNER_TEMP/vectorcraft-agent-plugin" skills.lock.json
       - run: python3 -I -B scripts/current_identity.py --check
       - run: python3 -I -B scripts/evidence_index.py --check
       - run: python3 -I -B scripts/verify_geometry_evidence.py
@@ -41,3 +46,8 @@ jobs:
           fi
       - run: python3 -I -B scripts/release_gate.py --require development
       - run: python3 -I -B scripts/verify_release_evidence.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: vectorcraft-agent-plugin-candidate-${{ github.sha }}
+          path: ${{ runner.temp }}/vectorcraft-agent-plugin/
+          retention-days: 7

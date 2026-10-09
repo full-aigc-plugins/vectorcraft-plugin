@@ -3,14 +3,18 @@
 > **文档说明**：进程、数据、协议、故障恢复及验收的完整目标设计。
 >
 > **版本**：1.0.0
-> **最后更新**：2026-10-05
-> **状态**：目标设计；尚未实现。事实依据与验收结果单独标注。
+> **最后更新**：2026-10-09
+> **状态**：目标设计与有界实现并存；当前源码和固定验收范围以 OpenSpec 任务及绑定版本的证据为准。
 
 关联文档：[品牌边界](../product-docs/VectorCraft/1%E3%80%81VectorCraft-%E5%91%BD%E5%90%8D%E4%B8%8E%E5%93%81%E7%89%8C%E8%AF%B4%E6%98%8E.md) · [技术方案](../product-docs/VectorCraft/5%E3%80%81VectorCraft-%E6%8A%80%E6%9C%AF%E6%96%B9%E6%A1%88%E4%B8%8E%E8%B7%AF%E7%BA%BF.md) · [详细架构](VectorCraft-Runtime-Architecture.zh_CN.md) · [OpenSpec](../openspec/changes/establish-v1-plugin/proposal.md) · [证据](evidence/runtime-baseline.json)
 
 ## 1. 定位与证据边界
 
-VectorCraft 负责可编辑矢量品牌资产与多画板设计。当前仓库包含文档、规格、元数据与脱敏运行时证据；`src/`、业务技能和完整宿主适配尚未实现。所有下列运行时组件均为目标设计。
+VectorCraft 负责可编辑矢量品牌资产与多画板设计。当前仓库已有 `src/` Harness 实现、13 项固定技能源副本及有界运行证据；完整宿主路由、全命令与权限秘密验收仍开放。下文描述目标体系，不能把已存在的模块或局部测试等同于完整交付。
+
+### Agent Plugin 发行目录与开发仓
+
+Agent Plugins 1.0 宿主从根 `plugin.json`、`skills/` 及可选 `mcp.json` 发现可移植组件。当前发行目录只抽取 `plugin.json`、13 项锁定技能和 `LICENSE`；`src/`、`scripts/`、`tests/`、`docs/`、`openspec/` 留在开发仓，不会仅因文件存在而被规范宿主加载。命令与钩子须依具体宿主的扩展协议提供，不能宣称为跨宿主能力。若未来将 Harness 作为插件可调用服务，必须提供并验证真实 MCP 或宿主扩展入口；静态包检查不能替代该运行验收。
 
 ## 2. 驱动与非目标
 

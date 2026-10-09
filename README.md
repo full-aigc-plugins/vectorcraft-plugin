@@ -1,5 +1,7 @@
 # VectorCraft Agent Plugin
 
+**Plugin boundary:** The Agent Plugins 1.0 distribution directory contains root `plugin.json`, 13 locked `skills/` and `LICENSE`. The development repository's `src/` Harness, tests, evidence and release tooling are not automatically discoverable plugin components; there is currently no `mcp.json` or command/hook extension. Recoverable execution has separate OpenSpec acceptance gates; existing bounded evidence does not establish complete V1. [Architecture and acceptance boundary](docs/VectorCraft-Runtime-Architecture.md).
+
 Fixed plugin37/source33 passed bounded installed brand-export acceptance. A newer source candidate and plugin orchestration modules are under local validation; their fixed-release and host acceptance remain separate. [Architecture](docs/VectorCraft-Brand-Gateway-Export-Architecture.md).
 
 Fixed plugin36/source32 passes13 independent native cold installations,26 real workflow tests and52 injected erroneous-update refusals. All64 installed identities match;51 unchanged skills retain revalidated historical cold evidence. Art bundled upgrades and complete V1 remain open. [Fixed acceptance](docs/VectorCraft-Fixed-Brand-Guard-Architecture.md).

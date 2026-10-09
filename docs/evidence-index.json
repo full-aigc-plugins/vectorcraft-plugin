@@ -3044,7 +3044,7 @@
         "docs/evidence/vectorcraft-revision-fixed63-20261009.json": "38c0415b3f51533555985aa9e047c91e2049e3aa1a058e2c0c3d2d5bf607f45b",
         "docs/evidence/pre-revision64-identity/docs/release-evidence.json": "429ad7566c861936a5235df03edbfc32f4f00e7bcaff99bd35dfac14c9589174",
         "openspec/changes/establish-v1-plugin/specs/quality-review/spec.md": "60b8491854042fc69fe12898fefb57a85731ea7c23f264190b7fdf764fb32c54",
-        "openspec/changes/establish-v1-plugin/specs/release-compatibility/spec.md": "32b5411fad23b0215b6352af5f255cf748c89593779e8ef03a0986f0934d7b11",
+        "docs/evidence/pre-portable-package-identity/openspec/changes/establish-v1-plugin/specs/release-compatibility/spec.md": "32b5411fad23b0215b6352af5f255cf748c89593779e8ef03a0986f0934d7b11",
         "docs/evidence/pre-permissions-identity/plugin.json": "51014ee0536d8f30da7f2992afa63d8c8ff38f2881f7059690d4068b6fdaef57",
         "scripts/qa/revision_budget.ts": "a5601841c8e76d9ca143060df7a21e27722612c2b4b7892e3215218ca3275e47",
         "scripts/qa/revision_goal.ts": "3e40cc1d808756040e17b569280e41aaf68e2ab664f0667cb9d01547b52367c9",
