@@ -1,11 +1,10 @@
 import {assetDigest} from './asset_digest.ts';
 import {authorizedRead,authorizedDigest,authorizedDigests,authorizedCopy} from './authorized_file.ts';
 import {authorizedWrite} from './authorized_write.ts';
-import {authorizedDirectory,authorizedTreeCopy,authorizedTreeDigest} from './authorized_tree.ts';
 import {assertNoLiteralSecrets,validateAssetRecords} from './input_policy.ts';
 import {nativeEnvironment} from './native_environment.ts';
 import { createHash } from 'node:crypto';
-import { existsSync, lstatSync, readFileSync } from 'node:fs';
+import { existsSync, lstatSync, readFileSync, mkdirSync, cpSync } from 'node:fs';
 import { relative, resolve, join, isAbsolute, dirname } from 'node:path';
 import { spawn } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
@@ -50,7 +49,7 @@ export class Controller {
     return this.ledger.get(id);
   }
   publishState(id:string,epoch:number,state:string){
-    authorizedDirectory(this.snapshotRoot,dirname(this.snapshotRoot));
+    mkdirSync(this.snapshotRoot,{recursive:true,mode:0o700});
     const path=join(this.snapshotRoot,id+'-state.json');
     authorizedWrite(path,this.snapshotRoot,canonical({task:id,epoch,state}),0o600,true);
   }
@@ -222,20 +221,21 @@ export class Controller {
       return {...task,...(geometryContract&&geometryVerification?{geometryVerification}:{}),resumePolicy:'inspect original files and request; no automatic replay'};
     }
     if(existsSync(request.output))throw new Error('output_exists');
-    authorizedDirectory(this.snapshotRoot,dirname(this.snapshotRoot));
+    mkdirSync(this.snapshotRoot,{recursive:true,mode:0o700});
     const skillSnapshot=join(this.snapshotRoot,task.id+'-skill');
-    authorizedTreeCopy(request.skill,skillSnapshot,this.snapshotRoot,request.expectedSkillSha256);
+    cpSync(request.skill,skillSnapshot,{recursive:true,errorOnExist:true,force:false});
+    if(skillDigest(skillSnapshot)!==request.expectedSkillSha256)throw new Error('skill_snapshot_mismatch');
     let sourceSnapshot:string|undefined,sourceSnapshotSha256:string|undefined;
     if(request.source){
-      sourceSnapshot=join(this.snapshotRoot,task.id+'-source');authorizedDirectory(sourceSnapshot,this.snapshotRoot,true);
+      sourceSnapshot=join(this.snapshotRoot,task.id+'-source');mkdirSync(sourceSnapshot,{mode:0o700});
       for(const [name,expected] of Object.entries(sourceDependencies)){
         if(expected===null)continue;
         const original=join(request.source,name),snapshot=join(sourceSnapshot,name);
         if(sourcePathLinked(name))throw new Error('invalid_source_dependency');
-        authorizedDirectory(dirname(snapshot),sourceSnapshot);
+        mkdirSync(dirname(snapshot),{recursive:true,mode:0o700});
         authorizedCopy(original,auth.readRoots,snapshot,sourceSnapshot,expected);
       }
-      checkInputs();sourceSnapshotSha256=authorizedTreeDigest(sourceSnapshot);
+      checkInputs();sourceSnapshotSha256=skillDigest(sourceSnapshot);
     }
     const planSnapshot=join(this.snapshotRoot,task.id+'.json');
     authorizedWrite(planSnapshot,this.snapshotRoot,canonical(plan),0o400);

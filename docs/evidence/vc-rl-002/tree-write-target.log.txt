@@ -1,0 +1,27 @@
+✔ directory creation stays inside frozen roots and preserves existing exclusive targets (133.921291ms)
+✔ tree copy and digest preserve binary bytes, empty directories, Unicode sorting and executable modes (103.738458ms)
+✔ tree snapshot rejects digest drift, source links and replaced snapshot roots (92.920625ms)
+✔ controller binds a supplied standalone snapshot, records intent and verifies actual files (1070.580917ms)
+✔ changing a bound brief during execution stops the owned group and retains the unresolved task (755.900875ms)
+✔ source manifest cannot change while runtime is probing (215.951458ms)
+✔ source inherited plan cannot change while runtime is probing (194.234125ms)
+✔ source declared asset cannot change while runtime is probing (199.449959ms)
+✔ source previously absent PDF date cannot change while runtime is probing (167.161958ms)
+✔ source manifest and declared dependency digests enter immutable task identity (1137.4635ms)
+✔ source manifest cannot introduce path traversal or linked inputs before probing (193.16225ms)
+✔ ordinary dependency filenames cannot bypass guards through object prototype setters (190.141792ms)
+✔ a declared dependency cannot escape its source bundle through a parent directory link (96.44525ms)
+✔ execution uses a hash-verified readonly source snapshot while resource identity stays on the user source (1104.738291ms)
+✔ source snapshot refuses an ancestor swapped after link checking before copying bytes (531.021667ms)
+✔ state publication preserves external files under temporary-link (77.66225ms)
+✔ state publication preserves external files under parent-swap (73.339792ms)
+✔ snapshot parent swap refuses external skill-copy effects (318.224625ms)
+✔ snapshot parent swap refuses external source-directory effects (316.342958ms)
+ℹ tests 19
+ℹ suites 0
+ℹ pass 19
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3615.506833

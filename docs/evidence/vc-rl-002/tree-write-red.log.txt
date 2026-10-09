@@ -1,0 +1,55 @@
+✖ snapshot parent swap refuses external skill-copy effects (692.823417ms)
+✖ snapshot parent swap refuses external source-directory effects (319.449917ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 0
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1119.934
+
+✖ failing tests:
+
+test at tests/tree_write_permissions.test.ts:13:54
+✖ snapshot parent swap refuses external skill-copy effects (692.823417ms)
+  AssertionError [ERR_ASSERTION]: must not create directories or copy files outside frozen snapshots
+  + actual - expected
+  
+  + [
+  +   '84d657b1-f7b6-43eb-932d-beef1390fa44-skill',
+  +   '84d657b1-f7b6-43eb-932d-beef1390fa44-source'
+  + ]
+  - []
+  
+      at TestContext.<anonymous> (file://PLUGIN_REPOSITORY/tests/tree_write_permissions.test.ts:27:70)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: [ '84d657b1-f7b6-43eb-932d-beef1390fa44-skill', '84d657b1-f7b6-43eb-932d-beef1390fa44-source' ],
+    expected: [],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/tree_write_permissions.test.ts:13:54
+✖ snapshot parent swap refuses external source-directory effects (319.449917ms)
+  AssertionError [ERR_ASSERTION]: must not create directories or copy files outside frozen snapshots
+  + actual - expected
+  
+  + [
+  +   '0f1c37c6-9d37-4cd5-92f3-dbb30d6ee692-source'
+  + ]
+  - []
+  
+      at TestContext.<anonymous> (file://PLUGIN_REPOSITORY/tests/tree_write_permissions.test.ts:27:70)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: [ '0f1c37c6-9d37-4cd5-92f3-dbb30d6ee692-source' ],
+    expected: [],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
