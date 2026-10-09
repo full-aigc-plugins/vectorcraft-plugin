@@ -1,5 +1,10 @@
 # Version-bound release records
 
+## dev.64 (2026-10-09)
+
+Post-publication tag verification: plugin v0.1.0-dev.64 is published at6763caa1f0e6596fc01d298304794d0e9c139dc3,pinning independent source v0.1.0-dev.46. Actual public-tag installation into a fresh isolated Codex0.153.4 home discovers13 matching skills. All13 independent HTTPS empty-runtime starts and12 native create/revise pairs pass,setup-only separate,zero skips. Installed product files exactly match the pre-publication four-scenario copy;all4 main/tag CI runs pass. Thirteen completed runtime caches were removed after confirming no open handles;native projects and execution records remain. This completes the public-release/install/cold-start portion of9.18,whose9.9 model-routing prerequisite remains open;9.18 is not closed. Full permission/secret boundaries,per-command GUI,other platforms and completeV1 remain unqualified:121/127 tasks complete,6 open. [Evidence](docs/evidence/vectorcraft-public-tag64-install-20261009.json).
+
+
 ## dev.49 (2026-10-09)
 
 Bind completed step receipts to the original manifest and all files; refuse settlement if the receipt changes after inspection. Pinned source38 records actual delivery directory identity before rename, including linked package subdirectories. Four real plain/linked crashes before/after receipt pass as candidates. Old pending proofs need fresh step-bound inspection; unverifiable source37 packaged results remain occupied.97 Node regressions pass; fixed49 acceptance is separate and full3.6/V1 remain open.

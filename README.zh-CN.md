@@ -141,7 +141,7 @@ Intent + assets
 | Stage | implementation-in-progress |
 | Skills source | vectorcraft-skills / v0.1.0-dev.46 |
 | Execution | 上游 CLI；ArtCraft 使用子适配器 |
-| Host compatibility | Public63 bounded Codex install/discovery verified; candidate64 fixed-host qualification pending |
+| Host compatibility | 公开dev.64/source46的Codex安装与13项冷启动已验证；模型派发和完整宿主验收开放 |
 | License | Apache-2.0 (original repository content) |
 
 
@@ -465,3 +465,6 @@ Controller目录／整树增量：快照目录创建、固定技能树复制和�
 
 
 当前固定副本四场景复验：dev.64/source46公开提交安装上，6次原生修订、15项守卫及拥有签名桌面的源工程修改／保存／重开后陈旧建议拒绝通过；最佳候选、轮数、停滞、额度与文本保全按VC-QA-002核验。桌面初次夹具越界被正确拒绝，调整为测试拥有的GUI根内工程后通过，产品权限未放宽。证据v2解析已绑定checker_bundle.ts的完整10文件身份；发布门禁核验所选当前报告，旧v1三文件证据与原脚本归档保留。当前六层开发发行门禁通过，市场资格仍为false；公开标签后的安装复验、模型路由、权限／秘密完整边界及逐命令GUI仍开放，121/127完成、6项开放。回执评分为QA夹具，不代表真实创意评审。 [Evidence](docs/evidence/vectorcraft-revision-commit64-20261009.json).
+
+
+公开标签发布后复验：插件v0.1.0-dev.64已发布，标签指向6763caa1f0e6596fc01d298304794d0e9c139dc3，固定独立技能源v0.1.0-dev.46。从公开标签安装到全新Codex0.153.4隔离配置，13技能身份一致；13次独立HTTPS空缓存启动、12组原生创建／返工通过，setup-only单列，零跳过。安装产品源码与发行前四场景副本逐文件一致，main／tag共4个CI运行通过。已完成且无句柄的13个测试运行时缓存被清理，原生工程和执行记录保留。此结果补齐9.18的公开发行及实际安装／冷启动部分；其9.9真实模型默认路由等前置仍未完成，不关闭9.18。权限／秘密完整边界、全命令GUI、其他平台与完整V1不提升；121/127完成、6项开放。 [Evidence](docs/evidence/vectorcraft-public-tag64-install-20261009.json).

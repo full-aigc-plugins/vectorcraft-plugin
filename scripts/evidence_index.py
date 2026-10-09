@@ -337,6 +337,9 @@ def build(root=ROOT):
     revision64='docs/evidence/vectorcraft-revision-commit64-20261009.json'
     if (root/revision64).is_file():
         entries.append(bound_report(root,revision64,'fixed-install','Current four VC-QA-002 scenarios on installed public-commit64/source46;6 native revisions,15 guards,owned signed desktop stale-source refusal and10-file checker identity;explicit QA scores,not public-tag or model/full-V1 acceptance','VC-QA-002',['6.6']))
+    public64='docs/evidence/vectorcraft-public-tag64-install-20261009.json'
+    if (root/public64).is_file():
+        entries.append(bound_report(root,public64,'fixed-install','Post-publication public tag64/source46 actual Codex installation;13 independent cold starts,12 native create/revise pairs,zero skips and4 successful main/tag CI runs;product bytes equal pre-publication qualification;model/full-domain/secret-boundary acceptance remains open','VC-RL-004',[]))
     # 明确归档变更前执行字节；保留报告原摘要，不能把旧运行重绑定到新实现。
     for entry in entries:
         archived={}

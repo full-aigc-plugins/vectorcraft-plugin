@@ -141,7 +141,7 @@ Intent + assets
 | Stage | implementation-in-progress |
 | Skills source | vectorcraft-skills / v0.1.0-dev.46 |
 | Execution | Upstream CLI; ArtCraft uses child adapters |
-| Host compatibility | Public63 bounded Codex install/discovery verified; candidate64 fixed-host qualification pending |
+| Host compatibility | Public64/source46 Codex installation and13 cold starts verified;model routing/full-host acceptance open |
 | License | Apache-2.0 (original repository content) |
 
 
@@ -467,3 +467,6 @@ Public-commit installed-copy acceptance: dev.64/source46 installs from the exact
 
 
 Current installed-copy four-scenario revalidation: public-commit dev.64/source46 passes6 native revisions,15 guards and stale-proposal refusal after an owned signed desktop modifies,saves and reopens its source project. VC-QA-002 checks best candidates,round/stagnation limits,budgets and text preservation. The initial desktop fixture was correctly refused outside its owned root;placing the fixture inside that root passes without broadening product permissions. Evidence v2 derives the complete10-file checker identity from bound checker_bundle.ts;the release gate verifies the selected current report. Original v1 three-file proofs and drivers remain archived. All six development-release layers now pass;marketplace eligibility remains false. Post-publication tag installation,model routing,complete permission/secret boundaries and per-command GUI acceptance remain open:121/127 tasks complete,6 open. Scores remain explicit QA fixtures,not creative judgment. [Evidence](docs/evidence/vectorcraft-revision-commit64-20261009.json).
+
+
+Post-publication tag verification: plugin v0.1.0-dev.64 is published at6763caa1f0e6596fc01d298304794d0e9c139dc3,pinning independent source v0.1.0-dev.46. Actual public-tag installation into a fresh isolated Codex0.153.4 home discovers13 matching skills. All13 independent HTTPS empty-runtime starts and12 native create/revise pairs pass,setup-only separate,zero skips. Installed product files exactly match the pre-publication four-scenario copy;all4 main/tag CI runs pass. Thirteen completed runtime caches were removed after confirming no open handles;native projects and execution records remain. This completes the public-release/install/cold-start portion of9.18,whose9.9 model-routing prerequisite remains open;9.18 is not closed. Full permission/secret boundaries,per-command GUI,other platforms and completeV1 remain unqualified:121/127 tasks complete,6 open. [Evidence](docs/evidence/vectorcraft-public-tag64-install-20261009.json).
