@@ -7,6 +7,8 @@ Post-publication tag verification: plugin v0.1.0-dev.64 is published at6763caa1f
 
 Post-publication command supplement: the installed public64/source46 copy passes22 paint commands,44 native save/reopen stages and88 decoded SVG/PNG exports in an owned signed desktop session. The complete585-command matrix keeps563 NOT_RUN. Product/source bytes and existing release tag remain unchanged;task8.3 and fullV1 remain open. [Command matrix](docs/evidence/vectorcraft-command-matrix-fixed64-20261009.json).
 
+Swatch command supplement: all22 swatch commands pass on actual installed64/source46. Together with unchanged paint evidence,the complete catalog matrix records44/585 accepted,541 NOT_RUN,88 native save/reopen stages and176 decoded SVG/PNG exports. All13 installed skill identities remain unchanged;task8.3 and completeV1 stay open. [Family matrix](docs/evidence/vectorcraft-command-families-fixed64-20261009.json).
+
 ## dev.49 (2026-10-09)
 
 Bind completed step receipts to the original manifest and all files; refuse settlement if the receipt changes after inspection. Pinned source38 records actual delivery directory identity before rename, including linked package subdirectories. Four real plain/linked crashes before/after receipt pass as candidates. Old pending proofs need fresh step-bound inspection; unverifiable source37 packaged results remain occupied.97 Node regressions pass; fixed49 acceptance is separate and full3.6/V1 remain open.

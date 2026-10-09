@@ -1,0 +1,81 @@
+#!/usr/bin/env python3
+"""合并固定安装命令族证据；重复、身份漂移及缺失语义禁止提升通过数。"""
+import argparse
+import hashlib
+import importlib.util
+import json
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[1]
+BASE='scripts/verify_command_evidence.py'
+MATRIX='docs/evidence/vectorcraft-command-families-fixed64-20261009.json'
+FAMILIES={'swatch':'docs/evidence/vectorcraft-command-swatch-fixed64-20261009.json'}
+def sha(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+def load(name,path):
+    spec=importlib.util.spec_from_file_location(name,path);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);return m
+
+def merge_ids(accepted,commands):
+    """按原生命令ID合并，绝不以重复执行或重复族增加覆盖。"""
+    if len(commands)!=len(set(commands)):raise ValueError('command_family_duplicate')
+    if set(accepted)&set(commands):raise ValueError('command_family_overlap')
+    return set(accepted)|set(commands)
+
+def validate_family(root,family,path):
+    """验证当前安装身份及每轮命令上下文、真实对象、交付解码和重开。"""
+    report=json.loads((root/path).read_text());identity=json.loads((root/'docs/current-identity.json').read_text())
+    host=json.loads((root/'docs/evidence/vectorcraft-public-tag64-install-20261009.json').read_text());catalog=json.loads((root/'skills/vectorcraft-use/references/command-coverage.json').read_text())
+    if report.get('schema')!='vectorcraft-command-family/v1' or report.get('result')!='PASS' or report.get('family')!=family:raise ValueError('family_report_identity')
+    for key in ('pluginVersion','pluginCommit','sourceRef','sourceCommit','hostVersion','platform'):
+        if report[key]!=host[key]:raise ValueError('family_fixed_identity')
+    if report['installedSkillsBefore']!=identity['skills'] or report['installedSkillsAfter']!=identity['skills']:raise ValueError('family_installed_identity')
+    if report['runtimeSha256']!=identity['runtime']['binarySha256'] or report['desktopBinarySha256']!=identity['desktop']['binarySha256']:raise ValueError('family_runtime_identity')
+    driver_path='scripts/qa/command_'+family+'.py'
+    if report['driverSha256']!=sha(root/driver_path) or report['runnerSha256']!=sha(root/'scripts/qa/command_family.py') or report['catalogSha256']!=sha(root/'skills/vectorcraft-use/references/command-coverage.json'):raise ValueError('family_execution_identity')
+    if report['allOwnedProcessesStopped'] is not True or report['listenerOwnedByPID'] is not True:raise ValueError('family_owned_processes')
+    driver=load('family_semantics_'+family,root/driver_path);cases=report['cases'];ids=[c['command'] for c in cases]
+    expected=[row['id'] for row in catalog['commands'] if row['id'].startswith(family+'.')]
+    if ids!=expected or ids!=driver.COMMANDS:raise ValueError('family_command_coverage')
+    rows={row['id']:row for row in catalog['commands']}
+    for case in cases:
+        command=case['command']
+        if case['result']!='PASS' or case['mode']!='owned-signed-desktop-bridge' or case['sourcePreserved'] is not True or case['previousDeliveryPreserved'] is not True:raise ValueError('family_context')
+        if [s['round'] for s in case['stages']]!=[1,2]:raise ValueError('family_revision_stages')
+        for stage in case['stages']:
+            context=stage['context']
+            if context['id']!=command or context['params']!=rows[command]['params'] or context['enabled'] is not True or stage['ui']['activeDocument'] is None:raise ValueError('family_live_context')
+            driver.validate_transition(command,stage)
+            # 色板夹具只授权目标填充变化；描边与其他外观属性必须原样保全。
+            if family=='swatch':
+                before_appearance=driver.paint.objects(stage['before'])[2]['appearance']
+                after_appearance=driver.paint.objects(stage['after'])[2]['appearance']
+                def protected(value):return {**value,'items':[item for item in value['items'] if item['kind']!='fill']}
+                if protected(before_appearance)!=protected(after_appearance):raise ValueError('family_protected_appearance')
+            canvas=stage['canvas'];exports=stage['exports']
+            if canvas['mimeType']!='image/png' or canvas['width']!=128 or canvas['height']!=96 or canvas['bytes']<=0:raise ValueError('family_canvas_decode')
+            if [e['format'] for e in exports]!=['svg','png'] or any(e['decoded'] is not True for e in exports):raise ValueError('family_export_decode')
+            for digest in [canvas['sha256'],stage['nativeProjectSha256'],*[e['sha256'] for e in exports]]:
+                if len(digest)!=64 or any(c not in '0123456789abcdef' for c in digest):raise ValueError('family_artifact_identity')
+    return ids
+
+def verify(root=ROOT):
+    """复用已通过且原字节不变的paint证据，补充新的实际命令族。"""
+    base=load('family_base',root/BASE);previous=base.verify(root);accepted={r['id'] for r in previous['commands'] if r['executionAcceptance']=='PASS'}
+    reports={base.REPORT:sha(root/base.REPORT)};fingerprints={BASE:sha(root/BASE),'scripts/verify_command_families.py':sha(root/'scripts/verify_command_families.py'),'docs/current-identity.json':sha(root/'docs/current-identity.json'),'skills/vectorcraft-use/references/command-coverage.json':sha(root/base.CATALOG)}
+    for family,path in FAMILIES.items():
+        accepted=merge_ids(accepted,validate_family(root,family,path));reports[path]=sha(root/path)
+        for name,digest in json.loads((root/path).read_text())['fingerprints'].items():
+            if sha(root/name)!=digest:raise ValueError('family_dependency_drift')
+            fingerprints[name]=digest
+    catalog=json.loads((root/base.CATALOG).read_text());entries=base.matrix_rows(catalog,accepted)
+    for name,digest in reports.items():fingerprints[name]=digest
+    return {'schema':'vectorcraft-command-families/v1','result':'PASS','requirement':'VC-CM-001','tasksClosed':[],
+            'pluginVersion':previous['pluginVersion'],'pluginCommit':previous['pluginCommit'],'sourceRef':previous['sourceRef'],
+            'coverage':{'catalogCommands':len(entries),'passed':len(accepted),'notRun':len(entries)-len(accepted),'stages':2*len(accepted)},
+            'reports':reports,'fingerprints':fingerprints,
+            'scope':'Explicit paint and swatch native semantics on public fixed64/source46;incomplete exhaustive commands/GUI/creative/V1 acceptance;native canvas images are not OS-window screenshots',
+            'commands':entries}
+
+if __name__=='__main__':
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--write',action='store_true');args=parser.parse_args();result=verify()
+    if args.write:(ROOT/MATRIX).write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
+    elif json.loads((ROOT/MATRIX).read_text())!=result:raise SystemExit('command_family_matrix_drift')
+    print(json.dumps({'result':'PASS',**result['coverage'],'tasksClosed':[]}))

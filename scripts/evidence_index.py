@@ -343,6 +343,9 @@ def build(root=ROOT):
     paint64='docs/evidence/vectorcraft-command-paint-fixed64-20261009.json'
     if (root/paint64).is_file():
         entries.append(bound_report(root,paint64,'command-execution','Public tag64/source46 owned signed desktop:22 paint commands,44 native save/reopen stages,88 decoded SVG/PNG exports;563 locked commands remain NOT_RUN;native canvas images only,not exhaustive GUI or creative acceptance','VC-CM-001',[]))
+    command_families='docs/evidence/vectorcraft-command-families-fixed64-20261009.json'
+    if (root/command_families).is_file():
+        entries.append(bound_report(root,command_families,'command-execution','Public tag64/source46:44 of585 locked commands accepted across paint/swatch,88 save/reopen stages and176 decoded SVG/PNG exports;541 NOT_RUN;13 installed skill identities unchanged;no task closure or exhaustive GUI/creative acceptance','VC-CM-001',[]))
     # 明确归档变更前执行字节；保留报告原摘要，不能把旧运行重绑定到新实现。
     for entry in entries:
         archived={}
@@ -360,7 +363,7 @@ def build(root=ROOT):
     return {'schema':'vectorcraft-evidence-index/v1',
             'identitySha256':sha(safe_file(root,'docs/current-identity.json')),
             'entries':entries,
-            'commandAcceptance':'Use version-bound command catalog executionAcceptance; directory discovery never promotes NOT_RUN',
+            'commandAcceptance':'Frozen catalog retains its audit statuses; later native execution is recorded in digest-bound external command-family matrices; directory discovery never promotes NOT_RUN',
             'excluded':['complete V1','all commands','all GUI','model dispatch','source candidate fixed-install acceptance']}
 
 

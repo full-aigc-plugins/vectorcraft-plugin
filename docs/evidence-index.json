@@ -3892,9 +3892,38 @@
         "skills/vectorcraft-use/scripts/desktop.lock.json": "f38c7cd5b837bc4f3275ef96c17308fc894f6be66c6a00ecf9c53378ad4bb486",
         "docs/evidence/vectorcraft-public-tag64-install-20261009.json": "e9cddc8c64e0a5d0ca2c3d7c3d0d8d3bab4c439715b80464f4773b4f99fce318"
       }
+    },
+    {
+      "path": "docs/evidence/vectorcraft-command-families-fixed64-20261009.json",
+      "sha256": "7a9401dea221b9008b7c2d86c90d51ec4b2294962cbbf72adc0b7bdb079e81f2",
+      "level": "command-execution",
+      "status": "PASS",
+      "scope": "Public tag64/source46:44 of585 locked commands accepted across paint/swatch,88 save/reopen stages and176 decoded SVG/PNG exports;541 NOT_RUN;13 installed skill identities unchanged;no task closure or exhaustive GUI/creative acceptance",
+      "requirement": "VC-CM-001",
+      "tasks": [],
+      "historical": false,
+      "dependencies": {
+        "scripts/verify_command_evidence.py": "2226125e18cbf119de2451534d08547e12dfd2f1e6db9e5464586659d7598364",
+        "scripts/verify_command_families.py": "19e3b8201f601c3491364640da035583928402e23157c31c7197ab04067e14cd",
+        "docs/current-identity.json": "e559e00b4d74b41b716e3697b7477a4760790222a8d5e7ec4d1525ca55167ecc",
+        "skills/vectorcraft-use/references/command-coverage.json": "532d2fc467f4fc4c48856e11fdb97ea465276270c882e837a3214692de831a50",
+        "scripts/qa/command_swatch.py": "d4882dedf88b126626f10e1f2c13761ee3f188c324d8daee9ba82f73c78a7e0a",
+        "scripts/qa/command_family.py": "23dd21952e95f8aab612c8ef03f455f0ddfc26282274e1eecd77d63d72890f22",
+        "scripts/qa/command_paint.py": "919fd550c129d5127ebbd0d3828b8f25e8edbc942a4388e15a6de6947716efe0",
+        "scripts/vendor/skill_vendor.py": "ce99651896676f7c64b0075fce0f6589c28f03954c39480d11b27aa158801570",
+        "skills.lock.json": "44bd17666c6ef2a79641245a239a4f29a1f4a79162bba0de8b8329347f0a8fd1",
+        "plugin.json": "60e59b0f5f44bf657e0554e25a20c5e99e774af7c2ad9f1602590cd5bff6f712",
+        "skills/vectorcraft-use/scripts/commands.py": "70565ffb80b5d2645df79c95e703c21a9e6bebf39a011e5555508eb1413d0eda",
+        "skills/vectorcraft-use/scripts/desktop_session.py": "e87d5df29c7e5ead4b7e3ebcbdf4c6361f65da8d3df1681c4822363b6b23a687",
+        "skills/vectorcraft-use/scripts/runtime.lock.json": "7b6bd7f3fab84b757d4ea20ac91b74d89b417ec061efc6ae320dda97a422cc07",
+        "skills/vectorcraft-use/scripts/desktop.lock.json": "f38c7cd5b837bc4f3275ef96c17308fc894f6be66c6a00ecf9c53378ad4bb486",
+        "docs/evidence/vectorcraft-public-tag64-install-20261009.json": "e9cddc8c64e0a5d0ca2c3d7c3d0d8d3bab4c439715b80464f4773b4f99fce318",
+        "docs/evidence/vectorcraft-command-paint-fixed64-20261009.json": "362d409a6acebb3e7aa21b9de169db98037d24924094ea57f290c1e84122066f",
+        "docs/evidence/vectorcraft-command-swatch-fixed64-20261009.json": "3759db48c03cebeb2187116b1caeceaac6da4f0d46ee20a09525e85e18b90aa5"
+      }
     }
   ],
-  "commandAcceptance": "Use version-bound command catalog executionAcceptance; directory discovery never promotes NOT_RUN",
+  "commandAcceptance": "Frozen catalog retains its audit statuses; later native execution is recorded in digest-bound external command-family matrices; directory discovery never promotes NOT_RUN",
   "excluded": [
     "complete V1",
     "all commands",
