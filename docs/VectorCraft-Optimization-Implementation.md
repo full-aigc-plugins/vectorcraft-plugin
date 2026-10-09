@@ -125,3 +125,23 @@ flowchart LR
     D --> E[Compare revision pixels]
     B --> F[Preserve original captures and native projects]
 ```
+
+
+Fixed-installed layer acceptance:all11 layer commands pass22 native save/reopen stages,44 decoded SVG/PNG exports and22 actual owned app-window captures on public dev.64/source46. Independent full-tree assertions check insertion above the current layer,nested sublayers,deletion/current-layer fallback,fresh preorder IDs throughout duplicated subtrees,hidden/locked selection pruning,paint-order collection,immediate eligible children,clipping-path reorder/paint removal and unpainted release,and persisted paste options. Current layer,selection and target are independently read from native session state;project persistence is not claimed for session fields. Each second round first renames an owned layer;control objects,other fields,source and previous delivery remain preserved. All33 actual canvas/PNG/window comparisons pass their explicit preservation/change/measurement contracts;the four visibility/clipping canvas/PNG comparisons change964 and419 pixels. Window differences alone do not prove command semantics. All13 installed skill identities remain unchanged;22 new assertion/evidence regressions pass. Original81-command matrix and verifier bytes remain preserved. Current coverage:92/585 passed,493 NOT_RUN,184 save/reopen stages,368 decoded exports. Task8.3 remains open;121/127 tasks complete,6 open;no all-command GUI,creative/model,permission/secret,marketplace or completeV1 claim. [Evidence](evidence/vectorcraft-command-families92-fixed64-20261009.json).
+
+```mermaid
+flowchart LR
+    Before[Owned fixture and native session readback] --> Execute[One layer command]
+    Execute --> Tree[Independent full tree and reopen assertions]
+    Execute --> State[Current layer selection and target readback]
+    Execute --> Images[Canvas PNG and actual app window]
+    Images --> Contract{Expected pixel contract}
+    Contract --> Equal[State-only delivery preserves artwork]
+    Contract --> Different[Visibility and clipping change artwork]
+    Contract --> Measured[Window changes recorded separately]
+    Tree --> Evidence[Digest-bound fixed-install evidence]
+    State --> Evidence
+    Equal --> Evidence
+    Different --> Evidence
+    Measured --> Evidence
+```

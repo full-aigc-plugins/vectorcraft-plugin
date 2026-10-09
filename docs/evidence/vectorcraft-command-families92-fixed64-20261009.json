@@ -1,0 +1,3568 @@
+{
+  "schema": "vectorcraft-command-families/v1",
+  "result": "PASS",
+  "requirement": "VC-CM-001",
+  "tasksClosed": [],
+  "pluginVersion": "0.1.0-dev.64",
+  "pluginCommit": "6763caa1f0e6596fc01d298304794d0e9c139dc3",
+  "sourceRef": "v0.1.0-dev.46",
+  "coverage": {
+    "catalogCommands": 585,
+    "passed": 92,
+    "notRun": 493,
+    "stages": 184
+  },
+  "reports": {
+    "docs/evidence/vectorcraft-command-paint-fixed64-20261009.json": "362d409a6acebb3e7aa21b9de169db98037d24924094ea57f290c1e84122066f",
+    "docs/evidence/vectorcraft-command-swatch-fixed64-20261009.json": "3759db48c03cebeb2187116b1caeceaac6da4f0d46ee20a09525e85e18b90aa5",
+    "docs/evidence/vectorcraft-command-stroke-fixed64-20261009.json": "269096f8437da36fcad8079e9ad2d57b6d6cfa8b4e394c6189a1bf2d2ddab2ed",
+    "docs/evidence/vectorcraft-command-transparency-fixed64-20261009.json": "10dd342607b31688de24662d64596a2ef9c117c87c370cd978336c8938e082b9",
+    "docs/evidence/vectorcraft-command-shape-fixed64-20261009.json": "7600aa16a645ded8ed0692468317ea58d13efcba9e71293fb88f9c2d06af4347",
+    "docs/evidence/vectorcraft-command-layer-fixed64-20261009.json": "8ce01eaea633a8d5ff4564fdc31754c35426b41c36c4f08bc6ad5ef5a748ef86"
+  },
+  "fingerprints": {
+    "scripts/verify_command_evidence.py": "2226125e18cbf119de2451534d08547e12dfd2f1e6db9e5464586659d7598364",
+    "scripts/verify_command_families.py": "d7426b657da55443dfbf20a11f104aa261e964517b293ef2b06252b105a801d0",
+    "docs/current-identity.json": "e559e00b4d74b41b716e3697b7477a4760790222a8d5e7ec4d1525ca55167ecc",
+    "skills/vectorcraft-use/references/command-coverage.json": "532d2fc467f4fc4c48856e11fdb97ea465276270c882e837a3214692de831a50",
+    "scripts/qa/command_swatch.py": "d4882dedf88b126626f10e1f2c13761ee3f188c324d8daee9ba82f73c78a7e0a",
+    "scripts/qa/command_family.py": "23dd21952e95f8aab612c8ef03f455f0ddfc26282274e1eecd77d63d72890f22",
+    "scripts/qa/command_paint.py": "919fd550c129d5127ebbd0d3828b8f25e8edbc942a4388e15a6de6947716efe0",
+    "scripts/vendor/skill_vendor.py": "ce99651896676f7c64b0075fce0f6589c28f03954c39480d11b27aa158801570",
+    "skills.lock.json": "44bd17666c6ef2a79641245a239a4f29a1f4a79162bba0de8b8329347f0a8fd1",
+    "plugin.json": "60e59b0f5f44bf657e0554e25a20c5e99e774af7c2ad9f1602590cd5bff6f712",
+    "skills/vectorcraft-use/scripts/commands.py": "70565ffb80b5d2645df79c95e703c21a9e6bebf39a011e5555508eb1413d0eda",
+    "skills/vectorcraft-use/scripts/desktop_session.py": "e87d5df29c7e5ead4b7e3ebcbdf4c6361f65da8d3df1681c4822363b6b23a687",
+    "skills/vectorcraft-use/scripts/runtime.lock.json": "7b6bd7f3fab84b757d4ea20ac91b74d89b417ec061efc6ae320dda97a422cc07",
+    "skills/vectorcraft-use/scripts/desktop.lock.json": "f38c7cd5b837bc4f3275ef96c17308fc894f6be66c6a00ecf9c53378ad4bb486",
+    "docs/evidence/vectorcraft-public-tag64-install-20261009.json": "e9cddc8c64e0a5d0ca2c3d7c3d0d8d3bab4c439715b80464f4773b4f99fce318",
+    "scripts/qa/command_stroke.py": "7e55a0f042e1effe57577884a77018bad017f7c601a227187c7f8d16027bb5f3",
+    "scripts/qa/command_render.py": "734f7e65475ecfcb535b227b2cdddbd0cd1e856646c690eedc2d623444302dde",
+    "scripts/qa/command_transparency.py": "8e9b18ec54f037e79092088754b77ddb4db3352efe006fd242bcc1ba7e1a1583",
+    "scripts/qa/command_transparency_render.py": "0dc713df6d3e6f8e4309d13ba42d772452c53dcd535e2cc89935b9d0365de491",
+    "scripts/qa/command_shape.py": "8c04ff61d6d6affad08fddca382abbcdf8182b3761dc721ea4be466c38a3a2f1",
+    "scripts/qa/command_shape_render.py": "e15d61c8c91b6ec10db86e91737890dc6c652b4a0bd80f577f631d5cb5e44db6",
+    "scripts/qa/command_family_window.py": "3d33e47fcf85da22a991b3623f8368eb61602354c15ffa4380c0bf7182604a16",
+    "scripts/qa/command_layer.py": "a3711f9b9a43a738dcf65af265027f8fd729838d499ba8b0eb559623be83fae4",
+    "scripts/qa/command_layer_render.py": "34ec88660bd673cec3fb00ef6835476de918d44ffcbe7fb30c022f16d411628e",
+    "docs/evidence/vectorcraft-command-paint-fixed64-20261009.json": "362d409a6acebb3e7aa21b9de169db98037d24924094ea57f290c1e84122066f",
+    "docs/evidence/vectorcraft-command-swatch-fixed64-20261009.json": "3759db48c03cebeb2187116b1caeceaac6da4f0d46ee20a09525e85e18b90aa5",
+    "docs/evidence/vectorcraft-command-stroke-fixed64-20261009.json": "269096f8437da36fcad8079e9ad2d57b6d6cfa8b4e394c6189a1bf2d2ddab2ed",
+    "docs/evidence/vectorcraft-command-transparency-fixed64-20261009.json": "10dd342607b31688de24662d64596a2ef9c117c87c370cd978336c8938e082b9",
+    "docs/evidence/vectorcraft-command-shape-fixed64-20261009.json": "7600aa16a645ded8ed0692468317ea58d13efcba9e71293fb88f9c2d06af4347",
+    "docs/evidence/vectorcraft-command-layer-fixed64-20261009.json": "8ce01eaea633a8d5ff4564fdc31754c35426b41c36c4f08bc6ad5ef5a748ef86"
+  },
+  "scope": "Explicit paint,swatch,stroke,transparency,shape and layer native semantics on public fixed64/source46;incomplete exhaustive commands/GUI/creative/V1 acceptance;shape/layer have separate actual app-window captures;layer state-only commands preserve canvas pixels and use independent session readbacks;earlier native canvas images are not OS-window screenshots",
+  "commands": [
+    {
+      "id": "file.new",
+      "ownerSkill": "vectorcraft-cli-project",
+      "paramsSha256": "c47d79ad5aad8be6c52740925dec4ee66fe4f6b80505f64f4717d9bc99337eb9",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "file.close",
+      "ownerSkill": "vectorcraft-cli-project",
+      "paramsSha256": "9df290f00ecb60ab93a46bee3fafd48860ec1684db432051c21ab35d7c062266",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "document.activate",
+      "ownerSkill": "vectorcraft-cli-project",
+      "paramsSha256": "f8f0251027e752dcb1389371ba65dbcca2732fb938fcf5db875e5c273ce9a0f5",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "document.inspect",
+      "ownerSkill": "vectorcraft-cli-project",
+      "paramsSha256": "0309837056c61cb3bdd12a9c8a4d7d57f17dc800fe5d3cd57f2d9b43e94c7eef",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "document.node",
+      "ownerSkill": "vectorcraft-cli-project",
+      "paramsSha256": "d8a03e6f23c71cec8d3bf7708970d531d22af5fdaff42417982230752ed71b2a",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "document.json",
+      "ownerSkill": "vectorcraft-cli-project",
+      "paramsSha256": "47f05c7f2440659239a586d32030e02dfea1abfd2869ec1dec96da66640ecb68",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "document.setUnits",
+      "ownerSkill": "vectorcraft-cli-project",
+      "paramsSha256": "02aa4886eec1b29f29a74dffcc3f1f702be0841613f7850ec7c4229676e0eedc",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "edit.undo",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "c89a148be40e6752261e3038609a4b68de22fa3bfdaf32f884edffb8480b9bbe",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "edit.redo",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "c89a148be40e6752261e3038609a4b68de22fa3bfdaf32f884edffb8480b9bbe",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "edit.cut",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "c89a148be40e6752261e3038609a4b68de22fa3bfdaf32f884edffb8480b9bbe",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "edit.copy",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "c89a148be40e6752261e3038609a4b68de22fa3bfdaf32f884edffb8480b9bbe",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "edit.paste",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "ab1f3c6aad8e50fc204fd8cdd8d55d23fbf4ed4158a0083b06d2feff3539098b",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "edit.pasteInFront",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "ec33299f24a6575759fb42876e12b86cd5681abe8c1f0002d37efac088c2f828",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "edit.pasteInBack",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "ac89d53f3a2043ca8d0d97dfd99b18975e24fd8f15343bc3bd8c08612f0c9aa6",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "edit.pasteInPlace",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "c95f7a0e7b94eb2206a53250e024050918e801947a1bebcffcc65c764903ddd0",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "edit.pasteOnAllArtboards",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "6c8cbc9005cb617db3487a0f062a28f85976ce4c5ff536d475a0298231c0adc7",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "edit.clear",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "710093e78dcf3b35087357259a4efac42619e66687321ea624e1cdb055c75ae9",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "edit.duplicate",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "400dfc5e83e69eb81e5ae4e1a25294b92500d9e55e97158008a60bcff9338bd5",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "clipboard.exportSvg",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "1bfbc2e965dc288a212175f244356f8b79f27e120aa4e5783f89c050de1a0354",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "clipboard.importSvg",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "7b80a7b23768916b6a518e3dc7435bb1c8bbde5eebb79c0f37ba4fa2d6abafd4",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "clipboard.conflicts",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "784a5bf974ba33c278a249a295db30fea15222c1c3eb73bda4ac55ee129d9cd6",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "clipboard.exportPng",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "ab4f4353af6c0a674c7a63d36f0e01eece597c54459c82bd3008fd1afea14158",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "clipboard.exportPdf",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "5b694d3fc4a0aa6b9e3eaa91d47015be7aff0fbb9712b640f4e4416cd60c5183",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "clipboard.exportText",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "453e2d686ea4a82968a1f2fa01f3c9972844a8f7dea557760c4e190129e18a90",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "clipboard.flavours",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "d1eb3c329e851bdb580c82668f2985ed0c9f0d10e44a598c76b8464126b59c30",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "clipboard.importImage",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "8afe9772d6f60f9d6e94ed4f33321bd9696378547e650be79e28d5fbda81d19e",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "clipboard.importText",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "b6eb68a8937664c406d1cb6a3551ff032d0751d4954e99314fcd0724ad4ebcb3",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "clipboard.importPdf",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "696a1ca7a917140bd47c46bb3e13d52aad1fe75d7d00de1d0e6c3890ff8753fe",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "recolor.colors",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "d814eb0d08602580c22774737a08a96a8729983188498159c91c6c6c60dfc850",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "recolor.apply",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "cb2f982723f3b4c64aa22e421644c6c81afc80fc4fd2eb1cd893b5c9d6669eff",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "recolor.reduce",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "b896e39633a1ae3ec8622e76e4b395dee76ceb590948d338ad15986cf5df150e",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "recolor.randomize",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "e96e5d884e5a27fd788068c2d719ac0c58f39a3e9f4e34e30cc8f79a91c534ec",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "document.open",
+      "ownerSkill": "vectorcraft-cli-project",
+      "paramsSha256": "a941aa475e93848ed514b777cb2dc2cd7dc9e2228429cf9df969a74bf36495fa",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "document.serialize",
+      "ownerSkill": "vectorcraft-cli-project",
+      "paramsSha256": "dd44d1d34a653a49e8c242e70ab0465cad45eeb4be2c467865c4c9641382ac73",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "document.export",
+      "ownerSkill": "vectorcraft-cli-export",
+      "paramsSha256": "87c3762ff52e6cafb1d4ccba1a53292944c7280a67424d64c9723169997c4cd5",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "document.exportSelection",
+      "ownerSkill": "vectorcraft-cli-export",
+      "paramsSha256": "10740ac1e5f2346d9f39dc441aef79c202f9ec660c95ec71e27c0b53e3625e70",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "document.exportForScreens",
+      "ownerSkill": "vectorcraft-cli-export",
+      "paramsSha256": "b17496abb55cb7e4e38cefe31a10dd818d6500fd5b22a7c025357064f120441d",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "command.batch",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "cec185c9dca14817582e94bee0cf07e74ec49289fddbfd9e97f99ab6dab6f9ff",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "document.formats",
+      "ownerSkill": "vectorcraft-cli-project",
+      "paramsSha256": "8aa6f32d8ffa4a093f25dbceefc9ce9dbd87e1c615832f575d80106760803863",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "document.pdfInfo",
+      "ownerSkill": "vectorcraft-cli-project",
+      "paramsSha256": "98bb608c32a651990871a23aecf45dd6723cb7c44e0770d0c6614d2774424904",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "document.exportForOffice",
+      "ownerSkill": "vectorcraft-cli-export",
+      "paramsSha256": "91884d050d71363acbb6291ffcea41932b97379e50e67243956a5f2dfbceb8d0",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "document.exportSettings",
+      "ownerSkill": "vectorcraft-cli-export",
+      "paramsSha256": "eb59e55aa456cada579c136b4cf799e50d45de011ede2c6fbb0248f12d0f58c0",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "document.save",
+      "ownerSkill": "vectorcraft-cli-project",
+      "paramsSha256": "c17b6a2634151e597cdaff0ab14e3c74a99179feb7b0d9262553d2342bf7681a",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "file.saveAs",
+      "ownerSkill": "vectorcraft-cli-project",
+      "paramsSha256": "ee5e37d2c3017e237bea2028fbfbdcd94a91d0a746e4d0a29cd12b181cda676a",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "file.saveCopy",
+      "ownerSkill": "vectorcraft-cli-project",
+      "paramsSha256": "b6f9899317a431ffb0ac5db90464c067d9628b356366ff252c8d8b6d7f620e91",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "file.saveAsTemplate",
+      "ownerSkill": "vectorcraft-cli-project",
+      "paramsSha256": "fbed161f85e8834362a1c8b944d6dfaa3067c90311fb2e3fc196907400a9cf10",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "file.newFromTemplate",
+      "ownerSkill": "vectorcraft-cli-project",
+      "paramsSha256": "5abae515ffd6cc3b0098eba2c63ae118b4e39b8951717a408e402473eedb7836",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "file.revert",
+      "ownerSkill": "vectorcraft-cli-project",
+      "paramsSha256": "2172f48e96e078216c466cc7ce970e87cc12767aa0759864992de82ee175c0eb",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "file.formatOptions",
+      "ownerSkill": "vectorcraft-cli-project",
+      "paramsSha256": "bb1a075c2271614cc6cad8c1652da6d2855ed41fd42c86395c7cd3a8eec8c52e",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "shape.rectangle",
+      "ownerSkill": "vectorcraft-cli-shapes",
+      "paramsSha256": "b288ec0cc121bbdbe0ccd304d7c3e8c724de2b7649c69d2770704ce4a9a912a2",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "shape.ellipse",
+      "ownerSkill": "vectorcraft-cli-shapes",
+      "paramsSha256": "5c5c2631bd19090d6bf05c76ca13c7fa9c4540763df9f048dac1b4b3a859daa6",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "shape.polygon",
+      "ownerSkill": "vectorcraft-cli-shapes",
+      "paramsSha256": "9ce9b725f495242127fe8e8b380e0f21b31e754b8c4f63896590cf5334854742",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "shape.star",
+      "ownerSkill": "vectorcraft-cli-shapes",
+      "paramsSha256": "606d5cb62af5768db94bb77dd3998c61d904ddcb984876dc39069657c9dc7cbd",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "shape.flare",
+      "ownerSkill": "vectorcraft-cli-shapes",
+      "paramsSha256": "d53545036f0bac2b14f5b5f907010e37bcf4704f4408e263313d10f53e0dc3f9",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "shape.line",
+      "ownerSkill": "vectorcraft-cli-shapes",
+      "paramsSha256": "4bae496f7d6935a0340d359f4782a66af700a25319791573cd9dc327f284a0c4",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "shape.spiral",
+      "ownerSkill": "vectorcraft-cli-shapes",
+      "paramsSha256": "d36d6037822725820d352ea61e4332f73e9092f5c16eecddbc7296c15d4a2500",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "shape.arc",
+      "ownerSkill": "vectorcraft-cli-shapes",
+      "paramsSha256": "6eebe39d6cf699b0c890091a8de9351d8c78910b7af6433124bc17f99688c6d2",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "shape.rectangularGrid",
+      "ownerSkill": "vectorcraft-cli-shapes",
+      "paramsSha256": "69ae1827a34e987898bc9049dc10a74c8254a58fdfa231f40ba884ff7ef5e600",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "shape.polarGrid",
+      "ownerSkill": "vectorcraft-cli-shapes",
+      "paramsSha256": "16a77fccdba8bf691c3283ba08a275f65efebcb8000edb0f03224ebc1e9d8405",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "path.create",
+      "ownerSkill": "vectorcraft-cli-paths",
+      "paramsSha256": "7456f14fca7bc89ee4d76a726918ae903341e06751d9c1e2dd2e5234a91d5a21",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "view.drawMode",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "e18491e0b516cb5ec3ae3be9443891815e5d622247a826b457edf73af498f328",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "text.create",
+      "ownerSkill": "vectorcraft-cli-text",
+      "paramsSha256": "da0e6ec0e00f9d788357b808676a83980035c550da303a7aae2464a9df52a4c8",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.transform",
+      "ownerSkill": "vectorcraft-cli-shapes",
+      "paramsSha256": "b457cdba2220d3bdbba0ddfbff84c828626c132ecaa6cf0451973693fd0b6063",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.move",
+      "ownerSkill": "vectorcraft-cli-shapes",
+      "paramsSha256": "7e89882097fd6784b9de6c7f92bb13aa238a16bcaa9a5791351b51b8bf42a3a9",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.rotate",
+      "ownerSkill": "vectorcraft-cli-shapes",
+      "paramsSha256": "b4787232e5acf9a43ab2cdbe5a779b1777a4c7610e3cabda2b8ed261c842c381",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.scale",
+      "ownerSkill": "vectorcraft-cli-shapes",
+      "paramsSha256": "c568cfc3671108994f49c7e1ad05cd00589cf70222d7dd5e67e0f2f01271f6cd",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.reflect",
+      "ownerSkill": "vectorcraft-cli-shapes",
+      "paramsSha256": "af3f9fcb9703b3cf6bb95fe639d73e4bf2ee9a1402ef9626a66816c003190efa",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.shear",
+      "ownerSkill": "vectorcraft-cli-shapes",
+      "paramsSha256": "59200a5837b46bc8b449d7d36eae06f2cde2f6e15ba8745e60909a0f021c8403",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.transformAgain",
+      "ownerSkill": "vectorcraft-cli-shapes",
+      "paramsSha256": "c89a148be40e6752261e3038609a4b68de22fa3bfdaf32f884edffb8480b9bbe",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.nudge",
+      "ownerSkill": "vectorcraft-cli-shapes",
+      "paramsSha256": "91403bd76e8b22b34bbea61e5ac6ee4dca8a419a1a21c3a4a0ab9fbe3a67b5ac",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.arrange.bringToFront",
+      "ownerSkill": "vectorcraft-cli-shapes",
+      "paramsSha256": "c89a148be40e6752261e3038609a4b68de22fa3bfdaf32f884edffb8480b9bbe",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.arrange.bringForward",
+      "ownerSkill": "vectorcraft-cli-shapes",
+      "paramsSha256": "c89a148be40e6752261e3038609a4b68de22fa3bfdaf32f884edffb8480b9bbe",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.arrange.sendBackward",
+      "ownerSkill": "vectorcraft-cli-shapes",
+      "paramsSha256": "c89a148be40e6752261e3038609a4b68de22fa3bfdaf32f884edffb8480b9bbe",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.arrange.sendToBack",
+      "ownerSkill": "vectorcraft-cli-shapes",
+      "paramsSha256": "c89a148be40e6752261e3038609a4b68de22fa3bfdaf32f884edffb8480b9bbe",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.arrange.sendToCurrentLayer",
+      "ownerSkill": "vectorcraft-cli-shapes",
+      "paramsSha256": "c89a148be40e6752261e3038609a4b68de22fa3bfdaf32f884edffb8480b9bbe",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.group",
+      "ownerSkill": "vectorcraft-cli-shapes",
+      "paramsSha256": "797f2aa9cf3a4e38acc278d72b59a09b8c9147aa4bf61cd7b9c4823cc77cf43f",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.ungroup",
+      "ownerSkill": "vectorcraft-cli-shapes",
+      "paramsSha256": "c89a148be40e6752261e3038609a4b68de22fa3bfdaf32f884edffb8480b9bbe",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.lock",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "c89a148be40e6752261e3038609a4b68de22fa3bfdaf32f884edffb8480b9bbe",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.unlockAll",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "c89a148be40e6752261e3038609a4b68de22fa3bfdaf32f884edffb8480b9bbe",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.hide",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "c89a148be40e6752261e3038609a4b68de22fa3bfdaf32f884edffb8480b9bbe",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.showAll",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "c89a148be40e6752261e3038609a4b68de22fa3bfdaf32f884edffb8480b9bbe",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.compoundPath.make",
+      "ownerSkill": "vectorcraft-cli-boolean",
+      "paramsSha256": "c89a148be40e6752261e3038609a4b68de22fa3bfdaf32f884edffb8480b9bbe",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.compoundPath.release",
+      "ownerSkill": "vectorcraft-cli-boolean",
+      "paramsSha256": "c89a148be40e6752261e3038609a4b68de22fa3bfdaf32f884edffb8480b9bbe",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.clippingMask.make",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "8c5913e191d40b92b781b7663d56c2f62e4fbf33ae99c2ae772afa0e664bc11f",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.clippingMask.release",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "6137660538265959adf38dd0c789b2cebe8785c1a5ff2ec87cc2c5292cd31fff",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.clippingMask.editContents",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "971f91bd58c616fea8c923de59468f150ad61d3d36afcdb5bd66c9132b039749",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.clippingMask.editMask",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "b21a3e868a7fddbd05890c26adec84a9439d46d1165d3468490b5e156965f8bb",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.isolate",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "ad79f20f3a374f6bb6c693f5ee649aeb84bf1ff09994ce5250d7ff66eef1e8a2",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.exitIsolation",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "c89a148be40e6752261e3038609a4b68de22fa3bfdaf32f884edffb8480b9bbe",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.setProps",
+      "ownerSkill": "vectorcraft-cli-shapes",
+      "paramsSha256": "e11167edf64384949d2493328cace16d0149b9947991d0ee244df50f67c9cd43",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.align",
+      "ownerSkill": "vectorcraft-cli-shapes",
+      "paramsSha256": "bf6adcb0001fc3e2762cc7975ee27e7b2cad2a892db85e436d1407ce51bf5eaa",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.distribute",
+      "ownerSkill": "vectorcraft-cli-shapes",
+      "paramsSha256": "b5b9a142125f7971c445790455222ab54f7b154956ce7ffdac6886b44cff75b2",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.distributeSpacing",
+      "ownerSkill": "vectorcraft-cli-shapes",
+      "paramsSha256": "3578927158c100d564c8e2e7d52ab49f25c4e2db44481a42b7e7e8422cf86689",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.setBounds",
+      "ownerSkill": "vectorcraft-cli-shapes",
+      "paramsSha256": "86b204567871d424b7420754867ae564eed536556f92d47602de0cbcdc5f05f9",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.expandShape",
+      "ownerSkill": "vectorcraft-cli-shapes",
+      "paramsSha256": "3412fbbd5202c02ff4f3b743b8c7c1eaee299ebdb10a42ac2e4583243a6a1ed4",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.setLiveShape",
+      "ownerSkill": "vectorcraft-cli-shapes",
+      "paramsSha256": "8902ca8dc74537e02dfe94e6c01b43f7e8d58f39084c2d5cdd47db204a96cb3e",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "path.appendAnchor",
+      "ownerSkill": "vectorcraft-cli-paths",
+      "paramsSha256": "5cac8c6852fffd7937e75095c7ff337bbf707b74611286c151b2fe8cfdf12daf",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "path.close",
+      "ownerSkill": "vectorcraft-cli-paths",
+      "paramsSha256": "7a8593e907c9529a366b9cb288e8f0d12bd8b2f4be98a385192fa7cd1c007ee6",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "path.moveAnchors",
+      "ownerSkill": "vectorcraft-cli-paths",
+      "paramsSha256": "5bee1e1998ef60ce91a4c6ac49d0a2675fa91986f9b1c90d9af9ef131d06f735",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "path.setHandle",
+      "ownerSkill": "vectorcraft-cli-paths",
+      "paramsSha256": "797b75ecab83a8f6cd6e22f5a67bdcafc2ecf001aee85f835d42c608bb00f357",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "path.setAnchors",
+      "ownerSkill": "vectorcraft-cli-paths",
+      "paramsSha256": "a4681a90eb4006ebcc9d7911f7061b1612f0779e224bfcbad70c1497bed117e3",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "path.reverse",
+      "ownerSkill": "vectorcraft-cli-paths",
+      "paramsSha256": "c7eee3438f5fa203ba62fced48eddc7233e1f9a1454e6419515cd7c982e8480d",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "path.join",
+      "ownerSkill": "vectorcraft-cli-paths",
+      "paramsSha256": "37385c17d947022a22b5b5a9f1286686ffd28f0170d082bb68e42deb6251406b",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "path.average",
+      "ownerSkill": "vectorcraft-cli-paths",
+      "paramsSha256": "91fed93f6b319e55de59cb8fbf4c0e6e7b9d06861f123c84f609f794e861bc5c",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "path.convertAnchors",
+      "ownerSkill": "vectorcraft-cli-paths",
+      "paramsSha256": "ddd6553e4b4fa2af56ce800b01e6e16dedac7cb4d75a92bded85fe13e0aa68ec",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "path.deleteAnchors",
+      "ownerSkill": "vectorcraft-cli-paths",
+      "paramsSha256": "4c853c4fda2c598da7ebefe75291a32fc56c25a28dabbd43fba3a347ed809ae9",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "path.reshape",
+      "ownerSkill": "vectorcraft-cli-paths",
+      "paramsSha256": "3d7bfc45656a139226b4b5a5d4e1a00ed65fefe04115663167081e1bb3125391",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "path.insertAnchor",
+      "ownerSkill": "vectorcraft-cli-paths",
+      "paramsSha256": "60bc011135cb3e8cc7cb1bc9f9e5eb2670721d1f2303f35039df71b3c230092b",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "path.cutAtAnchors",
+      "ownerSkill": "vectorcraft-cli-paths",
+      "paramsSha256": "c89a148be40e6752261e3038609a4b68de22fa3bfdaf32f884edffb8480b9bbe",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "select.all",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "c89a148be40e6752261e3038609a4b68de22fa3bfdaf32f884edffb8480b9bbe",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "select.allOnArtboard",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "9bbc0a7da79848058347e002c7bb5b3db7203c91fd805449426040ad6bdc1fc6",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "select.none",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "c89a148be40e6752261e3038609a4b68de22fa3bfdaf32f884edffb8480b9bbe",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "select.reselect",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "c89a148be40e6752261e3038609a4b68de22fa3bfdaf32f884edffb8480b9bbe",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "select.inverse",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "c89a148be40e6752261e3038609a4b68de22fa3bfdaf32f884edffb8480b9bbe",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "select.nextAbove",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "c89a148be40e6752261e3038609a4b68de22fa3bfdaf32f884edffb8480b9bbe",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "select.nextBelow",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "c89a148be40e6752261e3038609a4b68de22fa3bfdaf32f884edffb8480b9bbe",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "select.set",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "3e4ea779ce4b521153602585a6382b39339fe83c41179c89f845194cade80a03",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "select.add",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "3e4ea779ce4b521153602585a6382b39339fe83c41179c89f845194cade80a03",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "select.toggle",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "ad79f20f3a374f6bb6c693f5ee649aeb84bf1ff09994ce5250d7ff66eef1e8a2",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "select.key",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "3044468e9db49a2e875fb7f337f324778fb9076b2c321ab1e6fb51b75d93fd0b",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "select.anchors",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "755acb8b414c843c9c06a57a291d86d75753133a43e27658b045da7178e88ae5",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "select.anchorsMany",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "7c7335675902027d608c20057995dea16d1ebea100ba1e4c68ed84bcd9a6313f",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "select.same.fillColor",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "c89a148be40e6752261e3038609a4b68de22fa3bfdaf32f884edffb8480b9bbe",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "select.same.strokeColor",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "c89a148be40e6752261e3038609a4b68de22fa3bfdaf32f884edffb8480b9bbe",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "select.same.strokeWeight",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "c89a148be40e6752261e3038609a4b68de22fa3bfdaf32f884edffb8480b9bbe",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "select.same.fillAndStroke",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "c89a148be40e6752261e3038609a4b68de22fa3bfdaf32f884edffb8480b9bbe",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "select.same.opacity",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "c89a148be40e6752261e3038609a4b68de22fa3bfdaf32f884edffb8480b9bbe",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "select.same.blendingMode",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "c89a148be40e6752261e3038609a4b68de22fa3bfdaf32f884edffb8480b9bbe",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "select.same.appearance",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "c89a148be40e6752261e3038609a4b68de22fa3bfdaf32f884edffb8480b9bbe",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "select.same.shapeType",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "c89a148be40e6752261e3038609a4b68de22fa3bfdaf32f884edffb8480b9bbe",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "select.object.allOnSameLayers",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "c89a148be40e6752261e3038609a4b68de22fa3bfdaf32f884edffb8480b9bbe",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "select.object.clippingMasks",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "c89a148be40e6752261e3038609a4b68de22fa3bfdaf32f884edffb8480b9bbe",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "select.object.textObjects",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "c89a148be40e6752261e3038609a4b68de22fa3bfdaf32f884edffb8480b9bbe",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "select.object.strayPoints",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "c89a148be40e6752261e3038609a4b68de22fa3bfdaf32f884edffb8480b9bbe",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "select.object.openPaths",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "c89a148be40e6752261e3038609a4b68de22fa3bfdaf32f884edffb8480b9bbe",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "select.same.graphicStyle",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "83da5615fb323402884786427f0c813e38795ba456c56a0d1875c2af1a810075",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "select.same.appearanceAttribute",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "ac81adb41439eab0a793cdd289f1c293f3ba8650bf817cc8b728f9c004f57ef4",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "select.magicWand",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "f4a3db85303cd663729c08c0223b9696a436a5d6e666ae4c9d98cd827cb9e760",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "magicWand.set",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "4a2e96de93e511d9848ad39845a811a6a6bf2c59bac94d44cf15606b70142d4a",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "magicWand.options",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "e3dd41a92a6239aa04478e4e40a0bc13042c3ad3b1caed652721f424c7f63da5",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "paint.setFill",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "5cd0a75b550062eff9ff945ec9f4e924037760a55a209efc25377148e2625b7b",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "paint.setStroke",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "98f98378e695c75fe5d61d094ffe4aebe715cee664e3decbee7dc4afa0e1cce4",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "paint.swap",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "84e726062a2b82d8df449dbee5e1fc4af23487dc323cda75ffaeeb465c084476",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "paint.default",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "496c8a69b8d257a9ec1234f5296c4e132aa3a6121908628e94aa09ef888b4021",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "paint.toggleActive",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "accf77a8473c4965d6052e8bfb32864ce5bef76ac584ac9a2fffeac5505f80c7",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "paint.none",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "b37dd82819a2a8decc167e9fb60605de3159ca165e147cab74a9734d3f8c4dda",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "transparency.set",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "319ff5f0a160f78ba3e73593174f8b848c88b6e2a73cba86c261ec0ea6463790",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "stroke.set",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "c6c64cc6ac7a49f4118c1249b2023f99f3a78734669578a461c379f2ad20d77d",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "stroke.setAdvanced",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "29bb1bcf37f7d4213581bb3f3d5280da312dd834c457f7f941d1512fbc1b0f02",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "stroke.widthProfile.add",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "6858e59471a4c487a7edc8fe56f0609e6aa802c934f13c10301f3b05018836f7",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "stroke.widthProfile.delete",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "9ffaab42f39e2d02807e4f2db66390c0e73a31f575f5abe67b1b9ac37f8d6d1c",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "stroke.widthProfile.reset",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "875e38b36306166c895de8470794bb7a24adb440ced7e31b1310ab8d1b29e178",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "stroke.widthProfile.list",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "9cfcc78024d7015340cc100461fd9444f4d13ef1c1ccfc62788c29709288c0f4",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "appearance.addFill",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "7eefb07bbfdb5c973995877712dc8612d42b2745e3965da6a867143a067958c8",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "appearance.addStroke",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "7bf32419b3645ca27dc83e5a9c966b03a443284c93f9b1bd634ba44b44f606dc",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "appearance.clear",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "8f837dbf04341bc6b673f776a38182e744aece5f40a2989c7cc82eeab72054b7",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "appearance.reduceToBasic",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "b6433e27ef84560351cd07398f0c5a58042ad558a0ffaa589d623daa20f6ccf2",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "appearance.setItem",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "c01f2e9e85f87bbe45ddefc2cd6178a6847e9046748b1a023ff10a2907628dbd",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "appearance.removeItem",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "4ac147d5ca25ff1b45e113ba5d70748103131f93f2779a06f7642001c968f3f6",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "appearance.addEffect",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "8acad663d587b394b582b1e880f9e0df08c6c168bc8d2b5a35d1898ea003509d",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "appearance.duplicateItem",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "0ee89148c7d6d56dcb815e2ffa2fe0c6480d706af84ad5156daccbe9111ab315",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "appearance.moveItem",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "ef5d85107e4e518868897f8c792b10d748e844b5edfce53e1603537aaf944c41",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "appearance.copyFrom",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "e9561ad1e6e5c5be5abe93be2b4518c3f772d1121de72954d6fc4bf36e99a433",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "appearance.setActiveItem",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "30fd2d314b947d06c80186f0304136e4e9ec777f2a10aa0d52be31d8e949464c",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "appearance.showAllHidden",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "9ae87f3dcc2d9913ce92e6a5fd2f42300e0001e827a3ebbed22f44e68c826a65",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "appearance.targetContents",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "6883b8de5c261c70ae678d1a8bf27a1574e72c087999b1c9e68805e14507ae81",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "appearance.transfer",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "3c5cb49fd9e1f47e6268d9e5ee43acd389af21c47f252c456e63007b45708972",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "graphicStyle.apply",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "4d84585b9d69f47ce9da04fc479d3c9d935160df53b6b0a88f381614fa15b482",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "graphicStyle.new",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "94e988e52f57943342d8d5863f13fc32a90dc040fd6eb57a64deb6b38ea75c2c",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "graphicStyle.delete",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "9327e35404b2f9857e89fe655a5f8c0fac5b0a7724f53ed8cf506a6b7677b8ba",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "graphicStyle.duplicate",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "21ceabcc609ff01a04f218722c0bf8433fcc98e3f670617c420783f2de2e89a7",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "graphicStyle.list",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "97142fcb793d30a8500390a4639cc2e069ab0933899ed5b4477f917963b66b9a",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "graphicStyle.redefine",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "b3c8d178eb2c68caf47744bf0d25bc73ead433774f5b11c7d826cfb4738a0c68",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "graphicStyle.breakLink",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "2f6b4452e0f50927b939ed1fca990b8273e4004d182c254cefd49de2e29916a2",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "graphicStyle.rename",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "fbd67c0739ffc260f15d512b0ad8362ca0f1161579eb2618c88719fd070c0f6e",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "graphicStyle.unused",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "2035e2e6b57f234647f3fb298e0e1a826addfe1ce5e40bc0402d3a84cfeec913",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "graphicStyle.sortByName",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "b02719215bb1bf6a11501e3c46caffd5e818ecd70da216663717bdc2c4177251",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "graphicStyle.merge",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "db20f622ab22cf1ac66ff96fc5f56acfa902274fe7b04210cd837e59c6cc469e",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "graphicStyle.move",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "766cc2cd491944296c9a9bb7a16858364c9e0da7c89a1c0e69ae4ec95a739bb1",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "graphicStyle.setOptions",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "9e99c11fcce83004d55d30f5c7a90847d58e15021aafbc6b67f8ba055eaa001f",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "swatch.new",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "ec19e1a52234ab5daf57e6c226c8ba07e6f7940368b22de4b000696678435c2d",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "swatch.delete",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "ef123537f984a77ff5c4e2910b14fbc3bb3775e2aafde30b2b4a8b8f2d0d282f",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "swatch.newGroup",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "8cfbbb13c99f256d39c8033ed69b70453c9c1f63b130f68d9b3b2c0a9e471cfa",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "swatch.duplicate",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "9b4d288713ff0b81f6c0dfcc8bf1cac96c9a53c3a65ed11110e4706b6bc6828f",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "swatch.sortByName",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "c89a148be40e6752261e3038609a4b68de22fa3bfdaf32f884edffb8480b9bbe",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "swatch.edit",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "0b6e22643f56bd38726e4d59a87627ed5cfc41b992c35353372afdf88975e34e",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "swatch.list",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "b4f1f4cea1100adc6201071d73f7f45894887027a4d9bff803f51f7ac7b10fc7",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "swatch.move",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "47be0ea7ee95da7e5ed343a875f5936f229a78f6e0a8eb59481509ca44c0bcd6",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "swatch.addUsedColors",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "d8e53909e1e2dcce1d040f131af01ec71e39f33019a5777d61882cc2fdaac84d",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "swatch.unused",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "29a9bb8616cf14e9553f664482732fd812c4722c31af88da3bc3e607af5d3620",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "swatch.merge",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "192fffb34190acb0bf4a54cda1d0d6f2c357445b7bd8b9a5b239feb9393ec496",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "swatch.ungroup",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "da26f1a9e77c8ba19d775443d867f94b21e0839dca9f04acf0405baa3eb68b42",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "swatch.sortByKind",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "63aa82dadb6cf95b77460f599aa7b63e5c319d10f693cfe508b7aae9b828086b",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "swatch.spotOptions",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "db9b2093b333176b501e3c9a8fad2be38746b200cb8d84ff4a7f92dcefd7f8bb",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "swatch.editGroup",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "7dd4247242e33ea89b5e35bed15873a90b3360f1d8acf56450fd1f8385b7a0e9",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "paint.editGradient",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "4eb767a4c667f11d1fe7836c61b2031c5d0ed98eaef16c0064d7eb7c58c129b8",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "paint.setGradientGeom",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "9aed80c87ac022cee9ba316c757054a5a693e69b8bf04e81022acbb51da587a8",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "gradient.selectStop",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "4484070cd3668ad80c6dcedd88c277d26513a1653ccb9a212192cb87ecd93673",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "transparency.makeOpacityMask",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "ad30ea097a72f81639edd3c5a998bd326fb0a9669cd3375a2f135cd78e50d9d7",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "transparency.releaseOpacityMask",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "0b76a59262439c57e7f9c816e7a5d74eef9180f7985b3bcbed0ce00bb8eb641f",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "transparency.disableOpacityMask",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "a339ecf68157f7fdb509a682584d1e514d1efddd6427e1b14590b5afa07fa13f",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "transparency.enableOpacityMask",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "2b07a9456cb6c0c90a8ce4241844fa9fac2706f3e849b5d4222cdda1862dc6b8",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "transparency.unlinkOpacityMask",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "202ae6a1808629a02ba65f4003be389661a217efdf5612f08b9c1c66f537df27",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "transparency.linkOpacityMask",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "2b07a9456cb6c0c90a8ce4241844fa9fac2706f3e849b5d4222cdda1862dc6b8",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "transparency.setOpacityMask",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "c474cd4f65992ab5fea8f7c14f3953430457538ece1ec5e47d1edf1c1ac603bf",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "transparency.toggleNewMasksClipping",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "fbe2ddf3180e2cb2f72a9dde52ce44dc3625ffcf03aefe1987853ef7199063db",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "transparency.toggleNewMasksInverted",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "fbe2ddf3180e2cb2f72a9dde52ce44dc3625ffcf03aefe1987853ef7199063db",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "transparency.opacityMaskInfo",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "c78bbe62a63e3337cb323c80d9873df4477cf9241fe1a45c18daadfeefed3ef2",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "transparency.info",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "d16557f3d8ad2d47fd2036a123dc006df5834495da286ac5b79b0adf9b27f63f",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "transparency.togglePageIsolatedBlending",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "d699208085572b80b48e30ccd0371d40dfe902274985e2d54e3c9dc9ec5c1af0",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "transparency.togglePageKnockoutGroup",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "23cbbab058a126a52c2eabd14b49e8845f308e5918de220c6ac3646bfa773b42",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "layer.new",
+      "ownerSkill": "vectorcraft-cli-project",
+      "paramsSha256": "50e3b355c64b9f403701984fa8b8ff70d36e47be7434b27fb5bfe86b51330042",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "layer.newSublayer",
+      "ownerSkill": "vectorcraft-cli-project",
+      "paramsSha256": "d3d50ff050e468630c5162759a2d965f20ed60908b8ba70c9f50dc5d06a6812f",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "layer.delete",
+      "ownerSkill": "vectorcraft-cli-project",
+      "paramsSha256": "e9a2dce458a805de99d91700c8196faffa5707b4b27e4c5c73220f6060bae3cf",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "layer.duplicate",
+      "ownerSkill": "vectorcraft-cli-project",
+      "paramsSha256": "b6369459100a311a9498c9ee412257b4ab241475efdfe359bccd8fb703d834c8",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "layer.setCurrent",
+      "ownerSkill": "vectorcraft-cli-project",
+      "paramsSha256": "ad79f20f3a374f6bb6c693f5ee649aeb84bf1ff09994ce5250d7ff66eef1e8a2",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "layer.setProps",
+      "ownerSkill": "vectorcraft-cli-project",
+      "paramsSha256": "ab87decb2fa1fd587f11452fae5ed9b6dcaed7fce50e901399af7b834b8b6bc2",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "layer.collectInNew",
+      "ownerSkill": "vectorcraft-cli-project",
+      "paramsSha256": "c89a148be40e6752261e3038609a4b68de22fa3bfdaf32f884edffb8480b9bbe",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "layer.selectAll",
+      "ownerSkill": "vectorcraft-cli-project",
+      "paramsSha256": "ad79f20f3a374f6bb6c693f5ee649aeb84bf1ff09994ce5250d7ff66eef1e8a2",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "node.move",
+      "ownerSkill": "vectorcraft-cli-paths",
+      "paramsSha256": "0c1440a2e87af5c87091680c3c4890e30a38ed05b0cf71e4d716a6fe13e8c53e",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "artboard.new",
+      "ownerSkill": "vectorcraft-cli-artboards",
+      "paramsSha256": "25545934f6391ea0ff709259751e4243633540ee7ff059fbb063492900351e4e",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "artboard.delete",
+      "ownerSkill": "vectorcraft-cli-artboards",
+      "paramsSha256": "f8f0251027e752dcb1389371ba65dbcca2732fb938fcf5db875e5c273ce9a0f5",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "artboard.setProps",
+      "ownerSkill": "vectorcraft-cli-artboards",
+      "paramsSha256": "8a84fc356d19a05ac2c628678847ef5b69791ad138190578cd40d52703be2a7b",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "artboard.fitToArt",
+      "ownerSkill": "vectorcraft-cli-artboards",
+      "paramsSha256": "9df290f00ecb60ab93a46bee3fafd48860ec1684db432051c21ab35d7c062266",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "artboard.fitToSelection",
+      "ownerSkill": "vectorcraft-cli-artboards",
+      "paramsSha256": "9df290f00ecb60ab93a46bee3fafd48860ec1684db432051c21ab35d7c062266",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "layer.clippingMask.toggle",
+      "ownerSkill": "vectorcraft-cli-project",
+      "paramsSha256": "f3190ff1d694e5f01e7c48fe168fb8d720529d5ec5350f8f44cc397bef7e5027",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "layer.target",
+      "ownerSkill": "vectorcraft-cli-project",
+      "paramsSha256": "6fb887fdd97a2395b8c1e48fff507c349d6699aa6bd70ada3420e63a845a35d0",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "layer.pasteRemembersLayers",
+      "ownerSkill": "vectorcraft-cli-project",
+      "paramsSha256": "771e47f429f4e7717c26bdce954a1b6e111a6b2d9e7da41634f11644ef50fa0f",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "path.freehand",
+      "ownerSkill": "vectorcraft-cli-paths",
+      "paramsSha256": "cab0df291d878c3e062f8e80feb326a35533c2fd7923eac1089f34f7842de2f0",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "path.curvature",
+      "ownerSkill": "vectorcraft-cli-paths",
+      "paramsSha256": "b6fe187556ccea7110709df696ced1655e4774e4ed0f0f6075a4f1e33e9a4166",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "path.removeAnchor",
+      "ownerSkill": "vectorcraft-cli-paths",
+      "paramsSha256": "efcb05610cc46f6dad2e949e3ec9ef79b452648afec9df039d6ad4bb5a187ecd",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "path.convertAnchor",
+      "ownerSkill": "vectorcraft-cli-paths",
+      "paramsSha256": "b61a4739d8845b210fb0da1a7b15bcb53d6eaeef68e4b546589e69a79f0df971",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "path.reshapeSegment",
+      "ownerSkill": "vectorcraft-cli-paths",
+      "paramsSha256": "476ae7cbe9b4b9adf5c8869b66164c48cde29e25c92cf30a69f588ee7e3795be",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "path.split",
+      "ownerSkill": "vectorcraft-cli-paths",
+      "paramsSha256": "767d07c3c7ea88044591f96b8acc030f95d69ef310780df81ed5f2d56a39e830",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "path.knife",
+      "ownerSkill": "vectorcraft-cli-paths",
+      "paramsSha256": "23c684d396f7b7375d349943ca149c4a0d23c23abe66607a200742567772cab4",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "path.eraseRegion",
+      "ownerSkill": "vectorcraft-cli-paths",
+      "paramsSha256": "94a07b4cec3ac403d57186f8bf6daebd1a59b91b60125f7498c07ad04163715d",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "path.eraseSegments",
+      "ownerSkill": "vectorcraft-cli-paths",
+      "paramsSha256": "abc0789257be984a80bcdeaf2d7cc7a9179e281f6fe24c6e95ca7d376f011acc",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "path.smoothRegion",
+      "ownerSkill": "vectorcraft-cli-paths",
+      "paramsSha256": "1b0cef5cb9ff895a7d66486ed4fbd00641b85a772ba81d9b8e90d474834d079f",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "path.joinScrub",
+      "ownerSkill": "vectorcraft-cli-paths",
+      "paramsSha256": "40fada8bc19490b9a02b7f6585be000ef0ef5e1943da663f5e103e269de39857",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "path.blob",
+      "ownerSkill": "vectorcraft-cli-paths",
+      "paramsSha256": "41fe2e3d952800d8ea03186195082701fe78395ef5dbf42225c57508cde105a2",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.distort",
+      "ownerSkill": "vectorcraft-cli-shapes",
+      "paramsSha256": "40ba01071f913c292b49ff382fe02312a1f44bcba593c7ae41d38479340e2619",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "paint.sampleColor",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "ad716c5f15eb36a0e11cb55f463559bd37b5bb1e5689a45cf2618dc71d14558b",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "eyedropper.setOptions",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "5c5b0a050af5bb196a7a90def5508edc414842e6e52a233c5aee6567210cfd61",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "artboard.move",
+      "ownerSkill": "vectorcraft-cli-artboards",
+      "paramsSha256": "b616a197eaef59166237ee5e8e3aa86d2d3e1e529fd5c167c233642816f0f48f",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "effect.apply",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "5e4d5ab6c6e14fb62c69fc648427cec91f32c285a1416a45809b1af5e1e466f4",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "effect.list",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "6ef5a190c24e7a389c709ee6a42c9082854964aedfbb64452c5c7dbe1d2da6f6",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "effect.remove",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "2379240f4b935d62f220488479871e6b692381c9c63d2230e683159f09bb6338",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "effect.setParams",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "6676c77a4cab8d818e30362086d78d8b8775e3f2242bcaf74aa5f09f58933214",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "effect.expandAppearance",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "1a669601d65a5a56743befd23829820af667f3c07c0491a5fd9e65796cc02020",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "effect.duplicate",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "0160e0c2ecb27946db3d2bd6e1e24368989abe34459cfd3e6a2a13785b444f05",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "effect.move",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "2d010839202c1241dd75c869b2d0ddd2cce8917c7ac596d993f84403cd784f42",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.pathfinder.unite",
+      "ownerSkill": "vectorcraft-cli-boolean",
+      "paramsSha256": "d3334c72912f44e802a3f8fc66420f2a961efa1fd2e6fc4cd904bda62757eaaa",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.pathfinder.minusFront",
+      "ownerSkill": "vectorcraft-cli-boolean",
+      "paramsSha256": "d3334c72912f44e802a3f8fc66420f2a961efa1fd2e6fc4cd904bda62757eaaa",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.pathfinder.intersect",
+      "ownerSkill": "vectorcraft-cli-boolean",
+      "paramsSha256": "d3334c72912f44e802a3f8fc66420f2a961efa1fd2e6fc4cd904bda62757eaaa",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.pathfinder.exclude",
+      "ownerSkill": "vectorcraft-cli-boolean",
+      "paramsSha256": "d3334c72912f44e802a3f8fc66420f2a961efa1fd2e6fc4cd904bda62757eaaa",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.pathfinder.divide",
+      "ownerSkill": "vectorcraft-cli-boolean",
+      "paramsSha256": "d3334c72912f44e802a3f8fc66420f2a961efa1fd2e6fc4cd904bda62757eaaa",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.pathfinder.trim",
+      "ownerSkill": "vectorcraft-cli-boolean",
+      "paramsSha256": "d3334c72912f44e802a3f8fc66420f2a961efa1fd2e6fc4cd904bda62757eaaa",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.pathfinder.merge",
+      "ownerSkill": "vectorcraft-cli-boolean",
+      "paramsSha256": "d3334c72912f44e802a3f8fc66420f2a961efa1fd2e6fc4cd904bda62757eaaa",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.pathfinder.crop",
+      "ownerSkill": "vectorcraft-cli-boolean",
+      "paramsSha256": "d3334c72912f44e802a3f8fc66420f2a961efa1fd2e6fc4cd904bda62757eaaa",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.pathfinder.outline",
+      "ownerSkill": "vectorcraft-cli-boolean",
+      "paramsSha256": "d3334c72912f44e802a3f8fc66420f2a961efa1fd2e6fc4cd904bda62757eaaa",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.pathfinder.minusBack",
+      "ownerSkill": "vectorcraft-cli-boolean",
+      "paramsSha256": "d3334c72912f44e802a3f8fc66420f2a961efa1fd2e6fc4cd904bda62757eaaa",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.path.outlineStroke",
+      "ownerSkill": "vectorcraft-cli-paths",
+      "paramsSha256": "754120755380b97a150e7773c7970787d94f11c3ab2c08153b6bd2b8eb2fb8d8",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.path.offsetPath",
+      "ownerSkill": "vectorcraft-cli-paths",
+      "paramsSha256": "7363654e939abef25b5f06916daf65d3a4823f0286ae245ab9b09a3b1a81a2e7",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.path.simplify",
+      "ownerSkill": "vectorcraft-cli-paths",
+      "paramsSha256": "54482a996bbeb0001b6a4bb80d32c774832791f54ddfa6ebed50fc61807cbc53",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.path.addAnchorPoints",
+      "ownerSkill": "vectorcraft-cli-paths",
+      "paramsSha256": "fc75a7ee1f651ec28dd849b889e2db87be1a5ffb8365bd98a7e309dea75860f6",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.path.divideObjectsBelow",
+      "ownerSkill": "vectorcraft-cli-paths",
+      "paramsSha256": "1f4ea38e356a88bfee1765ac1ff952bb74958b0afd5e38f091e198a5ea2375e7",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.path.splitIntoGrid",
+      "ownerSkill": "vectorcraft-cli-paths",
+      "paramsSha256": "99b54e79146e25af093630773ac6b29d46aa61388f8bffe5653642c2faca99cf",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.path.cleanUp",
+      "ownerSkill": "vectorcraft-cli-paths",
+      "paramsSha256": "7302aa43ed059e18f69606f617238b0d33380cca2d68fff4773418743f006468",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "type.createOutlines",
+      "ownerSkill": "vectorcraft-cli-text",
+      "paramsSha256": "ffc607af65a35095e7c6531d1f96cca15f4690deaba162ab64a705518ddfded7",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "text.setText",
+      "ownerSkill": "vectorcraft-cli-text",
+      "paramsSha256": "a2b1857a9a1c416a74012346c295cda43748f26905ae12d3feff64e6e2ec1d4e",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "text.areaOptions",
+      "ownerSkill": "vectorcraft-cli-text",
+      "paramsSha256": "145d3d385acafe1374b6976acfb03ee8827f0cdc3006b5c1aa46a8a01819bf10",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "text.fitHeadline",
+      "ownerSkill": "vectorcraft-cli-text",
+      "paramsSha256": "1e9decb8589cf43c304d39244a5b25ebed59828eb941467bab871f379638fcbb",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "text.setStyle",
+      "ownerSkill": "vectorcraft-cli-text",
+      "paramsSha256": "b784a05ffe21dfd6fbc3a5f1c2eca2a6a475140386636c6c9dbce4831669f19a",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.lock.above",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "082f2fc3dc3021e53d5e9f8142c4f01b16c08d9748ac76413bdd7f8d65f4bf9c",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.lock.otherLayers",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "20dda86d6df59e612ad958db4893457b14ab35783e73f296d950403250b95ed2",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.hide.above",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "3f4b57664274b40a2a77756c6e5295dec4953093092f5b39eb7f98381cf261ec",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.hide.otherLayers",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "842a380aad734f294fc6bc1acb9aceafd99aa79bb1d274a0ef8f62690e605a81",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.transformEach",
+      "ownerSkill": "vectorcraft-cli-shapes",
+      "paramsSha256": "33ffa2eb84b183052166b72af8c13470a01d1ca8e0660deb33f1bdad17c87c07",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.resetBoundingBox",
+      "ownerSkill": "vectorcraft-cli-shapes",
+      "paramsSha256": "1940c01522864a821f99734736f73dc07bb7ca4eeb545f37ad6084ea2fd86c32",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.rasterize",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "3b148ff91a12da259b4095eccfb9d3425cc6fef4fc7a66323d0466e0ab5739e2",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.createObjectMosaic",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "86b972961e26eadcdba97e265447b0a3bd434906fa3e7b5e303baad4570d0251",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.cropImage",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "3a8f60b815313810bcc4b8e955ffdba288620ad46d2fac3c1da9d4821a9452cc",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.createTrimMarks",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "1a5efee4cf7f93800e8e9bbdc1c99f7c38cf08b19e5e038c708981f6369047ae",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.shape.convertToShape",
+      "ownerSkill": "vectorcraft-cli-shapes",
+      "paramsSha256": "c75deb3470ea145c3fefeb322897589bd70926cdc3ee097578129150a8f22a96",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "artboard.convertToArtboards",
+      "ownerSkill": "vectorcraft-cli-artboards",
+      "paramsSha256": "99f8f5e6cf3088efe46f234adb0b26458e1f4e01dd68d80d68a25308d0d8551d",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "artboard.rearrange",
+      "ownerSkill": "vectorcraft-cli-artboards",
+      "paramsSha256": "11ef57f3722c2c2444188daec1712bd26dc29bcbca4a8ddd42d34f87896080ed",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.blend.make",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "717822aa03f3b976d3285efd8129c579261065990fd6c3678dbf5d49b891a58e",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.blend.release",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "9db71980d2205c37e4fab667d9f25f639adb25960f6d4791b4978d2ff11670f3",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.blend.options",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "bb21499001490374246fc86846d899f01d9b6a518ab0c5b14f4f7406cddf49bc",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.blend.expand",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "1bf4ff5907d91507a19b5af6da3fe90ca850a63b00623713ecf366f04a7d27bc",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.blend.replaceSpine",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "82d776cdc854179f3c2c8f01eb106ba85858dfc6dceea635631ef0e2708241a1",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.blend.reverseSpine",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "b80ec0738fd809badecd69ad9e57bf86e2b82be9d9632d5d71476f85f7a3afb5",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.blend.reverseFrontToBack",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "7698b5c11a2b6840a71946903811ce86e1284b080cae8b1046a931a56f1fb42f",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.envelope.makeWithWarp",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "94214968f78861f405fc5f8e31b4982e07120e108eec5341f48c23e9f1bf6af9",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.envelope.makeWithMesh",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "3e247fcda8b65ee3f9b141ceecb91b65158e776afbb823037e1414d8e924aff3",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.envelope.makeWithTopObject",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "2ddc1668edf53f8fbc70ce9b556e801cae00be605a4bb9001c1d31961581ccc3",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.envelope.release",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "04f18d3fc79e68ef0c2bc5d5f9098c96cf3d26abe1d0e749030b25debda8510b",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.envelope.options",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "79b046f2a96d8f06a58b8a2de8052e2390651be0e1aa04b92ddd6e20c530e9a5",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.envelope.expand",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "2312a32d375b30b458aa4d426a1777a2672ef1e78dcc2255846fc820520b65e6",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.envelope.editContents",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "777147a840505db43aa67a70355553d5c6f3c2e019a7736e389d271cabf01516",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.envelope.setMeshPoint",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "d3d79456e8ffa1baa53e0abee259d502ee74cc4200f4017d4439ea7df034c045",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.mesh.create",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "4b97e6f659977327d9522514970fae91d0ba73abb6d06b426803d527d55a49e6",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.mesh.setPointColor",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "cb4fc29117d2d9b4912c5b808f5d34ba9b349174c654644d8608c8ee0eb404b1",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.mesh.movePoint",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "ab091ac09b54334cbcf51bd0eec9579e2ddb40d93d1b32b93d9423854cc9ce62",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.mesh.addLine",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "bc1aacdb5e4390b918b2e5aabe5164f44807eb0e65f12c486fd64012b1327d5a",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.mesh.deletePoint",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "18ae6cb763e58f2a93998e3d59d56a984e9c418e45a443bbdbac16e049c25376",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.mesh.expand",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "d202e372bba32953165cd7a8a2941a4c88426ae37fad333078479c6b2a2e29dc",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "edit.colors.invert",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "d5644255baa73a8657b66cb1ac63be61e0e5d2ed46c5212adb7ccfeeccabc247",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "edit.colors.toCMYK",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "312c199ef6c59cc0a4d9945972656192e926ead861b801fe7bdbc4ba9ed3d9d5",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "edit.colors.toGrayscale",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "312c199ef6c59cc0a4d9945972656192e926ead861b801fe7bdbc4ba9ed3d9d5",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "edit.colors.toRGB",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "312c199ef6c59cc0a4d9945972656192e926ead861b801fe7bdbc4ba9ed3d9d5",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "edit.colors.saturate",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "82617cefc8ef70bf9abddefe1178df6de35ca7889bd822cd22361c86ceb6a8be",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "edit.colors.adjustBalance",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "5d7ef5e288da609d27582ce9e6d78d1ac1943d8603ffded25da9e72085154678",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "edit.colors.blendFrontToBack",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "14e8a1cb0c27d5b836aad99b01a29f55ee76c9da37b5d3ec2255140af9be9fa2",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "edit.colors.blendHorizontally",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "d4bf3769dc3a3c00395442bffb266e752b84eede1b4d5008937e4ed125daf408",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "edit.colors.blendVertically",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "c5f28c7985520a6f058bbdfd1a4c16b6e173ca1920fd8ebd7e47d39428c31d4e",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "color.harmony",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "976b1a904b8a429ff3e2d075086b9c7e6dfa610e119295242e28b5ba80669d62",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "edit.colorSettings",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "3967dad1c548d282ca0fe43b00175573efd6953d74e645c474d78330401a8035",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "color.loadProfile",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "b687b47ef47df8ca008c3bdd69dae1993f981418d37e449c2b04a07e364c155e",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "edit.assignProfile",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "c1ad6c00755fbc1881804f40a2cd952522bb3ae6fe86a60937907a1f3fb48c68",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.convertDocumentColorMode",
+      "ownerSkill": "vectorcraft-cli-project",
+      "paramsSha256": "6f84d59bd55a3e4f4c012df22b0fbefa7aaf285246db7ecd99e2511a0dbb3326",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "color.convert",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "230ee180006a5b7ccad9136e4a2dcdbeff198a1ea0fb2fe807bf02abab14344a",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "color.gamutCheck",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "2904dc5074411ece5463cc539c02dba329eaaf0b45526311ff46f2e7d64a8cb4",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "view.proofSetup",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "7ff3ab353239834de758bce0afbc5f8eafdba4f296044e35cc324c6e2afcc526",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "view.proofColors",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "927e31ce29718438eef9bb92a49aaab5a0f90c0a7bcd5bd9c8dd277dd2ad4754",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "view.overprintPreview",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "927e31ce29718438eef9bb92a49aaab5a0f90c0a7bcd5bd9c8dd277dd2ad4754",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "view.separationsPreview",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "989f9780a65f0dfd4b75181f78c7cbf649d319a13d9a064fd469102d529003a6",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "color.plates",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "a712e9d9ddae9505f893bcd28c0aeaf46ea3b75c4630660a2c88cf081d40e02c",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "edit.colors.overprintBlack",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "f26b8b4fc52459cd8cd207e975d00eb91deb01bf4afbd3d68f7c5217393c05c1",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "swatch.setSpot",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "380bf2d5ca17e79724f080d90c4525efe81f565474c91bc17ae46abd8a98ebf4",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "type.changeCase",
+      "ownerSkill": "vectorcraft-cli-text",
+      "paramsSha256": "5bdea226058fb3c5de05defd41437bad23740ad139b102fd897d3989b1be4093",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "type.smartPunctuation",
+      "ownerSkill": "vectorcraft-cli-text",
+      "paramsSha256": "ea4aa5670c22af97b95b8e420495bedaaafdc32647dc49c31bf5d23eb033d90c",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "type.convertToAreaType",
+      "ownerSkill": "vectorcraft-cli-text",
+      "paramsSha256": "05fd94aa9b44f46c5fe9e6c7640553ce74a6db9eef729fc30e9afbb1217c39ad",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "type.convertToPointType",
+      "ownerSkill": "vectorcraft-cli-text",
+      "paramsSha256": "8cb97383237c5f7541ad0dcc5cf6554642b3fe9b2a97634be2c185a8d5288870",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "type.pathOptions",
+      "ownerSkill": "vectorcraft-cli-text",
+      "paramsSha256": "3828128145c82eec7f041ddea70b7d3d8212d90b0fc2e4e2fc9a622c2f602097",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "type.fillPlaceholder",
+      "ownerSkill": "vectorcraft-cli-text",
+      "paramsSha256": "888bd72d0a2a07b752df109cb7eb2bde72688302985697047819670e168d722f",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "type.insert",
+      "ownerSkill": "vectorcraft-cli-text",
+      "paramsSha256": "04eae4c8b82225caddd7b694648423a276982f435d81cf82654a7eefacbddb29",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "edit.findReplace",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "8ebaa88040fdca1320355c289a61b139af056c6697a7f1fa5d17ffb295739004",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "edit.findNext",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "0ade4345d18d20c179be5f2138090f440d1c162a9729153281c1299c5899d373",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "edit.pasteWithoutFormatting",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "fe9067ed9af0fabc672725445c4bed76f758bd7aea7ddf018659568675ddd659",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "text.editRange",
+      "ownerSkill": "vectorcraft-cli-text",
+      "paramsSha256": "5bc0036a6f973f16ac9502c1ce766f269acd4c4aa4e2a1cf69916c5db77c3280",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "text.setRangeStyle",
+      "ownerSkill": "vectorcraft-cli-text",
+      "paramsSha256": "a251ee28562b6aaaf1dd5d4bf93906c1d95982fbbcecba4f1673bbbcc173f11d",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "text.getRange",
+      "ownerSkill": "vectorcraft-cli-text",
+      "paramsSha256": "07c91925c8a82443deb66a84236f9f4a290a6c936da19da9948f1bd1b73daccb",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "text.createInPath",
+      "ownerSkill": "vectorcraft-cli-text",
+      "paramsSha256": "aa05f390950f9d7c32ca22b971f1d0f0ee058cab8db353aa4f07772a5260add6",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "type.fitHeadline",
+      "ownerSkill": "vectorcraft-cli-text",
+      "paramsSha256": "fcc7e28df16c4c7a3f9ab7fa552c4f20c36b64e26f621a4180041855add2acff",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "charStyle.list",
+      "ownerSkill": "vectorcraft-cli-text",
+      "paramsSha256": "24af4213206df120765360ebc594b934f690b2ff2347119574d2c6827a296943",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "charStyle.new",
+      "ownerSkill": "vectorcraft-cli-text",
+      "paramsSha256": "2a3e29d48a70b0de753d7fe88ca05484d6c6194579fc5f188af6ad4c07439f8a",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "charStyle.apply",
+      "ownerSkill": "vectorcraft-cli-text",
+      "paramsSha256": "c2908c829b78eb3fc3b072d433e9e67bb15c29e8923e5e852f57c954818c721e",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "charStyle.redefine",
+      "ownerSkill": "vectorcraft-cli-text",
+      "paramsSha256": "b93cf6b08e2e94c929701e1a5858082c0961888ab9e47e8bc6c577d632a955d5",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "charStyle.setAttrs",
+      "ownerSkill": "vectorcraft-cli-text",
+      "paramsSha256": "ff450f2bf45b991b7da8dab11cf2fe94c939088ac47b8c283ef8a7b9a80a9dca",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "charStyle.duplicate",
+      "ownerSkill": "vectorcraft-cli-text",
+      "paramsSha256": "21ceabcc609ff01a04f218722c0bf8433fcc98e3f670617c420783f2de2e89a7",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "charStyle.rename",
+      "ownerSkill": "vectorcraft-cli-text",
+      "paramsSha256": "58cf0f67cc29b0976c8fb123334f6f030a228393a6aacd3888587d3c728d435a",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "charStyle.delete",
+      "ownerSkill": "vectorcraft-cli-text",
+      "paramsSha256": "acae30c21163a257ba469a14a210ff536b8aa1e75fdd372bdde5e821e3750bdb",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "paraStyle.list",
+      "ownerSkill": "vectorcraft-cli-text",
+      "paramsSha256": "24af4213206df120765360ebc594b934f690b2ff2347119574d2c6827a296943",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "paraStyle.new",
+      "ownerSkill": "vectorcraft-cli-text",
+      "paramsSha256": "2a3e29d48a70b0de753d7fe88ca05484d6c6194579fc5f188af6ad4c07439f8a",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "paraStyle.apply",
+      "ownerSkill": "vectorcraft-cli-text",
+      "paramsSha256": "c2908c829b78eb3fc3b072d433e9e67bb15c29e8923e5e852f57c954818c721e",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "paraStyle.redefine",
+      "ownerSkill": "vectorcraft-cli-text",
+      "paramsSha256": "b93cf6b08e2e94c929701e1a5858082c0961888ab9e47e8bc6c577d632a955d5",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "paraStyle.setAttrs",
+      "ownerSkill": "vectorcraft-cli-text",
+      "paramsSha256": "ff450f2bf45b991b7da8dab11cf2fe94c939088ac47b8c283ef8a7b9a80a9dca",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "paraStyle.duplicate",
+      "ownerSkill": "vectorcraft-cli-text",
+      "paramsSha256": "21ceabcc609ff01a04f218722c0bf8433fcc98e3f670617c420783f2de2e89a7",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "paraStyle.rename",
+      "ownerSkill": "vectorcraft-cli-text",
+      "paramsSha256": "58cf0f67cc29b0976c8fb123334f6f030a228393a6aacd3888587d3c728d435a",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "paraStyle.delete",
+      "ownerSkill": "vectorcraft-cli-text",
+      "paramsSha256": "acae30c21163a257ba469a14a210ff536b8aa1e75fdd372bdde5e821e3750bdb",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "text.fonts",
+      "ownerSkill": "vectorcraft-cli-text",
+      "paramsSha256": "772a4aba4f26b4f71ab8cef4b63c5b1c0db0620d0a9bb4efeaf6d2b254fad642",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "text.replaceFont",
+      "ownerSkill": "vectorcraft-cli-text",
+      "paramsSha256": "1b43f8e3f206af86465f62de0bfca0720a3cf5b30336a29633c630fa2c8ebc43",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "select.font",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "2e2f0c76b12637129d315a4fde7e01b74812f6cd6e229bd6dcf02ac7461ea01c",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "help.discord",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "6489d08e61317f8bf962fef53d609e1b28a672b0fc221ef6308af23ddac86222",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "help.website",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "722420213bd517b60540b89603669131d39b190e05f7883303d07f9db6a5754d",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "help.appPage",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "01129d94d375aba40f8a3804cce5ef2d291e0d5781afd99861c07d5365002285",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "help.github",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "56209298baa338fb9654b1a74ded648dad65273bae5a8ef79c4d91805e59b54f",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "help.links",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "da6173078124e0b34d3cdc31e0b42053f904d5bdfcc11d4eef4d7e012848c534",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "text.thread.create",
+      "ownerSkill": "vectorcraft-cli-text",
+      "paramsSha256": "844b2a087d05966592923acc492e95a509cc2aaf162865b4d12e7b524590e92d",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "text.thread.releaseSelection",
+      "ownerSkill": "vectorcraft-cli-text",
+      "paramsSha256": "6889e49000056372d5102b4759535d6dde550ac577f12147e5872b78bcf6e623",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "text.thread.remove",
+      "ownerSkill": "vectorcraft-cli-text",
+      "paramsSha256": "848dae18596e4ad2bd501a4b9a02455542bb873882b4b531120d5303d2700986",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "text.thread.info",
+      "ownerSkill": "vectorcraft-cli-text",
+      "paramsSha256": "67ebd8e81cd146735cdfec4bb035b83ed2718810b3c6174d2bc40aa776e3a38d",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.textWrap.make",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "d4110d8e3212569211bb6cd5078b6bb84d7228b4327ff513b3104a0adede4bd3",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.textWrap.release",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "4e6d8c6ce93ccc4c8e1f09d2f4c7c263333a08425d98c9e18215b4c33d7f493d",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.textWrap.options",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "2f5752fd7c337fef696a8b58ab39bc2e3c7c31211209ca5e71c635d71b75a0d5",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "graph.create",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "a56718079ced7e072fafc22b6d0641711a2d3404735ae08e105b3ed5e46ce232",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "graph.setData",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "78ecc0cd4434209e936289d4374e5e886a0c4152aba04772939b5be67950b167",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "graph.setType",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "2bee79317b2e5134c7fb430cd0ea056c5ea92e444505244fdbbbe18e1c843cd8",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "document.rasterEffectsSettings",
+      "ownerSkill": "vectorcraft-cli-project",
+      "paramsSha256": "2995d3d930baa2985b2d07aa2784e08c27f181419ae7b94c40d7b821078cfdad",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "view.saved.new",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "53dc44cf219a444efe8be6829964eb617fb8062346bbc362a1f66b4e044ba2cf",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "view.saved.edit",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "5cb980b8e044238639995b8620c3627514b645967366904bc16c7a78302b704c",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "view.saved.list",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "9007bf4d3f53b80ff15f4ab7b6005022605d3f2b02e06826e37f43abd4d0ba2a",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "view.transparencyGrid",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "2f80a68a3d199ed3fda883e07483284c5de3ac42269abe6f00a8c2e5daa834cc",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "transparency.editOpacityMask",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "193f8bad08809a0f0aac835ad11f5389f8f07573e716d5791f2013cf208d5968",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "transparency.stopEditingOpacityMask",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "b5ee4f7366b8e463dec5deaf4b5b68c2cabb539e7b282b39e4a7adb9c4b9f457",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "transparency.viewOpacityMask",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "649b5c2111a9b659bc31bbfc52ce3978265565482bc48a92cb64609034cab0df",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "text.tabs.set",
+      "ownerSkill": "vectorcraft-cli-text",
+      "paramsSha256": "b803978eb02f91a7e6830abc3975027e65d88f80ec4d9ab5b57b7f5b3fc3abe8",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "text.tabs.get",
+      "ownerSkill": "vectorcraft-cli-text",
+      "paramsSha256": "a162c1100967693fc1acab8ea96a6a0044dcf1ef59d6c1738d1b43a9b055bde3",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "text.tabs.clear",
+      "ownerSkill": "vectorcraft-cli-text",
+      "paramsSha256": "710093e78dcf3b35087357259a4efac42619e66687321ea624e1cdb055c75ae9",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "select.same.symbolInstance",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "6bfbe26db7217f9e663c4fdea18e0ff9267ed13ca56336ebc5ce5473fe152241",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "select.same.fontFamily",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "6bfbe26db7217f9e663c4fdea18e0ff9267ed13ca56336ebc5ce5473fe152241",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "select.same.fontFamilyStyle",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "6bfbe26db7217f9e663c4fdea18e0ff9267ed13ca56336ebc5ce5473fe152241",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "select.same.fontFamilyStyleSize",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "6bfbe26db7217f9e663c4fdea18e0ff9267ed13ca56336ebc5ce5473fe152241",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "select.same.fontSize",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "6bfbe26db7217f9e663c4fdea18e0ff9267ed13ca56336ebc5ce5473fe152241",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "select.same.textFillColor",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "6bfbe26db7217f9e663c4fdea18e0ff9267ed13ca56336ebc5ce5473fe152241",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "select.same.textStrokeColor",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "6bfbe26db7217f9e663c4fdea18e0ff9267ed13ca56336ebc5ce5473fe152241",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "select.object.directionHandles",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "1b242d392c067d176d65875e52bd64454ec0c5a349b5c01bcae651d279517625",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "select.object.pointText",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "6bfbe26db7217f9e663c4fdea18e0ff9267ed13ca56336ebc5ce5473fe152241",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "select.object.areaText",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "6bfbe26db7217f9e663c4fdea18e0ff9267ed13ca56336ebc5ce5473fe152241",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "select.object.brushStrokes",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "6bfbe26db7217f9e663c4fdea18e0ff9267ed13ca56336ebc5ce5473fe152241",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "select.object.bristleBrushStrokes",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "ce73a658f12e441663e3fde092b48cb6af735090e0e25c4da4cb67935038ae50",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "select.save",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "5dcc9686db5ceec8edd4ef031fb8649eee9e191e6d3f02fc5de6319b508b3805",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "select.recall",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "e7ba02d06ea521e513ce2df5350c6e882ce4d64c2cecea23ed201b993f8c1184",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "select.editSaved",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "20d0339b0bc351a45acea6afb42d5258c14fefd86b48e9824ef4e5e14efee9f3",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "select.savedList",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "1521ebd1db3464e74bbd269c78174d03dec8021ae8c3744b5e1db49134ae2f1c",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "view.guides.make",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "3a9b07c35382768c5f5279dc70ef1ada8bb3ca83fe9972e91edbec3c42b71a20",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "view.guides.release",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "1a17556c0685c2472aa76180318c677519d9b0f5e6dd566696bef975a7fea6f4",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "view.guides.lock",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "5166ee22864bf3a028c8e30bc2bfa6039389756a7611358c0700749687a60891",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "view.guides.clear",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "44e36d4d6844554074ce103b35cc28b0bdffcd875acb0fedd1ac9f11071a895d",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "guide.add",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "d8082ad44227bd13e8d70c6482f18ecedec2b2d560ad8fc8fff7963a995faa2d",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "guide.remove",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "f8f0251027e752dcb1389371ba65dbcca2732fb938fcf5db875e5c273ce9a0f5",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "guide.move",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "3395e3f8c1214a98b2bcc214061824322cdfaf7bbbd10631ca71b31c789464ad",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "file.closeAll",
+      "ownerSkill": "vectorcraft-cli-project",
+      "paramsSha256": "bb91ab73775ce685c45c56d04d75a8fa05b66b1efc751da3c70328fdc1f27cbd",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "file.documentColorMode",
+      "ownerSkill": "vectorcraft-cli-project",
+      "paramsSha256": "5e7e1c9e4f39dbb035e3bb7affd400c871f8c813b92d2ddb7c05f46680ecbc97",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "file.info",
+      "ownerSkill": "vectorcraft-cli-project",
+      "paramsSha256": "01e405536a31ea08b7b1aeef602069f68881b75e787dc06de7654b782ce5de22",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "document.info",
+      "ownerSkill": "vectorcraft-cli-project",
+      "paramsSha256": "c020eee7b9d69366dcfdc9880512e956f6f0d57343f020abbde2ef76c4667b2e",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.makePixelPerfect",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "6572e6a91fd451a6e8d94caebf3e032d4ae7c4e7d8adab010bbeb9e1fa733a67",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "artboard.reorder",
+      "ownerSkill": "vectorcraft-cli-artboards",
+      "paramsSha256": "2074b0b71bfdbc938368515a328008a1328b29b6af7b179382f5041034c7abca",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "artboard.duplicate",
+      "ownerSkill": "vectorcraft-cli-artboards",
+      "paramsSha256": "79334aa438b0453bb0318224b682a0b08683bfd15e0ab1034b5a3e14a4b128a0",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "text.setFormat",
+      "ownerSkill": "vectorcraft-cli-text",
+      "paramsSha256": "2582c421231ba36e07a74e3e2a832c23d7d7bfa3e63808016b9024ec3cf84da5",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "shapeBuilder.merge",
+      "ownerSkill": "vectorcraft-cli-boolean",
+      "paramsSha256": "17f9acf59c70084bc1b8c389d3ffa07d3b2992672492826a8b72a2ef2b2c5369",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "shapeBuilder.regions",
+      "ownerSkill": "vectorcraft-cli-boolean",
+      "paramsSha256": "216c218fc94f0075f8cb9c0a6d95667240521c233a414d8de81d4dc7911c01cb",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "livePaint.make",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "203df17977711f62e5f4b51b916a2b99bfa7c452a330c2a333a4b64d05b69fbd",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "livePaint.merge",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "6f955c931bceed4a65e3e18b63c8d5b4c3365f08355b32f1df9a59a0567fb95f",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "livePaint.release",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "7bf2cca465aed17cd993ac25bf3287096a9238c15c997f1a7a9715c7140d0691",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "livePaint.expand",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "b1ac8cb964e8f91e40a21e6ceb2eb13c37a506073390a23eddba7c3cf002c5fc",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "livePaint.fill",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "2759fd52bfc7a28b4eca84c491b571d2cf8072bb2a253cb355f0037bf7a3e4c9",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "livePaint.strokeEdge",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "a08524640f8d633558ad41dc811e952aa76a43355621f23a7fc2e401ac360245",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "livePaint.info",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "2d1b4667da59ddb56c079e941e6cf29c98bcf3df575f7cb74d1f6141ccf16215",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "imageTrace.make",
+      "ownerSkill": "vectorcraft-cli-assets",
+      "paramsSha256": "5f556ab4d22a5ba725b4187e610a2a76fbaa8bdc678bc28b6cbf2bc26829d10c",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "imageTrace.makeAndExpand",
+      "ownerSkill": "vectorcraft-cli-assets",
+      "paramsSha256": "e11574ba0d73d5154ccabb17ea12a3b0b7905c0e69cd007e44dea355f3d66382",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "imageTrace.release",
+      "ownerSkill": "vectorcraft-cli-assets",
+      "paramsSha256": "9b61f54121d4d9b3036340917f825056ab32570792001d6e5a2239db66281b65",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "imageTrace.expand",
+      "ownerSkill": "vectorcraft-cli-assets",
+      "paramsSha256": "635da35188267ac545d2e6fafa6b78a6eacfc8f6a21f43857a88725cf7507966",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "imageTrace.presets",
+      "ownerSkill": "vectorcraft-cli-assets",
+      "paramsSha256": "2a1458ce1e09db733e13095e084b9967560ca53a508a79997f9471cc09663081",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "brush.list",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "0d31c0178420122a941b6e69060a562c78f2d4b20d951fb11a29f694501401da",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "brush.get",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "a1ec639d66811dec6d2e4ff1aba8dd362d8677d0158c16c7cef72986cfb6eb41",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "brush.apply",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "5f258262830348a2afeaa77bbeb95a176e562a1a33dc6a7442d5c1da5e016918",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "brush.remove",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "ca28f709ec77eb1982d4d2ee051c44e6638b5b4d6e597e4798885c3d17717aa7",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "brush.setCurrent",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "67679f201f03410e80655abe2405be4c01831c6ccc869e5f711c842dbc7a1257",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "brush.new",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "16e5630f444517789e39fa2f6cd8243d9c8b7bd301261ebb40846ca532b880f7",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "brush.delete",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "04c10916124eb4fac5ff464b35c3ba58859816fe0fa353525bd5fb31da5cbd34",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "brush.duplicate",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "4a25a69343e820b26521d773e59409dd770a02b81e7cd2fa7fd2801d1731b833",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "brush.options",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "034aded5f1f327f33d5c855f72d4bf8d6611ab6a8c5b7d8db1afb8b802c207d4",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.expandBrush",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "aa8ec88eb4502b91db3db0de20d33739d843f08c522653e1e9af9c80dccf5fda",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "brush.freehand",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "344d48a216f255a30404d8f1f6d4cc8550090541f9d946211e2aef60553ab660",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "symbol.list",
+      "ownerSkill": "vectorcraft-cli-assets",
+      "paramsSha256": "ba1c764e97e28090b94755eb027f6603cba602845b504124ccab55af24dc39bb",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "symbol.new",
+      "ownerSkill": "vectorcraft-cli-assets",
+      "paramsSha256": "3eb082ba92ef549f88761880e1dd06a4e308dc32820fbfe0130cc85838cb2387",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "symbol.place",
+      "ownerSkill": "vectorcraft-cli-assets",
+      "paramsSha256": "131b7a05902955db7e63692b082bc61a087caa6b3317fb5bb73f11858a5575b4",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "symbol.breakLink",
+      "ownerSkill": "vectorcraft-cli-assets",
+      "paramsSha256": "a6bd6e7cb41b330e6e3fee75ada97a0031ef530130feed14b757bea4cf24e23c",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "symbol.edit",
+      "ownerSkill": "vectorcraft-cli-assets",
+      "paramsSha256": "f361960b169ceae5a4a6b1c7f5b58050a48a21de52dc248b61b9e8ae6ccd1f16",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "symbol.update",
+      "ownerSkill": "vectorcraft-cli-assets",
+      "paramsSha256": "3590f794a01d8a2af8fbd475b65d89e8b53a10caac63e1d9de20c069e9ce241e",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "symbol.delete",
+      "ownerSkill": "vectorcraft-cli-assets",
+      "paramsSha256": "e4341ebf5339ba3074276ec8d724f9be669394a5368aaa7d00a8507dd2de2a16",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "symbol.duplicate",
+      "ownerSkill": "vectorcraft-cli-assets",
+      "paramsSha256": "4a25a69343e820b26521d773e59409dd770a02b81e7cd2fa7fd2801d1731b833",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "symbol.replace",
+      "ownerSkill": "vectorcraft-cli-assets",
+      "paramsSha256": "4b641ea4d74a069e5f9534a0e9d1624a473a00bd17b55053d81f2bd8e7492142",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "symbol.setCurrent",
+      "ownerSkill": "vectorcraft-cli-assets",
+      "paramsSha256": "45a0dd616121e59a731afe5d036a7431250e76f74c96fd7c45955bb2d5fd3652",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "symbol.selectInstances",
+      "ownerSkill": "vectorcraft-cli-assets",
+      "paramsSha256": "3bb31d4b1b32135ecdf776028d858fdeeeecbf9ba0db0c7304cfc9890ba0bb21",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "symbol.spray",
+      "ownerSkill": "vectorcraft-cli-assets",
+      "paramsSha256": "aa926c78e43c3b3c3f9faf43f1e83b6bb7cf03ca57523c3e9dfa3b3cf3899acf",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "symbol.adjust",
+      "ownerSkill": "vectorcraft-cli-assets",
+      "paramsSha256": "ffd722ee167fb688ef8aa652822b04fa8219055ae36fd0e512e2bc0abda0233e",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.pattern.make",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "76ba3335065577592b69e313b7019ab720a9a4a9fc61dd990103c46f38241a6c",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.pattern.edit",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "c931bcc4646ea3b64050815e283b5f570c8bf2543275c22c674634eb241b25a3",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.pattern.done",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "e33fe980cacea5b10bad5e708bcdf635f4ec65b3f40d84c4b0b0cf82b083fa47",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.pattern.cancel",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "d79df1e4dfec880ca72bc1c31032bd7857f28ef58683ad60de13bd9ad678d931",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.pattern.saveCopy",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "23b6a0e2a7523f20463b6fabcab6572cbbc102854816b4b601d8ffc421b10ed6",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "pattern.options",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "896135b3da17d92f050a56414873b4abdc351406fd87599ffd2b1ab914d0d884",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "pattern.delete",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "8c9a2e2db16d63f47607110e04d31aa55cc6131ee93714127232617c4c94b719",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "pattern.list",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "e2f3f7c660d58c7df84a863b08c9cbf59fc7295b301f77c29dd2d57c6f10f459",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "pattern.transform",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "80a220a9ab7e930fc00201d1f8f1dc07173be38fe55f69ec9152f03addb3f954",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.repeat.radial",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "23181a8f5267679bb271468c70c6c6653d35d8bb6b309fe89bde4ddf2c7caad7",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.repeat.grid",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "7e0c3dad35d6308784db90010731e018a8ba2bb0a18a64c840307eb29d8f772d",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.repeat.mirror",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "8255285099113a3a98c511a777d70187ad593c344c93db2e611c8d892fbaca14",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.repeat.release",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "4a80d04f6f0aa0b3d433a93e40f0633bb0253609047de5e912b6f6be2b327982",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.repeat.options",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "abe1c473505d8f3d0693596f00a5019522b73e1f4f441ea383d81614d1c1ee33",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.repeat.expand",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "d4e9e25957fb44a716fc8a74591e221d00b4796221df07dc6b502e8b1b793dd6",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "prefs.get",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "608113d2e86b5de7409e9a146c013c47b743af862c80e8a7b7581e5d9b2be66f",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "prefs.set",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "dffcdd178e696d588e818248721f78dca97624087dcafaa24a810d99d53707ff",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "prefs.reset",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "648f89b7282b0e132ba537931497d2661639a9af04d9cd6901886ecd59979ab2",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "prefs.list",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "d781171f7a2b18871c27b750a6ba6dd22ef2dadd279412423f54cc4e6332e544",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "stroke.widthPoint.set",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "d45525eb815a1568c52954884b3475ea412c3d307b8afb0a9be041f5430ac2e5",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "stroke.widthPoint.remove",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "b417344139aaf773d2e8ef926555394fa83a173914f3b5a3a9375847e992edc5",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "stroke.widthPoint.copy",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "25c9ca370914c43e227c7b2b0d9814e2815cb8367959d66f5c04b9925b61e536",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "stroke.widthProfile.set",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "739cbb4582340ce1130d72e112a4cc869c157cb0c3b4cfc37fa83e178fd06a3a",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "object.liquify",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "f15c3d530dab98047784248aa8006ea6f656de057a739dad0707735b6d5e6bb7",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.puppetWarp",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "c2d8488d914e3ad396dfffdc75ac5e97d19b3ee72c4f887c0133515fe8e1d4cf",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "perspective.grid.set",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "83349e53b234a7cb4577eb187fb9c8a57540e8c274c27c8296e6859e972fb0d7",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "perspective.grid.preset",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "ab7a4d1901cb51cdf3872734dd47221dcc5964accc55deef96c70297163974c9",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "perspective.grid.show",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "cc702c5f7f61caab3202f640a72211f5bb357a749e70208b59a4b74e9f5f7876",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "perspective.plane.set",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "330e95267b1e36f3295c125113b13765beec1d60ffc8919df57d9a7208f70740",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "perspective.attach",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "93d97c52707abfc84ded8c2a90427234b80508fba9868177e040d7078a3991a5",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "perspective.release",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "897710f4fb4ddf697fccecd10a8e6e514c9a6746f481b01a742e3a967f588854",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "perspective.move",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "d4efd7e9ea79932ddeb3a4c4797cc09b57cf29324d0772ffa3cb381e94d9573b",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "perspective.draw",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "62590c4920bf0dc0624c9e819e7d1ff580f26205e7403a4dd4a7aa8fe4863b2f",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "paint.invert",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "9ddf5e9390b62879f1a9a0f3df7f730bd1078902321a83cd5eca3285845dbc14",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "paint.complement",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "d45bb6c61c293bb02371e0fe40d64c37012d44b8bccff616605c0e5657303034",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "paint.lastColor",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "69243aa6c0eca390ccf46a0bbe5948eb17a34b569c270a1722507d81672868ca",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "paint.lastGradient",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "10121a92503a194e5bf702a4b54098b670014fff6f8eede140d40fdc242dd911",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "paint.recent",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "1e76cc0951e345be0159e2da2fb1a8d923f3a745a711236191c05a4c26d7579d",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "paint.proxies",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "cb8b9195fcb286aeecd5bc2d8ccd802e27c997045c7a8ea4fb98a4b75b92961f",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "object.setOverprint",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "aba69fba2fba0b31d988339f975258c22fcb73a6aacc3436b4836404615dfb62",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "attributes.info",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "0c98a287a3dc06f9c39678956b972b10e256f927291f432e8efa29889966d436",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "swatch.library.list",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "7282c96e4f62f4ef7420b5a10be6578a18053f2b8d9ea045b3f8b7256bc03816",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "swatch.library.get",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "f6ef2e02ea4be937888fc390814d00ef114af8dbd1078641ede57b89302b4f40",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "swatch.library.add",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "9df6ad934b7a5b12424229283f71cb47bbab064db8e3eb492305e228f303c2a2",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "swatch.resetDefaults",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "4dbc4cf017179569442825ed3529fd85df3e5a412a79b70baa4f13aa9968a259",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "swatch.library.save",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "f24e4102295e51c90b6b21539799a729ef4186b06f12cb70bb1dff24834035e8",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "swatch.library.load",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "4d19da19d86669a405e4155f4f211cc769475271317beee462981624c3b9f3b5",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "paint.freeform.addPoint",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "1230343177de2e6937a157bd0effbd9e49c17d77de27dba9f0ba6640578d53da",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "paint.freeform.setPoint",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "36727c1cf8eacbe7bda3bdda2c9f5ca5f0054fa2b5f7a5e711ae9c064b433129",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "paint.freeform.deletePoint",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "d49ebfa4067157f4642246c4d5a61640716702c0535cf37ab08159655eb45183",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "paint.freeform.addLine",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "cc325becf3aa6f4703b5893b361ea90fdd27047578d837fe272f4b71f23aa3d6",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "paint.freeform.splitLine",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "9fae8b4eab4abe32e5aa23fb7eb1dc96f88c1ce80bcceb4c93534b5674ca0d91",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "paint.freeform.selectPoint",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "3cfea3b06bb656a543b0965e9bb9a0cb2c623c81e4a6b202f3331a913ae1404f",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "paint.freeform.get",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "ad8c6d54eddb0dad37d73d8b4d49b755d549f52e40faf89f2391f8c0fc61de01",
+      "executionAcceptance": "PASS"
+    },
+    {
+      "id": "object.flattenTransparency",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "f929a748a4ada99e451a542dc8b669cb3df69b096fb985ce3e49fb6cfa0a0d36",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "flattener.presets.list",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "0bbd09ae6f38a511d5a2601c9cdc25fac82e67bfc3f0e68ed349e4dbc7769b9f",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "flattener.presets.save",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "aa2ccfda5f7ff213844ea13950cb013abb3aeb3289e5f4e44d84f74947e1dcac",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "flattener.presets.delete",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "a4bc13b9c3f89759c1111aaaa464a8102a25b91c70edc6defd66f463d5e2f08f",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "flattener.presets.import",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "b3ff9b69c74f750baf08625f060a174302bb484017d5f35327cfb0400e2ec15a",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "flattener.presets.export",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "336d93089059360d5deb201cf5edc29cb50af7c6efe8ac8aafe08f985aa26811",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "flattener.preview",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "e1741938fa850e39da467c35522e1e21bae1dd364924bea320b8abeefee97ef3",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "graphicStyle.libraries",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "5eb173cff2b1e382b370bcb81675ffa748cd1211bf4fcecbc2de50c5b9f73733",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "graphicStyle.library",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "64b81ec0064ec8e6581f4a5317bd2fc890f8cab79dff582460e84e88fdbfdacc",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "graphicStyle.addFromLibrary",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "f7fa8fb29282003f9ac24ab28aa1a35c75a5fed52e27e27b7b55c82d391e0f5d",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "graphicStyle.saveLibrary",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "aaf9fd01f996a36e5d34a603b40111fd7b0f76e2880fb203f9495ba37fb5b1c0",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "graphicStyle.loadLibrary",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "692cd081ffe6fd51adae2612696c26e359f6fa3b3fdafa7060d56328a3754fb4",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.expand",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "fe600dbe5b81a1cc0cee67f993072fedf98d858b514fe6a4b4f82f1fbd311bdb",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.expand.info",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "36600444b16fa3c74f461a3411ee832ce7f838e22f86ab43f65be5f19944d4a9",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "attributes.set",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "61822595f6bff8def2bce7141d22cee330b4486400633c94f3dce8c0c895a8f7",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "path.setFillRule",
+      "ownerSkill": "vectorcraft-cli-paths",
+      "paramsSha256": "85feb93c04a8682ed3485bbed7a37c1b7b4ca6bce3b0ba833e7532142fa68866",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "appearance.setNewArtBasic",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "00e24f3827a46187950282bf9fe9a7728a9e14314d49d87f8d2d0a477fc378c0",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "appearance.newArt",
+      "ownerSkill": "vectorcraft-cli-appearance",
+      "paramsSha256": "ed7135b8d1002b5d4790202cb18ac875e2ad9546d413643dc66e98c9ae3865a5",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "colorTheme.list",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "1a639d132690acf414692d641abf81674545741b253ccbdeccf1de54b7f50998",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "colorTheme.save",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "31398a11e32ab070ea8752d682fa1e64b650760e6713caf1489b6840c6d4c9e0",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "colorTheme.delete",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "8070b7b859d2e98d89e2e6ced42cde165f1c7c1a6ff282ffceb9aade0db63976",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "colorTheme.addToSwatches",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "4a633b99cdbe69fe05f557f479e38caf1f277de63c1b9799db1df5b0fddb52a3",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "document.exportPdf",
+      "ownerSkill": "vectorcraft-cli-export",
+      "paramsSha256": "09421c0297f4f895cf681b761f2e40e3582f657b09b95500037275d991c58d98",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "document.pdfSettings",
+      "ownerSkill": "vectorcraft-cli-project",
+      "paramsSha256": "fbb9d5b3fdacf6603099bf13ceabf116fe0ad4f08b9895dbe166ea10fa26339f",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "document.setup",
+      "ownerSkill": "vectorcraft-cli-project",
+      "paramsSha256": "b3869645e41de97e0515ee76acd023846c16d7a4490b01f95dbf8c22339eefa1",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "file.newPresets",
+      "ownerSkill": "vectorcraft-cli-project",
+      "paramsSha256": "27166b7a403e510c4c72bd3278640c219dc5811e415f92114aaf611b259d1324",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "file.newPresets.save",
+      "ownerSkill": "vectorcraft-cli-project",
+      "paramsSha256": "59089298e40c7e3854a7c35030618e3b5bf2c4e222a75400d715804bd3970d2e",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "file.newPresets.delete",
+      "ownerSkill": "vectorcraft-cli-project",
+      "paramsSha256": "f98c83a3f114535d8a815891d8eaa5777422ca01668c55596eed4fa4d44c47fe",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "file.place",
+      "ownerSkill": "vectorcraft-cli-assets",
+      "paramsSha256": "6634a13e97f08faed9cfc9064462a068299a364b10e49ae090c49ed39378b1da",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "file.place.info",
+      "ownerSkill": "vectorcraft-cli-assets",
+      "paramsSha256": "5ec01b42b8cfe7a2d80edb8130d36c3bd4326fb71a81d99e462c6e018fc68aa5",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "image.info",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "5b5c22fb71b6ae8fd7d2e71780af221edc635e64ecdf4b931c2a52863e2d5b73",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "file.place.queue",
+      "ownerSkill": "vectorcraft-cli-assets",
+      "paramsSha256": "ce5aa16641fce1808debd8d1b0d07d20428d4188091706ee391566823598caa8",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "links.check",
+      "ownerSkill": "vectorcraft-cli-assets",
+      "paramsSha256": "18dff9fa08c32dc0dc7c95a952360636af86fdb9c7ef3d05de45a34c05beacbf",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "links.update",
+      "ownerSkill": "vectorcraft-cli-assets",
+      "paramsSha256": "c723deab974e62c07238cbd094bf9a737d9c4269a6d3c9f461b0769ba9363795",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "links.relink",
+      "ownerSkill": "vectorcraft-cli-assets",
+      "paramsSha256": "7559685ca0a3cda3557e45971c51f08c0c9ba32c98c1e140aef97bfb10a1940a",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "links.list",
+      "ownerSkill": "vectorcraft-cli-assets",
+      "paramsSha256": "8b96e67e675b60dd58959f27f6a04b1bdac62879e9a49650f6fe5ec52dea94ce",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "links.goTo",
+      "ownerSkill": "vectorcraft-cli-assets",
+      "paramsSha256": "56e8d716c3f9c2ade82204634dd0d04739f2081d7006b7ced3d9b1733ebad4bf",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "links.embed",
+      "ownerSkill": "vectorcraft-cli-assets",
+      "paramsSha256": "1c1b4d8c46a3c98dc8b29b8b58b01e6e3bb1152bebc943490c286a2bf9ed2921",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "links.unembed",
+      "ownerSkill": "vectorcraft-cli-assets",
+      "paramsSha256": "c36413af57565639c5dd257d5e1836673d14928de1238166c75c342e54fe5fd5",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "links.info",
+      "ownerSkill": "vectorcraft-cli-assets",
+      "paramsSha256": "63c3c7d1d398d9cc02e0f6e57bb3958de10537b98df096345162d36c9b3619a9",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "links.placementOptions",
+      "ownerSkill": "vectorcraft-cli-assets",
+      "paramsSha256": "bf5b8e9010b5b4da0e73370866cc8723a44f8ad7196b6a68553b9767cba76e2d",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "pdf.preset.list",
+      "ownerSkill": "vectorcraft-cli-export",
+      "paramsSha256": "717adc03b67d25e560c58694e60590f5cc4c97493128402b5bb57e1c5f48b27f",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "pdf.preset.save",
+      "ownerSkill": "vectorcraft-cli-export",
+      "paramsSha256": "c8df2cc36eb30a18968da1b929d2b0e7e2ca2c2ef339827bb7def9a4982a6c22",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "pdf.preset.delete",
+      "ownerSkill": "vectorcraft-cli-export",
+      "paramsSha256": "a4bc13b9c3f89759c1111aaaa464a8102a25b91c70edc6defd66f463d5e2f08f",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "pdf.preset.export",
+      "ownerSkill": "vectorcraft-cli-export",
+      "paramsSha256": "7c371cffea4cee5663eb09a4ff21772fe5df41b86a86a463f2447840f2bc3458",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "pdf.preset.import",
+      "ownerSkill": "vectorcraft-cli-export",
+      "paramsSha256": "903690754b7cb73b2c419a397191268373f112ac5be82fafdd5ebcbdd5c0e379",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "document.exportDxf",
+      "ownerSkill": "vectorcraft-cli-export",
+      "paramsSha256": "dd79c002c8c1e5fb09a2cd498ef3eabe5f81dcc584121177f9f7e5bf0c9a3282",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "file.package",
+      "ownerSkill": "vectorcraft-cli-project",
+      "paramsSha256": "da8f0bf1d108c0225979c3753309b436fcabca6e46618bd582747faba062ddf2",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.slice.make",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "b215d6203f30b1ba096e96e8d887d262fa157aef5aa1f4b05072f8da7390a374",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.slice.release",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "5e742bda0c8359a2aa3cdfdb4ae4cd3bad9d36794756b6425944a8d3548b038a",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.slice.fromGuides",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "c5d2a851417d6a3b9ac69b8d85bec5d28b899463348b722ec724ddb653d2ba44",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.slice.fromSelection",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "2c48bc27314352b939d16c264108c4a46bb5e752ef308d36c7c771cf46f12f4f",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.slice.duplicate",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "3db2c853a868245580f2e1791f14a6d2a89309a7930568c8b1dd0458a8b08263",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.slice.combine",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "bd91e267509c9f59cf0a8507060c4eef53fc9d6557b62f9cdd53d9e67a2312ba",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.slice.divide",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "71decf8cc38c45603c18db8cc9a8363bf00f5988cdf81b2fde382d5bd8adcf53",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.slice.deleteAll",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "2d45108d67eb45ffed993774a09b420b9aac734038993cef133b4e77bb76ac5d",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.slice.options",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "2ab4c4782f1a22c9466c29f840fb8d6826566240bf5d8cb63b73d7c1db0e34df",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.slice.clipToArtboard",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "f18077f25e09725287d48a82cf06c70b51bf61fc75a54cfd25a99b9318195b5f",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "view.slices.hide",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "b1968db5a0cb4a8bc858848fff2001999ff60b8d880e3b1108f8c879a913099a",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "view.slices.lock",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "8917b9b856e836b53d1d98a2276b747eb1307cfe006cefa83c06d9e7d9a713af",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "slice.list",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "63f3757f94c68826ee08d8f9ea8e7be252de727a1f3f637dcb0999c1346b8e1f",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "select.object.slices",
+      "ownerSkill": "vectorcraft-cli-selection",
+      "paramsSha256": "2e7a63b7b7133284f0743f11e586988b960637a0d330c11926f52b0e5555e45e",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.slice.create",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "f97c7f301a7fe0196df10315a4dc8fd283ca4d8fe587f5207561463933619a31",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.slice.setRect",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "b5541ea7a7bdd163c2b510b05af729a7bc367fccceef1c9badfcda7c32382923",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.slice.move",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "fe2436d714683f3dd5078a907e9fa57bda63ceb435fa49c19a890dabf76c50fb",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.slice.delete",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "6718858bb1be1320932cd12dffc026fa84a38a0d25cc9c5c9daa10d67549fa59",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "object.slice.select",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "b7640bf71dab679a0bdc5ae3da48e9df72fa343e17e7063596b70a50aa028c3c",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "file.open",
+      "ownerSkill": "vectorcraft-cli-project",
+      "paramsSha256": "4f42e3df93139e80ad20c3b0253a8f4cc0ed597613aa66ce1ea2884a5bc04b7a",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "file.save",
+      "ownerSkill": "vectorcraft-cli-project",
+      "paramsSha256": "cae3df06a3a10dcbae3ece968738a58bfbe3876a26b25b4da89384a24de1b528",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "file.export",
+      "ownerSkill": "vectorcraft-cli-export",
+      "paramsSha256": "176192aa28d7549157e16098563e197f6d6d48ef2ae3ef301fa8ea9f47c6b0d3",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "file.exportForScreens",
+      "ownerSkill": "vectorcraft-cli-export",
+      "paramsSha256": "4a0a48077fb7f1690d734b1657c91422bc6fad4cae6a4754d429e7f8c866ea4f",
+      "executionAcceptance": "NOT_RUN"
+    },
+    {
+      "id": "tool.select",
+      "ownerSkill": "vectorcraft-cli",
+      "paramsSha256": "7e57173f8ab019e44ebb97639b725ea0d7dc2ca36d0d4b4198e70990ec5d4724",
+      "executionAcceptance": "NOT_RUN"
+    }
+  ]
+}

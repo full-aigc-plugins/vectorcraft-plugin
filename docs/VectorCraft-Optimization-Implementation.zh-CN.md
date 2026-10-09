@@ -131,3 +131,23 @@ flowchart LR
     D --> E[Compare revision pixels]
     B --> F[Preserve original captures and native projects]
 ```
+
+
+逐命令图层固定安装增量：公开dev.64/source46实际安装副本完成全部11条layer命令、22轮原生保存重开、44份解码SVG/PNG及22张真实拥有应用窗口。独立完整树断言核验当前层上方插入、嵌套子层、删除及当前层回退、复制子树全新前序ID、隐藏／锁定选择清理、绘制顺序收集、仅直接可选子节点、剪切路径移底并去除画笔及释放后保留无画笔路径、文档粘贴选项持久化。当前层／选择／目标用原生会话读回，不虚称随工程持久化。第二轮先修改自有图层名称，完整保全控制对象、其他字段、源文件及前轮交付。33组实际画布／PNG／窗口比较完成：可见性与剪切的4组画布／PNG比较分别变化964和419像素，其余按显式保全或只记录契约核对；窗口变化不单独作为命令语义证明。13安装技能身份不变，22项新增断言／证据回归通过。旧81命令矩阵及校验器原字节保留，当前92/585通过、493 NOT_RUN、184轮保存重开及368份解码导出。任务8.3仍开放；121/127完成、6项开放，不提升全命令GUI、创意／模型、权限秘密边界、市场资格或完整V1。 [Evidence](evidence/vectorcraft-command-families92-fixed64-20261009.json).
+
+```mermaid
+flowchart LR
+    Before[自有夹具与原生会话读回] --> Execute[执行一次图层命令]
+    Execute --> Tree[独立完整树与重开断言]
+    Execute --> State[当前层选择及目标读回]
+    Execute --> Images[画布PNG及真实应用窗口]
+    Images --> Contract{预定像素契约}
+    Contract --> Equal[状态命令交付保全艺术]
+    Contract --> Different[可见性与剪切改变艺术]
+    Contract --> Measured[窗口变化单独记录]
+    Tree --> Evidence[摘要绑定固定安装证据]
+    State --> Evidence
+    Equal --> Evidence
+    Different --> Evidence
+    Measured --> Evidence
+```
