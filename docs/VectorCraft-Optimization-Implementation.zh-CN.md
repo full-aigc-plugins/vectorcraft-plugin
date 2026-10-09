@@ -151,3 +151,20 @@ flowchart LR
     Different --> Evidence
     Measured --> Evidence
 ```
+
+
+逐命令图形样式固定安装增量：公开dev.64/source46实际安装副本完成全部18条graphicStyle命令、36轮原生保存重开、72份解码SVG/PNG及36张真实拥有应用窗口。独立完整树断言核验不同尺寸矩形的单位框渐变映射、替换与追加外观／透明度保全、唯一名称与稳定ID、删除保色解绑、仍同步对象重定义跟随与已改外观对象保全解绑、合并堆栈顺序、排序／移动、未使用及绑定读回、内置目录和自有样式库保存／加载／名称冲突编号／再次导入复用。第二轮先修改自有源对象名称，原控制文字及其他字段、源工程与前轮交付保全。54组实际画布／PNG／窗口比较按显式变化／保全／测量契约核验；两轮删除预置不同外观，跨轮像素仅测量，每轮删除保色由执行前后完整树证明，不能把窗口差异独立当作语义验收。13安装技能身份不变；23项新增断言／证据回归通过。Override Character Color仅验证私有会话偏好及列表读回，跨应用重启持久化NOT_RUN。旧92命令矩阵及校验器原字节保留，当前110/585通过、475 NOT_RUN、220轮保存重开及440份解码导出。任务8.3仍开放，121/127完成、6项开放，不提升全命令GUI、创意／模型、权限秘密边界、市场资格或完整V1。 [Evidence](evidence/vectorcraft-command-families110-fixed64-20261009.json).
+
+```mermaid
+stateDiagram-v2
+    state "未绑定外观" as Unlinked
+    state "外观同步的样式绑定" as Linked
+    state "已改外观但保留上次样式身份" as Edited
+    [*] --> Unlinked
+    Unlinked --> Linked: new or apply
+    Linked --> Linked: redefine updates synchronized objects
+    Linked --> Edited: change appearance
+    Edited --> Unlinked: redefine preserves edited look
+    Linked --> Unlinked: breakLink or delete preserves look
+    Unlinked --> Unlinked: add appends appearance
+```

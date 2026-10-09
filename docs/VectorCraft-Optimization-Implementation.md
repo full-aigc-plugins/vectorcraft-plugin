@@ -145,3 +145,20 @@ flowchart LR
     Different --> Evidence
     Measured --> Evidence
 ```
+
+
+Fixed-installed graphic-style acceptance:all18 graphicStyle commands pass36 native save/reopen stages,72 decoded SVG/PNG exports and36 actual owned app-window captures on public dev.64/source46. Independent full-tree assertions check unit-box gradient placement on differently sized rectangles,replace/add appearance and transparency preservation,unique names/stable IDs,delete-with-look-preserved unlinking,redefinition propagation only to still-synchronized objects,preservation/unlinking of edited objects,merge stack order,sort/move,unused/link readbacks,built-in library inventory,and owned library save/load/name-conflict numbering/reimport deduplication. Each second round first renames an owned source object;control text,other fields,source and previous delivery remain preserved. All54 canvas/PNG/window comparisons use explicit change/preservation/measurement contracts. Delete rounds start with different primed appearances,so their cross-round images are measured only;each deletion preserves its prior appearance by full-tree assertion. Window differences alone do not prove semantics. All13 installed skill identities remain unchanged;23 new assertion/evidence regressions pass. Override Character Color covers private-session preference/list readback only;application-restart persistence is NOT_RUN. Original92-command matrix and verifier bytes remain preserved. Current coverage:110/585 passed,475 NOT_RUN,220 save/reopen stages,440 decoded exports. Task8.3 remains open;121/127 tasks complete,6 open;no exhaustive GUI,creative/model,permission/secret,marketplace or completeV1 claim. [Evidence](evidence/vectorcraft-command-families110-fixed64-20261009.json).
+
+```mermaid
+stateDiagram-v2
+    state "Unlinked appearance" as Unlinked
+    state "Synchronized style link" as Linked
+    state "Edited appearance retains last style identity" as Edited
+    [*] --> Unlinked
+    Unlinked --> Linked: new or apply
+    Linked --> Linked: redefine updates synchronized objects
+    Linked --> Edited: change appearance
+    Edited --> Unlinked: redefine preserves edited look
+    Linked --> Unlinked: breakLink or delete preserves look
+    Unlinked --> Unlinked: add appends appearance
+```
