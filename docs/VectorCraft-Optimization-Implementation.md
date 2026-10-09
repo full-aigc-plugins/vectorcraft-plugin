@@ -113,3 +113,15 @@ Fixed-installed transparency increment: all17 transparency commands pass34 nativ
 
 
 Additional owned-window evidence verifies only viewOpacityMask on/off using two1440×900 native window captures and three interior grey/colored pixel samples;editing stays active. This does not qualify all585 command GUI contexts. [Evidence](evidence/vectorcraft-mask-window-fixed64-20261009.json).
+
+
+Fixed-installed shape acceptance: all10 shape commands pass20 native save/reopen stages,40 decoded SVG/PNG exports and20 actual owned app-window captures on public dev.64/source46. Independent formulas check rounded corners,ellipse/arc handles,polygon/star vertices and rotation,reversed decaying spirals,grid divider ordering,and deterministic flare subtrees/radial gradients. Each second round revises only the actual previous return-ID object's opacity and creates a differently parameterized shape;control artwork/text,other fields,source and previous delivery files are preserved. All30 canvas/PNG/window comparisons change244–165235 pixels;all13 installed skill identities remain unchanged. Original physical window scales1x/2x are recorded;window analysis explicitly normalizes to1440x900. Failed screenshot reads are retained with at most three read-only attempts;edit requests are never replayed. Retained QA field assumptions and white-on-white flare visibility were corrected;an owned dark backdrop makes the complete fresh-session family observable. Original71-command matrix and verifier bytes remain preserved. Current coverage:81/585 passed,504 NOT_RUN,162 save/reopen stages,324 decoded exports. Window evidence covers only these10 shape commands,not all-command GUI,creative/model or completeV1 acceptance. Task8.3 remains open;121/127 tasks complete,6 open. [Evidence](evidence/vectorcraft-command-families81-fixed64-20261009.json).
+
+```mermaid
+flowchart LR
+    A[Actual owned app window] --> B[Decode original PNG and bind digest]
+    B --> C[Record physical pixel scale 1x or 2x]
+    C --> D[Normalize analysis to 1440x900]
+    D --> E[Compare revision pixels]
+    B --> F[Preserve original captures and native projects]
+```
