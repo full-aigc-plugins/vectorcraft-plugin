@@ -168,3 +168,6 @@ stateDiagram-v2
     Linked --> Unlinked: breakLink or delete preserves look
     Unlinked --> Unlinked: add appends appearance
 ```
+
+
+外观验收诊断检查点：新增16条appearance命令的候选驱动、图像检查器和独立堆栈断言；尚未形成通过证据。a2在setActiveItem探针的内存undo恢复后，保存／重开缺少目标对象2；a3在effect.apply调用处结果未知并停止，所有自有进程停止，未自动重放。原因仍待隔离，不归因为产品缺陷。候选改为从原生保存快照恢复探针，但该修改尚未验收。缺少固定通过报告的18项正向证据测试保留在scripts/qa/pending/，不冒充已通过回归；CI执行堆栈单元测试及真实失败记录的断言。通过覆盖仍为110/585，475 NOT_RUN，任务121/127完成、6项开放，8.3不勾选。产品标签dev.64与技能源46保持不变。 [诊断](VectorCraft-Appearance-Diagnostic.zh-CN.md)。

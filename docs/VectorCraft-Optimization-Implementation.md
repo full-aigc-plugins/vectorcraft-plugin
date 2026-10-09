@@ -162,3 +162,6 @@ stateDiagram-v2
     Linked --> Unlinked: breakLink or delete preserves look
     Unlinked --> Unlinked: add appends appearance
 ```
+
+
+Appearance QA diagnostic checkpoint: candidate drivers for16 commands, image checks and independent stack assertions are preserved without acceptance. Run a2 lost target object2 after save/reopen despite an in-memory undo restoration; a3 stopped on an unknown effect.apply result. Owned processes stopped with no automatic replay; root cause remains unassigned. Candidate checkpoint-reopen probe restoration is unqualified. The18 positive evidence tests require a missing fixed PASS report and remain explicit pending QA; CI runs stack units and failure-record assertions. Accepted coverage stays110/585,475 NOT_RUN;121/127 tasks complete,6 open,including8.3. Product tag dev.64/source46 remains unchanged. [Diagnostic](VectorCraft-Appearance-Diagnostic.md).
