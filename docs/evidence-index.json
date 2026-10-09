@@ -3323,7 +3323,7 @@
       ],
       "historical": true,
       "dependencies": {
-        ".github/workflows/implementation.yml": "ead5e28011083a9649b88f719af188873813a54902b18fb6f82db70ce94ed222",
+        "docs/evidence/pre-command-paint-identity/.github/workflows/implementation.yml": "ead5e28011083a9649b88f719af188873813a54902b18fb6f82db70ce94ed222",
         "docs/current-identity.json": "e559e00b4d74b41b716e3697b7477a4760790222a8d5e7ec4d1525ca55167ecc",
         "docs/evidence/vc-qa-003/after-model.json": "572c83ab545ff431d8fd6497ed658479321cd6e5b4eb75ca9dd446f0a661f039",
         "docs/evidence/vc-qa-003/before-model.json": "9f4d77332c172915fd2b021138e6e7dff6e6e73b0bd554851c07329ce7d89ff9",
@@ -3869,6 +3869,28 @@
         "src/runtime/runtime_gate.ts": "269966ae978c9afa7b9cdad719afce9ca0b57e54c52f3cb732777f3ddc23a68c",
         "src/runtime/runtime_probe.py": "ee196f91dde9487bd1537d1c91a8f5957deb795431a54baa333be35bfc90e54c",
         "src/strict_json.ts": "69a445339670e53f6a7fcb96770b53b896666dd1e60f114c1751a23981d5b7d0"
+      }
+    },
+    {
+      "path": "docs/evidence/vectorcraft-command-paint-fixed64-20261009.json",
+      "sha256": "362d409a6acebb3e7aa21b9de169db98037d24924094ea57f290c1e84122066f",
+      "level": "command-execution",
+      "status": "PASS",
+      "scope": "Public tag64/source46 owned signed desktop:22 paint commands,44 native save/reopen stages,88 decoded SVG/PNG exports;563 locked commands remain NOT_RUN;native canvas images only,not exhaustive GUI or creative acceptance",
+      "requirement": "VC-CM-001",
+      "tasks": [],
+      "historical": false,
+      "dependencies": {
+        "scripts/qa/command_paint.py": "919fd550c129d5127ebbd0d3828b8f25e8edbc942a4388e15a6de6947716efe0",
+        "scripts/verify_command_evidence.py": "2226125e18cbf119de2451534d08547e12dfd2f1e6db9e5464586659d7598364",
+        "skills.lock.json": "44bd17666c6ef2a79641245a239a4f29a1f4a79162bba0de8b8329347f0a8fd1",
+        "plugin.json": "60e59b0f5f44bf657e0554e25a20c5e99e774af7c2ad9f1602590cd5bff6f712",
+        "skills/vectorcraft-use/references/command-coverage.json": "532d2fc467f4fc4c48856e11fdb97ea465276270c882e837a3214692de831a50",
+        "skills/vectorcraft-use/scripts/commands.py": "70565ffb80b5d2645df79c95e703c21a9e6bebf39a011e5555508eb1413d0eda",
+        "skills/vectorcraft-use/scripts/desktop_session.py": "e87d5df29c7e5ead4b7e3ebcbdf4c6361f65da8d3df1681c4822363b6b23a687",
+        "skills/vectorcraft-use/scripts/runtime.lock.json": "7b6bd7f3fab84b757d4ea20ac91b74d89b417ec061efc6ae320dda97a422cc07",
+        "skills/vectorcraft-use/scripts/desktop.lock.json": "f38c7cd5b837bc4f3275ef96c17308fc894f6be66c6a00ecf9c53378ad4bb486",
+        "docs/evidence/vectorcraft-public-tag64-install-20261009.json": "e9cddc8c64e0a5d0ca2c3d7c3d0d8d3bab4c439715b80464f4773b4f99fce318"
       }
     }
   ],

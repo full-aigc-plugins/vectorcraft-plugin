@@ -10,7 +10,7 @@ Four-domain RT-001 runtime source/integrity acceptance now covers every current 
 
 Create Logo, icon and brand assets as `.vectorcraft` with applicable SVG, PDF and PNG exports.
 
-Current plugin: `0.1.0-dev.64`; skill source: `0.1.0-dev.46`; 13 independent skills. Candidate64 is not yet published;public63 retains source43.
+Current plugin: `0.1.0-dev.64`; skill source: `0.1.0-dev.46`; 13 independent skills. Published public tag64 has passed isolated installation and13 independent native cold starts;full V1 remains open.
 
 Plugin55/source41 adds actual SVG image scope and a digest-bound technical disclosure guard. Minimum tasks4.13/4.14 pass; 4.15 qualifies for its current headless scenarios. [Architecture](docs/VectorCraft-Exchange-Scope.en.md).
 
@@ -470,3 +470,6 @@ Current installed-copy four-scenario revalidation: public-commit dev.64/source46
 
 
 Post-publication tag verification: plugin v0.1.0-dev.64 is published at6763caa1f0e6596fc01d298304794d0e9c139dc3,pinning independent source v0.1.0-dev.46. Actual public-tag installation into a fresh isolated Codex0.153.4 home discovers13 matching skills. All13 independent HTTPS empty-runtime starts and12 native create/revise pairs pass,setup-only separate,zero skips. Installed product files exactly match the pre-publication four-scenario copy;all4 main/tag CI runs pass. Thirteen completed runtime caches were removed after confirming no open handles;native projects and execution records remain. This completes the public-release/install/cold-start portion of9.18,whose9.9 model-routing prerequisite remains open;9.18 is not closed. Full permission/secret boundaries,per-command GUI,other platforms and completeV1 remain unqualified:121/127 tasks complete,6 open. [Evidence](docs/evidence/vectorcraft-public-tag64-install-20261009.json).
+
+
+Fixed-installed command increment: the actual public plugin dev.64/source46 copy passes22 paint commands,44 native save/reopen stages and88 decoded SVG/PNG exports in an owned signed desktop session. Checks bind live enabled state,verbatim parameters,target colors/gradients/freeform data,control text,source preservation and previous deliveries. Freeform splitting follows the pinned upstream Catmull-Rom curve. Initial QA assumptions about registry size,RGB readback,selection and linear positions were retained and corrected;product code was unchanged. The external complete catalog matrix records22/585 passed and563 NOT_RUN;frozen skills are unchanged. Native tool canvas images are not OS-window screenshots or creative review. Task8.3 remains open;121/127 tasks complete,6 open. [Evidence](docs/evidence/vectorcraft-command-matrix-fixed64-20261009.json).
