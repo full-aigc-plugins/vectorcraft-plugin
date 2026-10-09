@@ -1,0 +1,57 @@
+{
+  "schema": "vectorcraft-permissions-technical-write-candidate/v1",
+  "result": "PASS",
+  "pluginVersion": "0.1.0-dev.64",
+  "sourceRef": "v0.1.0-dev.46",
+  "baseCommit": "ff74e12a0a4ce17f2803a1f7c64c3d6549108289",
+  "platform": "darwin-arm64",
+  "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+  "tasksClosed": [],
+  "marketplaceEligible": false,
+  "fixedPluginAcceptance": "NOT_RUN",
+  "redTests": {
+    "failed": 4,
+    "baseline": "isolated original ff74e12 TechnicalReview and checker bundle with current unchanged helper modules;three external effects and one mutable-request interruption"
+  },
+  "newBoundaryTests": 4,
+  "newAdapterDriftTests": 4,
+  "targetTests": 21,
+  "nodeTests": 171,
+  "checkerFiles": 10,
+  "nativeRevision": {
+    "result": "PASS",
+    "sharedAttempts": 4,
+    "sourcePreserved": true,
+    "controlTextPreserved": true,
+    "allGroupsStopped": true,
+    "scope": "actual native revision and checked next candidate; scores explicitly injected QA; no creative or fixed installation acceptance"
+  },
+  "remaining": [
+    "database and backup paths",
+    "native launch boundary audit",
+    "actual host secret references",
+    "current immutable fixed plugin installation qualification"
+  ],
+  "fingerprints": {
+    "src/evaluation/technical_review.ts": "13a92c382d41172f5346c63d7a83f9df364dd94115de96d8e96d989cf473cbf1",
+    "src/evaluation/checker_bundle.ts": "e89b14e19819189b8cf34d8b9ad0e55583b65fc9b4d742a86be9e82d216b8121",
+    "src/harness/authorized_write.ts": "216f8fc9ab1cef8a2ed3e95624200e7b4e2bbf3f717b8e28e62fe6a895758e15",
+    "src/harness/authorized_write.py": "867e7b247eea15c82340fc5c8c3cfe68b3647099d30797a165a3afa9c2932e81",
+    "src/harness/authorized_tree.ts": "f0b2603abf592f45411f0a99de9d6f2d86aff53f9d556a1bb87ebe4540fe6ad8",
+    "src/harness/authorized_tree.py": "b8b6dcd2c85f987bfac8a71ce0c598f155100844781b37b1eba809771327e6f0",
+    "src/harness/authorized_file.ts": "42a8c74b646c4598a7652493a63ba772bf28eb791c816a6d345ad6b3daa0cd33",
+    "src/harness/asset_digest.py": "8ddd6bc9e07f7b111da43b4c7d5564ef623be438924ddbaa215b749b701f3465",
+    "skills.lock.json": "44bd17666c6ef2a79641245a239a4f29a1f4a79162bba0de8b8329347f0a8fd1",
+    "plugin.json": "60e59b0f5f44bf657e0554e25a20c5e99e774af7c2ad9f1602590cd5bff6f712",
+    "scripts/qa/revision_budget.ts": "a5601841c8e76d9ca143060df7a21e27722612c2b4b7892e3215218ca3275e47",
+    "tests/technical_write_permissions.test.ts": "0d1b5bfa0c99d078b0238167831604103bafc984aedeb36f2c0adf44dbfb28dd",
+    "tests/technical_checker_identity.test.ts": "93482fec5b810ae915adcd86485b70ca3bf84fafabd9708efa8584abfce73767",
+    "docs/evidence/vc-rl-002/technical-write-red.log.txt": "42882d70e7011f67ed69b81f9a8c383130a513fce2dac28843756615ad2c6a47",
+    "docs/evidence/vc-rl-002/technical-write-target.log.txt": "a6032830b9ddea67dd2bd75a78cc273fd44d32fcdd21aeffbe377fab98228bb5",
+    "docs/evidence/vc-rl-002/technical-write-node171.log.txt": "3215e53c616798c864c4c0f0c1c743b339da79390d49c09d3b882c72844c9c38",
+    "docs/evidence/vc-rl-002/technical-write-native.json": "867822ba72d16f41453b67cb98a55f48ad431850e7213674bbe916df5d238dad",
+    "docs/evidence/vc-rl-002/technical-write-native.log.txt": "c0001f21291126dc73fd527bd6d09f61a9c7974ae6aeff64704c1c747617170e",
+    "docs/evidence/vc-rl-002/technical-write-python156.log.txt": "74e7e6e40ae0ec7134fca36b2fc8c03d325fb03fb556e6c0a3a53b15b713ab48"
+  },
+  "pythonTests": 156
+}

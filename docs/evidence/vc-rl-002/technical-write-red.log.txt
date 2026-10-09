@@ -1,0 +1,109 @@
+✖ technical output-directory refuses replaced parent without external effects (882.129625ms)
+✖ technical delivery-snapshot refuses replaced parent without external effects (367.91875ms)
+✖ technical report refuses replaced parent without external effects (861.297625ms)
+✖ technical request-mutation refuses replaced parent without external effects (327.880667ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 0
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2518.6845
+
+✖ failing tests:
+
+test at .local/technical-write-baseline/tests/technical_write_permissions.test.ts:13:89
+✖ technical output-directory refuses replaced parent without external effects (882.129625ms)
+  AssertionError [ERR_ASSERTION]: must not create snapshots or reports outside the frozen root
+  + actual - expected
+  
+  + [
+  +   '018c3395f5391265a48e5b46d274be481c4bce485941adca0364b1c3d84e204c'
+  + ]
+  - []
+  
+      at TestContext.<anonymous> (file://PLUGIN_REPOSITORY/.local/technical-write-baseline/tests/technical_write_permissions.test.ts:29:67)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: [ '018c3395f5391265a48e5b46d274be481c4bce485941adca0364b1c3d84e204c' ],
+    expected: [],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at .local/technical-write-baseline/tests/technical_write_permissions.test.ts:13:89
+✖ technical delivery-snapshot refuses replaced parent without external effects (367.91875ms)
+  AssertionError [ERR_ASSERTION]: must not create snapshots or reports outside the frozen root
+  + actual - expected
+  
+  + [
+  +   'manifest.json',
+  +   'preview.png',
+  +   'project.vectorcraft'
+  + ]
+  - []
+  
+      at TestContext.<anonymous> (file://PLUGIN_REPOSITORY/.local/technical-write-baseline/tests/technical_write_permissions.test.ts:29:67)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: [ 'manifest.json', 'preview.png', 'project.vectorcraft' ],
+    expected: [],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at .local/technical-write-baseline/tests/technical_write_permissions.test.ts:13:89
+✖ technical report refuses replaced parent without external effects (861.297625ms)
+  AssertionError [ERR_ASSERTION]: must not create snapshots or reports outside the frozen root
+  + actual - expected
+  
+  + [
+  +   'report.json'
+  + ]
+  - []
+  
+      at TestContext.<anonymous> (file://PLUGIN_REPOSITORY/.local/technical-write-baseline/tests/technical_write_permissions.test.ts:29:67)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: [ 'report.json' ],
+    expected: [],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at .local/technical-write-baseline/tests/technical_write_permissions.test.ts:13:89
+✖ technical request-mutation refuses replaced parent without external effects (327.880667ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + Error: technical_check_interrupted
+  +     at TechnicalReview.request (file://PLUGIN_REPOSITORY/.local/technical-write-baseline/src/evaluation/technical_review.ts:88:85)
+  +     at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+  +     at async TestContext.<anonymous> (file://PLUGIN_REPOSITORY/.local/technical-write-baseline/tests/technical_write_permissions.test.ts:27:47)
+  +     at async Test.run (node:internal/test_runner/test:1332:7)
+  +     at async Test.processPendingSubtests (node:internal/test_runner/test:911:7)
+  - undefined
+  
+      at TestContext.<anonymous> (file://PLUGIN_REPOSITORY/.local/technical-write-baseline/tests/technical_write_permissions.test.ts:28:41)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: technical_check_interrupted
+        at TechnicalReview.request (file://PLUGIN_REPOSITORY/.local/technical-write-baseline/src/evaluation/technical_review.ts:88:85)
+        at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+        at async TestContext.<anonymous> (file://PLUGIN_REPOSITORY/.local/technical-write-baseline/tests/technical_write_permissions.test.ts:27:47)
+        at async Test.run (node:internal/test_runner/test:1332:7)
+        at async Test.processPendingSubtests (node:internal/test_runner/test:911:7),
+    expected: undefined,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

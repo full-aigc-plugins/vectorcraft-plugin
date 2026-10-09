@@ -4,7 +4,7 @@ import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root=fileURLToPath(new URL('../../',import.meta.url));
-const paths=['src/evaluation/delivery_quality.py','src/harness/process_runner.py','skills/vectorcraft-use/scripts/exchange_loss.py','skills/vectorcraft-use/scripts/asset_reader.py','src/harness/asset_digest.py','src/harness/authorized_file.ts','src/harness/authorized_write.ts','src/harness/authorized_write.py','src/harness/authorized_tree.ts','src/harness/authorized_tree.py'];
+const paths=['src/evaluation/delivery_quality.py','src/harness/process_runner.py','skills/vectorcraft-use/scripts/exchange_loss.py','skills/vectorcraft-use/scripts/asset_reader.py','src/harness/asset_digest.py','src/harness/authorized_file.ts'];
 
 /** 捕获检查器及直接本地依赖的执行字节；来源路径相对安装根目录。 */
 export function captureChecker():{files:Record<string,string>,contents:Map<string,Buffer>}{

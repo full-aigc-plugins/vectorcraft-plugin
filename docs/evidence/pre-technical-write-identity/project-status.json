@@ -361,18 +361,5 @@
       "complete entrypoint audit",
       "current immutable fixed plugin installation qualification"
     ]
-  },
-  "permissionsTechnicalWriteIncrement": {
-    "implementationVersion": "0.1.0-dev.64",
-    "sourceRef": "v0.1.0-dev.46",
-    "evidence": "docs/evidence/vectorcraft-permissions-technical-write-candidate64-20261009.json",
-    "result": "PASS",
-    "tasksClosed": [],
-    "remaining": [
-      "database and backup paths",
-      "native launch boundary audit",
-      "actual host secret references",
-      "current immutable fixed plugin installation qualification"
-    ]
   }
 }

@@ -1,13 +1,11 @@
 import {assertNoLiteralSecrets} from '../harness/input_policy.ts';
-import {authorizedRead,authorizedDigests} from '../harness/authorized_file.ts';
-import {authorizedDirectory} from '../harness/authorized_tree.ts';
-import {authorizedWrite} from '../harness/authorized_write.ts';
+import {authorizedRead} from '../harness/authorized_file.ts';
 import {nativeEnvironment} from '../harness/native_environment.ts';
 import { spawn } from 'node:child_process';
 import { createHash,randomUUID } from 'node:crypto';
-import { lstatSync,realpathSync } from 'node:fs';
+import { readFileSync,writeFileSync,mkdirSync,lstatSync,realpathSync } from 'node:fs';
 import { dirname,resolve,relative,isAbsolute,join } from 'node:path';
-import { Ledger,resourcePath } from '../harness/ledger.ts';
+import { Ledger } from '../harness/ledger.ts';
 import { ProcessRegistry } from '../harness/process_registry.ts';
 import { canonical,strictJson } from '../strict_json.ts';
 import { ReviewStore } from './review_store.ts';
@@ -23,16 +21,11 @@ export class TechnicalReview {
   constructor(store:ReviewStore){this.store=store;}
   async request(input:any,options:{python?:string}={}):Promise<any>{
     assertNoLiteralSecrets(input);
-    // 冻结调用方数据及写入根，异步解码期间不能改写授权或延长截止时间。
-    input=strictJson(canonical(input));
     if(input?.technicalEvidence!==undefined||input?.technicalEvidenceOrigin!==undefined)throw new Error('technical_evidence_requires_check');
     const source=resolve(dirname(input.native)),manifest=join(source,'manifest.json');
     if(resolve(input.native)!==join(source,'project.vectorcraft'))throw new Error('invalid_native_path');
     if(!Array.isArray(input.authorization?.readRoots))throw new Error('technical_read_outside_roots');
     const readRoots=input.authorization.readRoots.map((root:string)=>realpathSync(root));
-    const parent=realpathSync(dirname(this.store.path)),base=join(parent,'.technical-checks');
-    const writeRoots=input.authorization?.writeRoots;
-    const frozenWriteRoots=Array.isArray(writeRoots)?writeRoots.map((root:string)=>resourcePath(root)):undefined;
     const sources:Record<string,string>={},contents=new Map<string,Buffer>();let bytes=0;
     const capture=(path:string)=>{
       const physical=realpathSync(path);
@@ -57,7 +50,9 @@ export class TechnicalReview {
     for(const path of [...input.candidates,...input.targets.map((t:any)=>t.path),input.rubric,input.exchangeLoss])capture(path);
     const checker=captureChecker(),checkerSha=checker.files['src/evaluation/delivery_quality.py'],launcherSha=checker.files['src/harness/process_runner.py'];
     const digest=hash(canonical({input,sources,checkerFiles:checker.files}));
-    if(!frozenWriteRoots?.some((root:string)=>inside(root,base)))throw new Error('technical_write_outside_roots');
+    const base=join(realpathSync(dirname(this.store.path)),'.technical-checks');
+    const writeRoots=input.authorization?.writeRoots;
+    if(!Array.isArray(writeRoots)||!writeRoots.some((r:string)=>inside(realpathSync(r),resolve(base))))throw new Error('technical_write_outside_roots');
     // 不沿用调用者可控制的链接；快照目录与报告都必须是新建普通路径。
     try{if(lstatSync(base).isSymbolicLink())throw new Error('technical_write_outside_roots');}catch(e){if((e as NodeJS.ErrnoException).code!=='ENOENT')throw e;}
     const output=join(base,digest),ledger=new Ledger(this.store.path),processes=new ProcessRegistry(ledger.db);
@@ -71,10 +66,10 @@ export class TechnicalReview {
       this.store.validateInput(input);
       ledger.intent(task.id,task.epoch,0,{kind:'readonly-delivery-decode',checkerFiles:checker.files,sources},bytes+[...checker.contents.values()].reduce((total,value)=>total+value.length,0)+1024*1024);
       try{
-        authorizedDirectory(base,parent);authorizedDirectory(output,base,true);const snapshot=join(output,'delivery');authorizedDirectory(snapshot,output,true);
-        for(const [name,value] of contents){const path=join(snapshot,name);authorizedDirectory(dirname(path),snapshot);authorizedWrite(path,snapshot,value,0o400);}
+        mkdirSync(base,{recursive:true});mkdirSync(output);const snapshot=join(output,'delivery');mkdirSync(snapshot);
+        for(const [name,value] of contents){const path=join(snapshot,name);mkdirSync(dirname(path),{recursive:true});writeFileSync(path,value,{flag:'wx',mode:0o400});}
         const checkerRoot=join(output,'checker');
-        for(const [name,value] of checker.contents){const path=join(checkerRoot,name);authorizedDirectory(dirname(path),output);authorizedWrite(path,output,value,0o400);}
+        for(const [name,value] of checker.contents){const path=join(checkerRoot,name);mkdirSync(dirname(path),{recursive:true});writeFileSync(path,value,{flag:'wx',mode:0o400});}
         const helper=join(checkerRoot,'src/evaluation/delivery_quality.py'),launcher=join(checkerRoot,'src/harness/process_runner.py');
         const marker=randomUUID();
         // nonce 留在 exec 后的命令行，供持久进程组身份核对；不向解码器增加公开参数。
@@ -98,11 +93,10 @@ export class TechnicalReview {
           ||report.manifestSha256!==sources[manifest]||canonical(report.files)!==canonical(data.files)||!['PASS','FAIL','NOT_RUN'].includes(report.technicalStatus)
           ||report.engineeringStatus!=='NOT_RUN'||report.nativeReopenStatus!=='NOT_RUN')throw new Error('invalid_technical_report');
         for(const [path,expected] of Object.entries(sources))if(hash(capture(path))!==expected)throw new Error('stale_review_binding');
-        const capturedChecker=authorizedDigests(Object.keys(checker.files).map(name=>join(checkerRoot,name)),[checkerRoot]);
-        if(canonical(checkerFiles())!==canonical(checker.files)||Object.entries(checker.files).some(([name,expected])=>capturedChecker[join(checkerRoot,name)]!==expected))throw new Error('technical_checker_changed');
+        if(canonical(checkerFiles())!==canonical(checker.files)||Object.entries(checker.files).some(([name,expected])=>hash(readFileSync(join(checkerRoot,name)))!==expected))throw new Error('technical_checker_changed');
         report.checkId=task.id;report.checkerSha256=checkerSha;report.launcherSha256=launcherSha;report.checkerFiles=checker.files;
-        const serialized=canonical(report),reportPath=join(output,'report.json'),written=authorizedWrite(reportPath,output,serialized,0o400);
-        ledger.receipt(task.id,task.epoch,0,{reportSha256:written.sha256});ledger.verified(task.id,task.epoch,{path:reportPath,sha256:written.sha256});
+        const serialized=canonical(report),reportPath=join(output,'report.json');writeFileSync(reportPath,serialized,{flag:'wx',mode:0o400});
+        ledger.receipt(task.id,task.epoch,0,{reportSha256:hash(serialized)});ledger.verified(task.id,task.epoch,{path:reportPath,sha256:hash(serialized)});
         ledger.db.prepare('INSERT INTO technical_checks(task,report,report_sha,sources) VALUES(?,?,?,?)').run(task.id,serialized,hash(serialized),canonical(sources));
         return this.store.requestFromCheck(input,task.id);
       }catch(error){if(ledger.get(task.id).state==='running')ledger.unknown(task.id,task.epoch,String(error));throw error;}

@@ -20,7 +20,7 @@ async function fixture(){
  const input={projectRevision:files['project.vectorcraft'],runtimeIdentity:'a'.repeat(64),native,candidates:[candidate],targets:[{path:target,role:'target'}],rubric,exchangeLoss:loss,technicalStatus:'PASS',authorization:{objects:[2],fields:['paint.color'],deadline:Date.now()+30000,maxAttempts:3,maxBytes:4*1024*1024,budgetId:'checker-budget',readRoots:[root],writeRoots:[root]}};
  const path=join(root,'review.sqlite');return {root,plugin,dependency,input,path,ReviewStore,TechnicalReview,close:()=>rmSync(root,{recursive:true,force:true})};
 }
-for(const changed of ['skills/vectorcraft-use/scripts/exchange_loss.py','skills/vectorcraft-use/scripts/asset_reader.py','src/harness/asset_digest.py','src/harness/authorized_file.ts','src/harness/authorized_write.ts','src/harness/authorized_write.py','src/harness/authorized_tree.ts','src/harness/authorized_tree.py'])test(`checked review binds ${changed} and rejects its drift after restart`,async()=>{
+for(const changed of ['skills/vectorcraft-use/scripts/exchange_loss.py','skills/vectorcraft-use/scripts/asset_reader.py','src/harness/asset_digest.py','src/harness/authorized_file.ts'])test(`checked review binds ${changed} and rejects its drift after restart`,async()=>{
  const f=await fixture();let store=new f.ReviewStore(f.path,[f.root]);
  try{
   const request=await new f.TechnicalReview(store).request(f.input);

@@ -1,0 +1,29 @@
+✔ review refuses unauthorized-manifest before external bytes are read (3.780875ms)
+✔ review refuses replaced-manifest before external bytes are read (54.013292ms)
+✔ review refuses replaced-review-input before external bytes are read (33.555875ms)
+✔ checked review binds skills/vectorcraft-use/scripts/exchange_loss.py and rejects its drift after restart (1902.107709ms)
+✔ checked review binds skills/vectorcraft-use/scripts/asset_reader.py and rejects its drift after restart (1864.47825ms)
+✔ checked review binds src/harness/asset_digest.py and rejects its drift after restart (1827.061625ms)
+✔ checked review binds src/harness/authorized_file.ts and rejects its drift after restart (1828.174458ms)
+✔ checked review binds src/harness/authorized_write.ts and rejects its drift after restart (1758.859125ms)
+✔ checked review binds src/harness/authorized_write.py and rejects its drift after restart (1776.528667ms)
+✔ checked review binds src/harness/authorized_tree.ts and rejects its drift after restart (1726.357625ms)
+✔ checked review binds src/harness/authorized_tree.py and rejects its drift after restart (1752.078167ms)
+✔ first checked request cannot settle persisted checked evidence after dependency drift (1429.030875ms)
+✔ older checked evidence without a complete checker bundle must be checked again (1778.3285ms)
+✔ checked requests use actual decode failures, persist evidence, and cannot be visually promoted (2543.073291ms)
+✔ unsupported decoding stays pending and all delivered files remain bound (2181.258833ms)
+✔ checked evidence cannot be injected through the legacy JSON request entry (3.475667ms)
+✔ readonly decoder cancellation consumes its shared attempt and does not replay after restart (1507.075459ms)
+✔ technical output-directory refuses replaced parent without external effects (284.373917ms)
+✔ technical delivery-snapshot refuses replaced parent without external effects (337.694875ms)
+✔ technical report refuses replaced parent without external effects (1439.8575ms)
+✔ technical request-mutation refuses replaced parent without external effects (1758.038291ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 21
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 28093.576
