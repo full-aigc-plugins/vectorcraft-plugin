@@ -1,0 +1,96 @@
+test_branch_abbreviated_commit_and_other_tag_are_rejected_before_git (test_fixed_install_ref.FixedInstallReferenceTests.test_branch_abbreviated_commit_and_other_tag_are_rejected_before_git) ... 
+  test_branch_abbreviated_commit_and_other_tag_are_rejected_before_git (test_fixed_install_ref.FixedInstallReferenceTests.test_branch_abbreviated_commit_and_other_tag_are_rejected_before_git) (ref='main') ... ERROR
+  test_branch_abbreviated_commit_and_other_tag_are_rejected_before_git (test_fixed_install_ref.FixedInstallReferenceTests.test_branch_abbreviated_commit_and_other_tag_are_rejected_before_git) (ref='aaaaaaa') ... ERROR
+  test_branch_abbreviated_commit_and_other_tag_are_rejected_before_git (test_fixed_install_ref.FixedInstallReferenceTests.test_branch_abbreviated_commit_and_other_tag_are_rejected_before_git) (ref='v0.1.0-dev.63') ... ERROR
+  test_branch_abbreviated_commit_and_other_tag_are_rejected_before_git (test_fixed_install_ref.FixedInstallReferenceTests.test_branch_abbreviated_commit_and_other_tag_are_rejected_before_git) (ref='../main') ... ERROR
+  test_branch_abbreviated_commit_and_other_tag_are_rejected_before_git (test_fixed_install_ref.FixedInstallReferenceTests.test_branch_abbreviated_commit_and_other_tag_are_rejected_before_git) (ref='AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA') ... ERROR
+test_default_remains_public_tag (test_fixed_install_ref.FixedInstallReferenceTests.test_default_remains_public_tag) ... ERROR
+test_exact_remote_commit_is_candidate_not_published_tag (test_fixed_install_ref.FixedInstallReferenceTests.test_exact_remote_commit_is_candidate_not_published_tag) ... ERROR
+test_moved_tag_or_local_commit_alias_cannot_pass (test_fixed_install_ref.FixedInstallReferenceTests.test_moved_tag_or_local_commit_alias_cannot_pass) ... ERROR
+test_unpushed_commit_is_rejected (test_fixed_install_ref.FixedInstallReferenceTests.test_unpushed_commit_is_rejected) ... ERROR
+
+======================================================================
+ERROR: test_branch_abbreviated_commit_and_other_tag_are_rejected_before_git (test_fixed_install_ref.FixedInstallReferenceTests.test_branch_abbreviated_commit_and_other_tag_are_rejected_before_git) (ref='main')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_ROOT/tests/test_fixed_install_ref.py", line 33, in test_branch_abbreviated_commit_and_other_tag_are_rejected_before_git
+    installer.resolve_reference('0.1.0-dev.64',ref,forbidden)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'fixed_install_ref' has no attribute 'resolve_reference'
+
+======================================================================
+ERROR: test_branch_abbreviated_commit_and_other_tag_are_rejected_before_git (test_fixed_install_ref.FixedInstallReferenceTests.test_branch_abbreviated_commit_and_other_tag_are_rejected_before_git) (ref='aaaaaaa')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_ROOT/tests/test_fixed_install_ref.py", line 33, in test_branch_abbreviated_commit_and_other_tag_are_rejected_before_git
+    installer.resolve_reference('0.1.0-dev.64',ref,forbidden)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'fixed_install_ref' has no attribute 'resolve_reference'
+
+======================================================================
+ERROR: test_branch_abbreviated_commit_and_other_tag_are_rejected_before_git (test_fixed_install_ref.FixedInstallReferenceTests.test_branch_abbreviated_commit_and_other_tag_are_rejected_before_git) (ref='v0.1.0-dev.63')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_ROOT/tests/test_fixed_install_ref.py", line 33, in test_branch_abbreviated_commit_and_other_tag_are_rejected_before_git
+    installer.resolve_reference('0.1.0-dev.64',ref,forbidden)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'fixed_install_ref' has no attribute 'resolve_reference'
+
+======================================================================
+ERROR: test_branch_abbreviated_commit_and_other_tag_are_rejected_before_git (test_fixed_install_ref.FixedInstallReferenceTests.test_branch_abbreviated_commit_and_other_tag_are_rejected_before_git) (ref='../main')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_ROOT/tests/test_fixed_install_ref.py", line 33, in test_branch_abbreviated_commit_and_other_tag_are_rejected_before_git
+    installer.resolve_reference('0.1.0-dev.64',ref,forbidden)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'fixed_install_ref' has no attribute 'resolve_reference'
+
+======================================================================
+ERROR: test_branch_abbreviated_commit_and_other_tag_are_rejected_before_git (test_fixed_install_ref.FixedInstallReferenceTests.test_branch_abbreviated_commit_and_other_tag_are_rejected_before_git) (ref='AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_ROOT/tests/test_fixed_install_ref.py", line 33, in test_branch_abbreviated_commit_and_other_tag_are_rejected_before_git
+    installer.resolve_reference('0.1.0-dev.64',ref,forbidden)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'fixed_install_ref' has no attribute 'resolve_reference'
+
+======================================================================
+ERROR: test_default_remains_public_tag (test_fixed_install_ref.FixedInstallReferenceTests.test_default_remains_public_tag)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_ROOT/tests/test_fixed_install_ref.py", line 22, in test_default_remains_public_tag
+    self.assertEqual(installer.resolve_reference('0.1.0-dev.64', None, self.git),
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'fixed_install_ref' has no attribute 'resolve_reference'
+
+======================================================================
+ERROR: test_exact_remote_commit_is_candidate_not_published_tag (test_fixed_install_ref.FixedInstallReferenceTests.test_exact_remote_commit_is_candidate_not_published_tag)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_ROOT/tests/test_fixed_install_ref.py", line 26, in test_exact_remote_commit_is_candidate_not_published_tag
+    self.assertEqual(installer.resolve_reference('0.1.0-dev.64', SHA, self.git),
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'fixed_install_ref' has no attribute 'resolve_reference'
+
+======================================================================
+ERROR: test_moved_tag_or_local_commit_alias_cannot_pass (test_fixed_install_ref.FixedInstallReferenceTests.test_moved_tag_or_local_commit_alias_cannot_pass)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_ROOT/tests/test_fixed_install_ref.py", line 47, in test_moved_tag_or_local_commit_alias_cannot_pass
+    installer.resolve_reference('0.1.0-dev.64',None,moved)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'fixed_install_ref' has no attribute 'resolve_reference'
+
+======================================================================
+ERROR: test_unpushed_commit_is_rejected (test_fixed_install_ref.FixedInstallReferenceTests.test_unpushed_commit_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_ROOT/tests/test_fixed_install_ref.py", line 40, in test_unpushed_commit_is_rejected
+    installer.resolve_reference('0.1.0-dev.64',SHA,git)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'fixed_install_ref' has no attribute 'resolve_reference'
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.001s
+
+FAILED (errors=9)

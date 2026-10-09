@@ -73,3 +73,6 @@ TASK含taskId与epoch。CONFIG沿用单轮品牌夹具的skill/source/runtimeHom
 插件42补充schema3迁移前只读备份与明确模式绑定；实际旧阅读器拒绝新schema。当前跨版本原生局部证据与完整2.6验收边界见[运行时门禁](Runtime-Gate.zh-CN.md)。技能源仍固定dev.37。
 
 当前状态（公开插件43／固定源37）：任务2.6全部7个运行时场景完成，证据见[运行门禁](Runtime-Gate.zh-CN.md)；上文候选／开放描述保留为原阶段记录，不作为当前完成判断。其他33项任务、完整V1及创意GUI／模型门禁仍开放。
+
+
+公开提交固定副本验收：从远端main的完整不可变提交`11a49e9d1d5f471d1c4cbf93551bdb1c87abe3d1`安装dev.64/source46到独立、含空格的Codex0.153.4配置；13技能发现与身份匹配，13次独立HTTPS空缓存启动、12组原生创建／返工通过，setup-only单独标记，不计作跳过。实际安装Harness完成原生返工、三格式重新解码、4次共享额度停止及源／文本保全；回执评分为显式QA夹具。5项引用守卫及161项Python回归通过。新脚本默认仍要求公开版本标签；显式候选只允许与远端main相同的完整SHA，并记录publicTagVerified=false。旧脚本原字节已归档，旧报告不重签。此证据推进9.9／9.18的安装与冷启动部分，不关闭模型默认路由、公开标签复验、六层发行门禁、全命令GUI或秘密边界；121/127完成、6项开放。 [Evidence](evidence/vectorcraft-public-commit64-install-20261009.json).

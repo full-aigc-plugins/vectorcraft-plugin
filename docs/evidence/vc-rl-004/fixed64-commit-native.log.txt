@@ -1,0 +1,13 @@
+PASS vectorcraft-use PASS
+PASS vectorcraft-cli PASS
+PASS vectorcraft-cli-setup NOT_APPLICABLE_SETUP_ONLY
+PASS vectorcraft-cli-project PASS
+PASS vectorcraft-cli-paths PASS
+PASS vectorcraft-cli-shapes PASS
+PASS vectorcraft-cli-boolean PASS
+PASS vectorcraft-cli-text PASS
+PASS vectorcraft-cli-appearance PASS
+PASS vectorcraft-cli-artboards PASS
+PASS vectorcraft-cli-assets PASS
+PASS vectorcraft-cli-export PASS
+PASS vectorcraft-cli-selection PASS

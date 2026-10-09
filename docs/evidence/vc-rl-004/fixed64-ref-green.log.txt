@@ -1,0 +1,10 @@
+test_branch_abbreviated_commit_and_other_tag_are_rejected_before_git (test_fixed_install_ref.FixedInstallReferenceTests.test_branch_abbreviated_commit_and_other_tag_are_rejected_before_git) ... ok
+test_default_remains_public_tag (test_fixed_install_ref.FixedInstallReferenceTests.test_default_remains_public_tag) ... ok
+test_exact_remote_commit_is_candidate_not_published_tag (test_fixed_install_ref.FixedInstallReferenceTests.test_exact_remote_commit_is_candidate_not_published_tag) ... ok
+test_moved_tag_or_local_commit_alias_cannot_pass (test_fixed_install_ref.FixedInstallReferenceTests.test_moved_tag_or_local_commit_alias_cannot_pass) ... ok
+test_unpushed_commit_is_rejected (test_fixed_install_ref.FixedInstallReferenceTests.test_unpushed_commit_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.000s
+
+OK

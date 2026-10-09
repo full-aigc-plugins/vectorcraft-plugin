@@ -24,12 +24,8 @@ def main():
     manifest=json.loads((ROOT/'plugin.json').read_text());source=json.loads((ROOT/'skills.lock.json').read_text())['sources'][0]
     assert host['result']=='PASS' and host['pluginVersion']==manifest['version']
     assert host['skillSourceRef']==source['ref'] and host['skillSourceCommit']==source['sha']
-    def git(*argv):
-        return subprocess.check_output(['git',*argv],cwd=ROOT,text=True,timeout=60).strip()
-    reference=_install.resolve_reference(manifest['version'],host.get('artifactRef'),git)
-    assert host['pluginCommit']==reference['commit']
-    assert host.get('artifactKind', 'public-tag')==reference['kind']
-    assert host.get('publicTagVerified', True)==(reference['kind']=='public-tag')
+    tag_commit=subprocess.check_output(['git','rev-parse','v'+manifest['version']+'^{commit}'],cwd=ROOT,text=True).strip()
+    assert host['pluginCommit']==tag_commit
     env=dict(os.environ,PATH='/usr/bin:/bin')
     for key in ('CRAFT_RUNTIME_HOME','CRAFT_NODE_ARCHIVE','CRAFT_BUNDLE_DIRECTORY','CRAFT_NATIVE_ARCHIVE_DIRECTORY'): env.pop(key,None)
     records=[]
@@ -92,7 +88,6 @@ def main():
         print('PASS',entry['name'],record['createRevise'],flush=True)
     proof={'schema':'vectorcraft-fixed-standalone-native/v1','result':'PASS','hostProofSha256':sha(args.host),'pluginVersion':host['pluginVersion'],
         'pluginCommit':host['pluginCommit'],'skillSourceRef':host['skillSourceRef'],'skillSourceCommit':host['skillSourceCommit'],
-        'artifactRef':reference['ref'],'artifactKind':reference['kind'],'publicTagVerified':reference['kind']=='public-tag',
         'python':sys.version,'platform':host['platform'],'driverSha256':sha(Path(__file__)),'cases':records,
         'scope':'13 installed skills independently cold-start; 12 declared create/revise pairs, setup-only excluded; not model routing or exhaustive domain acceptance'}
     (root/'proof.json').write_text(json.dumps(proof,ensure_ascii=False,indent=2)+'\n')

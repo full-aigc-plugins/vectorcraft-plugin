@@ -459,3 +459,6 @@ Controller目录／整树增量：快照目录创建、固定技能树复制和�
 
 
 账本备份／读取增量：旧schema的VACUUM INTO先写宿主随机私有暂存，校验schema及摘要后，以安全描述符复制发布400只读、fsync的备份；最终再核对冻结备份根内摘要。暂存创建成功后才登记清理所有权，清理失败关闭连接并阻止迁移。账本verified摘要只读取任务冻结输出根。1类根外备份写入及2类越界验收读取失败已修复；11项目标、176项Node通过，真实SQLite v1/v2、未checkpoint的已提交WAL、预算及运行时选择保全。当前原生受限返工／4次额度停止通过，此运行使用新schema3，不冒充原生旧状态迁移。主数据库及SQLite暂存路径、启动边界、宿主秘密引用、固定发行继续开放；7.4–7.6不勾选，121/127完成、6项开放。 [Evidence](docs/evidence/vectorcraft-permissions-backup-write-candidate64-20261009.json).
+
+
+公开提交固定副本验收：从远端main的完整不可变提交`11a49e9d1d5f471d1c4cbf93551bdb1c87abe3d1`安装dev.64/source46到独立、含空格的Codex0.153.4配置；13技能发现与身份匹配，13次独立HTTPS空缓存启动、12组原生创建／返工通过，setup-only单独标记，不计作跳过。实际安装Harness完成原生返工、三格式重新解码、4次共享额度停止及源／文本保全；回执评分为显式QA夹具。5项引用守卫及161项Python回归通过。新脚本默认仍要求公开版本标签；显式候选只允许与远端main相同的完整SHA，并记录publicTagVerified=false。旧脚本原字节已归档，旧报告不重签。此证据推进9.9／9.18的安装与冷启动部分，不关闭模型默认路由、公开标签复验、六层发行门禁、全命令GUI或秘密边界；121/127完成、6项开放。 [Evidence](docs/evidence/vectorcraft-public-commit64-install-20261009.json).

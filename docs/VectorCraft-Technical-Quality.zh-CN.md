@@ -19,3 +19,6 @@ flowchart LR
 ```
 
 6.1已有5项检查器测试。6.2接入通过4项新增测试及两条入口各健康／损坏共4项持久检查，复用此前固定38／源35生成的导出副本；高评分回执为自动注入的测试数据，不代表真实创作判断。本轮没有重新生成原生工程，6.3完整原生工程／创作验收及最大轮数、停滞和最佳版本合同继续开放。[接入证据](evidence/vectorcraft-checked-review-candidate-20261008.json)，[此前独立检查器证据](evidence/vectorcraft-technical-quality-candidate-20261008.json)。
+
+
+公开提交固定副本验收：从远端main的完整不可变提交`11a49e9d1d5f471d1c4cbf93551bdb1c87abe3d1`安装dev.64/source46到独立、含空格的Codex0.153.4配置；13技能发现与身份匹配，13次独立HTTPS空缓存启动、12组原生创建／返工通过，setup-only单独标记，不计作跳过。实际安装Harness完成原生返工、三格式重新解码、4次共享额度停止及源／文本保全；回执评分为显式QA夹具。5项引用守卫及161项Python回归通过。新脚本默认仍要求公开版本标签；显式候选只允许与远端main相同的完整SHA，并记录publicTagVerified=false。旧脚本原字节已归档，旧报告不重签。此证据推进9.9／9.18的安装与冷启动部分，不关闭模型默认路由、公开标签复验、六层发行门禁、全命令GUI或秘密边界；121/127完成、6项开放。 [Evidence](evidence/vectorcraft-public-commit64-install-20261009.json).

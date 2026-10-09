@@ -6,32 +6,12 @@ import json
 import os
 from pathlib import Path
 import queue
-import re
 import shutil
 import subprocess
 import threading
 import time
 
 ROOT = Path(__file__).resolve().parents[2]
-
-
-def resolve_reference(version, requested, git):
-    """默认验证公开标签；候选只接受与公开main完全一致的完整提交身份。"""
-    ref = requested or 'v'+version
-    if ref != 'v'+version and not re.fullmatch('[0-9a-f]{40}', ref):
-        raise ValueError('invalid_fixed_reference')
-    commit = git('rev-parse', ref+'^{commit}')
-    if ref == 'v'+version:
-        remote = git('ls-remote','origin','refs/tags/'+ref,'refs/tags/'+ref+'^{}').splitlines()
-        if not any(line.split()[0] == commit for line in remote):
-            raise ValueError('remote_release_mismatch')
-        return {'ref':ref,'commit':commit,'kind':'public-tag'}
-    if commit != ref:
-        raise ValueError('fixed_commit_mismatch')
-    remote = git('ls-remote','origin','refs/heads/main').splitlines()
-    if not any(line.split() == [commit,'refs/heads/main'] for line in remote):
-        raise ValueError('remote_commit_mismatch')
-    return {'ref':ref,'commit':commit,'kind':'public-commit'}
 
 
 def digest(directory):
@@ -80,13 +60,14 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output',type=Path,required=True)
     parser.add_argument('--codex',default=shutil.which('codex'))
-    parser.add_argument('--ref', help='公开main完整提交SHA；省略则必须验证当前版本公开标签')
     args=parser.parse_args();root=args.output.resolve()
     manifest=json.loads((ROOT/'plugin.json').read_text());lock=json.loads((ROOT/'skills.lock.json').read_text())['sources'][0]
-    version=manifest['version']
+    version=manifest['version'];ref='v'+version
     def git(*argv): return subprocess.check_output(['git',*argv],cwd=ROOT,text=True,timeout=60).strip()
-    reference=resolve_reference(version,args.ref,git);ref=reference['ref'];commit=reference['commit']
+    commit=git('rev-parse',ref+'^{commit}')
     if git('show',ref+':plugin.json').encode()+b'\n'!=(ROOT/'plugin.json').read_bytes(): raise ValueError('release_manifest_drift')
+    remote=git('ls-remote','origin','refs/tags/'+ref,'refs/tags/'+ref+'^{}').splitlines()
+    if not any(line.split()[0]==commit for line in remote): raise ValueError('remote_release_mismatch')
     root.mkdir(parents=True,exist_ok=False);home=root/'codex home';home.mkdir(mode=0o700)
     env=dict(os.environ,CODEX_HOME=str(home))
     def run(*argv):
@@ -118,10 +99,9 @@ def main():
         records.append({'name':name,'path':str(directory),'sha256':digest(directory),'enabled':True,
             'implicitPolicy':(directory/'agents/openai.yaml').read_text()})
     proof={'schema':'vectorcraft-fixed-host-install/v1','result':'PASS','pluginVersion':version,'pluginCommit':commit,
-        'artifactRef':ref,'artifactKind':reference['kind'],'publicTagVerified':reference['kind']=='public-tag',
         'skillSourceRef':lock['ref'],'skillSourceCommit':lock['sha'],'hostVersion':host_version,'hostIdentity':identity,
         'platform':os.uname().sysname+'-'+os.uname().machine,'skills':records,
-        'scope':'isolated actual '+reference['kind']+' plugin installation and host discovery; private acceptance catalog only',
+        'scope':'isolated actual published-tag plugin installation and host discovery; private acceptance catalog only',
         'excluded':['model implicit routing','GUI','complete V1','public marketplace eligibility']}
     (root/'proof.json').write_text(json.dumps(proof,ensure_ascii=False,indent=2)+'\n')
     print(json.dumps({'result':'PASS','skills':len(records),'hostVersion':host_version,'pluginVersion':version}))
