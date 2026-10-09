@@ -1,0 +1,89 @@
+test_bundle_itself_must_be_bound_before_parsing (test_revision_current_contract.CurrentCheckerContractTests.test_bundle_itself_must_be_bound_before_parsing) ... ERROR
+test_current_contract_captures_all_ten_source_declared_dependencies (test_revision_current_contract.CurrentCheckerContractTests.test_current_contract_captures_all_ten_source_declared_dependencies) ... ERROR
+test_duplicate_or_empty_declarations_are_rejected (test_revision_current_contract.CurrentCheckerContractTests.test_duplicate_or_empty_declarations_are_rejected) ...
+  test_duplicate_or_empty_declarations_are_rejected (test_revision_current_contract.CurrentCheckerContractTests.test_duplicate_or_empty_declarations_are_rejected) (source='const paths=[];') ... ERROR
+  test_duplicate_or_empty_declarations_are_rejected (test_revision_current_contract.CurrentCheckerContractTests.test_duplicate_or_empty_declarations_are_rejected) (source="const paths=['a','a'];") ... ERROR
+  test_duplicate_or_empty_declarations_are_rejected (test_revision_current_contract.CurrentCheckerContractTests.test_duplicate_or_empty_declarations_are_rejected) (source='const paths={};') ... ERROR
+test_legacy_schema_preserves_original_three_file_contract (test_revision_current_contract.CurrentCheckerContractTests.test_legacy_schema_preserves_original_three_file_contract) ... ERROR
+test_release_gate_checks_selected_technical_report (test_revision_current_contract.CurrentCheckerContractTests.test_release_gate_checks_selected_technical_report) ... FAIL
+test_unknown_schema_cannot_silently_downgrade_to_legacy (test_revision_current_contract.CurrentCheckerContractTests.test_unknown_schema_cannot_silently_downgrade_to_legacy) ... ERROR
+
+======================================================================
+ERROR: test_bundle_itself_must_be_bound_before_parsing (test_revision_current_contract.CurrentCheckerContractTests.test_bundle_itself_must_be_bound_before_parsing)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_ROOT/tests/test_revision_current_contract.py", line 31, in test_bundle_itself_must_be_bound_before_parsing
+    verifier.checker_contract({'schema':'vectorcraft-revision-fixed/v2'},bound)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'revision_current_verifier' has no attribute 'checker_contract'
+
+======================================================================
+ERROR: test_current_contract_captures_all_ten_source_declared_dependencies (test_revision_current_contract.CurrentCheckerContractTests.test_current_contract_captures_all_ten_source_declared_dependencies)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_ROOT/tests/test_revision_current_contract.py", line 18, in test_current_contract_captures_all_ten_source_declared_dependencies
+    files=verifier.checker_contract(report,lambda name:ROOT/name)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'revision_current_verifier' has no attribute 'checker_contract'
+
+======================================================================
+ERROR: test_duplicate_or_empty_declarations_are_rejected (test_revision_current_contract.CurrentCheckerContractTests.test_duplicate_or_empty_declarations_are_rejected) (source='const paths=[];')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_ROOT/tests/test_revision_current_contract.py", line 39, in test_duplicate_or_empty_declarations_are_rejected
+    verifier.checker_contract({'schema':'vectorcraft-revision-fixed/v2'},lambda name:p)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'revision_current_verifier' has no attribute 'checker_contract'
+
+======================================================================
+ERROR: test_duplicate_or_empty_declarations_are_rejected (test_revision_current_contract.CurrentCheckerContractTests.test_duplicate_or_empty_declarations_are_rejected) (source="const paths=['a','a'];")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_ROOT/tests/test_revision_current_contract.py", line 39, in test_duplicate_or_empty_declarations_are_rejected
+    verifier.checker_contract({'schema':'vectorcraft-revision-fixed/v2'},lambda name:p)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'revision_current_verifier' has no attribute 'checker_contract'
+
+======================================================================
+ERROR: test_duplicate_or_empty_declarations_are_rejected (test_revision_current_contract.CurrentCheckerContractTests.test_duplicate_or_empty_declarations_are_rejected) (source='const paths={};')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_ROOT/tests/test_revision_current_contract.py", line 39, in test_duplicate_or_empty_declarations_are_rejected
+    verifier.checker_contract({'schema':'vectorcraft-revision-fixed/v2'},lambda name:p)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'revision_current_verifier' has no attribute 'checker_contract'
+
+======================================================================
+ERROR: test_legacy_schema_preserves_original_three_file_contract (test_revision_current_contract.CurrentCheckerContractTests.test_legacy_schema_preserves_original_three_file_contract)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_ROOT/tests/test_revision_current_contract.py", line 22, in test_legacy_schema_preserves_original_three_file_contract
+    self.assertEqual(len(verifier.checker_contract({'schema':'vectorcraft-revision-fixed/v1'},lambda name:ROOT/name)),3)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'revision_current_verifier' has no attribute 'checker_contract'
+
+======================================================================
+ERROR: test_unknown_schema_cannot_silently_downgrade_to_legacy (test_revision_current_contract.CurrentCheckerContractTests.test_unknown_schema_cannot_silently_downgrade_to_legacy)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_ROOT/tests/test_revision_current_contract.py", line 25, in test_unknown_schema_cannot_silently_downgrade_to_legacy
+    verifier.checker_contract({'schema':'vectorcraft-revision-fixed/v999'},lambda name:ROOT/name)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'revision_current_verifier' has no attribute 'checker_contract'
+
+======================================================================
+FAIL: test_release_gate_checks_selected_technical_report (test_revision_current_contract.CurrentCheckerContractTests.test_release_gate_checks_selected_technical_report)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "PLUGIN_ROOT/tests/test_revision_current_contract.py", line 49, in test_release_gate_checks_selected_technical_report
+    self.assertEqual(result['layers']['native']['status'],'PASS',result)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'FAIL' != 'PASS'
+- FAIL
++ PASS
+ : {'schema': 'vectorcraft-release-readiness/v1', 'pluginVersion': '0.1.0-dev.63', 'sourceRef': 'v0.1.0-dev.43', 'layers': {'structure': {'status': 'PASS', 'evidence': ['plugin.json', 'docs/current-identity.json'], 'pluginVersion': '0.1.0-dev.63'}, 'skills': {'status': 'PASS', 'evidence': ['skills.lock.json'], 'sourceRef': 'v0.1.0-dev.43', 'sourceCommit': '36b79c603111fbf6c95f36d2f4c9ed43c9e7f155', 'skills': 13}, 'runtime': {'status': 'PASS', 'evidence': ['docs/evidence/selected-current-revision.json', 'docs/evidence/vc-qa-002/integrity-fixed63.json'], 'runtimeSha256': 'ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b', 'platform': 'darwin-arm64'}, 'host': {'status': 'PASS', 'evidence': ['docs/evidence/vc-qa-002/host-fixed63.json'], 'hostVersion': 'codex-cli 0.153.4', 'platform': 'Darwin-arm64', 'scope': 'isolated actual published-tag plugin installation and host discovery; private acceptance catalog only', 'excluded': ['model implicit routing', 'GUI', 'complete V1', 'public marketplace eligibility']}, 'task': {'status': 'PASS', 'evidence': ['docs/evidence/vc-qa-002/guards-fixed63.json'], 'executionTaskId': 'e8e7a109-b455-4e8e-bf9c-b06d96dcf329', 'scope': 'actual installed native task;explicit QA feedback,no model routing claim'}, 'native': {'status': 'FAIL', 'reason': 'revision_path'}}, 'publishable': {'development': False, 'marketplace': False}, 'marketplaceBlockers': ['six_layer_evidence_incomplete', 'implementation_tasks_open', 'implementation_not_complete', 'marketplace_approval_missing', 'full_task_evidence_coverage_missing', 'host_scope_exclusions_open'], 'scope': 'readonly release evidence gate;development scope does not assert complete V1 or modify host/marketplace approval'}
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.626s
+
+FAILED (failures=1, errors=7)

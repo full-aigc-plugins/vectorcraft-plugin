@@ -1,22 +1,10 @@
 #!/usr/bin/env python3
 """逐场景核验固定63受限修订；注入QA回执只证明控制机制，不升级创作验收。"""
-import argparse,ast,builtins,hashlib,json,re
+import builtins,hashlib,json
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 REPORT='docs/evidence/vectorcraft-revision-fixed63-20261009.json'
 def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
-def checker_contract(report,bound):
- """旧报告保持原三文件身份；新报告解析已绑定安装源码的完整检查器声明。"""
- legacy=['src/evaluation/delivery_quality.py','src/harness/process_runner.py','skills/vectorcraft-use/scripts/exchange_loss.py']
- if report['schema']=='vectorcraft-revision-fixed/v1':return {p:sha(bound(p)) for p in legacy}
- if report['schema']!='vectorcraft-revision-fixed/v2':raise ValueError('revision_schema')
- source=bound('src/evaluation/checker_bundle.ts').read_text()
- match=re.search(r'const paths=(\[[^;]*\]);',source)
- try:paths=ast.literal_eval(match.group(1)) if match else None
- except (SyntaxError,ValueError):raise ValueError('revision_checker_contract') from None
- required=set(legacy+['skills/vectorcraft-use/scripts/asset_reader.py','src/harness/asset_digest.py','src/harness/authorized_file.ts','src/harness/authorized_write.ts','src/harness/authorized_write.py','src/harness/authorized_tree.ts','src/harness/authorized_tree.py'])
- if not isinstance(paths,list) or not all(isinstance(p,str) for p in paths) or len(paths)!=len(set(paths)) or not required.issubset(paths):raise ValueError('revision_checker_contract')
- return {p:sha(bound(p)) for p in paths}
 def verify(root=ROOT):
  root=Path(root)
  def local(name):
@@ -33,8 +21,7 @@ def verify(root=ROOT):
   return local(candidates[0])
  for name in r['fingerprints']:bound(name)
  def read(name):return json.loads(bound(name).read_text())
- legacy=r['schema']=='vectorcraft-revision-fixed/v1'
- if r['result']!='PASS' or (r['tasksClosed']!=['6.6'] if legacy else r['tasksClosed']!=[] or r.get('tasksCovered')!=['6.6']):raise ValueError('revision_closure')
+ if r['result']!='PASS' or r['tasksClosed']!=['6.6']:raise ValueError('revision_closure')
  spec=local('openspec/changes/establish-v1-plugin/specs/quality-review/spec.md').read_text().split('### Requirement: VC-QA-002 ',1)[1].split('### Requirement:',1)[0];contracts={s.splitlines()[0]:hashlib.sha256(s.strip().encode()).hexdigest() for s in spec.split('#### Scenario: ')[1:]};matrix=read(r['scenarioMatrix'])
  expectedCoverage={'VC-QA-002-P':{'guards','goal-change','round-limit'},'VC-QA-002-N':{'budget','small-improvement','lower-score','round-limit'},'VC-QA-002-FRESH':{'guards','stale-gui'},'VC-QA-002-CYCLE':{'budget','small-improvement','lower-score','round-limit','guards','goal-change','stale-gui'}}
  if matrix['scenarioContracts']!=contracts or len(matrix['entries'])!=4 or {x['scenario'] for x in matrix['entries']}!=set(contracts):raise ValueError('revision_scenarios')
@@ -44,13 +31,10 @@ def verify(root=ROOT):
  if host['result']!='PASS' or len(host['skills'])!=13 or ids!=lock['sha256'] or integrity['digests']!=ids or integrity['skillsUnchanged']!=13 or integrity['result']!='PASS' or any(x['enabled'] is not True for x in host['skills']):raise ValueError('revision_host')
  for source,target in [('pluginVersion','pluginVersion'),('pluginCommit','pluginCommit'),('skillSourceRef','sourceRef'),('skillSourceCommit','sourceCommit'),('hostVersion','hostVersion')]:
   if host[source]!=r[target]:raise ValueError('revision_identity')
- if not legacy:
-  kind=r.get('artifactKind')
-  if kind not in ('public-tag','public-commit') or any(host.get(k)!=r.get(k) for k in ['artifactRef','artifactKind','publicTagVerified']) or r.get('publicTagVerified') is not (kind=='public-tag') or r.get('artifactRef')!=(r['pluginCommit'] if kind=='public-commit' else 'v'+r['pluginVersion']):raise ValueError('revision_artifact_identity')
  if read('plugin.json')['version']!=r['pluginVersion'] or lock['ref']!=r['sourceRef'] or lock['sha']!=r['sourceCommit'] or any(digest!=sha(bound(name)) for name,digest in integrity['installedCodeDigests'].items()):raise ValueError('revision_identity')
  provenance=read(r['nativeInput']['provenance'])
  if provenance['result']!='PASS' or provenance['manifest']['files']['project.vectorcraft']!=r['nativeInput']['projectRevision'] or provenance['runtimeSha256']!=r['runtimeSha256']:raise ValueError('revision_input_provenance')
- checker=checker_contract(r,bound);field='appearance.items.0.paint';value={'type':'solid','color':{'model':'rgb','r':0,'g':1,'b':0}}
+ checker={p:sha(bound(p)) for p in ['src/evaluation/delivery_quality.py','src/harness/process_runner.py','skills/vectorcraft-use/scripts/exchange_loss.py']};field='appearance.items.0.paint';value={'type':'solid','color':{'model':'rgb','r':0,'g':1,'b':0}}
  def checked(request):
   i=request['input'];e=i['technicalEvidence']
   if i['technicalEvidenceOrigin']!='checked-decoder' or i['technicalStatus']!='PASS' or e['technicalStatus']!='PASS' or e['artifactIntegrityStatus']!='PASS' or e['runtimeIdentity']!=r['runtimeSha256'] or e['projectRevision']!=i['projectRevision'] or e['checkerFiles']!=checker or len(e['outputs'])!=3 or {Path(o['path']).suffix for o in e['outputs']}!={'.svg','.pdf','.png'} or any(o['status']!='PASS' or e['files'][o['path']]!=o['sha256'] for o in e['outputs']):raise ValueError('revision_decode')
@@ -106,10 +90,5 @@ def verify(root=ROOT):
  m=read(r['cases']['guards-manifest'])
  if sha(bound(r['cases']['guards-manifest']))!=next['input']['technicalEvidence']['manifestSha256'] or m['sourceProjectSha256']!=first['input']['projectRevision'] or m['files']!=next['input']['technicalEvidence']['files'] or next['input']['native']!=n['execution']['output']+'/project.vectorcraft' or n['wrongDirectoryRequest']['input']['native']==next['input']['native']:raise ValueError('revision_lineage')
  if n['sharedAttempts']!=6 or n['nextProposal']['round']!=2 or n['nextProposal']['requestId']!=next['id'] or n['nextProposal']['authorization']!=n['proposal']['authorization'] or rows['idempotent-proposal']['rounds']!=1 or n['originalSourcePreserved'] is not True:raise ValueError('revision_explicit_round')
- print(json.dumps({'result':'PASS','scenarios':4,'nativeRevisions':6,'guardCases':15,'ownedDesktopStaleCases':1,'tasksCovered':['6.6'],'pluginVersion':r['pluginVersion'],'sourceRef':r['sourceRef'],'scope':'reported fixed installation on actual Codex macOS arm64; QA feedback only, creative judgment separate'}))
-if __name__=='__main__':
- parser=argparse.ArgumentParser(description=__doc__)
- bundle=ROOT/'docs/release-evidence.json'
- parser.add_argument('--report',default=json.loads(bundle.read_text())['technical'] if bundle.is_file() else REPORT)
- REPORT=parser.parse_args().report
- verify()
+ print(json.dumps({'result':'PASS','scenarios':4,'nativeRevisions':6,'guardCases':15,'ownedDesktopStaleCases':1,'taskClosed':'6.6','scope':'public63/source43 on actual Codex macOS arm64; QA feedback only, creative judgment separate'}))
+if __name__=='__main__':verify()

@@ -1,0 +1,11 @@
+test_bundle_itself_must_be_bound_before_parsing (test_revision_current_contract.CurrentCheckerContractTests.test_bundle_itself_must_be_bound_before_parsing) ... ok
+test_current_contract_captures_all_ten_source_declared_dependencies (test_revision_current_contract.CurrentCheckerContractTests.test_current_contract_captures_all_ten_source_declared_dependencies) ... ok
+test_duplicate_or_empty_declarations_are_rejected (test_revision_current_contract.CurrentCheckerContractTests.test_duplicate_or_empty_declarations_are_rejected) ... ok
+test_legacy_schema_preserves_original_three_file_contract (test_revision_current_contract.CurrentCheckerContractTests.test_legacy_schema_preserves_original_three_file_contract) ... ok
+test_release_gate_checks_selected_technical_report (test_revision_current_contract.CurrentCheckerContractTests.test_release_gate_checks_selected_technical_report) ... ok
+test_unknown_schema_cannot_silently_downgrade_to_legacy (test_revision_current_contract.CurrentCheckerContractTests.test_unknown_schema_cannot_silently_downgrade_to_legacy) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.540s
+
+OK

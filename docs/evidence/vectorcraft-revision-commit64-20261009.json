@@ -1,11 +1,64 @@
 {
-  "schema": "vectorcraft-release-evidence/v1",
+  "schema": "vectorcraft-revision-fixed/v2",
+  "result": "PASS",
   "pluginVersion": "0.1.0-dev.64",
+  "pluginCommit": "11a49e9d1d5f471d1c4cbf93551bdb1c87abe3d1",
   "sourceRef": "v0.1.0-dev.46",
   "sourceCommit": "91092712e427542e9c8383e346f0ad94f0e3f029",
+  "platform": "darwin-arm64",
+  "hostVersion": "codex-cli 0.153.4",
+  "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+  "tasksClosed": [],
+  "tasksCovered": [
+    "6.6"
+  ],
+  "artifactRef": "11a49e9d1d5f471d1c4cbf93551bdb1c87abe3d1",
+  "artifactKind": "public-commit",
+  "publicTagVerified": false,
   "host": "docs/evidence/vc-qa-002/host-commit64.json",
-  "technical": "docs/evidence/vectorcraft-revision-commit64-20261009.json",
   "integrity": "docs/evidence/vc-qa-002/integrity-commit64.json",
+  "scenarioMatrix": "docs/evidence/vc-qa-002/scenario-matrix-commit64.json",
+  "cases": {
+    "budget": "docs/evidence/vc-qa-002/budget-commit64.json",
+    "small-improvement": "docs/evidence/vc-qa-002/small-improvement-commit64.json",
+    "lower-score": "docs/evidence/vc-qa-002/lower-score-commit64.json",
+    "round-limit": "docs/evidence/vc-qa-002/round-limit-commit64.json",
+    "goal-change": "docs/evidence/vc-qa-002/goal-change-commit64.json",
+    "guards": "docs/evidence/vc-qa-002/guards-commit64.json",
+    "stale-gui": "docs/evidence/vc-qa-002/stale-gui-commit64.json",
+    "gui-snapshots": "docs/evidence/vc-qa-002/gui-snapshots-commit64.json",
+    "guards-manifest": "docs/evidence/vc-qa-002/guards-manifest-commit64.json"
+  },
+  "nativeInput": {
+    "provenance": "docs/evidence/vc-qa-001/native-fixed61.json",
+    "projectRevision": "c1de3466c9af39d7756f6b1671c49eec23e4eaa6c09ea5d38be8ccd1aeb45a48",
+    "scope": "unchanged historical fixed61 seed; six new current64 installed-code native revisions and owned signed desktop mutation"
+  },
+  "scope": "four current VC-QA-002 scenarios on actual public-commit64/source46 Codex installation;explicit QA scores;not a public-tag installation or creative judgment",
+  "unverified": [
+    "public-tag post-publication acceptance",
+    "actual creative judgment",
+    "other platforms",
+    "complete V1",
+    "all commands",
+    "model routing",
+    "host secret references"
+  ],
+  "initialGUIRefusal": {
+    "result": "EXPECTED_REFUSAL",
+    "reason": "legacy QA source outside owned desktop root;fixture moved within owned root,product scope unchanged",
+    "log": "docs/evidence/vc-qa-002/commit64-stale-gui-initial-refusal.log.txt",
+    "originalDriver": "docs/evidence/pre-revision64-identity/scripts/qa/revision_stale_gui.ts"
+  },
+  "localTests": {
+    "pythonRun": 167,
+    "pythonPassed": 166,
+    "pythonSkipped": 1,
+    "pythonLog": "docs/evidence/vc-qa-002/commit64-final-python167.log.txt",
+    "originalLogSha256": "e4a31f2524a2d75ccea3624be3f698b78e26855d3be079febbfff1b56c199693",
+    "skipReason": "existing negative branch requires changed worktree;current bundle already matches qualified proof",
+    "scope": "final complete Python regression after selecting current64 bundle;native scenario matrix has zero skips"
+  },
   "fingerprints": {
     "docs/current-identity.json": "e559e00b4d74b41b716e3697b7477a4760790222a8d5e7ec4d1525ca55167ecc",
     "docs/evidence/pre-revision64-identity/scripts/qa/revision_gui_edit.py": "1443f45680de566e1fb5406526d3a16b7c16f88bb44d4b7892efa56a7bc91110",
@@ -77,7 +130,7 @@
     "tests/revision_cycle.test.ts": "b99c8ebe0d622aeee15a86c25b3bd64b456a2f179368d167528f73bb99d55b45",
     "tests/test_revision_current_contract.py": "56fed990a4ca79e39f57dd66cb442204874932c8cafaaf15bf689fad9d910d63",
     "tests/test_revision_evidence.py": "16691330cf0943743af877c2fd284fce964bd2e0ab1efcfc2988dd8aa0f8816c",
-    "docs/evidence/vectorcraft-revision-commit64-20261009.json": "3af2eb331017476b5e17c614a4bdf5f307194ed077443a85bbc90c1eb4ab20a7",
     "docs/evidence/vc-qa-002/commit64-final-python167.log.txt": "2bc855290542af08a23c718b658db28b5dc9ac1fd088938ee9b06c7605a070a6"
-  }
+  },
+  "logNormalization": "Workspace/temp prefixes and trailing line whitespace normalized in public log copies;original execution records remain local."
 }

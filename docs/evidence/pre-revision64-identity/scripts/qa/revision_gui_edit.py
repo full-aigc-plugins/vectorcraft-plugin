@@ -6,7 +6,7 @@ def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
 def load(name):
  s=importlib.util.spec_from_file_location('revision_gui_'+name,a.skill/'scripts'/f'{name}.py');m=importlib.util.module_from_spec(s);s.loader.exec_module(m);return m
 runtime=json.loads((a.skill/'scripts/runtime.lock.json').read_text());expected=runtime['artifacts']['darwin-arm64']['binarySha256'];assert sha(a.binary)==expected
-desktop_lock=json.loads((a.skill/'scripts/desktop.lock.json').read_text());desktop=load('desktop').inspect(a.desktop,desktop_lock);a.output.mkdir(exist_ok=True)
+desktop_lock=json.loads((a.skill/'scripts/desktop.lock.json').read_text());desktop=load('desktop').inspect(a.desktop,desktop_lock);a.output.mkdir()
 with socket.socket() as sock:sock.bind(('127.0.0.1',0));port=sock.getsockname()[1]
 commands=load('commands');owned=load('desktop_session').OwnedSession(commands.backend_argv(str(a.binary),a.output,'bridge',f'127.0.0.1:{port}'),desktop,'vectorcraft',a.output,port)
 before=sha(a.source)

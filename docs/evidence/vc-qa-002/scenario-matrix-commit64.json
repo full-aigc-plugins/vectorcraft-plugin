@@ -1,0 +1,54 @@
+{
+  "scenarioContracts": {
+    "VC-QA-002-P 合同条件满足": "0352920dea8899e730ca57287645a899e4cd23d3da1e61245ab49e2cde51f5e0",
+    "VC-QA-002-N 边界条件": "93750cef057130a212cfd01cd3752e992485ab711b332e17524a64380fa9f5cc",
+    "VC-QA-002-FRESH 修订前重新核对原生状态": "29cac1daabb373fa2a65e053f2ae0270aa16ada031a3128364ac8d1d63d41d19",
+    "VC-QA-002-CYCLE 显式有界轮次及最佳候选": "313be75f27dd6aff25a7c9f8fdcbb68de542465a6865b71493fc1432f121baba"
+  },
+  "entries": [
+    {
+      "scenario": "VC-QA-002-P 合同条件满足",
+      "result": "PASS",
+      "level": "native-fixed-install",
+      "evidence": [
+        "docs/evidence/vc-qa-002/guards-commit64.json",
+        "docs/evidence/vc-qa-002/goal-change-commit64.json",
+        "docs/evidence/vc-qa-002/round-limit-commit64.json"
+      ]
+    },
+    {
+      "scenario": "VC-QA-002-N 边界条件",
+      "result": "PASS",
+      "level": "native-fixed-install",
+      "evidence": [
+        "docs/evidence/vc-qa-002/budget-commit64.json",
+        "docs/evidence/vc-qa-002/small-improvement-commit64.json",
+        "docs/evidence/vc-qa-002/lower-score-commit64.json",
+        "docs/evidence/vc-qa-002/round-limit-commit64.json"
+      ]
+    },
+    {
+      "scenario": "VC-QA-002-FRESH 修订前重新核对原生状态",
+      "result": "PASS",
+      "level": "native-fixed-install",
+      "evidence": [
+        "docs/evidence/vc-qa-002/guards-commit64.json",
+        "docs/evidence/vc-qa-002/stale-gui-commit64.json"
+      ]
+    },
+    {
+      "scenario": "VC-QA-002-CYCLE 显式有界轮次及最佳候选",
+      "result": "PASS",
+      "level": "native-fixed-install",
+      "evidence": [
+        "docs/evidence/vc-qa-002/budget-commit64.json",
+        "docs/evidence/vc-qa-002/small-improvement-commit64.json",
+        "docs/evidence/vc-qa-002/lower-score-commit64.json",
+        "docs/evidence/vc-qa-002/round-limit-commit64.json",
+        "docs/evidence/vc-qa-002/guards-commit64.json",
+        "docs/evidence/vc-qa-002/goal-change-commit64.json",
+        "docs/evidence/vc-qa-002/stale-gui-commit64.json"
+      ]
+    }
+  ]
+}

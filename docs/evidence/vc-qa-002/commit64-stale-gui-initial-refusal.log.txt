@@ -1,0 +1,34 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Traceback (most recent call last):
+  File "PLUGIN_ROOT/scripts/qa/revision_gui_edit.py", line 15, in <module>
+    command('document.open',{'path':str(a.source)});original=command('document.json',{})
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "PLUGIN_ROOT/scripts/qa/revision_gui_edit.py", line 14, in command
+    def command(name,params):return commands.parse_reply(owned.request('tools/call',{'name':'run_command','arguments':{'command':name,'params':params}}))
+                                                         ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "PLUGIN_ROOT/.local/fixed64 commit host/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.64/skills/vectorcraft-use/scripts/desktop_session.py", line 36, in request
+    def request(self,*args):return self.session.request(*args)
+                                   ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "PLUGIN_ROOT/.local/fixed64 commit host/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.64/skills/vectorcraft-use/scripts/mcp_session.py", line 49, in request
+    _commands.load('filesystem_scope').authorize_command(arguments.get('command'), arguments.get('params', {}), self.filesystem)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "PLUGIN_ROOT/.local/fixed64 commit host/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.64/skills/vectorcraft-use/scripts/filesystem_scope.py", line 96, in authorize_command
+    raise ValueError('filesystem_' + mode + '_outside_root')
+ValueError: filesystem_read_outside_root
+
+
+1 !== 0
+
+    at file://PLUGIN_ROOT/scripts/qa/revision_stale_gui.ts:27:82 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 1,
+  expected: 0,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.18.0

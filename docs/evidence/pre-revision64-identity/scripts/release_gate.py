@@ -43,7 +43,7 @@ def assess(root=ROOT):
   return {'evidence':['skills.lock.json'],'sourceRef':source['ref'],'sourceCommit':source['sha'],'skills':13}
  def technical():
   r=bjson(bundle['technical'])
-  if r.get('schema') not in ('vectorcraft-revision-fixed/v1','vectorcraft-revision-fixed/v2') or r.get('result')!='PASS' or r['pluginVersion']!=bundle['pluginVersion'] or r['sourceRef']!=bundle['sourceRef'] or r['sourceCommit']!=bundle['sourceCommit']:raise ValueError('release_technical_identity')
+  if r.get('schema')!='vectorcraft-revision-fixed/v1' or r.get('result')!='PASS' or r['pluginVersion']!=bundle['pluginVersion'] or r['sourceRef']!=bundle['sourceRef'] or r['sourceCommit']!=bundle['sourceCommit']:raise ValueError('release_technical_identity')
   for name,digest in r['fingerprints'].items():
    if sha(bound(name))!=digest:raise ValueError('release_technical_dependency')
   return r
@@ -62,7 +62,7 @@ def assess(root=ROOT):
   if n['result']!='PASS' or n['pluginVersion']!=bundle['pluginVersion'] or n['sourceRef']!=bundle['sourceRef'] or execution['state']!='awaiting_review' or not execution['executionTaskId'] or next_request['input']['native']!=execution['output']+'/project.vectorcraft' or n['proposal']['expectedProjectRevision']!=first['input']['projectRevision'] or n['allGroupsStopped'] is not True:raise ValueError('release_task_execution')
   return {'evidence':[r['cases']['guards']],'executionTaskId':execution['executionTaskId'],'scope':'actual installed native task;explicit QA feedback,no model routing claim'}
  def native():
-  technical();module_path=bound('scripts/verify_revision_evidence.py');spec=importlib.util.spec_from_file_location('release_native_verifier',module_path);module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);module.REPORT=bundle['technical']
+  technical();module_path=bound('scripts/verify_revision_evidence.py');spec=importlib.util.spec_from_file_location('release_native_verifier',module_path);module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
   with contextlib.redirect_stdout(io.StringIO()):module.verify(root)
   return {'evidence':[bundle['technical']],'scope':'current four-scenario native revision evidence;creative judgment and other platforms excluded'}
  for name,fn in [('structure',structure),('skills',skills),('runtime',runtime),('host',host),('task',task),('native',native)]:check(name,fn)

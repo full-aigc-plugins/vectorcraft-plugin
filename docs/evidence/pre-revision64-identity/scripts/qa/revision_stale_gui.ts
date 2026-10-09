@@ -6,7 +6,7 @@ import { pathToFileURL } from 'node:url';
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 const sha=(value:Buffer)=>createHash('sha256').update(value).digest('hex');
-const c=JSON.parse(readFileSync(process.argv[2],'utf8'));mkdirSync(c.output,{recursive:true});const originalSource=c.source;const guiRoot=join(c.output,'gui');mkdirSync(guiRoot);cpSync(c.source,join(guiRoot,'source'),{recursive:true});c.source=join(guiRoot,'source');
+const c=JSON.parse(readFileSync(process.argv[2],'utf8'));mkdirSync(c.output,{recursive:true});const originalSource=c.source;cpSync(c.source,join(c.output,'source'),{recursive:true});c.source=join(c.output,'source');
 const load=async(path:string)=>await import(pathToFileURL(join(c.installed,path)).href);
 const {skillDigest}=await load('src/harness/controller.ts');
 const beforeFiles=skillDigest(originalSource);
