@@ -104,3 +104,9 @@ Pins independent source32 with self-contained brand dependency enforcement acros
 ## 0.1.0-dev.56
 
 Plugin56 pins source42: registered raster/SVG asset dependency checks, native instance bounds correction and verified export inheritance. Candidate token/asset regressions pass. Tasks4.16/4.17 complete; fixed installed4.18 qualification remains separate.
+
+
+逐命令透明度固定安装增量：公开dev.64/source46实际安装副本在拥有的签名桌面中完成全部17条transparency命令、34轮原生保存重开及68份解码SVG/PNG导出。逐命令核验对象百分比与混合／挖空选项、顶层蒙版移动与释放后重新编号、启停／链接选项、页面标志、默认值对新建蒙版的实际影响，以及编辑层进入／退出和查看开关的原生返回状态。临时编辑层不进入保存工程，蒙版艺术与控制文本保全；13技能身份不变。三种修订的6次实际画布／PNG比较有1208–2160像素变化。初次夹具错误（无效描边颜色、默认false省略字段、新探针文档未保存）已保留并修正，全族从新拥有会话复验通过，产品及锁定技能未改动。默认值只覆盖私有会话，应用重启后的偏好持久化仍NOT_RUN；普通screenshot是艺术板渲染，不能证明蒙版灰度查看或完整窗口GUI。原54命令矩阵与校验器原字节保留；当前71/585通过、514 NOT_RUN，142次保存重开、284份解码导出。任务8.3保持开放，121/127完成、6项开放。 [Evidence](docs/evidence/vectorcraft-command-families71-fixed64-20261009.json).
+
+
+补充viewOpacityMask真实窗口开启／关闭验收，两张1440×900原生窗口的画布内部灰度／彩色像素及编辑状态通过；13安装技能身份保全。此证据仅覆盖单命令窗口，不关闭8.3或其余6项任务。 [Evidence](docs/evidence/vectorcraft-mask-window-fixed64-20261009.json).

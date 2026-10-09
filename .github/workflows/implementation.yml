@@ -30,6 +30,7 @@ jobs:
       - run: python3 -I -B scripts/verify_single_round_evidence.py
       - run: python3 -I -B scripts/verify_command_evidence.py
       - run: python3 -I -B scripts/verify_command_families.py
+      - run: python3 -I -B scripts/verify_mask_window_evidence.py
       - uses: actions/setup-node@v4
         with:
           node-version: '24.18.0'
