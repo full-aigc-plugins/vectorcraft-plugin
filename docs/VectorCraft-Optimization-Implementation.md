@@ -96,3 +96,14 @@ flowchart LR
   C -->|disabled or unknown| X[Stop and retain failure]
   D -->|unknown outcome or assertion failure| X
 ```
+
+
+Fixed-installed stroke acceptance: all10 stroke commands pass20 native save/reopen stages and40 decoded SVG/PNG exports on actual public plugin dev.64/source46;all13 installed skill digests remain unchanged. Open paths exercise arrows,advanced profiles and width points;closed paths exercise inside/outside alignment. Assertions cover pt-to-half-width factors,arrow scale swaps,along/across profile flips,and custom profile add/delete/reset. Fill,control text,geometry,source and previous deliveries are preserved. Ten actual canvas/PNG comparisons across five style revisions show142–1189 changed pixels;43 command-focused regressions pass. Native-disabled empty reset and duplicate-profile add QA failures were retained;corrected contexts pass without product or skill changes. Profile names are qualified only within the owned private desktop session;preference persistence across app restarts remains NOT_RUN. Canvas images do not establish OS-window screenshots or creative judgment. Original44-command matrix and verifier bytes remain preserved. Current coverage is54/585,531 NOT_RUN,108 save/reopen stages and216 decoded exports. Task8.3 remains open;121/127 tasks complete,6 open. [Evidence](evidence/vectorcraft-command-families54-fixed64-20261009.json).
+
+
+| Stroke input | Acceptance calculation | Protected state |
+| :--- | :--- | :--- |
+| Width-point left/right in pt | Native factor = 2 × side width / stroke weight | Other width points,fill and geometry |
+| swapArrows and arrowScale | Swap paired endpoint arrows and scales | Color and non-stroke appearance |
+| flipProfile | along: t becomes1−t and reorder;across: swap side widths | Exact point values and order |
+| Custom profile names | Private-session add/delete/reset and list | No claim of preference persistence across app restarts |

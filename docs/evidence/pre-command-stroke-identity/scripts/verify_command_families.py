@@ -7,8 +7,8 @@ import json
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 BASE='scripts/verify_command_evidence.py'
-MATRIX='docs/evidence/vectorcraft-command-families54-fixed64-20261009.json'
-FAMILIES={'swatch':'docs/evidence/vectorcraft-command-swatch-fixed64-20261009.json','stroke':'docs/evidence/vectorcraft-command-stroke-fixed64-20261009.json'}
+MATRIX='docs/evidence/vectorcraft-command-families-fixed64-20261009.json'
+FAMILIES={'swatch':'docs/evidence/vectorcraft-command-swatch-fixed64-20261009.json'}
 def sha(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 def load(name,path):
     spec=importlib.util.spec_from_file_location(name,path);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);return m
@@ -54,18 +54,6 @@ def validate_family(root,family,path):
             if [e['format'] for e in exports]!=['svg','png'] or any(e['decoded'] is not True for e in exports):raise ValueError('family_export_decode')
             for digest in [canvas['sha256'],stage['nativeProjectSha256'],*[e['sha256'] for e in exports]]:
                 if len(digest)!=64 or any(c not in '0123456789abcdef' for c in digest):raise ValueError('family_artifact_identity')
-    if family=='stroke':
-        if report.get('preferenceRestartAcceptance')!='NOT_RUN' or any(s['observed'].get('preferenceRestartAcceptance')!='NOT_RUN' for c in cases for s in c['stages']):raise ValueError('stroke_preference_scope')
-        render=report['renderChanges'];checker=load('stroke_render',root/'scripts/qa/command_render.py')
-        if render['schema']!='vectorcraft-command-render-changes/v1' or render['result']!='PASS' or render['executionReportSha256']!=report['originalExecutionReportSha256'] or render['checkerSha256']!=sha(root/'scripts/qa/command_render.py'):raise ValueError('stroke_render_identity')
-        if [c['command'] for c in render['cases']]!=checker.COMMANDS:raise ValueError('stroke_render_coverage')
-        for measured in render['cases']:
-            stages=next(c['stages'] for c in cases if c['command']==measured['command'])
-            if [m['kind'] for m in measured['comparisons']]!=['native-canvas','png-export']:raise ValueError('stroke_render_coverage')
-            for m in measured['comparisons']:
-                if (m['width'],m['height'],m['totalPixels'])!=(128,96,12288) or type(m['changedPixels']) is not int or not 1<=m['changedPixels']<=12288:raise ValueError('stroke_render_pixels')
-                expected=[s['canvas']['sha256'] if m['kind']=='native-canvas' else next(e['sha256'] for e in s['exports'] if e['format']=='png') for s in stages]
-                if [m['firstSha256'],m['secondSha256']]!=expected or expected[0]==expected[1]:raise ValueError('stroke_render_binding')
     return ids
 
 def verify(root=ROOT):
@@ -83,7 +71,7 @@ def verify(root=ROOT):
             'pluginVersion':previous['pluginVersion'],'pluginCommit':previous['pluginCommit'],'sourceRef':previous['sourceRef'],
             'coverage':{'catalogCommands':len(entries),'passed':len(accepted),'notRun':len(entries)-len(accepted),'stages':2*len(accepted)},
             'reports':reports,'fingerprints':fingerprints,
-            'scope':'Explicit paint,swatch and stroke native semantics on public fixed64/source46;incomplete exhaustive commands/GUI/creative/V1 acceptance;native canvas images are not OS-window screenshots',
+            'scope':'Explicit paint and swatch native semantics on public fixed64/source46;incomplete exhaustive commands/GUI/creative/V1 acceptance;native canvas images are not OS-window screenshots',
             'commands':entries}
 
 if __name__=='__main__':

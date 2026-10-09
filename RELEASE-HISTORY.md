@@ -9,6 +9,8 @@ Post-publication command supplement: the installed public64/source46 copy passes
 
 Swatch command supplement: all22 swatch commands pass on actual installed64/source46. Together with unchanged paint evidence,the complete catalog matrix records44/585 accepted,541 NOT_RUN,88 native save/reopen stages and176 decoded SVG/PNG exports. All13 installed skill identities remain unchanged;task8.3 and completeV1 stay open. [Family matrix](docs/evidence/vectorcraft-command-families-fixed64-20261009.json).
 
+Stroke command supplement:10 commands,20 native save/reopen stages,40 decoded SVG/PNG exports and10 actual pixel comparisons pass on installed64/source46. Total coverage54/585,531 NOT_RUN;all13 skill identities unchanged. Profile names remain private-session scoped;app-restart preference persistence,task8.3 and completeV1 stay open. Original44-command report remains unchanged. [54-command matrix](docs/evidence/vectorcraft-command-families54-fixed64-20261009.json).
+
 ## dev.49 (2026-10-09)
 
 Bind completed step receipts to the original manifest and all files; refuse settlement if the receipt changes after inspection. Pinned source38 records actual delivery directory identity before rename, including linked package subdirectories. Four real plain/linked crashes before/after receipt pass as candidates. Old pending proofs need fresh step-bound inspection; unverifiable source37 packaged results remain occupied.97 Node regressions pass; fixed49 acceptance is separate and full3.6/V1 remain open.
