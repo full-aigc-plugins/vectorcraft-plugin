@@ -16,3 +16,18 @@ class AppearanceTests(unittest.TestCase):
   n={'kind':{'type':'path'},'appearance':{'items':[{'kind':'fill','paint':{'type':'none'},'opacity':.2,'effects':[{'id':'x'}]}]}};self.m.add(n,True);self.assertEqual(n['appearance']['items'][-1],{'kind':'fill','paint':{'type':'none'}})
  def test_unknown_command_cannot_pass(self):
   with self.assertRaisesRegex(ValueError,'appearance_command_unknown'):self.m.expected('appearance.future',{}, {}, {}, {})
+
+ def test_transfer_fixture_passes_ordered_ids_to_mask_command(self):
+  calls=[]
+  def call(command,**params):
+   calls.append((command,params));return {'id':7} if command=='shape.rectangle' else None
+  self.m.prepare(call,'appearance.transfer',1,Path('/owned'),{'layer':4,'source':5,'other':6})
+  params=next(p for c,p in calls if c=='transparency.makeOpacityMask');self.assertEqual(params.get('ids'),[5,7])
+
+ def test_transfer_mask_is_created_in_source_layer(self):
+  calls=[]
+  def call(command,**params):
+   calls.append((command,params));return {'id':7} if command=='shape.rectangle' else None
+  self.m.prepare(call,'appearance.transfer',1,Path('/owned'),{'layer':4,'source':5,'other':6})
+  mask_index=next(i for i,(c,p) in enumerate(calls) if c=='shape.rectangle')
+  self.assertIn(('layer.setCurrent',{'id':4}),calls[:mask_index])

@@ -2,12 +2,12 @@
 import copy,importlib.util,json,shutil,tempfile
 from pathlib import Path
 import unittest
-ROOT=Path(__file__).resolve().parents[3]
+ROOT=Path(__file__).resolve().parents[1]
 REPORT='docs/evidence/vectorcraft-command-appearance-fixed64-20261009.json'
 class AppearanceEvidenceTests(unittest.TestCase):
  def setUp(self):
   self.assertTrue((ROOT/REPORT).is_file(),'appearance_fixed_evidence_missing');self.tmp=tempfile.TemporaryDirectory();self.addCleanup(self.tmp.cleanup);self.root=Path(self.tmp.name)
-  for name in (REPORT,'docs/current-identity.json','docs/evidence/vectorcraft-public-tag64-install-20261009.json','skills/vectorcraft-use/references/command-coverage.json',*[f'scripts/qa/{n}.py' for n in ('command_family_window','command_appearance_render','command_layer_render','command_paint','command_shape','command_graphicStyle','command_appearance')]):
+  for name in (REPORT,'docs/current-identity.json','docs/evidence/vectorcraft-public-tag64-install-20261009.json','skills/vectorcraft-use/references/command-coverage.json',*[f'scripts/qa/{n}.py' for n in ('command_family_window','command_family_window_diagnostic','command_appearance_render','command_layer_render','command_paint','command_shape','command_graphicStyle','command_appearance')]):
    p=self.root/name;p.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/name,p)
   spec=importlib.util.spec_from_file_location('appearance_evidence',ROOT/'scripts/verify_command_families.py');self.m=importlib.util.module_from_spec(spec);spec.loader.exec_module(self.m)
  def change(self,command,mutate,round=1):
@@ -68,3 +68,10 @@ class AppearanceEvidenceTests(unittest.TestCase):
  def test_window_cannot_be_canvas(self):
   self.change('newArt',lambda s:s['window'].update(width=128,height=96))
   with self.assertRaisesRegex(ValueError,'appearance_window_capture'):self.validate()
+
+ def test_undo_flag_cannot_replace_checkpoint_restoration(self):
+  self.change('setActiveItem',lambda s:s['observed']['activeProbe'].update(restoration='undo-only'))
+  with self.assertRaisesRegex(ValueError,'appearance_probe_restoration'):self.validate()
+ def test_probe_artifacts_require_digests(self):
+  self.change('newArt',lambda s:s['observed']['newArtProbe'].update(probeProjectSha256=''))
+  with self.assertRaisesRegex(ValueError,'appearance_probe_identity'):self.validate()

@@ -7,8 +7,8 @@ import json
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 BASE='scripts/verify_command_evidence.py'
-MATRIX='docs/evidence/vectorcraft-command-families126-fixed64-20261009.json'
-FAMILIES={'swatch':'docs/evidence/vectorcraft-command-swatch-fixed64-20261009.json','stroke':'docs/evidence/vectorcraft-command-stroke-fixed64-20261009.json','transparency':'docs/evidence/vectorcraft-command-transparency-fixed64-20261009.json','shape':'docs/evidence/vectorcraft-command-shape-fixed64-20261009.json','layer':'docs/evidence/vectorcraft-command-layer-fixed64-20261009.json','graphicStyle':'docs/evidence/vectorcraft-command-graphicStyle-fixed64-20261009.json','appearance':'docs/evidence/vectorcraft-command-appearance-fixed64-20261009.json'}
+MATRIX='docs/evidence/vectorcraft-command-families110-fixed64-20261009.json'
+FAMILIES={'swatch':'docs/evidence/vectorcraft-command-swatch-fixed64-20261009.json','stroke':'docs/evidence/vectorcraft-command-stroke-fixed64-20261009.json','transparency':'docs/evidence/vectorcraft-command-transparency-fixed64-20261009.json','shape':'docs/evidence/vectorcraft-command-shape-fixed64-20261009.json','layer':'docs/evidence/vectorcraft-command-layer-fixed64-20261009.json','graphicStyle':'docs/evidence/vectorcraft-command-graphicStyle-fixed64-20261009.json'}
 def sha(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 def load(name,path):
     spec=importlib.util.spec_from_file_location(name,path);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);return m
@@ -29,8 +29,8 @@ def validate_family(root,family,path):
     if report['installedSkillsBefore']!=identity['skills'] or report['installedSkillsAfter']!=identity['skills']:raise ValueError('family_installed_identity')
     if report['runtimeSha256']!=identity['runtime']['binarySha256'] or report['desktopBinarySha256']!=identity['desktop']['binarySha256']:raise ValueError('family_runtime_identity')
     driver_path='scripts/qa/command_'+family+'.py'
-    runner_path='scripts/qa/command_family_window_diagnostic.py' if family=='appearance' else 'scripts/qa/command_family_window.py' if family in ('shape','layer','graphicStyle') else 'scripts/qa/command_family.py'
-    if family in ('shape','layer','graphicStyle','appearance') and report.get('runnerPath')!=runner_path:raise ValueError(family+'_window_runner')
+    runner_path='scripts/qa/command_family_window.py' if family in ('shape','layer','graphicStyle') else 'scripts/qa/command_family.py'
+    if family in ('shape','layer','graphicStyle') and report.get('runnerPath')!=runner_path:raise ValueError(family+'_window_runner')
     if report['driverSha256']!=sha(root/driver_path) or report['runnerSha256']!=sha(root/runner_path) or report['catalogSha256']!=sha(root/'skills/vectorcraft-use/references/command-coverage.json'):raise ValueError('family_execution_identity')
     if report['allOwnedProcessesStopped'] is not True or report['listenerOwnedByPID'] is not True:raise ValueError('family_owned_processes')
     driver=load('family_semantics_'+family,root/driver_path);cases=report['cases'];ids=[c['command'] for c in cases]
@@ -51,7 +51,7 @@ def validate_family(root,family,path):
                 after_appearance=driver.paint.objects(stage['after'])[2]['appearance']
                 def protected(value):return {**value,'items':[item for item in value['items'] if item['kind']!='fill']}
                 if protected(before_appearance)!=protected(after_appearance):raise ValueError('family_protected_appearance')
-            if family in ('shape','layer','graphicStyle','appearance'):
+            if family in ('shape','layer','graphicStyle'):
                 w=stage['window'];scale=w['pixelScale'];attempts=w['readAttempts']
                 if scale not in (1,2) or (w['width'],w['height'])!=(1440*scale,900*scale) or w['window'] is not True or w['decoded'] is not True or w['mimeType']!='image/png' or w['bytes']<=0:raise ValueError(family+'_window_capture')
                 if not 1<=len(attempts)<=3 or [x['attempt'] for x in attempts]!=list(range(1,len(attempts)+1)) or [x['status'] for x in attempts]!=['native-read-error']*(len(attempts)-1)+['PASS']:raise ValueError(family+'_window_read_attempts')
@@ -62,16 +62,6 @@ def validate_family(root,family,path):
             if [e['format'] for e in exports]!=['svg','png'] or any(e['decoded'] is not True for e in exports):raise ValueError('family_export_decode')
             for digest in [canvas['sha256'],stage['nativeProjectSha256'],*[e['sha256'] for e in exports]]:
                 if len(digest)!=64 or any(c not in '0123456789abcdef' for c in digest):raise ValueError('family_artifact_identity')
-    if family=='appearance':
-        if report.get('preferenceRestartAcceptance')!='NOT_RUN':raise ValueError('appearance_preference_scope')
-        for case in cases:
-            if case['command'] not in ('appearance.setActiveItem','appearance.setNewArtBasic','appearance.newArt'):continue
-            for stage in case['stages']:
-                probe=stage['observed']['activeProbe' if case['command']=='appearance.setActiveItem' else 'newArtProbe']
-                if probe.get('restoration')!='native-saved-checkpoint-reopen':raise ValueError('appearance_probe_restoration')
-                for key in ('checkpointSha256','probeProjectSha256'):
-                    digest=probe.get(key)
-                    if not isinstance(digest,str) or len(digest)!=64 or any(c not in '0123456789abcdef' for c in digest):raise ValueError('appearance_probe_identity')
     if family in ('stroke','transparency','shape'):
         if family!='shape' and (report.get('preferenceRestartAcceptance')!='NOT_RUN' or any(s['observed'].get('preferenceRestartAcceptance')!='NOT_RUN' for c in cases for s in c['stages'])):raise ValueError(family+'_preference_scope')
         render=report['renderChanges'];checker_path='scripts/qa/command_render.py' if family=='stroke' else 'scripts/qa/command_'+family+'_render.py';checker=load(family+'_render',root/checker_path)
@@ -86,12 +76,12 @@ def validate_family(root,family,path):
                 if (m['width'],m['height'],m['totalPixels'])!=size or type(m['changedPixels']) is not int or not 1<=m['changedPixels']<=size[2]:raise ValueError(family+'_render_pixels')
                 expected=[s['window']['sha256'] if m['kind']=='app-window' else s['canvas']['sha256'] if m['kind']=='native-canvas' else next(e['sha256'] for e in s['exports'] if e['format']=='png') for s in stages]
                 if [m['firstSha256'],m['secondSha256']]!=expected or expected[0]==expected[1]:raise ValueError(family+'_render_binding')
-    if family in ('layer','graphicStyle','appearance'):validate_layer_render(root,report,cases,family)
+    if family in ('layer','graphicStyle'):validate_layer_render(root,report,cases,family)
     return ids
 
 def validate_layer_render(root,report,cases,family):
     """状态命令保全画布、可见性及剪切修改产生变化；窗口独立测量。"""
-    path='scripts/qa/command_'+family+'_render.py';checker=load(family+'_render',root/path);render=report['renderChanges'];schema={'layer':'vectorcraft-command-layer-render/v1','graphicStyle':'vectorcraft-command-graphic-style-render/v1','appearance':'vectorcraft-command-appearance-render/v1'}[family]
+    path='scripts/qa/command_'+family+'_render.py';checker=load(family+'_render',root/path);render=report['renderChanges'];schema='vectorcraft-command-layer-render/v1' if family=='layer' else 'vectorcraft-command-graphic-style-render/v1'
     if render['schema']!=schema or render['result']!='PASS' or render['executionReportSha256']!=report['originalExecutionReportSha256'] or render['checkerSha256']!=sha(root/path):raise ValueError('layer_render_identity')
     if [c['command'] for c in render['cases']]!=checker.COMMANDS:raise ValueError('layer_render_coverage')
     for measured in render['cases']:
@@ -120,7 +110,7 @@ def verify(root=ROOT):
             'pluginVersion':previous['pluginVersion'],'pluginCommit':previous['pluginCommit'],'sourceRef':previous['sourceRef'],
             'coverage':{'catalogCommands':len(entries),'passed':len(accepted),'notRun':len(entries)-len(accepted),'stages':2*len(accepted)},
             'reports':reports,'fingerprints':fingerprints,
-            'scope':'Explicit paint,swatch,stroke,transparency,shape,layer,graphicStyle and appearance native semantics on public fixed64/source46;incomplete exhaustive commands/GUI/creative/V1 acceptance;shape/layer/graphicStyle/appearance have separate actual app-window captures;layer/style state-only commands preserve canvas pixels and use independent session readbacks;earlier native canvas images are not OS-window screenshots',
+            'scope':'Explicit paint,swatch,stroke,transparency,shape,layer and graphicStyle native semantics on public fixed64/source46;incomplete exhaustive commands/GUI/creative/V1 acceptance;shape/layer/graphicStyle have separate actual app-window captures;layer/style state-only commands preserve canvas pixels and use independent session readbacks;earlier native canvas images are not OS-window screenshots',
             'commands':entries}
 
 if __name__=='__main__':

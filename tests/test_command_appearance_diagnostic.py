@@ -34,7 +34,7 @@ class AppearanceDiagnosticTests(unittest.TestCase):
 
     def test_candidate_identity_is_not_an_execution_identity(self):
         self.assertTrue(self.report['executionDriverIdentity'].startswith('NOT_RECORDED'))
-        candidate = ROOT / 'scripts/qa/command_appearance.py'
+        candidate = ROOT / 'docs/evidence/pre-appearance-diagnostic-identity/scripts/qa/command_appearance.py'
         self.assertEqual(self.report['candidateDriverSha256'], hashlib.sha256(candidate.read_bytes()).hexdigest())
 
     def test_acceptance_task_remains_open(self):

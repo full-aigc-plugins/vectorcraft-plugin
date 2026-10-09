@@ -176,7 +176,7 @@ def prepare(call,command,number,directory,state):
   p={'ids':[layer]}
  elif name=='transfer':
   if not second:
-   call('layer.setCurrent',id=layer);mask=call('shape.rectangle',x=82,y=14,width=24,height=20)['id'];call('paint.setFill',ids=[mask],color='#ffffff');call('select.set',ids=[src,mask]);call('transparency.makeOpacityMask',ids=[src,mask])
+   mask=call('shape.rectangle',x=82,y=14,width=24,height=20)['id'];call('paint.setFill',ids=[mask],color='#ffffff');call('select.set',ids=[src,mask]);call('transparency.makeOpacityMask')
   else:source_look(call,src)
   p={'source':src,'target':other if second else 2,'copy':second}
  elif name in ('setNewArtBasic','newArt'):
@@ -202,4 +202,4 @@ def observe(call,command,params,returned,directory,fixture):
  o['newArtProbe' if name in ('setNewArtBasic','newArt') else 'activeProbe']=probe
  return o
 if __name__=='__main__':
- common=load_local('command_family_window_diagnostic');family=type('AppearanceFamily',(),{'FAMILY':FAMILY,'COMMANDS':COMMANDS,'__file__':__file__,**{n:staticmethod(globals()[n]) for n in ('initialize','prepare','observe','validate_transition')}});common.run(json.loads(Path(sys.argv[1]).read_text()),family)
+ common=load_local('command_family_window');family=type('AppearanceFamily',(),{'FAMILY':FAMILY,'COMMANDS':COMMANDS,'__file__':__file__,**{n:staticmethod(globals()[n]) for n in ('initialize','prepare','observe','validate_transition')}});common.run(json.loads(Path(sys.argv[1]).read_text()),family)
