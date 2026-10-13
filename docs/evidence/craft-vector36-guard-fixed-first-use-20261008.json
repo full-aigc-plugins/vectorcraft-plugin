@@ -807,7 +807,7 @@
         "reusedBecauseWholeTreeHashMatches": true,
         "historicalRecordedRun": "effectcraft-camera-scene-20261008/effect15-cold/effectcraft-cli",
         "rawCallsEvidence": {
-          "path": "artifacts/effectcraft-camera-scene-20261008/effect15-cold/effectcraft-cli/\u9996\u6b21 \u4f7f\u7528 \u4e2d\u6587/calls.json",
+          "path": "artifacts/effectcraft-camera-scene-20261008/effect15-cold/effectcraft-cli/首次 使用 中文/calls.json",
           "sha256": "b3e730b30fce851891728ce8674d34b27bce64dcf532f005e66aec10e920b264",
           "installReused": false,
           "nativeCommandCount": 640
@@ -835,7 +835,7 @@
         "reusedBecauseWholeTreeHashMatches": true,
         "historicalRecordedRun": "effectcraft-camera-scene-20261008/effect15-cold/effectcraft-cli-animation",
         "rawCallsEvidence": {
-          "path": "artifacts/effectcraft-camera-scene-20261008/effect15-cold/effectcraft-cli-animation/\u9996\u6b21 \u4f7f\u7528 \u4e2d\u6587/calls.json",
+          "path": "artifacts/effectcraft-camera-scene-20261008/effect15-cold/effectcraft-cli-animation/首次 使用 中文/calls.json",
           "sha256": "8a0986b9fecad87a1e50c51b13b4f971599df1e49ef328c09ac0bb141f8d4ac8",
           "installReused": false,
           "nativeCommandCount": 640
@@ -863,7 +863,7 @@
         "reusedBecauseWholeTreeHashMatches": true,
         "historicalRecordedRun": "effectcraft-camera-scene-20261008/effect15-cold/effectcraft-cli-camera",
         "rawCallsEvidence": {
-          "path": "artifacts/effectcraft-camera-scene-20261008/effect15-cold/effectcraft-cli-camera/\u9996\u6b21 \u4f7f\u7528 \u4e2d\u6587/calls.json",
+          "path": "artifacts/effectcraft-camera-scene-20261008/effect15-cold/effectcraft-cli-camera/首次 使用 中文/calls.json",
           "sha256": "85fc0d208b25380c6ae7aa3d1e624a5b87190a1c3354f4c295562d6f6d975b47",
           "installReused": false,
           "nativeCommandCount": 640
@@ -891,7 +891,7 @@
         "reusedBecauseWholeTreeHashMatches": true,
         "historicalRecordedRun": "effectcraft-camera-scene-20261008/effect15-cold/effectcraft-cli-composition",
         "rawCallsEvidence": {
-          "path": "artifacts/effectcraft-camera-scene-20261008/effect15-cold/effectcraft-cli-composition/\u9996\u6b21 \u4f7f\u7528 \u4e2d\u6587/calls.json",
+          "path": "artifacts/effectcraft-camera-scene-20261008/effect15-cold/effectcraft-cli-composition/首次 使用 中文/calls.json",
           "sha256": "85bea0cc03594b69aae8f5f10cb241b91b79bba0643450146bdea99df7b78199",
           "installReused": false,
           "nativeCommandCount": 640
@@ -919,7 +919,7 @@
         "reusedBecauseWholeTreeHashMatches": true,
         "historicalRecordedRun": "effectcraft-camera-scene-20261008/effect15-cold/effectcraft-cli-effects",
         "rawCallsEvidence": {
-          "path": "artifacts/effectcraft-camera-scene-20261008/effect15-cold/effectcraft-cli-effects/\u9996\u6b21 \u4f7f\u7528 \u4e2d\u6587/calls.json",
+          "path": "artifacts/effectcraft-camera-scene-20261008/effect15-cold/effectcraft-cli-effects/首次 使用 中文/calls.json",
           "sha256": "3264526438e23895a32726fbcf2ebc45771e46426db4d15a75f6180642da78b6",
           "installReused": false,
           "nativeCommandCount": 640
@@ -947,7 +947,7 @@
         "reusedBecauseWholeTreeHashMatches": true,
         "historicalRecordedRun": "effectcraft-camera-scene-20261008/effect15-cold/effectcraft-cli-export",
         "rawCallsEvidence": {
-          "path": "artifacts/effectcraft-camera-scene-20261008/effect15-cold/effectcraft-cli-export/\u9996\u6b21 \u4f7f\u7528 \u4e2d\u6587/calls.json",
+          "path": "artifacts/effectcraft-camera-scene-20261008/effect15-cold/effectcraft-cli-export/首次 使用 中文/calls.json",
           "sha256": "acfec8b11e7433de13ab780b4cb3f0d609cc0ae79ec8f1a9f642a0231a82934f",
           "installReused": false,
           "nativeCommandCount": 640
@@ -975,7 +975,7 @@
         "reusedBecauseWholeTreeHashMatches": true,
         "historicalRecordedRun": "effectcraft-camera-scene-20261008/effect15-cold/effectcraft-cli-expressions",
         "rawCallsEvidence": {
-          "path": "artifacts/effectcraft-camera-scene-20261008/effect15-cold/effectcraft-cli-expressions/\u9996\u6b21 \u4f7f\u7528 \u4e2d\u6587/calls.json",
+          "path": "artifacts/effectcraft-camera-scene-20261008/effect15-cold/effectcraft-cli-expressions/首次 使用 中文/calls.json",
           "sha256": "758698a77be8a38f6ca2cdc404dff05ea480c180e5b0880833b0f8265b54b10f",
           "installReused": false,
           "nativeCommandCount": 640
@@ -1003,7 +1003,7 @@
         "reusedBecauseWholeTreeHashMatches": true,
         "historicalRecordedRun": "effectcraft-camera-scene-20261008/effect15-cold/effectcraft-cli-footage",
         "rawCallsEvidence": {
-          "path": "artifacts/effectcraft-camera-scene-20261008/effect15-cold/effectcraft-cli-footage/\u9996\u6b21 \u4f7f\u7528 \u4e2d\u6587/calls.json",
+          "path": "artifacts/effectcraft-camera-scene-20261008/effect15-cold/effectcraft-cli-footage/首次 使用 中文/calls.json",
           "sha256": "c3fce78b0584130117aec5b104fb7bf7b5768d7a3e7bee59eb9d2205aacde34f",
           "installReused": false,
           "nativeCommandCount": 640
@@ -1031,7 +1031,7 @@
         "reusedBecauseWholeTreeHashMatches": true,
         "historicalRecordedRun": "effectcraft-camera-scene-20261008/effect15-cold/effectcraft-cli-layers",
         "rawCallsEvidence": {
-          "path": "artifacts/effectcraft-camera-scene-20261008/effect15-cold/effectcraft-cli-layers/\u9996\u6b21 \u4f7f\u7528 \u4e2d\u6587/calls.json",
+          "path": "artifacts/effectcraft-camera-scene-20261008/effect15-cold/effectcraft-cli-layers/首次 使用 中文/calls.json",
           "sha256": "dc9992f1e25bb12bc91779237fa2404c8367c3a7144bda626d25f594f14f0f1a",
           "installReused": false,
           "nativeCommandCount": 640
@@ -1059,7 +1059,7 @@
         "reusedBecauseWholeTreeHashMatches": true,
         "historicalRecordedRun": "effectcraft-camera-scene-20261008/effect15-cold/effectcraft-cli-masks",
         "rawCallsEvidence": {
-          "path": "artifacts/effectcraft-camera-scene-20261008/effect15-cold/effectcraft-cli-masks/\u9996\u6b21 \u4f7f\u7528 \u4e2d\u6587/calls.json",
+          "path": "artifacts/effectcraft-camera-scene-20261008/effect15-cold/effectcraft-cli-masks/首次 使用 中文/calls.json",
           "sha256": "d4a82790027b010c35cb6539f7692f538a6bab3d038bb8b85214a9afd1362e77",
           "installReused": false,
           "nativeCommandCount": 640
@@ -1087,7 +1087,7 @@
         "reusedBecauseWholeTreeHashMatches": true,
         "historicalRecordedRun": "effectcraft-camera-scene-20261008/effect15-cold/effectcraft-cli-project",
         "rawCallsEvidence": {
-          "path": "artifacts/effectcraft-camera-scene-20261008/effect15-cold/effectcraft-cli-project/\u9996\u6b21 \u4f7f\u7528 \u4e2d\u6587/calls.json",
+          "path": "artifacts/effectcraft-camera-scene-20261008/effect15-cold/effectcraft-cli-project/首次 使用 中文/calls.json",
           "sha256": "c976458b03e72037d8af27add502aaa4ef30388e1eac6ed4d027a4b6cd88e06d",
           "installReused": false,
           "nativeCommandCount": 640
@@ -1115,7 +1115,7 @@
         "reusedBecauseWholeTreeHashMatches": true,
         "historicalRecordedRun": "effectcraft-camera-scene-20261008/effect15-cold/effectcraft-cli-puppet",
         "rawCallsEvidence": {
-          "path": "artifacts/effectcraft-camera-scene-20261008/effect15-cold/effectcraft-cli-puppet/\u9996\u6b21 \u4f7f\u7528 \u4e2d\u6587/calls.json",
+          "path": "artifacts/effectcraft-camera-scene-20261008/effect15-cold/effectcraft-cli-puppet/首次 使用 中文/calls.json",
           "sha256": "829f0a95efe9c29643b7f21cf9a542b77841a8dd00e83e0c3f7f3ea2e80a1591",
           "installReused": false,
           "nativeCommandCount": 640
@@ -1143,7 +1143,7 @@
         "reusedBecauseWholeTreeHashMatches": true,
         "historicalRecordedRun": "effectcraft-camera-scene-20261008/effect15-cold/effectcraft-cli-setup",
         "rawCallsEvidence": {
-          "path": "artifacts/effectcraft-camera-scene-20261008/effect15-cold/effectcraft-cli-setup/\u9996\u6b21 \u4f7f\u7528 \u4e2d\u6587/calls.json",
+          "path": "artifacts/effectcraft-camera-scene-20261008/effect15-cold/effectcraft-cli-setup/首次 使用 中文/calls.json",
           "sha256": "14bb030dbb1de56a078385a4065e50d089df7e6376dea4b3c148342353a5aaa2",
           "installReused": false,
           "nativeCommandCount": 640
@@ -1171,7 +1171,7 @@
         "reusedBecauseWholeTreeHashMatches": true,
         "historicalRecordedRun": "effectcraft-camera-scene-20261008/effect15-cold/effectcraft-cli-tracking",
         "rawCallsEvidence": {
-          "path": "artifacts/effectcraft-camera-scene-20261008/effect15-cold/effectcraft-cli-tracking/\u9996\u6b21 \u4f7f\u7528 \u4e2d\u6587/calls.json",
+          "path": "artifacts/effectcraft-camera-scene-20261008/effect15-cold/effectcraft-cli-tracking/首次 使用 中文/calls.json",
           "sha256": "4d9027886958cec5f58749040008b0d838dd164b2b694346e63c39b7d972bdb4",
           "installReused": false,
           "nativeCommandCount": 640
@@ -1199,7 +1199,7 @@
         "reusedBecauseWholeTreeHashMatches": true,
         "historicalRecordedRun": "effectcraft-camera-scene-20261008/effect15-cold/effectcraft-use",
         "rawCallsEvidence": {
-          "path": "artifacts/effectcraft-camera-scene-20261008/effect15-cold/effectcraft-use/\u9996\u6b21 \u4f7f\u7528 \u4e2d\u6587/calls.json",
+          "path": "artifacts/effectcraft-camera-scene-20261008/effect15-cold/effectcraft-use/首次 使用 中文/calls.json",
           "sha256": "7c04532770e8169da53d40a6616e8ea4c3c02dc4004a84556a1b13f97f5c9824",
           "installReused": false,
           "nativeCommandCount": 640

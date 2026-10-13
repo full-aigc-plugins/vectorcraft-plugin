@@ -492,7 +492,7 @@
   "fingerprints": {
     "src/evaluation/technical_review.ts": "59eb77085bde9573e049701748ed7b508c507386a3f7686ebcc75384666e43a3",
     "src/evaluation/review_store.ts": "85d09a6a5bd7b42a1ca15954cb6bc55a67fa72a9b8439ff83bda2fb3a96ddb16",
-    "src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
+    "src/evaluation/delivery_quality.py": "dc4ff4f7dbe3b363e6bc5e865d3be7ca2944e3dcc60ce3ba8bd75fddbec059cd",
     "src/harness/ledger.ts": "c1aa8d6b7ad7c40d5fc0f1a8d87ddae1df0b29144c904690917e5b79355f660d",
     "src/harness/process_registry.ts": "c19a3cb5d42cc33620bc5baeff7db71f1c6daa92f046a112951a7f50f7906162",
     "src/harness/process_runner.py": "7332d0757aa01f03d00697f8eb8d93f849517cab34ea8a1355ba6c9513d5aba2",

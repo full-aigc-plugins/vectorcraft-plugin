@@ -4,7 +4,7 @@ from pathlib import Path
 from unittest.mock import patch
 from urllib.error import HTTPError,URLError
 ROOT=Path(__file__).resolve().parents[1]
-SOURCE=ROOT/'skills/vectorcraft-use/scripts/bootstrap.py'
+SOURCE=ROOT/'skills/vectorcraft-harness/scripts/bootstrap.py'
 class Response:
  url='https://objects.githubusercontent.com/release'
  def __init__(self,error=None,body=b'complete',length=None):self.error=error;self.body=body;self.reads=0;self.headers={} if length is None else {'Content-Length':str(length)}

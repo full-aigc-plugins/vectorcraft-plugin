@@ -36,7 +36,7 @@
   ],
   "fingerprints": {
     "plugin.json": "60e59b0f5f44bf657e0554e25a20c5e99e774af7c2ad9f1602590cd5bff6f712",
-    "skills.lock.json": "e1dfde91051afd5a9dd4d8231171f991df69698e976f3af96b7b8ffd6ed2d528",
+    "skills.lock.json": "8ade690cc48c7353dc15eb92536cab1ff6df17629c20f85e311950c8609a6086",
     "docs/current-identity.json": "99f0a5feda51a8362724f84741402eb939b8169eb05bca91bb97be4966ca337f",
     "docs/skills-source-plan.json": "5be8276b52f7323ae6312071929393ec89749dd18486d2fb957aa3972f5154e0",
     "src/harness/native_environment.ts": "fec69bc8d8aa148feb7708af2ac9e10bc140389cc8e27e24468c8fb9bf318dc0",
@@ -56,7 +56,7 @@
     "docs/evidence/vc-rl-002/source45-native.json": "6e556bba032ec1b39ef4a3ed24d2a501b120eb2bf1052d080bed76228e649647",
     "docs/evidence/vc-rl-002/source45-candidate.json": "1177d6489fc67464db9c6cbf54df208470a0fd0d048b65faea6c0e6c30d1f786",
     "docs/evidence/vc-rl-002/source45-target.log.txt": "5415ea6f877c9e042df84b5021d2295c8ed9ad5255786151d030e230c31b04af",
-    "docs/evidence/vc-rl-002/plugin64-source45-native-candidate.json": "7e7c52234ad8e8b9c95685b23adb0775029a5c46f499fab580ccf1f882379d5c",
+    "docs/evidence/vc-rl-002/plugin64-source45-native-candidate.json": "95515938d780fe15684e223d19e1749dc8764d5aa64e1b3efc94c71a27bb1743",
     "docs/evidence/vc-rl-002/plugin64-source45-python.log.txt": "e1c78c565d0ed623fc78695dfd20487ee05c02ad8cd5ce4b30ad37b3535b339a",
     "docs/evidence/vc-rl-002/plugin64-source45-node.log.txt": "d0a1031b2ba62f35953ffea111acc324c5c8f6988ff72546e0e537d19fd95b8f",
     "skills/vectorcraft-use/scripts/filesystem_scope.py": "1389cbaab07470cae0f00a7cbbe54c74170ca03d4bba49815d03571ad441f3c5",

@@ -12,7 +12,7 @@
 
 Logo、图标与品牌图形需求进入，交付 `.vectorcraft` 及适用的 SVG、PDF、PNG。
 
-当前插件：`0.1.0-dev.64`；技能源：`0.1.0-dev.46`；13 个独立技能。公开标签64已发布，并通过隔离安装与13次独立原生冷启动；完整V1仍开放。
+当前插件：`0.1.0-dev.64`；技能源：`0.1.0-dev.47`；14 个独立技能（13 领域技能 + 1 内置执行 harness）。公开标签64的资格证据仍绑定历史 13 技能载荷，重新鉴定需另行授权发布；完整V1仍开放。
 
 插件55／源41增加SVG实际图像范围及摘要绑定的技术披露门禁；最小任务4.13／4.14通过，4.15当前无界面场景验收通过。[架构](docs/VectorCraft-Exchange-Scope.zh_CN.md)。
 
@@ -141,7 +141,7 @@ Intent + assets
 | Plugin ID | vectorcraft |
 | Metadata version | 0.1.0-dev.64 |
 | Stage | implementation-in-progress |
-| Skills source | vectorcraft-skills / v0.1.0-dev.46 |
+| Skills source | vectorcraft-skills / v0.1.0-dev.47 |
 | Execution | 上游 CLI；ArtCraft 使用子适配器 |
 | Host compatibility | 公开dev.64/source46的Codex安装与13项冷启动已验证；模型派发和完整宿主验收开放 |
 | License | Apache-2.0 (original repository content) |

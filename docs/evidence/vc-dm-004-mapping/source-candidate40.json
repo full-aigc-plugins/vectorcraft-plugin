@@ -25,7 +25,7 @@
     "docs/evidence/artboards40/source-final.log": "59141543abb8be873cfb9b27686e9286602e80ee8b290b8ce9457b35258af64a",
     "scripts/verify_optimization_evidence.py": "765f238633350d23f63433e5938625398866f7610bc0fa24adfbbcdc4067d05f",
     "skill-suite.json": "389bb3b9f4caa3e29e60272d0a3c8877aebd070f1418342acbfd8364f4cfdca4",
-    "skills/vectorcraft-use/references/workflow.md": "8bc6e22c806cdc9097e91485918c17e3626648b54435ac052dba4b1d936ea6cd",
+    "skills/vectorcraft-use/references/workflow.md": "65555d74af51ecc262367a5b2fbbba0c48a875aecd86d93bf674cb5221a0b8db",
     "skills/vectorcraft-use/scripts/artboard_mapping.py": "3b0f83f6a9515f8d8d82c6c96973255b62a7b3a7de3cdde56d678746f1e57638",
     "skills/vectorcraft-use/scripts/workflow.py": "6a6cc338b6a052b6427856acae8a287024270b62ea8c7d964899b076493ae5dc",
     "tests/test_artboard_mapping.py": "714110e13be83b75185c85e7a107b6487e606d979d16e1ed2d3dae888e0bf7c0"

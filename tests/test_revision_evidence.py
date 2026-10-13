@@ -2,13 +2,24 @@
 import contextlib,importlib.util,io,json,shutil,tempfile,unittest
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];REPORT='docs/evidence/vectorcraft-revision-fixed63-20261009.json'
+
+def payload_source(name):
+    """执行载荷收敛在 vectorcraft-harness：沙箱复制的 skills/<domain>/scripts/ 源按字节等价映射。"""
+    if isinstance(name, str):
+        prefix = 'skills/vectorcraft-'
+        if name.startswith(prefix) and '/scripts/' in name and not (ROOT/name).is_file():
+            candidate = 'skills/vectorcraft-harness/scripts/' + name.split('/scripts/', 1)[1]
+            if (ROOT/candidate).is_file():
+                return candidate
+    return name
+
 class RevisionEvidenceTests(unittest.TestCase):
  def setUp(self):
   self.tmp=tempfile.TemporaryDirectory();self.addCleanup(self.tmp.cleanup);self.root=Path(self.tmp.name);self.report=json.loads((ROOT/REPORT).read_text());names=set(self.report['fingerprints'])|{REPORT,'docs/evidence-index.json'}
   for entry in json.loads((ROOT/'docs/evidence-index.json').read_text())['entries']:
    if entry['path']==REPORT:names.update(entry['dependencies'])
   for name in names:
-   p=self.root/name;p.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/name,p)
+   p=self.root/name;p.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/payload_source(name),p)
   spec=importlib.util.spec_from_file_location('revision_verifier',ROOT/'scripts/verify_revision_evidence.py');self.m=importlib.util.module_from_spec(spec);spec.loader.exec_module(self.m)
  def case(self,name):return json.loads((self.root/self.report['cases'][name]).read_text())
  def write(self,name,value):

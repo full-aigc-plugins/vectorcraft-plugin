@@ -5,7 +5,7 @@ VectorCraft 的全局色板是原生品牌色 token。创建 `swatch.new` 时设
 所有命令属于现有原生 CLI。技能的 `workflow.py` 支持 `swatch.new/edit/list`，不创建同名的新 CLI。以实际加载 SKILL.md 目录定位脚本，单独安装本技能即可首次安装与使用。
 
 ```bash
-python3 -I -B "$SKILL_DIR/scripts/workflow.py" \
+python3 -I -B "$HARNESS_DIR/scripts/workflow.py" \
   "$SKILL_DIR/examples/brand-token-assets.json" --output "$FIRST_DELIVERY"
 ```
 
@@ -29,7 +29,7 @@ python3 -I -B "$SKILL_DIR/scripts/workflow.py" \
 ```
 
 ```bash
-python3 -I -B "$SKILL_DIR/scripts/workflow.py" "$REVISION_PLAN" \
+python3 -I -B "$HARNESS_DIR/scripts/workflow.py" "$REVISION_PLAN" \
   --source "$FIRST_DELIVERY" --output "$NEXT_DELIVERY"
 ```
 
@@ -37,7 +37,7 @@ python3 -I -B "$SKILL_DIR/scripts/workflow.py" "$REVISION_PLAN" \
 
 ## 工作流执行时依赖守卫
 
-通过本技能的 `scripts/workflow.py` 执行 `swatch.edit`，或通过该工作流的 `native.command` 调用同一原生命令时，先保存原生修改前检查点，再读取同一会话的修改前后模型。只有显式 `swatch` 引用是消费者，同 RGB 颜色不构成消费关系。非消费者自身属性、对象身份、容器成员顺序和画板范围必须保持。
+通过 vectorcraft-harness 技能的 `scripts/workflow.py` 执行 `swatch.edit`，或通过该工作流的 `native.command` 调用同一原生命令时，先保存原生修改前检查点，再读取同一会话的修改前后模型。只有显式 `swatch` 引用是消费者，同 RGB 颜色不构成消费关系。非消费者自身属性、对象身份、容器成员顺序和画板范围必须保持。
 
 成功交付在 `manifest.json` 中登记 `brandDependencyReport`，指向已摘要绑定的 `brand-dependencies.json`；每项检查记录消费者 ID、受影响对象 ID、错误依赖边和前后模型摘要。检查点仅用于失败恢复：成功时移除临时检查点、保留摘要并记录 `checkpointRetained: false`；不要把该记录当成可打开的额外交付工程。
 

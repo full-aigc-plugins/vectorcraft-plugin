@@ -18,11 +18,13 @@ license: Apache-2.0
 
 将 `SKILL_DIR` 设置为宿主实际加载的本 `SKILL.md` 所在目录（绝对路径）。用户级安装可能位于 `~/.agents/skills/vectorcraft-cli-setup`，项目级可能位于 `.agents/skills/vectorcraft-cli-setup`，插件可能位于其 `skills/vectorcraft-cli-setup` 或宿主缓存目录；以实际加载路径为准，不按当前工作目录猜测，也不搜索后随意选择重复版本。技能目录与 CLI 的用户数据安装目录是两个独立位置。
 
+执行实现收敛在内置的 **vectorcraft-harness** 技能（随插件捆绑安装；单独安装用 `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-harness`）。将 `HARNESS_DIR` 设置为该技能实际加载目录（绝对路径）；本技能的 `SKILL_DIR` 只用于读取自身的 `examples/` 与 `references/`。
+
 ```bash
 : "${SKILL_DIR:?请先设置为本 SKILL.md 的实际所在目录}"
-python3 -I -B "$SKILL_DIR/scripts/bootstrap.py"
-python3 -I -B "$SKILL_DIR/scripts/cli.py" -- --version
-python3 -I -B "$SKILL_DIR/scripts/cli.py" -- commands
+python3 -I -B "$HARNESS_DIR/scripts/bootstrap.py"
+python3 -I -B "$HARNESS_DIR/scripts/cli.py" -- --version
+python3 -I -B "$HARNESS_DIR/scripts/cli.py" -- commands
 ```
 
 CLI argv 在 `--` 后，原生子命令必须放首位。安装参数放分隔符前；`--runtime-home` 可隔离缓存。锁定制品摘要失败、损坏安装或不支持平台时停止；不改 PATH、不执行浮动升级。原生帮助入口是 `help`；launcher 自身 `--help` 只说明启动参数。
@@ -35,7 +37,7 @@ CLI argv 在 `--` 后，原生子命令必须放首位。安装参数放分隔�
 
 不修改 PATH、不使用 sudo；版本损坏保留并报错，不自动升级。
 
-原生组合与源工程修订使用本技能自带 `scripts/workflow.py`；读取 [工作流合同](references/workflow.md)，模板在本技能 examples 内。只修改授权对象，原生工程和依赖素材保留，派生格式损失读取 [交换报告](references/exchange-loss.md)。
+原生组合与源工程修订使用 vectorcraft-harness 技能的 `scripts/workflow.py`；读取 [工作流合同](references/workflow.md)，模板在本技能 examples 内。只修改授权对象，原生工程和依赖素材保留，派生格式损失读取 [交换报告](references/exchange-loss.md)。
 
 ## 核验与恢复
 
@@ -58,14 +60,14 @@ PDF 工作流绑定工程创建日期；缺少创建日期时保留首次导出�
 当前技能自带完整目录的参数说明与同会话入口，不受创作模板白名单限制。读取 [完整使用指南](references/command-usage.md)，按需查询 [命令参考](references/command-reference.md)；每条指令有技能路由、前置观察及验收状态。
 
 ```bash
-python3 -I -B "$SKILL_DIR/scripts/commands.py" list --filter QUERY
-python3 -I -B "$SKILL_DIR/scripts/commands.py" describe COMMAND_ID
-python3 -I -B "$SKILL_DIR/scripts/commands.py" run "$SKILL_DIR/examples/commands-advanced.json" --output /absolute/new-command-result
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" list --filter QUERY
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe COMMAND_ID
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" run "$SKILL_DIR/examples/commands-advanced.json" --output /absolute/new-command-result
 ```
 
 新入口执行前检查真实注册表与当前可执行状态，保留返回值引用和逐步回执；语义错误或超时不冒充成功。目录覆盖与直接原生使用不等于所有指令、GUI、交付或 Art 编排已验收。
 
-完整工作流命令网关见 [使用说明](references/native-workflow.md)。固定 CLI 的版本与制品摘要以本技能自带 `scripts/runtime.lock.json` 为准；技能包版本以对应发布标签为准。独立安装复验与全量逐命令验收分别记录，不以发布替代验收。
+完整工作流命令网关见 [使用说明](references/native-workflow.md)。固定 CLI 的版本与制品摘要以 vectorcraft-harness 技能自带的 `scripts/runtime.lock.json` 为准；技能包版本以对应发布标签为准。独立安装复验与全量逐命令验收分别记录，不以发布替代验收。
 
 原生渐变、全局色板联动、多重填色与明确活动行场景，使用本技能的[可执行创建／返工说明](references/appearance-gradient.md)。
 

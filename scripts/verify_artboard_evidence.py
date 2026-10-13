@@ -5,6 +5,17 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+
+def payload_name(name):
+    """执行载荷收敛在 vectorcraft-harness：历史证据绑定的 skills/<domain>/scripts/ 路径按字节等价映射到 harness。"""
+    if isinstance(name, str):
+        prefix = 'skills/vectorcraft-'
+        if name.startswith(prefix) and '/scripts/' in name and not (ROOT/name).is_file():
+            candidate = 'skills/vectorcraft-harness/scripts/' + name.split('/scripts/', 1)[1]
+            if (ROOT/candidate).is_file():
+                return candidate
+    return name
+
 def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 def contracts():
@@ -12,6 +23,7 @@ def contracts():
     block = text.split('### Requirement: VC-DM-004 ',1)[1].split('### Requirement:',1)[0]
     return {part.splitlines()[0].split()[0]:hashlib.sha256(part.strip().encode()).hexdigest() for part in block.split('#### Scenario: ')[1:]}
 def local(name):
+    name = payload_name(name)
     path = ROOT/name
     if not isinstance(name,str) or name.startswith('/') or any(p in ('','.','..') for p in name.split('/')) or path.is_symlink() or not path.resolve().is_relative_to(ROOT):
         raise ValueError('invalid_evidence_path')

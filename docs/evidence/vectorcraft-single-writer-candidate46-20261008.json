@@ -44,7 +44,7 @@
   },
   "fingerprints": {
     "src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
-    "src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
+    "src/evaluation/delivery_quality.py": "dc4ff4f7dbe3b363e6bc5e865d3be7ca2944e3dcc60ce3ba8bd75fddbec059cd",
     "src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
     "src/evaluation/revision_cycle.ts": "019a80ddf7ca9fa80737934ad65efb3cf5e66c17b180e25d32091123ac25185f",
     "src/evaluation/technical_review.ts": "59eb77085bde9573e049701748ed7b508c507386a3f7686ebcc75384666e43a3",
@@ -91,11 +91,11 @@
     "schemas/vector-review-request.schema.json": "15951f56b14316c1b6d06b58194c178fbd13c20c85e1ce1e6e492c204ec3f4cd",
     "schemas/vector-revision-policy.schema.json": "a68d6f6a5d639864edd34a24bd626f8668c49a6f7d8121febcc71353d4251073",
     "plugin.json": "8520562da05f9d995f6b8d0fed78c307c0d83d99e0f00d2459d02487779939e8",
-    "skills.lock.json": "37cf4e7a514193ff10b1f051915b931874f05a8f693c87e67d904657f040464e",
+    "skills.lock.json": "8ade690cc48c7353dc15eb92536cab1ff6df17629c20f85e311950c8609a6086",
     "tests/source_dependencies.test.ts": "5af5d34ee7ba482919200d881d6dd0741edffacba3f2e2e6e6602354e60f754b",
     "tests/output_reservation.test.ts": "a168d15ad1874036f9eea090692625e855d1a0d154505007a89544f6091bfe43",
     "openspec/changes/establish-v1-plugin/specs/task-execution/spec.md": "aed9b5e79b697a0abebc822505ce2b28facfe809895b071ee487cd076cd14c5c",
-    "docs/evidence/single-writer46/crash.json": "6d90345654dab621f70ede99ae5e1238ce9ab3d7eba4998aa8e7c6d75f008213",
+    "docs/evidence/single-writer46/crash.json": "5e1d4b8c98b3f70e67d3aea32bb4053c379f2aa043a4b14b2b902c66f5f2d87b",
     "docs/evidence/single-writer46/red.log": "2c1850c0d1b6ed28f36e1b60d5e155a9ae600d8f6c3d313ca60e6e58409b4cb0",
     "docs/evidence/single-writer46/node.log": "6d16513809a563b1ed6c08ab61a4c5aae6adee4f770797dc6ea80b9bf89ebe10",
     "docs/evidence/single-writer46/parent-link-red.log": "a1af2d2548499aed113ec0f2fd7236c0e401bc1a77fd54bf83fb0bb59e1809c2",
@@ -104,7 +104,7 @@
     "docs/evidence/single-writer46/gui-snapshots.json": "68969048047d4f5d318a5f35a82e7eb9834978765a1e8a2efc48365e235d825c",
     "docs/evidence/single-writer46/output-red.log": "e56aaeb0fe293c225391e9954375e3ecfa7758a0ba1c69f39f27532bb73cc4d4",
     "docs/evidence/single-writer46/python.log": "767d432e8a8276fa9eda5141d849af1c2f664f98946aad8895e7f97270eae95d",
-    "docs/evidence/single-writer46/contract.json": "32ef452051a1d09e1fe2303c8379c956a1d1f0daaa5970e0f6900b369a04be2a"
+    "docs/evidence/single-writer46/contract.json": "da81cf5d6e0cdbfa592f5c649ac58fe2f4fc3c89539047a847d778cee24512d3"
   },
   "excluded": [
     "manual human GUI interaction",

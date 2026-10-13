@@ -20,7 +20,7 @@
   "scenarioMatrix": "docs/evidence/vc-dm-001/scenario-matrix-fixed51.json",
   "fingerprints": {
     "src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
-    "src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
+    "src/evaluation/delivery_quality.py": "dc4ff4f7dbe3b363e6bc5e865d3be7ca2944e3dcc60ce3ba8bd75fddbec059cd",
     "src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
     "src/evaluation/revision_cycle.ts": "019a80ddf7ca9fa80737934ad65efb3cf5e66c17b180e25d32091123ac25185f",
     "src/evaluation/technical_review.ts": "59eb77085bde9573e049701748ed7b508c507386a3f7686ebcc75384666e43a3",
@@ -79,14 +79,14 @@
     "schemas/vector-revision-policy.schema.json": "a68d6f6a5d639864edd34a24bd626f8668c49a6f7d8121febcc71353d4251073",
     "docs/evidence/vc-dm-001/host.json": "f15290634c03e1d882cb905d5f54a68ae4dd733b9f181912e3a71665337f8047",
     "docs/evidence/vc-dm-001/scenario-matrix-fixed51.json": "b20bda7b6ede3a69f200e0c171ac97f16bcb13f4e100bb63484105700f08bd39",
-    "docs/evidence/vc-dm-001/native.json": "0a9d122e0e0e23eefa9562d91479bbb1b8ce99748d6d37c6abf8daf6bc5bd3f7",
+    "docs/evidence/vc-dm-001/native.json": "d758f25de3702a84272f0191237bfb5b4cea22cee78113f9f06df1a72af6239d",
     "docs/evidence/vc-dm-001/unit.log": "fba5643f46a95885b6cac9dbefbb063c735d71efe0744fd8283a8ea152eb27c2",
     "docs/evidence/vc-dm-001/groups.json": "5d781c52933c42b4d36943b64a9f770a0966a4b2154c84ace3eeebd2f0acdb41",
     "plugin.json": "196e82d28b763dd3ad69a5bbd662cb5255b6b671d3d895e81ae477a41ca5cb0d",
-    "skills.lock.json": "14952869286b68ee7080b75bcc5619de7f78e73b820c54d727d154b0745e7ca5",
+    "skills.lock.json": "8ade690cc48c7353dc15eb92536cab1ff6df17629c20f85e311950c8609a6086",
     "tests/geometry.test.ts": "c999edb7e17e97b04f3fc2d1165cd49205da3ec2286207d1d4a4ee5535186fa6",
     "scripts/qa/geometry_fixed.ts": "1fef026dcacd1b3072bf5468a681a5198fd9a534c6204bdd16b15cc1ca5bae96",
-    "scripts/verify_geometry_evidence.py": "55fec120589a7ca41bd3ee0d2d3bc80278f66b9e74b7b3d8064dd33e4ccf3890",
+    "scripts/verify_geometry_evidence.py": "7e80b3762faa69dc0aa86ecbc204fd231ebdd213468987f21ac64f7564f14692",
     "openspec/changes/establish-v1-plugin/specs/domain-workflow/spec.md": "1b526344cfeb85e315ed348e6b9172b86d78b5319f50b4a60e324d5ec6db1602"
   },
   "tasksClosed": [

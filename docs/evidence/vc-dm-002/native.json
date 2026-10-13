@@ -182,7 +182,7 @@
     "skills/vectorcraft-use/scripts/mcp_session.py": "15395ead853349a24feab6ce364e5bc9795add12e1dbe62e8ed5718ffdd1ccd2",
     "skills/vectorcraft-use/scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
     "skills/vectorcraft-use/scripts/execution_control.py": "0acaa8fa01aae3689bb8c460efdd9bb19578d33e1572e24dc8dea00ef38ec008",
-    "skills.lock.json": "14952869286b68ee7080b75bcc5619de7f78e73b820c54d727d154b0745e7ca5",
+    "skills.lock.json": "8ade690cc48c7353dc15eb92536cab1ff6df17629c20f85e311950c8609a6086",
     "plugin.json": "196e82d28b763dd3ad69a5bbd662cb5255b6b671d3d895e81ae477a41ca5cb0d"
   },
   "installedFilesSha256": "dbc7ce52dc5693e90846594d9c67ff8b309261fb24210903962c2b40e8d64ccb",

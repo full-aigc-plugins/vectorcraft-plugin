@@ -54,29 +54,6 @@
 - **THEN** 核验二进制摘要及版本输出，读取同一只读MCP会话的命令参数签名和工具inputSchema；缺失或变化时拒绝激活
 - **AND** headless与bridge独立绑定，不把空文档的enabled状态当作签名，也不静默替换模式
 
-#### Scenario: [VC-RT-002-DRAIN] 激活与任务登记竞争
-
-- **WHEN** 同一Harness账本有ready、running、reconciling、cancel_requested任务或未确认停止的原生进程组
-- **THEN** 拒绝激活并保留旧选择；激活与新任务登记共用写事务，任务不能抢入排空检查与选择切换之间
-- **AND** 保留上次选择的探测记录；不兼容当前账本schema的回退被拒绝，不在激活动作中自动迁移状态或删除旧版本目录
-
-
-#### Scenario: [VC-RT-002-DEFAULT] 默认首用在编辑前探测
-
-- **WHEN** 普通Harness入口收到新的工作流任务
-- **THEN** 沿用固定技能的计划验证与版本安装，核验当前实际命令参数签名和MCP工具schema后才登记任务与编辑意图
-- **AND** 已有选择不被隐式升级；相同版本的并发任务复用选择，探测期间选择变化时拒绝覆盖；相同任务键只核验原回执，不重放探测或编辑
-
-
-#### Scenario: [VC-RT-002-STATE-BACKUP] 状态格式迁移保留旧账本
-
-- **WHEN** 插件42打开schema1或schema2的旧账本
-- **THEN** 先保留包含已提交WAL的只读一致快照和SHA256，再在单一事务内迁移到schema3；备份失败不得迁移
-- **AND** 原任务、已消耗预算与选择保留；旧schema2阅读器拒绝schema3，未声明schema3兼容的旧选择须排空后重新激活
-- **AND** 原生登记可显式绑定bridge模式，默认headless；Controller继续只执行headless，禁止隐式模式替换
-- **AND** 升级前已打开的旧数据库连接也不能绕过选择的模式、运行时摘要和状态schema约束；插入失败不留下新任务或消耗预算
-
-
 ### Requirement: VC-DS-002 Verified Vector desktop export alias
 The standalone full-command gateway SHALL map `file.export` to `document.export` only in VectorCraft bridge mode, because the pinned official desktop advertises the engine operation while the CLI advertises its host alias. The gateway SHALL validate the complete mapped registry, check the actual operation's enabled state in the same session, preserve requested and backend command identities in its receipt, and fail on any unrelated missing command. Headless command identity SHALL remain unchanged.
 

@@ -15,13 +15,10 @@ def identity(root=ROOT):
         raise ValueError('one_skill_authority_required')
     source = lock['sources'][0]
     skills = {}
-    runtime, desktop = None, None
+    # 执行载荷收敛在 vectorcraft-harness：运行时与桌面锁只在 harness，且必须与领域技能引用保持一致。
+    runtime = read('skills/vectorcraft-harness/scripts/runtime.lock.json')
+    desktop = read('skills/vectorcraft-harness/scripts/desktop.lock.json')
     for name in source['skills']:
-        cli = read('skills/'+name+'/scripts/runtime.lock.json')
-        gui = read('skills/'+name+'/scripts/desktop.lock.json')
-        if runtime is not None and (runtime != cli or desktop != gui):
-            raise ValueError('standalone_runtime_identity_drift: '+name)
-        runtime, desktop = cli, gui
         skills[name] = source['sha256'][name]
     baseline = read('runtime/vectorcraft-cli.lock.json')
     if baseline.get('role') != 'historical-baseline' or baseline.get('executionAuthority') != 'skills/*/scripts/runtime.lock.json':

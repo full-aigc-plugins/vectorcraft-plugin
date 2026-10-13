@@ -12,7 +12,7 @@
   ],
   "fingerprints": {
     "plugin.json": "bbd28acf3caedbd4e8f8cc61f960c060b7b59f21c6dcf5f36f3878ae7722461b",
-    "skills.lock.json": "d3cfa17086478e3116618e33c355555be6631879c880d67437ec15ce95523c00",
+    "skills.lock.json": "8ade690cc48c7353dc15eb92536cab1ff6df17629c20f85e311950c8609a6086",
     "docs/current-identity.json": "81c75f5820403012dbb2c6fa90a6788fd209e8e1d4f05793ba9c0cb1a6ea9cf2",
     "scripts/qa/brand_asset_variants.py": "1c9084fc3b43c98e8b28eb414e7e900301e2f4aea7f3b38a2d0420490ad1e876",
     "docs/evidence/vc-dm-006/inheritance-green.log.txt": "131fc58c566687757b19a01da0e7b69c63f7b5d2106f7d1ff94f3d6902c22e24",

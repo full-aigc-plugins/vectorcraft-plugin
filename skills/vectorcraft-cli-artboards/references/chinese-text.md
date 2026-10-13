@@ -3,7 +3,7 @@
 本技能自带 `examples/chinese-text.json`，在 macOS arm64 上使用已安装的 `Songti SC` 字体创建中文标题和独立英文页脚。以实际加载的 `SKILL.md` 所在绝对目录为 `SKILL_DIR`，无需兄弟技能：
 
 ```bash
-python3 -I -B "$SKILL_DIR/scripts/workflow.py" \
+python3 -I -B "$HARNESS_DIR/scripts/workflow.py" \
   "$SKILL_DIR/examples/chinese-text.json" --output "$FIRST_DELIVERY"
 ```
 

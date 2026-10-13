@@ -12,7 +12,7 @@ Four-domain RT-001 runtime source/integrity acceptance now covers every current 
 
 Create Logo, icon and brand assets as `.vectorcraft` with applicable SVG, PDF and PNG exports.
 
-Current plugin: `0.1.0-dev.64`; skill source: `0.1.0-dev.46`; 13 independent skills. Published public tag64 has passed isolated installation and13 independent native cold starts;full V1 remains open.
+Current plugin: `0.1.0-dev.64`; skill source: `0.1.0-dev.47`; 14 independent skills (13 domain skills + 1 built-in execution harness). Published public tag64 qualification remains bound to the historical 13-skill payload; re-qualification requires a separately authorized release. Full V1 remains open.
 
 Plugin55/source41 adds actual SVG image scope and a digest-bound technical disclosure guard. Minimum tasks4.13/4.14 pass; 4.15 qualifies for its current headless scenarios. [Architecture](docs/VectorCraft-Exchange-Scope.en.md).
 
@@ -141,7 +141,7 @@ Intent + assets
 | Plugin ID | vectorcraft |
 | Metadata version | 0.1.0-dev.64 |
 | Stage | implementation-in-progress |
-| Skills source | vectorcraft-skills / v0.1.0-dev.46 |
+| Skills source | vectorcraft-skills / v0.1.0-dev.47 |
 | Execution | Upstream CLI; ArtCraft uses child adapters |
 | Host compatibility | Public64/source46 Codex installation and13 cold starts verified;model routing/full-host acceptance open |
 | License | Apache-2.0 (original repository content) |

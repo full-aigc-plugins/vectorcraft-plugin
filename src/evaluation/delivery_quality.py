@@ -18,7 +18,7 @@ MAX_TOTAL=256*1024*1024
 
 def exchange_module():
     """从不可变技能快照读取源码，不向安装目录写入Python缓存。"""
-    path=Path(__file__).resolve().parents[2]/'skills/vectorcraft-use/scripts/exchange_loss.py'
+    path=Path(__file__).resolve().parents[2]/'skills/vectorcraft-harness/scripts/exchange_loss.py'
     spec=importlib.util.spec_from_file_location('quality_exchange',path)
     module=importlib.util.module_from_spec(spec)
     exec(compile(path.read_bytes(),str(path),'exec'),module.__dict__)

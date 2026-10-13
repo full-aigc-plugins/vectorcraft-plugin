@@ -7,7 +7,7 @@ import {nativeEnvironment} from './native_environment.ts';
 /** 可信宿主读取入口：固定技能读取器持有描述符，冻结根不会随目录替换扩张。 */
 function inspect(path:string|string[],roots:string[],operation:'file-read'|'file-digest'|'file-digests'|'file-copy',copy?:{target:string,writeRoot:string,expected:string}):any {
  const helper=fileURLToPath(new URL('./asset_digest.py',import.meta.url));
- const reader=fileURLToPath(new URL('../../skills/vectorcraft-use/scripts/asset_reader.py',import.meta.url));
+ const reader=fileURLToPath(new URL('../../skills/vectorcraft-harness/scripts/asset_reader.py',import.meta.url));
  const result=spawnSync('python3',['-I','-B',helper,reader],{input:JSON.stringify({...(Array.isArray(path)?{paths:path}:{path}),roots,operation,...copy}),encoding:'utf8',env:nativeEnvironment(),timeout:30000,maxBuffer:operation==='file-read'?96*1024*1024:operation==='file-digests'?32*1024*1024:4096});
  if(result.error)throw new Error('authorized_read_process_failed');
  let reply:any;try{reply=strictJson(result.stdout);}catch{throw new Error('authorized_read_reply_invalid');}

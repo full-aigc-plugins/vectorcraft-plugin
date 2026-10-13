@@ -2,12 +2,23 @@
 import copy,importlib.util,json,shutil,tempfile,unittest
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
+
+def payload_source(name):
+    """执行载荷收敛在 vectorcraft-harness：沙箱复制的 skills/<domain>/scripts/ 源按字节等价映射。"""
+    if isinstance(name, str):
+        prefix = 'skills/vectorcraft-'
+        if name.startswith(prefix) and '/scripts/' in name and not (ROOT/name).is_file():
+            candidate = 'skills/vectorcraft-harness/scripts/' + name.split('/scripts/', 1)[1]
+            if (ROOT/candidate).is_file():
+                return candidate
+    return name
+
 REPORT='docs/evidence/vectorcraft-command-guide-fixed64-20261009.json'
 class GuideEvidenceTests(unittest.TestCase):
  def setUp(self):
   self.tmp=tempfile.TemporaryDirectory();self.addCleanup(self.tmp.cleanup);self.root=Path(self.tmp.name)
   for name in (REPORT,'docs/current-identity.json','docs/evidence/vectorcraft-public-tag64-install-20261009.json','skills/vectorcraft-use/references/command-coverage.json',*[f'scripts/qa/{n}.py' for n in ('command_family_window_diagnostic','command_family_guide','command_guide','command_guide_render','command_layer_render','command_shape','command_paint')]):
-   p=self.root/name;p.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/name,p)
+   p=self.root/name;p.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/payload_source(name),p)
   s=importlib.util.spec_from_file_location('guide_evidence',ROOT/'scripts/verify_command_families.py');self.m=importlib.util.module_from_spec(s);s.loader.exec_module(self.m)
  def change(self,fn):
   p=self.root/REPORT;r=json.loads(p.read_text());fn(r);p.write_text(json.dumps(r))

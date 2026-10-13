@@ -28,9 +28,9 @@ Scale parameters use percentages, rotation uses counter-clockwise degrees, and a
 Preserve a checkpoint, build the authorized object set and inspect all candidates from same-color selection. Save/reopen the native project and compare unrelated variants. Track new object IDs when making copies.
 
 ```bash
-python3 -I -B "$SKILL_DIR/scripts/commands.py" describe select.same.fillColor
-python3 -I -B "$SKILL_DIR/scripts/commands.py" describe select.set
-python3 -I -B "$SKILL_DIR/scripts/commands.py" describe object.scale
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe select.same.fillColor
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe select.set
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe object.scale
 ```
 
 交付原生工程、适用的 SVG/PNG/PDF 和对象修改记录；检查边界、笔画、文字可编辑性、画板范围及导出像素。完整选择与对象命令逐项执行验收仍未完成。

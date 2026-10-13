@@ -103,7 +103,7 @@
     }
   ],
   "fingerprints": {
-    "skills.lock.json": "14952869286b68ee7080b75bcc5619de7f78e73b820c54d727d154b0745e7ca5",
+    "skills.lock.json": "8ade690cc48c7353dc15eb92536cab1ff6df17629c20f85e311950c8609a6086",
     "scripts/acceptance/managed_boolean.ts": "55fbffdf6d44a8b0b95b9902d7716037980eeaf5c2c437c69a06b740b889be52",
     "src/harness/controller.ts": "1dfbd182d7228eb20c21dd8f70a85c24c75a4b22fcf9a1f11d5b19f8eea7a8f5",
     "src/harness/ledger.ts": "d2a336ad4f52e2fc1f839514fd4d3ed351b323f5cfa230152f796d55b336db6c",

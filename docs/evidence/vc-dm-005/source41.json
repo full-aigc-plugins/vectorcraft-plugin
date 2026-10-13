@@ -15,7 +15,7 @@
     "scripts/verify_optimization_evidence.py": "f37f8c7d317df4ae59fa05094e6bd391c8a7d3c4bbe0983b93156f9928013218",
     "tests/test_svg_raster_scope.py": "d4a3e8d596209c6b8dfc2e1a1be5459612e3506513efc2bbbe516a1374e35639",
     "skills/vectorcraft-use/scripts/exchange_loss.py": "7fdee028008a20bd88bb1e27334f326a7fcc774a079b1621a1c0d06bebfd8f29",
-    "skills/vectorcraft-use/references/workflow.md": "b56eae84aded6e13a75e4c709fd14570d6bf5c472a682d5ba2ec4eb9345280b3",
+    "skills/vectorcraft-use/references/workflow.md": "65555d74af51ecc262367a5b2fbbba0c48a875aecd86d93bf674cb5221a0b8db",
     "docs/evidence/exchange41/scope-green.log.txt": "9f169aa04896ef0203477ff61d8d57406ec0dab00b71ec15cf38cdae22509147",
     "docs/evidence/exchange41/scope-red.log.txt": "8e78edc20b7bf5ecfb6a9a713e0a1c78b44bb0036bd960dff32ef05ef4c19b79",
     "docs/evidence/exchange41/source-regression.log.txt": "6624237e70384334d402f4643ea463f177e53941fff77e7b6fe25a863726d305",

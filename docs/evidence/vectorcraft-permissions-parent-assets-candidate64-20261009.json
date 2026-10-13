@@ -38,7 +38,7 @@
     "project-status.json": "0e185b02366ee4f552f6908bb8fb21ce2208131e486e11411b1ffad58392f27e",
     "scripts/evidence_index.py": "b6cbaf8147b6132459b1c12dba0295f02a47aa8e2bd771d695239ad2c4c915c4",
     "scripts/qa/asset_permissions.ts": "57489d9ab9d4203bcfe8f549d3a110e8c62d4c256c9956bdc134e51f26dbabcf",
-    "skills.lock.json": "44bd17666c6ef2a79641245a239a4f29a1f4a79162bba0de8b8329347f0a8fd1",
+    "skills.lock.json": "8ade690cc48c7353dc15eb92536cab1ff6df17629c20f85e311950c8609a6086",
     "skills/vectorcraft-use/scripts/asset_reader.py": "d067708d2355c0aa4415027ae2cff53c5559611c90854447fd7595b6535939f3",
     "src/harness/asset_digest.py": "bd7fdb17db386913d3870af9d3417d87ce6a955e5c462d60796e298a820e1af2",
     "src/harness/asset_digest.ts": "f1ad1d239eb56da52d29098b69b96b62677293c3542d95a3a999e00e2c69789d",

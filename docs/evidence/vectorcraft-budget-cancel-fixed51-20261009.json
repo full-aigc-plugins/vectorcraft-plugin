@@ -20,7 +20,7 @@
   "scenarioMatrix": "docs/evidence/vc-tx-003/scenario-matrix-fixed51.json",
   "fingerprints": {
     "src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
-    "src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
+    "src/evaluation/delivery_quality.py": "dc4ff4f7dbe3b363e6bc5e865d3be7ca2944e3dcc60ce3ba8bd75fddbec059cd",
     "src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
     "src/evaluation/revision_cycle.ts": "019a80ddf7ca9fa80737934ad65efb3cf5e66c17b180e25d32091123ac25185f",
     "src/evaluation/technical_review.ts": "59eb77085bde9573e049701748ed7b508c507386a3f7686ebcc75384666e43a3",
@@ -78,21 +78,21 @@
     "schemas/vector-review-request.schema.json": "15951f56b14316c1b6d06b58194c178fbd13c20c85e1ce1e6e492c204ec3f4cd",
     "schemas/vector-revision-policy.schema.json": "a68d6f6a5d639864edd34a24bd626f8668c49a6f7d8121febcc71353d4251073",
     "docs/evidence/vc-tx-003/host.json": "f15290634c03e1d882cb905d5f54a68ae4dd733b9f181912e3a71665337f8047",
-    "docs/evidence/vc-tx-003/deadline.json": "9ddc1f4bfb435f0e0f4499de2d7331de05007e0241bd67e8b97035b980facc73",
-    "docs/evidence/vc-tx-003/late.json": "79110aab24317463f36ccaacc782ab7112f1c23577a15b54a9f3e601d82cd326",
+    "docs/evidence/vc-tx-003/deadline.json": "213a94dbc4c648e14bcb9cb844b20b8d4ec690f8e39d7305a2f3623f0f34dbe7",
+    "docs/evidence/vc-tx-003/late.json": "f097bd243b24cefc552f4a09798e0af5fb410315418abc229c8c3db0aee6bb42",
     "docs/evidence/vc-tx-003/scenario-matrix-fixed51.json": "1a9781ee146898c1d3ab66dde74cf5697be439afcb91df620d776820959470ab",
     "docs/evidence/vc-tx-003/node.log": "116a62f2dae52e2b2ee356f9e38d09907c6d7d0d8ebb516dc1179c27b39363ba",
-    "docs/evidence/vc-tx-003/shared.json": "e5a9ee972ea8c7b54b5f05e6c757d7a1195ee8a68f6fbbf513b07ec7fe7cb0cc",
-    "docs/evidence/vc-tx-003/bytes.json": "4088bd790030dc45b8e2bd8c76e8298dae871f426233cf51ee25530e67506a9c",
+    "docs/evidence/vc-tx-003/shared.json": "58baa17b886c406547cdf0b88dc52ecf918a221382b4fc57b44a3fef40a5f67d",
+    "docs/evidence/vc-tx-003/bytes.json": "93ef3dda03bbfd8af480100b001270a0879ca62c44d59115d0d194a0adc62fed",
     "docs/evidence/vc-tx-003/groups.json": "a6c2fc9a17aba789fef1398933a41400b41e72b2cc8676aa89a2bb0f7177f6d2",
-    "docs/evidence/vc-tx-003/attempt.json": "e882420c5051bf5818ede7ae477ed24680626142625b93a7945cf2ed9fd6a5d9",
+    "docs/evidence/vc-tx-003/attempt.json": "095cc8a6264a3b9063eff15449ee76cc371711c258d948e2c48f6767eed5a4bb",
     "docs/evidence/vc-tx-003/python.log": "0533a559b192b845c893945b12d28e90555ede6e9533026baff63c0ee9207218",
     "plugin.json": "196e82d28b763dd3ad69a5bbd662cb5255b6b671d3d895e81ae477a41ca5cb0d",
-    "skills.lock.json": "14952869286b68ee7080b75bcc5619de7f78e73b820c54d727d154b0745e7ca5",
+    "skills.lock.json": "8ade690cc48c7353dc15eb92536cab1ff6df17629c20f85e311950c8609a6086",
     "tests/shared_cancellation.test.ts": "d27ef99c7400b751930f37abd02de6568c230e121bf344040cd60b5e27779871",
     "tests/deadline_resume.test.ts": "06cc2044fd0c13ed1924639b00a2f3d48b3e63a27db3adc3cfd9978444ffca11",
     "openspec/changes/establish-v1-plugin/specs/task-execution/spec.md": "adc11c24d9db2b2ccee4b527409234b112781a44cdb2211e643acc83f4d8bdd2",
-    "scripts/verify_budget_cancel_evidence.py": "bafbea13bdd8043a2febefa8c794c0b2f74d95614edd65256c6330bc818b6c3c"
+    "scripts/verify_budget_cancel_evidence.py": "d3f8bd7de000836e1fe4bb950d52b29e4db5ed0d8065811da33ba77ed97e4569"
   },
   "tasksClosed": [
     "3.9"

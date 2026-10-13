@@ -14,9 +14,9 @@
     "docs/evidence/vc-dm-005/fixed55-host.json": "b2cf3239db66592d2fa4b43a743b39c77c314478d34532f7a3f3df6ab31a4a4b",
     "docs/evidence/vc-dm-005/fixed55-native.json": "2715866a6a15e64c31012274d770a59155b69869b9abf19abf2f7e41421f13ba",
     "plugin.json": "8c09f2fc1da8f218e20936dbdb5ddff884e92c985502eb016f32a17b2e20dd84",
-    "skills.lock.json": "0035adfa3fc09aae071c37cc03b78e307d9a92f0af947ffa4603a6da2f42cd06",
+    "skills.lock.json": "8ade690cc48c7353dc15eb92536cab1ff6df17629c20f85e311950c8609a6086",
     "docs/current-identity.json": "43742de0dcd2b2fd39ea182525d2640f80918e966224231b3c39d3c2785d81cf",
-    "src/evaluation/delivery_quality.py": "f3bb72202c70a8db138881b2ff89456d66c128103d5ed9a8a2006d876eca75dc",
+    "src/evaluation/delivery_quality.py": "dc4ff4f7dbe3b363e6bc5e865d3be7ca2944e3dcc60ce3ba8bd75fddbec059cd",
     "scripts/qa/exchange_formats.py": "3f2e25009080470f6ee61fba32c3091c0c79d8b07fec29b5f618cc2d9d44d97f"
   },
   "skillsUnchanged": 13,

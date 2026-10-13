@@ -2,18 +2,29 @@
 import contextlib,importlib.util,io,json,shutil,tempfile,unittest
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
+
+def payload_source(name):
+    """执行载荷收敛在 vectorcraft-harness：沙箱复制的 skills/<domain>/scripts/ 源按字节等价映射。"""
+    if isinstance(name, str):
+        prefix = 'skills/vectorcraft-'
+        if name.startswith(prefix) and '/scripts/' in name and not (ROOT/name).is_file():
+            candidate = 'skills/vectorcraft-harness/scripts/' + name.split('/scripts/', 1)[1]
+            if (ROOT/candidate).is_file():
+                return candidate
+    return name
+
 REPORT='docs/evidence/vectorcraft-brand-variants-fixed56-20261009.json'
 class BrandVariantEvidenceTests(unittest.TestCase):
  def setUp(self):
   self.temp=tempfile.TemporaryDirectory();self.addCleanup(self.temp.cleanup);self.root=Path(self.temp.name)
   self.report=json.loads((ROOT/REPORT).read_text())
   for name in set(self.report['fingerprints'])|{REPORT,'docs/evidence-index.json'}:
-   p=self.root/name;p.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/name,p)
+   p=self.root/name;p.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/payload_source(name),p)
   s=importlib.util.spec_from_file_location('brand_verify_fixture',ROOT/'scripts/verify_brand_variant_evidence.py');self.m=importlib.util.module_from_spec(s);s.loader.exec_module(self.m);self.m.ROOT=self.root
   for entry in json.loads((ROOT/'docs/evidence-index.json').read_text())['entries']:
    for name in entry['dependencies']:
     p=self.root/name
-    if not p.exists():p.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/name,p)
+    if not p.exists():p.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/payload_source(name),p)
  def write(self,name,value):
   p=self.root/name;p.write_text(json.dumps(value));self.report['fingerprints'][name]=self.m.sha(p);(self.root/REPORT).write_text(json.dumps(self.report))
  def verify(self):

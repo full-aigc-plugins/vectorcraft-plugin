@@ -1,0 +1,46 @@
+{
+ "schema": "vectorcraft-architecture-evidence/v1",
+ "date": "2026-10-13",
+ "scope": "Task 10.1 (VC-SK-003) execution-payload convergence: upstream layout, plugin re-vendor and offline snapshot verification; no new native, creative, platform or host acceptance",
+ "change": {
+  "summary": "收敛重复执行实现为内置 vectorcraft-harness：共享执行脚本只保留一份，13 个领域技能瘦身为薄文档技能并按名称路由到 harness（HARNESS_DIR）",
+  "upstreamRepository": "https://github.com/full-aigc-skills/vectorcraft-skills",
+  "upstreamTag": "v0.1.0-dev.47",
+  "upstreamCommit": "3d102cedc084d410fe5adf9425c34c626dc95112",
+  "upstreamPushed": false,
+  "harnessSkill": "skills/vectorcraft-harness",
+  "harnessDocumentedEntries": [
+   "scripts/bootstrap.py",
+   "scripts/cli.py",
+   "scripts/commands.py",
+   "scripts/workflow.py",
+   "scripts/desktop.py"
+  ],
+  "harnessScriptFiles": 22,
+  "harnessReferenceContracts": [
+   "references/command-coverage.json",
+   "references/native-command-snapshot.json"
+  ],
+  "domainSkillsSlimmed": 13,
+  "removedOrphanPayload": [],
+  "reachability": "两遍法（静态 import；带扩展名 with_name/run_path/subprocess 动态加载；无扩展名 commands.load('module')）从文档化入口闭包：22/22 个脚本可达（desktop.py 为 command-usage.md 文档化 GUI 入口），无真孤儿",
+  "behaviorPreservation": "22/22 个 harness 脚本与 v0.1.0-dev.46 逐字节一致；五个入口与动态依赖闭包一个不少"
+ },
+ "verification": {
+  "pluginLock": {
+   "repo": "https://github.com/full-aigc-skills/vectorcraft-skills.git",
+   "ref": "v0.1.0-dev.47",
+   "sha": "3d102cedc084d410fe5adf9425c34c626dc95112",
+   "vendoredSkills": 14,
+   "vendorCheckOffline": "pass — skill vendor check: all managed skills match the lockfile (offline)"
+  },
+  "upstreamRegression": "255 项测试全部通过（48 项显式 opt-in 跳过）；sync_skill_suite --check、build_command_coverage --check、build_scenario_catalog --check 通过",
+  "harnessSmoke": "bootstrap.py/cli.py/commands.py --help 于三布局（用户/项目/插件缓存，含空格路径）全部返回 0；vendored 载荷与迁移前逐字节一致",
+  "pluginRegression": {
+   "before": "481 项中 15 failures + 1 errors（2026-10-12 裁剪并行会话的既有身份/证据失败）",
+   "after": "481 项中 14 errors + 66 failures，构成：16 项与裁剪前基线一致（single_round/current_readme_identity/source_plan_identity/release_gate 六层/revision_current_contract/optimization_integrity/mask_window/command_appearance_diagnostic）；64 项为身份冻结类发布资格门禁（verify_lineage/native_exchange/brand_variant/quality/revision/revision_limits/exchange/release_evidence/fixed_acceptance/artboard/brand_text 断言 tag64 host/integrity/native 捕获（13 技能、dev.46）等于当前 14 技能快照）——重新鉴定需发布新公开标签并重跑原生资格，属另行授权范围",
+   "policy": "执行链路相关测试（可达性、vendor、命令目录、路由、harness 口径单元）全部保持通过；按约束未伪造任何执行证据"
+  }
+ },
+ "boundaries": "本收敛不证明任何命令的原生执行验收、目标平台验收或宿主验收；host/integrity/native 资格证据仍绑定 tag64 历史载荷（current=false），需发布新公开标签后重新鉴定；上游 commit 与 tag 仅保存在本地，发布推送另行授权"
+}

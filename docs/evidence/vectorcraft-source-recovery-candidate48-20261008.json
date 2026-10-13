@@ -33,7 +33,7 @@
   },
   "fingerprints": {
     "src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
-    "src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
+    "src/evaluation/delivery_quality.py": "dc4ff4f7dbe3b363e6bc5e865d3be7ca2944e3dcc60ce3ba8bd75fddbec059cd",
     "src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
     "src/evaluation/revision_cycle.ts": "019a80ddf7ca9fa80737934ad65efb3cf5e66c17b180e25d32091123ac25185f",
     "src/evaluation/technical_review.ts": "59eb77085bde9573e049701748ed7b508c507386a3f7686ebcc75384666e43a3",
@@ -84,9 +84,9 @@
     "docs/evidence/recovery48/red.log": "f412f3c9f54221dfde6c1dc76dfcfb225ff61dfe13cf19960796fd898a1397f2",
     "docs/evidence/recovery48/node.log": "85095966e729d1b0449d894153fe9e79fcbc4d482815ea9c3d806868e33a91b6",
     "docs/evidence/recovery48/green.log": "746b85f256cb351dccfc0d51bf4692ff3a0d25fcfa724787135d55ca9c7b3472",
-    "docs/evidence/recovery48/receipt-loss.json": "55a1c72edc5706d629c7af149656252fa6e4fcfe8fe0e51a1874cac1d2cb054c",
+    "docs/evidence/recovery48/receipt-loss.json": "4d63dbafbf3a4de79cf3452b8ffc174eb4e1c761d903e9fe0b7e05c4cf7793e7",
     "docs/evidence/recovery48/python.log": "9d6e41c67b49857c0aa6cb0ed2fbaa29fb6294177d17d20d49411e4a6f6436d3",
-    "docs/evidence/recovery48/cancel.json": "a765eef13632284e1620f95b572138cb9a45552f450338764bb7ada2c2d3f00d"
+    "docs/evidence/recovery48/cancel.json": "3c148e26f745dfa180b9cc360462d79db6eace9214f95309218da519512e1afa"
   },
   "rawReports": {
     "docs/evidence/recovery48/red.log": "f412f3c9f54221dfde6c1dc76dfcfb225ff61dfe13cf19960796fd898a1397f2",

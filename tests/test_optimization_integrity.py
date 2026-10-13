@@ -9,6 +9,17 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 
+def payload_source(name):
+    """执行载荷收敛在 vectorcraft-harness：沙箱复制的 skills/<domain>/scripts/ 源按字节等价映射。"""
+    if isinstance(name, str):
+        prefix = 'skills/vectorcraft-'
+        if name.startswith(prefix) and '/scripts/' in name and not (ROOT/name).is_file():
+            candidate = 'skills/vectorcraft-harness/scripts/' + name.split('/scripts/', 1)[1]
+            if (ROOT/candidate).is_file():
+                return candidate
+    return name
+
+
 
 def load(name):
     spec = importlib.util.spec_from_file_location(name, ROOT/'scripts'/(name+'.py'))
@@ -25,7 +36,8 @@ class OptimizationIntegrityTests(unittest.TestCase):
         self.assertEqual(value['pluginVersion'], json.loads((ROOT/'plugin.json').read_text())['version'])
         self.assertEqual(value['runtime']['version'], '0.2.0-craft.2')
         self.assertEqual(value['rootRuntimeRole'], 'historical-baseline')
-        self.assertEqual(len(value['skills']), 13)
+        # 执行载荷收敛在 vectorcraft-harness：身份清单含 13 领域技能 + 1 harness。
+        self.assertEqual(len(value['skills']), 14)
 
     def test_evidence_changed_dependencies_are_stale_but_unrelated_changes_reuse(self):
         with tempfile.TemporaryDirectory() as temporary:
@@ -60,7 +72,7 @@ class OptimizationIntegrityTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temporary:
             root=Path(temporary)
             for name in ('docs/current-identity.json','docs/evidence/craft-vector37-gateway-export-fixed-first-use-20261008.json','docs/evidence/craft-full-command-fixed-first-use-20261007.json','docs/evidence/craft-fixed64-every-skill-cold-first-use-20261007.json','skills.lock.json','plugin.json'):
-                destination=root/name;destination.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/name,destination)
+                destination=root/name;destination.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/payload_source(name),destination)
             m=load('evidence_index')
             observed=json.loads((root/'docs/evidence/craft-vector37-gateway-export-fixed-first-use-20261008.json').read_text())['hostLock']['plugins']['vectorcraft']
             manifest=json.loads((root/'plugin.json').read_text());manifest['version']=observed['version'];(root/'plugin.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
@@ -76,17 +88,19 @@ class OptimizationIntegrityTests(unittest.TestCase):
             root=Path(temporary)
             paths=['plugin.json','skills.lock.json','runtime/vectorcraft-cli.lock.json','project-status.json','skills/vectorcraft-use/references/command-coverage.json']
             lock=json.loads((ROOT/'skills.lock.json').read_text())
-            paths += [f'skills/{name}/scripts/{kind}.lock.json' for name in lock['sources'][0]['skills'] for kind in ('runtime','desktop')]
+            # 执行载荷收敛在 vectorcraft-harness：运行时与桌面锁只在 harness 一份。
+            paths += [f'skills/vectorcraft-harness/scripts/{kind}.lock.json' for kind in ('runtime','desktop')]
             for name in paths:
-                dest=root/name;dest.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/name,dest)
+                dest=root/name;dest.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/payload_source(name),dest)
             identity=load('current_identity');identity.identity(root)
-            for kind in ('runtime','desktop'):
-                name=f'skills/vectorcraft-cli-text/scripts/{kind}.lock.json';path=root/name;original=path.read_text();data=json.loads(original)
-                data['binarySha256']='0'*64
-                if kind=='runtime':data['artifacts']['darwin-arm64']['binarySha256']='0'*64
-                path.write_text(json.dumps(data))
-                with self.assertRaisesRegex(ValueError,'standalone_runtime_identity_drift'):identity.identity(root)
-                path.write_text(original)
+            # 锁文件唯一收敛在 harness：运行时锁漂移直接表现为目录身份漂移。
+            # 桌面锁收敛后无独立交叉源，其漂移经 current-identity 产物比对（test_current_identity_is_a_checked_artifact）暴露。
+            name='skills/vectorcraft-harness/scripts/runtime.lock.json';path=root/name;original=path.read_text();data=json.loads(original)
+            data['binarySha256']='0'*64
+            data['artifacts']['darwin-arm64']['binarySha256']='0'*64
+            path.write_text(json.dumps(data))
+            with self.assertRaisesRegex(ValueError,'catalog_runtime_identity_drift'):identity.identity(root)
+            path.write_text(original)
 
     def test_previous_candidate_is_historical_after_plugin_release_version_changes(self):
         import shutil
@@ -94,7 +108,7 @@ class OptimizationIntegrityTests(unittest.TestCase):
             root=Path(temporary)
             names=('docs/current-identity.json','docs/evidence/craft-vector37-gateway-export-fixed-first-use-20261008.json','docs/evidence/craft-full-command-fixed-first-use-20261007.json','docs/evidence/craft-fixed64-every-skill-cold-first-use-20261007.json','docs/evidence/vectorcraft-optimization-local-20261008.json','docs/evidence/vectorcraft-optimization-single-round-native-20261008.json','skills.lock.json','plugin.json')
             for name in names:
-                dest=root/name;dest.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/name,dest)
+                dest=root/name;dest.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/payload_source(name),dest)
             manifest=json.loads((root/'plugin.json').read_text());manifest['version']='0.1.0-dev.999'
             (root/'plugin.json').write_text(json.dumps(manifest))
             m=load('evidence_index');entries=m.build(root)['entries']

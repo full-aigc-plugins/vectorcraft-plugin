@@ -33,6 +33,9 @@
           "Create an editable VectorCraft project from my assets"
         ]
       }
+    },
+    "ai.nanoco.nanoclaw": {
+      "agentName": "VectorCraft"
     }
   }
 }

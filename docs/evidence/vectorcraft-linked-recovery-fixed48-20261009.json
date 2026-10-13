@@ -36,7 +36,7 @@
   "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
   "fingerprints": {
     "src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
-    "src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
+    "src/evaluation/delivery_quality.py": "dc4ff4f7dbe3b363e6bc5e865d3be7ca2944e3dcc60ce3ba8bd75fddbec059cd",
     "src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
     "src/evaluation/revision_cycle.ts": "019a80ddf7ca9fa80737934ad65efb3cf5e66c17b180e25d32091123ac25185f",
     "src/evaluation/technical_review.ts": "59eb77085bde9573e049701748ed7b508c507386a3f7686ebcc75384666e43a3",
@@ -88,11 +88,11 @@
     "schemas/vector-revision-policy.schema.json": "a68d6f6a5d639864edd34a24bd626f8668c49a6f7d8121febcc71353d4251073",
     "docs/evidence/linked-recovery48/fixture.json": "c74571ac9b6f169eb67e266aee89d05fab8ecbbda821c08b46f87eb142bc6173",
     "docs/evidence/linked-recovery48/fixture.log": "5e9588d027186c3a822e01a9294be2400e5e8bb56c8ce80d0f6787758f3f3ec7",
-    "docs/evidence/linked-recovery48/native.json": "2ef4e89831c80a5e7b319620f2bb8d17fd466cf1c42584a1001fbc38d4918950",
+    "docs/evidence/linked-recovery48/native.json": "c522140334997d3b073fe325b065c22a80fc68c5f4e330ab7e3088cc9e1ac2c5",
     "docs/evidence/linked-recovery48/native.log": "ebbb8413e7bce628cb4b9235ee9f9c869b1ebdaf4d8f4d4b54926f5a3338608a",
     "docs/evidence/linked-recovery48/recovery-regression.log": "01424f9212f800d92d0e30c8afe41fd154fbf6daf752f4aba606fe542efca047",
     "plugin.json": "eee181a1d59d6d4c0124960f469e4a085f0923b0a4869a52d3e2d007c8a79b29",
-    "skills.lock.json": "37cf4e7a514193ff10b1f051915b931874f05a8f693c87e67d904657f040464e"
+    "skills.lock.json": "8ade690cc48c7353dc15eb92536cab1ff6df17629c20f85e311950c8609a6086"
   },
   "rawReports": {
     "docs/evidence/linked-recovery48/fixture.json": "c74571ac9b6f169eb67e266aee89d05fab8ecbbda821c08b46f87eb142bc6173",

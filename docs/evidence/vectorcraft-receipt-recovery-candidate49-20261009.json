@@ -116,7 +116,7 @@
   ],
   "fingerprints": {
     "src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
-    "src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
+    "src/evaluation/delivery_quality.py": "dc4ff4f7dbe3b363e6bc5e865d3be7ca2944e3dcc60ce3ba8bd75fddbec059cd",
     "src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
     "src/evaluation/revision_cycle.ts": "019a80ddf7ca9fa80737934ad65efb3cf5e66c17b180e25d32091123ac25185f",
     "src/evaluation/technical_review.ts": "59eb77085bde9573e049701748ed7b508c507386a3f7686ebcc75384666e43a3",
@@ -166,18 +166,18 @@
     "schemas/vector-review-receipt.schema.json": "d1e94365af9e75ce55de82df50a36eb37a65d0da4b19f66e704b00e9b35641ab",
     "schemas/vector-review-request.schema.json": "15951f56b14316c1b6d06b58194c178fbd13c20c85e1ce1e6e492c204ec3f4cd",
     "schemas/vector-revision-policy.schema.json": "a68d6f6a5d639864edd34a24bd626f8668c49a6f7d8121febcc71353d4251073",
-    "docs/evidence/receipt-recovery49/linked-after-source38.json": "cd415c7b7235b4cee8d53dea7aaefe140a8e21a1d425ca15e5365672afe733d1",
+    "docs/evidence/receipt-recovery49/linked-after-source38.json": "eda906cc20d745b560247e7165c26c03d67b7ee16018cf870904da691240f5ed",
     "docs/evidence/receipt-recovery49/old-source37-directory-red.log": "fef949d9bb3210f5d785d10a58da5b13725d3b8f84059b24ef8e5ab8fccdca1f",
     "docs/evidence/receipt-recovery49/node.log": "64542f0ae3b152b89c1bf3c97d488fb9a51947a2d70a60425f958df7b398892a",
     "docs/evidence/receipt-recovery49/green.log": "923d17a79944d4f6e7c711a6095bb287a85e0e0ba4083cb6b931be72152a208b",
-    "docs/evidence/receipt-recovery49/linked-before-source38.json": "5f0396cca5163ffcdac4e8feea06d5192583ca09471e142d64269cd63fca0465",
-    "docs/evidence/receipt-recovery49/plain-after-source38.json": "509cefe32bd6e1f32b0e42ca111f6be5fbebfdea0c09f4b49c734e6f04f61889",
+    "docs/evidence/receipt-recovery49/linked-before-source38.json": "144a8d82f1e79a438d97e5d8840e32fcd7375bdfed84afe5192a194c6eb9a8d4",
+    "docs/evidence/receipt-recovery49/plain-after-source38.json": "8915f96fc1dd7a53017b53a89a26feb74f17f6166f31a49a492f4fd0d2831f24",
     "docs/evidence/receipt-recovery49/receipt-red.log": "d15dabfc23eb5084b040b5e50293d63f3258281452e9d0173be40625d3543b28",
-    "docs/evidence/receipt-recovery49/plain-before-source38.json": "2dccf69a11310e8d48854be07b36494e8933682d0f5295e957e99c4374fa2902",
+    "docs/evidence/receipt-recovery49/plain-before-source38.json": "e24019118f5d6bccaae5b6a8fc7bd81d73ba798897485bc6ad3a13145f273a1d",
     "docs/evidence/receipt-recovery49/python.log": "0c13d114a8e44b75d67b2cfb6420221f98cf0336e56a48bdc780269d20e40266",
     "docs/evidence/receipt-recovery49/delivery-red.log": "15cb5a9148ed332d5839c3d52b238c2d91d63e64ae7c6b9e104c5f293cb31d3c",
     "plugin.json": "7497b40d5d97b1ff53f32c36f2f9f4d4090241bc4f1399993f0635a63341d6a6",
-    "skills.lock.json": "14952869286b68ee7080b75bcc5619de7f78e73b820c54d727d154b0745e7ca5"
+    "skills.lock.json": "8ade690cc48c7353dc15eb92536cab1ff6df17629c20f85e311950c8609a6086"
   },
   "rawReports": {
     "docs/evidence/receipt-recovery49/linked-after-source38.json": "cd415c7b7235b4cee8d53dea7aaefe140a8e21a1d425ca15e5365672afe733d1",

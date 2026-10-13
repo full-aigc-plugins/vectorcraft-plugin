@@ -9,6 +9,17 @@ import tempfile
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
+
+def payload_source(name):
+    """执行载荷收敛在 vectorcraft-harness：沙箱复制的 skills/<domain>/scripts/ 源按字节等价映射。"""
+    if isinstance(name, str):
+        prefix = 'skills/vectorcraft-'
+        if name.startswith(prefix) and '/scripts/' in name and not (ROOT/name).is_file():
+            candidate = 'skills/vectorcraft-harness/scripts/' + name.split('/scripts/', 1)[1]
+            if (ROOT/candidate).is_file():
+                return candidate
+    return name
+
 REPORT = 'docs/evidence/vectorcraft-artboards-fixed54-20261009.json'
 
 class ArtboardEvidenceTests(unittest.TestCase):
@@ -23,7 +34,7 @@ class ArtboardEvidenceTests(unittest.TestCase):
         for name in names:
             target = self.root/name
             target.parent.mkdir(parents=True,exist_ok=True)
-            shutil.copyfile(ROOT/name,target)
+            shutil.copyfile(ROOT/payload_source(name),target)
         spec = importlib.util.spec_from_file_location('artboard_verify_fixture',ROOT/'scripts/verify_artboard_evidence.py')
         self.module = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(self.module)

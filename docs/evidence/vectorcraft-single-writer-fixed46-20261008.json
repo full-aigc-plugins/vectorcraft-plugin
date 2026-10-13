@@ -70,7 +70,7 @@
   "scope": "actual installed plugin46 recorded native scenario subset; root replacement authorization boundary remains unverified, so complete3.3 is not claimed",
   "fingerprints": {
     "src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
-    "src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
+    "src/evaluation/delivery_quality.py": "dc4ff4f7dbe3b363e6bc5e865d3be7ca2944e3dcc60ce3ba8bd75fddbec059cd",
     "src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
     "src/evaluation/revision_cycle.ts": "019a80ddf7ca9fa80737934ad65efb3cf5e66c17b180e25d32091123ac25185f",
     "src/evaluation/technical_review.ts": "59eb77085bde9573e049701748ed7b508c507386a3f7686ebcc75384666e43a3",
@@ -117,14 +117,14 @@
     "schemas/vector-review-request.schema.json": "15951f56b14316c1b6d06b58194c178fbd13c20c85e1ce1e6e492c204ec3f4cd",
     "schemas/vector-revision-policy.schema.json": "a68d6f6a5d639864edd34a24bd626f8668c49a6f7d8121febcc71353d4251073",
     "plugin.json": "8520562da05f9d995f6b8d0fed78c307c0d83d99e0f00d2459d02487779939e8",
-    "skills.lock.json": "37cf4e7a514193ff10b1f051915b931874f05a8f693c87e67d904657f040464e",
+    "skills.lock.json": "8ade690cc48c7353dc15eb92536cab1ff6df17629c20f85e311950c8609a6086",
     "docs/evidence/single-writer46/fixed-python.log": "5ca2545c454f666f587d0afdd624cccc22fbe731d290df163abc82db33e6a398",
     "docs/evidence/single-writer46/fixed-host.json": "0dda884f08c77c6b1569d774aa02ccd46cb71d78233bb149897485cb579cbaa8",
-    "docs/evidence/single-writer46/fixed-contract.json": "5d75956a0af652dcbeb23f7410d76fca52e93afac46f74b44ce3f06dc109ee58",
+    "docs/evidence/single-writer46/fixed-contract.json": "00e7b1e1b813c8b363e9fbc4860cd8cc53f37b6c18e2ab6c8048bf50db0084c6",
     "docs/evidence/single-writer46/fixed-node.log": "f5ba72923a02d2eea40a7b18049efd4d9256bf1e17e78f5bc1b4c2ac52242458",
     "docs/evidence/single-writer46/fixed-source-snapshot-modes.json": "78e7fa641df23b1523a606900fac126a44abda950e48e0f561fb3cecd3f10c6f",
     "docs/evidence/single-writer46/fixed-gui-snapshots.json": "8734a6956f17b04a9d12aed0cf3af076f916ba0f2e85df2249f50511ddd6c79a",
-    "docs/evidence/single-writer46/fixed-crash.json": "c2941b235519599f45030ae6d2b94796957fbf6bb4de0c3e1e3622cdf37f885b"
+    "docs/evidence/single-writer46/fixed-crash.json": "916e5a61da4ab751c04bb5d3ffa425f1fbce2fdd037751903b01493d326d75df"
   },
   "remainingOpenTasks": 33,
   "excluded": [

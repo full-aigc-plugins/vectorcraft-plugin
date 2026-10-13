@@ -10,6 +10,17 @@ import tempfile
 import unittest
 
 ROOT=Path(__file__).resolve().parents[1]
+
+def payload_source(name):
+    """执行载荷收敛在 vectorcraft-harness：沙箱复制的 skills/<domain>/scripts/ 源按字节等价映射。"""
+    if isinstance(name, str):
+        prefix = 'skills/vectorcraft-'
+        if name.startswith(prefix) and '/scripts/' in name and not (ROOT/name).is_file():
+            candidate = 'skills/vectorcraft-harness/scripts/' + name.split('/scripts/', 1)[1]
+            if (ROOT/candidate).is_file():
+                return candidate
+    return name
+
 REPORT='docs/evidence/vectorcraft-brand-text-fixed53-20261009.json'
 class BrandTextEvidenceTests(unittest.TestCase):
  def setUp(self):
@@ -18,7 +29,7 @@ class BrandTextEvidenceTests(unittest.TestCase):
   index=json.loads((ROOT/'docs/evidence-index.json').read_text())
   dependencies=next(e['dependencies'] for e in index['entries'] if e['path']==REPORT)
   for name in [REPORT,'docs/evidence-index.json',*self.report['fingerprints'],*dependencies]:
-   dst=self.root/name;dst.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/name,dst)
+   dst=self.root/name;dst.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/payload_source(name),dst)
   spec=importlib.util.spec_from_file_location('brand_evidence',ROOT/'scripts/verify_brand_text_evidence.py');self.module=importlib.util.module_from_spec(spec);spec.loader.exec_module(self.module);self.module.ROOT=self.root
  def save(self,name,data,rebind=False):
   path=self.root/name;path.write_text(json.dumps(data))

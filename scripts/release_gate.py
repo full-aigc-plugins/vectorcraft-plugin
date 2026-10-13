@@ -12,6 +12,11 @@ def assess(root=ROOT):
  root=Path(root);layers={k:{'status':'NOT_RUN','reason':'evidence_not_checked'} for k in ['structure','skills','runtime','host','task','native']}
  def safe(name):
   if not isinstance(name,str) or Path(name).is_absolute() or '\\' in name or any(p in ('','.','..') for p in name.split('/')):raise ValueError('release_evidence_path')
+  # 执行载荷收敛在 vectorcraft-harness：历史证据绑定的 skills/<domain>/scripts/ 路径按字节等价映射。
+  prefix='skills/vectorcraft-'
+  if isinstance(name,str) and name.startswith(prefix) and '/scripts/' in name and not (root/name).is_file():
+   candidate=root/('skills/vectorcraft-harness/scripts/'+name.split('/scripts/',1)[1])
+   if candidate.is_file():name=candidate.relative_to(root).as_posix()
   p=root/name
   if not p.resolve().is_relative_to(root.resolve()) or any(x.is_symlink() for x in [p,*p.parents] if x.is_relative_to(root)):raise ValueError('release_evidence_path')
   return p
@@ -38,9 +43,9 @@ def assess(root=ROOT):
   lock=bjson('skills.lock.json')['sources']
   if len(lock)!=1:raise ValueError('ambiguous_skill_authority')
   source=lock[0]
-  if source['ref']!=bundle['sourceRef'] or source['sha']!=bundle['sourceCommit'] or len(source['skills'])!=13 or set(source['skills'])!=set(source['sha256']):raise ValueError('release_skill_identity')
+  if source['ref']!=bundle['sourceRef'] or source['sha']!=bundle['sourceCommit'] or len(source['skills'])!=14 or set(source['skills'])!=set(source['sha256']):raise ValueError('release_skill_identity')
   if any(tree_digest(root/'skills'/name)!=digest for name,digest in source['sha256'].items()):raise ValueError('release_skill_drift')
-  return {'evidence':['skills.lock.json'],'sourceRef':source['ref'],'sourceCommit':source['sha'],'skills':13}
+  return {'evidence':['skills.lock.json'],'sourceRef':source['ref'],'sourceCommit':source['sha'],'skills':14}
  def technical():
   r=bjson(bundle['technical'])
   if r.get('schema') not in ('vectorcraft-revision-fixed/v1','vectorcraft-revision-fixed/v2') or r.get('result')!='PASS' or r['pluginVersion']!=bundle['pluginVersion'] or r['sourceRef']!=bundle['sourceRef'] or r['sourceCommit']!=bundle['sourceCommit']:raise ValueError('release_technical_identity')
@@ -48,7 +53,7 @@ def assess(root=ROOT):
    if sha(bound(name))!=digest:raise ValueError('release_technical_dependency')
   return r
  def runtime():
-  r=technical();identity=bjson('docs/current-identity.json');lock=json.loads((root/'skills/vectorcraft-use/scripts/runtime.lock.json').read_text());integrity=bjson(bundle['integrity'])
+  r=technical();identity=bjson('docs/current-identity.json');lock=json.loads((root/'skills/vectorcraft-harness/scripts/runtime.lock.json').read_text());integrity=bjson(bundle['integrity'])
   if r['runtimeSha256']!=identity['runtime']['binarySha256'] or r['runtimeSha256']!=lock['artifacts']['darwin-arm64']['binarySha256']:raise ValueError('release_runtime_identity')
   for name,digest in integrity['installedCodeDigests'].items():
    if sha(bound(name))!=digest:raise ValueError('release_installed_code_drift')

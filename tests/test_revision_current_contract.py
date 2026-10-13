@@ -15,11 +15,11 @@ foundation=load('release_gate_fixture',ROOT/'tests/test_release_gate.py')
 class CurrentCheckerContractTests(unittest.TestCase):
  def test_current_contract_captures_all_ten_source_declared_dependencies(self):
   report={'schema':'vectorcraft-revision-fixed/v2'}
-  files=verifier.checker_contract(report,lambda name:ROOT/name)
+  files=verifier.checker_contract(report,lambda name:ROOT/verifier.payload_name(name))
   self.assertEqual(len(files),10)
   self.assertEqual(files['src/harness/authorized_tree.py'],verifier.sha(ROOT/'src/harness/authorized_tree.py'))
  def test_legacy_schema_preserves_original_three_file_contract(self):
-  self.assertEqual(len(verifier.checker_contract({'schema':'vectorcraft-revision-fixed/v1'},lambda name:ROOT/name)),3)
+  self.assertEqual(len(verifier.checker_contract({'schema':'vectorcraft-revision-fixed/v1'},lambda name:ROOT/verifier.payload_name(name))),3)
  def test_unknown_schema_cannot_silently_downgrade_to_legacy(self):
   with self.assertRaisesRegex(ValueError,'revision_schema'):
    verifier.checker_contract({'schema':'vectorcraft-revision-fixed/v999'},lambda name:ROOT/name)

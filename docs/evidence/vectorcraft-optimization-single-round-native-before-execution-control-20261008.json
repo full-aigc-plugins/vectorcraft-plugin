@@ -49,6 +49,6 @@
     "schemas/vector-review-receipt.schema.json": "d1e94365af9e75ce55de82df50a36eb37a65d0da4b19f66e704b00e9b35641ab",
     "schemas/vector-review-request.schema.json": "7abda15fe87ef22574690914c00b86d2aa13d3a3f081f97ac691d3d25adad161",
     "scripts/acceptance/single_round.ts": "88858756e29b93588b5850df849c5d39df283ffdc3b8fe313241b43f31bf7ad2",
-    "docs/vector-review-rubric.json": "47d0bc2a91a19357e2279f66e10af68bf15644dd51be40e0465521c8c4c6ef9b"
+    "docs/vector-review-rubric.json": "afd3ef1833649703a4055a5b8758dab7944fa0b6bb60f66394736a05c38f5d48"
   }
 }

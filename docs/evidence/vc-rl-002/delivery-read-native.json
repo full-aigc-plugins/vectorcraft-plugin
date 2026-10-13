@@ -61,9 +61,9 @@
         "checkerFiles": {
           "skills/vectorcraft-use/scripts/asset_reader.py": "d067708d2355c0aa4415027ae2cff53c5559611c90854447fd7595b6535939f3",
           "skills/vectorcraft-use/scripts/exchange_loss.py": "a4ba82ec8000a095dcf62813352621bdc42cfd7a81949baa6b0e896d1a2048e3",
-          "src/evaluation/delivery_quality.py": "60b81d1097d2a2ef84d5e8010ee698295e1184db1b3667f3e40fa03feb899070",
+          "src/evaluation/delivery_quality.py": "dc4ff4f7dbe3b363e6bc5e865d3be7ca2944e3dcc60ce3ba8bd75fddbec059cd",
           "src/harness/asset_digest.py": "a08d26cef0e86fa5298778dd857006a00ab7541709ce53de5d8bde8d3a34a861",
-          "src/harness/authorized_file.ts": "68661f81d3c5fe4fe0e13cbfbce687f9a266e4c3e3479552d8044b3b4360447b",
+          "src/harness/authorized_file.ts": "fa397735005c39b9bcc230a9d7b1af106b8838ebc1639bae7e5355ddab5a2a7e",
           "src/harness/process_runner.py": "7332d0757aa01f03d00697f8eb8d93f849517cab34ea8a1355ba6c9513d5aba2"
         },
         "checkerSha256": "60b81d1097d2a2ef84d5e8010ee698295e1184db1b3667f3e40fa03feb899070",
@@ -199,9 +199,9 @@
         "checkerFiles": {
           "skills/vectorcraft-use/scripts/asset_reader.py": "d067708d2355c0aa4415027ae2cff53c5559611c90854447fd7595b6535939f3",
           "skills/vectorcraft-use/scripts/exchange_loss.py": "a4ba82ec8000a095dcf62813352621bdc42cfd7a81949baa6b0e896d1a2048e3",
-          "src/evaluation/delivery_quality.py": "60b81d1097d2a2ef84d5e8010ee698295e1184db1b3667f3e40fa03feb899070",
+          "src/evaluation/delivery_quality.py": "dc4ff4f7dbe3b363e6bc5e865d3be7ca2944e3dcc60ce3ba8bd75fddbec059cd",
           "src/harness/asset_digest.py": "a08d26cef0e86fa5298778dd857006a00ab7541709ce53de5d8bde8d3a34a861",
-          "src/harness/authorized_file.ts": "68661f81d3c5fe4fe0e13cbfbce687f9a266e4c3e3479552d8044b3b4360447b",
+          "src/harness/authorized_file.ts": "fa397735005c39b9bcc230a9d7b1af106b8838ebc1639bae7e5355ddab5a2a7e",
           "src/harness/process_runner.py": "7332d0757aa01f03d00697f8eb8d93f849517cab34ea8a1355ba6c9513d5aba2"
         },
         "checkerSha256": "60b81d1097d2a2ef84d5e8010ee698295e1184db1b3667f3e40fa03feb899070",

@@ -29,10 +29,10 @@
   ],
   "fingerprints": {
     "src/harness/controller.ts": "ad042d8b5797c2188df961f6ec11f1d9c097e58e0b37e0bdbbbabb64d1dcdc33",
-    "src/harness/authorized_file.ts": "42a8c74b646c4598a7652493a63ba772bf28eb791c816a6d345ad6b3daa0cd33",
+    "src/harness/authorized_file.ts": "fa397735005c39b9bcc230a9d7b1af106b8838ebc1639bae7e5355ddab5a2a7e",
     "src/harness/asset_digest.py": "8ddd6bc9e07f7b111da43b4c7d5564ef623be438924ddbaa215b749b701f3465",
     "skills/vectorcraft-use/scripts/asset_reader.py": "d067708d2355c0aa4415027ae2cff53c5559611c90854447fd7595b6535939f3",
-    "skills.lock.json": "44bd17666c6ef2a79641245a239a4f29a1f4a79162bba0de8b8329347f0a8fd1",
+    "skills.lock.json": "8ade690cc48c7353dc15eb92536cab1ff6df17629c20f85e311950c8609a6086",
     "plugin.json": "60e59b0f5f44bf657e0554e25a20c5e99e774af7c2ad9f1602590cd5bff6f712",
     "scripts/qa/revision_budget.ts": "a5601841c8e76d9ca143060df7a21e27722612c2b4b7892e3215218ca3275e47",
     "tests/source_snapshot_permissions.test.ts": "14fda2dfb24987ebdb47422ba5ce892a4a9db3273bc668f6d27aa62b3e261603",
@@ -41,7 +41,7 @@
     "docs/evidence/vc-rl-002/source-copy-green.log.txt": "6e8a1c449c3d5f34780a4e3e30dafe05159a041faeadca522270c33c26f73b73",
     "docs/evidence/vc-rl-002/source-copy-target.log.txt": "a65cc1b3fc08fa1692a022d21ab86d1c32cb2a436ab5292f9d3a391f9b3b5ea6",
     "docs/evidence/vc-rl-002/source-copy-node153.log.txt": "56365173ccc0af2180e91b4bd61ff91b4aef9cd65ca734251ce930c8dd3782c4",
-    "docs/evidence/vc-rl-002/source-copy-native.json": "5ecb90da1cdd46099f9ae6fb0bf85fc8939cc6fb675510b92ba6e041692645ac",
+    "docs/evidence/vc-rl-002/source-copy-native.json": "99604608bd1b70707d4c23e4bcbb441d62fa695f3414f4497527188dd650091e",
     "docs/evidence/vc-rl-002/source-copy-native.log.txt": "c0001f21291126dc73fd527bd6d09f61a9c7974ae6aeff64704c1c747617170e",
     "docs/evidence/vc-rl-002/source-copy-python156.log.txt": "4730621e83d318e3954e9ea91870c9a3d34c45480ed6c8aa31f3fcbe454c2039",
     "docs/evidence/vc-rl-002/source-copy-python-source-plan-retry.log.txt": "f97fa48616c82773355ad4676ba6ad357a2906fb6a58289607e5537d90430cad"

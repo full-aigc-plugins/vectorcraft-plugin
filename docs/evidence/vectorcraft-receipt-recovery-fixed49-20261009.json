@@ -124,7 +124,7 @@
   ],
   "fingerprints": {
     "src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
-    "src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
+    "src/evaluation/delivery_quality.py": "dc4ff4f7dbe3b363e6bc5e865d3be7ca2944e3dcc60ce3ba8bd75fddbec059cd",
     "src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
     "src/evaluation/revision_cycle.ts": "019a80ddf7ca9fa80737934ad65efb3cf5e66c17b180e25d32091123ac25185f",
     "src/evaluation/technical_review.ts": "59eb77085bde9573e049701748ed7b508c507386a3f7686ebcc75384666e43a3",
@@ -176,13 +176,13 @@
     "schemas/vector-revision-policy.schema.json": "a68d6f6a5d639864edd34a24bd626f8668c49a6f7d8121febcc71353d4251073",
     "docs/evidence/receipt-recovery49/fixed-python.log": "d14c4636f2e03ac3c38c20c4688c18c271cff85f781b75c237c362aaf73ce469",
     "docs/evidence/receipt-recovery49/fixed-host.json": "ecf71946f6161b88201a0ffda065adb2d147981674c0eb6efd8b7e6a80efab96",
-    "docs/evidence/receipt-recovery49/fixed-plain-after.json": "9db1066a4537b333cf9c70563614228a2998599573a86a1daa40c0ee393e4266",
-    "docs/evidence/receipt-recovery49/fixed-plain-before.json": "e7220d23274bc086d2001cddc54c09733dad0172861e32d222d79e4ed165e831",
+    "docs/evidence/receipt-recovery49/fixed-plain-after.json": "50ca2b6fe55a95dcbded17d156fa9bada5b076e9051bd2f0ed2d3268f54cf6d3",
+    "docs/evidence/receipt-recovery49/fixed-plain-before.json": "c4cd72c13a212aaf42bf54ead9d04991fb76798d7027f39d8bab8fbc2c8920ea",
     "docs/evidence/receipt-recovery49/fixed-node.log": "981dffb474c275f8b063104ae6563b600de2b049f95f945cce7b5189d1377a7f",
-    "docs/evidence/receipt-recovery49/fixed-linked-before.json": "bc695e410d2c2632b459e4810fb6ec2ce67a53b7bff603a8a3cd6ee8a521152f",
-    "docs/evidence/receipt-recovery49/fixed-linked-after.json": "439ce8245e3594c787647c7dcadb82d0bbb50d17d20d1e23da5766b73f8bc755",
+    "docs/evidence/receipt-recovery49/fixed-linked-before.json": "e6789c92bf8b514c4d03b5b907b0670b06a17017209f31595a33326b34519f15",
+    "docs/evidence/receipt-recovery49/fixed-linked-after.json": "fe7af6b1987c928d4b828672e55c9a09cb6bdbe81cbcbfa64d1fb748a7039339",
     "plugin.json": "7497b40d5d97b1ff53f32c36f2f9f4d4090241bc4f1399993f0635a63341d6a6",
-    "skills.lock.json": "14952869286b68ee7080b75bcc5619de7f78e73b820c54d727d154b0745e7ca5"
+    "skills.lock.json": "8ade690cc48c7353dc15eb92536cab1ff6df17629c20f85e311950c8609a6086"
   },
   "rawReports": {
     "docs/evidence/receipt-recovery49/fixed-python.log": "d14c4636f2e03ac3c38c20c4688c18c271cff85f781b75c237c362aaf73ce469",

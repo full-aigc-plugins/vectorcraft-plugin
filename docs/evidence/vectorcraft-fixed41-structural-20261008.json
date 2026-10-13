@@ -38,9 +38,9 @@
   "fingerprints": {
     "docs/evidence/fixed41/host.json": "9b8b9f980ae450ea6eb797a400d4ef6cfe0d72ffd4b743ab26dcc11b3f8ca260",
     "docs/evidence/fixed41/native.json": "5fb5d482fa3f65a577aadd539fcdaccac6985eee29268c540fbbe769d5187e9d",
-    "docs/evidence/fixed41/managed.json": "c33c55e042674e572ea58b64cbf6b092b009ff3f8605dd5ec393dce9cbe38fd7",
+    "docs/evidence/fixed41/managed.json": "3ec037203842fead665d41777575888d945dc86a3e3de9bb2f032aa81ea580a7",
     "plugin.json": "4d65a577e7c146d11d68635f2618a210a1addb6432f4955a657b087300105936",
-    "skills.lock.json": "37cf4e7a514193ff10b1f051915b931874f05a8f693c87e67d904657f040464e",
+    "skills.lock.json": "8ade690cc48c7353dc15eb92536cab1ff6df17629c20f85e311950c8609a6086",
     "scripts/acceptance/fixed_install.py": "b360544f751efe3c0f64a0f40a75d81a61588185956d17d7b9cca9ca766abd48",
     "scripts/acceptance/fixed_native.py": "913e0656e13a8985335197684460ad40aecbe5440d96587252a92e096d96b09e",
     "scripts/acceptance/managed_boolean.ts": "55fbffdf6d44a8b0b95b9902d7716037980eeaf5c2c437c69a06b740b889be52"

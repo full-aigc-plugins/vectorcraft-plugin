@@ -73,7 +73,7 @@
   "scope": "all seven current VC-TX-001 scenarios including physical namespace replacement at public installed plugin47 and its actual host-loaded source37 on macOS arm64; signed desktop bridge mutation, real native branches and coordinator SIGKILL with owned surviving group",
   "fingerprints": {
     "src/cli.ts": "d311b7ddcc0f795121b1e23aee6822053a81a16b6bc14bead4229643ee67ca00",
-    "src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
+    "src/evaluation/delivery_quality.py": "dc4ff4f7dbe3b363e6bc5e865d3be7ca2944e3dcc60ce3ba8bd75fddbec059cd",
     "src/evaluation/review_store.ts": "9349782fe56b84bb0e06aa03f3e1d3c59b3845de966bf72e2b2c964c950b4ae0",
     "src/evaluation/revision_cycle.ts": "019a80ddf7ca9fa80737934ad65efb3cf5e66c17b180e25d32091123ac25185f",
     "src/evaluation/technical_review.ts": "59eb77085bde9573e049701748ed7b508c507386a3f7686ebcc75384666e43a3",
@@ -120,11 +120,11 @@
     "schemas/vector-review-request.schema.json": "15951f56b14316c1b6d06b58194c178fbd13c20c85e1ce1e6e492c204ec3f4cd",
     "schemas/vector-revision-policy.schema.json": "a68d6f6a5d639864edd34a24bd626f8668c49a6f7d8121febcc71353d4251073",
     "plugin.json": "fd8b6418943ffde1928bb2de06ef6d2b63187a607e64a3d3e5fa7654a8ba1386",
-    "skills.lock.json": "37cf4e7a514193ff10b1f051915b931874f05a8f693c87e67d904657f040464e",
+    "skills.lock.json": "8ade690cc48c7353dc15eb92536cab1ff6df17629c20f85e311950c8609a6086",
     "docs/evidence/single-writer47/fixed47-node.log": "bf9405c0ef018d63ccac1cb9915e2300ee0594ec9e251eb30bd1ef60837bf5ba",
     "docs/evidence/single-writer47/fixed-host.json": "a3d27b20fedc5d520f2dfc89e7fc6b58835fdfce58b0c644dfe2b813080b4fdb",
-    "docs/evidence/single-writer47/fixed47-contract.json": "d3d0adaa5e321fdb324654d1011aa5cad3d8e5658994d1d841bd3b9c80de350e",
-    "docs/evidence/single-writer47/fixed47-crash.json": "cc273bf9c46403abd21cc21cd17252aaa997629f10918e8c88855d6afb3a0da6",
+    "docs/evidence/single-writer47/fixed47-contract.json": "f245b05935a3acbdef09468809d46d9d28ee56f01d6348d2690390bfe680f5af",
+    "docs/evidence/single-writer47/fixed47-crash.json": "a11bb838cbe2ca8c9543d0a7e4a105ff02f0a47f595328661aa88d681f809b2e",
     "docs/evidence/single-writer47/fixed47-python.log": "33f202dcaeed51ce80c72ba2502a05470882a50f8dfd73a0d60e4ad90b0cfceb",
     "docs/evidence/single-writer47/fixed47-source-snapshot-modes.json": "a3ae2bcddebdfe4adacfd550e34cff544730628ce39b24a469dfcce54933bdfe",
     "docs/evidence/single-writer47/fixed47-gui-snapshots.json": "79ff186392339714b19619c06ddc96634d5db21b968bc47a34b308db4ec6b7ac"

@@ -45,10 +45,10 @@ Inspect actual object IDs and preserve the original. Selection is the editing ta
 ## 执行、修订与交付 / Execution and delivery
 
 ```bash
-python3 -I -B "$SKILL_DIR/scripts/commands.py" describe object.align
-python3 -I -B "$SKILL_DIR/scripts/commands.py" describe object.path.offsetPath
-python3 -I -B "$SKILL_DIR/scripts/commands.py" check /absolute/object-plan.json
-python3 -I -B "$SKILL_DIR/scripts/commands.py" run /absolute/object-plan.json --output /absolute/new-object-result
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe object.align
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe object.path.offsetPath
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" check /absolute/object-plan.json
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" run /absolute/object-plan.json --output /absolute/new-object-result
 ```
 
 按本技能command-usage.md合同在同一会话连接返回值、重新选择对象、保存vectorcraft并导出适用SVG/PNG。重开核对目标几何、样式、堆叠和非目标对象；公开参数、归属和预检不等于36条新增归属命令均已运行验收。依赖GUI工作状态的任务按bridge合同执行，不能用headless成功替代GUI验收。

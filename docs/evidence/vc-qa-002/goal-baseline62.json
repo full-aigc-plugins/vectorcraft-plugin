@@ -72,7 +72,7 @@
         "checkId": "6110356b-38ae-4107-8795-59ad5a720409",
         "checkerFiles": {
           "skills/vectorcraft-use/scripts/exchange_loss.py": "a4ba82ec8000a095dcf62813352621bdc42cfd7a81949baa6b0e896d1a2048e3",
-          "src/evaluation/delivery_quality.py": "60b81d1097d2a2ef84d5e8010ee698295e1184db1b3667f3e40fa03feb899070",
+          "src/evaluation/delivery_quality.py": "dc4ff4f7dbe3b363e6bc5e865d3be7ca2944e3dcc60ce3ba8bd75fddbec059cd",
           "src/harness/process_runner.py": "7332d0757aa01f03d00697f8eb8d93f849517cab34ea8a1355ba6c9513d5aba2"
         },
         "checkerSha256": "60b81d1097d2a2ef84d5e8010ee698295e1184db1b3667f3e40fa03feb899070",
@@ -207,7 +207,7 @@
         "checkId": "06215dd1-5819-412a-abc2-1c24850adea5",
         "checkerFiles": {
           "skills/vectorcraft-use/scripts/exchange_loss.py": "a4ba82ec8000a095dcf62813352621bdc42cfd7a81949baa6b0e896d1a2048e3",
-          "src/evaluation/delivery_quality.py": "60b81d1097d2a2ef84d5e8010ee698295e1184db1b3667f3e40fa03feb899070",
+          "src/evaluation/delivery_quality.py": "dc4ff4f7dbe3b363e6bc5e865d3be7ca2944e3dcc60ce3ba8bd75fddbec059cd",
           "src/harness/process_runner.py": "7332d0757aa01f03d00697f8eb8d93f849517cab34ea8a1355ba6c9513d5aba2"
         },
         "checkerSha256": "60b81d1097d2a2ef84d5e8010ee698295e1184db1b3667f3e40fa03feb899070",

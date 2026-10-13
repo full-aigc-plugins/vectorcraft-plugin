@@ -35,7 +35,7 @@
   ],
   "fingerprints": {
     "plugin.json": "60e59b0f5f44bf657e0554e25a20c5e99e774af7c2ad9f1602590cd5bff6f712",
-    "skills.lock.json": "389151462aed6dd0ae5366c94fbaf4ce6240078e219babdd9c5d78a66afd1f85",
+    "skills.lock.json": "8ade690cc48c7353dc15eb92536cab1ff6df17629c20f85e311950c8609a6086",
     "docs/current-identity.json": "28807386c1f940b822f635017fbeb792be99e2c397dc9b8abb30a7b963ed8000",
     "docs/skills-source-plan.json": "262bdce05c0babb6ee9c21867ce7600f850f8e12c02968f3067437cfc3aa1e1d",
     "src/harness/native_environment.ts": "fec69bc8d8aa148feb7708af2ac9e10bc140389cc8e27e24468c8fb9bf318dc0",
@@ -54,7 +54,7 @@
     "docs/evidence/vc-rl-002/source44-candidate.json": "6bf26f4c3cc2670ae566354157b74b12caaa5a225be58eb6f811a10e481a7093",
     "docs/evidence/vc-rl-002/source44-cold.json": "07ca4efa1b196708ef10828915998b10248d1d019bf030d97b235c9a5ab59088",
     "docs/evidence/vc-rl-002/source44-native.json": "9592ca8af22e321b4bd5aba169a4f1fde35704dd8c7e9bea8bdc6dcaa598a1e0",
-    "docs/evidence/vc-rl-002/plugin64-native-candidate.json": "20db0cd5b36b63ae8f44d8d553341a8697357670f2ecc6872cde10b5ee412476",
+    "docs/evidence/vc-rl-002/plugin64-native-candidate.json": "25f9205472d8d2dbf98003bf92722fac42cc2ddb8310d358e1f562b64f240325",
     "docs/evidence/vc-rl-002/plugin64-node.log.txt": "75240009b57b2624fdf5715efb7415b65f07293294acf69bc6b599ec1e2c3c33",
     "docs/evidence/vc-rl-002/plugin64-python.log.txt": "70ad55c603dd2dc23ebf918a4d5f317bb04a894d6e1fdd2377040899541104f8"
   }

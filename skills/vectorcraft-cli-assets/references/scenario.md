@@ -40,7 +40,7 @@
 
 ```bash
 : "${SKILL_DIR:?本技能实际加载目录}" "${SOURCE_PROJECT:?原生工程绝对路径}" "${OUTPUT_PROJECT:?新工程绝对路径}" "${OBJECT_IDS_JSON:?从真实回执取得的整数 ID 数组}"
-python3 -I -B "$SKILL_DIR/scripts/cli.py" -- run --in "$SOURCE_PROJECT" \
+python3 -I -B "$HARNESS_DIR/scripts/cli.py" -- run --in "$SOURCE_PROJECT" \
   --cmd select.set --params "{\"ids\":$OBJECT_IDS_JSON}" \
   --cmd symbol.new --params '{"name":"Brand mark"}' \
   --cmd symbol.place --params '{"name":"Brand mark","x":64,"y":32}' \

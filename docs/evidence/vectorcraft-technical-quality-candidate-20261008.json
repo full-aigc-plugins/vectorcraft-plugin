@@ -14,7 +14,7 @@
   "corruptNativeExportCases": 2,
   "scope": "tests and standalone readonly technical helper;6.2 coordinator integration and6.3 complete native engineering/creative acceptance remain open",
   "fingerprints": {
-    "src/evaluation/delivery_quality.py": "3e3ff7d42cda8988c250faaabb835952058986dd8f31d0539086e498f738c3b6",
+    "src/evaluation/delivery_quality.py": "dc4ff4f7dbe3b363e6bc5e865d3be7ca2944e3dcc60ce3ba8bd75fddbec059cd",
     "tests/test_delivery_quality.py": "bd424eae9e6ee0d00cb331aea7c4310fef8caae642f117ccea8fbde475d86f4b",
     "docs/evidence/delivery-quality/direct-corrupt.json": "c1bdd14d64829df0c33fea102451a7319af8d0fe5cb182877b50974a05bd7ae0",
     "docs/evidence/delivery-quality/direct-healthy.json": "283a29f7fd54bf5f1f48664521e9cbd1e487c57c53d6d525ddcbc1c82d319292",

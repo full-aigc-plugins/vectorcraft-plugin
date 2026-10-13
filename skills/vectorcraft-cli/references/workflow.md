@@ -1,11 +1,11 @@
 # 可执行原生计划
 
-`scripts/workflow.py` 是技能自带的原生矢量操作助手，运行在单个 headless MCP 会话中；插件级任务账本与跨插件调度仍在实现。需要 Python 3.11+。首次调用自动复用或安装锁定 CLI，安装范围见技能入口。
+`scripts/workflow.py` 是 vectorcraft-harness 技能自带的原生矢量操作助手，运行在单个 headless MCP 会话中；插件级任务账本与跨插件调度仍在实现。需要 Python 3.11+。首次调用自动复用或安装锁定 CLI，安装范围见技能入口。
 
 以下 `SKILL_DIR` 沿用本技能 `SKILL.md` 的实际加载目录，脚本和示例均来自同一技能。
 
 ```bash
-python3 "$SKILL_DIR/scripts/workflow.py" \
+python3 "$HARNESS_DIR/scripts/workflow.py" \
   "$SKILL_DIR/examples/brand-assets.json" \
   --output /absolute/project/brand-v1
 ```

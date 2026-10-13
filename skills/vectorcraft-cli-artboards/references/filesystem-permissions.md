@@ -5,7 +5,7 @@ macOS arm64 固定原生进程由 `filesystem_scope.py` 生成系统策略并执
 原始 CLI 默认没有用户工程读取或写入权限。可信调用层可显式绑定已授权的根目录，不能从模型计划直接抄入：
 
 ```bash
-python3 -I -B "$SKILL_DIR/scripts/cli.py" \
+python3 -I -B "$HARNESS_DIR/scripts/cli.py" \
   --read-root /absolute/authorized-input \
   --write-root /absolute/authorized-output \
   -- convert /absolute/authorized-input/project.vectorcraft /absolute/authorized-output/preview.svg

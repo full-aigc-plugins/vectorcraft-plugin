@@ -4,14 +4,14 @@
   "level": "native-current64-source46-candidate",
   "fingerprints": {
     "src/cli.ts": "19ca97519319f9d694a060e7bde94da300d0feed4bc69de69e7799f59816dd2d",
-    "src/evaluation/checker_bundle.ts": "7f57b688c4dae338743d6dcd5a955e00d3d33516526bc5dada5fd3952fa82fde",
-    "src/evaluation/delivery_quality.py": "60b81d1097d2a2ef84d5e8010ee698295e1184db1b3667f3e40fa03feb899070",
+    "src/evaluation/checker_bundle.ts": "aa3215c1724cbaa910a2130b8c633aac09217d748f5180ff58eced455c70b489",
+    "src/evaluation/delivery_quality.py": "dc4ff4f7dbe3b363e6bc5e865d3be7ca2944e3dcc60ce3ba8bd75fddbec059cd",
     "src/evaluation/review_store.ts": "992b6914c453d674eeb3e02e006c0acda75892f0757efcd1d33e990d306aa7f8",
     "src/evaluation/revision_cycle.ts": "86280433e21003262200266b0a1a7666ac232091ab40b5490571e4ba58715fe7",
     "src/evaluation/technical_review.ts": "c049122036dd2ff5ad8f3fa3644480f058b1105049b2e49b61a1c8dfdfe6195f",
     "src/harness/asset_digest.py": "a08d26cef0e86fa5298778dd857006a00ab7541709ce53de5d8bde8d3a34a861",
     "src/harness/asset_digest.ts": "f1ad1d239eb56da52d29098b69b96b62677293c3542d95a3a999e00e2c69789d",
-    "src/harness/authorized_file.ts": "68661f81d3c5fe4fe0e13cbfbce687f9a266e4c3e3479552d8044b3b4360447b",
+    "src/harness/authorized_file.ts": "fa397735005c39b9bcc230a9d7b1af106b8838ebc1639bae7e5355ddab5a2a7e",
     "src/harness/controller.ts": "22cb3b51fad857ee4cc74b805995159c0c7f26191eb1b2787f194df839f44ef3",
     "src/harness/input_policy.ts": "02e153e37675821008226edffed71bab0055205dfa75602e954f51086bcbf3a5",
     "src/harness/launch_recovery.ts": "baae4fc69b2577df52f576b6ff5e593d5b48e6f871574d13910eab96f0b11b89",
@@ -86,7 +86,7 @@
         "schema": "vectorcraft-geometry-contract/v1",
         "units": "Pixels",
         "coordinateSpace": "artboard-local",
-        "tolerance": 0.000001,
+        "tolerance": 1e-06,
         "artboards": [
           {
             "id": 2,
@@ -342,7 +342,7 @@
         "schema": "vectorcraft-geometry-contract/v1",
         "units": "Points",
         "coordinateSpace": "document",
-        "tolerance": 0.000001,
+        "tolerance": 1e-06,
         "artboards": [
           {
             "id": 2,
@@ -598,7 +598,7 @@
         "schema": "vectorcraft-geometry-contract/v1",
         "units": "Pixels",
         "coordinateSpace": "artboard-local",
-        "tolerance": 0.000001,
+        "tolerance": 1e-06,
         "artboards": [
           {
             "id": 2,
@@ -860,7 +860,7 @@
         "schema": "vectorcraft-geometry-contract/v1",
         "units": "Points",
         "coordinateSpace": "artboard-local",
-        "tolerance": 0.000001,
+        "tolerance": 1e-06,
         "artboards": [
           {
             "id": 2,
@@ -1123,7 +1123,7 @@
         "schema": "vectorcraft-geometry-contract/v1",
         "units": "Pixels",
         "coordinateSpace": "artboard-local",
-        "tolerance": 0.000001,
+        "tolerance": 1e-06,
         "artboards": [
           {
             "id": 2,
@@ -1387,7 +1387,7 @@
         "schema": "vectorcraft-geometry-contract/v1",
         "units": "Pixels",
         "coordinateSpace": "artboard-local",
-        "tolerance": 0.000001,
+        "tolerance": 1e-06,
         "artboards": [
           {
             "id": 2,

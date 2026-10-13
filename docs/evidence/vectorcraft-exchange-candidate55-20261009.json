@@ -17,7 +17,7 @@
     "pluginNodePassed": 115
   },
   "fingerprints": {
-    "docs/evidence/vc-dm-005/source41.json": "0abdb37f2828761d3ed2a8b8058cbd11312827a2666afb2f8ddfe600bfc29850",
+    "docs/evidence/vc-dm-005/source41.json": "5f50f82fa4aaa798e9ed94eafc29e5393850e58cd9f4d0225c23fe454cf29bf4",
     "docs/evidence/vc-dm-005/candidate55.json": "43b2bf2cdabc3eeaa854869201a4eeb212d7c10ba8c14b5de647fd4f12bb9521",
     "docs/evidence/vc-dm-005/quality-red-driver.py.txt": "a543f0fb714d004ae11be42fb073af8805cc82fd47675e1756832c81f90d0246",
     "docs/evidence/vc-dm-005/quality-green.log.txt": "2b13e07986485deb96ecae34ca5376452166c41d29e5f86335b5b78d2c6d2c03",
@@ -28,9 +28,9 @@
     "docs/evidence/vc-dm-005/qa-driver.py.txt": "3f2e25009080470f6ee61fba32c3091c0c79d8b07fec29b5f618cc2d9d44d97f",
     "docs/evidence/vc-dm-005/quality-red.log.txt": "f596f336d734a383dca3339ae77616d462f0ef4e8b4b50020a46bad4d2283512",
     "plugin.json": "8c09f2fc1da8f218e20936dbdb5ddff884e92c985502eb016f32a17b2e20dd84",
-    "skills.lock.json": "0035adfa3fc09aae071c37cc03b78e307d9a92f0af947ffa4603a6da2f42cd06",
+    "skills.lock.json": "8ade690cc48c7353dc15eb92536cab1ff6df17629c20f85e311950c8609a6086",
     "docs/current-identity.json": "43742de0dcd2b2fd39ea182525d2640f80918e966224231b3c39d3c2785d81cf",
-    "src/evaluation/delivery_quality.py": "f3bb72202c70a8db138881b2ff89456d66c128103d5ed9a8a2006d876eca75dc",
+    "src/evaluation/delivery_quality.py": "dc4ff4f7dbe3b363e6bc5e865d3be7ca2944e3dcc60ce3ba8bd75fddbec059cd",
     "scripts/qa/exchange_formats.py": "3f2e25009080470f6ee61fba32c3091c0c79d8b07fec29b5f618cc2d9d44d97f",
     "tests/test_delivery_quality.py": "a543f0fb714d004ae11be42fb073af8805cc82fd47675e1756832c81f90d0246",
     "skills/vectorcraft-use/scripts/exchange_loss.py": "7fdee028008a20bd88bb1e27334f326a7fcc774a079b1621a1c0d06bebfd8f29",

@@ -1,0 +1,27 @@
+{
+  "name": "full-aigc-plugins-vectorcraft",
+  "interface": {
+    "displayName": "VectorCraft"
+  },
+  "plugins": [
+    {
+      "name": "vectorcraft",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/full-aigc-plugins/vectorcraft-plugin.git",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Creativity",
+      "version": "0.1.0-dev.64",
+      "description": "VectorCraft creative workflows with pinned first-use installation and independent skill snapshots; development release, full domain and host acceptance pending.",
+      "interface": {
+        "displayName": "VectorCraft",
+        "shortDescription": "Editable creative workflows and pinned setup"
+      }
+    }
+  ]
+}

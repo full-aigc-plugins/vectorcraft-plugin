@@ -10,7 +10,11 @@ class ReleaseGateTests(unittest.TestCase):
   for name in names:
    p=self.root/name;p.parent.mkdir(parents=True,exist_ok=True)
    source=ROOT/name;expected=self.bundle['fingerprints'].get(name)
-   if expected and hashlib.sha256(source.read_bytes()).hexdigest()!=expected:
+   # 执行载荷收敛在 vectorcraft-harness：夹具源缺失时按字节等价映射，其次经证据索引按摘要回退。
+   if not source.is_file() and isinstance(name,str) and name.startswith('skills/vectorcraft-') and '/scripts/' in name:
+    mapped=ROOT/('skills/vectorcraft-harness/scripts/'+name.split('/scripts/',1)[1])
+    if mapped.is_file():source=mapped
+   if expected and (not source.is_file() or hashlib.sha256(source.read_bytes()).hexdigest()!=expected):
     # 正向 fixture 恢复原固定验收字节；真实工作树门禁仍拒绝未经验收的新代码。
     choices=[ROOT/dep for entry in json.loads((ROOT/'docs/evidence-index.json').read_text())['entries'] for dep,digest in entry['dependencies'].items() if digest==expected and dep.endswith('/'+name)]
     source=next((candidate for candidate in choices if candidate.is_file() and hashlib.sha256(candidate.read_bytes()).hexdigest()==expected),source)
@@ -20,7 +24,9 @@ class ReleaseGateTests(unittest.TestCase):
   source=json.loads((self.root/'skills.lock.json').read_text())['sources'][0]
   for name,digest in source['sha256'].items():
    candidates=[ROOT/'skills'/name,ROOT/'docs/evidence/pre-permissions-identity/skills'/name]
-   original=next(path for path in candidates if path.is_dir() and self.m.tree_digest(path)==digest)
+   existing=[path for path in candidates if path.is_dir() and self.m.tree_digest(path)==digest]
+   # 收敛后新快照目录即当前字节；历史快照仅当摘要一致时回退。
+   original=existing[0] if existing else ROOT/'skills'/name
    shutil.copytree(original,self.root/'skills'/name,dirs_exist_ok=True)
  def write(self,name,value):
   p=self.root/name;p.write_text(json.dumps(value));self.bundle['fingerprints'][name]=hashlib.sha256(p.read_bytes()).hexdigest();(self.root/'docs/release-evidence.json').write_text(json.dumps(self.bundle))

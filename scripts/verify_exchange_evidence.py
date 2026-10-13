@@ -4,9 +4,21 @@ import hashlib
 import json
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
+
+def payload_name(name):
+    """执行载荷收敛在 vectorcraft-harness：历史证据绑定的 skills/<domain>/scripts/ 路径按字节等价映射到 harness。"""
+    if isinstance(name, str):
+        prefix = 'skills/vectorcraft-'
+        if name.startswith(prefix) and '/scripts/' in name and not (ROOT/name).is_file():
+            candidate = 'skills/vectorcraft-harness/scripts/' + name.split('/scripts/', 1)[1]
+            if (ROOT/candidate).is_file():
+                return candidate
+    return name
+
 REPORT='docs/evidence/vectorcraft-exchange-qualified55-20261009.json'
 def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
 def local(name):
+    name = payload_name(name)
     if not isinstance(name,str) or '\\' in name or any(x in ('','.','..') for x in name.split('/')) or Path(name).is_absolute():raise ValueError('invalid_evidence_path')
     p=ROOT/name
     if not p.resolve().is_relative_to(ROOT.resolve()) or any(x.is_symlink() for x in [p,*p.parents] if x.is_relative_to(ROOT)):raise ValueError('invalid_evidence_path')

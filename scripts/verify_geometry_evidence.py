@@ -6,6 +6,17 @@ from pathlib import Path
 import re
 
 ROOT=Path(__file__).resolve().parents[1]
+
+def payload_name(name):
+    """执行载荷收敛在 vectorcraft-harness：历史证据绑定的 skills/<domain>/scripts/ 路径按字节等价映射到 harness。"""
+    if isinstance(name, str):
+        prefix = 'skills/vectorcraft-'
+        if name.startswith(prefix) and '/scripts/' in name and not (ROOT/name).is_file():
+            candidate = 'skills/vectorcraft-harness/scripts/' + name.split('/scripts/', 1)[1]
+            if (ROOT/candidate).is_file():
+                return candidate
+    return name
+
 def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
 def contracts():
     text=(ROOT/'openspec/changes/establish-v1-plugin/specs/domain-workflow/spec.md').read_text()
@@ -13,6 +24,7 @@ def contracts():
     parts=block.split('#### Scenario: ')
     return {part.splitlines()[0].split()[0]:hashlib.sha256(part.strip().encode()).hexdigest() for part in parts[1:]}
 def local(name):
+    name = payload_name(name)
     path=ROOT/name
     if not isinstance(name,str) or name.startswith('/') or any(p in ('','.','..') for p in name.split('/')) or path.is_symlink() or not path.resolve().is_relative_to(ROOT):raise ValueError('invalid_evidence_path')
     return path

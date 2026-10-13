@@ -3,6 +3,17 @@
 import argparse,ast,builtins,hashlib,json,re
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
+
+def payload_name(name):
+    """执行载荷收敛在 vectorcraft-harness：历史证据绑定的 skills/<domain>/scripts/ 路径按字节等价映射到 harness。"""
+    if isinstance(name, str):
+        prefix = 'skills/vectorcraft-'
+        if name.startswith(prefix) and '/scripts/' in name and not (ROOT/name).is_file():
+            candidate = 'skills/vectorcraft-harness/scripts/' + name.split('/scripts/', 1)[1]
+            if (ROOT/candidate).is_file():
+                return candidate
+    return name
+
 REPORT='docs/evidence/vectorcraft-revision-fixed63-20261009.json'
 def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
 def checker_contract(report,bound):
@@ -14,12 +25,14 @@ def checker_contract(report,bound):
  match=re.search(r'const paths=(\[[^;]*\]);',source)
  try:paths=ast.literal_eval(match.group(1)) if match else None
  except (SyntaxError,ValueError):raise ValueError('revision_checker_contract') from None
- required=set(legacy+['skills/vectorcraft-use/scripts/asset_reader.py','src/harness/asset_digest.py','src/harness/authorized_file.ts','src/harness/authorized_write.ts','src/harness/authorized_write.py','src/harness/authorized_tree.ts','src/harness/authorized_tree.py'])
+ # v2 声明以 harness 路径为准；v1 legacy 标签仅用于旧报告并经 payload_name 等价解析。
+ required={'src/evaluation/delivery_quality.py','src/harness/process_runner.py','skills/vectorcraft-harness/scripts/exchange_loss.py','skills/vectorcraft-harness/scripts/asset_reader.py','src/harness/asset_digest.py','src/harness/authorized_file.ts','src/harness/authorized_write.ts','src/harness/authorized_write.py','src/harness/authorized_tree.ts','src/harness/authorized_tree.py'}
  if not isinstance(paths,list) or not all(isinstance(p,str) for p in paths) or len(paths)!=len(set(paths)) or not required.issubset(paths):raise ValueError('revision_checker_contract')
  return {p:sha(bound(p)) for p in paths}
 def verify(root=ROOT):
  root=Path(root)
  def local(name):
+  name = payload_name(name)
   if not isinstance(name,str) or Path(name).is_absolute() or '\\' in name or any(p in ('','.','..') for p in name.split('/')):raise ValueError('revision_path')
   p=root/name
   if not p.is_file() or not p.resolve().is_relative_to(root.resolve()) or any(x.is_symlink() for x in [p,*p.parents] if x.is_relative_to(root)):raise ValueError('revision_path')

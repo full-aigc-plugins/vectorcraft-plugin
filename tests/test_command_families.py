@@ -3,6 +3,17 @@ import importlib.util
 from pathlib import Path
 import unittest
 ROOT=Path(__file__).resolve().parents[1]
+
+def payload_source(name):
+    """执行载荷收敛在 vectorcraft-harness：沙箱复制的 skills/<domain>/scripts/ 源按字节等价映射。"""
+    if isinstance(name, str):
+        prefix = 'skills/vectorcraft-'
+        if name.startswith(prefix) and '/scripts/' in name and not (ROOT/name).is_file():
+            candidate = 'skills/vectorcraft-harness/scripts/' + name.split('/scripts/', 1)[1]
+            if (ROOT/candidate).is_file():
+                return candidate
+    return name
+
 class CommandFamilyMatrixTests(unittest.TestCase):
  def setUp(self):
   p=ROOT/'scripts/verify_command_families.py';self.assertTrue(p.is_file(),'command_family_matrix_missing')
@@ -16,7 +27,7 @@ class CommandFamilyMatrixTests(unittest.TestCase):
   import shutil,tempfile
   self.temp=tempfile.TemporaryDirectory();self.addCleanup(self.temp.cleanup);root=Path(self.temp.name)
   for name in ('docs/evidence/vectorcraft-command-swatch-fixed64-20261009.json','docs/current-identity.json','docs/evidence/vectorcraft-public-tag64-install-20261009.json','skills/vectorcraft-use/references/command-coverage.json','scripts/qa/command_paint.py','scripts/qa/command_family.py','scripts/qa/command_swatch.py'):
-   target=root/name;target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/name,target)
+   target=root/name;target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/payload_source(name),target)
   return root
  def mutate(self,root,change):
   import json

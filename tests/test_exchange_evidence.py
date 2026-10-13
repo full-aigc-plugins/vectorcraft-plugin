@@ -9,6 +9,17 @@ import tempfile
 import unittest
 
 ROOT=Path(__file__).resolve().parents[1]
+
+def payload_source(name):
+    """执行载荷收敛在 vectorcraft-harness：沙箱复制的 skills/<domain>/scripts/ 源按字节等价映射。"""
+    if isinstance(name, str):
+        prefix = 'skills/vectorcraft-'
+        if name.startswith(prefix) and '/scripts/' in name and not (ROOT/name).is_file():
+            candidate = 'skills/vectorcraft-harness/scripts/' + name.split('/scripts/', 1)[1]
+            if (ROOT/candidate).is_file():
+                return candidate
+    return name
+
 REPORT='docs/evidence/vectorcraft-exchange-qualified55-20261009.json'
 class ExchangeEvidenceTests(unittest.TestCase):
     def setUp(self):
@@ -19,7 +30,7 @@ class ExchangeEvidenceTests(unittest.TestCase):
         index=json.loads((ROOT/'docs/evidence-index.json').read_text())
         dependencies=next(e['dependencies'] for e in index['entries'] if e['path']==REPORT)
         for name in set(self.report['fingerprints'])|set(dependencies)|{REPORT,'docs/evidence-index.json'}:
-            target=self.root/name;target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/name,target)
+            target=self.root/name;target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/payload_source(name),target)
         self.module.ROOT=self.root
     def write(self,name,data):
         p=self.root/name;p.write_text(json.dumps(data));self.report['fingerprints'][name]=self.module.sha(p)

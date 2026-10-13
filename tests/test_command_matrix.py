@@ -3,6 +3,17 @@ import importlib.util
 from pathlib import Path
 import unittest
 ROOT=Path(__file__).resolve().parents[1]
+
+def payload_source(name):
+    """执行载荷收敛在 vectorcraft-harness：沙箱复制的 skills/<domain>/scripts/ 源按字节等价映射。"""
+    if isinstance(name, str):
+        prefix = 'skills/vectorcraft-'
+        if name.startswith(prefix) and '/scripts/' in name and not (ROOT/name).is_file():
+            candidate = 'skills/vectorcraft-harness/scripts/' + name.split('/scripts/', 1)[1]
+            if (ROOT/candidate).is_file():
+                return candidate
+    return name
+
 class CommandMatrixTests(unittest.TestCase):
  def setUp(self):
   p=ROOT/'scripts/verify_command_evidence.py'
@@ -21,7 +32,7 @@ class CommandMatrixTests(unittest.TestCase):
   import shutil,tempfile
   self.temp=tempfile.TemporaryDirectory();self.addCleanup(self.temp.cleanup);root=Path(self.temp.name)
   for name in (self.m.REPORT,self.m.CATALOG,'docs/current-identity.json','docs/evidence/vectorcraft-public-tag64-install-20261009.json','scripts/qa/command_paint.py'):
-   target=root/name;target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/name,target)
+   target=root/name;target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/payload_source(name),target)
   return root
  def test_current_fixed_report_validates_all_paint_cases(self):
   matrix=self.m.verify(self.fixed_fixture());self.assertEqual(matrix['coverage'],{'catalogCommands':585,'passed':22,'notRun':563,'stages':44});self.assertEqual(matrix['tasksClosed'],[])

@@ -41,62 +41,13 @@
       "requirement": "VC-RT-002",
       "capability": "runtime-distribution",
       "tasks": [
-        "2.4",
-        "2.5",
-        "2.6",
         "2.9",
         "2.10"
       ],
       "owner": "Runtime owner",
-      "status": "verified",
+      "status": "in-progress",
       "candidateEvidence": "docs/evidence/vectorcraft-native-download-candidate-20261007.json",
-      "fixedNativeDownloadEvidence": "docs/evidence/codex-native-download-first-use-20261007.json",
-      "evidence": "docs/evidence/vectorcraft-runtime-upgrade-fixed43-20261008.json",
-      "scope": "All seven current RT-002 scenarios on declared macOS arm64; installed plugin43/source37; unsupported platforms refused; other V1 requirements remain separate"
-    },
-    {
-      "requirement": "VC-TX-001",
-      "capability": "task-execution",
-      "tasks": [
-        "3.1",
-        "3.2",
-        "3.3",
-        "3.13",
-        "3.14"
-      ],
-      "owner": "Harness owner",
-      "status": "verified",
-      "candidateEvidence": "docs/evidence/vectorcraft-execution-control-20261008.json",
-      "scope": "all seven current VC-TX-001 scenarios including namespace replacement in public installed plugin47/source37 on macOS arm64; manual human GUI and creative acceptance not claimed",
-      "evidence": "docs/evidence/vectorcraft-single-writer-fixed47-20261008.json"
-    },
-    {
-      "requirement": "VC-TX-002",
-      "capability": "task-execution",
-      "tasks": [
-        "3.4",
-        "3.5",
-        "3.6"
-      ],
-      "owner": "Harness owner",
-      "status": "verified",
-      "candidateEvidence": "docs/evidence/vectorcraft-launch-recovery-candidate50-20261009.json",
-      "scope": "all seven current VC-TX-002 scenarios on public installed plugin50/source38 macOS arm64;13 actual native crash/recovery cases,109 Node and43 Python tests; full VC-TX-003 and V1 remain open",
-      "evidence": "docs/evidence/vectorcraft-task-recovery-fixed50-20261009.json"
-    },
-    {
-      "requirement": "VC-TX-003",
-      "capability": "task-execution",
-      "tasks": [
-        "3.7",
-        "3.8",
-        "3.9"
-      ],
-      "owner": "Harness owner",
-      "status": "verified",
-      "candidateEvidence": "docs/evidence/vectorcraft-execution-control-20261008.json",
-      "scope": "all five current VC-TX-003 scenarios at public installed plugin51/source38 macOS arm64;five actual native cases,115 Node and43 Python tests; reserved output quota, not filesystem hard quota or remote credits; complete V1 remains open",
-      "evidence": "docs/evidence/vectorcraft-budget-cancel-fixed51-20261009.json"
+      "fixedNativeDownloadEvidence": "docs/evidence/codex-native-download-first-use-20261007.json"
     },
     {
       "requirement": "VC-DM-001",
@@ -184,19 +135,6 @@
       "scope": "All six current VC-DM-006 scenarios on actual public56/source42 macOS arm64 installed skills; registered RGB tokens and raster/SVG assets; GUI/model/other platforms/Art bundle/fullV1 separate"
     },
     {
-      "requirement": "VC-AR-001",
-      "capability": "artifact-delivery",
-      "tasks": [
-        "5.1",
-        "5.2",
-        "5.3"
-      ],
-      "owner": "Harness owner",
-      "status": "verified",
-      "evidence": "docs/evidence/vectorcraft-lineage-fixed58-20261009.json",
-      "scope": "all three current scenarios; actual fixed58/source43 Codex0.153.4 macOS arm64; creative and other platforms separate"
-    },
-    {
       "requirement": "VC-AR-002",
       "capability": "artifact-delivery",
       "tasks": [
@@ -210,53 +148,16 @@
       "scope": "all three current scenarios; actual public59/source43 Codex0.153.4 macOS arm64; creative/GUI/external editors/other platforms separate"
     },
     {
-      "requirement": "VC-QA-001",
-      "capability": "quality-review",
-      "tasks": [
-        "6.1",
-        "6.2",
-        "6.3"
-      ],
-      "owner": "Harness owner",
-      "status": "verified",
-      "scope": "all three current VC-QA-001 scenarios; public61/source43 actual Codex0.153.4 macOS arm64;19 native boundary cases; maximal scores explicitly synthetic QA; actual creative judgment/GUI/other platforms separate",
-      "evidence": "docs/evidence/vectorcraft-quality-fixed61-20261009.json"
-    },
-    {
       "requirement": "VC-QA-002",
       "capability": "quality-review",
-      "tasks": [
-        "6.4",
-        "6.5",
-        "6.6"
-      ],
+      "tasks": [],
       "owner": "Harness owner",
-      "status": "verified",
-      "candidateEvidence": "docs/evidence/vectorcraft-revision-budget-fixed62-20261009.json",
-      "scope": "all four current VC-QA-002 scenarios;public63/source43 actual Codex0.153.4 macOS arm64;6 native revisions,15 native guards,owned signed desktop stale source;QA scores explicit;actual creative judgment and other platforms separate",
-      "evidence": "docs/evidence/vectorcraft-revision-fixed63-20261009.json"
-    },
-    {
-      "requirement": "VC-RL-001",
-      "capability": "release-compatibility",
-      "tasks": [
-        "7.1",
-        "7.2",
-        "7.3"
-      ],
-      "owner": "Release owner",
-      "status": "verified",
-      "evidence": "docs/evidence/vectorcraft-release-gate-20261009.json",
-      "scope": "both current scenarios;external release-owner tooling verifies unchanged public63/source43 actual host/native proof;docs/spec-only isolation refuses promotion;marketplace and other full-release gates remain blocked"
+      "status": "planned"
     },
     {
       "requirement": "VC-RL-002",
       "capability": "release-compatibility",
-      "tasks": [
-        "7.4",
-        "7.5",
-        "7.6"
-      ],
+      "tasks": [],
       "owner": "Release owner",
       "status": "planned"
     },
@@ -268,11 +169,13 @@
         "1.8",
         "1.9",
         "1.11",
-        "1.10"
+        "1.10",
+        "10.1"
       ],
       "owner": "Skills owner",
       "status": "bounded-verification-passed",
-      "evidence": "docs/evidence/skill-suite.json"
+      "evidence": "docs/evidence/skill-suite.json",
+      "harnessConvergenceEvidence": "docs/evidence/vectorcraft-harness-convergence-20261013.json"
     },
     {
       "requirement": "VC-DM-007",
@@ -291,7 +194,6 @@
       "tasks": [
         "8.1",
         "8.2",
-        "8.3",
         "8.4",
         "8.5",
         "8.6",
@@ -319,11 +221,7 @@
     {
       "requirement": "VC-TX-004",
       "capability": "task-execution",
-      "tasks": [
-        "3.10",
-        "3.11",
-        "3.12"
-      ],
+      "tasks": [],
       "owner": "Harness owner",
       "status": "verified-darwin-arm64",
       "candidateEvidence": "docs/evidence/failed-stage-candidate-20261007.json",
@@ -360,104 +258,6 @@
       "owner": "Desktop gateway owner",
       "status": "source-verified",
       "evidence": "docs/evidence/craft-four-desktop-live-bridge-20261007.json"
-    },
-    {
-      "requirement": "VC-TX-005",
-      "capability": "task-execution",
-      "tasks": [
-        "9.1",
-        "9.2",
-        "9.3"
-      ],
-      "owner": "Skills owner",
-      "status": "candidate-verified-pending-fixed-install",
-      "priority": "P0",
-      "evidence": "docs/evidence/vectorcraft-optimization-local-20261008.json",
-      "scope": "section9 implementation and bounded candidate evidence; release/installation/full foundational gates remain separate"
-    },
-    {
-      "requirement": "VC-DM-008",
-      "capability": "domain-workflow",
-      "tasks": [
-        "9.4",
-        "9.5",
-        "9.6"
-      ],
-      "owner": "Domain owner",
-      "status": "candidate-verified-pending-fixed-install",
-      "priority": "P0",
-      "evidence": "docs/evidence/vectorcraft-optimization-local-20261008.json",
-      "scope": "section9 implementation and bounded candidate evidence; release/installation/full foundational gates remain separate"
-    },
-    {
-      "requirement": "VC-SK-004",
-      "capability": "skills-distribution",
-      "tasks": [
-        "9.7",
-        "9.8",
-        "9.9"
-      ],
-      "owner": "Skills owner",
-      "status": "candidate-verified-pending-host-dispatch",
-      "priority": "P1",
-      "evidence": "docs/evidence/vectorcraft-optimization-local-20261008.json",
-      "scope": "section9 implementation and bounded candidate evidence; release/installation/full foundational gates remain separate"
-    },
-    {
-      "requirement": "VC-RL-003",
-      "capability": "release-compatibility",
-      "tasks": [
-        "9.10",
-        "9.11",
-        "9.12"
-      ],
-      "owner": "Release owner",
-      "status": "bounded-identity-verification-passed",
-      "priority": "P1",
-      "evidence": "docs/evidence/vectorcraft-optimization-local-20261008.json",
-      "scope": "section9 implementation and bounded candidate evidence; release/installation/full foundational gates remain separate"
-    },
-    {
-      "requirement": "VC-AR-003",
-      "capability": "artifact-delivery",
-      "tasks": [
-        "9.13",
-        "9.14",
-        "9.15"
-      ],
-      "owner": "Harness owner",
-      "status": "bounded-integrity-verification-passed",
-      "priority": "P1",
-      "evidence": "docs/evidence/vectorcraft-optimization-local-20261008.json",
-      "scope": "section9 implementation and bounded candidate evidence; release/installation/full foundational gates remain separate"
-    },
-    {
-      "requirement": "VC-RL-004",
-      "capability": "release-compatibility",
-      "tasks": [
-        "9.16",
-        "9.17",
-        "9.18"
-      ],
-      "owner": "Release owner",
-      "status": "local-ci-equivalents-passed-pending-release",
-      "priority": "P1",
-      "evidence": "docs/evidence/vectorcraft-optimization-local-20261008.json",
-      "scope": "section9 implementation and bounded candidate evidence; release/installation/full foundational gates remain separate"
-    },
-    {
-      "requirement": "VC-QA-003",
-      "capability": "quality-review",
-      "tasks": [
-        "9.19",
-        "9.20",
-        "9.21"
-      ],
-      "owner": "Harness owner",
-      "status": "both-current-single-round-scenarios-qualified",
-      "priority": "P2",
-      "evidence": "docs/evidence/vectorcraft-single-round64-20261009.json",
-      "scope": "actual current-conversation multi-size native review,one authorized revision,nine stale/schema/restart guards; task9.21 only; no independence,full automatic loop or fixed distribution claim"
     }
   ]
 }

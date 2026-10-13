@@ -132,7 +132,7 @@
             "defaultShortcut": "Cmd+Alt+N",
             "enabled": true,
             "id": "file.newProject",
-            "label": "Project\u2026",
+            "label": "Project…",
             "menu": [
               "File",
               "New"
@@ -160,7 +160,7 @@
             "defaultShortcut": "Cmd+N",
             "enabled": true,
             "id": "file.newSequence",
-            "label": "Sequence\u2026",
+            "label": "Sequence…",
             "menu": [
               "File",
               "New"
@@ -232,7 +232,7 @@
             "defaultShortcut": null,
             "enabled": true,
             "id": "file.newOfflineFile",
-            "label": "Offline File\u2026",
+            "label": "Offline File…",
             "menu": [
               "File",
               "New"
@@ -245,7 +245,7 @@
             "defaultShortcut": null,
             "enabled": true,
             "id": "file.newAdjustmentLayer",
-            "label": "Adjustment Layer\u2026",
+            "label": "Adjustment Layer…",
             "menu": [
               "File",
               "New"
@@ -258,7 +258,7 @@
             "defaultShortcut": null,
             "enabled": true,
             "id": "file.newBarsAndTone",
-            "label": "Bars and Tone\u2026",
+            "label": "Bars and Tone…",
             "menu": [
               "File",
               "New"
@@ -271,7 +271,7 @@
             "defaultShortcut": null,
             "enabled": true,
             "id": "file.newBlackVideo",
-            "label": "Black Video\u2026",
+            "label": "Black Video…",
             "menu": [
               "File",
               "New"
@@ -284,7 +284,7 @@
             "defaultShortcut": null,
             "enabled": true,
             "id": "file.newColorMatte",
-            "label": "Color Matte\u2026",
+            "label": "Color Matte…",
             "menu": [
               "File",
               "New"
@@ -297,7 +297,7 @@
             "defaultShortcut": null,
             "enabled": true,
             "id": "file.newCountingLeader",
-            "label": "Universal Counting Leader\u2026",
+            "label": "Universal Counting Leader…",
             "menu": [
               "File",
               "New"
@@ -310,7 +310,7 @@
             "defaultShortcut": null,
             "enabled": true,
             "id": "file.newTransparentVideo",
-            "label": "Transparent Video\u2026",
+            "label": "Transparent Video…",
             "menu": [
               "File",
               "New"
@@ -346,7 +346,7 @@
             "defaultShortcut": null,
             "enabled": false,
             "id": "file.exportEdl",
-            "label": "EDL\u2026",
+            "label": "EDL…",
             "menu": [
               "File",
               "Export"
@@ -359,7 +359,7 @@
             "defaultShortcut": null,
             "enabled": false,
             "id": "file.exportSelectionProject",
-            "label": "Selection as FilmCraft Project\u2026",
+            "label": "Selection as FilmCraft Project…",
             "menu": [
               "File",
               "Export"
@@ -372,7 +372,7 @@
             "defaultShortcut": null,
             "enabled": false,
             "id": "file.exportAle",
-            "label": "Avid Log Exchange\u2026",
+            "label": "Avid Log Exchange…",
             "menu": [
               "File",
               "Export"
@@ -385,7 +385,7 @@
             "defaultShortcut": null,
             "enabled": false,
             "id": "file.exportOtio",
-            "label": "OpenTimelineIO\u2026",
+            "label": "OpenTimelineIO…",
             "menu": [
               "File",
               "Export"
@@ -398,7 +398,7 @@
             "defaultShortcut": null,
             "enabled": false,
             "id": "file.exportFcp7Xml",
-            "label": "Final Cut Pro XML\u2026",
+            "label": "Final Cut Pro XML…",
             "menu": [
               "File",
               "Export"
@@ -411,7 +411,7 @@
             "defaultShortcut": null,
             "enabled": false,
             "id": "file.exportFcpxml",
-            "label": "FCPXML\u2026",
+            "label": "FCPXML…",
             "menu": [
               "File",
               "Export"
@@ -424,7 +424,7 @@
             "defaultShortcut": null,
             "enabled": false,
             "id": "file.exportAaf",
-            "label": "AAF\u2026",
+            "label": "AAF…",
             "menu": [
               "File",
               "Export"
@@ -437,7 +437,7 @@
             "defaultShortcut": null,
             "enabled": false,
             "id": "file.exportOmf",
-            "label": "OMF\u2026",
+            "label": "OMF…",
             "menu": [
               "File",
               "Export"
@@ -450,7 +450,7 @@
             "defaultShortcut": null,
             "enabled": true,
             "id": "file.importAaf",
-            "label": "Import AAF\u2026",
+            "label": "Import AAF…",
             "menu": [],
             "params": "{\"path\":str}",
             "shortcut": null,
@@ -460,7 +460,7 @@
             "defaultShortcut": "Cmd+O",
             "enabled": true,
             "id": "file.open",
-            "label": "Open Project\u2026",
+            "label": "Open Project…",
             "menu": [
               "File"
             ],
@@ -540,7 +540,7 @@
             "defaultShortcut": "Cmd+Shift+S",
             "enabled": true,
             "id": "file.saveAs",
-            "label": "Save As\u2026",
+            "label": "Save As…",
             "menu": [
               "File"
             ],
@@ -554,7 +554,7 @@
             "defaultShortcut": "Cmd+Alt+S",
             "enabled": true,
             "id": "file.saveCopy",
-            "label": "Save a Copy\u2026",
+            "label": "Save a Copy…",
             "menu": [
               "File"
             ],
@@ -568,7 +568,7 @@
             "defaultShortcut": null,
             "enabled": true,
             "id": "file.saveAsTemplate",
-            "label": "Save as Template\u2026",
+            "label": "Save as Template…",
             "menu": [
               "File"
             ],
@@ -604,7 +604,7 @@
             "defaultShortcut": null,
             "enabled": false,
             "id": "file.recover",
-            "label": "Recover Unsaved Changes\u2026",
+            "label": "Recover Unsaved Changes…",
             "menu": [
               "File"
             ],
@@ -696,7 +696,7 @@
             "defaultShortcut": null,
             "enabled": false,
             "id": "file.exportMedia",
-            "label": "Media\u2026",
+            "label": "Media…",
             "menu": [
               "File",
               "Export"
@@ -825,7 +825,7 @@
             "defaultShortcut": "Cmd+Alt+V",
             "enabled": false,
             "id": "edit.pasteAttributes",
-            "label": "Paste Attributes\u2026",
+            "label": "Paste Attributes…",
             "menu": [
               "Edit"
             ],
@@ -839,7 +839,7 @@
             "defaultShortcut": null,
             "enabled": false,
             "id": "edit.removeAttributes",
-            "label": "Remove Attributes\u2026",
+            "label": "Remove Attributes…",
             "menu": [
               "Edit"
             ],
@@ -920,7 +920,7 @@
             "defaultShortcut": "Cmd+F",
             "enabled": true,
             "id": "edit.find",
-            "label": "Find\u2026",
+            "label": "Find…",
             "menu": [
               "Edit"
             ],
@@ -1221,7 +1221,7 @@
             "id": "edit.label",
             "label": "Label",
             "menu": [],
-            "params": "{\"label\":\"Violet|Iris|\u2026\"}",
+            "params": "{\"label\":\"Violet|Iris|…\"}",
             "shortcut": null,
             "shortcuts": []
           },
@@ -1229,7 +1229,7 @@
             "defaultShortcut": null,
             "enabled": true,
             "id": "clip.rename",
-            "label": "Rename\u2026",
+            "label": "Rename…",
             "menu": [
               "Clip"
             ],
@@ -1241,7 +1241,7 @@
             "defaultShortcut": "Cmd+U",
             "enabled": false,
             "id": "clip.makeSubclip",
-            "label": "Make Subclip\u2026",
+            "label": "Make Subclip…",
             "menu": [
               "Clip"
             ],
@@ -1255,7 +1255,7 @@
             "defaultShortcut": null,
             "enabled": false,
             "id": "clip.editSubclip",
-            "label": "Edit Subclip\u2026",
+            "label": "Edit Subclip…",
             "menu": [
               "Clip"
             ],
@@ -1267,7 +1267,7 @@
             "defaultShortcut": null,
             "enabled": false,
             "id": "clip.editOffline",
-            "label": "Edit Offline\u2026",
+            "label": "Edit Offline…",
             "menu": [
               "Clip"
             ],
@@ -1279,7 +1279,7 @@
             "defaultShortcut": null,
             "enabled": false,
             "id": "clip.sourceSettings",
-            "label": "Source Settings\u2026",
+            "label": "Source Settings…",
             "menu": [
               "Clip"
             ],
@@ -1291,7 +1291,7 @@
             "defaultShortcut": "Shift+G",
             "enabled": false,
             "id": "clip.audioChannels",
-            "label": "Audio Channels\u2026",
+            "label": "Audio Channels…",
             "menu": [
               "Clip",
               "Modify"
@@ -1306,7 +1306,7 @@
             "defaultShortcut": null,
             "enabled": false,
             "id": "clip.interpretFootage",
-            "label": "Interpret Footage\u2026",
+            "label": "Interpret Footage…",
             "menu": [
               "Clip",
               "Modify"
@@ -1319,7 +1319,7 @@
             "defaultShortcut": null,
             "enabled": false,
             "id": "clip.modifyTimecode",
-            "label": "Timecode\u2026",
+            "label": "Timecode…",
             "menu": [
               "Clip",
               "Modify"
@@ -1332,7 +1332,7 @@
             "defaultShortcut": null,
             "enabled": false,
             "id": "clip.frameHoldOptions",
-            "label": "Frame Hold Options\u2026",
+            "label": "Frame Hold Options…",
             "menu": [
               "Clip",
               "Video Options"
@@ -1371,7 +1371,7 @@
             "defaultShortcut": null,
             "enabled": false,
             "id": "clip.fieldOptions",
-            "label": "Field Options\u2026",
+            "label": "Field Options…",
             "menu": [
               "Clip",
               "Video Options"
@@ -1465,7 +1465,7 @@
             "defaultShortcut": "G",
             "enabled": false,
             "id": "clip.audioGain",
-            "label": "Audio Gain\u2026",
+            "label": "Audio Gain…",
             "menu": [
               "Clip",
               "Audio Options"
@@ -1506,7 +1506,7 @@
             "defaultShortcut": "Cmd+R",
             "enabled": false,
             "id": "clip.speedDuration",
-            "label": "Speed/Duration\u2026",
+            "label": "Speed/Duration…",
             "menu": [
               "Clip"
             ],
@@ -1520,7 +1520,7 @@
             "defaultShortcut": null,
             "enabled": false,
             "id": "clip.sceneEditDetection",
-            "label": "Scene Edit Detection\u2026",
+            "label": "Scene Edit Detection…",
             "menu": [
               "Clip"
             ],
@@ -1598,7 +1598,7 @@
             "defaultShortcut": null,
             "enabled": false,
             "id": "clip.nest",
-            "label": "Nest\u2026",
+            "label": "Nest…",
             "menu": [
               "Clip"
             ],
@@ -1632,7 +1632,7 @@
             "defaultShortcut": null,
             "enabled": false,
             "id": "sequence.settings",
-            "label": "Sequence Settings\u2026",
+            "label": "Sequence Settings…",
             "menu": [
               "Sequence"
             ],
@@ -1792,7 +1792,7 @@
             "menu": [
               "Sequence"
             ],
-            "params": "{\"clip\":id?,\"effect\":\"cross_dissolve|Cross Dissolve|\u2026\"?,\"frames\":i64?,\"edge\":\"in\"|\"out\"?,\"params\":{param:value}?,\"reverse\":bool?}",
+            "params": "{\"clip\":id?,\"effect\":\"cross_dissolve|Cross Dissolve|…\"?,\"frames\":i64?,\"edge\":\"in\"|\"out\"?,\"params\":{param:value}?,\"reverse\":bool?}",
             "shortcut": "Cmd+D",
             "shortcuts": [
               "Cmd+D"
@@ -1976,7 +1976,7 @@
             "defaultShortcut": null,
             "enabled": false,
             "id": "sequence.normalizeMixTrack",
-            "label": "Normalize Mix Track\u2026",
+            "label": "Normalize Mix Track…",
             "menu": [
               "Sequence"
             ],
@@ -2002,7 +2002,7 @@
             "defaultShortcut": null,
             "enabled": false,
             "id": "sequence.transcribe",
-            "label": "Transcribe Sequence\u2026",
+            "label": "Transcribe Sequence…",
             "menu": [
               "Sequence"
             ],
@@ -2014,7 +2014,7 @@
             "defaultShortcut": null,
             "enabled": false,
             "id": "sequence.simplify",
-            "label": "Simplify Sequence\u2026",
+            "label": "Simplify Sequence…",
             "menu": [
               "Sequence"
             ],
@@ -2026,7 +2026,7 @@
             "defaultShortcut": null,
             "enabled": false,
             "id": "sequence.addTracks",
-            "label": "Add Tracks\u2026",
+            "label": "Add Tracks…",
             "menu": [
               "Sequence"
             ],
@@ -2038,7 +2038,7 @@
             "defaultShortcut": null,
             "enabled": false,
             "id": "sequence.deleteTracks",
-            "label": "Delete Tracks\u2026",
+            "label": "Delete Tracks…",
             "menu": [
               "Sequence"
             ],
@@ -2050,7 +2050,7 @@
             "defaultShortcut": null,
             "enabled": false,
             "id": "sequence.colorSettings",
-            "label": "Color Management\u2026",
+            "label": "Color Management…",
             "menu": [
               "Sequence"
             ],
@@ -2474,7 +2474,7 @@
             "defaultShortcut": null,
             "enabled": false,
             "id": "markers.edit",
-            "label": "Edit Marker\u2026",
+            "label": "Edit Marker…",
             "menu": [],
             "params": "{\"marker\":id,\"name\":str?,\"comment\":str?,\"color\":label?,\"durationFrames\":i64?}",
             "shortcut": null,
@@ -2484,7 +2484,7 @@
             "defaultShortcut": null,
             "enabled": false,
             "id": "markers.addChapter",
-            "label": "Add Chapter Marker\u2026",
+            "label": "Add Chapter Marker…",
             "menu": [
               "Markers"
             ],
@@ -2496,7 +2496,7 @@
             "defaultShortcut": null,
             "enabled": false,
             "id": "markers.addFlashCue",
-            "label": "Add Flash Cue Marker\u2026",
+            "label": "Add Flash Cue Marker…",
             "menu": [
               "Markers"
             ],
@@ -2759,7 +2759,7 @@
             "defaultShortcut": null,
             "enabled": false,
             "id": "clip.updateMetadata",
-            "label": "Update Metadata\u2026",
+            "label": "Update Metadata…",
             "menu": [
               "Clip"
             ],
@@ -2783,7 +2783,7 @@
             "defaultShortcut": null,
             "enabled": false,
             "id": "clip.automateToSequence",
-            "label": "Automate to Sequence\u2026",
+            "label": "Automate to Sequence…",
             "menu": [
               "Clip"
             ],
@@ -3127,7 +3127,7 @@
             "id": "effects.apply",
             "label": "Apply Effect",
             "menu": [],
-            "params": "{\"clips\":[id]?,\"effect\":\"gaussian_blur|Gaussian Blur|\u2026\"}",
+            "params": "{\"clips\":[id]?,\"effect\":\"gaussian_blur|Gaussian Blur|…\"}",
             "shortcut": null,
             "shortcuts": []
           },
@@ -3338,7 +3338,7 @@
             "defaultShortcut": "Cmd+Alt+A",
             "enabled": false,
             "id": "captions.newTrack",
-            "label": "Add New Caption Track\u2026",
+            "label": "Add New Caption Track…",
             "menu": [
               "Sequence",
               "Captions"
@@ -3434,7 +3434,7 @@
             "id": "captions.setTimes",
             "label": "Set Caption In/Out",
             "menu": [],
-            "params": "{\"caption\":id?,\"startTime|startFrame|startSeconds|startTimecode\":\u2026,\"endTime|endFrame|endSeconds|endTimecode\":\u2026}",
+            "params": "{\"caption\":id?,\"startTime|startFrame|startSeconds|startTimecode\":…,\"endTime|endFrame|endSeconds|endTimecode\":…}",
             "shortcut": null,
             "shortcuts": []
           },
@@ -3561,7 +3561,7 @@
             "defaultShortcut": null,
             "enabled": true,
             "id": "captions.import",
-            "label": "Import Captions\u2026",
+            "label": "Import Captions…",
             "menu": [],
             "params": "{\"path\":str,\"name\":str?}",
             "shortcut": null,
@@ -3571,7 +3571,7 @@
             "defaultShortcut": null,
             "enabled": false,
             "id": "captions.export",
-            "label": "Captions\u2026",
+            "label": "Captions…",
             "menu": [
               "File",
               "Export"
@@ -3864,7 +3864,7 @@
             "defaultShortcut": null,
             "enabled": false,
             "id": "clip.synchronize",
-            "label": "Synchronize\u2026",
+            "label": "Synchronize…",
             "menu": [
               "Clip"
             ],
@@ -3876,7 +3876,7 @@
             "defaultShortcut": null,
             "enabled": false,
             "id": "clip.mergeClips",
-            "label": "Merge Clips\u2026",
+            "label": "Merge Clips…",
             "menu": [
               "Clip"
             ],
@@ -3888,7 +3888,7 @@
             "defaultShortcut": null,
             "enabled": false,
             "id": "clip.createMulticam",
-            "label": "Create Multi-Camera Source Sequence\u2026",
+            "label": "Create Multi-Camera Source Sequence…",
             "menu": [
               "Clip"
             ],
@@ -3976,7 +3976,7 @@
             "defaultShortcut": null,
             "enabled": true,
             "id": "multicam.editCameras",
-            "label": "Edit Cameras\u2026",
+            "label": "Edit Cameras…",
             "menu": [],
             "params": "{\"sequence\":id?,\"cameras\":[{\"angle\":0-based,\"name\":str?,\"enabled\":bool?}]?,\"audio\":\"camera1|all|switch\"?}",
             "shortcut": null,
@@ -4344,7 +4344,7 @@
             "id": "essentialSound.set",
             "label": "Essential Sound Setting",
             "menu": [],
-            "params": "{\"clips\":[id]?,\"key\":\"repair.noise.on|repair.noise.amount|repair.humHz|clarity.eqPreset|creative.reverbPreset|ducking.reduceDb|volume.levelDb|mute|\u2026\",\"value\":any,\"values\":{key:value}?,\"begin\":bool?}",
+            "params": "{\"clips\":[id]?,\"key\":\"repair.noise.on|repair.noise.amount|repair.humHz|clarity.eqPreset|creative.reverbPreset|ducking.reduceDb|volume.levelDb|mute|…\",\"value\":any,\"values\":{key:value}?,\"begin\":bool?}",
             "shortcut": null,
             "shortcuts": []
           },
@@ -4452,7 +4452,7 @@
             "defaultShortcut": null,
             "enabled": true,
             "id": "lut.import",
-            "label": "Import LUT\u2026",
+            "label": "Import LUT…",
             "menu": [],
             "params": "{\"path\":str,\"name\":str?}",
             "shortcut": null,
@@ -4549,7 +4549,7 @@
             "id": "graphics.newShape",
             "label": "Shape",
             "menu": [],
-            "params": "{\"shape\":\"rectangle|ellipse|polygon|path\",\"position\":[x,y]?,\"size\":[w,h]=[400,200],\"points\":[[x,y],\u2026]?,\"clip\":id?,\"seconds\":f64=5}",
+            "params": "{\"shape\":\"rectangle|ellipse|polygon|path\",\"position\":[x,y]?,\"size\":[w,h]=[400,200],\"points\":[[x,y],…]?,\"clip\":id?,\"seconds\":f64=5}",
             "shortcut": null,
             "shortcuts": []
           },
@@ -4569,7 +4569,7 @@
             "id": "graphics.set",
             "label": "Set Graphic Properties",
             "menu": [],
-            "params": "{\"clip\":id?,\"layer\":n|name?,\"props\":{\"font\":\"Inter\",\"font_style\":\"Bold\",\"size\":120,\"align\":\"center\",\"tracking\":50,\"leading\":0,\"fill_color\":\"#ffcc00\",\"stroke\":true,\"stroke_width\":6,\"background\":true,\"shadow\":true,\"position\":[x,y],\"scale\":100,\"rotation\":0,\"opacity\":100,\u2026},\"time\":ticks?}",
+            "params": "{\"clip\":id?,\"layer\":n|name?,\"props\":{\"font\":\"Inter\",\"font_style\":\"Bold\",\"size\":120,\"align\":\"center\",\"tracking\":50,\"leading\":0,\"fill_color\":\"#ffcc00\",\"stroke\":true,\"stroke_width\":6,\"background\":true,\"shadow\":true,\"position\":[x,y],\"scale\":100,\"rotation\":0,\"opacity\":100,…},\"time\":ticks?}",
             "shortcut": null,
             "shortcuts": []
           },
@@ -4703,7 +4703,7 @@
             "defaultShortcut": null,
             "enabled": false,
             "id": "graphics.newFromFile",
-            "label": "From file\u2026",
+            "label": "From file…",
             "menu": [
               "Graphics and Titles",
               "New Layer"
@@ -5162,11 +5162,11 @@
             "defaultShortcut": null,
             "enabled": false,
             "id": "graphics.template.export",
-            "label": "Export As Motion Graphics Template\u2026",
+            "label": "Export As Motion Graphics Template…",
             "menu": [
               "Graphics and Titles"
             ],
-            "params": "{\"clip\":id?,\"name\":str,\"category\":str=\"My Templates\",\"description\":str?,\"controls\":[{\"layer\":n|name,\"param\":\"text|fill_color|size|font|position|enabled|\u2026\",\"name\":str?,\"kind\":\"text|color|slider|checkbox|font|position\"?,\"min\":f64?,\"max\":f64?,\"id\":str?}]? (default: each text layer's text),\"path\":str? (default: the user templates folder),\"embedFonts\":bool=false,\"fontLicense\":str?}",
+            "params": "{\"clip\":id?,\"name\":str,\"category\":str=\"My Templates\",\"description\":str?,\"controls\":[{\"layer\":n|name,\"param\":\"text|fill_color|size|font|position|enabled|…\",\"name\":str?,\"kind\":\"text|color|slider|checkbox|font|position\"?,\"min\":f64?,\"max\":f64?,\"id\":str?}]? (default: each text layer's text),\"path\":str? (default: the user templates folder),\"embedFonts\":bool=false,\"fontLicense\":str?}",
             "shortcut": null,
             "shortcuts": []
           },
@@ -5174,7 +5174,7 @@
             "defaultShortcut": null,
             "enabled": false,
             "id": "file.exportGraphicsTemplate",
-            "label": "Motion Graphics Template\u2026",
+            "label": "Motion Graphics Template…",
             "menu": [
               "File",
               "Export"
@@ -5187,7 +5187,7 @@
             "defaultShortcut": null,
             "enabled": true,
             "id": "graphics.template.install",
-            "label": "Install Motion Graphics Template\u2026",
+            "label": "Install Motion Graphics Template…",
             "menu": [
               "Graphics and Titles"
             ],
@@ -5241,7 +5241,7 @@
             "id": "graphics.setRoll",
             "label": "Roll/Crawl Options",
             "menu": [],
-            "params": "{\"clip\":id?,\"mode\":\"off|roll|crawlLeft|crawlRight\"?,\"startOffScreen\":bool?,\"endOffScreen\":bool?,\"prerollFrames\":n?,\"easeInFrames\":n?,\"easeOutFrames\":n?,\"postrollFrames\":n? (or \u2026Seconds, or ticks as preroll/easeIn/easeOut/postroll)}",
+            "params": "{\"clip\":id?,\"mode\":\"off|roll|crawlLeft|crawlRight\"?,\"startOffScreen\":bool?,\"endOffScreen\":bool?,\"prerollFrames\":n?,\"easeInFrames\":n?,\"easeOutFrames\":n?,\"postrollFrames\":n? (or …Seconds, or ticks as preroll/easeIn/easeOut/postroll)}",
             "shortcut": null,
             "shortcuts": []
           },
@@ -5303,7 +5303,7 @@
             "defaultShortcut": null,
             "enabled": true,
             "id": "file.replaceFonts",
-            "label": "Replace Fonts in Projects\u2026",
+            "label": "Replace Fonts in Projects…",
             "menu": [
               "Graphics and Titles"
             ],
@@ -5505,7 +5505,7 @@
             "defaultShortcut": null,
             "enabled": true,
             "id": "media.linkMedia",
-            "label": "Link Media\u2026",
+            "label": "Link Media…",
             "menu": [
               "File"
             ],
@@ -5527,7 +5527,7 @@
             "defaultShortcut": null,
             "enabled": true,
             "id": "media.replaceFootage",
-            "label": "Replace Footage\u2026",
+            "label": "Replace Footage…",
             "menu": [],
             "params": "{\"item\":id,\"path\":str}",
             "shortcut": null,
@@ -5557,7 +5557,7 @@
             "defaultShortcut": null,
             "enabled": false,
             "id": "media.makeOffline",
-            "label": "Make Offline\u2026",
+            "label": "Make Offline…",
             "menu": [
               "File"
             ],
@@ -5583,7 +5583,7 @@
             "defaultShortcut": "Cmd+I",
             "enabled": true,
             "id": "file.import",
-            "label": "Import\u2026",
+            "label": "Import…",
             "menu": [
               "File"
             ],
@@ -5597,7 +5597,7 @@
             "defaultShortcut": null,
             "enabled": true,
             "id": "file.importImageSequence",
-            "label": "Import Image Sequence\u2026",
+            "label": "Import Image Sequence…",
             "menu": [
               "File"
             ],
@@ -5619,7 +5619,7 @@
             "defaultShortcut": null,
             "enabled": false,
             "id": "media.createProxies",
-            "label": "Create Proxies\u2026",
+            "label": "Create Proxies…",
             "menu": [
               "Clip",
               "Proxy"
@@ -5632,7 +5632,7 @@
             "defaultShortcut": null,
             "enabled": false,
             "id": "media.attachProxies",
-            "label": "Attach Proxies\u2026",
+            "label": "Attach Proxies…",
             "menu": [
               "Clip",
               "Proxy"
@@ -5658,7 +5658,7 @@
             "defaultShortcut": null,
             "enabled": false,
             "id": "media.reconnectFullRes",
-            "label": "Reconnect Full Resolution Media\u2026",
+            "label": "Reconnect Full Resolution Media…",
             "menu": [
               "Clip",
               "Proxy"
@@ -5693,7 +5693,7 @@
             "defaultShortcut": null,
             "enabled": true,
             "id": "file.mediaPropertiesFile",
-            "label": "File\u2026",
+            "label": "File…",
             "menu": [
               "File",
               "Get Media File Properties for"
@@ -5706,7 +5706,7 @@
             "defaultShortcut": "Cmd+Shift+H",
             "enabled": false,
             "id": "file.mediaProperties",
-            "label": "Selection\u2026",
+            "label": "Selection…",
             "menu": [
               "File",
               "Get Media File Properties for"
@@ -5721,7 +5721,7 @@
             "defaultShortcut": null,
             "enabled": true,
             "id": "file.projectSettings.general",
-            "label": "General\u2026",
+            "label": "General…",
             "menu": [
               "File",
               "Project Settings"
@@ -5734,7 +5734,7 @@
             "defaultShortcut": null,
             "enabled": true,
             "id": "file.projectSettings.scratchDisks",
-            "label": "Scratch Disks\u2026",
+            "label": "Scratch Disks…",
             "menu": [
               "File",
               "Project Settings"
@@ -5747,7 +5747,7 @@
             "defaultShortcut": null,
             "enabled": true,
             "id": "project.ingestSettings",
-            "label": "Ingest Settings\u2026",
+            "label": "Ingest Settings…",
             "menu": [
               "File",
               "Project Settings"
@@ -5760,11 +5760,11 @@
             "defaultShortcut": null,
             "enabled": false,
             "id": "file.projectManager",
-            "label": "Project Manager\u2026",
+            "label": "Project Manager…",
             "menu": [
               "File"
             ],
-            "params": "{\"destination\":str,\"mode\":\"collect|consolidate\",\"sequences\":[id]?,\"excludeUnused\":bool=true,\"handles\":frames=30,\"preset\":\"prores_lt|prores_hq|h264|\u2026\",\"includeProxies\":bool,\"includePreviews\":bool=false,\"projectName\":str?,\"dryRun\":bool=false,\"overwrite\":bool=false,\"wait\":bool=false}",
+            "params": "{\"destination\":str,\"mode\":\"collect|consolidate\",\"sequences\":[id]?,\"excludeUnused\":bool=true,\"handles\":frames=30,\"preset\":\"prores_lt|prores_hq|h264|…\",\"includeProxies\":bool,\"includePreviews\":bool=false,\"projectName\":str?,\"dryRun\":bool=false,\"overwrite\":bool=false,\"wait\":bool=false}",
             "shortcut": null,
             "shortcuts": []
           },
@@ -5774,7 +5774,7 @@
             "id": "masks.add",
             "label": "Create Mask",
             "menu": [],
-            "params": "{\"clip\":id?,\"effect\":index|id?=\"opacity\",\"shape\":\"ellipse\"|\"polygon\"|\"bezier\",\"path\":[[x,y]\u2026]|{vertices}?,\"center\":[x,y]?,\"size\":[w,h]?}",
+            "params": "{\"clip\":id?,\"effect\":index|id?=\"opacity\",\"shape\":\"ellipse\"|\"polygon\"|\"bezier\",\"path\":[[x,y]…]|{vertices}?,\"center\":[x,y]?,\"size\":[w,h]?}",
             "shortcut": null,
             "shortcuts": []
           },
@@ -5974,7 +5974,7 @@
             "id": "export.presets.save",
             "label": "Save Export Preset",
             "menu": [],
-            "params": "{\"name\":str,\"from\":str?,\"settings\":ExportSettings?,\"category\":str?,\"description\":str?,\"overwrite\":bool=true, \u2026flat overrides}",
+            "params": "{\"name\":str,\"from\":str?,\"settings\":ExportSettings?,\"category\":str?,\"description\":str?,\"overwrite\":bool=true, …flat overrides}",
             "shortcut": null,
             "shortcuts": []
           },
@@ -6034,7 +6034,7 @@
             "id": "export.resolve",
             "label": "Resolve Export Settings",
             "menu": [],
-            "params": "{\u2026settings params, \"path\":str?}",
+            "params": "{…settings params, \"path\":str?}",
             "shortcut": null,
             "shortcuts": []
           },
@@ -6044,7 +6044,7 @@
             "id": "export.queue.add",
             "label": "Send to Export Queue",
             "menu": [],
-            "params": "{\u2026settings params,\"path\":str|dir?,\"sequences\":[id]?,\"ranges\":[range]?,\"start\":bool?,\"wait\":bool?}",
+            "params": "{…settings params,\"path\":str|dir?,\"sequences\":[id]?,\"ranges\":[range]?,\"start\":bool?,\"wait\":bool?}",
             "shortcut": "Alt+Shift+M",
             "shortcuts": [
               "Alt+Shift+M"
@@ -6136,7 +6136,7 @@
             "id": "export.quick",
             "label": "Quick Export",
             "menu": [],
-            "params": "{\"preset\":str?,\"path\":str?,\"wait\":bool?, \u2026settings params}",
+            "params": "{\"preset\":str?,\"path\":str?,\"wait\":bool?, …settings params}",
             "shortcut": null,
             "shortcuts": []
           },
@@ -6144,7 +6144,7 @@
             "defaultShortcut": null,
             "enabled": true,
             "id": "transcript.generate",
-            "label": "Transcribe\u2026",
+            "label": "Transcribe…",
             "menu": [
               "Sequence",
               "Transcript"
@@ -6250,7 +6250,7 @@
             "defaultShortcut": null,
             "enabled": false,
             "id": "transcript.renameSpeaker",
-            "label": "Rename Speaker\u2026",
+            "label": "Rename Speaker…",
             "menu": [],
             "params": "{\"speaker\":\"Speaker 1\"|index,\"name\":str,\"item\":id?}",
             "shortcut": null,
@@ -6286,7 +6286,7 @@
             "defaultShortcut": null,
             "enabled": false,
             "id": "transcript.createCaptions",
-            "label": "Create Captions from Transcript\u2026",
+            "label": "Create Captions from Transcript…",
             "menu": [
               "Sequence",
               "Transcript"
@@ -6331,7 +6331,7 @@
             "id": "metadata.set",
             "label": "Edit Metadata",
             "menu": [],
-            "params": "{\"item\":id?,\"clip\":id?,\"field\":\"Name|Label|Description|Scene|Shot|Log Note|Comment|Tape Name|Client|Camera Angle|\u2026\",\"value\":str} | {\"item\":id?,\"fields\":{name:str}}",
+            "params": "{\"item\":id?,\"clip\":id?,\"field\":\"Name|Label|Description|Scene|Shot|Log Note|Comment|Tape Name|Client|Camera Angle|…\",\"value\":str} | {\"item\":id?,\"fields\":{name:str}}",
             "shortcut": null,
             "shortcuts": []
           },
@@ -6362,7 +6362,7 @@
             "defaultShortcut": null,
             "enabled": false,
             "id": "clip.remix.properties",
-            "label": "Remix Properties\u2026",
+            "label": "Remix Properties…",
             "menu": [
               "Clip",
               "Remix"
@@ -7614,7 +7614,7 @@
             "defaultShortcut": null,
             "enabled": true,
             "id": "project.freeform.options",
-            "label": "Freeform View Options\u2026",
+            "label": "Freeform View Options…",
             "menu": [],
             "params": "{\"grid\":f32?,\"snap\":bool?,\"showNames\":bool?,\"showDurations\":bool?,\"cardSize\":f32?}",
             "shortcut": null,
@@ -7978,7 +7978,7 @@
                 "video",
                 "audio"
               ],
-              "preset": "Match Source \u2013 Adaptive High Bitrate",
+              "preset": "Match Source – Adaptive High Bitrate",
               "quickOpen": false,
               "quickPath": "",
               "quickPreset": "",
@@ -8685,7 +8685,7 @@
           },
           {
             "id": "project.find",
-            "label": "Find\u2026",
+            "label": "Find…",
             "rect": [
               217.8169860839844,
               614.2900390625,
@@ -9015,7 +9015,7 @@
           },
           {
             "id": "audioMeters.loudness",
-            "label": "M \u2014 S \u2014 I \u2014 LUFS TP \u2014 dBTP",
+            "label": "M — S — I — LUFS TP — dBTP",
             "rect": [
               1487.0,
               876.0,

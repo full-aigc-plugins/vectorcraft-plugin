@@ -10,14 +10,16 @@ license: Apache-2.0
 
 ## 首次使用
 
-1. 定位本 `SKILL.md` 的实际目录。需要 Python 3.11+；使用该目录下的 `scripts/bootstrap.py`，不要假设当前工作目录就是技能目录。
+1. 定位 **vectorcraft-harness** 技能的实际目录。需要 Python 3.11+；使用其 `scripts/bootstrap.py`，不要假设当前工作目录就是技能目录。
 2. 用户已要求安装或完成创作且现有授权涵盖必要依赖时，直接运行安装入口；安装范围是用户数据目录，不需要 sudo。下载锁定发行制品并校验摘要，失败即停止，不删除隔离属性、不改 shell 配置。
 
 将 `SKILL_DIR` 设置为宿主实际加载的本 `SKILL.md` 所在目录（绝对路径）。用户级安装可能位于 `~/.agents/skills/vectorcraft-use`，项目级可能位于 `.agents/skills/vectorcraft-use`，插件可能位于其 `skills/vectorcraft-use` 或宿主缓存目录；以实际加载路径为准，不按当前工作目录猜测，也不搜索后随意选择重复版本。技能目录与 CLI 的用户数据安装目录是两个独立位置。
 
+执行实现收敛在内置的 **vectorcraft-harness** 技能（随插件捆绑安装；单独安装用 `npx skills add full-aigc-skills/vectorcraft-skills --skill vectorcraft-harness`）。将 `HARNESS_DIR` 设置为该技能实际加载目录（绝对路径）；本技能的 `SKILL_DIR` 只用于读取自身的 `examples/` 与 `references/`。
+
 ```bash
 : "${SKILL_DIR:?请先设置为本 SKILL.md 的实际所在目录}"
-python3 -I -B "$SKILL_DIR/scripts/bootstrap.py"
+python3 -I -B "$HARNESS_DIR/scripts/bootstrap.py"
 ```
 
 安装器返回 JSON `executable`，后续将其作为 argv 的第一个元素。当前锁定平台为 macOS arm64；未支持的平台返回 `unsupported_platform`，不要安装别的平台制品。
@@ -37,7 +39,7 @@ python3 -I -B "$SKILL_DIR/scripts/bootstrap.py"
 
 ## 可执行计划与局部改色
 
-需要可复现的原生操作、稳定对象引用、多画板导出或定向改色时，读取 [工作流助手](references/workflow.md)，使用本技能内 `scripts/workflow.py` 和 `examples/brand-assets.json`。助手在同一 MCP 会话中编辑，避免每条 CLI 调用丢失选择集。
+需要可复现的原生操作、稳定对象引用、多画板导出或定向改色时，读取 [工作流助手](references/workflow.md)，使用 vectorcraft-harness 技能的 `scripts/workflow.py` 和本技能 `examples/brand-assets.json`。助手在同一 MCP 会话中编辑，避免每条 CLI 调用丢失选择集。
 
 ## 修订与交付证据
 
@@ -67,7 +69,7 @@ python3 -I -B "$SKILL_DIR/scripts/bootstrap.py"
 
 | **vectorcraft-cli-selection** | 使用 VectorCraft 精确选择对象或按属性筛选品牌修改候选，核对画板和非目标对象；首次使用安装固定 CLI。 |
 
-缺少技能：`npx skills add full-aigc-skills/vectorcraft-skills --skill <skill-name>`。每项自带安装与执行资源；直接执行本技能 `scripts/cli.py` 也可查询当前 CLI，不依赖兄弟路径。 原生工程读写根目录及原始 CLI 的授权参数见 [文件权限边界](references/filesystem-permissions.md)。
+缺少技能：`npx skills add full-aigc-skills/vectorcraft-skills --skill <skill-name>`。执行资源统一收敛在 **vectorcraft-harness**；直接执行其 `scripts/cli.py` 也可查询当前 CLI。 原生工程读写根目录及原始 CLI 的授权参数见 [文件权限边界](references/filesystem-permissions.md)。
 
 ## 品牌色 token
 
@@ -88,14 +90,14 @@ PDF 工作流绑定工程创建日期；缺少创建日期时保留首次导出�
 当前技能自带完整目录的参数说明与同会话入口，不受创作模板白名单限制。读取 [完整使用指南](references/command-usage.md)，按需查询 [命令参考](references/command-reference.md)；每条指令有技能路由、前置观察及验收状态。
 
 ```bash
-python3 -I -B "$SKILL_DIR/scripts/commands.py" list --filter QUERY
-python3 -I -B "$SKILL_DIR/scripts/commands.py" describe COMMAND_ID
-python3 -I -B "$SKILL_DIR/scripts/commands.py" run "$SKILL_DIR/examples/commands-advanced.json" --output /absolute/new-command-result
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" list --filter QUERY
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe COMMAND_ID
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" run "$SKILL_DIR/examples/commands-advanced.json" --output /absolute/new-command-result
 ```
 
 新入口执行前检查真实注册表与当前可执行状态，保留返回值引用和逐步回执；语义错误或超时不冒充成功。目录覆盖与直接原生使用不等于所有指令、GUI、交付或 Art 编排已验收。
 
-完整工作流命令网关见 [使用说明](references/native-workflow.md)。固定 CLI 的版本与制品摘要以本技能自带 `scripts/runtime.lock.json` 为准；技能包版本以对应发布标签为准。独立安装复验与全量逐命令验收分别记录，不以发布替代验收。
+完整工作流命令网关见 [使用说明](references/native-workflow.md)。固定 CLI 的版本与制品摘要以 vectorcraft-harness 技能自带的 `scripts/runtime.lock.json` 为准；技能包版本以对应发布标签为准。独立安装复验与全量逐命令验收分别记录，不以发布替代验收。
 
 原生渐变、全局色板联动、多重填色与明确活动行场景，使用本技能的[可执行创建／返工说明](references/appearance-gradient.md)。
 

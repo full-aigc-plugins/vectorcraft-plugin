@@ -39,14 +39,14 @@
     "tests/test_release_gate.py": "0375872546a7b7d687cb7c1acd60777b608963014ebe677991c8374da2ddd3db",
     "scripts/qa/revision_budget.ts": "a5601841c8e76d9ca143060df7a21e27722612c2b4b7892e3215218ca3275e47",
     "plugin.json": "51014ee0536d8f30da7f2992afa63d8c8ff38f2881f7059690d4068b6fdaef57",
-    "skills.lock.json": "46255b049f5e3d14b45ca9fecbaf037cd55b1e8b8bb447d407cb16c55eb3758c",
+    "skills.lock.json": "8ade690cc48c7353dc15eb92536cab1ff6df17629c20f85e311950c8609a6086",
     "docs/evidence/vc-rl-002/environment-green.log.txt": "fb7df83cd6b9f465505daf829462f79344854fc387aaa6f79233bd0de633eee4",
     "docs/evidence/vc-rl-002/cli-red.log.txt": "a03cee30091736d99cc9ec4e667b765ece95351057db60de0be1619a49b09eb1",
     "docs/evidence/vc-rl-002/input-red.log.txt": "8d93982e72c18651c6ce446f9369152b2679c0cc233dee2d528239853b92e701",
     "docs/evidence/vc-rl-002/environment-red.log.txt": "c93dcce5421a820ccde45a36fd4867e494de4d319d710cdf36e9ab30204c50bb",
     "docs/evidence/vc-rl-002/node-regression.log.txt": "96c7f358539cd20c680493715fc13e66aabaf914ee0d4b4ab87d9996c6845e3b",
     "docs/evidence/vc-rl-002/python-regression.log.txt": "39d7825499137718464ccdb3d642b2acb1d24be6aaffa243805e897029c1740a",
-    "docs/evidence/vc-rl-002/native-candidate.json": "80df8bc23b86d9d97e8babd3639416c8d739f58dca6f45c721a33998e227f6a6",
+    "docs/evidence/vc-rl-002/native-candidate.json": "047163421d5cbe6f8cdc3e45eee781824af50ad8870e4c0f5160b260c4092660",
     "docs/evidence/vc-rl-002/candidate-release-refused.json": "967c25c0eebec669050bdc3101a69a17a173d1a70b810f892e25246c65362773"
   }
 }

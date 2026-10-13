@@ -5,9 +5,9 @@
 目录为宿主实际加载本技能的 SKILL_DIR；任意 Vector 单技能均自带本示例与所有脚本。安装范围是锁定 macOS arm64 CLI，首次执行自动下载并核对摘要；不读取兄弟技能目录。
 
 ```bash
-python3 -I -B "$SKILL_DIR/scripts/commands.py" describe paint.setFill
-python3 -I -B "$SKILL_DIR/scripts/commands.py" describe appearance.setItem
-python3 -I -B "$SKILL_DIR/scripts/workflow.py" "$SKILL_DIR/examples/appearance-gradient-create.json" --output /absolute/new-original --runtime-home /absolute/empty-runtime
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe paint.setFill
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe appearance.setItem
+python3 -I -B "$HARNESS_DIR/scripts/workflow.py" "$SKILL_DIR/examples/appearance-gradient-create.json" --output /absolute/new-original --runtime-home /absolute/empty-runtime
 ```
 
 创建128×64工程：左侧渐变标记关联 Brand start/Brand end 全局色板，底部渐变填色＋空描边＋顶部20%白色填色形成三项外观；右侧绿色矩形是未绑定品牌色的控制对象。导出 `.vectorcraft`、SVG、PNG、PDF、原生重开记录、参数记录及交换损失。
@@ -19,7 +19,7 @@ python3 -I -B "$SKILL_DIR/scripts/workflow.py" "$SKILL_DIR/examples/appearance-g
 返工计划保留 source manifest 中的绑定，并使用 expectedProjectSha256 防止编辑错版本。先将新计划中的 expectedProjectSha256 设置为原交付 manifest.json 的 files["project.vectorcraft"]，再运行：
 
 ```bash
-python3 -I -B "$SKILL_DIR/scripts/workflow.py" /absolute/revision-plan.json --source /absolute/new-original --output /absolute/new-revision --runtime-home /absolute/empty-runtime
+python3 -I -B "$HARNESS_DIR/scripts/workflow.py" /absolute/revision-plan.json --source /absolute/new-original --output /absolute/new-revision --runtime-home /absolute/empty-runtime
 ```
 
 revision-plan.json 从本技能 examples/appearance-gradient-revise.json 复制；不修改已安装技能中的示例。重开后重新选中 badge、定位底部渐变填色、选择停靠点，再把 Brand end 改为紫色。原工程、路径几何、对象ID、顶部白色填色及右侧控制对象都必须保持不变。新的原生工程须重开检查渐变链接与色板，PNG须出现预期目标变化，SVG须仍包含实际渐变结构。

@@ -75,7 +75,7 @@
     "scripts/evidence_index.py": "7d19c2b4db2ab84b2b888fedfbdb7a3fbb519289778e43fca7010a0f54cb370c",
     "scripts/qa/asset_permissions.ts": "57489d9ab9d4203bcfe8f549d3a110e8c62d4c256c9956bdc134e51f26dbabcf",
     "scripts/qa/revision_budget.ts": "a5601841c8e76d9ca143060df7a21e27722612c2b4b7892e3215218ca3275e47",
-    "skills.lock.json": "44bd17666c6ef2a79641245a239a4f29a1f4a79162bba0de8b8329347f0a8fd1",
+    "skills.lock.json": "8ade690cc48c7353dc15eb92536cab1ff6df17629c20f85e311950c8609a6086",
     "skills/vectorcraft-cli-appearance/scripts/asset_inputs.py": "a344e54e668011cd8701cc241378c1ea83e5006c902bd187a6c8fa677d3dc2e5",
     "skills/vectorcraft-cli-appearance/scripts/asset_reader.py": "d067708d2355c0aa4415027ae2cff53c5559611c90854447fd7595b6535939f3",
     "skills/vectorcraft-cli-appearance/scripts/commands.py": "70565ffb80b5d2645df79c95e703c21a9e6bebf39a011e5555508eb1413d0eda",

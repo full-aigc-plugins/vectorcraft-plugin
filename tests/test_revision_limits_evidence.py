@@ -2,6 +2,17 @@
 import contextlib,importlib.util,io,json,shutil,tempfile,unittest
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
+
+def payload_source(name):
+    """执行载荷收敛在 vectorcraft-harness：沙箱复制的 skills/<domain>/scripts/ 源按字节等价映射。"""
+    if isinstance(name, str):
+        prefix = 'skills/vectorcraft-'
+        if name.startswith(prefix) and '/scripts/' in name and not (ROOT/name).is_file():
+            candidate = 'skills/vectorcraft-harness/scripts/' + name.split('/scripts/', 1)[1]
+            if (ROOT/candidate).is_file():
+                return candidate
+    return name
+
 REPORT='docs/evidence/vectorcraft-revision-limits-fixed62-20261009.json'
 class RevisionLimitsEvidenceTests(unittest.TestCase):
  def setUp(self):
@@ -11,7 +22,7 @@ class RevisionLimitsEvidenceTests(unittest.TestCase):
   for entry in json.loads((ROOT/'docs/evidence-index.json').read_text())['entries']:
    if entry['path']==REPORT:names.update(entry['dependencies'])
   for name in names:
-   p=self.root/name;p.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/name,p)
+   p=self.root/name;p.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/payload_source(name),p)
   spec=importlib.util.spec_from_file_location('revision_limits_verifier',ROOT/'scripts/verify_revision_limits_evidence.py');self.m=importlib.util.module_from_spec(spec);spec.loader.exec_module(self.m)
  def case(self,key):return json.loads((self.root/self.report['cases'][key]).read_text())
  def rewrite(self,key,value):
