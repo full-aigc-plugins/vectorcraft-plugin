@@ -34,7 +34,7 @@ def main():
  def read(name):return json.loads(bound(name).read_text())
  for name in r['fingerprints']:bound(name)
  if r['result']!='PASS' or r['tasksClosed']!=['6.3']:raise ValueError('quality_closure')
- block=local('openspec/changes/establish-v1-plugin/specs/quality-review/spec.md').read_text().split('### Requirement: VC-QA-001 ',1)[1].split('### Requirement:',1)[0]
+ block=bound('openspec/changes/establish-v1-plugin/specs/quality-review/spec.md').read_text().split('### Requirement: VC-QA-001 ',1)[1].split('### Requirement:',1)[0]
  contracts={s.splitlines()[0]:hashlib.sha256(s.strip().encode()).hexdigest() for s in block.split('#### Scenario: ')[1:]}
  matrix=read(r['scenarioMatrix'])
  if matrix['scenarioContracts']!=contracts or len(matrix['entries'])!=len(contracts) or {e['scenario'] for e in matrix['entries']}!=set(contracts) or any(e['result']!='PASS' or e['level']!='native-fixed-install' for e in matrix['entries']):raise ValueError('quality_scenario_coverage')

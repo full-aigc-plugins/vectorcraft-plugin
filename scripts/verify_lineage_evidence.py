@@ -36,8 +36,13 @@ def main():
  def read(name):return json.loads(bound(name).read_text())
  for name in report['fingerprints']:bound(name)
  if report['result']!='PASS' or report['tasksClosed']!=['5.3']:raise ValueError('incomplete_lineage')
- spec=local('openspec/changes/establish-v1-plugin/specs/artifact-delivery/spec.md').read_text()
- block=spec.split('### Requirement: VC-AR-001 ',1)[1].split('### Requirement:',1)[0]
+ spec_name='openspec/changes/establish-v1-plugin/specs/artifact-delivery/spec.md';spec_text=local(spec_name).read_text()
+ if '### Requirement: VC-AR-001 ' not in spec_text:
+  # 规格裁剪后 VC-AR-001 移出当前规格文件；历史证据按执行时归档规格核对。
+  archived=[ROOT/p for p in known if p.endswith('/'+spec_name) and (ROOT/p).is_file() and '### Requirement: VC-AR-001 ' in (ROOT/p).read_text()]
+  if len(archived)<1:raise ValueError('lineage_spec_archive')
+  spec_text=archived[0].read_text()
+ block=spec_text.split('### Requirement: VC-AR-001 ',1)[1].split('### Requirement:',1)[0]
  contracts={s.splitlines()[0].split()[0]:hashlib.sha256(s.strip().encode()).hexdigest() for s in block.split('#### Scenario: ')[1:]}
  matrix=read(report['scenarioMatrix'])
  if matrix['scenarioContracts']!=contracts or len(matrix['entries'])!=len(contracts) or {x['scenario'] for x in matrix['entries']}!=set(contracts) or any(x['level']!='native-fixed-install' or x['result']!='PASS' for x in matrix['entries']):raise ValueError('scenario_coverage')

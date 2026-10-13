@@ -17,7 +17,8 @@ for(const mode of ['plan','source','guard'])test(`Controller refuses replaced ${
  fs.writeFileSync(plan,JSON.stringify({operations:[],...(mode==='source'?{expectedProjectSha256:hash('authorized synthetic source')}:{})}));
  const path=mode==='plan'?plan:mode==='source'?native:guard;
  fs.writeFileSync(join(folders.outside,mode==='plan'?'plan.json':mode==='source'?'project.vectorcraft':'brief.txt'),mode==='plan'?fs.readFileSync(plan):'outside synthetic sentinel');
- const skill=resolve('skills/vectorcraft-use'),expected=skillDigest(skill);let probes=0;
+ // 执行载荷收敛在 vectorcraft-harness：托管执行控制与运行时锁只在 harness 技能内。
+ const skill=resolve('skills/vectorcraft-harness'),expected=skillDigest(skill);let probes=0;
  const controller=new Controller(join(root,'state.sqlite'),async()=>{probes++;throw new Error('probe_should_not_run');});
  const read=fs.readFileSync,real=fs.realpathSync,stat=fs.lstatSync;let swapped=false,externalRead=false,planChecks=0;
  const swap=()=>{swapped=true;fs.renameSync(folders[mode],join(root,'original'));fs.symlinkSync(folders.outside,folders[mode],'dir');};

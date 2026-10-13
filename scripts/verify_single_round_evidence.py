@@ -14,8 +14,10 @@ def sha(path):
 def verify(root=ROOT):
     report=json.loads((root/REPORT).read_text())
     known={}
-    if (root/'docs/evidence-index.json').is_file():
-        known=next((e['dependencies'] for e in json.loads((root/'docs/evidence-index.json').read_text())['entries'] if e['path']==REPORT),{})
+    index_path=root/'docs/evidence-index.json'
+    if not index_path.is_file():index_path=ROOT/'docs/evidence-index.json'
+    if index_path.is_file():
+        known=next((e['dependencies'] for e in json.loads(index_path.read_text())['entries'] if e['path']==REPORT),{})
     def bound(name):
         path=root/name
         if Path(name).is_absolute() or '..' in Path(name).parts or path.is_symlink() or not path.resolve().is_relative_to(root.resolve()):raise ValueError('single_round_path')
@@ -29,7 +31,19 @@ def verify(root=ROOT):
     if report['result']!='PASS' or report['tasksClosed']!=['9.21'] or report['marketplaceEligible'] is not False:raise ValueError('single_round_scope')
     lock=read('skills.lock.json')['sources'][0]
     if read('plugin.json')['version']!=report['pluginVersion'] or lock['ref']!=report['sourceRef'] or lock['sha']!=report['sourceCommit']:raise ValueError('single_round_identity')
-    spec=(root/'openspec/changes/establish-v1-plugin/specs/quality-review/spec.md').read_text().split('### Requirement: VC-QA-003 ',1)[1].split('### Requirement:',1)[0]
+    # 规格裁剪后 VC-QA-003 移出当前规格文件；历史证据按执行时归档规格核对。
+    spec_name='openspec/changes/establish-v1-plugin/specs/quality-review/spec.md'
+    spec_path=root/spec_name
+    spec_text=spec_path.read_text() if spec_path.is_file() else ''
+    if '### Requirement: VC-QA-003 ' not in spec_text:
+        archived=[base/p for base in (root,ROOT) for p in known if p.endswith('/'+spec_name) and (base/p).is_file() and '### Requirement: VC-QA-003 ' in (base/p).read_text()]
+        # 规格裁剪归档统一保存在收敛前执行身份目录；唯一字节版本才可作核对基准。
+        for base in (root,ROOT):
+            archived+=[p for p in sorted((base/'docs/evidence/pre-harness-convergence-identity').glob('*/'+spec_name)) if p.is_file() and '### Requirement: VC-QA-003 ' in p.read_text()]
+        texts={p.read_text() for p in archived}
+        if len(texts)!=1:raise ValueError('single_round_spec_archive')
+        spec_text=next(iter(texts))
+    spec=spec_text.split('### Requirement: VC-QA-003 ',1)[1].split('### Requirement:',1)[0]
     contracts={p.splitlines()[0].split()[0]:hashlib.sha256(p.strip().encode()).hexdigest() for p in spec.split('#### Scenario: ')[1:]}
     matrix=read(report['matrix'])
     if any(set(r['evidence'])!=({'flow.json','revision-phase.json','initial-assessment.json','revised-assessment.json','budget.json'} if r['scenario']=='VC-QA-003-P' else {'receipt-guards.json','malformed-green.log.txt'}) for r in matrix['entries']) or matrix['scenarioContracts']!=contracts or {r['scenario'] for r in matrix['entries']}!=set(contracts) or len(matrix['entries'])!=2 or any(r['result']!='PASS' or not r['evidence'] for r in matrix['entries']):raise ValueError('single_round_scenarios')

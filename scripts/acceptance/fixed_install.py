@@ -105,7 +105,10 @@ def main():
     identity,response=discover(args.codex,root,env)
     (root/'discovery.json').write_text(json.dumps(response,ensure_ascii=False,indent=2)+'\n')
     rows=response['data'];assert not any(row.get('errors') for row in rows)
-    found={skill['name']:skill for row in rows for skill in row.get('skills',[]) if skill['name'].startswith('vectorcraft:')}
+    # codex>=0.162 的 skills/list 会把宿主内置 .system 技能也冠以 vectorcraft: 前缀报出；
+    # 插件技能只可能位于安装缓存 plugins/cache/ 下，宿主系统技能不在其内，精确集合断言保持不变。
+    found={skill['name']:skill for row in rows for skill in row.get('skills',[])
+        if skill['name'].startswith('vectorcraft:') and 'plugins/cache/' in Path(skill['path']).as_posix()}
     assert set(found)=={'vectorcraft:'+name for name in lock['skills']}
     records=[]
     for name in lock['skills']:

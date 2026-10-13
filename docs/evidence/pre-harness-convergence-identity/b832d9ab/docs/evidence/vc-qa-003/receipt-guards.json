@@ -1,0 +1,263 @@
+{
+  "schema": "vectorcraft-single-round-receipt-guards/v1",
+  "result": "PASS",
+  "pluginVersion": "0.1.0-dev.64",
+  "sourceRef": "v0.1.0-dev.46",
+  "driverSha256": "573cd619f167d72c8e0d5af279c3ff7c14e00e09b0aa976354c8de6770289c74",
+  "request": {
+    "schema": "vectorcraft-review-request/v1",
+    "id": "2faeeff1-4d90-4e02-a731-ee2cb24c35ce",
+    "bindingHash": "bcb4b59c1c1099406946f57aba0a81af532ae92ecc8933645b1b7f5b4c30a6dc",
+    "input": {
+      "native": "GUARD_ROOT/source/project.vectorcraft",
+      "projectRevision": "c1de3466c9af39d7756f6b1671c49eec23e4eaa6c09ea5d38be8ccd1aeb45a48",
+      "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "candidates": [
+        "GUARD_ROOT/source/artboard-1.svg",
+        "GUARD_ROOT/source/artboard-1.pdf",
+        "GUARD_ROOT/source/artboard-1.png"
+      ],
+      "targets": [
+        {
+          "path": "GUARD_ROOT/brief.txt",
+          "role": "target"
+        },
+        {
+          "path": "GUARD_ROOT/judge-only.txt",
+          "role": "judge-reference"
+        }
+      ],
+      "rubric": "GUARD_ROOT/rubric.json",
+      "exchangeLoss": "GUARD_ROOT/source/exchange-loss.json",
+      "technicalStatus": "PASS",
+      "authorization": {
+        "objects": [
+          2
+        ],
+        "fields": [
+          "appearance.items.0.paint"
+        ],
+        "deadline": 1791500478945,
+        "maxAttempts": 3,
+        "maxBytes": 67108864,
+        "budgetId": "single-round-receipt-guards",
+        "readRoots": [
+          "GUARD_ROOT",
+          "RUNTIME"
+        ],
+        "writeRoots": [
+          "GUARD_ROOT",
+          "RUNTIME"
+        ]
+      },
+      "technicalEvidence": {
+        "acceptanceStatus": "pending",
+        "artifactIntegrityStatus": "PASS",
+        "artifactLogicalId": "vectorcraft:38a4a25f-15e2-4120-8f28-f043a1d6057b",
+        "artifactVersion": "d81a1b6b55bf2737687b229e112aa8d5ac88af7fe36dfe231eb0a11f0e06185b",
+        "checkId": "a3d8a219-c57a-42b2-b775-a938e1bea033",
+        "checkerFiles": {
+          "skills/vectorcraft-use/scripts/exchange_loss.py": "a4ba82ec8000a095dcf62813352621bdc42cfd7a81949baa6b0e896d1a2048e3",
+          "src/evaluation/delivery_quality.py": "60b81d1097d2a2ef84d5e8010ee698295e1184db1b3667f3e40fa03feb899070",
+          "src/harness/process_runner.py": "7332d0757aa01f03d00697f8eb8d93f849517cab34ea8a1355ba6c9513d5aba2"
+        },
+        "checkerSha256": "60b81d1097d2a2ef84d5e8010ee698295e1184db1b3667f3e40fa03feb899070",
+        "creativeStatus": "NOT_RUN",
+        "engineeringStatus": "NOT_RUN",
+        "exchangeStatus": "PASS",
+        "files": {
+          "artboard-1.pdf": "126366c97b6dc408264453e16e9be244281aca4b81d4cebf77772e62e7c91252",
+          "artboard-1.png": "02e13da3a0b0c7de68fadaa1c6f736a65b2a4a794c6311fbef84f036df2dc3bd",
+          "artboard-1.svg": "f9a16bac10a8d200a9f459e3d288ce81158a136ab96ed64fcf84e72d95ec3360",
+          "exchange-loss.json": "a853fb90b19ad18d01bda9e54cad5893bdda265789a8bcd8c1b4b6cf330d020d",
+          "lineage.json": "ea7c4ac08dcda4f832c09ea086d0e03dcef3daf8b42dc3feac73285938a1e28a",
+          "native.json": "9f4d77332c172915fd2b021138e6e7dff6e6e73b0bd554851c07329ce7d89ff9",
+          "operations.json": "8e223ade81a302f7cb83aac38430616f4a7d18d452e9aeae79ebf1c2e386e89d",
+          "pdf-export-date.json": "c7381343ea6046fcb36ee719065592fecfe43967d2e134483e683a1913f566d3",
+          "plan.json": "71a4846cb381a7f855db0211c83636dc17f30b8181617914156f6aef7b26a822",
+          "project.vectorcraft": "c1de3466c9af39d7756f6b1671c49eec23e4eaa6c09ea5d38be8ccd1aeb45a48"
+        },
+        "launcherSha256": "7332d0757aa01f03d00697f8eb8d93f849517cab34ea8a1355ba6c9513d5aba2",
+        "lineageStatus": "PASS",
+        "manifestSha256": "6904a4f6796e34b9845d8c4d793ea82e58ff13d6781613dbb6d48839c1a25140",
+        "nativeReopenStatus": "NOT_RUN",
+        "outputs": [
+          {
+            "decoder": "PyMuPDF",
+            "pages": 1,
+            "path": "artboard-1.svg",
+            "scope": "bounded raster decode; creative quality not assessed",
+            "sha256": "f9a16bac10a8d200a9f459e3d288ce81158a136ab96ed64fcf84e72d95ec3360",
+            "status": "PASS"
+          },
+          {
+            "decoder": "PyMuPDF",
+            "pages": 1,
+            "path": "artboard-1.pdf",
+            "scope": "bounded raster decode; creative quality not assessed",
+            "sha256": "126366c97b6dc408264453e16e9be244281aca4b81d4cebf77772e62e7c91252",
+            "status": "PASS"
+          },
+          {
+            "decoder": "Pillow",
+            "path": "artboard-1.png",
+            "sha256": "02e13da3a0b0c7de68fadaa1c6f736a65b2a4a794c6311fbef84f036df2dc3bd",
+            "size": [
+              128,
+              96
+            ],
+            "status": "PASS"
+          }
+        ],
+        "projectRevision": "c1de3466c9af39d7756f6b1671c49eec23e4eaa6c09ea5d38be8ccd1aeb45a48",
+        "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+        "schema": "vectorcraft-technical-review/v1",
+        "scope": "artifact integrity and export decode only; native reopening and creative review remain separate",
+        "sourceTask": {
+          "id": "execution-14612934-e6ef-4f4b-a828-ae77cd2afe4a",
+          "planSha256": "71a4846cb381a7f855db0211c83636dc17f30b8181617914156f6aef7b26a822",
+          "scope": "workflow-execution"
+        },
+        "technicalStatus": "PASS"
+      },
+      "technicalEvidenceOrigin": "checked-decoder",
+      "technicalCheckId": "a3d8a219-c57a-42b2-b775-a938e1bea033"
+    },
+    "fingerprints": {
+      "GUARD_ROOT/brief.txt": "44b3ccf63523329bba74926192dd29fe55e51e1ee762e242a68643a36752bc3c",
+      "GUARD_ROOT/judge-only.txt": "f518c945875dc511b036f3499f4ec917b40149f3181ba36307d22a612a1d5c22",
+      "GUARD_ROOT/rubric.json": "b36785153c18dfe94141f1d584fb0e0fe3f435d23f9519d1f22e7b6780bb61e2",
+      "GUARD_ROOT/source/artboard-1.pdf": "126366c97b6dc408264453e16e9be244281aca4b81d4cebf77772e62e7c91252",
+      "GUARD_ROOT/source/artboard-1.png": "02e13da3a0b0c7de68fadaa1c6f736a65b2a4a794c6311fbef84f036df2dc3bd",
+      "GUARD_ROOT/source/artboard-1.svg": "f9a16bac10a8d200a9f459e3d288ce81158a136ab96ed64fcf84e72d95ec3360",
+      "GUARD_ROOT/source/exchange-loss.json": "a853fb90b19ad18d01bda9e54cad5893bdda265789a8bcd8c1b4b6cf330d020d",
+      "GUARD_ROOT/source/lineage.json": "ea7c4ac08dcda4f832c09ea086d0e03dcef3daf8b42dc3feac73285938a1e28a",
+      "GUARD_ROOT/source/manifest.json": "6904a4f6796e34b9845d8c4d793ea82e58ff13d6781613dbb6d48839c1a25140",
+      "GUARD_ROOT/source/native.json": "9f4d77332c172915fd2b021138e6e7dff6e6e73b0bd554851c07329ce7d89ff9",
+      "GUARD_ROOT/source/operations.json": "8e223ade81a302f7cb83aac38430616f4a7d18d452e9aeae79ebf1c2e386e89d",
+      "GUARD_ROOT/source/pdf-export-date.json": "c7381343ea6046fcb36ee719065592fecfe43967d2e134483e683a1913f566d3",
+      "GUARD_ROOT/source/plan.json": "71a4846cb381a7f855db0211c83636dc17f30b8181617914156f6aef7b26a822",
+      "GUARD_ROOT/source/project.vectorcraft": "c1de3466c9af39d7756f6b1671c49eec23e4eaa6c09ea5d38be8ccd1aeb45a48"
+    },
+    "state": "pending"
+  },
+  "records": [
+    {
+      "case": "malformed-json",
+      "result": "PASS",
+      "attemptsBefore": 1,
+      "attemptsAfter": 1,
+      "rejectionPersisted": true
+    },
+    {
+      "case": "duplicate-json-key",
+      "result": "PASS",
+      "attemptsBefore": 1,
+      "attemptsAfter": 1,
+      "rejectionPersisted": true
+    },
+    {
+      "case": "schema-extra-field",
+      "result": "PASS",
+      "attemptsBefore": 1,
+      "attemptsAfter": 1,
+      "rejectionPersisted": true
+    },
+    {
+      "case": "binding-hash-mismatch",
+      "result": "PASS",
+      "attemptsBefore": 1,
+      "attemptsAfter": 1,
+      "rejectionPersisted": true
+    },
+    {
+      "case": "stale-source",
+      "result": "PASS",
+      "attemptsBefore": 1,
+      "attemptsAfter": 1,
+      "rejectionPersisted": true
+    },
+    {
+      "case": "stale-candidate",
+      "result": "PASS",
+      "attemptsBefore": 1,
+      "attemptsAfter": 1,
+      "rejectionPersisted": true
+    },
+    {
+      "case": "stale-target",
+      "result": "PASS",
+      "attemptsBefore": 1,
+      "attemptsAfter": 1,
+      "rejectionPersisted": true
+    },
+    {
+      "case": "stale-rubric",
+      "result": "PASS",
+      "attemptsBefore": 1,
+      "attemptsAfter": 1,
+      "rejectionPersisted": true
+    },
+    {
+      "case": "duplicate-receipt",
+      "result": "PASS",
+      "attemptsBefore": 1,
+      "attemptsAfter": 1,
+      "rejectionPersisted": true
+    }
+  ],
+  "events": [
+    {
+      "request": null,
+      "reason": "invalid_review_json",
+      "receipt": "{\"bytes\":41,\"sha256\":\"4c0c5c986ed0762fadb80ba7623198435f73a93e84f3109c1cea4422db1019ba\",\"withheld\":true}"
+    },
+    {
+      "request": null,
+      "reason": "invalid_review_json",
+      "receipt": "{\"bytes\":27,\"sha256\":\"b32fbffc850c3c29358d86a8cb906aa2ca36197c281808f431330e76ba79ede5\",\"withheld\":true}"
+    },
+    {
+      "request": "2faeeff1-4d90-4e02-a731-ee2cb24c35ce",
+      "reason": "Error: invalid_review_receipt",
+      "receipt": "{\"schema\":\"vectorcraft-review-receipt/v1\",\"requestId\":\"2faeeff1-4d90-4e02-a731-ee2cb24c35ce\",\"bindingHash\":\"bcb4b59c1c1099406946f57aba0a81af532ae92ecc8933645b1b7f5b4c30a6dc\",\"reviewer\":{\"kind\":\"host-model\",\"identity\":\"Codex active conversation main assistant\",\"contextOrigin\":\"thread 01a11a35-eaa0-7911-ac19-2546b82066f1; actual view_image tool inspection of128x96,64x48,32x24 native previews\",\"independenceEvidence\":null},\"verdict\":\"revise\",\"issues\":[{\"objectId\":2,\"field\":\"appearance.items.0.paint\",\"message\":\"observed: red/blue gradient fails the explicit solid-green target; change only this fill to #00ff00\",\"evidence\":[\"artboard-1.png: rectangle x12..72,y12..48\",\"native.json: object2 appearance.items.0.paint\"]},{\"objectId\":3,\"field\":\"kind.runs.0.style.size\",\"message\":\"observed: label is not readable in the32x24 preview; text-size edits are outside this round authorization and remain unresolved\",\"evidence\":[\"initial previews/preview-32.png\",\"native.json: object3 live Source Sans3,size12\"]}],\"scores\":{\"structure\":3,\"text\":2,\"brand\":1,\"layout\":3,\"legibility\":1},\"unexpected\":true}"
+    },
+    {
+      "request": "2faeeff1-4d90-4e02-a731-ee2cb24c35ce",
+      "reason": "Error: stale_review_binding",
+      "receipt": "{\"schema\":\"vectorcraft-review-receipt/v1\",\"requestId\":\"2faeeff1-4d90-4e02-a731-ee2cb24c35ce\",\"bindingHash\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"reviewer\":{\"kind\":\"host-model\",\"identity\":\"Codex active conversation main assistant\",\"contextOrigin\":\"thread 01a11a35-eaa0-7911-ac19-2546b82066f1; actual view_image tool inspection of128x96,64x48,32x24 native previews\",\"independenceEvidence\":null},\"verdict\":\"revise\",\"issues\":[{\"objectId\":2,\"field\":\"appearance.items.0.paint\",\"message\":\"observed: red/blue gradient fails the explicit solid-green target; change only this fill to #00ff00\",\"evidence\":[\"artboard-1.png: rectangle x12..72,y12..48\",\"native.json: object2 appearance.items.0.paint\"]},{\"objectId\":3,\"field\":\"kind.runs.0.style.size\",\"message\":\"observed: label is not readable in the32x24 preview; text-size edits are outside this round authorization and remain unresolved\",\"evidence\":[\"initial previews/preview-32.png\",\"native.json: object3 live Source Sans3,size12\"]}],\"scores\":{\"structure\":3,\"text\":2,\"brand\":1,\"layout\":3,\"legibility\":1}}"
+    },
+    {
+      "request": "2faeeff1-4d90-4e02-a731-ee2cb24c35ce",
+      "reason": "Error: stale_review_binding",
+      "receipt": "{\"schema\":\"vectorcraft-review-receipt/v1\",\"requestId\":\"2faeeff1-4d90-4e02-a731-ee2cb24c35ce\",\"bindingHash\":\"bcb4b59c1c1099406946f57aba0a81af532ae92ecc8933645b1b7f5b4c30a6dc\",\"reviewer\":{\"kind\":\"host-model\",\"identity\":\"Codex active conversation main assistant\",\"contextOrigin\":\"thread 01a11a35-eaa0-7911-ac19-2546b82066f1; actual view_image tool inspection of128x96,64x48,32x24 native previews\",\"independenceEvidence\":null},\"verdict\":\"revise\",\"issues\":[{\"objectId\":2,\"field\":\"appearance.items.0.paint\",\"message\":\"observed: red/blue gradient fails the explicit solid-green target; change only this fill to #00ff00\",\"evidence\":[\"artboard-1.png: rectangle x12..72,y12..48\",\"native.json: object2 appearance.items.0.paint\"]},{\"objectId\":3,\"field\":\"kind.runs.0.style.size\",\"message\":\"observed: label is not readable in the32x24 preview; text-size edits are outside this round authorization and remain unresolved\",\"evidence\":[\"initial previews/preview-32.png\",\"native.json: object3 live Source Sans3,size12\"]}],\"scores\":{\"structure\":3,\"text\":2,\"brand\":1,\"layout\":3,\"legibility\":1}}"
+    },
+    {
+      "request": "2faeeff1-4d90-4e02-a731-ee2cb24c35ce",
+      "reason": "Error: stale_review_binding",
+      "receipt": "{\"schema\":\"vectorcraft-review-receipt/v1\",\"requestId\":\"2faeeff1-4d90-4e02-a731-ee2cb24c35ce\",\"bindingHash\":\"bcb4b59c1c1099406946f57aba0a81af532ae92ecc8933645b1b7f5b4c30a6dc\",\"reviewer\":{\"kind\":\"host-model\",\"identity\":\"Codex active conversation main assistant\",\"contextOrigin\":\"thread 01a11a35-eaa0-7911-ac19-2546b82066f1; actual view_image tool inspection of128x96,64x48,32x24 native previews\",\"independenceEvidence\":null},\"verdict\":\"revise\",\"issues\":[{\"objectId\":2,\"field\":\"appearance.items.0.paint\",\"message\":\"observed: red/blue gradient fails the explicit solid-green target; change only this fill to #00ff00\",\"evidence\":[\"artboard-1.png: rectangle x12..72,y12..48\",\"native.json: object2 appearance.items.0.paint\"]},{\"objectId\":3,\"field\":\"kind.runs.0.style.size\",\"message\":\"observed: label is not readable in the32x24 preview; text-size edits are outside this round authorization and remain unresolved\",\"evidence\":[\"initial previews/preview-32.png\",\"native.json: object3 live Source Sans3,size12\"]}],\"scores\":{\"structure\":3,\"text\":2,\"brand\":1,\"layout\":3,\"legibility\":1}}"
+    },
+    {
+      "request": "2faeeff1-4d90-4e02-a731-ee2cb24c35ce",
+      "reason": "Error: stale_review_binding",
+      "receipt": "{\"schema\":\"vectorcraft-review-receipt/v1\",\"requestId\":\"2faeeff1-4d90-4e02-a731-ee2cb24c35ce\",\"bindingHash\":\"bcb4b59c1c1099406946f57aba0a81af532ae92ecc8933645b1b7f5b4c30a6dc\",\"reviewer\":{\"kind\":\"host-model\",\"identity\":\"Codex active conversation main assistant\",\"contextOrigin\":\"thread 01a11a35-eaa0-7911-ac19-2546b82066f1; actual view_image tool inspection of128x96,64x48,32x24 native previews\",\"independenceEvidence\":null},\"verdict\":\"revise\",\"issues\":[{\"objectId\":2,\"field\":\"appearance.items.0.paint\",\"message\":\"observed: red/blue gradient fails the explicit solid-green target; change only this fill to #00ff00\",\"evidence\":[\"artboard-1.png: rectangle x12..72,y12..48\",\"native.json: object2 appearance.items.0.paint\"]},{\"objectId\":3,\"field\":\"kind.runs.0.style.size\",\"message\":\"observed: label is not readable in the32x24 preview; text-size edits are outside this round authorization and remain unresolved\",\"evidence\":[\"initial previews/preview-32.png\",\"native.json: object3 live Source Sans3,size12\"]}],\"scores\":{\"structure\":3,\"text\":2,\"brand\":1,\"layout\":3,\"legibility\":1}}"
+    },
+    {
+      "request": "2faeeff1-4d90-4e02-a731-ee2cb24c35ce",
+      "reason": "Error: stale_review_binding",
+      "receipt": "{\"schema\":\"vectorcraft-review-receipt/v1\",\"requestId\":\"2faeeff1-4d90-4e02-a731-ee2cb24c35ce\",\"bindingHash\":\"bcb4b59c1c1099406946f57aba0a81af532ae92ecc8933645b1b7f5b4c30a6dc\",\"reviewer\":{\"kind\":\"host-model\",\"identity\":\"Codex active conversation main assistant\",\"contextOrigin\":\"thread 01a11a35-eaa0-7911-ac19-2546b82066f1; actual view_image tool inspection of128x96,64x48,32x24 native previews\",\"independenceEvidence\":null},\"verdict\":\"revise\",\"issues\":[{\"objectId\":2,\"field\":\"appearance.items.0.paint\",\"message\":\"observed: red/blue gradient fails the explicit solid-green target; change only this fill to #00ff00\",\"evidence\":[\"artboard-1.png: rectangle x12..72,y12..48\",\"native.json: object2 appearance.items.0.paint\"]},{\"objectId\":3,\"field\":\"kind.runs.0.style.size\",\"message\":\"observed: label is not readable in the32x24 preview; text-size edits are outside this round authorization and remain unresolved\",\"evidence\":[\"initial previews/preview-32.png\",\"native.json: object3 live Source Sans3,size12\"]}],\"scores\":{\"structure\":3,\"text\":2,\"brand\":1,\"layout\":3,\"legibility\":1}}"
+    },
+    {
+      "request": "2faeeff1-4d90-4e02-a731-ee2cb24c35ce",
+      "reason": "Error: duplicate_review_receipt",
+      "receipt": "{\"schema\":\"vectorcraft-review-receipt/v1\",\"requestId\":\"2faeeff1-4d90-4e02-a731-ee2cb24c35ce\",\"bindingHash\":\"bcb4b59c1c1099406946f57aba0a81af532ae92ecc8933645b1b7f5b4c30a6dc\",\"reviewer\":{\"kind\":\"host-model\",\"identity\":\"Codex active conversation main assistant\",\"contextOrigin\":\"thread 01a11a35-eaa0-7911-ac19-2546b82066f1; actual view_image tool inspection of128x96,64x48,32x24 native previews\",\"independenceEvidence\":null},\"verdict\":\"revise\",\"issues\":[{\"objectId\":2,\"field\":\"appearance.items.0.paint\",\"message\":\"observed: red/blue gradient fails the explicit solid-green target; change only this fill to #00ff00\",\"evidence\":[\"artboard-1.png: rectangle x12..72,y12..48\",\"native.json: object2 appearance.items.0.paint\"]},{\"objectId\":3,\"field\":\"kind.runs.0.style.size\",\"message\":\"observed: label is not readable in the32x24 preview; text-size edits are outside this round authorization and remain unresolved\",\"evidence\":[\"initial previews/preview-32.png\",\"native.json: object3 live Source Sans3,size12\"]}],\"scores\":{\"structure\":3,\"text\":2,\"brand\":1,\"layout\":3,\"legibility\":1}}"
+    }
+  ],
+  "pendingRecovered": true,
+  "pendingRequestReused": true,
+  "restartCreatedNewReview": false,
+  "sharedAttempts": 1,
+  "sourceUnchanged": true,
+  "targetRoleSeparated": true,
+  "scope": "Actual checked native input and current receipt handler; deliberate invalid/stale payload injection,not fresh creative scoring or independent model routing"
+}

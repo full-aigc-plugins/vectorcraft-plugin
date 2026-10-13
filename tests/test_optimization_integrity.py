@@ -1,4 +1,5 @@
 """当前版本与证据依赖校验，不把静态门禁视为原生验收。"""
+import hashlib
 import importlib.util
 import json
 from pathlib import Path
@@ -75,6 +76,12 @@ class OptimizationIntegrityTests(unittest.TestCase):
                 destination=root/name;destination.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/payload_source(name),destination)
             m=load('evidence_index')
             observed=json.loads((root/'docs/evidence/craft-vector37-gateway-export-fixed-first-use-20261008.json').read_text())['hostLock']['plugins']['vectorcraft']
+            # 清单形状随收敛合法变更：夹具改用执行时代的收敛前清单字节，使记录的清单摘要可按版本对齐复算。
+            era=ROOT/'plugin.json'
+            for candidate in sorted((ROOT/'docs/evidence/pre-harness-convergence-identity').glob('*/plugin.json')):
+                aligned=json.loads(candidate.read_text());aligned['version']=observed['version']
+                if hashlib.sha256((json.dumps(aligned,ensure_ascii=False,indent=2)+'\n').encode()).hexdigest()==observed['pluginManifestSha256']:era=candidate;break
+            shutil.copyfile(era,root/'plugin.json')
             manifest=json.loads((root/'plugin.json').read_text());manifest['version']=observed['version'];(root/'plugin.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
             lock=json.loads((root/'skills.lock.json').read_text());lock['sources'][0]['sha']=observed['skillSourceSha'];lock['sources'][0]['ref']=observed['skillSourceRef'];lock['sources'][0]['sha256']=observed['skills'];(root/'skills.lock.json').write_text(json.dumps(lock))
             self.assertFalse(m.build(root)['entries'][0]['historical'])

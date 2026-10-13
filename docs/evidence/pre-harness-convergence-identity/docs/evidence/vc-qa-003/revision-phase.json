@@ -1,0 +1,408 @@
+{
+  "feedback": {
+    "assessment": {
+      "kind": "actual-current-conversation-model-review",
+      "projectRevision": "c1de3466c9af39d7756f6b1671c49eec23e4eaa6c09ea5d38be8ccd1aeb45a48",
+      "previewSha256": "02e13da3a0b0c7de68fadaa1c6f736a65b2a4a794c6311fbef84f036df2dc3bd",
+      "reviewer": {
+        "kind": "host-model",
+        "identity": "Codex active conversation main assistant",
+        "contextOrigin": "thread 01a11a35-eaa0-7911-ac19-2546b82066f1; actual view_image tool inspection of128x96,64x48,32x24 native previews",
+        "independenceEvidence": null
+      },
+      "verdict": "revise",
+      "scores": {
+        "structure": 3,
+        "text": 2,
+        "brand": 1,
+        "layout": 3,
+        "legibility": 1
+      },
+      "issues": [
+        {
+          "objectId": 2,
+          "field": "appearance.items.0.paint",
+          "message": "observed: red/blue gradient fails the explicit solid-green target; change only this fill to #00ff00",
+          "evidence": [
+            "artboard-1.png: rectangle x12..72,y12..48",
+            "native.json: object2 appearance.items.0.paint"
+          ]
+        },
+        {
+          "objectId": 3,
+          "field": "kind.runs.0.style.size",
+          "message": "observed: label is not readable in the32x24 preview; text-size edits are outside this round authorization and remain unresolved",
+          "evidence": [
+            "initial previews/preview-32.png",
+            "native.json: object3 live Source Sans3,size12"
+          ]
+        }
+      ],
+      "inspection": {
+        "actualImageViews": [
+          {
+            "path": "preview-128.png",
+            "sha256": "02e13da3a0b0c7de68fadaa1c6f736a65b2a4a794c6311fbef84f036df2dc3bd",
+            "width": 128,
+            "height": 96,
+            "scale": 1
+          },
+          {
+            "path": "preview-64.png",
+            "sha256": "f58a7e40247166945c20e2de329df86e830447861d0759a340f2d4394b150df7",
+            "width": 64,
+            "height": 48,
+            "scale": 0.5
+          },
+          {
+            "path": "preview-32.png",
+            "sha256": "1432616744fa34f12a7305526149f0a02e855d9eedf0ca3438983301b730ee12",
+            "width": 32,
+            "height": 24,
+            "scale": 0.25
+          }
+        ],
+        "structure": {
+          "status": "observed",
+          "closedSubpaths": 1,
+          "holes": 0,
+          "stroke": "none",
+          "nativeEditability": "path and live rectangle retained"
+        },
+        "text": {
+          "status": "observed",
+          "live": "Editable source",
+          "font": "Source Sans3 present",
+          "fontPortability": "unknown"
+        },
+        "brand": {
+          "status": "observed",
+          "solidGreenTargetMet": false
+        },
+        "layout": {
+          "status": "observed",
+          "alignment": "shape and text left edges x12; artboard128x96"
+        },
+        "legibility": {
+          "32": "label is not readable",
+          "64": "reduced text is difficult",
+          "128": "dark label on transparent preview has limited contrast",
+          "status": "observed"
+        },
+        "exchange": {
+          "lost": [
+            "SVG native editing model",
+            "SVG live-text editability"
+          ],
+          "observed": [
+            "SVG freeform fill rasterization",
+            "native editable text and closed shape"
+          ],
+          "unknown": [
+            "font portability",
+            "universal external editor effect fidelity"
+          ]
+        },
+        "scope": "Actual current-agent inspection of synthetic acceptance artwork; no independent reviewer,external-host routing or universal brand quality claim"
+      }
+    },
+    "receipt": {
+      "schema": "vectorcraft-review-receipt/v1",
+      "requestId": "ecdf2920-0ab5-43e4-ad9e-341e8f66d0c2",
+      "bindingHash": "fc580a5a59f143c3118a7a6d3b682a30367df4bc3dddffb24e002b59d99b5b58",
+      "reviewer": {
+        "kind": "host-model",
+        "identity": "Codex active conversation main assistant",
+        "contextOrigin": "thread 01a11a35-eaa0-7911-ac19-2546b82066f1; actual view_image tool inspection of128x96,64x48,32x24 native previews",
+        "independenceEvidence": null
+      },
+      "verdict": "revise",
+      "issues": [
+        {
+          "objectId": 2,
+          "field": "appearance.items.0.paint",
+          "message": "observed: red/blue gradient fails the explicit solid-green target; change only this fill to #00ff00",
+          "evidence": [
+            "artboard-1.png: rectangle x12..72,y12..48",
+            "native.json: object2 appearance.items.0.paint"
+          ]
+        },
+        {
+          "objectId": 3,
+          "field": "kind.runs.0.style.size",
+          "message": "observed: label is not readable in the32x24 preview; text-size edits are outside this round authorization and remain unresolved",
+          "evidence": [
+            "initial previews/preview-32.png",
+            "native.json: object3 live Source Sans3,size12"
+          ]
+        }
+      ],
+      "scores": {
+        "structure": 3,
+        "text": 2,
+        "brand": 1,
+        "layout": 3,
+        "legibility": 1
+      }
+    },
+    "response": {
+      "state": "revision_proposed",
+      "requestId": "ecdf2920-0ab5-43e4-ad9e-341e8f66d0c2",
+      "issues": [
+        {
+          "evidence": [
+            "artboard-1.png: rectangle x12..72,y12..48",
+            "native.json: object2 appearance.items.0.paint"
+          ],
+          "field": "appearance.items.0.paint",
+          "message": "observed: red/blue gradient fails the explicit solid-green target; change only this fill to #00ff00",
+          "objectId": 2
+        },
+        {
+          "evidence": [
+            "initial previews/preview-32.png",
+            "native.json: object3 live Source Sans3,size12"
+          ],
+          "field": "kind.runs.0.style.size",
+          "message": "observed: label is not readable in the32x24 preview; text-size edits are outside this round authorization and remain unresolved",
+          "objectId": 3
+        }
+      ],
+      "independent": false,
+      "independenceStatus": "not_claimed",
+      "independenceEvidence": null,
+      "technicalStatus": "PASS",
+      "creativeVerdict": "revise",
+      "engineeringStatus": "NOT_RUN",
+      "creativeStatus": "FAIL",
+      "technicalEvidenceOrigin": "checked-decoder",
+      "scores": {
+        "brand": 1,
+        "layout": 3,
+        "legibility": 1,
+        "structure": 3,
+        "text": 2
+      },
+      "exchangeLossSha256": "a853fb90b19ad18d01bda9e54cad5893bdda265789a8bcd8c1b4b6cf330d020d",
+      "acceptanceStatus": "pending"
+    }
+  },
+  "proposal": {
+    "schema": "vectorcraft-local-revision-proposal/v1",
+    "requestId": "ecdf2920-0ab5-43e4-ad9e-341e8f66d0c2",
+    "bindingHash": "fc580a5a59f143c3118a7a6d3b682a30367df4bc3dddffb24e002b59d99b5b58",
+    "expectedProjectRevision": "c1de3466c9af39d7756f6b1671c49eec23e4eaa6c09ea5d38be8ccd1aeb45a48",
+    "changes": [
+      {
+        "field": "appearance.items.0.paint",
+        "objectId": 2,
+        "value": {
+          "color": {
+            "b": 0,
+            "g": 1,
+            "model": "rgb",
+            "r": 0
+          },
+          "type": "solid"
+        }
+      }
+    ],
+    "authorization": {
+      "budgetId": "actual-single-round",
+      "deadline": 1791501552470,
+      "fields": [
+        "appearance.items.0.paint"
+      ],
+      "maxAttempts": 6,
+      "maxBytes": 134217728,
+      "objects": [
+        2
+      ],
+      "readRoots": [
+        "QA_ROOT",
+        "QA_RUNTIME"
+      ],
+      "writeRoots": [
+        "QA_ROOT",
+        "QA_RUNTIME"
+      ]
+    },
+    "state": "proposed",
+    "id": "a006aeb1-55e7-4f75-854d-5db2e0c93f37",
+    "cycleId": "actual-single-round",
+    "round": 1
+  },
+  "execution": {
+    "cycleId": "actual-single-round",
+    "proposalId": "a006aeb1-55e7-4f75-854d-5db2e0c93f37",
+    "executionTaskId": "0e05b8f1-0cfb-4234-8066-aebd3138ad65",
+    "state": "awaiting_review",
+    "output": "QA_ROOT/revised",
+    "acceptanceStatus": "pending"
+  },
+  "observation": {
+    "schema": "vectorcraft-single-review-native-observer/v1",
+    "result": "PASS",
+    "sourceProjectSha256": "08e3b58b1fd5f46979b7958470c2c54c16ab691739653209c35bbe1f90011d9d",
+    "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+    "driverSha256": "bbac080bf0f3b7ff1f52f3124002071926835cfc329ddebc56477c2ef1cccad2",
+    "nativeReopen": true,
+    "sourceUnchanged": true,
+    "previews": [
+      {
+        "path": "preview-128.png",
+        "sha256": "099779df74d2eaffc1e4e67220d55bed8a3b686f0387fb4e1a981ddfcecd5e74",
+        "width": 128,
+        "height": 96,
+        "scale": 1
+      },
+      {
+        "path": "preview-64.png",
+        "sha256": "460a74ba1fd7ec29706af0b7a6e740b94ed5b2216575e17fd34a29b83556dcdb",
+        "width": 64,
+        "height": 48,
+        "scale": 0.5
+      },
+      {
+        "path": "preview-32.png",
+        "sha256": "48af94e0e689bf8b2d320e67cc23f7e7309c4640eb52b0a2c88597217980d84d",
+        "width": 32,
+        "height": 24,
+        "scale": 0.25
+      }
+    ],
+    "scope": "explicit QA instrumentation before or after the bounded review; outside workflow budget,not a model-dispatch or automatic workflow call"
+  },
+  "request": {
+    "schema": "vectorcraft-review-request/v1",
+    "id": "40d950c0-7187-4545-9a9a-a13e6f77e055",
+    "bindingHash": "c2600cef9f300b82074cfb55064ec7615032fb29076369d4bc10e8f39ff73b62",
+    "input": {
+      "native": "QA_ROOT/revised/project.vectorcraft",
+      "projectRevision": "08e3b58b1fd5f46979b7958470c2c54c16ab691739653209c35bbe1f90011d9d",
+      "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "candidates": [
+        "QA_ROOT/revised/artboard-1.svg",
+        "QA_ROOT/revised/artboard-1.pdf",
+        "QA_ROOT/revised/artboard-1.png"
+      ],
+      "targets": [
+        {
+          "path": "QA_ROOT/brief.txt",
+          "role": "target"
+        }
+      ],
+      "rubric": "QA_ROOT/rubric.json",
+      "exchangeLoss": "QA_ROOT/revised/exchange-loss.json",
+      "technicalStatus": "PASS",
+      "authorization": {
+        "objects": [
+          2
+        ],
+        "fields": [
+          "appearance.items.0.paint"
+        ],
+        "deadline": 1791501552470,
+        "maxAttempts": 6,
+        "maxBytes": 134217728,
+        "budgetId": "actual-single-round",
+        "readRoots": [
+          "QA_ROOT",
+          "QA_RUNTIME"
+        ],
+        "writeRoots": [
+          "QA_ROOT",
+          "QA_RUNTIME"
+        ]
+      },
+      "technicalEvidence": {
+        "acceptanceStatus": "pending",
+        "artifactIntegrityStatus": "PASS",
+        "artifactLogicalId": "vectorcraft:38a4a25f-15e2-4120-8f28-f043a1d6057b",
+        "artifactVersion": "a4ee710e34f8821b518147ebb3135c721ee7ade1525021a61532e2ebdc6ffd3f",
+        "checkId": "dd86b51d-a559-45ec-8333-f29532e711ba",
+        "checkerFiles": {
+          "skills/vectorcraft-use/scripts/exchange_loss.py": "a4ba82ec8000a095dcf62813352621bdc42cfd7a81949baa6b0e896d1a2048e3",
+          "src/evaluation/delivery_quality.py": "60b81d1097d2a2ef84d5e8010ee698295e1184db1b3667f3e40fa03feb899070",
+          "src/harness/process_runner.py": "7332d0757aa01f03d00697f8eb8d93f849517cab34ea8a1355ba6c9513d5aba2"
+        },
+        "checkerSha256": "60b81d1097d2a2ef84d5e8010ee698295e1184db1b3667f3e40fa03feb899070",
+        "creativeStatus": "NOT_RUN",
+        "engineeringStatus": "NOT_RUN",
+        "exchangeStatus": "PASS",
+        "files": {
+          "artboard-1.pdf": "ad6c14578c4b0253246f4ddf9fc9bcb5480236fc8a9f8adae369ed43571ee2b8",
+          "artboard-1.png": "099779df74d2eaffc1e4e67220d55bed8a3b686f0387fb4e1a981ddfcecd5e74",
+          "artboard-1.svg": "81575fef72584e8f9af32e854a8ee71d11b86d5fa630a86b90ba8aaa11fcd45e",
+          "exchange-loss.json": "e1847e6fd40fea68cfe3a80f9d10b2eab1ed4434f5cbacf846edd73946999c71",
+          "lineage.json": "1f72b2403ca3ae2d6c6c118c62c53e93040197c34f580ed8f7bf27a3f5b8c570",
+          "native.json": "572c83ab545ff431d8fd6497ed658479321cd6e5b4eb75ca9dd446f0a661f039",
+          "operations.json": "7c708f14541f6987fe0c01f44dd4e2ee102336a087d9b1ad5ceeb9026ec5dd38",
+          "pdf-export-date.json": "c7381343ea6046fcb36ee719065592fecfe43967d2e134483e683a1913f566d3",
+          "plan.json": "74f0b9416cd732146fb55da43640701fa0cb3662a0bf1d5d716d8a2d305b48dc",
+          "project.vectorcraft": "08e3b58b1fd5f46979b7958470c2c54c16ab691739653209c35bbe1f90011d9d"
+        },
+        "launcherSha256": "7332d0757aa01f03d00697f8eb8d93f849517cab34ea8a1355ba6c9513d5aba2",
+        "lineageStatus": "PASS",
+        "manifestSha256": "de964e4e2c1303cb6e752e27e6ce8845863209c833f0a94cd0d3b26826f6c200",
+        "nativeReopenStatus": "NOT_RUN",
+        "outputs": [
+          {
+            "decoder": "PyMuPDF",
+            "pages": 1,
+            "path": "artboard-1.svg",
+            "scope": "bounded raster decode; creative quality not assessed",
+            "sha256": "81575fef72584e8f9af32e854a8ee71d11b86d5fa630a86b90ba8aaa11fcd45e",
+            "status": "PASS"
+          },
+          {
+            "decoder": "PyMuPDF",
+            "pages": 1,
+            "path": "artboard-1.pdf",
+            "scope": "bounded raster decode; creative quality not assessed",
+            "sha256": "ad6c14578c4b0253246f4ddf9fc9bcb5480236fc8a9f8adae369ed43571ee2b8",
+            "status": "PASS"
+          },
+          {
+            "decoder": "Pillow",
+            "path": "artboard-1.png",
+            "sha256": "099779df74d2eaffc1e4e67220d55bed8a3b686f0387fb4e1a981ddfcecd5e74",
+            "size": [
+              128,
+              96
+            ],
+            "status": "PASS"
+          }
+        ],
+        "projectRevision": "08e3b58b1fd5f46979b7958470c2c54c16ab691739653209c35bbe1f90011d9d",
+        "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+        "schema": "vectorcraft-technical-review/v1",
+        "scope": "artifact integrity and export decode only; native reopening and creative review remain separate",
+        "sourceTask": {
+          "id": "execution-c27d3432-778d-47a0-a27c-a5d9d1ca4376",
+          "planSha256": "74f0b9416cd732146fb55da43640701fa0cb3662a0bf1d5d716d8a2d305b48dc",
+          "scope": "workflow-execution"
+        },
+        "technicalStatus": "PASS"
+      },
+      "technicalEvidenceOrigin": "checked-decoder",
+      "technicalCheckId": "dd86b51d-a559-45ec-8333-f29532e711ba"
+    },
+    "fingerprints": {
+      "QA_ROOT/brief.txt": "44b3ccf63523329bba74926192dd29fe55e51e1ee762e242a68643a36752bc3c",
+      "QA_ROOT/revised/artboard-1.pdf": "ad6c14578c4b0253246f4ddf9fc9bcb5480236fc8a9f8adae369ed43571ee2b8",
+      "QA_ROOT/revised/artboard-1.png": "099779df74d2eaffc1e4e67220d55bed8a3b686f0387fb4e1a981ddfcecd5e74",
+      "QA_ROOT/revised/artboard-1.svg": "81575fef72584e8f9af32e854a8ee71d11b86d5fa630a86b90ba8aaa11fcd45e",
+      "QA_ROOT/revised/exchange-loss.json": "e1847e6fd40fea68cfe3a80f9d10b2eab1ed4434f5cbacf846edd73946999c71",
+      "QA_ROOT/revised/lineage.json": "1f72b2403ca3ae2d6c6c118c62c53e93040197c34f580ed8f7bf27a3f5b8c570",
+      "QA_ROOT/revised/manifest.json": "de964e4e2c1303cb6e752e27e6ce8845863209c833f0a94cd0d3b26826f6c200",
+      "QA_ROOT/revised/native.json": "572c83ab545ff431d8fd6497ed658479321cd6e5b4eb75ca9dd446f0a661f039",
+      "QA_ROOT/revised/operations.json": "7c708f14541f6987fe0c01f44dd4e2ee102336a087d9b1ad5ceeb9026ec5dd38",
+      "QA_ROOT/revised/pdf-export-date.json": "c7381343ea6046fcb36ee719065592fecfe43967d2e134483e683a1913f566d3",
+      "QA_ROOT/revised/plan.json": "74f0b9416cd732146fb55da43640701fa0cb3662a0bf1d5d716d8a2d305b48dc",
+      "QA_ROOT/revised/project.vectorcraft": "08e3b58b1fd5f46979b7958470c2c54c16ab691739653209c35bbe1f90011d9d",
+      "QA_ROOT/rubric.json": "b36785153c18dfe94141f1d584fb0e0fe3f435d23f9519d1f22e7b6780bb61e2"
+    },
+    "state": "pending"
+  }
+}

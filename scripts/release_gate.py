@@ -60,7 +60,9 @@ def assess(root=ROOT):
   return {'evidence':[bundle['technical'],bundle['integrity']],'runtimeSha256':r['runtimeSha256'],'platform':r['platform']}
  def host():
   r=bjson(bundle['host']);source=bjson('skills.lock.json')['sources'][0];integrity=bjson(bundle['integrity']);p=bjson('plugin.json')
-  if r['result']!='PASS' or r['pluginVersion']!=p['version'] or r['skillSourceRef']!=source['ref'] or r['skillSourceCommit']!=source['sha'] or len(r['skills'])!=13 or any(x['enabled'] is not True for x in r['skills']) or {x['name']:x['sha256'] for x in r['skills']}!=source['sha256'] or integrity['digests']!=source['sha256'] or integrity['skillsUnchanged']!=13:raise ValueError('release_host_identity')
+  # 技能数与未变技能数一律以锁定源身份（source['sha256'] 键数）为准，不得硬编码历史域技能数。
+  count=len(source['sha256'])
+  if r['result']!='PASS' or r['pluginVersion']!=p['version'] or r['skillSourceRef']!=source['ref'] or r['skillSourceCommit']!=source['sha'] or len(r['skills'])!=count or any(x['enabled'] is not True for x in r['skills']) or {x['name']:x['sha256'] for x in r['skills']}!=source['sha256'] or integrity['digests']!=source['sha256'] or integrity['skillsUnchanged']!=count:raise ValueError('release_host_identity')
   return {'evidence':[bundle['host']],'hostVersion':r['hostVersion'],'platform':r['platform'],'scope':r['scope'],'excluded':r['excluded']}
  def task():
   r=technical();n=bjson(r['cases']['guards']);execution=n['execution'];first=n['initialRequest'];next_request=n['nextRequest']

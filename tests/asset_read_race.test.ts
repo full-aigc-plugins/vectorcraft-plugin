@@ -26,7 +26,7 @@ test('Controller refuses a replaced asset ancestor before reading outside bytes'
    return (originalRead as any)(path,...args);
   }) as typeof fs.readFileSync;
   syncBuiltinESMExports();
-  let error:any;try{await controller.run({key:'ancestor-race',skill:resolve('skills/vectorcraft-use'),expectedSkillSha256:skillDigest(resolve('skills/vectorcraft-use')),
+  let error:any;try{await controller.run({key:'ancestor-race',skill:resolve('skills/vectorcraft-harness'),expectedSkillSha256:skillDigest(resolve('skills/vectorcraft-harness')),
    plan,output:join(root,'delivery'),runtimeHome:join(root,'runtime'),python:process.env.VECTORCRAFT_TEST_PYTHON??(fs.existsSync('/opt/anaconda3/bin/python3')?'/opt/anaconda3/bin/python3':'python3'),estimatedBytes:1048576,
    authorization:{objects:[],fields:[],deadline:Date.now()+60000,maxAttempts:1,maxBytes:1048576,readRoots:[plan,allowed],writeRoots:[root]}});}catch(caught){error=caught;}
   assert(swapped,'test must reach the path-to-read boundary');

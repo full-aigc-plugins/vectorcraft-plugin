@@ -1,0 +1,54 @@
+{
+  "schema": "vectorcraft-revision-fixed/v2",
+  "result": "NOT_RUN",
+  "pluginVersion": "0.1.0-dev.64",
+  "pluginCommit": "3eb0c325c23a74864e4a563effe0ed9ba7a365c0",
+  "sourceRef": "v0.1.0-dev.47",
+  "sourceCommit": "3d102cedc084d410fe5adf9425c34c626dc95112",
+  "platform": "darwin-arm64",
+  "hostVersion": "codex-cli 0.162.1",
+  "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+  "tasksClosed": [],
+  "tasksCovered": [],
+  "artifactRef": "3eb0c325c23a74864e4a563effe0ed9ba7a365c0",
+  "artifactKind": "public-commit",
+  "publicTagVerified": false,
+  "host": "docs/evidence/vc-qa-004/host-commit47.json",
+  "integrity": "docs/evidence/vc-qa-004/integrity-commit47.json",
+  "cases": {},
+  "blocked": [
+    {
+      "condition": "fixed61 seed native project absent",
+      "detail": "every revision case must bind the unchanged fixed61 seed projectRevision c1de3466c9af39d7756f6b1671c49eec23e4eaa6c09ea5d38be8ccd1aeb45a48 recorded in docs/evidence/vc-qa-001/native-fixed61.json; the actual project directory was never committed and is absent from this machine, so guards/budget/small-improvement/lower-score/round-limit/goal-change cannot re-execute"
+    },
+    {
+      "condition": "VectorCraft.app 0.2.0 (signed desktop) not installed",
+      "detail": "stale-gui and gui-snapshots require the owned signed desktop mutation (ai.storyteller.vectorcraft binarySha256 46d7846a765dd0c2a64a72dea17796f49d725203d2c5d91c339432572048f856); no VectorCraft.app exists on this machine"
+    },
+    {
+      "condition": "last qualified technical stays at its original identity",
+      "detail": "the four-scenario native technical evidence of record remains docs/evidence/vectorcraft-revision-commit64-20261009.json (public-commit64/source46); it is not rebound to source47"
+    }
+  ],
+  "scope": "source47 re-qualification honestly NOT_RUN in the current environment; host and installed-integrity layers were actually re-executed against public commit 3eb0c325c23a74864e4a563effe0ed9ba7a365c0 (14/14 locked skills discovered enabled with unchanged tree digests on codex-cli 0.162.1); no native revision, desktop mutation or model run was performed or claimed",
+  "unverified": [
+    "four VC-QA-002 native scenarios on source47",
+    "six native revisions",
+    "15 native guards",
+    "owned signed desktop stale-source mutation",
+    "actual creative judgment",
+    "other platforms",
+    "complete V1",
+    "all commands",
+    "model routing",
+    "host secret references"
+  ],
+  "fingerprints": {
+    "skills/vectorcraft-harness/scripts/runtime.lock.json": "7b6bd7f3fab84b757d4ea20ac91b74d89b417ec061efc6ae320dda97a422cc07",
+    "skills/vectorcraft-harness/scripts/desktop.lock.json": "f38c7cd5b837bc4f3275ef96c17308fc894f6be66c6a00ecf9c53378ad4bb486",
+    "docs/evidence/vc-qa-001/native-fixed61.json": "034a862e9057f2cefac128d946874327d29472721c910532dda2d6428d6b0085",
+    "docs/evidence/vectorcraft-revision-commit64-20261009.json": "945a76c78e987c03ce7554b07d583dbbb00df760523fcb6007693c45ad9d8c84",
+    "docs/evidence/vc-qa-004/host-commit47.json": "7d07e164bf99c13b6b6e1bb20bed9f8bf88d84db8ec08435b92ff5f4c6df1c4f",
+    "docs/evidence/vc-qa-004/integrity-commit47.json": "851c37b3b813afb039188bed47cff97a0a81fab1c29af40840cb8cc5fd0c5f2c"
+  }
+}

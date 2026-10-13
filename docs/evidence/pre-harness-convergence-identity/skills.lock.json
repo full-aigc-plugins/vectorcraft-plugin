@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "package": "vectorcraft-skills",
+      "repo": "https://github.com/full-aigc-skills/vectorcraft-skills.git",
+      "ref": "v0.1.0-dev.35",
+      "sha": "2bd9110a70e156315f1712854f034dd1e3eb27cd",
+      "skills": [
+        "vectorcraft-use",
+        "vectorcraft-cli",
+        "vectorcraft-cli-setup",
+        "vectorcraft-cli-project",
+        "vectorcraft-cli-paths",
+        "vectorcraft-cli-shapes",
+        "vectorcraft-cli-boolean",
+        "vectorcraft-cli-text",
+        "vectorcraft-cli-appearance",
+        "vectorcraft-cli-artboards",
+        "vectorcraft-cli-assets",
+        "vectorcraft-cli-export",
+        "vectorcraft-cli-selection"
+      ],
+      "dest": "skills/",
+      "sha256": {
+        "vectorcraft-use": "a332ea661bdbea83302e0b07194fff7501671c916e4e3cda3fb6f79b460e2622",
+        "vectorcraft-cli": "19e62e6f3d29aabb2b924d5a1512a307b4349c0dfa28b72d05fd4f9c9baf2a84",
+        "vectorcraft-cli-setup": "835914e9e850e98d711e6047a0d57ea503e989020c9d7ad2a3582c28ffef888d",
+        "vectorcraft-cli-project": "ca80fad61959445cab49467429f54cb3808912c1b2bd469d2ce2d353fa509e14",
+        "vectorcraft-cli-paths": "0c5f36a8ecb80a91ea07c29c694b34efc9e0f73c566cc0e2bf2e39f72247597b",
+        "vectorcraft-cli-shapes": "503bc747b5de04f0c4a0171a987bc387c84974cb501360974a1aa3fc82344c3d",
+        "vectorcraft-cli-boolean": "a2932215ed88342ec6aef05b5e3f1999c591fdccadaa32ab7136a1b14e4e78d2",
+        "vectorcraft-cli-text": "bf8c0f1eac96d1231ff87daf805f80dbedd6a7a741bb95b50c3e09b672da704e",
+        "vectorcraft-cli-appearance": "5b803d3e019d72cbcc557c05626577e729484e9a9677eafb796a943882573d08",
+        "vectorcraft-cli-artboards": "58751ad473afdf2c2cadf19a09a95cb1dbe8f9779143880bd5b5a9bf2b9227a2",
+        "vectorcraft-cli-assets": "ba0143c8dad9ee7a8cf880e72889fa75868c7ed3d298a3b2977c650e7356a5c7",
+        "vectorcraft-cli-export": "3b7669c61f4dff4cf793f65f46e4df8848e8737f4510ab51dfef05eee530346c",
+        "vectorcraft-cli-selection": "b483f5c6b7cf40b623005a856ece438d1b5f371eadf85242c6d4ae7a9d6e1d22"
+      }
+    }
+  ]
+}

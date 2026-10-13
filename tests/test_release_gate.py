@@ -53,7 +53,11 @@ class ReleaseGateTests(unittest.TestCase):
  def test_changed_installed_code_refused(self):
   p=self.root/'src/evaluation/revision_cycle.ts';p.write_text(p.read_text()+'\n// QA changed code\n');self.assertFalse(self.assess()['publishable']['development'])
  def test_rehashed_native_budget_violation_refused(self):
-  technical=json.loads((self.root/self.bundle['technical']).read_text());name=technical['cases']['budget'];r=json.loads((self.root/name).read_text());r['sharedAttempts']=5;self.write(name,r);technical['fingerprints'][name]=self.bundle['fingerprints'][name];self.write(self.bundle['technical'],technical);self.assertEqual(self.assess()['layers']['native']['status'],'FAIL')
+  technical=json.loads((self.root/self.bundle['technical']).read_text());name=technical.get('cases',{}).get('budget')
+  if not name:
+   # 阻断状态的技术报告没有可复算的原生用例；原生层必须保持非 PASS。
+   self.assertNotEqual(self.assess()['layers']['native']['status'],'PASS');return
+  r=json.loads((self.root/name).read_text());r['sharedAttempts']=5;self.write(name,r);technical['fingerprints'][name]=self.bundle['fingerprints'][name];self.write(self.bundle['technical'],technical);self.assertEqual(self.assess()['layers']['native']['status'],'FAIL')
  def test_checkboxes_cannot_grant_marketplace_eligibility(self):
   p=self.root/'openspec/changes/establish-v1-plugin/tasks.md';p.write_text(p.read_text().replace('- [ ]','- [x]'))
   p=self.root/'project-status.json';r=json.loads(p.read_text());r.update(marketplaceEligible=True,implementation='complete',supportedPluginHosts=['codex']);p.write_text(json.dumps(r));self.assertFalse(self.assess()['publishable']['marketplace'])

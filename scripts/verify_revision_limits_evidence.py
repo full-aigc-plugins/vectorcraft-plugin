@@ -75,7 +75,7 @@ def verify(root=ROOT):
  n=read(r['cases']['stale-gui']);common(n,'scripts/qa/revision_stale_gui.ts');gui=n['gui']
  if n['guiDriverSha256']!=sha(bound('scripts/qa/revision_gui_edit.py')) or any(gui[x] is not True for x in ['listenerOwnedByPID','ownedProcessesStopped','nativeDocumentChanged','nativeReopened','persistedContentMatches']) or gui['sourceBeforeSha256']==gui['sourceAfterSha256']:raise ValueError('limits_gui')
  if 'stale_review_binding' not in n['refusal'] or n['sharedAttempts']!=2 or n['registeredGroupsBefore']!=n['registeredGroupsAfter'] or n['newOutputAbsent'] is not True or n['originalSourcePreserved'] is not True or n['allGroupsStopped'] is not True or n['best']['requestId']!=n['initialRequest']['id']:raise ValueError('limits_stale')
- if sha(local(r['cases']['guiSnapshots']))!=gui['snapshotsSha256']:raise ValueError('limits_gui_snapshots')
+ if sha(bound(r['cases']['guiSnapshots']))!=gui['snapshotsSha256']:raise ValueError('limits_gui_snapshots')
  snapshots=read(r['cases']['guiSnapshots']);modified=snapshots['modified'];reopened=snapshots['reopened']
  if obj(snapshots['original'],2)==obj(modified,2) or obj(snapshots['original'],3)!=obj(modified,3) or reopened!={**modified,'metadata':{**modified['metadata'],'modified':reopened['metadata']['modified']}}:raise ValueError('limits_gui_snapshots')
  print(json.dumps({'result':'PASS','nativeRevisions':3,'ownedDesktopStaleCase':1,'tasksClosed':[],'scope':'fixed62 subset; full6.6 remains open'}))

@@ -4,13 +4,13 @@ import argparse,ast,builtins,hashlib,json,re
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 
-def payload_name(name):
+def payload_name(name,root=ROOT):
     """执行载荷收敛在 vectorcraft-harness：历史证据绑定的 skills/<domain>/scripts/ 路径按字节等价映射到 harness。"""
     if isinstance(name, str):
         prefix = 'skills/vectorcraft-'
-        if name.startswith(prefix) and '/scripts/' in name and not (ROOT/name).is_file():
+        if name.startswith(prefix) and '/scripts/' in name and not (Path(root)/name).is_file():
             candidate = 'skills/vectorcraft-harness/scripts/' + name.split('/scripts/', 1)[1]
-            if (ROOT/candidate).is_file():
+            if (Path(root)/candidate).is_file():
                 return candidate
     return name
 
@@ -32,7 +32,7 @@ def checker_contract(report,bound):
 def verify(root=ROOT):
  root=Path(root)
  def local(name):
-  name = payload_name(name)
+  name = payload_name(name,root)
   if not isinstance(name,str) or Path(name).is_absolute() or '\\' in name or any(p in ('','.','..') for p in name.split('/')):raise ValueError('revision_path')
   p=root/name
   if not p.is_file() or not p.resolve().is_relative_to(root.resolve()) or any(x.is_symlink() for x in [p,*p.parents] if x.is_relative_to(root)):raise ValueError('revision_path')
@@ -48,7 +48,7 @@ def verify(root=ROOT):
  def read(name):return json.loads(bound(name).read_text())
  legacy=r['schema']=='vectorcraft-revision-fixed/v1'
  if r['result']!='PASS' or (r['tasksClosed']!=['6.6'] if legacy else r['tasksClosed']!=[] or r.get('tasksCovered')!=['6.6']):raise ValueError('revision_closure')
- spec=local('openspec/changes/establish-v1-plugin/specs/quality-review/spec.md').read_text().split('### Requirement: VC-QA-002 ',1)[1].split('### Requirement:',1)[0];contracts={s.splitlines()[0]:hashlib.sha256(s.strip().encode()).hexdigest() for s in spec.split('#### Scenario: ')[1:]};matrix=read(r['scenarioMatrix'])
+ spec=bound('openspec/changes/establish-v1-plugin/specs/quality-review/spec.md').read_text().split('### Requirement: VC-QA-002 ',1)[1].split('### Requirement:',1)[0];contracts={s.splitlines()[0]:hashlib.sha256(s.strip().encode()).hexdigest() for s in spec.split('#### Scenario: ')[1:]};matrix=read(r['scenarioMatrix'])
  expectedCoverage={'VC-QA-002-P':{'guards','goal-change','round-limit'},'VC-QA-002-N':{'budget','small-improvement','lower-score','round-limit'},'VC-QA-002-FRESH':{'guards','stale-gui'},'VC-QA-002-CYCLE':{'budget','small-improvement','lower-score','round-limit','guards','goal-change','stale-gui'}}
  if matrix['scenarioContracts']!=contracts or len(matrix['entries'])!=4 or {x['scenario'] for x in matrix['entries']}!=set(contracts):raise ValueError('revision_scenarios')
  for row in matrix['entries']:

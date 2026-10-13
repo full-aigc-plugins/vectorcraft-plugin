@@ -19,9 +19,25 @@ def merge_ids(accepted,commands):
     if set(accepted)&set(commands):raise ValueError('command_family_overlap')
     return set(accepted)|set(commands)
 
+def era_identity(root,report):
+    """收敛后 docs/current-identity.json 只描述当前世界；历史报告按执行时归档身份核对。"""
+    def matches(identity):return identity['pluginVersion']==report['pluginVersion'] and identity['skillSource']['ref']==report['sourceRef'] and identity['skillSource']['sha']==report['sourceCommit']
+    current=json.loads((root/'docs/current-identity.json').read_text())
+    if matches(current):return current
+    candidates={}
+    for base in (root,ROOT):
+        archived=base/'docs/evidence/pre-harness-convergence-identity'
+        if not archived.is_dir():continue
+        for path in sorted(archived.glob('*/docs/current-identity.json')):
+            try:candidate=path.read_bytes()
+            except OSError:continue
+            if matches(json.loads(candidate)):candidates[hashlib.sha256(candidate).hexdigest()]=json.loads(candidate)
+    if len(candidates)!=1:raise ValueError('family_installed_identity')
+    return next(iter(candidates.values()))
+
 def validate_family(root,family,path):
     """验证当前安装身份及每轮命令上下文、真实对象、交付解码和重开。"""
-    report=json.loads((root/path).read_text());identity=json.loads((root/'docs/current-identity.json').read_text())
+    report=json.loads((root/path).read_text());identity=era_identity(root,report)
     host=json.loads((root/'docs/evidence/vectorcraft-public-tag64-install-20261009.json').read_text());catalog=json.loads((root/'skills/vectorcraft-use/references/command-coverage.json').read_text())
     if report.get('schema')!='vectorcraft-command-family/v1' or report.get('result')!='PASS' or report.get('family')!=family:raise ValueError('family_report_identity')
     for key in ('pluginVersion','pluginCommit','sourceRef','sourceCommit','hostVersion','platform'):
