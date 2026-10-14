@@ -4,7 +4,7 @@ import {mkdtempSync,rmSync} from 'node:fs';
 import {join} from 'node:path';
 import {tmpdir} from 'node:os';
 import {DatabaseSync} from 'node:sqlite';
-import {Ledger} from '../src/harness/ledger.ts';
+import {Ledger} from '../scripts/harness/ledger.ts';
 import {Ledger as PreviousLedger} from '../docs/evidence/pre-runtime-boundaries-identity/src/harness/ledger.ts';
 test('migration preserves original WAL selection, consumed shared budget and task rows in both snapshot and schema3',()=>{
  const root=mkdtempSync(join(tmpdir(),'vector-selection-migration-')),path=join(root,'state.sqlite');const previous=new PreviousLedger(path);

@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {mkdtempSync,realpathSync,mkdirSync,writeFileSync,existsSync,rmSync} from 'node:fs';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
-import {Controller,skillDigest} from '../src/harness/controller.ts';
+import {Controller,skillDigest} from '../scripts/harness/controller.ts';
 import {runtimeFixture} from './runtime_fixture.ts';
 test('expired ready resume requests cancellation instead of preparing or launching again',async()=>{
  const root=realpathSync(mkdtempSync(join(tmpdir(),'vector-expired-resume-'))),skill=join(root,'skill');mkdirSync(join(skill,'scripts'),{recursive:true});

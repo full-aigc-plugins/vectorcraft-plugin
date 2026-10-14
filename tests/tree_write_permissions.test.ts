@@ -7,7 +7,7 @@ import {syncBuiltinESMExports} from 'node:module';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {createHash} from 'node:crypto';
-import {Controller,skillDigest} from '../src/harness/controller.ts';
+import {Controller,skillDigest} from '../scripts/harness/controller.ts';
 import {runtimeFixture} from './runtime_fixture.ts';
 const hash=(v:string)=>createHash('sha256').update(v).digest('hex');
 for(const stage of ['skill-copy','source-directory'])test(`snapshot parent swap refuses external ${stage} effects`,async()=>{

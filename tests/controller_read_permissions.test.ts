@@ -6,7 +6,7 @@ import {syncBuiltinESMExports} from 'node:module';
 import {tmpdir} from 'node:os';
 import {join,resolve} from 'node:path';
 import {createHash} from 'node:crypto';
-import {Controller,skillDigest} from '../src/harness/controller.ts';
+import {Controller,skillDigest} from '../scripts/harness/controller.ts';
 const hash=(bytes:string|Buffer)=>createHash('sha256').update(bytes).digest('hex');
 const physical=(path:any)=>String(path).replace('/private/var/','/var/');
 for(const mode of ['plan','source','guard'])test(`Controller refuses replaced ${mode} ancestor before external bytes`,async()=>{

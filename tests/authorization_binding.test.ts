@@ -4,7 +4,7 @@ import {mkdtempSync,mkdirSync,writeFileSync,readFileSync,rmSync,realpathSync,ren
 import {join} from 'node:path';
 import {tmpdir} from 'node:os';
 import {createHash} from 'node:crypto';
-import {Controller,skillDigest} from '../src/harness/controller.ts';
+import {Controller,skillDigest} from '../scripts/harness/controller.ts';
 import {runtimeFixture} from './runtime_fixture.ts';
 // 仅证明协调器授权边界；原生工程单写、GUI冲突与进程交接由真实验收覆盖。
 function fixture(){

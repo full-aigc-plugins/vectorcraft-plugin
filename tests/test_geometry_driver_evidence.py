@@ -18,8 +18,10 @@ class GeometryDriverEvidenceTests(unittest.TestCase):
         names=set(self.report['fingerprints'])|{REPORT,'docs/evidence-index.json','openspec/changes/establish-v1-plugin/specs/domain-workflow/spec.md'}
         for name in names:
             original=ROOT/name;expected=self.report['fingerprints'].get(name)
-            if expected and hashlib.sha256(original.read_bytes()).hexdigest()!=expected:
-                original=ROOT/next(p for p,h in self.dependencies.items() if h==expected and p.endswith('/'+name))
+            if expected and (not original.is_file() or hashlib.sha256(original.read_bytes()).hexdigest()!=expected):
+                # harness 归位/收敛归档：依赖键可能是字节等价映射后的路径。
+                aliases=[name]+(['scripts/harness/'+name.split('src/harness/',1)[1]] if name.startswith('src/harness/') else [])
+                original=ROOT/next(p for p,h in self.dependencies.items() if h==expected and any(p.endswith('/'+a) or p==a for a in aliases))
             target=self.root/name;target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(original,target)
         archived=next(p for p,h in self.dependencies.items() if h==self.report['fingerprints'][DRIVER] and p.endswith('/'+DRIVER))
         target=self.root/archived;target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/archived,target)

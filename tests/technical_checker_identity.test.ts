@@ -9,7 +9,7 @@ const ROOT=fileURLToPath(new URL('../',import.meta.url));
 const hash=(v:string|Buffer)=>createHash('sha256').update(v).digest('hex');
 async function fixture(){
  const root=mkdtempSync(join(tmpdir(),'vector isolated checker ')),plugin=join(root,'plugin');mkdirSync(plugin);
- cpSync(join(ROOT,'src'),join(plugin,'src'),{recursive:true});
+ cpSync(join(ROOT,'src'),join(plugin,'src'),{recursive:true});cpSync(join(ROOT,'scripts/harness'),join(plugin,'scripts/harness'),{recursive:true});
  const dependency=join(plugin,'skills/vectorcraft-harness/scripts/exchange_loss.py');mkdirSync(dirname(dependency),{recursive:true});cpSync(join(ROOT,'skills/vectorcraft-harness/scripts/exchange_loss.py'),dependency);cpSync(join(ROOT,'skills/vectorcraft-harness/scripts/asset_reader.py'),join(dirname(dependency),'asset_reader.py'));
  const {ReviewStore}=await import(pathToFileURL(join(plugin,'src/evaluation/review_store.ts')).href);
  const {TechnicalReview}=await import(pathToFileURL(join(plugin,'src/evaluation/technical_review.ts')).href);
@@ -20,7 +20,7 @@ async function fixture(){
  const input={projectRevision:files['project.vectorcraft'],runtimeIdentity:'a'.repeat(64),native,candidates:[candidate],targets:[{path:target,role:'target'}],rubric,exchangeLoss:loss,technicalStatus:'PASS',authorization:{objects:[2],fields:['paint.color'],deadline:Date.now()+30000,maxAttempts:3,maxBytes:4*1024*1024,budgetId:'checker-budget',readRoots:[root],writeRoots:[root]}};
  const path=join(root,'review.sqlite');return {root,plugin,dependency,input,path,ReviewStore,TechnicalReview,close:()=>rmSync(root,{recursive:true,force:true})};
 }
-for(const changed of ['skills/vectorcraft-harness/scripts/exchange_loss.py','skills/vectorcraft-harness/scripts/asset_reader.py','src/harness/asset_digest.py','src/harness/authorized_file.ts','src/harness/authorized_write.ts','src/harness/authorized_write.py','src/harness/authorized_tree.ts','src/harness/authorized_tree.py'])test(`checked review binds ${changed} and rejects its drift after restart`,async()=>{
+for(const changed of ['skills/vectorcraft-harness/scripts/exchange_loss.py','skills/vectorcraft-harness/scripts/asset_reader.py','scripts/harness/asset_digest.py','scripts/harness/authorized_file.ts','scripts/harness/authorized_write.ts','scripts/harness/authorized_write.py','scripts/harness/authorized_tree.ts','scripts/harness/authorized_tree.py'])test(`checked review binds ${changed} and rejects its drift after restart`,async()=>{
  const f=await fixture();let store=new f.ReviewStore(f.path,[f.root]);
  try{
   const request=await new f.TechnicalReview(store).request(f.input);

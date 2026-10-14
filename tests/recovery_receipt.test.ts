@@ -4,9 +4,9 @@ import {mkdtempSync,mkdirSync,writeFileSync,readFileSync,rmSync,lstatSync,unlink
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {createHash} from 'node:crypto';
-import {Ledger} from '../src/harness/ledger.ts';
-import {Recovery} from '../src/harness/recovery.ts';
-import {skillDigest} from '../src/harness/skill_digest.ts';
+import {Ledger} from '../scripts/harness/ledger.ts';
+import {Recovery} from '../scripts/harness/recovery.ts';
+import {skillDigest} from '../scripts/harness/skill_digest.ts';
 import {canonical} from '../src/strict_json.ts';
 const sha=(value:string|Buffer)=>createHash('sha256').update(value).digest('hex');
 // 合成账本只验证原生启动前的回执门禁；不声明原生工程验收。

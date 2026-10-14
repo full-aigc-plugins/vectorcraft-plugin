@@ -5,7 +5,7 @@ import fs from 'node:fs';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {createHash} from 'node:crypto';
-import {authorizedWrite} from '../src/harness/authorized_write.ts';
+import {authorizedWrite} from '../scripts/harness/authorized_write.ts';
 test('exclusive writes return the held identity and preserve existing plan bytes',()=>{
  const root=fs.realpathSync(fs.mkdtempSync(join(tmpdir(),'vectorcraft-safe-write-')));try{
   const path=join(root,'plan.json'),bytes=Buffer.from([0,255,13,10,128]);

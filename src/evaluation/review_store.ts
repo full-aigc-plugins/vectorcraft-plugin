@@ -1,5 +1,5 @@
-import {assertNoLiteralSecrets} from '../harness/input_policy.ts';
-import {authorizedDigest} from '../harness/authorized_file.ts';
+import {assertNoLiteralSecrets} from '../../scripts/harness/input_policy.ts';
+import {authorizedDigest} from '../../scripts/harness/authorized_file.ts';
 import { DatabaseSync } from 'node:sqlite';
 import { createHash, randomUUID } from 'node:crypto';
 import { realpathSync } from 'node:fs';
@@ -73,7 +73,7 @@ export class ReviewStore {
     const input=strictJson(row.input),fingerprints=strictJson(row.fingerprints);
     if(input.technicalEvidenceOrigin==='checked-decoder'){
       const current=checkerFiles(),evidence=input.technicalEvidence;
-      if(!evidence.checkerFiles||canonical(evidence.checkerFiles)!==canonical(current)||current['src/evaluation/delivery_quality.py']!==evidence.checkerSha256||current['src/harness/process_runner.py']!==evidence.launcherSha256)throw new Error('stale_review_binding');
+      if(!evidence.checkerFiles||canonical(evidence.checkerFiles)!==canonical(current)||current['src/evaluation/delivery_quality.py']!==evidence.checkerSha256||current['scripts/harness/process_runner.py']!==evidence.launcherSha256)throw new Error('stale_review_binding');
     }
     for(const [path,expected] of Object.entries(fingerprints)) {
       try{if(this.fingerprint(path)!==expected)throw new Error('stale');}

@@ -5,7 +5,7 @@ import {mkdtempSync,writeFileSync,openSync,ftruncateSync,closeSync,rmSync,mkdirS
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {createHash} from 'node:crypto';
-import {authorizedRead,authorizedDigests} from '../src/harness/authorized_file.ts';
+import {authorizedRead,authorizedDigests} from '../scripts/harness/authorized_file.ts';
 const hash=(bytes:Buffer)=>createHash('sha256').update(bytes).digest('hex');
 test('batch fingerprints preserve binary bytes,duplicates,chunking and files above64MiB',()=>{
  const root=mkdtempSync(join(tmpdir(),'vectorcraft-batch-read-'));try{

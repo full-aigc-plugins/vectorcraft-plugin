@@ -1,0 +1,336 @@
+{
+  "schema": "vectorcraft-revision-stale-gui-native/v1",
+  "driverSha256": "b124cbb4141eeb8953ae9fc9398ead4f1498828ad4a58c7c6c76ad2c81c7d024",
+  "guiDriverSha256": "1e669549494a6f5b0f1bf692dc796c92efbf939919085875bdb8b021442df44e",
+  "result": "PASS",
+  "pluginVersion": "0.1.0-dev.64",
+  "sourceRef": "v0.1.0-dev.47",
+  "platform": "darwin-arm64",
+  "initialRequest": {
+    "schema": "vectorcraft-review-request/v1",
+    "id": "1147d483-c5c0-4e8b-a6b9-222dcddef017",
+    "bindingHash": "aceba7d203bb6a543dc758854aae4d3c903f75743082a3292d44fba5df33540f",
+    "input": {
+      "authorization": {
+        "budgetId": "native-revision-probe",
+        "deadline": 1791944915786,
+        "fields": [
+          "appearance.items.0.paint",
+          "kind.runs.0.text"
+        ],
+        "maxAttempts": 20,
+        "maxBytes": 134217728,
+        "objects": [
+          2,
+          3
+        ],
+        "readRoots": [
+          "QA_ROOT",
+          "QA_SOURCE",
+          "QA_RUNTIME"
+        ],
+        "writeRoots": [
+          "QA_ROOT",
+          "QA_RUNTIME"
+        ]
+      },
+      "candidates": [
+        "QA_SOURCE/artboard-1.svg",
+        "QA_SOURCE/artboard-1.png",
+        "QA_SOURCE/artboard-1.pdf"
+      ],
+      "exchangeLoss": "QA_SOURCE/exchange-loss.json",
+      "native": "QA_SOURCE/project.vectorcraft",
+      "projectRevision": "b0348f38a4366f3ca71c091482a752df17cddb30184a566972f99584a5b90a8f",
+      "rubric": "QA_ROOT/rubric.json",
+      "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+      "targets": [
+        {
+          "path": "QA_ROOT/brief.txt",
+          "role": "target"
+        }
+      ],
+      "technicalStatus": "PASS",
+      "technicalEvidence": {
+        "acceptanceStatus": "pending",
+        "artifactIntegrityStatus": "PASS",
+        "artifactLogicalId": "vectorcraft:cada8e2c-b826-424e-a50c-f00956ef233e",
+        "artifactVersion": "a5b1e43dcde3923e909bc9694d08838fc3584eb124b873d1b72b9691a09ca2c2",
+        "checkId": "0b6f979e-8ba8-46b4-83a3-f5374894e168",
+        "checkerFiles": {
+          "scripts/harness/asset_digest.py": "8ddd6bc9e07f7b111da43b4c7d5564ef623be438924ddbaa215b749b701f3465",
+          "scripts/harness/authorized_file.ts": "dfa7933cb2e2e509487865bc6bb97e54d587874c961c99c8e70d61eb3571f3d0",
+          "scripts/harness/authorized_tree.py": "b8b6dcd2c85f987bfac8a71ce0c598f155100844781b37b1eba809771327e6f0",
+          "scripts/harness/authorized_tree.ts": "e3200b2d6ebbe90d5e24eaf9fec19cc122004a310900b145eb28e0bfb4480491",
+          "scripts/harness/authorized_write.py": "867e7b247eea15c82340fc5c8c3cfe68b3647099d30797a165a3afa9c2932e81",
+          "scripts/harness/authorized_write.ts": "9e385040ea8a19ed70b02793ee78fb1239001ae24c84b56eb23f2fc594f94273",
+          "scripts/harness/process_runner.py": "7332d0757aa01f03d00697f8eb8d93f849517cab34ea8a1355ba6c9513d5aba2",
+          "skills/vectorcraft-harness/scripts/asset_reader.py": "d067708d2355c0aa4415027ae2cff53c5559611c90854447fd7595b6535939f3",
+          "skills/vectorcraft-harness/scripts/exchange_loss.py": "a4ba82ec8000a095dcf62813352621bdc42cfd7a81949baa6b0e896d1a2048e3",
+          "src/evaluation/delivery_quality.py": "dc4ff4f7dbe3b363e6bc5e865d3be7ca2944e3dcc60ce3ba8bd75fddbec059cd"
+        },
+        "checkerSha256": "dc4ff4f7dbe3b363e6bc5e865d3be7ca2944e3dcc60ce3ba8bd75fddbec059cd",
+        "creativeStatus": "NOT_RUN",
+        "engineeringStatus": "NOT_RUN",
+        "exchangeStatus": "PASS",
+        "files": {
+          "artboard-1.pdf": "b612c8684eac869042dfe88f5722adbb7d5f5ef0297e98f1bea1d2a875a939f7",
+          "artboard-1.png": "ae9a7f32141236a550a5e890ccd6aad1147d0ebff7db90bb16b25405eec06465",
+          "artboard-1.svg": "c4d5c1c9fc0529febd79a3879fdf8efcb64ac8987961a63fa83470614625cd02",
+          "exchange-loss.json": "d502a8b918993e12d0cc3053e3d9944394e444dff36b8ff44a3062f06c9eeb99",
+          "lineage.json": "49c7744645a8b0889d8be21fad66992d706e2d0b02f9545cc240229dc6dd187a",
+          "native.json": "4435cd2f4140eb4fc4f9ce7c980a5b6161d3f981f5b92542dee1ac57c54aa586",
+          "operations.json": "21eede3072f9abe508fc4cee8b8a79a787ec0bce6a141e81a61d3e84fed44685",
+          "pdf-export-date.json": "b72ec99c9e9a30da2b51a088de54537f44e21de0829e17713b9279a83ea63af9",
+          "plan.json": "1e72bcc543dc7fb72c49a109af22f0c7229b2f7ed3f6fd6dd8f6c788a6df0e5e",
+          "project.vectorcraft": "b0348f38a4366f3ca71c091482a752df17cddb30184a566972f99584a5b90a8f"
+        },
+        "launcherSha256": "7332d0757aa01f03d00697f8eb8d93f849517cab34ea8a1355ba6c9513d5aba2",
+        "lineageStatus": "PASS",
+        "manifestSha256": "f0db7d97ade7826bcbccd703777d0ff43ec5690d8d1e7ad845ffb4b749f887fa",
+        "nativeReopenStatus": "NOT_RUN",
+        "outputs": [
+          {
+            "decoder": "PyMuPDF",
+            "pages": 1,
+            "path": "artboard-1.svg",
+            "scope": "bounded raster decode; creative quality not assessed",
+            "sha256": "c4d5c1c9fc0529febd79a3879fdf8efcb64ac8987961a63fa83470614625cd02",
+            "status": "PASS"
+          },
+          {
+            "decoder": "Pillow",
+            "path": "artboard-1.png",
+            "sha256": "ae9a7f32141236a550a5e890ccd6aad1147d0ebff7db90bb16b25405eec06465",
+            "size": [
+              128,
+              96
+            ],
+            "status": "PASS"
+          },
+          {
+            "decoder": "PyMuPDF",
+            "pages": 1,
+            "path": "artboard-1.pdf",
+            "scope": "bounded raster decode; creative quality not assessed",
+            "sha256": "b612c8684eac869042dfe88f5722adbb7d5f5ef0297e98f1bea1d2a875a939f7",
+            "status": "PASS"
+          }
+        ],
+        "projectRevision": "b0348f38a4366f3ca71c091482a752df17cddb30184a566972f99584a5b90a8f",
+        "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+        "schema": "vectorcraft-technical-review/v1",
+        "scope": "artifact integrity and export decode only; native reopening and creative review remain separate",
+        "sourceTask": {
+          "id": "execution-f558a616-2ff9-4285-bb0e-f0b689264650",
+          "planSha256": "1e72bcc543dc7fb72c49a109af22f0c7229b2f7ed3f6fd6dd8f6c788a6df0e5e",
+          "scope": "workflow-execution"
+        },
+        "technicalStatus": "PASS"
+      },
+      "technicalEvidenceOrigin": "checked-decoder",
+      "technicalCheckId": "0b6f979e-8ba8-46b4-83a3-f5374894e168"
+    },
+    "fingerprints": {
+      "QA_ROOT/brief.txt": "f3857fcf89d0ce9355b27bdeecb83a52fd60f8ee97f581d9382e3931364f9ecc",
+      "QA_SOURCE/artboard-1.pdf": "b612c8684eac869042dfe88f5722adbb7d5f5ef0297e98f1bea1d2a875a939f7",
+      "QA_SOURCE/artboard-1.png": "ae9a7f32141236a550a5e890ccd6aad1147d0ebff7db90bb16b25405eec06465",
+      "QA_SOURCE/artboard-1.svg": "c4d5c1c9fc0529febd79a3879fdf8efcb64ac8987961a63fa83470614625cd02",
+      "QA_SOURCE/exchange-loss.json": "d502a8b918993e12d0cc3053e3d9944394e444dff36b8ff44a3062f06c9eeb99",
+      "QA_SOURCE/lineage.json": "49c7744645a8b0889d8be21fad66992d706e2d0b02f9545cc240229dc6dd187a",
+      "QA_SOURCE/manifest.json": "f0db7d97ade7826bcbccd703777d0ff43ec5690d8d1e7ad845ffb4b749f887fa",
+      "QA_SOURCE/native.json": "4435cd2f4140eb4fc4f9ce7c980a5b6161d3f981f5b92542dee1ac57c54aa586",
+      "QA_SOURCE/operations.json": "21eede3072f9abe508fc4cee8b8a79a787ec0bce6a141e81a61d3e84fed44685",
+      "QA_SOURCE/pdf-export-date.json": "b72ec99c9e9a30da2b51a088de54537f44e21de0829e17713b9279a83ea63af9",
+      "QA_SOURCE/plan.json": "1e72bcc543dc7fb72c49a109af22f0c7229b2f7ed3f6fd6dd8f6c788a6df0e5e",
+      "QA_SOURCE/project.vectorcraft": "b0348f38a4366f3ca71c091482a752df17cddb30184a566972f99584a5b90a8f",
+      "QA_ROOT/rubric.json": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+    },
+    "state": "pending"
+  },
+  "proposal": {
+    "schema": "vectorcraft-local-revision-proposal/v1",
+    "requestId": "1147d483-c5c0-4e8b-a6b9-222dcddef017",
+    "bindingHash": "aceba7d203bb6a543dc758854aae4d3c903f75743082a3292d44fba5df33540f",
+    "expectedProjectRevision": "b0348f38a4366f3ca71c091482a752df17cddb30184a566972f99584a5b90a8f",
+    "changes": [
+      {
+        "field": "appearance.items.0.paint",
+        "objectId": 2,
+        "value": {
+          "color": {
+            "b": 0,
+            "g": 1,
+            "model": "rgb",
+            "r": 0
+          },
+          "type": "solid"
+        }
+      }
+    ],
+    "authorization": {
+      "budgetId": "native-revision-probe",
+      "deadline": 1791944915786,
+      "fields": [
+        "appearance.items.0.paint"
+      ],
+      "maxAttempts": 20,
+      "maxBytes": 134217728,
+      "objects": [
+        2
+      ],
+      "readRoots": [
+        "QA_ROOT",
+        "QA_SOURCE",
+        "QA_RUNTIME"
+      ],
+      "writeRoots": [
+        "QA_ROOT",
+        "QA_RUNTIME"
+      ]
+    },
+    "state": "proposed",
+    "id": "15324556-a7d1-4a36-a569-34b9e25f8e35",
+    "cycleId": "native-cycle",
+    "round": 1
+  },
+  "gui": {
+    "result": "PASS",
+    "actor": "owned signed desktop bridge; real GUI document mutation and save, not manual human interaction",
+    "runtimeIdentity": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+    "desktopBinarySha256": "46d7846a765dd0c2a64a72dea17796f49d725203d2c5d91c339432572048f856",
+    "desktopVersion": "0.2.0",
+    "listenerOwnedByPID": true,
+    "desktopPID": 91888,
+    "sourceBeforeSha256": "b0348f38a4366f3ca71c091482a752df17cddb30184a566972f99584a5b90a8f",
+    "sourceAfterSha256": "3d12d98e9aa9dccb72687ac5a147522f98ebde8d18f5fedfb73559ce3d245cbd",
+    "nativeDocumentChanged": true,
+    "nativeReopened": true,
+    "persistedContentMatches": true,
+    "nativeSaveTimestamp": {
+      "before": 1791944189,
+      "after": 1791944804
+    },
+    "snapshotsSha256": "11b46bcf13ed86e6b1164566031d74d50effedb771ee59b0b136798ddd4a3118",
+    "ownedProcessesStopped": true
+  },
+  "refusal": "Error: stale_review_binding",
+  "best": {
+    "cycleId": "native-cycle",
+    "requestId": "1147d483-c5c0-4e8b-a6b9-222dcddef017",
+    "score": 2,
+    "path": "QA_ROOT/.revision-best/1147d483-c5c0-4e8b-a6b9-222dcddef017",
+    "fingerprints": {
+      "artboard-1.pdf": "b612c8684eac869042dfe88f5722adbb7d5f5ef0297e98f1bea1d2a875a939f7",
+      "artboard-1.png": "ae9a7f32141236a550a5e890ccd6aad1147d0ebff7db90bb16b25405eec06465",
+      "artboard-1.svg": "c4d5c1c9fc0529febd79a3879fdf8efcb64ac8987961a63fa83470614625cd02",
+      "exchange-loss.json": "d502a8b918993e12d0cc3053e3d9944394e444dff36b8ff44a3062f06c9eeb99",
+      "inputs/0": "f3857fcf89d0ce9355b27bdeecb83a52fd60f8ee97f581d9382e3931364f9ecc",
+      "inputs/1": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "inputs/2": "d502a8b918993e12d0cc3053e3d9944394e444dff36b8ff44a3062f06c9eeb99",
+      "lineage.json": "49c7744645a8b0889d8be21fad66992d706e2d0b02f9545cc240229dc6dd187a",
+      "manifest.json": "f0db7d97ade7826bcbccd703777d0ff43ec5690d8d1e7ad845ffb4b749f887fa",
+      "native.json": "4435cd2f4140eb4fc4f9ce7c980a5b6161d3f981f5b92542dee1ac57c54aa586",
+      "operations.json": "21eede3072f9abe508fc4cee8b8a79a787ec0bce6a141e81a61d3e84fed44685",
+      "pdf-export-date.json": "b72ec99c9e9a30da2b51a088de54537f44e21de0829e17713b9279a83ea63af9",
+      "plan.json": "1e72bcc543dc7fb72c49a109af22f0c7229b2f7ed3f6fd6dd8f6c788a6df0e5e",
+      "project.vectorcraft": "b0348f38a4366f3ca71c091482a752df17cddb30184a566972f99584a5b90a8f"
+    },
+    "projectRevision": "b0348f38a4366f3ca71c091482a752df17cddb30184a566972f99584a5b90a8f",
+    "latestRequestId": "1147d483-c5c0-4e8b-a6b9-222dcddef017",
+    "goal": {
+      "rubric": {
+        "path": "QA_ROOT/rubric.json",
+        "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+      },
+      "targets": [
+        {
+          "path": "QA_ROOT/brief.txt",
+          "role": "target",
+          "sha256": "f3857fcf89d0ce9355b27bdeecb83a52fd60f8ee97f581d9382e3931364f9ecc"
+        }
+      ]
+    },
+    "unresolvedIssues": [
+      {
+        "evidence": [
+          "artboard-1.png"
+        ],
+        "field": "appearance.items.0.paint",
+        "message": "QA: test authorized green revision",
+        "objectId": 2
+      }
+    ],
+    "rounds": 1,
+    "stagnation": 0,
+    "sharedBudget": {
+      "id": "native-revision-probe",
+      "attempts": 2,
+      "bytes": 1296697
+    },
+    "technicalStatus": "PASS",
+    "engineeringStatus": "NOT_RUN",
+    "acceptanceStatus": "pending",
+    "reason": null
+  },
+  "sharedAttempts": 2,
+  "cycle": {
+    "id": "native-cycle",
+    "budget": "native-revision-probe",
+    "policy": {
+      "maxRounds": 2,
+      "minImprovement": 0.1,
+      "stagnationLimit": 1
+    },
+    "authorization": {
+      "budgetId": "native-revision-probe",
+      "deadline": 1791944915786,
+      "fields": [
+        "appearance.items.0.paint",
+        "kind.runs.0.text"
+      ],
+      "maxAttempts": 20,
+      "maxBytes": 134217728,
+      "objects": [
+        2,
+        3
+      ],
+      "readRoots": [
+        "QA_ROOT",
+        "QA_SOURCE",
+        "QA_RUNTIME"
+      ],
+      "writeRoots": [
+        "QA_ROOT",
+        "QA_RUNTIME"
+      ]
+    },
+    "goal": {
+      "rubric": {
+        "path": "QA_ROOT/rubric.json",
+        "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+      },
+      "targets": [
+        {
+          "path": "QA_ROOT/brief.txt",
+          "role": "target",
+          "sha256": "f3857fcf89d0ce9355b27bdeecb83a52fd60f8ee97f581d9382e3931364f9ecc"
+        }
+      ]
+    },
+    "runtime": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+    "state": "active",
+    "reason": null,
+    "rounds": 1,
+    "stagnation": 0,
+    "latest": "1147d483-c5c0-4e8b-a6b9-222dcddef017",
+    "best": "1147d483-c5c0-4e8b-a6b9-222dcddef017",
+    "best_score": 2
+  },
+  "originalSourcePreserved": true,
+  "newOutputAbsent": true,
+  "registeredGroupsBefore": 1,
+  "registeredGroupsAfter": 1,
+  "allGroupsStopped": true,
+  "scope": "owned signed desktop GUI source mutation rejects old proposal before native revision effects; preserved best; explicit QA feedback; not full6.6 qualification"
+}

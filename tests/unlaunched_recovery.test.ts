@@ -4,10 +4,10 @@ import {mkdtempSync,realpathSync,mkdirSync,writeFileSync,rmSync,existsSync} from
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {createHash} from 'node:crypto';
-import {Ledger} from '../src/harness/ledger.ts';
-import {ProcessRegistry} from '../src/harness/process_registry.ts';
-import {Recovery} from '../src/harness/recovery.ts';
-import {skillDigest} from '../src/harness/skill_digest.ts';
+import {Ledger} from '../scripts/harness/ledger.ts';
+import {ProcessRegistry} from '../scripts/harness/process_registry.ts';
+import {Recovery} from '../scripts/harness/recovery.ts';
+import {skillDigest} from '../scripts/harness/skill_digest.ts';
 import {canonical} from '../src/strict_json.ts';
 const sha=(s:string)=>createHash('sha256').update(s).digest('hex');
 function fixture(){
@@ -33,7 +33,7 @@ test('unlaunched settlement refuses plan or launch gate changed after inspection
 test('submitted but unlaunched crash still requires recorded execution snapshot identity',async()=>{const f=fixture();try{
  f.ledger.intent(f.task.id,1,0,{},100);await assert.rejects(()=>f.recovery.inspect(f.task.id,1),/recovery_identity_missing/);assert.equal(f.ledger.get(f.task.id).attempts,1);
 }finally{f.close();}});
-test('cancelling an unlaunched ready task persists state even before snapshot directory creation',async()=>{const f=fixture();const {Controller}=await import('../src/harness/controller.ts');const controller=new Controller(join(f.root,'state.sqlite'));try{
+test('cancelling an unlaunched ready task persists state even before snapshot directory creation',async()=>{const f=fixture();const {Controller}=await import('../scripts/harness/controller.ts');const controller=new Controller(join(f.root,'state.sqlite'));try{
  assert.equal(existsSync(controller.snapshotRoot),false);assert.equal(controller.requestCancel(f.task.id,1).state,'cancel_requested');
  const proof=await f.recovery.inspect(f.task.id,1);const task=f.recovery.settle(f.task.id,1,proof.checkId);assert.equal(task.state,'cancelled');assert.equal(task.epoch,2);assert.equal(task.attempts,0);
 }finally{controller.close();f.close();}});

@@ -4,7 +4,7 @@ import {mkdtempSync,rmSync,symlinkSync} from 'node:fs';
 import {join} from 'node:path';
 import {tmpdir} from 'node:os';
 import {DatabaseSync} from 'node:sqlite';
-import {Ledger} from '../src/harness/ledger.ts';
+import {Ledger} from '../scripts/harness/ledger.ts';
 // 账本／SQL门禁单元用例；原生竞争由task_crash验收脚本覆盖。
 function fixture(){const root=mkdtempSync(join(tmpdir(),'vector-output-owner-')),path=join(root,'state.sqlite'),ledger=new Ledger(path);const binding={planHash:'a'.repeat(64),runtimeIdentity:'b'.repeat(64),inputHashes:{},projectRevision:null,authorization:{objects:[1],fields:['paint.color'],deadline:Date.now()+60000,maxAttempts:2,maxBytes:10000}};return {root,path,ledger,binding,close(){ledger.close();rmSync(root,{recursive:true,force:true});}};}
 test('different source resources cannot claim one physical output in any unresolved state',()=>{

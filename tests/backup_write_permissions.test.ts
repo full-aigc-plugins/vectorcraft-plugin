@@ -7,7 +7,7 @@ import {syncBuiltinESMExports} from 'node:module';
 import {DatabaseSync} from 'node:sqlite';
 import {tmpdir} from 'node:os';
 import {join,dirname} from 'node:path';
-import {Ledger} from '../src/harness/ledger.ts';
+import {Ledger} from '../scripts/harness/ledger.ts';
 test('migration refuses a backup directory swapped after reservation without writing outside or migrating',()=>{
  const root=fs.realpathSync(fs.mkdtempSync(join(tmpdir(),'vectorcraft-backup-write-'))),path=join(root,'state.sqlite'),directory=join(root,'state-schema-backups'),outside=join(root,'outside');fs.mkdirSync(outside);
  const legacy=new DatabaseSync(path);legacy.exec("PRAGMA journal_mode=WAL;CREATE TABLE preserved(value TEXT);INSERT INTO preserved VALUES('synthetic legacy state');PRAGMA user_version=1;");legacy.close();

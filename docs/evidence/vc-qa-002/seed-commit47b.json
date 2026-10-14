@@ -1,0 +1,294 @@
+{
+  "schema": "vectorcraft-exchange-delivery-native/v1",
+  "result": "PASS",
+  "level": "fixed-install",
+  "platform": "Darwin-arm64",
+  "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+  "driverSha256": "1e72bcc543dc7fb72c49a109af22f0c7229b2f7ed3f6fd6dd8f6c788a6df0e5e",
+  "plan": {
+    "document": {
+      "name": "QA gradient seed",
+      "width": 128,
+      "height": 96,
+      "units": "Pixels"
+    },
+    "operations": [
+      {
+        "command": "native.command",
+        "params": {
+          "command": "document.setup",
+          "params": {
+            "exportText": "appearance"
+          }
+        }
+      },
+      {
+        "command": "native.command",
+        "params": {
+          "command": "swatch.new",
+          "params": {
+            "name": "Seed start",
+            "color": "#ef5b36",
+            "global": true
+          }
+        },
+        "as": "brandStart"
+      },
+      {
+        "command": "native.command",
+        "params": {
+          "command": "swatch.new",
+          "params": {
+            "name": "Seed end",
+            "color": "#2366e8",
+            "global": true
+          }
+        },
+        "as": "brandEnd"
+      },
+      {
+        "command": "shape.rectangle",
+        "params": {
+          "x": 12,
+          "y": 16,
+          "width": 48,
+          "height": 64
+        },
+        "as": "gradient"
+      },
+      {
+        "command": "select.set",
+        "params": {
+          "ids": [
+            {
+              "$ref": "gradient.id"
+            }
+          ]
+        }
+      },
+      {
+        "command": "native.command",
+        "params": {
+          "command": "paint.setFill",
+          "params": {
+            "ids": [
+              {
+                "$ref": "gradient.id"
+              }
+            ],
+            "gradient": {
+              "kind": "linear",
+              "stops": [
+                {
+                  "offset": 0,
+                  "swatch": {
+                    "$ref": "brandStart.name"
+                  }
+                },
+                {
+                  "offset": 1,
+                  "swatch": {
+                    "$ref": "brandEnd.name"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "command": "native.command",
+        "params": {
+          "command": "paint.setGradientGeom",
+          "params": {
+            "ids": [
+              {
+                "$ref": "gradient.id"
+              }
+            ],
+            "item": 0,
+            "start": [
+              12,
+              48
+            ],
+            "end": [
+              60,
+              48
+            ]
+          }
+        }
+      },
+      {
+        "command": "text.create",
+        "params": {
+          "x": 70,
+          "y": 56,
+          "text": "QA title",
+          "font": "Source Sans 3",
+          "size": 18,
+          "color": "#192a3b"
+        },
+        "as": "title"
+      }
+    ],
+    "exports": [
+      {
+        "format": "svg",
+        "artboard": 0
+      },
+      {
+        "format": "png",
+        "artboard": 0
+      },
+      {
+        "format": "pdf",
+        "artboard": 0
+      }
+    ]
+  },
+  "manifest": {
+    "schema": "vectorcraft-delivery/v1",
+    "sourceProjectSha256": null,
+    "runtimeSha256": "ac47d32f34b8910dd559cff59d64cafaaade066227714359d1821cb2b0e59d1b",
+    "bindings": {
+      "brandStart": {
+        "name": "Seed start",
+        "names": [
+          "Seed start"
+        ]
+      },
+      "brandEnd": {
+        "name": "Seed end",
+        "names": [
+          "Seed end"
+        ]
+      },
+      "gradient": {
+        "id": 2
+      },
+      "title": {
+        "id": 3
+      }
+    },
+    "outputs": [
+      {
+        "format": "svg",
+        "artboardIndex": 0,
+        "artboardId": 1,
+        "artboardName": "Artboard 1",
+        "artboardRect": {
+          "x0": 0.0,
+          "x1": 128.0,
+          "y0": 0.0,
+          "y1": 96.0
+        },
+        "path": "artboard-1.svg",
+        "warnings": [],
+        "isolationPolicy": "native-paint-bounds; whole-dependent-containers-and-unknown-bounds-retained"
+      },
+      {
+        "format": "png",
+        "artboardIndex": 0,
+        "artboardId": 1,
+        "artboardName": "Artboard 1",
+        "artboardRect": {
+          "x0": 0.0,
+          "x1": 128.0,
+          "y0": 0.0,
+          "y1": 96.0
+        },
+        "path": "artboard-1.png",
+        "warnings": []
+      },
+      {
+        "format": "pdf",
+        "artboardIndex": 0,
+        "artboardId": 1,
+        "artboardName": "Artboard 1",
+        "artboardRect": {
+          "x0": 0.0,
+          "x1": 128.0,
+          "y0": 0.0,
+          "y1": 96.0
+        },
+        "path": "artboard-1.pdf",
+        "warnings": [],
+        "pdfCreated": 1791944188,
+        "pdfDateBinding": "native-document-created"
+      }
+    ],
+    "fontDependencies": [
+      {
+        "family": "Source Sans 3",
+        "missing": false,
+        "objects": 1,
+        "runs": 1,
+        "style": "Regular"
+      }
+    ],
+    "assets": {},
+    "artboards": [
+      {
+        "id": 1,
+        "index": 0,
+        "name": "Artboard 1",
+        "rect": {
+          "x0": 0.0,
+          "x1": 128.0,
+          "y0": 0.0,
+          "y1": 96.0
+        },
+        "width": 128.0,
+        "height": 96.0
+      }
+    ],
+    "artboardOrder": [
+      1
+    ],
+    "previewOrder": [
+      "artboard-1.png"
+    ],
+    "files": {
+      "plan.json": "1e72bcc543dc7fb72c49a109af22f0c7229b2f7ed3f6fd6dd8f6c788a6df0e5e",
+      "project.vectorcraft": "b0348f38a4366f3ca71c091482a752df17cddb30184a566972f99584a5b90a8f",
+      "exchange-loss.json": "d502a8b918993e12d0cc3053e3d9944394e444dff36b8ff44a3062f06c9eeb99",
+      "pdf-export-date.json": "b72ec99c9e9a30da2b51a088de54537f44e21de0829e17713b9279a83ea63af9",
+      "native.json": "4435cd2f4140eb4fc4f9ce7c980a5b6161d3f981f5b92542dee1ac57c54aa586",
+      "artboard-1.pdf": "b612c8684eac869042dfe88f5722adbb7d5f5ef0297e98f1bea1d2a875a939f7",
+      "artboard-1.png": "ae9a7f32141236a550a5e890ccd6aad1147d0ebff7db90bb16b25405eec06465",
+      "artboard-1.svg": "c4d5c1c9fc0529febd79a3879fdf8efcb64ac8987961a63fa83470614625cd02",
+      "operations.json": "21eede3072f9abe508fc4cee8b8a79a787ec0bce6a141e81a61d3e84fed44685",
+      "lineage.json": "49c7744645a8b0889d8be21fad66992d706e2d0b02f9545cc240229dc6dd187a"
+    },
+    "lossReport": {
+      "path": "exchange-loss.json",
+      "sha256": "d502a8b918993e12d0cc3053e3d9944394e444dff36b8ff44a3062f06c9eeb99"
+    },
+    "acceptance": "requires-domain-and-visual-review",
+    "executionId": "execution-f558a616-2ff9-4285-bb0e-f0b689264650",
+    "lineage": {
+      "path": "lineage.json",
+      "sha256": "49c7744645a8b0889d8be21fad66992d706e2d0b02f9545cc240229dc6dd187a",
+      "logicalId": "vectorcraft:cada8e2c-b826-424e-a50c-f00956ef233e",
+      "version": "a5b1e43dcde3923e909bc9694d08838fc3584eb124b873d1b72b9691a09ca2c2",
+      "parent": {
+        "projectSha256": null,
+        "status": "creation"
+      }
+    }
+  },
+  "sourceFiles": {
+    "artboard-1.pdf": "b612c8684eac869042dfe88f5722adbb7d5f5ef0297e98f1bea1d2a875a939f7",
+    "artboard-1.png": "ae9a7f32141236a550a5e890ccd6aad1147d0ebff7db90bb16b25405eec06465",
+    "artboard-1.svg": "c4d5c1c9fc0529febd79a3879fdf8efcb64ac8987961a63fa83470614625cd02",
+    "exchange-loss.json": "d502a8b918993e12d0cc3053e3d9944394e444dff36b8ff44a3062f06c9eeb99",
+    "lineage.json": "49c7744645a8b0889d8be21fad66992d706e2d0b02f9545cc240229dc6dd187a",
+    "manifest.json": "f0db7d97ade7826bcbccd703777d0ff43ec5690d8d1e7ad845ffb4b749f887fa",
+    "native.json": "4435cd2f4140eb4fc4f9ce7c980a5b6161d3f981f5b92542dee1ac57c54aa586",
+    "operations.json": "21eede3072f9abe508fc4cee8b8a79a787ec0bce6a141e81a61d3e84fed44685",
+    "pdf-export-date.json": "b72ec99c9e9a30da2b51a088de54537f44e21de0829e17713b9279a83ea63af9",
+    "plan.json": "1e72bcc543dc7fb72c49a109af22f0c7229b2f7ed3f6fd6dd8f6c788a6df0e5e",
+    "project.vectorcraft": "b0348f38a4366f3ca71c091482a752df17cddb30184a566972f99584a5b90a8f"
+  },
+  "scope": "fresh commit47b seed created by the pinned runtime via skills/vectorcraft-harness/scripts/workflow.py; gradient object2 + text object3 on a 128x96 artboard; replaces the absent fixed61 seed for this re-execution round"
+}

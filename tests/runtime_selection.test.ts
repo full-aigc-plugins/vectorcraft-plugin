@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {mkdtempSync,rmSync} from 'node:fs';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
-import {Ledger} from '../src/harness/ledger.ts';
+import {Ledger} from '../scripts/harness/ledger.ts';
 
 test('selected runtime identity is checked inside the task claim transaction',()=>{
  const root=mkdtempSync(join(tmpdir(),'craft-selection-')),l=new Ledger(join(root,'state.sqlite'));

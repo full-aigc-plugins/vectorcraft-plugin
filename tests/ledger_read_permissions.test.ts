@@ -6,7 +6,7 @@ import {syncBuiltinESMExports} from 'node:module';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {createHash} from 'node:crypto';
-import {Ledger} from '../src/harness/ledger.ts';
+import {Ledger} from '../scripts/harness/ledger.ts';
 for(const mode of ['outside-artifact','replaced-output'])test(`ledger verification refuses ${mode} before reading external bytes`,()=>{
  const root=fs.realpathSync(fs.mkdtempSync(join(tmpdir(),'vectorcraft-ledger-read-'))),output=join(root,'output'),outside=join(root,'outside');fs.mkdirSync(output);fs.mkdirSync(outside);
  for(const folder of [output,outside])fs.writeFileSync(join(folder,'artifact.txt'),'synthetic artifact');

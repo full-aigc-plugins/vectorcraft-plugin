@@ -7,7 +7,7 @@ import { createHash } from 'node:crypto';
 const sha=(value:Buffer)=>createHash('sha256').update(value).digest('hex');
 const c=JSON.parse(readFileSync(process.argv[2],'utf8'));mkdirSync(c.output,{recursive:true});const score=3;const expectedReason='goal_changed';
 const load=async(path:string)=>await import(pathToFileURL(join(c.installed,path)).href);
-const {skillDigest}=await load('src/harness/controller.ts');
+const {skillDigest}=await load('scripts/harness/controller.ts');
 const beforeFiles=skillDigest(c.source);
 const {ReviewStore}=await load('src/evaluation/review_store.ts'),{TechnicalReview}=await load('src/evaluation/technical_review.ts'),{RevisionCycle}=await load('src/evaluation/revision_cycle.ts');
 const lock=JSON.parse(readFileSync(join(c.installed,'skills.lock.json'),'utf8')).sources[0],manifest=JSON.parse(readFileSync(join(c.source,'manifest.json'),'utf8'));
@@ -25,7 +25,7 @@ try{
  assert.throws(()=>cycle.propose('native-cycle',request.id,[{objectId:2,field,value:{}}],'green'),/revision_proposal_conflict/);
  if(c.mode!=='round-limit')assert.throws(()=>cycle.propose('native-cycle',request.id,[{objectId:2,field,value}],'overlap'),/revision_round_pending/);
  const plan=join(c.output,'green.json');writeFileSync(plan,JSON.stringify({expectedProjectSha256:manifest.files['project.vectorcraft'],operations:[{command:'paint.setFill',params:{ids:[2],color:'#00ff00'}}],exports:[{format:'svg',artboard:0},{format:'pdf',artboard:0},{format:'png',artboard:0}]}));
- const result=await cycle.execute('native-cycle',proposal.id,{skill:join(c.installed,'skills/vectorcraft-use'),expectedSkillSha256:lock.sha256['vectorcraft-use'],plan,output:join(c.output,'revised'),runtimeHome:c.runtime,python:'/opt/anaconda3/bin/python3',estimatedBytes:4000000});
+ const result=await cycle.execute('native-cycle',proposal.id,{skill:join(c.installed,'skills/vectorcraft-harness'),expectedSkillSha256:lock.sha256['vectorcraft-harness'],plan,output:join(c.output,'revised'),runtimeHome:c.runtime,python:'/opt/anaconda3/bin/python3',estimatedBytes:4000000});
  assert.equal(cycle.get('native-cycle').latest,request.id);assert.equal(cycle.get('native-cycle').state,'active');
  await assert.rejects(()=>cycle.execute('native-cycle',proposal.id,{}),/revision_execution_requires_new_intent/);
  const revisedManifest=JSON.parse(readFileSync(join(result.output,'manifest.json'),'utf8'));
@@ -43,7 +43,7 @@ try{
  const before=JSON.parse(readFileSync(join(c.source,'native.json'),'utf8')),after=JSON.parse(readFileSync(join(result.output,'native.json'),'utf8'));
  function object(model:any,id:number):any{const walk=(x:any):any=>{if(!x||typeof x!=='object')return; if(x.id===id)return x;for(const child of Object.values(x)){const found=walk(child);if(found)return found;}};return walk(model.layers);}
  assert.deepEqual(object(before,3),object(after,3));assert.deepEqual(object(after,2).appearance.items[0].paint,value);assert.deepEqual(before.artboards,after.artboards);
- const groups=cycle.ledger.db.prepare('SELECT task,epoch FROM native_processes').all() as any[];const {ProcessRegistry}=await load('src/harness/process_registry.ts');const registry=new ProcessRegistry(store.db);assert(groups.every(g=>registry.observe(g.task,g.epoch).stopped));
+ const groups=cycle.ledger.db.prepare('SELECT task,epoch FROM native_processes').all() as any[];const {ProcessRegistry}=await load('scripts/harness/process_registry.ts');const registry=new ProcessRegistry(store.db);assert(groups.every(g=>registry.observe(g.task,g.epoch).stopped));
  const beforeReopen=cycle.get('native-cycle');cycle.close();const restarted=new RevisionCycle(store);
  assert.deepEqual(restarted.get('native-cycle'),beforeReopen);assert.deepEqual(restarted.best('native-cycle'),best);restarted.close();
  const proof={schema:'vectorcraft-revision-goal-native/v1',driverSha256:sha(readFileSync(process.argv[1])),result:gap?'FAIL':'PASS',expectedGapConfirmed:gap,expectedReason,feedbackScore:score,latestIssues,level:c.level??'native-candidate',pluginVersion:JSON.parse(readFileSync(join(c.installed,'plugin.json'),'utf8')).version,sourceRef:lock.ref,platform:process.platform+'-'+process.arch,initialRequest:request,nextRequest:next,proposal,execution:result,best,cycle:beforeReopen,sharedAttempts:attempts(),sourcePreserved:true,controlTextPreserved:true,targetPaint:value,sourceModel:before,revisedModel:after,manifest:revisedManifest,registeredGroups:groups.length,allGroupsStopped:true,scope:'actual native revision and checked changed-goal feedback; best for original goal retained; latest feedback must be reported; QA scores only; not full6.6 qualification'};

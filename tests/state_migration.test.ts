@@ -5,7 +5,7 @@ import {mkdtempSync,rmSync,readFileSync,statSync} from 'node:fs';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {createHash} from 'node:crypto';
-import {Ledger} from '../src/harness/ledger.ts';
+import {Ledger} from '../scripts/harness/ledger.ts';
 const sha=(p:string)=>createHash('sha256').update(readFileSync(p)).digest('hex');
 test('legacy v1 migration retains an immutable consistent backup and consumed task budget',()=>{
  const root=mkdtempSync(join(tmpdir(),'vector-state-migration-')),path=join(root,'state.sqlite');let ledger=new Ledger(path);

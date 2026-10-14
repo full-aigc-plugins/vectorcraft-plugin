@@ -4,8 +4,8 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
-import {skillDigest} from '../src/harness/controller.ts';
-import {authorizedDirectory,authorizedTreeCopy,authorizedTreeDigest} from '../src/harness/authorized_tree.ts';
+import {skillDigest} from '../scripts/harness/controller.ts';
+import {authorizedDirectory,authorizedTreeCopy,authorizedTreeDigest} from '../scripts/harness/authorized_tree.ts';
 function fixture(){return fs.realpathSync(fs.mkdtempSync(join(tmpdir(),'vectorcraft-safe-tree-')));}
 test('directory creation stays inside frozen roots and preserves existing exclusive targets',()=>{
  const root=fixture();try{

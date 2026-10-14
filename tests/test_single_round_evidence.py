@@ -18,8 +18,9 @@ class SingleRoundEvidenceTests(unittest.TestCase):
         for name in names:
             target=self.root/name;target.parent.mkdir(parents=True,exist_ok=True)
             original=ROOT/name;digest=self.report['fingerprints'].get(name)
-            if digest and hashlib.sha256(original.read_bytes()).hexdigest()!=digest:
-                matches=[ROOT/p for p,h in dependencies.items() if h==digest and p.endswith('/'+name)]
+            if digest and (not original.is_file() or hashlib.sha256(original.read_bytes()).hexdigest()!=digest):
+                aliases=[name]+(['scripts/harness/'+name.split('src/harness/',1)[1]] if name.startswith('src/harness/') else [])
+                matches=[ROOT/p for p,h in dependencies.items() if h==digest and any(p.endswith('/'+a) or p==a for a in aliases)]
                 if len(matches)!=1:raise AssertionError('missing original single-round execution bytes: '+name)
                 original=matches[0]
             shutil.copyfile(original,target)

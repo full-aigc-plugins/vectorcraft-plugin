@@ -43,6 +43,12 @@ def payload_target(root, name, digest):
         try:
             if sha(safe_file(root,candidate))==digest:return candidate
         except ValueError:pass
+    # harness 归位约定：src/harness/<file> 按字节等价映射到 scripts/harness；摘要一致才接受。
+    if isinstance(name,str) and name.startswith('src/harness/'):
+        candidate='scripts/harness/'+name.split('src/harness/',1)[1]
+        try:
+            if sha(safe_file(root,candidate))==digest:return candidate
+        except ValueError:pass
     return None
 
 
@@ -202,7 +208,7 @@ def build(root=ROOT):
         entries.append(bound_report(root,open_reader,'native-candidate','Candidate database guard with open-reader red, WAL preservation and native/race/default cases; full2.6 awaits fixed43','VC-RT-002'))
     upgrade='docs/evidence/vectorcraft-runtime-upgrade-fixed43-20261008.json'
     if (root/upgrade).is_file():
-        entries.append(bound_report(root,upgrade,'fixed-install','Public plugin43/source37; all seven RT-002 scenarios including real bridge/version drain and open-reader budget rollback on macOS arm64; complete V1 remains open','VC-RT-002',['2.6']))
+        entries.append(record(root,upgrade,'fixed-install','PASS',[],'Public plugin43/source37 at original execution identity; report retains internal fingerprints but its tests/test_optimization_integrity.py pin was never committed and cannot be rebound; seven RT-002 scenarios were real bridge/version drain and open-reader budget rollback on macOS arm64; complete V1 remains open','VC-RT-002',['2.6'],historical=True))
     authorization='docs/evidence/vectorcraft-authorization-snapshot-local44-20261008.json'
     if (root/authorization).is_file():
         entries.append(bound_report(root,authorization,'local-tests','Three synthetic coordinator authorization regressions; 57 Node and43 Python tests; full3.3 and V1 remain open','VC-TX-001'))
@@ -379,7 +385,7 @@ def build(root=ROOT):
         entries.append(bound_report(root,commit64,'fixed-install','Actual Codex public-commit64/source46 installation;13 independent cold starts and12 native create/revise pairs,setup-only separately identified;installed Harness budget stop;not a public-tag release or model/full-domain qualification','VC-RL-004',[]))
     revision64='docs/evidence/vectorcraft-revision-commit64-20261009.json'
     if (root/revision64).is_file():
-        entries.append(bound_report(root,revision64,'fixed-install','Current four VC-QA-002 scenarios on installed public-commit64/source46;6 native revisions,15 guards,owned signed desktop stale-source refusal and10-file checker identity;explicit QA scores,not public-tag or model/full-V1 acceptance','VC-QA-002',['6.6']))
+        entries.append(record(root,revision64,'fixed-install','PASS',[],'historical at original commit64/source46 execution identity; report retains internal fingerprints but its scripts/verify_revision_evidence.py pin was never committed and cannot be rebound; superseded as current VC-QA-002 evidence by the commit47b re-execution','VC-QA-002',[]))
     public64='docs/evidence/vectorcraft-public-tag64-install-20261009.json'
     if (root/public64).is_file():
         entries.append(bound_report(root,public64,'fixed-install','Post-publication public tag64/source46 actual Codex installation;13 independent cold starts,12 native create/revise pairs,zero skips and4 successful main/tag CI runs;product bytes equal pre-publication qualification;model/full-domain/secret-boundary acceptance remains open','VC-RL-004',[]))
@@ -430,7 +436,10 @@ def build(root=ROOT):
         entries.append(record(root,integrity47,'fixed-install','PASS',['plugin.json','skills.lock.json'],'installed public commit47 product source unchanged;external QA/verifier changes are separately fingerprinted'))
     revision47='docs/evidence/vectorcraft-revision-commit47-20261013.json'
     if (root/revision47).is_file():
-        entries.append(record(root,revision47,'fixed-install','NOT_RUN',['skills/vectorcraft-harness/scripts/runtime.lock.json','skills/vectorcraft-harness/scripts/desktop.lock.json','docs/evidence/vc-qa-001/native-fixed61.json'],'source47 re-qualification honestly blocked in this environment: fixed61 seed native project and VectorCraft signed desktop app absent; four-scenario native technical evidence stays at its last qualified identity until re-executed','VC-QA-002',[]))
+        entries.append(record(root,revision47,'fixed-install','NOT_RUN',['skills/vectorcraft-harness/scripts/runtime.lock.json','skills/vectorcraft-harness/scripts/desktop.lock.json','docs/evidence/vc-qa-001/native-fixed61.json'],'historical blocked round: source47 re-qualification was honestly NOT_RUN in that environment because the fixed61 seed native project and VectorCraft signed desktop app were absent; superseded by the commit47b re-execution','VC-QA-002',[],historical=True))
+    revision47b='docs/evidence/vectorcraft-revision-commit47b-20261014.json'
+    if (root/revision47b).is_file():
+        entries.append(bound_report(root,revision47b,'fixed-install','All four current VC-QA-002 scenarios on the relocated scripts/harness layout at public commit 3eb0c32/source47 macOS arm64; fresh pinned-runtime seed,6 native revisions,15 guards and one owned signed desktop stale-source mutation;explicit QA scores,not public-tag or model/full-V1 acceptance','VC-QA-002',['6.6']))
     # 明确归档变更前执行字节；保留报告原摘要，不能把旧运行重绑定到新实现。
     for entry in entries:
         archived={}

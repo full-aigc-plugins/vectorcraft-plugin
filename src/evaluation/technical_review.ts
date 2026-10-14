@@ -1,14 +1,14 @@
-import {assertNoLiteralSecrets} from '../harness/input_policy.ts';
-import {authorizedRead,authorizedDigests} from '../harness/authorized_file.ts';
-import {authorizedDirectory} from '../harness/authorized_tree.ts';
-import {authorizedWrite} from '../harness/authorized_write.ts';
-import {nativeEnvironment} from '../harness/native_environment.ts';
+import {assertNoLiteralSecrets} from '../../scripts/harness/input_policy.ts';
+import {authorizedRead,authorizedDigests} from '../../scripts/harness/authorized_file.ts';
+import {authorizedDirectory} from '../../scripts/harness/authorized_tree.ts';
+import {authorizedWrite} from '../../scripts/harness/authorized_write.ts';
+import {nativeEnvironment} from '../../scripts/harness/native_environment.ts';
 import { spawn } from 'node:child_process';
 import { createHash,randomUUID } from 'node:crypto';
 import { lstatSync,realpathSync } from 'node:fs';
 import { dirname,resolve,relative,isAbsolute,join } from 'node:path';
-import { Ledger,resourcePath } from '../harness/ledger.ts';
-import { ProcessRegistry } from '../harness/process_registry.ts';
+import { Ledger,resourcePath } from '../../scripts/harness/ledger.ts';
+import { ProcessRegistry } from '../../scripts/harness/process_registry.ts';
 import { canonical,strictJson } from '../strict_json.ts';
 import { ReviewStore } from './review_store.ts';
 import { captureChecker,checkerFiles } from './checker_bundle.ts';
@@ -55,7 +55,7 @@ export class TechnicalReview {
     }
     if(!Array.isArray(input.candidates)||!input.candidates.length||input.candidates.some((p:string)=>!data.outputs.some((o:any)=>typeof o.path==='string'&&resolve(source,o.path)===resolve(p)&&o.path in data.files)))throw new Error('unbound_candidate');
     for(const path of [...input.candidates,...input.targets.map((t:any)=>t.path),input.rubric,input.exchangeLoss])capture(path);
-    const checker=captureChecker(),checkerSha=checker.files['src/evaluation/delivery_quality.py'],launcherSha=checker.files['src/harness/process_runner.py'];
+    const checker=captureChecker(),checkerSha=checker.files['src/evaluation/delivery_quality.py'],launcherSha=checker.files['scripts/harness/process_runner.py'];
     const digest=hash(canonical({input,sources,checkerFiles:checker.files}));
     if(!frozenWriteRoots?.some((root:string)=>inside(root,base)))throw new Error('technical_write_outside_roots');
     // 不沿用调用者可控制的链接；快照目录与报告都必须是新建普通路径。
@@ -75,7 +75,7 @@ export class TechnicalReview {
         for(const [name,value] of contents){const path=join(snapshot,name);authorizedDirectory(dirname(path),snapshot);authorizedWrite(path,snapshot,value,0o400);}
         const checkerRoot=join(output,'checker');
         for(const [name,value] of checker.contents){const path=join(checkerRoot,name);authorizedDirectory(dirname(path),output);authorizedWrite(path,output,value,0o400);}
-        const helper=join(checkerRoot,'src/evaluation/delivery_quality.py'),launcher=join(checkerRoot,'src/harness/process_runner.py');
+        const helper=join(checkerRoot,'src/evaluation/delivery_quality.py'),launcher=join(checkerRoot,'scripts/harness/process_runner.py');
         const marker=randomUUID();
         // nonce 留在 exec 后的命令行，供持久进程组身份核对；不向解码器增加公开参数。
         const code=`import runpy,sys\nsys.argv=${JSON.stringify([helper,snapshot,'--runtime-sha256',input.runtimeIdentity,'--project-sha256',input.projectRevision])}\nrunpy.run_path(${JSON.stringify(helper)},run_name='__main__')\n# ${marker}`;

@@ -6,7 +6,7 @@ import {syncBuiltinESMExports} from 'node:module';
 import {tmpdir} from 'node:os';
 import {join,resolve} from 'node:path';
 import {createHash} from 'node:crypto';
-import {Controller,skillDigest} from '../src/harness/controller.ts';
+import {Controller,skillDigest} from '../scripts/harness/controller.ts';
 
 test('Controller refuses a replaced asset ancestor before reading outside bytes',async()=>{
  const root=fs.mkdtempSync(join(tmpdir(),'vectorcraft-parent-asset-'));

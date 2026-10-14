@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {mkdtempSync,mkdirSync,writeFileSync,rmSync,existsSync} from 'node:fs';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
-import {Controller,skillDigest} from '../src/harness/controller.ts';
+import {Controller,skillDigest} from '../scripts/harness/controller.ts';
 import {runtimeFixture} from './runtime_fixture.ts';
 function fixture(){
  const root=mkdtempSync(join(tmpdir(),'craft-runtime-default-')),skill=join(root,'skill');mkdirSync(join(skill,'scripts'),{recursive:true});

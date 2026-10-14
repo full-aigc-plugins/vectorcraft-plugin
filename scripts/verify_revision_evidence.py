@@ -12,6 +12,11 @@ def payload_name(name,root=ROOT):
             candidate = 'skills/vectorcraft-harness/scripts/' + name.split('/scripts/', 1)[1]
             if (Path(root)/candidate).is_file():
                 return candidate
+        # harness 归位：src/harness/<file> 按字节等价映射到 scripts/harness（摘要由调用方核对）。
+        if name.startswith('src/harness/') and not (Path(root)/name).is_file():
+            candidate = 'scripts/harness/' + name.split('src/harness/', 1)[1]
+            if (Path(root)/candidate).is_file():
+                return candidate
     return name
 
 REPORT='docs/evidence/vectorcraft-revision-fixed63-20261009.json'
@@ -25,8 +30,8 @@ def checker_contract(report,bound):
  match=re.search(r'const paths=(\[[^;]*\]);',source)
  try:paths=ast.literal_eval(match.group(1)) if match else None
  except (SyntaxError,ValueError):raise ValueError('revision_checker_contract') from None
- # v2 声明以 harness 路径为准；v1 legacy 标签仅用于旧报告并经 payload_name 等价解析。
- required={'src/evaluation/delivery_quality.py','src/harness/process_runner.py','skills/vectorcraft-harness/scripts/exchange_loss.py','skills/vectorcraft-harness/scripts/asset_reader.py','src/harness/asset_digest.py','src/harness/authorized_file.ts','src/harness/authorized_write.ts','src/harness/authorized_write.py','src/harness/authorized_tree.ts','src/harness/authorized_tree.py'}
+ # v2 声明以 harness 归位后的 scripts/harness 路径为准；v1 legacy 标签仅用于旧报告并经 payload_name 等价解析。
+ required={'src/evaluation/delivery_quality.py','scripts/harness/process_runner.py','skills/vectorcraft-harness/scripts/exchange_loss.py','skills/vectorcraft-harness/scripts/asset_reader.py','scripts/harness/asset_digest.py','scripts/harness/authorized_file.ts','scripts/harness/authorized_write.ts','scripts/harness/authorized_write.py','scripts/harness/authorized_tree.ts','scripts/harness/authorized_tree.py'}
  if not isinstance(paths,list) or not all(isinstance(p,str) for p in paths) or len(paths)!=len(set(paths)) or not required.issubset(paths):raise ValueError('revision_checker_contract')
  return {p:sha(bound(p)) for p in paths}
 def verify(root=ROOT):
@@ -54,7 +59,7 @@ def verify(root=ROOT):
  for row in matrix['entries']:
   if row['result']!='PASS' or row['level']!='native-fixed-install' or set(row['evidence'])!={r['cases'][x] for x in expectedCoverage[row['scenario'].split()[0]]}:raise ValueError('revision_scenarios')
  lock=read('skills.lock.json')['sources'][0];host=read(r['host']);integrity=read(r['integrity']);ids={x['name']:x['sha256'] for x in host['skills']}
- if host['result']!='PASS' or len(host['skills'])!=13 or ids!=lock['sha256'] or integrity['digests']!=ids or integrity['skillsUnchanged']!=13 or integrity['result']!='PASS' or any(x['enabled'] is not True for x in host['skills']):raise ValueError('revision_host')
+ if host['result']!='PASS' or len(host['skills'])!=len(lock['sha256']) or ids!=lock['sha256'] or integrity['digests']!=ids or integrity['skillsUnchanged']!=len(lock['sha256']) or integrity['result']!='PASS' or any(x['enabled'] is not True for x in host['skills']):raise ValueError('revision_host')
  for source,target in [('pluginVersion','pluginVersion'),('pluginCommit','pluginCommit'),('skillSourceRef','sourceRef'),('skillSourceCommit','sourceCommit'),('hostVersion','hostVersion')]:
   if host[source]!=r[target]:raise ValueError('revision_identity')
  if not legacy:

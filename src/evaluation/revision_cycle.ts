@@ -2,8 +2,8 @@ import { createHash,randomUUID } from 'node:crypto';
 import { readFileSync,writeFileSync,mkdirSync,lstatSync,realpathSync } from 'node:fs';
 import { dirname,join,relative,isAbsolute,resolve } from 'node:path';
 import { canonical,strictJson } from '../strict_json.ts';
-import { Ledger,resourcePath } from '../harness/ledger.ts';
-import { Controller } from '../harness/controller.ts';
+import { Ledger,resourcePath } from '../../scripts/harness/ledger.ts';
+import { Controller } from '../../scripts/harness/controller.ts';
 import { ReviewStore } from './review_store.ts';
 
 const hash=(v:string|Buffer)=>createHash('sha256').update(v).digest('hex');

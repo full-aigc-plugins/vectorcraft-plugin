@@ -6,7 +6,7 @@ import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {createHash} from 'node:crypto';
 import {ReviewStore} from '../src/evaluation/review_store.ts';
-import {Controller,skillDigest} from '../src/harness/controller.ts';
+import {Controller,skillDigest} from '../scripts/harness/controller.ts';
 
 // 独立真实 Python 进程验证继承与错误边界；合成内容不代表模型或原生工程验收。
 for(const mode of ['environment','diagnostic'])test(`managed child ${mode} cannot disclose host secrets`,async()=>{
@@ -41,7 +41,7 @@ raise SystemExit(23)
  }finally{controller.close();if(previous===undefined)delete process.env.VECTORCRAFT_TEST_HOST_SECRET;else process.env.VECTORCRAFT_TEST_HOST_SECRET=previous;rmSync(root,{recursive:true,force:true});}
 });
 
-import {nativeEnvironment} from '../src/harness/native_environment.ts';
+import {nativeEnvironment} from '../scripts/harness/native_environment.ts';
 import {prepareRuntime} from '../src/runtime/prepare_runtime.ts';
 import {spawnSync} from 'node:child_process';
 

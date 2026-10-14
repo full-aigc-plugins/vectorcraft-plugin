@@ -5,7 +5,7 @@ import fs from 'node:fs';
 import {join} from 'node:path';
 import {tmpdir} from 'node:os';
 import {createHash} from 'node:crypto';
-import {authorizedCopy,authorizedDigest} from '../src/harness/authorized_file.ts';
+import {authorizedCopy,authorizedDigest} from '../scripts/harness/authorized_file.ts';
 function fixture(){const root=fs.realpathSync(fs.mkdtempSync(join(tmpdir(),'vectorcraft-copy-')));for(const part of ['input','output','outside'])fs.mkdirSync(join(root,part));return root;}
 test('stream copy preserves a 65MiB project, digest and readonly mode',()=>{
  const root=fixture();try{

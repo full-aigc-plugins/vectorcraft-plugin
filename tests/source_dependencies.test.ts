@@ -4,7 +4,7 @@ import {mkdtempSync,mkdirSync,writeFileSync,readFileSync,rmSync,symlinkSync,exis
 import {join} from 'node:path';
 import {tmpdir} from 'node:os';
 import {createHash} from 'node:crypto';
-import {Controller,skillDigest} from '../src/harness/controller.ts';
+import {Controller,skillDigest} from '../scripts/harness/controller.ts';
 import {runtimeFixture} from './runtime_fixture.ts';
 const sha=(value:string|Buffer)=>createHash('sha256').update(value).digest('hex');
 // 合成协调器工作流，仅证明源输入版本绑定；原生验收独立执行。

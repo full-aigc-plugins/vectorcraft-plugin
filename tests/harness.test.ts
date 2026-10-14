@@ -4,7 +4,7 @@ import { mkdtempSync, writeFileSync, rmSync, symlinkSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { createHash } from 'node:crypto';
-import { Ledger } from '../src/harness/ledger.ts';
+import { Ledger } from '../scripts/harness/ledger.ts';
 import { ReviewStore } from '../src/evaluation/review_store.ts';
 import { strictJson } from '../src/strict_json.ts';
 

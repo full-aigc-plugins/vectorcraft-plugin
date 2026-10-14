@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {mkdtempSync,rmSync} from 'node:fs';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
-import {Ledger} from '../src/harness/ledger.ts';
+import {Ledger} from '../scripts/harness/ledger.ts';
 import {RuntimeGate,validateCapabilities} from '../src/runtime/runtime_gate.ts';
 const hash='a'.repeat(64),other='b'.repeat(64);
 const report=(identity=hash)=>({schema:'vectorcraft-runtime-probe/v1',mode:'headless',binarySha256:identity,version:'fixture 1',commands:[{id:'document.new',params:'{width,height}'}],tools:[{name:'run_command',inputSchema:{type:'object'}}]});

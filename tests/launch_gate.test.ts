@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {mkdtempSync,realpathSync,rmSync} from 'node:fs';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
-import {Ledger} from '../src/harness/ledger.ts';
+import {Ledger} from '../scripts/harness/ledger.ts';
 const binding={launchProtocol:'registered-go/v1',launchContext:{skill:'/fixture/skill',plan:'/fixture/plan',runtimeHome:'/fixture/runtime',python:'python3',source:null},planHash:'a'.repeat(64),inputHashes:{},projectRevision:null,runtimeIdentity:'b'.repeat(64),authorization:{objects:[],fields:[],deadline:Date.now()+60000,maxAttempts:2,maxBytes:1000}};
 function fixture(){const root=realpathSync(mkdtempSync(join(tmpdir(),'vector-launch-'))),ledger=new Ledger(join(root,'state.sqlite'));const task=ledger.claim('one',join(root,'output/project.vectorcraft'),join(root,'output'),binding as any);ledger.db.exec('CREATE TABLE IF NOT EXISTS native_processes(task TEXT,epoch INTEGER,identity TEXT)');return {ledger,task,close(){ledger.close();rmSync(root,{recursive:true,force:true});}};}
 test('unlaunched ready task can be sealed and late intent cannot reserve budget',()=>{const f=fixture();try{

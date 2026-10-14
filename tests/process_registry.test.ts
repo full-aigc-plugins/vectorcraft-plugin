@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { spawn } from 'node:child_process';
 import { randomUUID } from 'node:crypto';
-import { ProcessRegistry } from '../src/harness/process_registry.ts';
+import { ProcessRegistry } from '../scripts/harness/process_registry.ts';
 import { DatabaseSync } from 'node:sqlite';
 
 const sleep=(ms:number)=>new Promise(r=>setTimeout(r,ms));

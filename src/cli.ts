@@ -1,12 +1,12 @@
 #!/usr/bin/env node
-import {assertNoLiteralSecrets} from './harness/input_policy.ts';
-import {nativeEnvironment} from './harness/native_environment.ts';
+import {assertNoLiteralSecrets} from '../scripts/harness/input_policy.ts';
+import {nativeEnvironment} from '../scripts/harness/native_environment.ts';
 import { readFileSync,realpathSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { RuntimeGate,validateCapabilities } from './runtime/runtime_gate.ts';
 import { strictJson } from './strict_json.ts';
-import { Controller,skillDigest } from './harness/controller.ts';
+import { Controller,skillDigest } from '../scripts/harness/controller.ts';
 import { ReviewStore } from './evaluation/review_store.ts';
 import { TechnicalReview } from './evaluation/technical_review.ts';
 import { RevisionCycle } from './evaluation/revision_cycle.ts';

@@ -1,5 +1,5 @@
 import {canonical,strictJson} from '../strict_json.ts';
-import type {Ledger} from '../harness/ledger.ts';
+import type {Ledger} from '../../scripts/harness/ledger.ts';
 
 type Requirements={mode:string,commands:Record<string,string>,tools:Record<string,any>};
 /** 核对同一真实会话的命令参数签名与MCP工具schema；enabled属于执行时前置条件。 */

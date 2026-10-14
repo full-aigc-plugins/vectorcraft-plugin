@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import { mkdtempSync,mkdirSync,writeFileSync,rmSync,existsSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { Controller,skillDigest } from '../src/harness/controller.ts';
+import { Controller,skillDigest } from '../scripts/harness/controller.ts';
 
 // 合成协调器fixture，不充当真实原生或像素验收。
 function fixture(){

@@ -4,9 +4,9 @@ import {mkdtempSync,mkdirSync,writeFileSync,readFileSync,rmSync,lstatSync,unlink
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {createHash} from 'node:crypto';
-import {Ledger} from '../src/harness/ledger.ts';
-import {Recovery} from '../src/harness/recovery.ts';
-import {skillDigest} from '../src/harness/controller.ts';
+import {Ledger} from '../scripts/harness/ledger.ts';
+import {Recovery} from '../scripts/harness/recovery.ts';
+import {skillDigest} from '../scripts/harness/controller.ts';
 import {canonical} from '../src/strict_json.ts';
 // 仅核验恢复启动前的快照门禁；不把合成事件当作原生重开证据。
 const sha=(s:string|Buffer)=>createHash('sha256').update(s).digest('hex');

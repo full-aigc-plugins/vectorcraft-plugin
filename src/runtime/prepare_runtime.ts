@@ -1,5 +1,5 @@
-import {assertNoLiteralSecrets} from '../harness/input_policy.ts';
-import {nativeEnvironment} from '../harness/native_environment.ts';
+import {assertNoLiteralSecrets} from '../../scripts/harness/input_policy.ts';
+import {nativeEnvironment} from '../../scripts/harness/native_environment.ts';
 import {spawn} from 'node:child_process';
 import {fileURLToPath} from 'node:url';
 import {strictJson} from '../strict_json.ts';

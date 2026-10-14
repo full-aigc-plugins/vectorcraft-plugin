@@ -6,7 +6,7 @@ import childProcess from 'node:child_process';
 import {syncBuiltinESMExports} from 'node:module';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
-import {Controller} from '../src/harness/controller.ts';
+import {Controller} from '../scripts/harness/controller.ts';
 for(const mode of ['temporary-link','parent-swap'])test(`state publication preserves external files under ${mode}`,()=>{
  const root=fs.realpathSync(fs.mkdtempSync(join(tmpdir(),'vectorcraft-state-write-'))),outside=join(root,'outside');fs.mkdirSync(outside);
  const controller=new Controller(join(root,'state.sqlite')),mkdir=fs.mkdirSync,spawn=childProcess.spawnSync;fs.mkdirSync(controller.snapshotRoot);

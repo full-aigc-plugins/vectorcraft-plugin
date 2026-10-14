@@ -5,7 +5,7 @@ import { mkdtempSync, writeFileSync, mkdirSync, rmSync, readFileSync,existsSync 
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { createHash } from 'node:crypto';
-import { Controller, skillDigest } from '../src/harness/controller.ts';
+import { Controller, skillDigest } from '../scripts/harness/controller.ts';
 
 test('controller binds a supplied standalone snapshot, records intent and verifies actual files', async()=>{
   const root=mkdtempSync(join(tmpdir(),'vectorcraft-controller-'));

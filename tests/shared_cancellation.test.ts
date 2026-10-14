@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {mkdtempSync,realpathSync,rmSync} from 'node:fs';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
-import {Ledger} from '../src/harness/ledger.ts';
+import {Ledger} from '../scripts/harness/ledger.ts';
 function fixture(){const root=realpathSync(mkdtempSync(join(tmpdir(),'vector-budget-'))),path=join(root,'state.sqlite'),ledger=new Ledger(path),binding={planHash:'a'.repeat(64),runtimeIdentity:'b'.repeat(64),projectRevision:null,inputHashes:{},authorization:{budgetId:'workflow-one',deadline:Date.now()+60000,maxAttempts:3,maxBytes:1000,objects:[],fields:[]}};
  const claim=(key:string,b= binding)=>ledger.claim(key,join(root,key+'.vectorcraft'),join(root,key),b);
  return {root,path,ledger,binding,claim,close(){ledger.close();rmSync(root,{recursive:true,force:true});}};}
@@ -35,7 +35,7 @@ test('spent shared output budget rejects a new dependent task before admission',
  const task=f.claim('first');f.ledger.intent(task.id,1,0,{},1000);assert.throws(()=>f.claim('second'),/budget_exceeded/);
  assert.equal((f.ledger.db.prepare('SELECT COUNT(*) AS n FROM tasks').get() as any).n,1);
 }finally{f.close();}});
-test('one failed stop observation still persists cancellation and attempts the other group',async()=>{const f=fixture();const {Controller}=await import('../src/harness/controller.ts');const controller=new Controller(f.path);try{
+test('one failed stop observation still persists cancellation and attempts the other group',async()=>{const f=fixture();const {Controller}=await import('../scripts/harness/controller.ts');const controller=new Controller(f.path);try{
  const parent=f.claim('parent'),child=f.claim('child');controller.ledger.db.prepare('INSERT INTO native_processes(task,epoch,identity) VALUES(?,1,?)').run(parent.id,'unit parent');controller.ledger.db.prepare('INSERT INTO native_processes(task,epoch,identity) VALUES(?,1,?)').run(child.id,'unit child');
  const calls:string[]=[];controller.processes.signal=(task:string)=>{calls.push(task);if(task===parent.id)throw new Error('unit observation failed');};
  assert.equal(controller.requestCancel(parent.id,1).state,'cancel_requested');assert.deepEqual(new Set(calls),new Set([parent.id,child.id]));assert.match(controller.ledger.get(parent.id).reason,/native_stop_unconfirmed/);assert.equal(controller.ledger.get(child.id).state,'cancel_requested');

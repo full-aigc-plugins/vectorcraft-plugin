@@ -4,8 +4,8 @@ import { mkdtempSync,writeFileSync,rmSync,mkdirSync,lstatSync,readFileSync } fro
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { createHash } from 'node:crypto';
-import { Ledger } from '../src/harness/ledger.ts';
-import { Recovery } from '../src/harness/recovery.ts';
+import { Ledger } from '../scripts/harness/ledger.ts';
+import { Recovery } from '../scripts/harness/recovery.ts';
 import {canonical} from '../src/strict_json.ts';
 
 // 账本提交门禁单元测试；原生重开与真实进程停止由 opt-in 验收另行证明。
