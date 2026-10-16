@@ -1,0 +1,34 @@
+{
+  "status": "local-unreleased",
+  "sourcePackage": "full-aigc-skills/vectorcraft-skills",
+  "skills": [
+    {
+      "name": "vectorcraft-editor",
+      "sha256": "1c11185cf6cc1a08a2d7a2387425f1ea274539ec03f2300baac6c0f5a185710f"
+    },
+    {
+      "name": "vectorcraft-logo-system",
+      "sha256": "55ed2cf146566a16a325cf6673a9cb20767ed534b67ece4c8f3f523de3f73b0f"
+    },
+    {
+      "name": "vectorcraft-icon-set",
+      "sha256": "b3ea3032581410c15c751307c250de4e0c655805fbe3d699846d931f17f04692"
+    },
+    {
+      "name": "vectorcraft-infographic",
+      "sha256": "2619cc326fb5f655d1fbce907d89913dd6ee33213a92f090dd837e2c1ab44019"
+    },
+    {
+      "name": "vectorcraft-trace-artwork",
+      "sha256": "6d1d5fa8e78ed51dfbe13cbe8ba6c6881b91ee70f27cabeeee1f10da84093485"
+    },
+    {
+      "name": "vectorcraft-editable-chart",
+      "sha256": "5c592a6cf569fc0a1d119b986cdd8e183e03e9ff0fde60f306910b292f18c420"
+    },
+    {
+      "name": "vectorcraft-svg-cleanup",
+      "sha256": "e6e07abfa32fe0c29198730b193640122ceca5c61ccb0dfbcefa1838e512521e"
+    }
+  ]
+}

@@ -1,5 +1,13 @@
 {
   "version": 1,
   "dest": "skills/",
-  "skills": []
+  "skills": [
+    "vectorcraft-editable-chart",
+    "vectorcraft-editor",
+    "vectorcraft-icon-set",
+    "vectorcraft-infographic",
+    "vectorcraft-logo-system",
+    "vectorcraft-svg-cleanup",
+    "vectorcraft-trace-artwork"
+  ]
 }

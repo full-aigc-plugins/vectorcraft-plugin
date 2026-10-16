@@ -1,0 +1,11 @@
+{
+  "name": "vectorcraft",
+  "title": "VectorCraft",
+  "repository": "https://github.com/full-aigc-plugins/vectorcraft",
+  "commit": "deff5b8f4295b18e6ae3d3c3021bc5a9eb48db02",
+  "version": "0.11.0",
+  "sourceStatus": "fork",
+  "releaseRepository": "full-aigc-plugins/vectorcraft-plugin",
+  "patches": [],
+  "fontInput": "fonts.lock.json"
+}
