@@ -1,5 +1,10 @@
 # VectorCraft Use
 
+## Installable editor development candidate
+
+`0.1.0-dev.20261017.1` is distributed through the Full AIGC plugin marketplace as a development prerelease. Node.js 24 is required. Git installations use `ui/bootstrap.mjs` to download and verify the pinned editor archive on first start; complete release ZIPs also include that archive unpacked for offline startup. No Rust build or npm installation is required. Startup diagnostics use stderr; stdio remains MCP-only. The editor shares its session with Agent commands. Full creative quality and all-host embedded UI acceptance are still incomplete. Existing dated validation below describes its original version.
+
+
 **插件边界**：当前开发候选包含根 `plugin.json`、`mcp.json`、技能与随包stdio编辑器适配器。dev.65内嵌VectorCraft0.12，新增三条场景并修复宿主导出保存。下方锁定技能和Harness历史证据仅对应其标注版本，不代表当前候选已取得完整资格或真实宿主安装验收。
 
 开发 plugin37／source33 修复完整网关品牌返工遗漏变体。原生候选通过，固定安装验收另行执行。[架构](docs/VectorCraft-Brand-Gateway-Export-Architecture.zh_CN.md)。
