@@ -13,3 +13,7 @@ __pycache__/
 
 # 经脱敏、用于可复核验收的固定日志
 !docs/evidence/optimization-logs/*.log
+
+ui/dist/
+
+/ui/node_modules

@@ -1,6 +1,16 @@
-# VectorCraft Agent Plugin
+# VectorCraft Use
 
-**插件边界**：Agent Plugins 1.0 发行目录由根 `plugin.json`、13 项锁定 `skills/` 和 `LICENSE` 组成。开发仓的 `src/` Harness、测试、证据与发布脚本不自动成为宿主可发现的插件组件；当前没有 `mcp.json` 或命令／钩子扩展。可恢复执行在 OpenSpec 中单独验收，现有有界证据不等于完整 V1。[架构与验收边界](docs/VectorCraft-Runtime-Architecture.zh_CN.md)。
+## Installable editor development candidate
+
+`0.1.0-dev.20261017.3` is distributed through the Full AIGC plugin marketplace as a development prerelease. Node.js 24 is required. Git installations use `ui/bootstrap.mjs` to download and verify the pinned editor archive on first start; complete release ZIPs also include that archive unpacked for offline startup. No Rust build or npm installation is required. Startup diagnostics use stderr; stdio remains MCP-only. The editor shares its session with Agent commands. Full creative quality and all-host embedded UI acceptance are still incomplete. Existing dated validation below describes its original version.
+
+
+## Previous development candidate
+
+`0.1.0-dev.20261017.1` is distributed through the Full AIGC plugin marketplace as a development prerelease. Node.js 24 is required. Git installations use `ui/bootstrap.mjs` to download and verify the pinned editor archive on first start; complete release ZIPs also include that archive unpacked for offline startup. No Rust build or npm installation is required. Startup diagnostics use stderr; stdio remains MCP-only. The editor shares its session with Agent commands. Full creative quality and all-host embedded UI acceptance are still incomplete. Existing dated validation below describes its original version.
+
+
+**插件边界**：当前开发候选包含根 `plugin.json`、`mcp.json`、技能与随包stdio编辑器适配器。dev.65内嵌VectorCraft0.12，新增三条场景并修复宿主导出保存。下方锁定技能和Harness历史证据仅对应其标注版本，不代表当前候选已取得完整资格或真实宿主安装验收。
 
 开发 plugin37／source33 修复完整网关品牌返工遗漏变体。原生候选通过，固定安装验收另行执行。[架构](docs/VectorCraft-Brand-Gateway-Export-Architecture.zh_CN.md)。
 
@@ -12,7 +22,7 @@
 
 Logo、图标与品牌图形需求进入，交付 `.vectorcraft` 及适用的 SVG、PDF、PNG。
 
-当前插件：`0.1.0-dev.64`；技能源：`0.1.0-dev.47`；14 个独立技能（13 领域技能 + 1 内置执行 harness）。公开标签64的资格证据仍绑定历史 13 技能载荷，重新鉴定需另行授权发布；完整V1仍开放。
+当前插件：`0.1.0-dev.65`；技能源：`0.1.0-dev.47`；14 个独立技能（13 领域技能 + 1 内置执行 harness）。公开标签64的资格证据仍绑定历史 13 技能载荷，重新鉴定需另行授权发布；完整V1仍开放。
 
 插件55／源41增加SVG实际图像范围及摘要绑定的技术披露门禁；最小任务4.13／4.14通过，4.15当前无界面场景验收通过。[架构](docs/VectorCraft-Exchange-Scope.zh_CN.md)。
 
@@ -139,7 +149,7 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.64 |
+| Metadata version | 0.1.0-dev.65 |
 | Stage | implementation-in-progress |
 | Skills source | vectorcraft-skills / v0.1.0-dev.47 |
 | Execution | 上游 CLI；ArtCraft 使用子适配器 |
@@ -512,3 +522,25 @@ Controller目录／整树增量：快照目录创建、固定技能树复制和�
 
 
 逐命令魔棒设置固定安装增量：公开dev.64/source46实际安装副本完成2条magicWand命令、4轮原生保存重开、8份解码SVG/PNG及4张真实Magic Wand面板窗口。独立设置契约核验默认值、部分字段合并、重置后覆盖、未知字段忽略、颜色／描边粗细／不透明度的四种范围限制及小数保留；切换钢笔／选择工具和同会话原生重开后设置不变。第二轮先修改自有控制对象名称；完整树、色板、原控制文字、源工程、前轮交付及13安装技能身份保全。6组画布／PNG／窗口比较通过，艺术像素保全；20项独立设置导出的复选框像素断言核验五项开关。22项新增回归通过；旧138命令矩阵及校验器原字节保留，当前140/585通过、445 NOT_RUN、280轮保存重开、560份解码导出。应用重启后的偏好持久性和select.magicWand匹配仍未验收；不提升undo、模型、全GUI、创意、市场或完整V1；8.3保持开放，121/127完成、6项开放。 [Evidence](docs/evidence/vectorcraft-command-families140-fixed64-20261009.json).
+
+## 场景技能开发候选
+
+已增加 6 个领域场景技能及 1 个内嵌编辑器入口。详见 [场景目录](docs/scene-skills.md)。本地未发布候选，不代表全部场景的创作质量已验收。
+
+## 内嵌编辑器候选
+
+新增 MCP Apps 与宿主浏览器接入，详见 [配置与构建](docs/editor-integration.md)。`ui/dist/` 为本地生成物；首次分发须带齐生成物。
+
+插件展示使用上游官方图标；名称为 **VectorCraft Use**。图标来源与许可证保存在 `assets/official-icon-source.json` 和相邻 LICENSE 文件中。
+
+源码增强候选采用 `ui/source.lock.json` 与 `ui/build-source.py`；兼容更新查询本插件自有 GitHub Releases，失败回退内置，原版 Web 不替换增强自动化运行时。当前会话保留；宿主安装验收另行记录。
+
+## 矢量场景操作手册 / Vector scene playbooks
+
+当前11条带具体方法和参数的矢量工作流（8条基础与3条0.12新增），见 [vectorcraft-scenario-playbooks](skills/vectorcraft-scenario-playbooks/SKILL.md)。包含独立对象选择、文字母版和轮廓交付；本地候选不代表宿主同步显示已验收。
+
+Eight workflows include explicit commands, parameters, object selection and editable/outlined delivery. This candidate does not establish host UI synchronization.
+
+### 候选启动修正
+
+本候选先完成轻量MCP握手及能力发现，在首次工具或资源调用时校验/获取固定编辑器资源。修复多个编辑器首次下载阻塞宿主握手的问题。Windows通过Git安装时须启用Git长路径支持（`git config --global core.longpaths true`）；完整ZIP不包含历史验收记录，可避免Git检出长路径的问题。运行资源沿用已核验的dev.20261017.2制品，不以入口版本号冒充上游升级。
