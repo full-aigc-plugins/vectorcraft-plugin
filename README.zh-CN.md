@@ -1,6 +1,6 @@
 # VectorCraft Use
 
-**插件边界**：Agent Plugins 1.0 发行目录由根 `plugin.json`、13 项锁定 `skills/` 和 `LICENSE` 组成。开发仓的 `src/` Harness、测试、证据与发布脚本不自动成为宿主可发现的插件组件；当前没有 `mcp.json` 或命令／钩子扩展。可恢复执行在 OpenSpec 中单独验收，现有有界证据不等于完整 V1。[架构与验收边界](docs/VectorCraft-Runtime-Architecture.zh_CN.md)。
+**插件边界**：当前开发候选包含根 `plugin.json`、`mcp.json`、技能与随包stdio编辑器适配器。dev.65内嵌VectorCraft0.12，新增三条场景并修复宿主导出保存。下方锁定技能和Harness历史证据仅对应其标注版本，不代表当前候选已取得完整资格或真实宿主安装验收。
 
 开发 plugin37／source33 修复完整网关品牌返工遗漏变体。原生候选通过，固定安装验收另行执行。[架构](docs/VectorCraft-Brand-Gateway-Export-Architecture.zh_CN.md)。
 
@@ -12,7 +12,7 @@
 
 Logo、图标与品牌图形需求进入，交付 `.vectorcraft` 及适用的 SVG、PDF、PNG。
 
-当前插件：`0.1.0-dev.64`；技能源：`0.1.0-dev.47`；14 个独立技能（13 领域技能 + 1 内置执行 harness）。公开标签64的资格证据仍绑定历史 13 技能载荷，重新鉴定需另行授权发布；完整V1仍开放。
+当前插件：`0.1.0-dev.65`；技能源：`0.1.0-dev.47`；14 个独立技能（13 领域技能 + 1 内置执行 harness）。公开标签64的资格证据仍绑定历史 13 技能载荷，重新鉴定需另行授权发布；完整V1仍开放。
 
 插件55／源41增加SVG实际图像范围及摘要绑定的技术披露门禁；最小任务4.13／4.14通过，4.15当前无界面场景验收通过。[架构](docs/VectorCraft-Exchange-Scope.zh_CN.md)。
 
@@ -139,7 +139,7 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.64 |
+| Metadata version | 0.1.0-dev.65 |
 | Stage | implementation-in-progress |
 | Skills source | vectorcraft-skills / v0.1.0-dev.47 |
 | Execution | 上游 CLI；ArtCraft 使用子适配器 |

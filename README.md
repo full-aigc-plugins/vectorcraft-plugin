@@ -1,6 +1,6 @@
 # VectorCraft Use
 
-**Plugin boundary:** The Agent Plugins 1.0 distribution directory contains root `plugin.json`, 13 locked `skills/` and `LICENSE`. The development repository's `src/` Harness, tests, evidence and release tooling are not automatically discoverable plugin components; there is currently no `mcp.json` or command/hook extension. Recoverable execution has separate OpenSpec acceptance gates; existing bounded evidence does not establish complete V1. [Architecture and acceptance boundary](docs/VectorCraft-Runtime-Architecture.md).
+**Plugin boundary:** The current development candidate includes root `plugin.json`, `mcp.json`, skills and the bundled stdio editor adapter. Plugin dev.65 uses the source-built VectorCraft0.12 editor; three new scenarios and the export bridge have bounded native/browser checks. Historical locked skill and Harness evidence below belongs to its named release and does not qualify this candidate or imply installed-host acceptance.
 
 Fixed plugin37/source33 passed bounded installed brand-export acceptance. A newer source candidate and plugin orchestration modules are under local validation; their fixed-release and host acceptance remain separate. [Architecture](docs/VectorCraft-Brand-Gateway-Export-Architecture.md).
 
@@ -12,7 +12,7 @@ Four-domain RT-001 runtime source/integrity acceptance now covers every current 
 
 Create Logo, icon and brand assets as `.vectorcraft` with applicable SVG, PDF and PNG exports.
 
-Current plugin: `0.1.0-dev.64`; skill source: `0.1.0-dev.47`; 14 independent skills (13 domain skills + 1 built-in execution harness). Published public tag64 qualification remains bound to the historical 13-skill payload; re-qualification requires a separately authorized release. Full V1 remains open.
+Current plugin: `0.1.0-dev.65`; skill source: `0.1.0-dev.47`; 14 independent skills (13 domain skills + 1 built-in execution harness). Published public tag64 qualification remains bound to the historical 13-skill payload; re-qualification requires a separately authorized release. Full V1 remains open.
 
 Plugin55/source41 adds actual SVG image scope and a digest-bound technical disclosure guard. Minimum tasks4.13/4.14 pass; 4.15 qualifies for its current headless scenarios. [Architecture](docs/VectorCraft-Exchange-Scope.en.md).
 
@@ -139,7 +139,7 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | vectorcraft |
-| Metadata version | 0.1.0-dev.64 |
+| Metadata version | 0.1.0-dev.65 |
 | Stage | implementation-in-progress |
 | Skills source | vectorcraft-skills / v0.1.0-dev.47 |
 | Execution | Upstream CLI; ArtCraft uses child adapters |
