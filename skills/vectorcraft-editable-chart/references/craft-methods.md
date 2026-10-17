@@ -29,3 +29,5 @@ vectorcraft-cli run --in input.vectorcraft --cmd shape.ellipse --params '{"x":10
 保存可编辑工程后由新进程或重新打开的同一宿主会话核对；导出格式单独解码/查看。方法存在和零退出不代表本场景已经完成。
 
 工作流来源与许可见 [workflow-sources.json](workflow-sources.json)。仅借鉴事实与方法，本文与参数例子原创编写。
+
+保存重开后，先调用 `select.set {"ids":[实际图表ID]}`，再 `graph.setData {"id":实际图表ID}`。当前0.12即使传id也仍检查选择状态，未选择会报nothing selected。图表在inspect中可表现为Group；是否有数据模型必须用graph.setData读取验证，不能只看对象类型或柱形外观。

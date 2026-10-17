@@ -6,8 +6,9 @@
 | --- | --- | --- |
 | 1. 用统一尺寸创建代表图形 | `shape.ellipse` | `{"x":8,"y":8,"width":32,"height":32}` |
 | 2. 统一颜色 | `paint.setFill` | `{"color":"#243042"}` |
-| 3. 对齐选中图形 | `object.align` | `{"horizontal":"center","vertical":"center","to":"artboard"}` |
-| 4. 等比例缩放并控制描边 | `object.scale` | `{"sx":50,"sy":50,"strokes":true}` |
+| 3. 实心图标显式去掉继承的描边 | `paint.setStroke` | `{"none":true}` |
+| 4. 对齐选中图形 | `object.align` | `{"horizontal":"center","vertical":"center","to":"artboard"}` |
+| 5. 等比例缩放并控制描边 | `object.scale` | `{"sx":50,"sy":50,"strokes":true}` |
 
 ## 如何调用
 
@@ -25,7 +26,7 @@ vectorcraft-cli run --in input.vectorcraft --cmd shape.ellipse --params '{"x":10
 
 在目标像素尺寸检查线宽、端点、负空间与裁切，圆方做视觉补偿。
 
-边界：当前画板尺寸与选择需先核对；只等比例缩放不能自动生成一致图标语言。
+边界：当前画板尺寸与选择需先核对；只等比例缩放不能自动生成一致图标语言。 本例画板48×48，最终16×16；新建图形继承的描边须明确清除，真实尺寸/描边另按用途核对。
 
 保存可编辑工程后由新进程或重新打开的同一宿主会话核对；导出格式单独解码/查看。方法存在和零退出不代表本场景已经完成。
 

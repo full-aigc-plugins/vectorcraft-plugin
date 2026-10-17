@@ -29,3 +29,5 @@ vectorcraft-cli run --in input.vectorcraft --cmd shape.ellipse --params '{"x":10
 保存可编辑工程后由新进程或重新打开的同一宿主会话核对；导出格式单独解码/查看。方法存在和零退出不代表本场景已经完成。
 
 工作流来源与许可见 [workflow-sources.json](workflow-sources.json)。仅借鉴事实与方法，本文与参数例子原创编写。
+
+SVG交付要另行核对透明背景：原生文档的白色画板底色不会自动变成SVG背景图形。本轮透明SVG输入经简化与SVG重开后RGBA保持；若交付需要不透明白底，按要求在副本建立真实背景矩形并复核，不以画板显示白色作为已交付白底。保留原始SVG与原生母版。

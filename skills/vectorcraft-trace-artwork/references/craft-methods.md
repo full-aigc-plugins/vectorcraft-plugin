@@ -30,3 +30,5 @@ vectorcraft-cli run --in input.vectorcraft --cmd shape.ellipse --params '{"x":10
 保存可编辑工程后由新进程或重新打开的同一宿主会话核对；导出格式单独解码/查看。方法存在和零退出不代表本场景已经完成。
 
 工作流来源与许可见 [workflow-sources.json](workflow-sources.json)。仅借鉴事实与方法，本文与参数例子原创编写。
+
+0.12实际返回的Black and White Logo预设为ignoreWhite:true。本例将白底视为留空，保存后的孔洞与外部区域需检查alpha=0，不能用白色覆盖图形冒充孔洞；若白色本身属于标志内容，须重新选择参数并复核，不能照搬该预设。
