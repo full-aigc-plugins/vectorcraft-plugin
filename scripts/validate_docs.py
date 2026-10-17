@@ -17,7 +17,7 @@ errors.extend(contract_module.validate_reference(json.loads((ROOT / "docs/contra
 markdown = sorted(ROOT.rglob('*.md'))
 # 隔离宿主会将系统技能写入忽略的本地缓存；它们不属于待发布文档。
 # pre-*-identity 目录是执行身份归档，按原执行时字节保存，不参与当前文档门禁。
-markdown = [p for p in markdown if '.git' not in p.parts and p.relative_to(ROOT).parts[0] != '.local' and not any(part.startswith('pre-') and part.endswith('-identity') for part in p.parts)]
+markdown = [p for p in markdown if not {'.git', 'node_modules', 'dist', '.local'}.intersection(p.relative_to(ROOT).parts) and p.relative_to(ROOT).parts[0] != '.local' and not any(part.startswith('pre-') and part.endswith('-identity') for part in p.parts)]
 for path in markdown:
     text = path.read_text(encoding='utf-8')
     relative = str(path.relative_to(ROOT))
@@ -147,7 +147,7 @@ if en_sections!=zh_sections:
 for path in ROOT.rglob('*.json'):
     if path.relative_to(ROOT).parts[0] == '.local':
         continue
-    if '.git' not in path.parts:
+    if not {'.git', 'node_modules', 'dist', '.local'}.intersection(path.relative_to(ROOT).parts):
         try:
             json.loads(path.read_text())
         except (json.JSONDecodeError,UnicodeDecodeError) as exc:
