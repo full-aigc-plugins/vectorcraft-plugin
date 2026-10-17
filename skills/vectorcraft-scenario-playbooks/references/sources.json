@@ -44,6 +44,32 @@
         }
       ],
       "reuse": "workflow facts and original adaptation only; no upstream text, code or assets copied"
+    },
+    {
+      "repository": "storytold/vectorcraft",
+      "commit": "8bc65329286dc1b84aa392997bb205613c3e96cb",
+      "license": {
+        "name": "MIT OR Apache-2.0",
+        "spdx_id": "MIT OR Apache-2.0"
+      },
+      "readFiles": [
+        {
+          "path": "crates/engine/src/cmd/dimension.rs",
+          "url": "https://github.com/storytold/vectorcraft/blob/8bc65329286dc1b84aa392997bb205613c3e96cb/crates/engine/src/cmd/dimension.rs",
+          "bytes": 15831
+        },
+        {
+          "path": "crates/engine/src/cmd/intertwine.rs",
+          "url": "https://github.com/storytold/vectorcraft/blob/8bc65329286dc1b84aa392997bb205613c3e96cb/crates/engine/src/cmd/intertwine.rs",
+          "bytes": 13540
+        },
+        {
+          "path": "crates/engine/src/cmd/variablecmds.rs",
+          "url": "https://github.com/storytold/vectorcraft/blob/8bc65329286dc1b84aa392997bb205613c3e96cb/crates/engine/src/cmd/variablecmds.rs",
+          "bytes": 42467
+        }
+      ],
+      "reuse": "official command behavior and original scenario adaptation; no upstream source or prose copied into skill"
     }
   ],
   "adaptationNotes": {

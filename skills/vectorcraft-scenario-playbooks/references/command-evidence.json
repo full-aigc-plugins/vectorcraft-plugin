@@ -150,6 +150,105 @@
       "menu": [],
       "params": "{ids: [id…]} all ids must be non-negative integers naming existing objects → {count, ids} (resulting selection)",
       "shortcut": null
+    },
+    "dimension.create": {
+      "disabled_reason": "no document open",
+      "enabled": false,
+      "id": "dimension.create",
+      "label": "Create Dimension",
+      "menu": [],
+      "params": "{mode?: linear|angular|radius|diameter, a?: [x,y], b?: [x,y], vertex?: [x,y], source?: {kind: segment, edge: {node,subpath,segment}}|{kind: angle, first: edge, second: edge}|{kind: circle, node}|{kind: arc, edge}|{kind: points, a?, b?, vertex?: {node,subpath,anchor}}, offset?: pt, options?: {units: in|mm|pt|pc|px|cm|m|ft|yd, precision: 0-6, scale: drawing:real, hideUnits, lineWeight, lineType: solid|dashed|dotted, lineColor: [r,g,b], arrowStyle: filled|open|tick|none, arrowScale: %, extensionWeight, extensionType, extensionColor, extensionOffset, extensionLength, hideExtensions, fontFamily, fontStyle, fontSize, textColor, textPosition: away|between, textAlignment: left|center|right, textOffset}} → {id,label}; linked measurements follow source edits",
+      "shortcut": null
+    },
+    "dimension.update": {
+      "disabled_reason": "no document open",
+      "enabled": false,
+      "id": "dimension.update",
+      "label": "Update Dimensions",
+      "menu": [],
+      "params": "{ids?: [dimension ids] (default selection), options?: dimension options, offset?: pt} restyle or move existing dimensions → {ids}",
+      "shortcut": null
+    },
+    "object.intertwine.make": {
+      "disabled_reason": "no document open",
+      "enabled": false,
+      "id": "object.intertwine.make",
+      "label": "Make",
+      "menu": [
+        "Object",
+        "Intertwine"
+      ],
+      "params": "{ids?: two or more objects (default: the selection)} put the objects in an Intertwine group and choose the Intertwine tool, which arranges its overlap areas (object.intertwine.arrange) → {id}",
+      "shortcut": null
+    },
+    "object.intertwine.arrange": {
+      "disabled_reason": "no document open",
+      "enabled": false,
+      "id": "object.intertwine.arrange",
+      "label": "Arrange Intertwine Area",
+      "menu": [],
+      "params": "{id?: Intertwine group (default: the selected one), at?: [x,y] (the overlap area under this point, as a click picks it) | area?: [[x,y]…] (a closed polygon drawn around overlap areas: every area whose inside it encloses), order?: toggle|front|back (toggle: the object drawn right below the top comes to the front, so two objects swap), member?: id (front and back: the object to move; default: front brings the object right below the top, back sends the top one)} → {count: areas changed, top: [id of the object now on top in each area]}",
+      "shortcut": null
+    },
+    "variable.define": {
+      "disabled_reason": "no document open",
+      "enabled": false,
+      "id": "variable.define",
+      "label": "New Variable…",
+      "menu": [
+        "Window",
+        "Variables"
+      ],
+      "params": "{name, kind: text|visibility|image|graph} define a variable (graph: CSV data on a graph root)",
+      "shortcut": null
+    },
+    "variable.bind": {
+      "disabled_reason": "no document open",
+      "enabled": false,
+      "id": "variable.bind",
+      "label": "Bind Variable",
+      "menu": [
+        "Window",
+        "Variables"
+      ],
+      "params": "{variable, ids?} bind objects (default: the selection) to a variable; text needs type, image needs an image object, graph needs a graph root, locked art is refused. An object may hold several variables, and binding it to one it already has changes nothing → {bound, already}",
+      "shortcut": null
+    },
+    "dataset.import": {
+      "disabled_reason": "no document open",
+      "enabled": false,
+      "id": "dataset.import",
+      "label": "Import Data Sets…",
+      "menu": [
+        "Window",
+        "Variables"
+      ],
+      "params": "{path? | data? | dataBase64? | csv?} load datasets from CSV (header: name, then variable names; one row per dataset). Rows whose name already exists are replaced → {imported, updated, names}",
+      "shortcut": null
+    },
+    "dataset.select": {
+      "disabled_reason": "no document open",
+      "enabled": false,
+      "id": "dataset.select",
+      "label": "Select Data Set",
+      "menu": [
+        "Window",
+        "Variables"
+      ],
+      "params": "{name} apply a dataset in one undo step, deselecting every selected object left hidden or locked (the key object too) → {applied, skipped, overflow?: [id…] (area type and type on a path whose text it rewrote and that no longer fits; left out when all fits)}",
+      "shortcut": null
+    },
+    "dataset.export": {
+      "disabled_reason": "no document open",
+      "enabled": false,
+      "id": "dataset.export",
+      "label": "Export Data Sets…",
+      "menu": [
+        "Window",
+        "Variables"
+      ],
+      "params": "{path?} write every dataset as CSV (header: name, then variables); without path → {csv, datasets}",
+      "shortcut": null
     }
   },
   "archiveSha256": "fde42c30d14aadbb565cf0551f72f251321f8c9f875a24811b98e522aea6fe88",
@@ -250,5 +349,12 @@
     },
     "hostSynchronization": "NOT_TESTED",
     "realBrandOrPrintAcceptance": "NOT_TESTED"
+  },
+  "supplementaryCatalog": {
+    "version": "0.12.0",
+    "platform": "macOS",
+    "source": "official release binary; SHA256 verified",
+    "archiveSha256": "29d97dd6cbef0457824bc54202620d9589adb65bfe5e13459866531747dec5df",
+    "newSceneAcceptance": "LOCAL_NATIVE_ONLY_PENDING_WINDOWS"
   }
 }

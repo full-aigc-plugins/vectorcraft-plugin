@@ -6,7 +6,7 @@ license: Apache-2.0
 
 # VectorCraft 矢量场景
 
-从[8条具体流程](references/workflows.md)选当前任务，[recipes.json](references/recipes.json)含有序方法与示例参数，[命令证据](references/command-evidence.json)记录实际原生目录，[来源](references/sources.json)固定Illustrator工作流资料提交。正文与几何为原创适配，不执行外部JSX。
+从[8条基础流程](references/workflows.md)及[3条0.12新增场景](references/upstream-0.12.md)选当前任务，[recipes.json](references/recipes.json)含有序方法与示例参数，[命令证据](references/command-evidence.json)记录实际原生目录，[来源](references/sources.json)固定Illustrator工作流资料提交。正文与几何为原创适配，不执行外部JSX。
 
 先探测`vectorcraft-cli --version`和`commands`。本技能不附带CLI；缺失时按[官方发行说明](https://github.com/storytold/vectorcraft/releases)选择系统版本并遵守安装授权。原生0.12命令与插件Web运行时可能不同，先查当前schema再使用。
 
@@ -31,3 +31,5 @@ file.new和示例文案不是既有图编辑步骤。每条默认独立文件，
 ## 0.12发布能力
 
 需要精简命令检索或向旧版Illustrator交付AI时，读取[0.12能力与版本边界](references/upstream-0.12.md)。原生CLI与内嵌引擎分别核对版本。
+
+0.12另补三条具体场景：尺寸标注单位交付、交织遮挡与释放、CSV可编辑文案版本；按上面的0.12参考读取结构化参数。当前手册共11条配方。

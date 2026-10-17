@@ -13,6 +13,8 @@ import { authorizeRequest, workspacePath } from './security.mjs';
 import {selectEditor} from './editor-update.mjs';
 import {withPanelMetadata} from './panel-metadata.mjs';
 import {extendDiscoveryTool, callDiscoveryTool} from './catalog-filter.mjs';
+import {exportWithHostPath} from './host-export.mjs';
+import {outputPath, writeOutput} from './runtime/automation.mjs';
 const panelMetadata = process.env.CRAFT_PANEL_METADATA_FILE
  ? JSON.parse(await readFile(process.env.CRAFT_PANEL_METADATA_FILE, 'utf8')) : {};
 
@@ -74,7 +76,10 @@ async function tool(params, fromPage=false, pageId=null) {
  }
  if(params.name==='editor_status') return {content:[{type:'text',text:JSON.stringify({editor:config.name,workspace,attached:editorAttached && Date.now()-lastPoll<45000,runtime})}],structuredContent:{editor:config.name,workspace,attached:editorAttached && Date.now()-lastPoll<45000,runtime}};
  used=true;
- const result=await callDiscoveryTool(params,async request=>(await upstream()).callTool(request,undefined,{timeout:180000}));
+ if(params.name==='export' && typeof params.arguments?.path==='string') await outputPath(workspace,params.arguments.path);
+ const result=await exportWithHostPath(params,
+  request=>callDiscoveryTool(request,async forwarded=>(await upstream()).callTool(forwarded,undefined,{timeout:180000})),
+  (path,bytes)=>writeOutput(workspace,path,bytes,true));
  if(params.name==='_editor_attach' && !result.isError) {editorAttached=true;lastPoll=Date.now();if(fromPage){browserOwner=pageId;browserToken=result.structuredContent.token;}}
  if(params.name==='_editor_poll' && !result.isError)lastPoll=Date.now();
  if(params.name==='_editor_detach' && !result.isError) editorAttached=false;

@@ -1070,6 +1070,288 @@
         "箭头端点对齐不超出目的端"
       ],
       "limits": "箭头实际指向须按场地路线确认，本例不代表已完成无障碍或安全导视设计。"
+    },
+    {
+      "id": "dimension-unit-delivery",
+      "title": "矢量方案图的尺寸标注与单位切换",
+      "category": "technical-illustration",
+      "inputs": "独立图中144pt的线性距离；真实图按测量位置替换。",
+      "execution": "COMMAND_MAPPED_NOT_SCENE_ACCEPTED",
+      "minimumRuntime": "0.12.0",
+      "steps": [
+        {
+          "command": "file.new",
+          "purpose": "只在独立新图中建立测试画板；已有工程跳过并重新定位对象",
+          "params": {
+            "width": 240,
+            "height": 180,
+            "units": "Pixels",
+            "backgroundContents": "white"
+          },
+          "parameterReference": "command-evidence.json#file.new",
+          "newDocumentOnly": true
+        },
+        {
+          "command": "dimension.create",
+          "purpose": "标注144pt距离，比例必须是字符串",
+          "params": {
+            "mode": "linear",
+            "a": [
+              20,
+              50
+            ],
+            "b": [
+              164,
+              50
+            ],
+            "options": {
+              "units": "in",
+              "precision": 2,
+              "scale": "1:1"
+            }
+          },
+          "parameterReference": "command-evidence.json#dimension.create"
+        },
+        {
+          "command": "dimension.update",
+          "purpose": "对刚创建的标注改用毫米显示",
+          "params": {
+            "options": {
+              "units": "mm",
+              "precision": 1
+            }
+          },
+          "parameterReference": "command-evidence.json#dimension.update"
+        }
+      ],
+      "assertions": {
+        "artboard": [
+          240,
+          180
+        ],
+        "kindCounts": {
+          "Group": 1,
+          "Type": 1
+        },
+        "texts": [
+          "50.8 mm"
+        ]
+      },
+      "checks": [
+        "原生保存后保留标注组与50.8 mm文字",
+        "重开后按实际标注ID改回in，得到2.00 in",
+        "单位切换不改测量端点"
+      ],
+      "limits": "点坐标标注是固定测量，不声称跟随另一个对象。关联标注需使用source中的实际对象/边/锚点引用；不作为工程精度认证。"
+    },
+    {
+      "id": "intertwine-overlap-order",
+      "title": "交织标志的局部遮挡与可逆释放",
+      "category": "brand-artwork",
+      "inputs": "独立图两条纯色带，重叠区位于100,80；真实标志按几何定位。",
+      "execution": "COMMAND_MAPPED_NOT_SCENE_ACCEPTED",
+      "minimumRuntime": "0.12.0",
+      "steps": [
+        {
+          "command": "file.new",
+          "purpose": "只在独立新图中建立测试画板；已有工程跳过并重新定位对象",
+          "params": {
+            "width": 240,
+            "height": 180,
+            "units": "Pixels",
+            "backgroundContents": "white"
+          },
+          "parameterReference": "command-evidence.json#file.new",
+          "newDocumentOnly": true
+        },
+        {
+          "command": "shape.rectangle",
+          "purpose": "创建水平红带",
+          "params": {
+            "x": 20,
+            "y": 60,
+            "width": 180,
+            "height": 50
+          },
+          "parameterReference": "command-evidence.json#shape.rectangle"
+        },
+        {
+          "command": "paint.setFill",
+          "purpose": "红带填色",
+          "params": {
+            "color": "#ff0000"
+          },
+          "parameterReference": "command-evidence.json#paint.setFill"
+        },
+        {
+          "command": "paint.setStroke",
+          "purpose": "去掉红带描边",
+          "params": {
+            "none": true
+          },
+          "parameterReference": "command-evidence.json#paint.setStroke"
+        },
+        {
+          "command": "shape.rectangle",
+          "purpose": "创建垂直蓝带",
+          "params": {
+            "x": 80,
+            "y": 20,
+            "width": 50,
+            "height": 140
+          },
+          "parameterReference": "command-evidence.json#shape.rectangle"
+        },
+        {
+          "command": "paint.setFill",
+          "purpose": "蓝带填色",
+          "params": {
+            "color": "#0000ff"
+          },
+          "parameterReference": "command-evidence.json#paint.setFill"
+        },
+        {
+          "command": "paint.setStroke",
+          "purpose": "去掉蓝带描边",
+          "params": {
+            "none": true
+          },
+          "parameterReference": "command-evidence.json#paint.setStroke"
+        },
+        {
+          "command": "select.all",
+          "purpose": "仅此独立新图内选择两条新带；已有工程用实际ID",
+          "params": {},
+          "parameterReference": "command-evidence.json#select.all"
+        },
+        {
+          "command": "object.intertwine.make",
+          "purpose": "创建可编辑交织对象",
+          "params": {},
+          "parameterReference": "command-evidence.json#object.intertwine.make"
+        },
+        {
+          "command": "object.intertwine.arrange",
+          "purpose": "仅切换指定交叠区的前后顺序",
+          "params": {
+            "at": [
+              100,
+              80
+            ],
+            "order": "toggle"
+          },
+          "parameterReference": "command-evidence.json#object.intertwine.arrange"
+        }
+      ],
+      "assertions": {
+        "artboard": [
+          240,
+          180
+        ],
+        "kindCounts": {
+          "Intertwine": 1,
+          "Rectangle": 2
+        },
+        "fills": [
+          "#ff0000",
+          "#0000ff"
+        ]
+      },
+      "checks": [
+        "重叠区从蓝色改为红色，交叠区外保持",
+        "保存重开后交织仍可编辑",
+        "对副本释放交织后还原两条原对象及原始蓝色在前顺序"
+      ],
+      "limits": "只验证单交叠区域的矩形色带；复杂自交、描边与透明效果需单独查看，不全选改用户其他对象。"
+    },
+    {
+      "id": "csv-text-variants",
+      "title": "CSV驱动的可编辑文字版本",
+      "category": "variable-data",
+      "inputs": "独立画板的一个活文字对象与两个虚构文案版本；实际CSV按用户材料填写。",
+      "execution": "COMMAND_MAPPED_NOT_SCENE_ACCEPTED",
+      "minimumRuntime": "0.12.0",
+      "steps": [
+        {
+          "command": "file.new",
+          "purpose": "只在独立新图中建立测试画板；已有工程跳过并重新定位对象",
+          "params": {
+            "width": 240,
+            "height": 180,
+            "units": "Pixels",
+            "backgroundContents": "white"
+          },
+          "parameterReference": "command-evidence.json#file.new",
+          "newDocumentOnly": true
+        },
+        {
+          "command": "text.create",
+          "purpose": "创建可编辑文字",
+          "params": {
+            "x": 20,
+            "y": 70,
+            "text": "ORIGINAL",
+            "font": "Arial",
+            "size": 20
+          },
+          "parameterReference": "command-evidence.json#text.create"
+        },
+        {
+          "command": "variable.define",
+          "purpose": "定义文字变量",
+          "params": {
+            "name": "offer",
+            "kind": "text"
+          },
+          "parameterReference": "command-evidence.json#variable.define"
+        },
+        {
+          "command": "variable.bind",
+          "purpose": "绑定当前新建文字；已有工程使用实际对象ID",
+          "params": {
+            "variable": "offer"
+          },
+          "parameterReference": "command-evidence.json#variable.bind"
+        },
+        {
+          "command": "dataset.import",
+          "purpose": "导入两个数据版本；同名数据集会被替换",
+          "params": {
+            "csv": "name,offer\nA,ALPHA\nB,BETA\n"
+          },
+          "parameterReference": "command-evidence.json#dataset.import"
+        },
+        {
+          "command": "dataset.select",
+          "purpose": "应用B版本",
+          "params": {
+            "name": "B"
+          },
+          "parameterReference": "command-evidence.json#dataset.select"
+        },
+        {
+          "command": "dataset.export",
+          "purpose": "导出CSV检查全部版本",
+          "params": {},
+          "parameterReference": "command-evidence.json#dataset.export"
+        }
+      ],
+      "assertions": {
+        "artboard": [
+          240,
+          180
+        ],
+        "texts": [
+          "BETA"
+        ],
+        "textCount": 1
+      },
+      "checks": [
+        "文字仍为可编辑Type，B版本为BETA",
+        "重开后切换A版本为ALPHA，保留两套数据",
+        "CSV导出仍含A/ALPHA和B/BETA"
+      ],
+      "limits": "导入前盘点已有变量和数据集；同名替换须在授权范围内。换文案后检查溢出与字体，不把两个短词样例推断为任意多语言排版通过。"
     }
   ]
 }
