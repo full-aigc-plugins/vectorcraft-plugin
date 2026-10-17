@@ -12,6 +12,7 @@ import { fileURLToPath } from 'node:url';
 import { authorizeRequest, workspacePath } from './security.mjs';
 import {selectEditor} from './editor-update.mjs';
 import {withPanelMetadata} from './panel-metadata.mjs';
+import {extendDiscoveryTool, callDiscoveryTool} from './catalog-filter.mjs';
 const panelMetadata = process.env.CRAFT_PANEL_METADATA_FILE
  ? JSON.parse(await readFile(process.env.CRAFT_PANEL_METADATA_FILE, 'utf8')) : {};
 
@@ -73,14 +74,14 @@ async function tool(params, fromPage=false, pageId=null) {
  }
  if(params.name==='editor_status') return {content:[{type:'text',text:JSON.stringify({editor:config.name,workspace,attached:editorAttached && Date.now()-lastPoll<45000,runtime})}],structuredContent:{editor:config.name,workspace,attached:editorAttached && Date.now()-lastPoll<45000,runtime}};
  used=true;
- const result=await (await upstream()).callTool(params,undefined,{timeout:180000});
+ const result=await callDiscoveryTool(params,async request=>(await upstream()).callTool(request,undefined,{timeout:180000}));
  if(params.name==='_editor_attach' && !result.isError) {editorAttached=true;lastPoll=Date.now();if(fromPage){browserOwner=pageId;browserToken=result.structuredContent.token;}}
  if(params.name==='_editor_poll' && !result.isError)lastPoll=Date.now();
  if(params.name==='_editor_detach' && !result.isError) editorAttached=false;
  return result;
 }
 async function tools() {
- const result=await (await upstream()).listTools(); catalog=new Set(result.tools.map(t=>t.name));
+ const source=await (await upstream()).listTools(); const result={...source,tools:source.tools.map(extendDiscoveryTool)}; catalog=new Set(result.tools.map(t=>t.name));
  return {tools:[...result.tools.map(t=>t.name==='open_editor'?{...t,inputSchema:{...t.inputSchema,properties:{...t.inputSchema.properties,workspace:{type:'string',description:'Absolute workspace path; set before opening an editor session.'}}}}:t),
  {name:'open_browser_editor',description:'Open the same editor session in the host built-in browser. Use the returned editorUrl with the host browser tool. Does not itself render the page.',inputSchema:{type:'object',properties:{workspace:{type:'string'},path:{type:'string'}}}},
  {name:'editor_status',description:'Report whether the actual editor has attached to this MCP session.',inputSchema:{type:'object',properties:{}},annotations:{readOnlyHint:true}}]};
