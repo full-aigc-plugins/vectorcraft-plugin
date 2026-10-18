@@ -49,7 +49,8 @@ def verify(package: Path, lock_path: Path) -> dict:
     candidates = set()
     if 'scenario-candidates.json' in entries:
         declaration = json.loads((package / 'scenario-candidates.json').read_text())
-        if not isinstance(source.get('package'), str) or not source['package'] or declaration.get('status') != 'local-unreleased' or declaration.get('sourcePackage') != source['package']:
+        authorities = {'vectorcraft-skills', 'full-aigc-skills/vectorcraft-skills'}
+        if source.get('package') not in authorities or declaration.get('status') != 'local-unreleased' or declaration.get('sourcePackage') not in authorities:
             raise ValueError('invalid_candidate_authority')
         if not isinstance(declaration.get('skills'), list):
             raise ValueError('invalid_candidate_inventory')
