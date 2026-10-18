@@ -17,7 +17,7 @@ jobs:
       - name: Verify portable Agent Plugin payload
         run: |
           mkdir -p "$RUNNER_TEMP/vectorcraft-agent-plugin"
-          git archive HEAD plugin.json skills LICENSE | tar -x -C "$RUNNER_TEMP/vectorcraft-agent-plugin"
+          git archive HEAD plugin.json skills LICENSE scenario-candidates.json | tar -x -C "$RUNNER_TEMP/vectorcraft-agent-plugin"
           python3 -I -B scripts/verify_portable_package.py "$RUNNER_TEMP/vectorcraft-agent-plugin" skills.lock.json
       - run: python3 -I -B scripts/current_identity.py --check
       - run: python3 -I -B scripts/evidence_index.py --check
