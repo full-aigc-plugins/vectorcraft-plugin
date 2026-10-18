@@ -54,6 +54,15 @@
 - **THEN** 核验二进制摘要及版本输出，读取同一只读MCP会话的命令参数签名和工具inputSchema；缺失或变化时拒绝激活
 - **AND** headless与bridge独立绑定，不把空文档的enabled状态当作签名，也不静默替换模式
 
+#### Scenario: 编辑器只显示一层正常加载提示
+- **WHEN** 编辑器页面加载、MCP 客户端连接或正常打开文件
+- **THEN** 包装层 SHALL 从初始 HTML 起隐藏通知浮层，保留引擎自身加载画面，不叠加第二个加载提示
+
+#### Scenario: 启动或导出错误仍可见
+- **WHEN** 编辑器启动或操作失败
+- **THEN** 包装层 SHALL 显示错误；只有存在可重试导出时才显示导出重试按钮，恢复正常后隐藏错误浮层
+
+
 ### Requirement: VC-DS-002 Verified Vector desktop export alias
 The standalone full-command gateway SHALL map `file.export` to `document.export` only in VectorCraft bridge mode, because the pinned official desktop advertises the engine operation while the CLI advertises its host alias. The gateway SHALL validate the complete mapped registry, check the actual operation's enabled state in the same session, preserve requested and backend command identities in its receipt, and fail on any unrelated missing command. Headless command identity SHALL remain unchanged.
 
