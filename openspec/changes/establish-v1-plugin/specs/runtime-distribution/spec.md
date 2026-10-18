@@ -64,7 +64,12 @@
 
 
 ### Requirement: VC-DS-002 Verified Vector desktop export alias
-The standalone full-command gateway SHALL map `file.export` to `document.export` only in VectorCraft bridge mode, because the pinned official desktop advertises the engine operation while the CLI advertises its host alias. The gateway SHALL validate the complete mapped registry, check the actual operation's enabled state in the same session, preserve requested and backend command identities in its receipt, and fail on any unrelated missing command. Headless command identity SHALL remain unchanged.
+
+The VectorCraft bridge gateway SHALL apply the verified desktop export alias and preserve the complete validation and identity contract specified below.
+
+#### Scenario: Complete execution contract
+- **WHEN** the described standalone desktop or bridge workflow is requested
+- **THEN** The standalone full-command gateway SHALL map `file.export` to `document.export` only in VectorCraft bridge mode, because the pinned official desktop advertises the engine operation while the CLI advertises its host alias. The gateway SHALL validate the complete mapped registry, check the actual operation's enabled state in the same session, preserve requested and backend command identities in its receipt, and fail on any unrelated missing command. Headless command identity SHALL remain unchanged.
 
 #### Scenario: Export alias on official desktop
 - **GIVEN** the pinned desktop has `document.export` and no `file.export`
@@ -88,7 +93,12 @@ VectorCraft bridge discovery SHALL normalize only the verified `file.place` engi
 - **THEN** discovery returns an unknown registry outcome and performs no edit
 
 ### Requirement: VC-DS-001 Owned standalone desktop workflow
-Each domain skill SHALL offer `desktop.py run PLAN --output NEW_DIRECTORY` that validates the plan before installation, verifies fixed desktop and CLI identities, starts only its own isolated desktop, confirms the loopback listener belongs to that process, executes the existing full-command bridge gateway, and closes only its owned desktop/MCP processes on success or failure. Photo authentication SHALL use a private token file and the same authorized output root in both desktop and CLI. Unknown editing outcomes SHALL not be replayed.
+
+The system SHALL preserve the complete owned desktop execution contract in the scenario below, including fixed identities, process ownership, authentication isolation and no replay.
+
+#### Scenario: Complete execution contract
+- **WHEN** the described standalone desktop or bridge workflow is requested
+- **THEN** Each domain skill SHALL offer `desktop.py run PLAN --output NEW_DIRECTORY` that validates the plan before installation, verifies fixed desktop and CLI identities, starts only its own isolated desktop, confirms the loopback listener belongs to that process, executes the existing full-command bridge gateway, and closes only its owned desktop/MCP processes on success or failure. Photo authentication SHALL use a private token file and the same authorized output root in both desktop and CLI. Unknown editing outcomes SHALL not be replayed.
 
 #### Scenario: First use without a running desktop
 - **WHEN** a standalone skill runs a valid plan against empty runtime caches
