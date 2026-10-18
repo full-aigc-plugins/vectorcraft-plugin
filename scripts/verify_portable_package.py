@@ -64,8 +64,15 @@ def verify(package: Path, lock_path: Path) -> dict:
                 raise ValueError('candidate_digest_mismatch')
             if not path.read_text().startswith('---\nname: ' + name + '\n'):
                 raise ValueError('invalid_candidate_skill')
-            if any(p.is_file() and p.relative_to(directory).as_posix() not in {'SKILL.md', 'agents/openai.yaml'} for p in directory.rglob('*')):
+            files = {p.relative_to(directory).as_posix(): p for p in directory.rglob('*') if p.is_file()}
+            references = set(files) - {'SKILL.md', 'agents/openai.yaml'}
+            if any(not rel.startswith('references/') or Path(rel).suffix not in {'.md', '.json'} for rel in references):
                 raise ValueError('unsupported_candidate_payload')
+            if references or 'files' in entry:
+                if not isinstance(entry.get('files'), dict) or set(entry['files']) != set(files):
+                    raise ValueError('candidate_file_inventory_mismatch')
+                if any(hashlib.sha256(path.read_bytes()).hexdigest() != entry['files'][rel] for rel, path in files.items()):
+                    raise ValueError('candidate_digest_mismatch')
             candidates.add(name)
     skills = package / "skills"
     if not skills.is_dir() or {path.name for path in skills.iterdir()} != set(names) | candidates:

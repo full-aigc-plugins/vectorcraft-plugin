@@ -101,6 +101,23 @@ class PortablePackageTests(unittest.TestCase):
         manifest.write_text(json.dumps(invalid))
         self.assertIn('invalid_candidate_inventory', self.verify().stderr)
 
+    def test_candidate_references_need_a_complete_digest_inventory(self):
+        path = self.candidate()
+        reference = path.parent / 'references/workflow.json'
+        reference.parent.mkdir()
+        reference.write_text('{"description":"documented workflow"}')
+        manifest = self.package / 'scenario-candidates.json'
+        self.assertIn('candidate_file_inventory_mismatch', self.verify().stderr)
+        data = json.loads(manifest.read_text())
+        data['skills'][0]['files'] = {
+            p.relative_to(path.parent).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
+            for p in path.parent.rglob('*') if p.is_file()
+        }
+        manifest.write_text(json.dumps(data))
+        self.assertEqual(self.verify().returncode, 0)
+        reference.write_text('changed reference')
+        self.assertIn('candidate_digest_mismatch', self.verify().stderr)
+
     def test_symlink_escape_is_rejected(self):
         (self.package / "skills" / "vectorcraft-use" / "outside").symlink_to(self.lock)
         self.assertIn("package_symlink", self.verify().stderr)
