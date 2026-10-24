@@ -1,7 +1,7 @@
 {
   "name": "full-aigc-plugins-vectorcraft",
   "interface": {
-    "displayName": "VectorCraft · Vector Design"
+    "displayName": "VectorCraft（矢量设计）"
   },
   "plugins": [
     {
@@ -17,10 +17,10 @@
       },
       "category": "Creativity",
       "version": "0.1.0-dev.20261019.1",
-      "description": "Logos, icon sets, infographics, SVG cleanup and multi-artboard variants. Exports SVG, PDF and PNG with editable paths.",
+      "description": "标志、图标集、信息图、SVG 清理与多画板变体；导出 SVG、PDF 与 PNG，路径保持可编辑。",
       "interface": {
-        "displayName": "VectorCraft · Vector Design",
-        "shortDescription": "Logos, icons, infographics and SVG cleanup into editable vector projects",
+        "displayName": "VectorCraft（矢量设计）",
+        "shortDescription": "标志、图标、信息图与 SVG，导出可编辑矢量工程",
         "logo": "https://cdn.jsdelivr.net/gh/full-aigc-plugins/vectorcraft-plugin@v0.1.0-dev.20261018.2/assets/official-logo.png"
       },
       "icon": "https://cdn.jsdelivr.net/gh/full-aigc-plugins/vectorcraft-plugin@v0.1.0-dev.20261019.1/assets/official-logo.png",
