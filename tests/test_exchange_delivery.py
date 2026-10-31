@@ -49,6 +49,20 @@ class ExchangeDeliveryTests(unittest.TestCase):
     elif fault=='changed-mode':r['outputs'][0]['observations']['svgTextExportMode']='editable'
     else:r['outputs'][0]['observations']['nativeTextObjectIds']=[]
     self.save(root,m,r);self.assertEqual(self.check(root,m)['technicalStatus'],'FAIL')
+ def test_svg_mode_from_bound_workflow_journal(self):
+  with tempfile.TemporaryDirectory() as d:
+   root=Path(d);m,r=self.fixture(root)
+   (root/'drawing.svg').write_text('<svg xmlns="http://www.w3.org/2000/svg"><path d="M0 0L1 1"/></svg>')
+   journal=[{'command':'document.setup','params':{},'result':{'exportText':'editable'}},
+            {'command':'document.export','params':{'path':'drawing.svg','format':'svg'},'result':{'path':'drawing.svg'}}]
+   (root/'operations.json').write_text(json.dumps(journal))
+   m['files'].pop('drawing.pdf')
+   for name in ('drawing.svg','operations.json'):m['files'][name]=hashlib.sha256((root/name).read_bytes()).hexdigest()
+   m['outputs']=[{'path':'drawing.svg'}]
+   r=module().exchange_module().write_report(root,['drawing.svg'],{}, {'drawing.svg':'editable'})
+   self.save(root,m,r);self.assertEqual(self.check(root,m)['technicalStatus'],'PASS')
+   r['outputs'][0]['observations']['svgTextExportMode']='appearance'
+   self.save(root,m,r);self.assertEqual(self.check(root,m)['technicalStatus'],'FAIL')
  def test_missing_bound_report_and_invalid_report_json_refuse(self):
   for fault in ['missing-binding','missing-file','invalid-json','invalid-type']:
    with self.subTest(fault=fault),tempfile.TemporaryDirectory() as d:

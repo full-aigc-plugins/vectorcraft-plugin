@@ -1,0 +1,197 @@
+{
+  "schema": "vectorcraft-fixed-host-install/v1",
+  "result": "PASS",
+  "pluginVersion": "0.1.0-dev.20261019.1",
+  "pluginCommit": "b11aa23713f3db498006d43f88b22da5f5ced226",
+  "artifactRef": "b11aa23713f3db498006d43f88b22da5f5ced226",
+  "artifactKind": "public-commit",
+  "candidateBranch": "fix/restore-release-gate-20261031",
+  "publicTagVerified": false,
+  "skillSourceRef": "v0.1.0-dev.47",
+  "skillSourceCommit": "3d102cedc084d410fe5adf9425c34c626dc95112",
+  "hostVersion": "codex-cli 0.165.0",
+  "hostIdentity": {
+    "userAgent": "codex_work_desktop/0.165.0 (Mac OS 27.0.1; arm64) dumb (vectorcraft-fixed-acceptance; 1.0)",
+    "codexHome": "QA_ROOT/codex home",
+    "platformFamily": "unix",
+    "platformOs": "macos"
+  },
+  "platform": "Darwin-arm64",
+  "skills": [
+    {
+      "name": "vectorcraft-use",
+      "path": "QA_ROOT/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.20261019.1/skills/vectorcraft-use",
+      "sha256": "4570a405163704c69cc7dd2103445be5a01429291ee0ae7c1bfc92dbb99d72cb",
+      "enabled": true,
+      "implicitPolicy": "policy:\n  allow_implicit_invocation: true\n"
+    },
+    {
+      "name": "vectorcraft-cli",
+      "path": "QA_ROOT/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.20261019.1/skills/vectorcraft-cli",
+      "sha256": "1aa5a7f9d227ebea0249abdb61369fec239a3e196baf8c04edbf3dfee9d517b8",
+      "enabled": true,
+      "implicitPolicy": "policy:\n  allow_implicit_invocation: false\n"
+    },
+    {
+      "name": "vectorcraft-cli-setup",
+      "path": "QA_ROOT/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.20261019.1/skills/vectorcraft-cli-setup",
+      "sha256": "867fac54922705b770565644a4abf24925927e32f3408f46843e964591199b41",
+      "enabled": true,
+      "implicitPolicy": "policy:\n  allow_implicit_invocation: false\n"
+    },
+    {
+      "name": "vectorcraft-cli-project",
+      "path": "QA_ROOT/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.20261019.1/skills/vectorcraft-cli-project",
+      "sha256": "be98af733401234154a22e3fa9c9242feb5107365858ab82176b5c95482dd814",
+      "enabled": true,
+      "implicitPolicy": "policy:\n  allow_implicit_invocation: false\n"
+    },
+    {
+      "name": "vectorcraft-cli-paths",
+      "path": "QA_ROOT/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.20261019.1/skills/vectorcraft-cli-paths",
+      "sha256": "f54f3b1f4241892803d90e3530384cbefea3b3c5d58ed47cb24d1795de69deb9",
+      "enabled": true,
+      "implicitPolicy": "policy:\n  allow_implicit_invocation: false\n"
+    },
+    {
+      "name": "vectorcraft-cli-shapes",
+      "path": "QA_ROOT/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.20261019.1/skills/vectorcraft-cli-shapes",
+      "sha256": "d3fe284bbc27aec597d72caf4b619093e4281a35252ac003ca5316259e3a257c",
+      "enabled": true,
+      "implicitPolicy": "policy:\n  allow_implicit_invocation: false\n"
+    },
+    {
+      "name": "vectorcraft-cli-boolean",
+      "path": "QA_ROOT/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.20261019.1/skills/vectorcraft-cli-boolean",
+      "sha256": "ef795515fab3834b36d329daf36c00cf381e6a0602e8df39953ceb63d16ec3b2",
+      "enabled": true,
+      "implicitPolicy": "policy:\n  allow_implicit_invocation: false\n"
+    },
+    {
+      "name": "vectorcraft-cli-text",
+      "path": "QA_ROOT/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.20261019.1/skills/vectorcraft-cli-text",
+      "sha256": "69801e3d54d2a1c252c8e61af0e25cb18ff6439dbf91517ee00f7a19a4e12631",
+      "enabled": true,
+      "implicitPolicy": "policy:\n  allow_implicit_invocation: false\n"
+    },
+    {
+      "name": "vectorcraft-cli-appearance",
+      "path": "QA_ROOT/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.20261019.1/skills/vectorcraft-cli-appearance",
+      "sha256": "09f9d80e6cef04fc5f9d4569c70584740311019c4db91dc1c0e808af740afac7",
+      "enabled": true,
+      "implicitPolicy": "policy:\n  allow_implicit_invocation: false\n"
+    },
+    {
+      "name": "vectorcraft-cli-artboards",
+      "path": "QA_ROOT/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.20261019.1/skills/vectorcraft-cli-artboards",
+      "sha256": "9d6a03a7d61bc6c44fd0344355fe01a03685414b6418c3a5b6424cf83844ab02",
+      "enabled": true,
+      "implicitPolicy": "policy:\n  allow_implicit_invocation: false\n"
+    },
+    {
+      "name": "vectorcraft-cli-assets",
+      "path": "QA_ROOT/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.20261019.1/skills/vectorcraft-cli-assets",
+      "sha256": "f197d9b6f510c029ac56b4f466a26c20c6c2eafea241aa38fdcab94f07852de7",
+      "enabled": true,
+      "implicitPolicy": "policy:\n  allow_implicit_invocation: false\n"
+    },
+    {
+      "name": "vectorcraft-cli-export",
+      "path": "QA_ROOT/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.20261019.1/skills/vectorcraft-cli-export",
+      "sha256": "39122bf2d970efe363bc9899a8487d579134cb22286588540c6be5af11ccaa92",
+      "enabled": true,
+      "implicitPolicy": "policy:\n  allow_implicit_invocation: false\n"
+    },
+    {
+      "name": "vectorcraft-cli-selection",
+      "path": "QA_ROOT/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.20261019.1/skills/vectorcraft-cli-selection",
+      "sha256": "d59fcfde4122555148076161a49111d2918a940af8b0dbedca13069fc92c773d",
+      "enabled": true,
+      "implicitPolicy": "policy:\n  allow_implicit_invocation: false\n"
+    },
+    {
+      "name": "vectorcraft-harness",
+      "path": "QA_ROOT/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.20261019.1/skills/vectorcraft-harness",
+      "sha256": "b44b096294960386f9e2a6320b311273b9ce2f06acee19a9984d298e00a937ff",
+      "enabled": true,
+      "implicitPolicy": "interface:\n  display_name: \"vectorcraft-harness\"\n  short_description: \"VectorCraft 内置执行 harness：统一安装、原生命令、工作流与桌面桥接通道\"\n  default_prompt: \"使用 $vectorcraft-harness 作为所有 VectorCraft 技能的执行通道，经由本技能入口安装依赖、执行并核验。\"\npolicy:\n  allow_implicit_invocation: true\n"
+    }
+  ],
+  "localSkills": [
+    {
+      "name": "vectorcraft-editable-chart",
+      "path": "QA_ROOT/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.20261019.1/skills/vectorcraft-editable-chart",
+      "skillSha256": "acf78032fcdfc8f5ea05b07ecf317863c9c74dc774205f8a8fea10b70e9f5c3b",
+      "enabled": true
+    },
+    {
+      "name": "vectorcraft-editor",
+      "path": "QA_ROOT/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.20261019.1/skills/vectorcraft-editor",
+      "skillSha256": "1c11185cf6cc1a08a2d7a2387425f1ea274539ec03f2300baac6c0f5a185710f",
+      "enabled": true
+    },
+    {
+      "name": "vectorcraft-icon-set",
+      "path": "QA_ROOT/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.20261019.1/skills/vectorcraft-icon-set",
+      "skillSha256": "64de9cd56b6fdf93ead153bc11535d2294c2c162441a0ab80e6cfb9237a955b4",
+      "enabled": true
+    },
+    {
+      "name": "vectorcraft-infographic",
+      "path": "QA_ROOT/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.20261019.1/skills/vectorcraft-infographic",
+      "skillSha256": "26236684da3305f08ca3aab90f7f39bb6af937dced5507a3c85af843753a4f35",
+      "enabled": true
+    },
+    {
+      "name": "vectorcraft-logo-system",
+      "path": "QA_ROOT/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.20261019.1/skills/vectorcraft-logo-system",
+      "skillSha256": "25ade16ad9baf65bc0e06d1f252b55dd327982d6a0bef274696c988ba01c69f4",
+      "enabled": true
+    },
+    {
+      "name": "vectorcraft-scenario-playbooks",
+      "path": "QA_ROOT/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.20261019.1/skills/vectorcraft-scenario-playbooks",
+      "skillSha256": "5a375563988d97115b497cd4f39aca74fb35388b87a6a739a0b597eda09d7232",
+      "enabled": true
+    },
+    {
+      "name": "vectorcraft-svg-cleanup",
+      "path": "QA_ROOT/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.20261019.1/skills/vectorcraft-svg-cleanup",
+      "skillSha256": "fac7b6425163a8e8ca33a385bb8b69a57eb10927b0c7767c769957f45b2a52f9",
+      "enabled": true
+    },
+    {
+      "name": "vectorcraft-trace-artwork",
+      "path": "QA_ROOT/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.20261019.1/skills/vectorcraft-trace-artwork",
+      "skillSha256": "4364f678fb515724bd9e928816f0b4c47f7f695fc83fd7f12d1237c2e6eb4b0c",
+      "enabled": true
+    },
+    {
+      "name": "vectorcraft-clipped-illustration",
+      "path": "QA_ROOT/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.20261019.1/skills/vectorcraft-clipped-illustration",
+      "skillSha256": "1a25eb638e0199c7fbd783e5ffccaaf87165cf827a13bed732665a3eb7467bef",
+      "enabled": true
+    },
+    {
+      "name": "vectorcraft-sticker-grid",
+      "path": "QA_ROOT/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.20261019.1/skills/vectorcraft-sticker-grid",
+      "skillSha256": "da288a394074b9a6a60c7fdd3538ace001fd993eda03e77267145fc734312f17",
+      "enabled": true
+    },
+    {
+      "name": "vectorcraft-sticker-offset-border",
+      "path": "QA_ROOT/codex home/plugins/cache/vectorcraft-private-acceptance/vectorcraft/0.1.0-dev.20261019.1/skills/vectorcraft-sticker-offset-border",
+      "skillSha256": "17bf1653c3aada8ce05644114a9ceed14fb9e03de0bf3253d0425f0d050e5050",
+      "enabled": true
+    }
+  ],
+  "scope": "isolated actual public-commit plugin installation and host discovery; private acceptance catalog only",
+  "excluded": [
+    "model implicit routing",
+    "GUI",
+    "complete V1",
+    "public marketplace eligibility"
+  ],
+  "originalProofSha256": "29416a27ed9d0392d379d310215051f5a132601458d3b2f88dfe64009e04f364",
+  "redaction": "Only local absolute paths changed to QA_ROOT; statuses, hashes and identities preserved."
+}

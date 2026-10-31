@@ -38,16 +38,22 @@ class ReleaseGateTests(unittest.TestCase):
   with contextlib.redirect_stdout(io.StringIO()):return self.m.assess(self.root)
  def test_original_fixed_snapshot_passes_six_layers_as_development_only(self):
   r=self.assess();self.assertEqual({k:v['status'] for k,v in r['layers'].items()},{k:'PASS' for k in ['structure','skills','runtime','host','task','native']});self.assertTrue(r['publishable']['development']);self.assertFalse(r['publishable']['marketplace'])
- def test_changed_worktree_cannot_reuse_original_fixed_proof(self):
-  changed=any(hashlib.sha256((ROOT/name).read_bytes()).hexdigest()!=digest for name,digest in self.bundle['fingerprints'].items())
-  if not changed:self.skipTest('current worktree already matches its qualified fixed proof')
-  with contextlib.redirect_stdout(io.StringIO()):result=self.m.assess(ROOT)
-  self.assertFalse(result['publishable']['development']);self.assertFalse(result['publishable']['marketplace'])
+ def test_stale_fixed_bundle_cannot_qualify_a_new_candidate(self):
+  manifest=self.root/'plugin.json';value=json.loads(manifest.read_text())
+  value['version']='0.1.0-dev.20261019.1';manifest.write_text(json.dumps(value))
+  result=self.assess()
+  self.assertFalse(result['publishable']['development'])
+  self.assertFalse(result['publishable']['marketplace'])
+  self.assertEqual(result['layers']['structure']['reason'],'release_evidence_changed')
  def test_documents_only_do_not_promote_runtime_or_host(self):
   for name in [self.bundle['host'],self.bundle['technical']]: (self.root/name).unlink()
   r=self.assess();self.assertFalse(r['publishable']['development']);self.assertFalse(r['publishable']['marketplace']);self.assertNotEqual(r['layers']['host']['status'],'PASS');self.assertNotEqual(r['layers']['native']['status'],'PASS')
  def test_wrong_release_version_refused(self):
   p=self.root/'plugin.json';r=json.loads(p.read_text());r['version']='0.1.0-dev.999';p.write_text(json.dumps(r));self.assertFalse(self.assess()['publishable']['development'])
+ def test_current_development_version_syntax_is_valid_but_still_requires_matching_evidence(self):
+  self.assertIsNotNone(self.m.PLUGIN_VERSION_PATTERN.fullmatch('0.1.0-dev.20261019.1'))
+  self.assertIsNone(self.m.PLUGIN_VERSION_PATTERN.fullmatch('0.1.0-dev.20261019.1-extra'))
+  p=self.root/'plugin.json';manifest=json.loads(p.read_text());manifest['version']='0.1.0-dev.20261019.1';p.write_text(json.dumps(manifest));self.assertFalse(self.assess()['publishable']['development'])
  def test_vendor_drift_refused(self):
   p=self.root/'skills/vectorcraft-use/SKILL.md';p.write_text(p.read_text()+'\nQA changed vendor\n');self.assertEqual(self.assess()['layers']['skills']['status'],'FAIL')
  def test_disabled_host_skill_refused_after_rehash(self):

@@ -39,6 +39,8 @@ class CurrentReadmeIdentityTests(unittest.TestCase):
             cases = [
                 ('README.md', r'^(\| (?:Metadata version|Plugin ID / version|Plugin ID / 版本) \| )[^|]+( \|)$', 'plugin version'),
                 ('README.zh-CN.md', r'^(\| (?:Skills source|Skill authority|技能事实源) \| )[^|]+( \|)$', 'skill source'),
+                ('README.md', r'^(\| Version \| )[^|]+( \|)$', 'property version'),
+                ('README.zh-CN.md', r'^(\| 版本 \| )[^|]+( \|)$', 'property version'),
             ]
             for filename, pattern, field in cases:
                 with self.subTest(file=filename, field=field):
