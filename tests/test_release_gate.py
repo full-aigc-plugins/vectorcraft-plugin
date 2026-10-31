@@ -48,6 +48,10 @@ class ReleaseGateTests(unittest.TestCase):
   r=self.assess();self.assertFalse(r['publishable']['development']);self.assertFalse(r['publishable']['marketplace']);self.assertNotEqual(r['layers']['host']['status'],'PASS');self.assertNotEqual(r['layers']['native']['status'],'PASS')
  def test_wrong_release_version_refused(self):
   p=self.root/'plugin.json';r=json.loads(p.read_text());r['version']='0.1.0-dev.999';p.write_text(json.dumps(r));self.assertFalse(self.assess()['publishable']['development'])
+ def test_current_development_version_syntax_is_valid_but_still_requires_matching_evidence(self):
+  self.assertIsNotNone(self.m.PLUGIN_VERSION_PATTERN.fullmatch('0.1.0-dev.20261019.1'))
+  self.assertIsNone(self.m.PLUGIN_VERSION_PATTERN.fullmatch('0.1.0-dev.20261019.1-extra'))
+  p=self.root/'plugin.json';manifest=json.loads(p.read_text());manifest['version']='0.1.0-dev.20261019.1';p.write_text(json.dumps(manifest));self.assertFalse(self.assess()['publishable']['development'])
  def test_vendor_drift_refused(self):
   p=self.root/'skills/vectorcraft-use/SKILL.md';p.write_text(p.read_text()+'\nQA changed vendor\n');self.assertEqual(self.assess()['layers']['skills']['status'],'FAIL')
  def test_disabled_host_skill_refused_after_rehash(self):

@@ -430,10 +430,10 @@ def build(root=ROOT):
         entries.append(bound_report(root,command140,'command-execution','Public tag64/source46:140 of585 commands,280 save/reopen stages,560 decoded exports;445 NOT_RUN. MagicWand2 adds4 actual panel windows,6 image comparisons and20 independent checkbox pixel checks;merge/reset/clamps,tool switching and same-session native reopen preserve settings and artwork. No app restart,selection matching,model/fullGUI/creative/V1 or task closure','VC-CM-001',[]))
     host47='docs/evidence/vc-qa-004/host-commit47.json'
     if (root/host47).is_file():
-        entries.append(record(root,host47,'fixed-install','PASS',['plugin.json','skills.lock.json'],'Actual isolated Codex public-commit47 installation on macOS arm64; all14 locked source47 skills discovered enabled with unchanged tree digests; private acceptance catalog only,not a public-tag release or model qualification','VC-RL-004',[]))
+        entries.append(record(root,host47,'fixed-install','PASS',['docs/evidence/pre-harness-convergence-identity/9799bbef/plugin.json','skills.lock.json'],'Original public commit47 installation on macOS arm64; archived dev.64 manifest identity; private acceptance catalog only,not current candidate or public-tag release qualification','VC-RL-004',[],historical=True))
     integrity47='docs/evidence/vc-qa-004/integrity-commit47.json'
     if (root/integrity47).is_file():
-        entries.append(record(root,integrity47,'fixed-install','PASS',['plugin.json','skills.lock.json'],'installed public commit47 product source unchanged;external QA/verifier changes are separately fingerprinted'))
+        entries.append(record(root,integrity47,'fixed-install','PASS',['docs/evidence/pre-harness-convergence-identity/9799bbef/plugin.json','skills.lock.json'],'original public commit47 product source unchanged; archived dev.64 manifest identity; external QA/verifier changes separately fingerprinted',historical=True))
     revision47='docs/evidence/vectorcraft-revision-commit47-20261013.json'
     if (root/revision47).is_file():
         entries.append(record(root,revision47,'fixed-install','NOT_RUN',['skills/vectorcraft-harness/scripts/runtime.lock.json','skills/vectorcraft-harness/scripts/desktop.lock.json','docs/evidence/vc-qa-001/native-fixed61.json'],'historical blocked round: source47 re-qualification was honestly NOT_RUN in that environment because the fixed61 seed native project and VectorCraft signed desktop app were absent; superseded by the commit47b re-execution','VC-QA-002',[],historical=True))

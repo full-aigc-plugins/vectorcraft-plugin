@@ -4239,12 +4239,12 @@
       "sha256": "7d07e164bf99c13b6b6e1bb20bed9f8bf88d84db8ec08435b92ff5f4c6df1c4f",
       "level": "fixed-install",
       "status": "PASS",
-      "scope": "Actual isolated Codex public-commit47 installation on macOS arm64; all14 locked source47 skills discovered enabled with unchanged tree digests; private acceptance catalog only,not a public-tag release or model qualification",
+      "scope": "Original public commit47 installation on macOS arm64; archived dev.64 manifest identity; private acceptance catalog only,not current candidate or public-tag release qualification",
       "requirement": "VC-RL-004",
       "tasks": [],
-      "historical": false,
+      "historical": true,
       "dependencies": {
-        "plugin.json": "cb91eb6000e5c992ae4d375cb53922c4d00842853f885bc7a05de07c39d253a4",
+        "docs/evidence/pre-harness-convergence-identity/9799bbef/plugin.json": "9799bbefaf90b6529ddce43aa0dfcf4e49e91e113d5c3166db061bf8ac6dd58b",
         "skills.lock.json": "8ade690cc48c7353dc15eb92536cab1ff6df17629c20f85e311950c8609a6086"
       }
     },
@@ -4253,12 +4253,12 @@
       "sha256": "c3a90205cb52193e6f4f79ff212f6f41a57356ee044495a1862d0984a07b8b71",
       "level": "fixed-install",
       "status": "PASS",
-      "scope": "installed public commit47 product source unchanged;external QA/verifier changes are separately fingerprinted",
+      "scope": "original public commit47 product source unchanged; archived dev.64 manifest identity; external QA/verifier changes separately fingerprinted",
       "requirement": null,
       "tasks": [],
-      "historical": false,
+      "historical": true,
       "dependencies": {
-        "plugin.json": "cb91eb6000e5c992ae4d375cb53922c4d00842853f885bc7a05de07c39d253a4",
+        "docs/evidence/pre-harness-convergence-identity/9799bbef/plugin.json": "9799bbefaf90b6529ddce43aa0dfcf4e49e91e113d5c3166db061bf8ac6dd58b",
         "skills.lock.json": "8ade690cc48c7353dc15eb92536cab1ff6df17629c20f85e311950c8609a6086"
       }
     },
@@ -4328,7 +4328,7 @@
         "scripts/qa/revision_gui_edit.py": "1e669549494a6f5b0f1bf692dc796c92efbf939919085875bdb8b021442df44e",
         "scripts/qa/revision_stale_gui.ts": "b124cbb4141eeb8953ae9fc9398ead4f1498828ad4a58c7c6c76ad2c81c7d024",
         "scripts/qa/revision_stops.ts": "457bb372e7c21d4087cf279c1d1c0461ebedc5a3e575252d54a84ad3d5d814bc",
-        "scripts/release_gate.py": "e3911cc3aabcc8844928bdd9c2f722ad2fc5cd67a641597c4597c4179420f6c4",
+        "docs/evidence/pre-harness-convergence-identity/e3911cc3/scripts/release_gate.py": "e3911cc3aabcc8844928bdd9c2f722ad2fc5cd67a641597c4597c4179420f6c4",
         "scripts/verify_revision_evidence.py": "3ffba84ef93490f695949ccebf7f793e51e2e24489bf07988702f3fe24466968",
         "skills.lock.json": "8ade690cc48c7353dc15eb92536cab1ff6df17629c20f85e311950c8609a6086",
         "skills/vectorcraft-harness/scripts/asset_reader.py": "d067708d2355c0aa4415027ae2cff53c5559611c90854447fd7595b6535939f3",
