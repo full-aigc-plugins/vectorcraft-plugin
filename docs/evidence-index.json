@@ -1,6 +1,6 @@
 {
   "schema": "vectorcraft-evidence-index/v1",
-  "identitySha256": "19f8d4e8313a3052232c06ab144d3392a29efe964b961c076351fdf6e8d63757",
+  "identitySha256": "8302146f8bf7732b0d21d8a1a7d67487ae6739c093afeef49bf945b7f5cd6634",
   "entries": [
     {
       "path": "docs/evidence/craft-vector37-gateway-export-fixed-first-use-20261008.json",
@@ -1731,7 +1731,7 @@
         "skills.lock.json": "8ade690cc48c7353dc15eb92536cab1ff6df17629c20f85e311950c8609a6086",
         "docs/evidence/pre-harness-convergence-identity/c999edb7/tests/geometry.test.ts": "c999edb7e17e97b04f3fc2d1165cd49205da3ec2286207d1d4a4ee5535186fa6",
         "docs/evidence/pre-delivery-read-identity/scripts/qa/geometry_fixed.ts": "1fef026dcacd1b3072bf5468a681a5198fd9a534c6204bdd16b15cc1ca5bae96",
-        "scripts/verify_geometry_evidence.py": "7e80b3762faa69dc0aa86ecbc204fd231ebdd213468987f21ac64f7564f14692",
+        "docs/evidence/pre-harness-convergence-identity/7e80b376/scripts/verify_geometry_evidence.py": "7e80b3762faa69dc0aa86ecbc204fd231ebdd213468987f21ac64f7564f14692",
         "docs/evidence/pre-brand-text-identity/openspec/changes/establish-v1-plugin/specs/domain-workflow/spec.md": "1b526344cfeb85e315ed348e6b9172b86d78b5319f50b4a60e324d5ec6db1602"
       }
     },
@@ -1827,7 +1827,7 @@
         "docs/evidence/vc-dm-002/artifact-digests.json": "21d261dabf90b9934184842cf05e00f93d0817feaecf08c3e093e9e92b7306c3",
         "docs/evidence/vc-dm-002/source-unit-bytes/test_boolean_transactions.py.txt": "712f616ff158153f5d196092de2ae96e64fe645e214e8d013ad3ee0b66d73bd8",
         "docs/evidence/vc-dm-002/source-unit-bytes/test_execution_control.py.txt": "8422ad3dea3f552a5d3936f53344568351f9324aa98ca0d82a6828932bfab47c",
-        "scripts/verify_boolean_evidence.py": "00b9e69dc1c560227555694f6713fc729921d53eb40a3ef24dad90e1f0269970",
+        "docs/evidence/pre-harness-convergence-identity/00b9e69d/scripts/verify_boolean_evidence.py": "00b9e69dc1c560227555694f6713fc729921d53eb40a3ef24dad90e1f0269970",
         "docs/evidence/pre-brand-text-identity/openspec/changes/establish-v1-plugin/specs/domain-workflow/spec.md": "1b526344cfeb85e315ed348e6b9172b86d78b5319f50b4a60e324d5ec6db1602"
       }
     },
@@ -3400,7 +3400,7 @@
         "docs/evidence/pre-source-copy-identity/project-status.json": "6ec65f498759a39b90f956d124775b6e1144d91a305e6a1a5bdb2089c6436b22",
         "docs/evidence/vc-rl-002/delivery-driver-red.log.txt": "9125f8590ba0651d6fb2f557c985b6b99a68d83c8f4ecfa5e69271a8e13f11b5",
         "docs/evidence/vc-rl-002/delivery-driver-green.log.txt": "afa5f971bcf423a83c82dd433fd1bae337cadd8269cd84d5ebdf677cdc41c3aa",
-        "scripts/verify_geometry_evidence.py": "7e80b3762faa69dc0aa86ecbc204fd231ebdd213468987f21ac64f7564f14692",
+        "docs/evidence/pre-harness-convergence-identity/7e80b376/scripts/verify_geometry_evidence.py": "7e80b3762faa69dc0aa86ecbc204fd231ebdd213468987f21ac64f7564f14692",
         "docs/evidence/pre-harness-convergence-identity/16ec089f/tests/test_geometry_driver_evidence.py": "16ec089fcb4ac19ff5f302bef84e8e9ffdda1ce06e9a417af510ae4fc1af7a4c",
         "docs/evidence/vc-rl-002/delivery-read-python156.log.txt": "e262407b2ccb8e15587d26b60121a18c4de606a31275c784d1a69ff06cf14b60"
       }
@@ -4172,7 +4172,7 @@
     },
     {
       "path": "docs/evidence/vectorcraft-command-families140-fixed64-20261009.json",
-      "sha256": "01bea38296325fdd65ed8cb77feec945078590c018e1afb8d285b07b92f8738f",
+      "sha256": "0460b379dc9c378ecde8cd384ee8e2f84a3b7f6fcd5eefc7cf7d2c8d730afb75",
       "level": "command-execution",
       "status": "PASS",
       "scope": "historical at original execution identity; Public tag64/source46:140 of585 commands,280 save/reopen stages,560 decoded exports;445 NOT_RUN. MagicWand2 adds4 actual panel windows,6 image comparisons and20 independent checkbox pixel checks;merge/reset/clamps,tool switching and same-session native reopen preserve settings and artwork. No app restart,selection matching,model/fullGUI/creative/V1 or task closure",
@@ -4181,8 +4181,8 @@
       "historical": true,
       "dependencies": {
         "scripts/verify_command_evidence.py": "2226125e18cbf119de2451534d08547e12dfd2f1e6db9e5464586659d7598364",
-        "docs/evidence/pre-harness-convergence-identity/87c774d4/scripts/verify_command_families.py": "87c774d4d1560ebe630297ca5992ce5167b850c57b6867979a69e4a78bcc8af6",
-        "docs/evidence/pre-harness-convergence-identity/e559e00b/docs/current-identity.json": "e559e00b4d74b41b716e3697b7477a4760790222a8d5e7ec4d1525ca55167ecc",
+        "scripts/verify_command_families.py": "ba66f81868ba6f2c1420e5c890df26c917d4f47cbbca9bdf664de1c54a46868f",
+        "docs/current-identity.json": "8302146f8bf7732b0d21d8a1a7d67487ae6739c093afeef49bf945b7f5cd6634",
         "skills/vectorcraft-use/references/command-coverage.json": "532d2fc467f4fc4c48856e11fdb97ea465276270c882e837a3214692de831a50",
         "scripts/qa/command_magicWand.py": "7f4925535be496637a02b35d1715a79e0a1a7e2c635e38f9936fc2d76dae3b22",
         "scripts/qa/command_magicWand_render.py": "7e1c412f8d6733cc3f51b297a2de05266541cdc3b307bbed04a21ffdad445b13",
@@ -4244,7 +4244,7 @@
       "tasks": [],
       "historical": false,
       "dependencies": {
-        "plugin.json": "9799bbefaf90b6529ddce43aa0dfcf4e49e91e113d5c3166db061bf8ac6dd58b",
+        "plugin.json": "cb91eb6000e5c992ae4d375cb53922c4d00842853f885bc7a05de07c39d253a4",
         "skills.lock.json": "8ade690cc48c7353dc15eb92536cab1ff6df17629c20f85e311950c8609a6086"
       }
     },
@@ -4258,7 +4258,7 @@
       "tasks": [],
       "historical": false,
       "dependencies": {
-        "plugin.json": "9799bbefaf90b6529ddce43aa0dfcf4e49e91e113d5c3166db061bf8ac6dd58b",
+        "plugin.json": "cb91eb6000e5c992ae4d375cb53922c4d00842853f885bc7a05de07c39d253a4",
         "skills.lock.json": "8ade690cc48c7353dc15eb92536cab1ff6df17629c20f85e311950c8609a6086"
       }
     },
@@ -4282,14 +4282,14 @@
       "sha256": "b3ba1a29909843433087ea1dd2e8ad485c79e125344bdba84ea616a9697aa5bf",
       "level": "fixed-install",
       "status": "PASS",
-      "scope": "All four current VC-QA-002 scenarios on the relocated scripts/harness layout at public commit 3eb0c32/source47 macOS arm64; fresh pinned-runtime seed,6 native revisions,15 guards and one owned signed desktop stale-source mutation;explicit QA scores,not public-tag or model/full-V1 acceptance",
+      "scope": "historical at original execution identity; All four current VC-QA-002 scenarios on the relocated scripts/harness layout at public commit 3eb0c32/source47 macOS arm64; fresh pinned-runtime seed,6 native revisions,15 guards and one owned signed desktop stale-source mutation;explicit QA scores,not public-tag or model/full-V1 acceptance",
       "requirement": "VC-QA-002",
       "tasks": [
         "6.6"
       ],
-      "historical": false,
+      "historical": true,
       "dependencies": {
-        "docs/current-identity.json": "19f8d4e8313a3052232c06ab144d3392a29efe964b961c076351fdf6e8d63757",
+        "docs/evidence/pre-harness-convergence-identity/19f8d4e8/docs/current-identity.json": "19f8d4e8313a3052232c06ab144d3392a29efe964b961c076351fdf6e8d63757",
         "docs/evidence/vc-qa-001/native-fixed61.json": "034a862e9057f2cefac128d946874327d29472721c910532dda2d6428d6b0085",
         "docs/evidence/vc-qa-002/budget-commit47b.json": "08ebdf9ec71e8e809d69cfd7353eaefe5a57771ec0e067ab3dcfee36de25e5d3",
         "docs/evidence/vc-qa-002/goal-change-commit47b.json": "1c394c7200f5368a42211e6d75799e43052db3163f3a30feb970900f1adfc3ec",
@@ -4305,7 +4305,7 @@
         "docs/evidence/vc-qa-004/host-commit47.json": "7d07e164bf99c13b6b6e1bb20bed9f8bf88d84db8ec08435b92ff5f4c6df1c4f",
         "docs/evidence/vc-qa-004/integrity-commit47.json": "c3a90205cb52193e6f4f79ff212f6f41a57356ee044495a1862d0984a07b8b71",
         "openspec/changes/establish-v1-plugin/specs/quality-review/spec.md": "f6989589de9fbcdb056c0b9be672d60b8aeb944192d09e7b3ba3520229f5ede7",
-        "plugin.json": "9799bbefaf90b6529ddce43aa0dfcf4e49e91e113d5c3166db061bf8ac6dd58b",
+        "docs/evidence/pre-harness-convergence-identity/9799bbef/plugin.json": "9799bbefaf90b6529ddce43aa0dfcf4e49e91e113d5c3166db061bf8ac6dd58b",
         "scripts/harness/asset_digest.py": "8ddd6bc9e07f7b111da43b4c7d5564ef623be438924ddbaa215b749b701f3465",
         "scripts/harness/asset_digest.ts": "38fda074e09dfff7265a0a039552fcc20a8110f52800b4d7ec0c37ee1d20d385",
         "scripts/harness/authorized_file.ts": "dfa7933cb2e2e509487865bc6bb97e54d587874c961c99c8e70d61eb3571f3d0",
