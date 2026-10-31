@@ -2923,7 +2923,8 @@
         "docs/evidence/pre-harness-convergence-identity/16691330/tests/test_revision_evidence.py": "16691330cf0943743af877c2fd284fce964bd2e0ab1efcfc2988dd8aa0f8816c",
         "docs/evidence/vc-qa-001/native-fixed61.json": "034a862e9057f2cefac128d946874327d29472721c910532dda2d6428d6b0085",
         "docs/evidence/vc-qa-002/fixed63-python129.log.txt": "6eb47f6ecb67dfcac3493210f96885c255b491b19e1653141e604d71cda79766",
-        "docs/evidence/vc-qa-002/goal-node124.log.txt": "e3658754accd973c8a625210f0ff427c0d0a374c50ec814ca4797a9fd3711037"
+        "docs/evidence/vc-qa-002/goal-node124.log.txt": "e3658754accd973c8a625210f0ff427c0d0a374c50ec814ca4797a9fd3711037",
+        "plugin.json": "9799bbefaf90b6529ddce43aa0dfcf4e49e91e113d5c3166db061bf8ac6dd58b"
       }
     },
     {
@@ -3621,7 +3622,7 @@
       "scope": "historical at original commit64/source46 execution identity; report retains internal fingerprints but its scripts/verify_revision_evidence.py pin was never committed and cannot be rebound; superseded as current VC-QA-002 evidence by the commit47b re-execution",
       "requirement": "VC-QA-002",
       "tasks": [],
-      "historical": true,
+      "historical": false,
       "dependencies": {}
     },
     {
