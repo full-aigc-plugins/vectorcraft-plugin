@@ -15,8 +15,8 @@ import time
 ROOT = Path(__file__).resolve().parents[2]
 
 
-def resolve_reference(version, requested, git):
-    """默认验证公开标签；候选只接受与公开main完全一致的完整提交身份。"""
+def resolve_reference(version, requested, git, candidate_branch=None):
+    """默认验证公开标签；私有候选须同时钉住远端分支头与完整提交。"""
     ref = requested or 'v'+version
     if ref != 'v'+version and not re.fullmatch('[0-9a-f]{40}', ref):
         raise ValueError('invalid_fixed_reference')
@@ -28,10 +28,16 @@ def resolve_reference(version, requested, git):
         return {'ref':ref,'commit':commit,'kind':'public-tag'}
     if commit != ref:
         raise ValueError('fixed_commit_mismatch')
-    remote = git('ls-remote','origin','refs/heads/main').splitlines()
-    if not any(line.split() == [commit,'refs/heads/main'] for line in remote):
+    if candidate_branch is not None:
+        if not re.fullmatch(r'fix/[a-z0-9][a-z0-9/_-]*',candidate_branch) or '..' in candidate_branch or '//' in candidate_branch:
+            raise ValueError('invalid_candidate_branch')
+        branch='refs/heads/'+candidate_branch
+    else:
+        branch='refs/heads/main'
+    remote = git('ls-remote','origin',branch).splitlines()
+    if not any(line.split() == [commit,branch] for line in remote):
         raise ValueError('remote_commit_mismatch')
-    return {'ref':ref,'commit':commit,'kind':'public-commit'}
+    return {'ref':ref,'commit':commit,'kind':'private-branch-commit' if candidate_branch else 'public-commit'}
 
 
 def digest(directory):
@@ -89,12 +95,13 @@ def main():
     parser.add_argument('--output',type=Path,required=True)
     parser.add_argument('--codex',default=shutil.which('codex'))
     parser.add_argument('--ref', help='公开main完整提交SHA；省略则必须验证当前版本公开标签')
+    parser.add_argument('--candidate-branch', help='仅对私有QA：要求完整SHA精确等于此远端fix分支头')
     args=parser.parse_args();root=args.output.resolve()
     manifest=json.loads((ROOT/'plugin.json').read_text());lock=json.loads((ROOT/'skills.lock.json').read_text())['sources'][0]
     local_policy=json.loads((ROOT/'plugin-local-skills.json').read_text())
     version=manifest['version']
     def git(*argv): return subprocess.check_output(['git',*argv],cwd=ROOT,text=True,timeout=60).strip()
-    reference=resolve_reference(version,args.ref,git);ref=reference['ref'];commit=reference['commit']
+    reference=resolve_reference(version,args.ref,git,args.candidate_branch);ref=reference['ref'];commit=reference['commit']
     if git('show',ref+':plugin.json').encode()+b'\n'!=(ROOT/'plugin.json').read_bytes(): raise ValueError('release_manifest_drift')
     root.mkdir(parents=True,exist_ok=False);home=root/'codex home';home.mkdir(mode=0o700)
     env=dict(os.environ,CODEX_HOME=str(home))
@@ -136,7 +143,7 @@ def main():
         assert (directory/'SKILL.md').read_bytes()==(ROOT/'skills'/name/'SKILL.md').read_bytes()
         local_records.append({'name':name,'path':str(directory),'skillSha256':hashlib.sha256((directory/'SKILL.md').read_bytes()).hexdigest(),'enabled':True})
     proof={'schema':'vectorcraft-fixed-host-install/v1','result':'PASS','pluginVersion':version,'pluginCommit':commit,
-        'artifactRef':ref,'artifactKind':reference['kind'],'publicTagVerified':reference['kind']=='public-tag',
+        'artifactRef':ref,'artifactKind':reference['kind'],'candidateBranch':args.candidate_branch,'publicTagVerified':reference['kind']=='public-tag',
         'skillSourceRef':lock['ref'],'skillSourceCommit':lock['sha'],'hostVersion':host_version,'hostIdentity':identity,
         'platform':os.uname().sysname+'-'+os.uname().machine,'skills':records,'localSkills':local_records,
         'scope':'isolated actual '+reference['kind']+' plugin installation and host discovery; private acceptance catalog only',

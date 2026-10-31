@@ -36,6 +36,19 @@ class FixedInstallReferenceTests(unittest.TestCase):
         self.assertEqual(installer.resolve_reference('0.1.0-dev.64', SHA, self.git),
             {'ref':SHA,'commit':SHA,'kind':'public-commit'})
 
+    def test_exact_remote_private_branch_commit_is_accepted_as_candidate_only(self):
+        branch='fix/restore-release-gate-20261031'
+        def git(*args):
+            if args == ('rev-parse', SHA+'^{commit}'): return SHA
+            if args == ('ls-remote','origin','refs/heads/'+branch): return SHA+'\trefs/heads/'+branch
+            raise AssertionError(args)
+        self.assertEqual(installer.resolve_reference('0.1.0-dev.20261019.1',SHA,git,branch),
+            {'ref':SHA,'commit':SHA,'kind':'private-branch-commit'})
+        with self.assertRaisesRegex(ValueError,'remote_commit_mismatch'):
+            installer.resolve_reference('0.1.0-dev.20261019.1',SHA,lambda *args: ('b'*40+'\trefs/heads/'+branch) if args[0]=='ls-remote' else SHA,branch)
+        with self.assertRaisesRegex(ValueError,'invalid_candidate_branch'):
+            installer.resolve_reference('0.1.0-dev.20261019.1',SHA,lambda *args: SHA,'../main')
+
     def test_branch_abbreviated_commit_and_other_tag_are_rejected_before_git(self):
         def forbidden(*args): self.fail('invalid reference reached git')
         for ref in ('main','aaaaaaa','v0.1.0-dev.63','../main','A'*40):
