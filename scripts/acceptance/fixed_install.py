@@ -11,20 +11,47 @@ import shutil
 import subprocess
 import threading
 import time
+from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[2]
+REPOSITORY = 'full-aigc-plugins/vectorcraft-plugin'
+GIT_URL = 'https://github.com/'+REPOSITORY+'.git'
 
 
-def resolve_reference(version, requested, git, candidate_branch=None):
-    """默认验证公开标签；私有候选须同时钉住远端分支头与完整提交。"""
+def verify_public_commit(commit):
+    """Query the fixed GitHub repository without credentials; fail closed on any mismatch."""
+    base='https://api.github.com/repos/'+REPOSITORY
+    def get(path):
+        url=base+path
+        with urlopen(Request(url,headers={'User-Agent':'vectorcraft-fixed-acceptance','Accept':'application/vnd.github+json'}),timeout=20) as response:
+            if response.status!=200 or response.geturl()!=url: raise ValueError('public_commit_unverified')
+            return json.loads(response.read(1_000_001))
+    try:
+        repo=get('')
+        result=get('/commits/'+commit)
+        if repo.get('full_name')!=REPOSITORY or repo.get('private') is not False or repo.get('visibility')!='public' or result.get('sha')!=commit:
+            raise ValueError('public_commit_unverified')
+    except Exception as error:
+        raise ValueError('public_commit_unverified') from error
+    return commit
+
+
+def resolve_reference(version, requested, git, candidate_branch=None, public_verify=verify_public_commit):
+    """Pin a remote ref to an exact SHA and independently verify public retrieval."""
+    def confirmed_public(commit):
+        try:
+            if public_verify(commit)!=commit: raise ValueError('public_commit_unverified')
+        except Exception as error:
+            raise ValueError('public_commit_unverified') from error
     ref = requested or 'v'+version
     if ref != 'v'+version and not re.fullmatch('[0-9a-f]{40}', ref):
         raise ValueError('invalid_fixed_reference')
     commit = git('rev-parse', ref+'^{commit}')
     if ref == 'v'+version:
-        remote = git('ls-remote','origin','refs/tags/'+ref,'refs/tags/'+ref+'^{}').splitlines()
+        remote = git('ls-remote',GIT_URL,'refs/tags/'+ref,'refs/tags/'+ref+'^{}').splitlines()
         if not any(line.split()[0] == commit for line in remote):
             raise ValueError('remote_release_mismatch')
+        confirmed_public(commit)
         return {'ref':ref,'commit':commit,'kind':'public-tag'}
     if commit != ref:
         raise ValueError('fixed_commit_mismatch')
@@ -34,10 +61,11 @@ def resolve_reference(version, requested, git, candidate_branch=None):
         branch='refs/heads/'+candidate_branch
     else:
         branch='refs/heads/main'
-    remote = git('ls-remote','origin',branch).splitlines()
+    remote = git('ls-remote',GIT_URL,branch).splitlines()
     if not any(line.split() == [commit,branch] for line in remote):
         raise ValueError('remote_commit_mismatch')
-    return {'ref':ref,'commit':commit,'kind':'private-branch-commit' if candidate_branch else 'public-commit'}
+    confirmed_public(commit)
+    return {'ref':ref,'commit':commit,'kind':'public-commit'}
 
 
 def digest(directory):
@@ -94,8 +122,8 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output',type=Path,required=True)
     parser.add_argument('--codex',default=shutil.which('codex'))
-    parser.add_argument('--ref', help='公开main完整提交SHA；省略则必须验证当前版本公开标签')
-    parser.add_argument('--candidate-branch', help='仅对私有QA：要求完整SHA精确等于此远端fix分支头')
+    parser.add_argument('--ref', help='公开可检索的完整提交SHA；省略则验证当前版本公开标签')
+    parser.add_argument('--candidate-branch', help='要求完整SHA精确等于此远端fix分支头')
     args=parser.parse_args();root=args.output.resolve()
     manifest=json.loads((ROOT/'plugin.json').read_text());lock=json.loads((ROOT/'skills.lock.json').read_text())['sources'][0]
     local_policy=json.loads((ROOT/'plugin-local-skills.json').read_text())
@@ -114,7 +142,7 @@ def main():
     host_version=run('--version').strip()
     market=root/'private acceptance market';path=market/'.agents/plugins/marketplace.json';path.parent.mkdir(parents=True)
     path.write_text(json.dumps({'name':'vectorcraft-private-acceptance','owner':{'name':'Full AIGC Plugins'},'plugins':[
-        {'name':'vectorcraft','source':{'source':'url','url':'https://github.com/full-aigc-plugins/vectorcraft-plugin.git','ref':ref},
+        {'name':'vectorcraft','source':{'source':'url','url':GIT_URL,'ref':ref},
          'policy':{'installation':'AVAILABLE','authentication':'ON_USE'},'version':version,'category':'Creativity'}]}))
     run('plugin','marketplace','add',str(market),'--json')
     run('plugin','add','vectorcraft@vectorcraft-private-acceptance','--json')
