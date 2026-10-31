@@ -4305,7 +4305,7 @@
         "docs/evidence/vc-qa-004/host-commit47.json": "7d07e164bf99c13b6b6e1bb20bed9f8bf88d84db8ec08435b92ff5f4c6df1c4f",
         "docs/evidence/vc-qa-004/integrity-commit47.json": "c3a90205cb52193e6f4f79ff212f6f41a57356ee044495a1862d0984a07b8b71",
         "openspec/changes/establish-v1-plugin/specs/quality-review/spec.md": "f6989589de9fbcdb056c0b9be672d60b8aeb944192d09e7b3ba3520229f5ede7",
-        "plugin.json": "9799bbefaf90b6529ddce43aa0dfcf4e49e91e113d5c3166db061bf8ac6dd58b",
+        "docs/evidence/pre-harness-convergence-identity/9799bbef/plugin.json": "9799bbefaf90b6529ddce43aa0dfcf4e49e91e113d5c3166db061bf8ac6dd58b",
         "scripts/harness/asset_digest.py": "8ddd6bc9e07f7b111da43b4c7d5564ef623be438924ddbaa215b749b701f3465",
         "scripts/harness/asset_digest.ts": "38fda074e09dfff7265a0a039552fcc20a8110f52800b4d7ec0c37ee1d20d385",
         "scripts/harness/authorized_file.ts": "dfa7933cb2e2e509487865bc6bb97e54d587874c961c99c8e70d61eb3571f3d0",
