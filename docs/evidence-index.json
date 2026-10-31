@@ -1731,7 +1731,7 @@
         "skills.lock.json": "8ade690cc48c7353dc15eb92536cab1ff6df17629c20f85e311950c8609a6086",
         "docs/evidence/pre-harness-convergence-identity/c999edb7/tests/geometry.test.ts": "c999edb7e17e97b04f3fc2d1165cd49205da3ec2286207d1d4a4ee5535186fa6",
         "docs/evidence/pre-delivery-read-identity/scripts/qa/geometry_fixed.ts": "1fef026dcacd1b3072bf5468a681a5198fd9a534c6204bdd16b15cc1ca5bae96",
-        "scripts/verify_geometry_evidence.py": "7e80b3762faa69dc0aa86ecbc204fd231ebdd213468987f21ac64f7564f14692",
+        "docs/evidence/pre-harness-convergence-identity/7e80b376/scripts/verify_geometry_evidence.py": "7e80b3762faa69dc0aa86ecbc204fd231ebdd213468987f21ac64f7564f14692",
         "docs/evidence/pre-brand-text-identity/openspec/changes/establish-v1-plugin/specs/domain-workflow/spec.md": "1b526344cfeb85e315ed348e6b9172b86d78b5319f50b4a60e324d5ec6db1602"
       }
     },
@@ -3400,7 +3400,7 @@
         "docs/evidence/pre-source-copy-identity/project-status.json": "6ec65f498759a39b90f956d124775b6e1144d91a305e6a1a5bdb2089c6436b22",
         "docs/evidence/vc-rl-002/delivery-driver-red.log.txt": "9125f8590ba0651d6fb2f557c985b6b99a68d83c8f4ecfa5e69271a8e13f11b5",
         "docs/evidence/vc-rl-002/delivery-driver-green.log.txt": "afa5f971bcf423a83c82dd433fd1bae337cadd8269cd84d5ebdf677cdc41c3aa",
-        "scripts/verify_geometry_evidence.py": "7e80b3762faa69dc0aa86ecbc204fd231ebdd213468987f21ac64f7564f14692",
+        "docs/evidence/pre-harness-convergence-identity/7e80b376/scripts/verify_geometry_evidence.py": "7e80b3762faa69dc0aa86ecbc204fd231ebdd213468987f21ac64f7564f14692",
         "docs/evidence/pre-harness-convergence-identity/16ec089f/tests/test_geometry_driver_evidence.py": "16ec089fcb4ac19ff5f302bef84e8e9ffdda1ce06e9a417af510ae4fc1af7a4c",
         "docs/evidence/vc-rl-002/delivery-read-python156.log.txt": "e262407b2ccb8e15587d26b60121a18c4de606a31275c784d1a69ff06cf14b60"
       }
