@@ -1,6 +1,6 @@
 {
   "schema": "vectorcraft-evidence-index/v1",
-  "identitySha256": "19f8d4e8313a3052232c06ab144d3392a29efe964b961c076351fdf6e8d63757",
+  "identitySha256": "8302146f8bf7732b0d21d8a1a7d67487ae6739c093afeef49bf945b7f5cd6634",
   "entries": [
     {
       "path": "docs/evidence/craft-vector37-gateway-export-fixed-first-use-20261008.json",
@@ -3621,7 +3621,7 @@
       "scope": "historical at original commit64/source46 execution identity; report retains internal fingerprints but its scripts/verify_revision_evidence.py pin was never committed and cannot be rebound; superseded as current VC-QA-002 evidence by the commit47b re-execution",
       "requirement": "VC-QA-002",
       "tasks": [],
-      "historical": false,
+      "historical": true,
       "dependencies": {}
     },
     {
@@ -4244,7 +4244,7 @@
       "tasks": [],
       "historical": false,
       "dependencies": {
-        "plugin.json": "9799bbefaf90b6529ddce43aa0dfcf4e49e91e113d5c3166db061bf8ac6dd58b",
+        "plugin.json": "cb91eb6000e5c992ae4d375cb53922c4d00842853f885bc7a05de07c39d253a4",
         "skills.lock.json": "8ade690cc48c7353dc15eb92536cab1ff6df17629c20f85e311950c8609a6086"
       }
     },
@@ -4258,7 +4258,7 @@
       "tasks": [],
       "historical": false,
       "dependencies": {
-        "plugin.json": "9799bbefaf90b6529ddce43aa0dfcf4e49e91e113d5c3166db061bf8ac6dd58b",
+        "plugin.json": "cb91eb6000e5c992ae4d375cb53922c4d00842853f885bc7a05de07c39d253a4",
         "skills.lock.json": "8ade690cc48c7353dc15eb92536cab1ff6df17629c20f85e311950c8609a6086"
       }
     },
@@ -4282,14 +4282,14 @@
       "sha256": "b3ba1a29909843433087ea1dd2e8ad485c79e125344bdba84ea616a9697aa5bf",
       "level": "fixed-install",
       "status": "PASS",
-      "scope": "All four current VC-QA-002 scenarios on the relocated scripts/harness layout at public commit 3eb0c32/source47 macOS arm64; fresh pinned-runtime seed,6 native revisions,15 guards and one owned signed desktop stale-source mutation;explicit QA scores,not public-tag or model/full-V1 acceptance",
+      "scope": "historical at original execution identity; All four current VC-QA-002 scenarios on the relocated scripts/harness layout at public commit 3eb0c32/source47 macOS arm64; fresh pinned-runtime seed,6 native revisions,15 guards and one owned signed desktop stale-source mutation;explicit QA scores,not public-tag or model/full-V1 acceptance",
       "requirement": "VC-QA-002",
       "tasks": [
         "6.6"
       ],
       "historical": false,
       "dependencies": {
-        "docs/current-identity.json": "19f8d4e8313a3052232c06ab144d3392a29efe964b961c076351fdf6e8d63757",
+        "docs/evidence/pre-harness-convergence-identity/19f8d4e8/docs/current-identity.json": "19f8d4e8313a3052232c06ab144d3392a29efe964b961c076351fdf6e8d63757",
         "docs/evidence/vc-qa-001/native-fixed61.json": "034a862e9057f2cefac128d946874327d29472721c910532dda2d6428d6b0085",
         "docs/evidence/vc-qa-002/budget-commit47b.json": "08ebdf9ec71e8e809d69cfd7353eaefe5a57771ec0e067ab3dcfee36de25e5d3",
         "docs/evidence/vc-qa-002/goal-change-commit47b.json": "1c394c7200f5368a42211e6d75799e43052db3163f3a30feb970900f1adfc3ec",
@@ -4305,7 +4305,7 @@
         "docs/evidence/vc-qa-004/host-commit47.json": "7d07e164bf99c13b6b6e1bb20bed9f8bf88d84db8ec08435b92ff5f4c6df1c4f",
         "docs/evidence/vc-qa-004/integrity-commit47.json": "c3a90205cb52193e6f4f79ff212f6f41a57356ee044495a1862d0984a07b8b71",
         "openspec/changes/establish-v1-plugin/specs/quality-review/spec.md": "f6989589de9fbcdb056c0b9be672d60b8aeb944192d09e7b3ba3520229f5ede7",
-        "plugin.json": "9799bbefaf90b6529ddce43aa0dfcf4e49e91e113d5c3166db061bf8ac6dd58b",
+        "plugin.json": "cb91eb6000e5c992ae4d375cb53922c4d00842853f885bc7a05de07c39d253a4",
         "scripts/harness/asset_digest.py": "8ddd6bc9e07f7b111da43b4c7d5564ef623be438924ddbaa215b749b701f3465",
         "scripts/harness/asset_digest.ts": "38fda074e09dfff7265a0a039552fcc20a8110f52800b4d7ec0c37ee1d20d385",
         "scripts/harness/authorized_file.ts": "dfa7933cb2e2e509487865bc6bb97e54d587874c961c99c8e70d61eb3571f3d0",
