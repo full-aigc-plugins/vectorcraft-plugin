@@ -2923,8 +2923,7 @@
         "docs/evidence/pre-harness-convergence-identity/16691330/tests/test_revision_evidence.py": "16691330cf0943743af877c2fd284fce964bd2e0ab1efcfc2988dd8aa0f8816c",
         "docs/evidence/vc-qa-001/native-fixed61.json": "034a862e9057f2cefac128d946874327d29472721c910532dda2d6428d6b0085",
         "docs/evidence/vc-qa-002/fixed63-python129.log.txt": "6eb47f6ecb67dfcac3493210f96885c255b491b19e1653141e604d71cda79766",
-        "docs/evidence/vc-qa-002/goal-node124.log.txt": "e3658754accd973c8a625210f0ff427c0d0a374c50ec814ca4797a9fd3711037",
-        "plugin.json": "9799bbefaf90b6529ddce43aa0dfcf4e49e91e113d5c3166db061bf8ac6dd58b"
+        "docs/evidence/vc-qa-002/goal-node124.log.txt": "e3658754accd973c8a625210f0ff427c0d0a374c50ec814ca4797a9fd3711037"
       }
     },
     {
@@ -4288,7 +4287,7 @@
       "tasks": [
         "6.6"
       ],
-      "historical": false,
+      "historical": true,
       "dependencies": {
         "docs/evidence/pre-harness-convergence-identity/19f8d4e8/docs/current-identity.json": "19f8d4e8313a3052232c06ab144d3392a29efe964b961c076351fdf6e8d63757",
         "docs/evidence/vc-qa-001/native-fixed61.json": "034a862e9057f2cefac128d946874327d29472721c910532dda2d6428d6b0085",
@@ -4306,7 +4305,7 @@
         "docs/evidence/vc-qa-004/host-commit47.json": "7d07e164bf99c13b6b6e1bb20bed9f8bf88d84db8ec08435b92ff5f4c6df1c4f",
         "docs/evidence/vc-qa-004/integrity-commit47.json": "c3a90205cb52193e6f4f79ff212f6f41a57356ee044495a1862d0984a07b8b71",
         "openspec/changes/establish-v1-plugin/specs/quality-review/spec.md": "f6989589de9fbcdb056c0b9be672d60b8aeb944192d09e7b3ba3520229f5ede7",
-        "plugin.json": "cb91eb6000e5c992ae4d375cb53922c4d00842853f885bc7a05de07c39d253a4",
+        "plugin.json": "9799bbefaf90b6529ddce43aa0dfcf4e49e91e113d5c3166db061bf8ac6dd58b",
         "scripts/harness/asset_digest.py": "8ddd6bc9e07f7b111da43b4c7d5564ef623be438924ddbaa215b749b701f3465",
         "scripts/harness/asset_digest.ts": "38fda074e09dfff7265a0a039552fcc20a8110f52800b4d7ec0c37ee1d20d385",
         "scripts/harness/authorized_file.ts": "dfa7933cb2e2e509487865bc6bb97e54d587874c961c99c8e70d61eb3571f3d0",
