@@ -28,8 +28,8 @@
   },
   "fingerprints": {
     "scripts/verify_command_evidence.py": "2226125e18cbf119de2451534d08547e12dfd2f1e6db9e5464586659d7598364",
-    "scripts/verify_command_families.py": "87c774d4d1560ebe630297ca5992ce5167b850c57b6867979a69e4a78bcc8af6",
-    "docs/current-identity.json": "e559e00b4d74b41b716e3697b7477a4760790222a8d5e7ec4d1525ca55167ecc",
+    "scripts/verify_command_families.py": "ba66f81868ba6f2c1420e5c890df26c917d4f47cbbca9bdf664de1c54a46868f",
+    "docs/current-identity.json": "8302146f8bf7732b0d21d8a1a7d67487ae6739c093afeef49bf945b7f5cd6634",
     "skills/vectorcraft-use/references/command-coverage.json": "532d2fc467f4fc4c48856e11fdb97ea465276270c882e837a3214692de831a50",
     "scripts/qa/command_magicWand.py": "7f4925535be496637a02b35d1715a79e0a1a7e2c635e38f9936fc2d76dae3b22",
     "scripts/qa/command_magicWand_render.py": "7e1c412f8d6733cc3f51b297a2de05266541cdc3b307bbed04a21ffdad445b13",

@@ -1827,7 +1827,7 @@
         "docs/evidence/vc-dm-002/artifact-digests.json": "21d261dabf90b9934184842cf05e00f93d0817feaecf08c3e093e9e92b7306c3",
         "docs/evidence/vc-dm-002/source-unit-bytes/test_boolean_transactions.py.txt": "712f616ff158153f5d196092de2ae96e64fe645e214e8d013ad3ee0b66d73bd8",
         "docs/evidence/vc-dm-002/source-unit-bytes/test_execution_control.py.txt": "8422ad3dea3f552a5d3936f53344568351f9324aa98ca0d82a6828932bfab47c",
-        "scripts/verify_boolean_evidence.py": "00b9e69dc1c560227555694f6713fc729921d53eb40a3ef24dad90e1f0269970",
+        "docs/evidence/pre-harness-convergence-identity/00b9e69d/scripts/verify_boolean_evidence.py": "00b9e69dc1c560227555694f6713fc729921d53eb40a3ef24dad90e1f0269970",
         "docs/evidence/pre-brand-text-identity/openspec/changes/establish-v1-plugin/specs/domain-workflow/spec.md": "1b526344cfeb85e315ed348e6b9172b86d78b5319f50b4a60e324d5ec6db1602"
       }
     },
@@ -4172,7 +4172,7 @@
     },
     {
       "path": "docs/evidence/vectorcraft-command-families140-fixed64-20261009.json",
-      "sha256": "01bea38296325fdd65ed8cb77feec945078590c018e1afb8d285b07b92f8738f",
+      "sha256": "0460b379dc9c378ecde8cd384ee8e2f84a3b7f6fcd5eefc7cf7d2c8d730afb75",
       "level": "command-execution",
       "status": "PASS",
       "scope": "historical at original execution identity; Public tag64/source46:140 of585 commands,280 save/reopen stages,560 decoded exports;445 NOT_RUN. MagicWand2 adds4 actual panel windows,6 image comparisons and20 independent checkbox pixel checks;merge/reset/clamps,tool switching and same-session native reopen preserve settings and artwork. No app restart,selection matching,model/fullGUI/creative/V1 or task closure",
@@ -4181,8 +4181,8 @@
       "historical": true,
       "dependencies": {
         "scripts/verify_command_evidence.py": "2226125e18cbf119de2451534d08547e12dfd2f1e6db9e5464586659d7598364",
-        "docs/evidence/pre-harness-convergence-identity/87c774d4/scripts/verify_command_families.py": "87c774d4d1560ebe630297ca5992ce5167b850c57b6867979a69e4a78bcc8af6",
-        "docs/evidence/pre-harness-convergence-identity/e559e00b/docs/current-identity.json": "e559e00b4d74b41b716e3697b7477a4760790222a8d5e7ec4d1525ca55167ecc",
+        "scripts/verify_command_families.py": "ba66f81868ba6f2c1420e5c890df26c917d4f47cbbca9bdf664de1c54a46868f",
+        "docs/current-identity.json": "8302146f8bf7732b0d21d8a1a7d67487ae6739c093afeef49bf945b7f5cd6634",
         "skills/vectorcraft-use/references/command-coverage.json": "532d2fc467f4fc4c48856e11fdb97ea465276270c882e837a3214692de831a50",
         "scripts/qa/command_magicWand.py": "7f4925535be496637a02b35d1715a79e0a1a7e2c635e38f9936fc2d76dae3b22",
         "scripts/qa/command_magicWand_render.py": "7e1c412f8d6733cc3f51b297a2de05266541cdc3b307bbed04a21ffdad445b13",
