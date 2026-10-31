@@ -42,6 +42,14 @@ def digest(directory):
         for p in sorted(directory.rglob('*')) if p.is_file()).encode()).hexdigest()
 
 
+def expected_skills(lock, local_policy):
+    """Require both immutable source skills and declared plugin-local skills."""
+    local=local_policy['skills']
+    if local_policy['version']!=1 or local_policy['dest'] not in ('skills','skills/') or len(local)!=len(set(local)) or set(local)&set(lock['skills']):
+        raise ValueError('invalid_local_skill_inventory')
+    return {'vectorcraft:'+name for name in [*lock['skills'],*local]}
+
+
 def discover(codex, root, env):
     """调用真实宿主发现接口；不调用模型，不推断隐式路由已经验收。"""
     with (root/'app-server.stderr.log').open('w') as errors:
@@ -83,6 +91,7 @@ def main():
     parser.add_argument('--ref', help='公开main完整提交SHA；省略则必须验证当前版本公开标签')
     args=parser.parse_args();root=args.output.resolve()
     manifest=json.loads((ROOT/'plugin.json').read_text());lock=json.loads((ROOT/'skills.lock.json').read_text())['sources'][0]
+    local_policy=json.loads((ROOT/'plugin-local-skills.json').read_text())
     version=manifest['version']
     def git(*argv): return subprocess.check_output(['git',*argv],cwd=ROOT,text=True,timeout=60).strip()
     reference=resolve_reference(version,args.ref,git);ref=reference['ref'];commit=reference['commit']
@@ -109,7 +118,7 @@ def main():
     # 插件技能只可能位于安装缓存 plugins/cache/ 下，宿主系统技能不在其内，精确集合断言保持不变。
     found={skill['name']:skill for row in rows for skill in row.get('skills',[])
         if skill['name'].startswith('vectorcraft:') and 'plugins/cache/' in Path(skill['path']).as_posix()}
-    assert set(found)=={'vectorcraft:'+name for name in lock['skills']}
+    assert set(found)==expected_skills(lock,local_policy)
     records=[]
     for name in lock['skills']:
         skill=found['vectorcraft:'+name];directory=Path(skill['path']).resolve().parent
@@ -120,14 +129,20 @@ def main():
         assert digest(directory)==lock['sha256'][name]
         records.append({'name':name,'path':str(directory),'sha256':digest(directory),'enabled':True,
             'implicitPolicy':(directory/'agents/openai.yaml').read_text()})
+    local_records=[]
+    for name in local_policy['skills']:
+        skill=found['vectorcraft:'+name];directory=Path(skill['path']).resolve().parent
+        assert skill['enabled'] and directory.is_relative_to(home)
+        assert (directory/'SKILL.md').read_bytes()==(ROOT/'skills'/name/'SKILL.md').read_bytes()
+        local_records.append({'name':name,'path':str(directory),'skillSha256':hashlib.sha256((directory/'SKILL.md').read_bytes()).hexdigest(),'enabled':True})
     proof={'schema':'vectorcraft-fixed-host-install/v1','result':'PASS','pluginVersion':version,'pluginCommit':commit,
         'artifactRef':ref,'artifactKind':reference['kind'],'publicTagVerified':reference['kind']=='public-tag',
         'skillSourceRef':lock['ref'],'skillSourceCommit':lock['sha'],'hostVersion':host_version,'hostIdentity':identity,
-        'platform':os.uname().sysname+'-'+os.uname().machine,'skills':records,
+        'platform':os.uname().sysname+'-'+os.uname().machine,'skills':records,'localSkills':local_records,
         'scope':'isolated actual '+reference['kind']+' plugin installation and host discovery; private acceptance catalog only',
         'excluded':['model implicit routing','GUI','complete V1','public marketplace eligibility']}
     (root/'proof.json').write_text(json.dumps(proof,ensure_ascii=False,indent=2)+'\n')
-    print(json.dumps({'result':'PASS','skills':len(records),'hostVersion':host_version,'pluginVersion':version}))
+    print(json.dumps({'result':'PASS','sourceSkills':len(records),'localSkills':len(local_records),'hostVersion':host_version,'pluginVersion':version}))
 
 
 if __name__=='__main__': main()

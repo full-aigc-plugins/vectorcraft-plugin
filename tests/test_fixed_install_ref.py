@@ -1,5 +1,6 @@
 """公开不可变提交验收不得被误记为已发布标签验收。"""
 import importlib.util
+import json
 from pathlib import Path
 import unittest
 
@@ -11,6 +12,15 @@ SHA = 'a'*40
 
 
 class FixedInstallReferenceTests(unittest.TestCase):
+    def test_discovery_inventory_includes_source_and_plugin_local_skills(self):
+        lock=json.loads((ROOT/'skills.lock.json').read_text())['sources'][0]
+        local=json.loads((ROOT/'plugin-local-skills.json').read_text())
+        names=installer.expected_skills(lock,local)
+        self.assertEqual(len(names),25)
+        self.assertIn('vectorcraft:vectorcraft-harness',names)
+        self.assertIn('vectorcraft:vectorcraft-editor',names)
+        with self.assertRaisesRegex(ValueError,'invalid_local_skill_inventory'):
+            installer.expected_skills(lock,{**local,'skills':local['skills']+['vectorcraft-use']})
     def git(self, *args):
         if args == ('rev-parse', SHA+'^{commit}'): return SHA
         if args == ('rev-parse', 'v0.1.0-dev.64^{commit}'): return SHA

@@ -3610,7 +3610,7 @@
         "docs/evidence/pre-harness-convergence-identity/269966ae/src/runtime/runtime_gate.ts": "269966ae978c9afa7b9cdad719afce9ca0b57e54c52f3cb732777f3ddc23a68c",
         "src/runtime/runtime_probe.py": "ee196f91dde9487bd1537d1c91a8f5957deb795431a54baa333be35bfc90e54c",
         "src/strict_json.ts": "69a445339670e53f6a7fcb96770b53b896666dd1e60f114c1751a23981d5b7d0",
-        "tests/test_fixed_install_ref.py": "933df1282825ff5e5f5b07de0a2ad1d4f625de7353107cd588f149d092522462"
+        "docs/evidence/pre-harness-convergence-identity/933df128/tests/test_fixed_install_ref.py": "933df1282825ff5e5f5b07de0a2ad1d4f625de7353107cd588f149d092522462"
       }
     },
     {
