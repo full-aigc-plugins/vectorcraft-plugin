@@ -13,7 +13,7 @@
 
 > 把品牌需求变成可继续编辑的原生 VectorCraft 工程——标志、图标集、信息图或图表——并按对象局部返工，而不是重新画一遍。
 
-[![版本](https://img.shields.io/badge/release-0.1.0--dev.20261109.2-1A73E8)](https://github.com/full-aigc-plugins/vectorcraft-plugin/releases)
+[![版本](https://img.shields.io/badge/release-0.1.0--dev.20261109.4-1A73E8)](https://github.com/full-aigc-plugins/vectorcraft-plugin/releases)
 [![技能](https://img.shields.io/badge/skills-25-00A67E)](#技能)
 [![MCP 工具](https://img.shields.io/badge/MCP%20tools-40-00A67E)](#mcp-工具)
 [![许可证](https://img.shields.io/badge/license-Apache--2.0-green)](LICENSE)
