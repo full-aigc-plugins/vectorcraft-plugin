@@ -20,7 +20,8 @@ class ReleaseGateTests(unittest.TestCase):
     source=next((candidate for candidate in choices if candidate.is_file() and hashlib.sha256(candidate.read_bytes()).hexdigest()==expected),source)
    # 正向历史夹具读取原始Git字节；当前工作树的真实发布门禁仍校验当前manifest。
    if name in ('plugin.json','docs/current-identity.json') and expected:
-    fixture=ROOT/'tests/fixtures/release64'/name
+    fixture=(ROOT/'tests/fixtures/release_evidence/current-identity.json' if name=='docs/current-identity.json'
+             else ROOT/'tests/fixtures/release_evidence/plugin.json')
     if fixture.is_file() and hashlib.sha256(fixture.read_bytes()).hexdigest()==expected:source=fixture
    shutil.copyfile(source,p)
   spec=importlib.util.spec_from_file_location('release_gate',ROOT/'scripts/release_gate.py');self.m=importlib.util.module_from_spec(spec);spec.loader.exec_module(self.m)
