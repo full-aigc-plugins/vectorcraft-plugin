@@ -7,6 +7,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from unittest import mock
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -29,6 +30,25 @@ def load(name):
 
 
 class OptimizationIntegrityTests(unittest.TestCase):
+    def test_commit47_host_proof_stays_historical_after_current_version_advances(self):
+        m=load('evidence_index')
+        archived='docs/evidence/pre-harness-convergence-identity/9799bbef/plugin.json'
+        expected=hashlib.sha256((ROOT/archived).read_bytes()).hexdigest()
+        def check(entries):
+            for name in ('host-commit47.json','integrity-commit47.json'):
+                entry=next(x for x in entries if x['path'].endswith('/'+name))
+                self.assertTrue(entry['historical'])
+                self.assertEqual(entry['dependencies'][archived],expected)
+                self.assertNotIn('plugin.json',entry['dependencies'])
+                self.assertEqual(m.verify(ROOT,entry)['state'],'historical')
+        check(m.build(ROOT)['entries'])
+        with tempfile.TemporaryDirectory() as temporary:
+            advanced=Path(temporary)/'plugin.json'
+            manifest=json.loads((ROOT/'plugin.json').read_text());manifest['version']='0.1.0-dev.20261101.1'
+            advanced.write_text(json.dumps(manifest))
+            original=m.safe_file
+            with mock.patch.object(m,'safe_file',side_effect=lambda root,name: advanced if name=='plugin.json' else original(root,name)):
+                check(m.build(ROOT)['entries'])
     def test_current_identity_is_a_checked_artifact(self):
         self.assertTrue((ROOT/'docs/current-identity.json').is_file(), 'missing current identity authority')
         p = subprocess.run([sys.executable, '-I', '-B', str(ROOT/'scripts/current_identity.py'), '--check'], capture_output=True, text=True)

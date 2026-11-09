@@ -27,7 +27,7 @@ This plugin belongs to **AIGC content creation**.
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | `vectorcraft` |
-| Version | `0.1.0-dev.20261018.2` |
+| Version | `0.1.0-dev.20261019.1` |
 | Status | Development preview; full domain and all-host acceptance still open |
 | Editor runtime | Node.js 24, started from `ui/bootstrap.mjs` |
 | Native CLI | `vectorcraft-cli` maintained build `0.2.0-craft.2`, derived from upstream `v0.2.0` |

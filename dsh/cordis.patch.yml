@@ -8,7 +8,7 @@
 
     - id: mcp-vectorcraft-vectorcraft-editor
       name: '@deepseek-ai/dsh-mcp-client'
-      disabled: !!js "!process.env.DSH_MCP_VECTORCRAFT"
+      disabled: !!js "process.env.DSH_MCP_VECTORCRAFT === '0'"
       config:
         serverName: "vectorcraft-editor"
         toolCallTimeoutMs: 60000
