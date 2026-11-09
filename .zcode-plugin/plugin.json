@@ -16,10 +16,40 @@
     "development-release"
   ],
   "skills": "./skills/",
-  "displayName": "VectorCraft · Vector Design",
+  "displayName": "VectorCraft",
   "icon": "./assets/official-logo.png",
-  "mcpServers": "./.mcp.json",
+  "mcpServers": {
+    "vectorcraft-editor": {
+      "type": "stdio",
+      "command": "node",
+      "args": [
+        "${ZCODE_PLUGIN_ROOT}/ui/bootstrap.mjs"
+      ],
+      "cwd": "${ZCODE_PROJECT_DIR}",
+      "env": {
+        "CRAFT_PANEL_METADATA_FILE": "${ZCODE_PLUGIN_ROOT}/.zcode-plugin/panel-meta.json",
+        "CRAFT_WORKSPACE_ROOT": "${ZCODE_PROJECT_DIR}"
+      }
+    }
+  },
   "displayName_i18n": {
-    "en": "VectorCraft · Vector Design"
-  }
+    "en": "VectorCraft",
+    "zh-CN": "VectorCraft"
+  },
+  "ui": {
+    "surfaces": [
+      {
+        "id": "editor",
+        "title": {
+          "en-US": "VectorCraft",
+          "zh-CN": "VectorCraft"
+        },
+        "icon": "pen-tool",
+        "server": "vectorcraft-editor",
+        "resourceUri": "ui://vectorcraft/panel.html",
+        "availability": "session"
+      }
+    ]
+  },
+  "commands": "commands"
 }
