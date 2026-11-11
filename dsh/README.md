@@ -17,7 +17,7 @@ dsh plugin --profile desktop add https://github.com/full-aigc-plugins/vectorcraf
 For local development, link this directory instead:
 
 ```sh
-dsh plugin --profile desktop add link:./dsh
+dsh plugin --profile desktop add link:/path/to/vectorcraft-plugin
 ```
 
 The marketplace repository (`full-aigc-plugins`) stores catalog metadata only and
